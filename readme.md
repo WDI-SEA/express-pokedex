@@ -70,7 +70,7 @@ You'll want to add functionality to the following routes by incorporating the `p
 
 * `GET /pokemon`
   * View: `views/pokemon/index.ejs`
-  * Purpose: Retrieve all Pokemon and display them on the page (`findAll`)
+  * Purpose: Retrieve all favorited Pokemon and display them on the page (`findAll`)
 * `POST /pokemon`
   * View: none (redirect to `/pokemon`)
   * Purpose: Creates a new Pokemon (`create`) and redirects back to `/pokemon`
