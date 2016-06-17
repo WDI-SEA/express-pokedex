@@ -1,0 +1,12 @@
+<div class="container">
+  <h1 class="text-center">The Original 151 Pokemon</h1>
+  <p class="text-center">
+    <a href="/pokemon">Favorites</a>
+  </p>
+
+  <% Favorites.forEach(function(pokemon) { %>
+    <div class="well">
+      <h2><%= pokemon.name %></h2>
+    </div>
+  <% }); %>
+</div>
