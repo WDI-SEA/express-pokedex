@@ -1,0 +1,9 @@
+<a href="/">Back to Pokemon</a>
+
+<form>
+<% favorites.forEach(function(newPokemon) { %>
+  <div class="well"><%= newPokemon.name %>
+    <button type="submit" class="btn btn" name="<%= newPokemon.name %>">Delete</button>
+  </div>
+<% }); %>
+</form>
