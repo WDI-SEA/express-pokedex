@@ -9,6 +9,10 @@ $(document).ready(function(){
       success: function(){
         $(that).parent().remove();
       }
-    })
+    });
+  });
+  $('.home').click(function(e){
+    e.preventDefault();
+    
   });
 });
