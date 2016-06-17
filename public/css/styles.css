@@ -4,7 +4,7 @@ body {
   text-transform: uppercase;
   text-shadow: 0 1px 0 rgba(0,0,0,0.5);
   color: #7DFF74;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
 }
 
 a {
