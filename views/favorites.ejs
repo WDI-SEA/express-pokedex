@@ -1,0 +1,16 @@
+<div class="container">
+  <h1 class="text-center">My Favorites</h1>
+  <p class="text-center">
+    <a href="/">Home</a>
+  </p>
+
+  <% pokemon.forEach(function(pokemon) { %>
+    <div class="well">
+      <h2><%= pokemon.pokeName %></h2>
+      <form method="POST" action="/pokemon/delete">
+        <input hidden type="text" name="name" value="<%= pokemon.pokeName %>">
+        <button class="btn btn-danger" name="delete-link">Delete Pokemon</button>
+      </form>
+    </div>
+  <% }); %>
+</div>
