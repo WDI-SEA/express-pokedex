@@ -1,0 +1,7 @@
+<h1>Favorite Pokemon</h1>
+  <% favorites.forEach(function(pokemon) { %>
+    <div class="well">
+    <h2><%= pokemon.name %></h2>
+    <button class="btn btn-danger delete">Delete</button>
+    </div>
+  <% }); %>
