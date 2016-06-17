@@ -1,0 +1,8 @@
+<div class="container-fluid">
+<% pokemon.forEach(function(pokemon) { %>
+  <div class="well">
+    <h2><%= pokemon.name %></h2>
+      <button class="btn btn-danger pokemonDelete">Delete</button>
+  </div>
+  <% }); %>
+</div>
