@@ -1,6 +1,6 @@
 var express = require('express');
-var db = require('../models');
-var router = express.Router();
+var db      = require('../models');
+var router  = express.Router();
 
 // GET - return a page with favorited Pokemon
 router.get('/', function(req, res) {
@@ -18,6 +18,17 @@ router.post('/', function(req, res) {
     console.log(newPokemon.get());
     res.redirect('/pokemon');
   });
-
 });
+
+router.delete('/pokemon/:name', function(req, res) {
+    db.pokemon.destroy({
+        where: {
+          name: req.body.name
+        }
+      }).then(function(newPokemon) {
+        console.log('you\'re in');
+        res.render('/pokemon');
+      });
+});
+
 module.exports = router;
