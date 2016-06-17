@@ -1,0 +1,18 @@
+body {
+  background-image: url(../img/BG.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+#pokedex {
+  border-radius: 10px;
+  background-image: url(../img/Pokedex.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 50px 150px 150px 150px;
+  height: 1050px;
+}
+.container {
+  padding-top: 255px;
+}

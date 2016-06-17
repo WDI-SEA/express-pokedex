@@ -1,0 +1,17 @@
+<link rel="stylesheet" type="text/css" href="/css/favorites.css">
+
+<div id="pokedex">
+  <div class="container">
+      <h1>Your Favorite Pokemon</h1>
+      <p class="text-center">
+      </p>
+
+      <% favorites.forEach(function(pokemon) { %>
+      <div class="row">
+        <div class="well well-sm col-xs-2">
+          <h2><%= pokemon.name %></h2>
+        </div>
+      </div>
+      <% }); %>
+  </div>
+</div>
