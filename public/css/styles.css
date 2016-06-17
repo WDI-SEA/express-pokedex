@@ -3,7 +3,9 @@
   background-size: cover;
   background-repeat: no-repeat;
 }*/
+
 body {
+  font-family: 'VT323';
   background-image: url('https://media.giphy.com/media/79fMgiWsRsSju/giphy.gif');
   background-size: cover;
   background-repeat: no-repeat;

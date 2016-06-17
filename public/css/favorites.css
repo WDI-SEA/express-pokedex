@@ -1,18 +1,24 @@
+/*@font-face {
+    font-family: PokemonFont;
+    src: url(../Fonts/PokemonGB.tff);*/
 body {
+  /*font-family: PokemonFont;*/
+  font-family: 'VT323';
   background-image: url(../img/BG.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+h1 {
+  margin-left: 4%;
+}
 
 #pokedex {
-  border-radius: 10px;
+  padding-top: 15%;
+  border-radius: 30px;
   background-image: url(../img/Pokedex.png);
   background-repeat: no-repeat;
-  background-size: cover;
-  margin: 50px 150px 150px 150px;
-  height: 1050px;
-}
-.container {
-  padding-top: 255px;
+  background-size: contain;
+  margin-top: 50px;
+  height: 850px;
 }
