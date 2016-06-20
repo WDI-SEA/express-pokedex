@@ -8,12 +8,14 @@ app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(ejsLayouts);
+app.use(express.static('public'));
 
 app.get('/', function(req, res) {
-  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
+  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/?limit=151';
 
   request(pokemonUrl, function(error, response, body) {
     var pokemon = JSON.parse(body).results;
+    // res.send(body);
     res.render('index', { pokemon: pokemon });
   });
 });
