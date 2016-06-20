@@ -18,9 +18,22 @@ router.post('/', function(req, res) {
   };
   db.pokemon.create(query)
     .then(function(newPoke) {
-      res.redirect('/');
+      res.redirect('/pokemon');
     });
 
 });
+
+router.post('/delete', function(req, res) {
+  // res.send(req.body);
+  query = {
+    where: { pokemon: req.body.name }
+  };
+  db.pokemon.destroy(query)
+    .then(function(poke) {
+      res.redirect('/');
+    });
+
+
+})
 
 module.exports = router;

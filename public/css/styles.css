@@ -1,3 +1,41 @@
 body {
   background: url('../img/sayagata-400px.png');
 }
+
+/*h3 {
+  display: inline-block;
+}
+
+form {
+  display: inline-block;
+}*/
+
+button {
+  height: 30px;
+  width: 60px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid darkgrey;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.box {
+  /*border: 1px solid red;*/
+  border-bottom: 1px solid #666;
+  border-right: 1px solid #666;
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  background-color: #fdfdfd;
+  display: inline-block;
+  width: 200px;
+  margin: 10px 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+
+h4 {
+  margin-bottom: -20px;
+  color: #a8b8ec;
+}
