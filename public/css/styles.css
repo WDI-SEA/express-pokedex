@@ -1,0 +1,21 @@
+/*body {
+  background-image: url(../img/BG.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}*/
+
+body {
+  font-family: 'VT323';
+  background-image: url('https://media.giphy.com/media/79fMgiWsRsSju/giphy.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 50%;
+  height: 950px;
+}
+
+ .well {
+  padding-top: 0px;
+  background-color: rgba(175,225,0,0.35);
+  text-align: center;
+  border: 1px solid blue;
+ }

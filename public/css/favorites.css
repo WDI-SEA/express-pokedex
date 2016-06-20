@@ -1,0 +1,24 @@
+/*@font-face {
+    font-family: PokemonFont;
+    src: url(../Fonts/PokemonGB.tff);*/
+body {
+  /*font-family: PokemonFont;*/
+  font-family: 'VT323';
+  background-image: url(../img/BG.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  margin-left: 4%;
+}
+
+#pokedex {
+  padding-top: 15%;
+  border-radius: 30px;
+  background-image: url(../img/Pokedex.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: 50px;
+  height: 850px;
+}
