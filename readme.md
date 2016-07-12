@@ -86,3 +86,9 @@ When finished with the above, style the application appropriately with CSS.
   * You'll need to create an additional route.
   * You can get detailed information about a Pokemon by passing the Pokemon's name to PokeAPI. You can retrieve images, abilities, stats, and moves through the API.
   * Example: http://pokeapi.co/api/v2/pokemon/bulbasaur/
+
+---
+
+## Licensing
+1. All content is licensed under a CC-BY-NC-SA 4.0 license.
+2. All software code is licensed under GNU GPLv3. For commercial use or alternative licensing, please contact legal@ga.co.
