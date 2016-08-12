@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Favorites</title>
+  </head>
+  <body>
+  <% pokemon.forEach(function(pokemon){ %>
+    <h2><%= pokemon.name %></h2>
+    <form method="GET" action="/">
+      <button class="delete">Delete this Pokemon</button>
+    </form>
+  <% }) %>
+  </body>
+</html>
