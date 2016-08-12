@@ -13,4 +13,15 @@
       </form>
     </div>
   <% }); %>
+  <script>
+  window.onload = function() {
+    var nextNum = location.href.match("more") ? Number(location.href.replace(/.+more\//, "")) + 20 : 20,
+      moreLink = document.getElementById("more");
+      moreLink.href = "/more/" + nextNum;
+      if (nextNum > 151) {
+          moreLink.remove();
+      }
+  };
+  </script>
+  <a id="more" href="">Next 20</a>
 </div>
