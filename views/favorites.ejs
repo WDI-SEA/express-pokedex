@@ -1,0 +1,11 @@
+
+<h1>Favorite pokemon</h1>
+
+<h4><a href='/'>back to list</a></h4>
+
+<% pokemon.forEach(function(entry){ %>
+<div class='well'>
+<h1> <%= entry.name %> </h1>
+<p><a href ="/pokemon/<%= entry.name %>">Read more about <%= entry.name %></a></p>
+</div>
+<% }) %>
