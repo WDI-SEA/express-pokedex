@@ -3,6 +3,8 @@ var request = require('request');
 var bodyParser = require('body-parser');
 var ejsLayouts = require('express-ejs-layouts');
 var app = express();
+////require models
+var db = require('./models');
 
 app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
@@ -17,6 +19,14 @@ app.get('/', function(req, res) {
     res.render('index', { pokemon: pokemon });
   });
 });
+
+app.get('/pokemon', function(req, res){
+    db.pokemon.findAll().then(function(pokemon) {
+    res.render('favorites', {pokemon: pokemon});
+  });
+});
+
+
 
 app.use('/pokemon', require('./controllers/pokemon'));
 
