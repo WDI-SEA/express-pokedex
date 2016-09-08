@@ -40,40 +40,46 @@ We'll be using an existing application that uses the [PokeAPI](http://pokeapi.co
 
 ## Requirements
 
-#### Part 1: Setup Sequelize
+#### Part 1: Setup Database
 
-Your first step will be adding Sequelize to this project. Refer back to the notes on how to install, initialize, and configure Sequelize, as well as create a database that Sequelize can connect to.
+Your first step will be to create a SQL database for your application as well as corresponding setup and seed files. Refer back to the notes as necessary.
 
-#### Part 2: Create a Pokemon Model
+#### Part 2: Create a Pokemon Table
 
-Your second step will involve creating a Sequelize model to store favorite Pokemon. It's recommended that you name this model `pokemon`. It will only store one attribute, the Pokemon's `name`.
+Your second step will involve writing a SQL setup file to create a SQL table in your database to store your favorite Pokemon. It's recommended that you name this table `pokemon`. It will only store one attribute, the Pokemon's `name`.
 
-Once this model has been created, run the migration for the model and test the model's functionality. This can be done in a separate file. An example:
+Once you have created the setup file, run the file against your database to create your tables. (This of course, can be done directly in psql/postico if you wish.) Then be sure to test connectivity to and the functionality of your database. This can be done in a separate file. An example:
 
 **dbTest.js**
 
 ```js
-var db = require('./models');
 
-db.pokemon.create({
-  name: 'Pikachu'
-}).then(function(newPokemon) {
-  console.log(newPokemon.get());
+var knex = require('knex')({
+  client: 'pg',
+  connection: process.env.DATABASE_URL
 });
+
+knex.raw(`
+  INSERT INTO pokemon(name)
+  VALUES (?);
+`, ['Pikachu']).then(function(data) {
+  console.log(data);
+});
+
 ```
 
-Be sure to also test querying Pokemon.
+Be sure to also test querying against the pokemon table.
 
-#### Part 3: Integrating the model with the app
+#### Part 3: Integrating the database with the app
 
-You'll want to add functionality to the following routes by incorporating the `pokemon` model you created.
+You'll want to add functionality to the following routes by incorporating the `pokemon` table you created.
 
 * `GET /pokemon`
   * View: `views/pokemon/index.ejs`
-  * Purpose: Retrieve all favorited Pokemon and display them on the page (`findAll`)
+  * Purpose: Retrieve all favorited Pokemon and display them on the page
 * `POST /pokemon`
   * View: none (redirect to `/pokemon`)
-  * Purpose: Creates a new Pokemon (`create`) and redirects back to `/pokemon`
+  * Purpose: Creates a new Pokemon and redirects back to `/pokemon`
 
 #### Part 4: Styling
 
