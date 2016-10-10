@@ -2,6 +2,8 @@ var express = require('express');
 var request = require('request');
 var bodyParser = require('body-parser');
 var ejsLayouts = require('express-ejs-layouts');
+var Sequelize = require('sequelize');
+var db = require('./models');
 var app = express();
 
 app.use(require('morgan')('dev'));
@@ -17,6 +19,7 @@ app.get('/', function(req, res) {
     res.render('index', { pokemon: pokemon });
   });
 });
+
 
 app.use('/pokemon', require('./controllers/pokemon'));
 
