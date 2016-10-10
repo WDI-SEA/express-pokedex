@@ -7,6 +7,29 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/favorites.css">
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script>
+      $(document).ready(function(){
+        $(".delete-button").click(function(e){
+          //prevent default behavior
+          e.preventDefault();
+          //Get the data
+          var url = $(this).attr("href");
+          console.log("got here url is " + url)
+
+          //Perform ajax call
+          $.ajax({
+            method: "DELETE",
+            url: url
+          }).done(function(data){
+            console.log("ajax returned")
+            window.location = "/pokemon";
+          });//end ajax
+        });//end click handler
+      });//doc.ready
+
+  </script>
   </head>
   <body>
     <%- body %>
