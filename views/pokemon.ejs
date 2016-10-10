@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Favorite Pokemon</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script>
+			$(document).ready(function(){
+				$(".delete-link").click(function(e){
+					//Prevent default behavior
+					e.preventDefault();
+
+					//Get the data
+					var url = $(this).attr("href"); //getting link from anchor tag
+					console.log("got here" + url);
+
+					//Perform AJAX call
+					$.ajax({
+						method: "DELETE",
+						url: url
+					}).done(function(data){
+						window.location = "/";
+
+					}); //End AJAX
+				}); //End click handler
+			});
+	</script>
+</head>
+<body>
+	<h2>Favorite Pokemon</h2>
+
+	<div>
+	<%- pokeName.forEach(function(poke) { %>
+	<div>
+		<%= poke.name %> is my favorite
+		<a href="/pokemon/delete/<%= poke.id %>" class="delete-link">Delete?</a>
+		</div>
+	<% }); %>
+	</div>
+
+
+
+	<h2>Add a new favorite</h2>
+	<form method="POST" action="/pokemon/new">
+		<div>
+			First Name:
+			<input type="text" name="firstname">
+		</div>
+		<div>
+			Last Name:
+			<input type="text" name="lastname">
+		</div>
+		<div>
+			Age:
+			<input type="number" name="age">
+		</div>
+		<div>
+			Fun Fact:
+			<input type="text" name="funfact">
+		</div>
+		<input type="submit">
+	</form>
+
+</body>
+</html>
