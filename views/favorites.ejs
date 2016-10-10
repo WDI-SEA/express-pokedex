@@ -1,0 +1,12 @@
+
+<div style="margin-left: 18px;">
+<h2 class="title">Favorite Pokemon Page</h2>
+  <a href="/">Back to Pokemon List</a>
+  <div>
+  <ul>
+  <% pokemon.forEach(function(fav) { %>
+    <li style="font-size: 25px; padding: 5px;"><%= fav.name %><a href="/pokemon/delete/<%= fav.id %>" <button class="btn btn-danger delete-button" type="submit" name="remove" style="margin-left: 8px; padding: 2px 5px;">REMOVE</button></a></li>
+  <% }); %>
+  </ul>
+  </div>
+</div>
