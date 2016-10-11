@@ -18,7 +18,7 @@ app.get('/', function(req, res) {
   });
 });
 
-app.use('/pokemon', require('./controllers/pokemon'));
+app.use('/pokemon', require('./routes/pokemon'));
 
 var server = app.listen(process.env.PORT || 3000);
 
