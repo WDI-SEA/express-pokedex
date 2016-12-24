@@ -85,6 +85,49 @@ You'll want to add functionality to the following routes by incorporating the `p
 
 When finished with the above, style the application appropriately with CSS.
 
+## API Limits
+You might notice the API doesn't return all the data it has at once. It has a
+default limit of 20. That means if it has a list of 150 (or more) Pokemon it
+will only return 20 at a time, by default.
+
+<http://pokeapi.co/api/v2/pokemon/>
+
+The API has a way to get around this limit. You can pass a different limit in
+the query string. The limit allows you to ask the API to return more than it's
+default amount.
+
+Remember, query strings are parameters passed in the URL after a question mark
+and seperated with ampersands. They look like this:
+
+```
+http://mapwebsite.com/?lat=40.284&long=110.133&zoom=12
+```
+
+This is a URL. It consists of four parts:
+1. the *protocol* is `http://`
+2. the *domain* is `mapwebsite.com`
+3. the *path* is `/` (the root path)
+4. the *query string* is `?lat=40.284&long=110.133`
+
+The query string is like a JavaScript object. There's keys and values.
+This query string has three keys and values:
+
+| Key  | Value   |
+| ---  | ---     |
+| lat  | 40.284  |
+| long | 110.133 | 
+| zoom | 12  |
+
+The Pokemon API is configured to read all sorts of keys and values from
+the query string. Perhaps the most useful one we'll use is `limit`. Specifying
+smaller or larger limits tells the server to send back more or less data.
+
+Specify a limit of just one to see the first item in the list:
+<http://pokeapi.co/api/v2/pokemon?limit=1>
+
+Specify a limit of 151 to see all 151 pokemon!
+<http://pokeapi.co/api/v2/pokemon?limit=151>
+
 ##Bonuses
 
 * Add the ability to DELETE Pokemon from the favorites list.
