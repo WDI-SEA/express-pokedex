@@ -1,3 +1,12 @@
-<h1>This is where the favorites go</h1>
+<div id="favoritePokemon">
 
-<p>Pull favotires from db, do foEach to display each one here.</p>
+  <div class="row">
+
+    <% pokemon.forEach(function(pokemon){ %>
+      <div class="col-md-6 pokemon" style="color: blue"><%= pokemon.name %></div>
+      <div class="col-md-6"><a href="/pokemon/<%= pokemon.id %>" class=" btn btn-info delete" style="background-color: red" style="color: black">Delete</a></div>
+    <% }) %>
+
+  </div>
+
+</div>
