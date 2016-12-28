@@ -1,8 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
+
 // GET - return a page with favorited Pokemon
 router.get('/', function(req, res) {
+  // console.log(req);
+  // res.render("favorite.ejs");
   res.send('Render a page of favorites here');
 });
 
@@ -10,5 +13,4 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
   res.send(req.body);
 });
-
 module.exports = router;
