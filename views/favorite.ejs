@@ -1,0 +1,12 @@
+<h1>FAVORITES </h1>
+<% pokemon.forEach(function(pokemon){ %>
+  <div class="row">
+    <div class="col-xs-12">
+      <p>
+        Name:
+        <a href="/pokemon/favorite/<%= pokemon.id %>">
+          <%= pokemon.name %>
+      </p>
+    </div>
+  </div>
+  <% }); %>
