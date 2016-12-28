@@ -1,0 +1,14 @@
+<div class="container">
+  <h1 class="text-center">Favorite Pokemon</h1>
+  <p class="text-center">
+    <a href="/">All Pokemon</a>
+  </p>
+
+  <% pokemon.forEach(function(pokemon) { %>
+    <div class="well" id="<%= pokemon.id %>">
+      <h2><%= pokemon.name %></h2>
+      <button class="btn btn-primary delete-link">Remove from Favorites</button>
+    </div>
+  <% }); %>
+
+</div>
