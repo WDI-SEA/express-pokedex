@@ -3,12 +3,24 @@ var router = express.Router();
 
 // GET - return a page with favorited Pokemon
 router.get('/', function(req, res) {
-  res.send('Render a page of favorites here');
+  console.log(req.body);
+  res.render('favorites');
 });
 
 // POST - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
-  res.send(req.body);
+  console.log(req.body);
+  res.render('favorites');
+});
+
+//GET - to individual pokemon
+router.get('/:id', function(req, res) {
+  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/<-% id %>';
+
+  request(pokemonUrl, function(error, response, body) {
+    var pokemon = JSON.parse(body).results;
+    res.render('singlepokemon', { pokemon: pokemon });
+  });
 });
 
 module.exports = router;
