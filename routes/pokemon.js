@@ -15,7 +15,10 @@ router.post('/', function(req, res) {
 
 //GET - to individual pokemon
 router.get('/:id', function(req, res) {
-  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/<-% id %>';
+  id = req.params.id;
+  console.log(id);
+  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/<-% id %>/';
+  console.log(pokemonUrl);
 
   request(pokemonUrl, function(error, response, body) {
     var pokemon = JSON.parse(body).results;
