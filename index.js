@@ -18,6 +18,16 @@ app.get('/', function(req, res) {
   });
 });
 
+app.get('/:id', function(req, res) {
+  var id = req.params.id;
+  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/<%- id %>';
+
+  request(pokemonUrl, function(error, response, body) {
+    var pokemon = JSON.parse(body).results;
+    res.render('singlepokemon', { pokemon: pokemon });
+  });
+});
+
 app.use('/pokemon', require('./routes/pokemon'));
 
 var server = app.listen(process.env.PORT || 3000);
