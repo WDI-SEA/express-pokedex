@@ -15,4 +15,11 @@ router.post('/', function(req, res) {
   });
 });
 
+router.delete('/:id', function(req, res) {
+  db.pokemon.findById(req.params.id).then(function(pokemon) {
+    pokemon.destroy();
+    res.send('Done!!!');
+  });
+});
+
 module.exports = router;

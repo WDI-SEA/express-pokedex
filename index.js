@@ -22,14 +22,6 @@ app.get('/', function(req, res) {
 
 app.use('/pokemon', require('./routes/pokemon'));
 
-app.delete('/pokemon/:id', function(req, res) {
-  db.pokemon.findById(req.params.id).then(function(pokemon) {
-    pokemon.destroy();
-    res.send('Done!!!');
-  });
-});
-
-
 var server = app.listen(process.env.PORT || 3000);
 
 module.exports = server;
