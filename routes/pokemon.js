@@ -20,9 +20,10 @@ router.get('/info/:name', function(req, res){
   var pokemon = req.params.name;
   var info = "http://pokeapi.co/api/v2/pokemon/" +pokemon;
   request(info, function(error, response, body){
-    var height = JSON.parse(body).height;
-    console.log("this is height", height);
-    res.render('info', {pokemon: pokemon, height: height});
+    var height = JSON.parse(body).height * 10;
+    var weight = JSON.parse(body).weight / 10;
+    var sprites = JSON.parse(body).sprites;
+    res.render('info', {pokemon: pokemon, height: height, weight: weight, sprites: sprites});
   });
 });
 
