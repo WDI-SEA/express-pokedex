@@ -1,0 +1,21 @@
+<div class="container text-center">
+
+	<h1>These are my favorite Pokemons!</h1>
+	<br>
+	<a href="/" class="btn btn-info">Back to full list</a>
+
+	<hr>
+	<div class="row">
+
+	  <% pokemons.forEach(function(pokemon) { %>
+	    <div class="col-xs-12">
+	      
+	      <h2><img src="http://i1.wp.com/nintendo-papercraft.com/wp-content/uploads/2014/04/pokeball.png?resize=512%2C376" width="40px">
+	      <%= pokemon.name.toUpperCase() %></h2>
+	      
+	    </div>
+	  <% }); %>
+
+	</div>
+
+</div>
