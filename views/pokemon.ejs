@@ -7,9 +7,9 @@
     <% pokemon.forEach(function(pokemon) { %>
       <div class="well pokemon-cell">
         <h2><%= pokemon.name %></h2>
-        <form method="POST" action="/pokemon">
+        <form class="delete-form" method="DELETE" action="/pokemon">
           <input hidden type="text" name="name" value="<%= pokemon.name %>">
-          <button class="delete-action btn btn-danger" type="submit">delete <i-glyphicon class="glyphicon glyphicon-trash" /></button>
+          <button class="btn btn-danger" type="submit">delete <i-glyphicon class="glyphicon glyphicon-trash" /></button>
         </form>
       </div>
     <% }); %>

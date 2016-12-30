@@ -19,4 +19,29 @@ router.post('/', function(req, res) {
     });
 });
 
+// DELETE (via favorites page)
+router.delete("/", function(req, res) {
+  console.log("deleting via /pokemon:", req.body);
+  var pokemon_name = req.body.name;
+  db.pokemon.destroy({
+    where: {
+      name: pokemon_name
+    }
+  }).then(function(name){
+    res.redirect("/pokemon");
+  });
+});
+
+// DELETE (via pokemon's details page)
+router.delete("/:name", function(req, res) {
+  var pokemon_name = req.body.name;
+  db.pokemon.destroy({
+    where: {
+      name: pokemon_name
+    }
+  }).then(function(name){
+    res.redirect("/pokemon");
+  });
+});
+
 module.exports = router;
