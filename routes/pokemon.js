@@ -21,14 +21,14 @@ router.post('/', function(req, res) {
 
 // DELETE (via favorites page)
 router.delete("/", function(req, res) {
-  console.log("deleting via /pokemon:", req.body);
   var pokemon_name = req.body.name;
   db.pokemon.destroy({
     where: {
       name: pokemon_name
     }
-  }).then(function(name){
+  }).then(function(result){
     res.redirect("/pokemon");
+    console.log("deleted", result)
   });
 });
 
