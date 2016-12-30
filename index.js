@@ -15,11 +15,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(ejsLayouts);
 
 app.get('/', function(req, res) {
-  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/?limit=151';
+  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/?limit=1';
 
   request(pokemonUrl, function(error, response, body) {
     var pokemon = JSON.parse(body).results;
-    console.log(pokemon);
     res.render('index', { pokemon: pokemon });
   });
 });

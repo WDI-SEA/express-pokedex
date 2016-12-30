@@ -3,8 +3,9 @@
   <div class="row">
 
     <% pokemon.forEach(function(pokemon){ %>
-      <div class="col-md-6 pokemon" style="color: blue"><%= pokemon.name %></div>
-      <div class="col-md-6"><a href="/pokemon/<%= pokemon.id %>" class=" btn btn-info delete" style="background-color: red" style="color: black">Delete</a></div>
+      <div class="col-md-8 pokemon" style="color: blue"><%= pokemon.name %></div>
+      <div class="col-md-2"><a href="/pokemon/<%= pokemon.id %>" class=" btn btn-info delete" style="background-color: red" style="color: black">Delete</a></div>
+      <div class="col-md-2"> <a href='/pokemon/info/<%= pokemon.name %>' class=" btn btn-info stuff" style="background-color: blue" style="color: black">Info</a></div>
     <% }) %>
 
   </div>
