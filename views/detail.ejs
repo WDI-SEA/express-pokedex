@@ -1,0 +1,53 @@
+<div class="container">
+  <h1 class="text-center">Your Favorite Pokemon</h1>
+  <p class="text-center">
+    <a href="/">Back to the Original 151 Pokemon</a>
+  </p>
+  <p class="text-center">
+    <a href="/pokemon">Back to your favorites</a>
+  </p>
+  <div class="pokedex">
+    <div class="well pokemon-card">
+      <img src="<%= pokemon.sprites.front_default %>" />
+      <h2><%= pokemon.name %></h2>
+      <!-- var id = pokemon.id;
+      var spriteShiny = pokemon.sprites.front_shiny; // img src url -->
+      <table class="table">
+        <tbody>
+          <tr>
+            <td>
+              <span>type</span>
+            </td>
+            <td>
+              <% var types = pokemon.types; %>
+              <% types.forEach(function(type) { %>
+                <span><%= type.type.name %> </span>
+              <% }) %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>height</span>
+            </td>
+            <td>
+              <span><%= pokemon.height %> </span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>weight</span>
+            </td>
+            <td>
+              <span><%= pokemon.weight %> </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <form class="delete-form" method="DELETE" action="/pokemon">
+        <input hidden type="text" name="name" value="<%= pokemon.name %>">
+        <button class="btn btn-danger" type="submit">delete <i-glyphicon class="glyphicon glyphicon-trash" /></button>
+      </form>
+    </div>
+  </div>
+</div>
