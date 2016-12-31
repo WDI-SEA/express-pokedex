@@ -10,6 +10,7 @@
         <form class="delete-form" method="DELETE" action="/pokemon">
           <input hidden type="text" name="name" value="<%= pokemon.name %>">
           <button class="btn btn-danger" type="submit">delete <i-glyphicon class="glyphicon glyphicon-trash" /></button>
+          <a href="/pokemon/<%= pokemon.name %>" class="btn btn-info">info <i-glyphicon class="glyphicon glyphicon-info-sign" /></a>
         </form>
       </div>
     <% }); %>
