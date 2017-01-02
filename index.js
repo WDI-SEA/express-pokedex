@@ -23,6 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 app.use('/pokemon', pokemonRoute);
 app.use(express.static('public'));
+app.use(express.static('files'))
 
 
 // ROUTES
@@ -54,9 +55,16 @@ app.post('/', function(req, res) {
 });
 
 // GET - return a details page for each favorited Pokemon
-app.get('/pokemon/:id', function(req, res) {
-	db.pokemon.findById(req.params.id).then(function(pokemon) {
-		res.render('pokemon-detail', {pokemon: pokemon});
+app.get('/pokemon/:name', function(req, res) {
+	var pokemonName = req.params.name;
+	var pokemonDetail = "http://pokeapi.co/api/v2/pokemon/" + pokemonName;
+	request(pokemonDetail, function(error, response, body) {
+		var name = JSON.parse(body).name;
+		var sprite = JSON.parse(body).sprites;
+		var stats = JSON.parse(body).stats;
+		var height = JSON.parse(body).height * 10;
+		var weight = JSON.parse(body).weight / 10;
+		res.render('pokemon-detail', {name: name,stats: stats,sprite: sprite,height: height,weight: weight});
 	});
 });
 

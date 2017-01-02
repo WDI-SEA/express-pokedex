@@ -1,15 +1,16 @@
-<div class="container">
-	<h1 class="text-center">Favorite Pokemon</h1>
-	<p class="text-center">
-		<a href="/pokemon">Back to Favorites</a>
-	</p>
-
-	<div class="well">
-	  <h2><%= pokemon.name %></h1>
-	  <button class="btn btn-danger delete-link">Remove from Favorites</button>
-	  <p>
-
-	  </p>
-    </div>
-
+<div class="well" id="details-container">
+	<div id="pokemon-avatar">
+		<img class="sprite" src="<%=sprite.front_default%>" alt="pokemon sprite">
+	</div>
+	<div id="details-text">
+		<p><b class="blue">INFO:</b></p>
+		<p><b>Name:</b> <%= name %></p>
+		<p><b>Height:</b> <%=height%> cm</p>
+		<p><b>Weight:</b> <%=weight%> kg</p>
+		<br>
+		<p><b class="blue">STATS:</b></p>
+		    <%for (i = 0; i<stats.length; i++) { %>
+		        <p><b><%=stats[i].stat.name%>:</b> <%=stats[i].base_stat;%></p>
+		    <%}%>
+	</div>
 </div>
