@@ -1,0 +1,17 @@
+.pokedex {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pokemon-cell {
+  width: 230px;
+  height: 150px;
+  margin: 10px;
+  float: left;
+}
+
+.clearfix {
+  clear: both;
+  overflow: auto;
+}
