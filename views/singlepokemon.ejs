@@ -1,20 +1,22 @@
-<h1>Single pokemon will be displayed here</h1>
-<h3>the id: <%- id %></h3>
-
 <div class="container">
-  <h1 class="text-center">The Original 151 Pokemon</h1>
-  <p class="text-center">
-    <a href="/pokemon">Favorites</a>
-  </p>
-
-  <% pokemon.forEach(function(pokemon, index, array) { %>
-    <div class="well">
-      <h2><%= pokemon.name %></h2>
-      <h2><%= index %></h2>
-      <form method="POST" action="/pokemon">
-        <input hidden type="text" name="name" value="<%= pokemon.name %>">
-        <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
-      </form>
-    </div>
-  <% }); %>
+  <div class="well">
+    <h1><%- pokemon %></h1>
+    <img src="<%- sprites.front_default %>">
+    <p>
+      <h3>Moves:</h3>
+      <%- moves %>
+    </p>
+    <p>
+      <h3>Stats:</h3>
+      <%- stats %>
+    </p>
+    <p>
+      <h3>Height:</h3>
+      <%- height %>
+    </p>
+    <p>
+      <h3>Weight:</h3>
+      <%- weight %>
+    </p>
+  </div>
 </div>
