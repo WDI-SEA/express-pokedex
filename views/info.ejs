@@ -1,4 +1,17 @@
 <h1><%= pokemon %></h1>
-<h1><%= height %> centimeters</h1>
-<h1><%= weight %> kilograms</h1>
+<h3><%= height %> centimeters</h1>
+<h3><%= weight %> kilograms</h1>
+<h4>Abilities:</h1>
+<ul>
+  <% for(i = 0; i < abilities.length; i++) { %>
+    <li><%= abilities[i]['ability']['name'] %></li>
+  <% } %>
+</ul>
+<h4>Stats:</h4>
+<ul>
+  <% for(i = 0; i < stats.length; i++) { %>
+    <li><%= stats[i]['stat']['name'] %> : <%= stats[i]['base_stat'] %></li>
+  <% } %>
+</ul>
+
 <img src="<%=sprites.front_default %>" class="img-responsive left-block" alt="<%= pokemon %>">
