@@ -3,7 +3,9 @@ var request = require('request');
 var bodyParser = require('body-parser');
 var ejsLayouts = require('express-ejs-layouts');
 var app = express();
-
+var path = require('path');
+var db = require('./models');
+app.use(express.static(path.join(__dirname, 'static')));
 app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
