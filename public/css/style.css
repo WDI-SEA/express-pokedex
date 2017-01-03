@@ -27,7 +27,7 @@
 }
 
 #bootstrap-overrides i {
-	margin-right: .25em;
+	margin-right: .5em;
 }
 
 #bootstrap-overrides .container {
@@ -96,7 +96,7 @@ html {
 
 body {
 	background-color: white;
-	margin-bottom: 3em;
+	margin-bottom: 5em;
 }
 
 h1 {
