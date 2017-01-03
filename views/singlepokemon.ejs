@@ -1,22 +1,23 @@
 <div class="container">
   <div class="well">
-    <h1><%- pokemon %></h1>
-    <img src="<%- sprites.front_default %>">
-    <p>
-      <h3>Moves:</h3>
-      <%- moves %>
-    </p>
-    <p>
-      <h3>Stats:</h3>
-      <%- stats %>
-    </p>
-    <p>
-      <h3>Height:</h3>
+    <h1><img src="<%- sprites.front_default %>"><%- pokemon %></h1>
+
+    <h3>Stats:</h3>
+    <% stats.forEach(function(stat){ %>
+      <p class="stat">
+        <%- stat.stat.name %>: <%- stat.base_stat %>
+      </p>
+    <% }); %>
+
+    <h3>Height:</h3>
+    <p class="stat">
       <%- height %>
     </p>
-    <p>
-      <h3>Weight:</h3>
+
+    <h3>Weight:</h3>
+    <p class="stat">
       <%- weight %>
     </p>
+
   </div>
 </div>
