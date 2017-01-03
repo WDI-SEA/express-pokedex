@@ -56,15 +56,16 @@ app.post('/', function(req, res) {
 
 // GET - return a details page for each favorited Pokemon
 app.get('/pokemon/:name', function(req, res) {
-	var pokemonName = req.params.name;
-	var pokemonDetail = "http://pokeapi.co/api/v2/pokemon/" + pokemonName;
-	request(pokemonDetail, function(error, response, body) {
+	var pokemonDetails = "http://pokeapi.co/api/v2/pokemon/" + req.params.name;
+	request(pokemonDetails, function(error, response, body) {
 		var name = JSON.parse(body).name;
 		var sprite = JSON.parse(body).sprites;
+		var abilities = JSON.parse(body).abilities;
 		var stats = JSON.parse(body).stats;
-		var height = JSON.parse(body).height * 10;
-		var weight = JSON.parse(body).weight / 10;
-		res.render('pokemon-detail', {name: name,stats: stats,sprite: sprite,height: height,weight: weight});
+		var types = JSON.parse(body).types;
+		var height = JSON.parse(body).height;
+		var weight = JSON.parse(body).weight;
+		res.render('pokemon-detail', {name:name, stats:stats, sprite:sprite, height:height, weight:weight, abilities:abilities, types:types,});
 	});
 });
 
