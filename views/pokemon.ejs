@@ -1,0 +1,10 @@
+<% pokemon.forEach(function(pokemon) { %>
+  <div class="well favorited" id="<%= pokemon.id %>">
+    <h2><%= pokemon.name %></h2>
+    <a href="/pokemon/<%= pokemon.name %>">
+      <button class="btn btn-primary">
+	  	<i class="fa fa-list-ul" aria-hidden="true"></i>
+	  	See Details</button></a>
+    <button class="btn btn-danger delete-link"><i class="fa fa-times" aria-hidden="true"></i> Remove</button>  
+  </div>
+<% }); %>

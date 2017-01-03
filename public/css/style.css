@@ -1,0 +1,243 @@
+/*** BOOTSTRAP OVERRIDES ***/
+
+#bootstrap-overrides {
+	font-family: 'Roboto', sans-serif;
+	text-transform: capitalize;
+}
+
+#bootstrap-overrides p {
+	font-family: 'Roboto', sans-serif;
+	color: #25304a;
+	font-size: 1em;
+}
+
+#bootstrap-overrides h2 {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 2em;
+	letter-spacing: -.03em;
+	color: #25304a;
+	margin-bottom: .6em;
+}
+
+#bootstrap-overrides h5 {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 1em;
+	text-transform: none;
+	color: white;
+}
+
+#bootstrap-overrides i {
+	margin-right: .5em;
+}
+
+#bootstrap-overrides .container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-top: 2.2em;
+}
+
+#bootstrap-overrides .well {
+	padding-top: 0;
+	padding-bottom: 1.8em;
+	border: none;
+	background-color: white;
+	box-shadow: 0 3px 0px 0px #E3E3E3;
+}
+
+#bootstrap-overrides .col-sm-4 {
+	margin: 1%;
+	margin-top: .9em;
+	width: 31%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#bootstrap-overrides .btn {
+	font-weight: 500;
+	margin-left: .1em;
+	margin-right: .4em;
+	outline: none;
+	border: none;
+	color: white;
+	text-decoration: none;
+}
+
+#bootstrap-overrides .btn-primary {
+	background-color: #3064b0;
+	box-shadow: 0 3px 0px #18326b;
+	transition-property: transform, box-shadow;
+	transition-duration: 200ms;
+}
+
+#bootstrap-overrides .btn-primary:hover {
+	transform: translateY(-3px);
+	box-shadow: 0px 5px 0px #18326b;
+}
+
+#bootstrap-overrides .btn-danger {
+	background-color: #FF485E;
+	box-shadow: 0px 3px 0px #DA3F51;
+	transition-property: transform, box-shadow;	
+	transition-duration: 200ms;
+}
+
+#bootstrap-overrides .btn-danger:hover {
+	transform: translateY(-3px);
+	box-shadow: 0px 5px 0px #DA3F51;
+}
+
+
+/*** GLOBAL STYLES ***/
+
+html {
+	font-size: 62.5%; 
+}
+
+body {
+	background: white;
+	background-color: #F1F1F1;
+}
+
+.blue {
+	color: #3872b7;
+}
+
+
+/*** HEADER & NAV STYLES ***/
+
+nav {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-right: .3em;
+	padding-bottom: 0;
+	background-color: white;
+	border-bottom: 3px solid #E3E3E3;
+}
+
+#pokemon-logo img {
+	width: 370px;
+	max-width: 100%;
+	display: block;
+	margin-top: 1em;
+}
+
+.nav-icon {
+	height: 1.3em;
+	margin-right: .2em;
+	margin-bottom: .1em;
+	transition-property: transform;
+	transition-duration: 300ms;
+}
+
+.nav-item i {
+	transition-property: transform;
+	transition-duration: 300ms;
+}
+
+.nav-item {
+	font-weight: 700;
+	font-size: 1.1em;
+	line-height: 3em;
+	text-transform: none;
+	color: #1d2b58;
+	margin: 0 .8em;
+	transition-property: color;
+	transition-duration: 300ms;
+	cursor: pointer;
+}
+
+.nav-item:hover {
+	text-decoration: none;
+	color: #366cb6;
+}
+
+.nav-item:hover > .nav-icon {
+	transform: rotate(-35deg);
+}
+
+.nav-item:hover > .fa {
+	transform: translate(-.25em,0);
+}
+
+
+/*** POKEMON LIST PAGE STYLES ***/
+
+.add-favorite img {
+	transition-property: transform;
+	transition-duration: 300ms;
+}
+
+.add-favorite:hover img {
+	transform: rotate(-35deg);
+}
+
+/*** FAVORITES STYLES ***/
+
+.favorited {
+	width: 31%;
+	float: left;
+	margin: 1%;
+	margin-top: .9em;
+}
+
+
+/*** POKEMON DETAILS STYLES ***/
+
+#details-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 2.5em 1% 1.7em 1%;
+	width: 31%;
+	padding: .8em 2.4em 1.6em 2.4em;
+	font-size: 1.1em;
+	position: relative;
+}
+
+#pokemon-avatar {
+	border-radius: 50%;
+	background-color: #3064b0;
+	width: 6.5em;
+	height: 6.5em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: -3em;
+	box-shadow: -3px 3px 0px #18326b;
+	margin-left: 1.5px;
+}
+
+#pokemon-avatar img {
+	max-height: 95%;
+}
+
+#details-header {
+	margin-top: 2.2em;
+}
+
+#details-text {
+	text-align: left;
+	margin-top: .75em;
+}
+
+
+/*** FOOTER STYLES ***/
+	
+footer {
+	background-color: #18326b;
+	color: white;
+	padding: 1em 0;
+	margin-top: 4.5em;
+
+}
+

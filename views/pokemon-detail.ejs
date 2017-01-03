@@ -1,0 +1,31 @@
+<div class="well" id="details-container">
+	<div id="pokemon-avatar">
+		<img class="sprite" src="<%=sprite.front_default%>" alt="pokemon sprite">
+	</div>
+	<h2 class="text-center" id="details-header"><%= name %></h2>
+	<div id="details-text">
+		<p><b class="blue">SIZE:</b></p>
+		<p><b>Height:</b> <%=height%></p>
+		<p><b>Weight:</b> <%=weight%></p>
+		<br>
+		<p><b class="blue">TYPES:</b></p>
+		    <%for (i = 0; i < types.length; i++) { %>
+		        <p> <%= types[i].type.name %> </p>
+		    <%}%>
+		<br>
+		<p><b class="blue">STATS:</b></p>
+		    <% for (i = 0; i < stats.length; i++) { %>
+		        <p><b><%= stats[i].stat.name %>:</b> <%=stats[i].base_stat;%></p>
+		    <%}%>
+		<br>
+		<p><b class="blue">ABILITIES:</b></p>
+		    <% for (i = 0; i < abilities.length; i++) { %>
+		    	<p> <%= abilities[i].ability.name %> </p>
+		    <%}%>
+	</div>
+</div>
+
+<a class="nav-item" href="/pokemon">
+	<i class="fa fa-arrow-left" aria-hidden="true"></i>
+	Back to Favorites
+</a>
