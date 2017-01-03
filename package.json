@@ -18,11 +18,25 @@
     "eslint-plugin-react": "^5.1.1"
   },
   "dependencies": {
-    "body-parser": "^1.15.1",
-    "ejs": "^2.4.2",
-    "express": "^4.13.4",
-    "express-ejs-layouts": "^2.1.0",
+    "body-parser": "^1.15.2",
+    "ejs": "^2.5.5",
+    "express": "^4.14.0",
+    "express-ejs-layouts": "^2.2.0",
+    "knex": "^0.12.6",
+    "morgan": "^1.7.0",
+    "pg": "^6.1.2",
+    "pg-hstore": "^2.3.2",
     "request": "^2.72.0",
-    "morgan": "^1.7.0"
-  }
+    "sequelize": "^3.28.0"
+  },
+  "description": "Working with databases, especially through ORMs, can present quite a learning curve. We'll start by incorporating one database model into an application to save favorite Pokemon.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1CTWgha/express-pokedex.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/1CTWgha/express-pokedex/issues"
+  },
+  "homepage": "https://github.com/1CTWgha/express-pokedex#readme"
 }
