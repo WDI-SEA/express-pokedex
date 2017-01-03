@@ -7,15 +7,8 @@
 
 #bootstrap-overrides p {
 	font-family: 'Roboto', sans-serif;
-	color: #4A4059;
+	color: #25304a;
 	font-size: 1em;
-}
-
-#bootstrap-overrides h1 {
-	font-family: 'Roboto Condensed', sans-serif;
-	font-weight: 700;
-	font-size: 3.2em;
-	text-transform: uppercase;
 }
 
 #bootstrap-overrides h2 {
@@ -23,7 +16,16 @@
 	font-weight: 400;
 	font-size: 2em;
 	letter-spacing: -.03em;
-	color: #4A4059;
+	color: #25304a;
+	margin-bottom: .6em;
+}
+
+#bootstrap-overrides h5 {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 1em;
+	text-transform: none;
+	color: white;
 }
 
 #bootstrap-overrides i {
@@ -35,13 +37,14 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	padding-top: 2.2em;
 }
 
 #bootstrap-overrides .well {
 	padding-top: 0;
-	padding-bottom: 1.6em;
+	padding-bottom: 1.8em;
 	border: none;
-	border: 1px solid #eae9e9;
+	background-color: white;
 	box-shadow: 0 3px 0px 0px #E3E3E3;
 }
 
@@ -57,34 +60,36 @@
 
 #bootstrap-overrides .btn {
 	font-weight: 500;
+	margin-left: .1em;
 	margin-right: .4em;
 	outline: none;
+	border: none;
+	color: white;
+	text-decoration: none;
 }
 
 #bootstrap-overrides .btn-primary {
-	background-color: #00b191;
-	border: none;
-	box-shadow: 0px 3px 0px #049a7f;
-	transition-property: background-color;
+	background-color: #3064b0;
+	box-shadow: 0 3px 0px #18326b;
+	transition-property: transform, box-shadow;
 	transition-duration: 200ms;
 }
 
 #bootstrap-overrides .btn-primary:hover {
-	background-color: #049a7f;
-	text-decoration: none;
+	transform: translateY(-3px);
+	box-shadow: 0px 5px 0px #18326b;
 }
 
 #bootstrap-overrides .btn-danger {
 	background-color: #FF485E;
-	border: none;
 	box-shadow: 0px 3px 0px #DA3F51;
-	transition-property: background-color;
+	transition-property: transform, box-shadow;	
 	transition-duration: 200ms;
 }
 
 #bootstrap-overrides .btn-danger:hover {
-	background-color: #DA3F51;
-	border: none;
+	transform: translateY(-3px);
+	box-shadow: 0px 5px 0px #DA3F51;
 }
 
 
@@ -95,44 +100,12 @@ html {
 }
 
 body {
-	background-color: white;
-	margin-bottom: 5em;
-}
-
-h1 {
-	color: white;
-	text-shadow: 0px 5px 0px #3562BD;
+	background: white;
+	background-color: #F1F1F1;
 }
 
 .blue {
 	color: #3872b7;
-}
-
-.header-icon {
-	color: #5FD3BE;
-}
-
-.nav-button {
-	color: white;
-	font-weight: 500;
-	font-size: 1.1em;
-	background-color: #2655b2;
-	padding: 10px 14px 10px 14px;
-	border-radius: 4px;
-	box-shadow: 0px 4px 0px #1b49a5;
-	transition-property: background-color;
-	transition-duration: 200ms;
-} 
-
-.nav-button:hover {
-	text-decoration: none;
-	color: white;
-	background-color: #1b49a5;
-}
-
-.text-center-button {
-	margin: 1.4em 0 2.6em 0;
-	text-align: center;
 }
 
 
@@ -144,6 +117,9 @@ nav {
 	justify-content: center;
 	align-items: center;
 	padding-right: .3em;
+	padding-bottom: 0;
+	background-color: white;
+	border-bottom: 3px solid #E3E3E3;
 }
 
 #pokemon-logo img {
@@ -168,6 +144,8 @@ nav {
 .nav-item {
 	font-weight: 700;
 	font-size: 1.1em;
+	line-height: 3em;
+	text-transform: none;
 	color: #1d2b58;
 	margin: 0 .8em;
 	transition-property: color;
@@ -189,7 +167,18 @@ nav {
 }
 
 
-/*** POKEMON DETAILS STYLES ***/
+/*** POKEMON LIST PAGE STYLES ***/
+
+.add-favorite img {
+	transition-property: transform;
+	transition-duration: 300ms;
+}
+
+.add-favorite:hover img {
+	transform: rotate(-35deg);
+}
+
+/*** FAVORITES STYLES ***/
 
 .favorited {
 	width: 31%;
@@ -198,6 +187,7 @@ nav {
 	margin-top: .9em;
 }
 
+
 /*** POKEMON DETAILS STYLES ***/
 
 #details-container {
@@ -205,7 +195,7 @@ nav {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	margin: 2.5em 1%;
+	margin: 2.5em 1% 1.7em 1%;
 	width: 31%;
 	padding: .8em 2.4em 1.6em 2.4em;
 	font-size: 1.1em;
@@ -214,23 +204,39 @@ nav {
 
 #pokemon-avatar {
 	border-radius: 50%;
-	background-color: white;
-	width: 6em;
-	height: 6em;
+	background-color: #3064b0;
+	width: 6.5em;
+	height: 6.5em;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	position: absolute;
 	top: -3em;
-	border: 1px solid #E3E3E3;
-	box-shadow: 0 3px 0px #E3E3E3;
+	box-shadow: -3px 3px 0px #18326b;
+	margin-left: 1.5px;
 }
 
 #pokemon-avatar img {
-	max-height: 85%;
+	max-height: 95%;
+}
+
+#details-header {
+	margin-top: 2.2em;
 }
 
 #details-text {
 	text-align: left;
-	margin-top: 4.5em;
+	margin-top: .75em;
 }
+
+
+/*** FOOTER STYLES ***/
+	
+footer {
+	background-color: #18326b;
+	color: white;
+	padding: 1em 0;
+	margin-top: 4.5em;
+
+}
+

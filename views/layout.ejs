@@ -14,26 +14,32 @@
     <script src="/js/delete.js"></script>
   </head>
   <body id="bootstrap-overrides">
-    <div class="container">
-      <nav>  
-        <a id="pokemon-logo" href="/">    
-          <img src="/img/pokemon-logo.jpg" alt="pokemon logo">
+    <nav>  
+      <a id="pokemon-logo" href="/">    
+        <img src="/img/pokemon-logo.jpg" alt="pokemon logo">
+      </a>
+      <p class="text-center">
+        <a class="nav-item" href="/">    
+          <img class="nav-icon" src="/img/pikachu.jpg" alt="all pokemon">
+          The Original 151 Pokemon
         </a>
-        <p class="text-center-button">
-          <a class="nav-item" href="/">    
-            <img class="nav-icon" src="/img/pikachu.jpg" alt="all pokemon">
-            The Original 151 Pokemon
-          </a>
-          <a class="nav-item" href="/pokemon">    
-            <img class="nav-icon" src="/img/pokeball.jpg" alt="favorites">
-            Favorites
-          </a>
-        </p>
-      </nav>
+        <a class="nav-item" href="/pokemon">    
+          <img class="nav-icon" src="/img/pokeball.png" alt="favorites">
+          Favorites
+        </a>
+      </p>
+    </nav>
+    <div class="container">
 
     <%- body %>
 
     </div>
+
+    <footer>
+      <h5 class="text-center">
+      &copy; 2017 Pokémon. All character names are trademarks of Nintendo.
+      </h5>
+    </footer>
 
     <!-- Bootstrap JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>

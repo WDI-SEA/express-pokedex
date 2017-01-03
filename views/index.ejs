@@ -4,8 +4,8 @@
       <h2><%= pokemon.name %></h2>
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
-        <button class="btn btn-primary" type="submit">
-          <i class="fa fa-plus" aria-hidden="true"></i>
+        <button class="btn btn-primary add-favorite" type="submit">
+          <img class="nav-icon" src="/img/pokeball.png" alt="favorites">
           Add to Favorites
         </button>
       </form>
