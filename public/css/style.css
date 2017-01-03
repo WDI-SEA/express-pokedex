@@ -132,6 +132,7 @@ nav {
 .nav-icon {
 	height: 1.3em;
 	margin-right: .2em;
+	margin-bottom: .1em;
 	transition-property: transform;
 	transition-duration: 300ms;
 }
@@ -159,7 +160,7 @@ nav {
 }
 
 .nav-item:hover > .nav-icon {
-	transform: scale(1.25);
+	transform: rotate(-35deg);
 }
 
 .nav-item:hover > .fa {
