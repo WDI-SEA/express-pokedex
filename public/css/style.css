@@ -1,0 +1,26 @@
+.pokemon {
+  color: blue;
+}
+
+.logo {
+  height: 100px;
+  width: 300px;
+  z-index: 1;
+  margin: 0 auto;
+}
+
+.pokemonContainer {
+  height: 1080px;
+  width: 1890px;
+  background-image: url("/img/backgroundbig.png");
+  background-size: auto;
+}
+
+#favoritePokemon {
+  height: 500px;
+  width: 750px;
+  border: 3px solid white;
+  background-color: rgba(158, 158, 158, 0.4);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
