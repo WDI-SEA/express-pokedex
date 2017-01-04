@@ -11,8 +11,18 @@ router.get('/', function(req, res) {
 });
 
 // POST - receive the name of a pokemon and add it to the database
-router.post('/', function(req, res) {
-  db.pokemon.create(req.body).then(function(){
+// router.post('/', function(req, res) {
+//   db.pokemon.create(req.body).then(function(){
+//     res.redirect('/pokemon');
+//   });
+// });
+
+// POST - receive the name of a pokemon and add it to the database if not already there
+router.post('/',function(req,res){
+  db.pokemon.findOrCreate({
+    where: {name: req.body.name},
+    defaults: {name: req.body.name}
+  }).then(function(){
     res.redirect('/pokemon');
   });
 });
