@@ -1,0 +1,42 @@
+.stat{
+  margin-left: 20px;
+}
+
+.navbar{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: whitesmoke;
+}
+
+.navbar div{
+  width: 150px;
+  height: 50px;
+  line-height: 50px;
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.navbar div:hover{
+  background-color: red;
+  text-decoration: none;
+  color: white;
+  background-color: steelblue;
+}
+
+.navbar a:hover, .navbar a:focus{
+  text-decoration: none;
+}
+
+@media (max-width: 500px) {
+
+  .navbar a{
+    width: 50%;
+  }
+
+  .navbar div{
+    width: 100%;
+  }
+
+}
