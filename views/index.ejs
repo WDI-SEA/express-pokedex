@@ -7,9 +7,10 @@
       <input hidden type="text" name="name" value="<%= pokemon.name %>">
       <button class="btn btn-info btn-xs" type="submit">Favorite</button>
     </form>
-    <form>
-      <button class="btn btn-info btn-xs" type="submit">More Info</button>
-    </form
+    <form method="GET" action="/info">
+     <input hidden type="text" name="name" value="<%= pokemon.name %>">
+     <a class="btn btn-info btn-xs" href="/info/<%=pokemon.name%>">More Info</a>
+    </form>
   </div>
   <% }); %>
 </div>

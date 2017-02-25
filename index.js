@@ -14,6 +14,7 @@ app.use(express.static(__dirname + "/public"));
 
 // EXTRENAL ROUTES
 app.use("/favorites", require("./routes/pokemon"));
+app.use("/info", require("./routes/info"));
 
 // ROUTES
 app.get('/', function(req, res) {
@@ -21,6 +22,7 @@ app.get('/', function(req, res) {
 
   request(pokemonUrl, function(error, response, body) {
     var pokemon = JSON.parse(body).results;
+    // res.send(pokemon)
     res.render('index', { pokemon: pokemon });
   });
 });

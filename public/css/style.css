@@ -15,6 +15,7 @@ body {
 	background-repeat: no-repeat;
 	background-size: auto;
 	background-position: center;
+	font-family: 'VT323', monospace;
 }
 
 .pokedexContainer {
@@ -49,4 +50,10 @@ body {
 	top:  25%;
 	padding: 2%;
 	z-index: -1;
+}
+
+.nav {
+	position: absolute;
+	top: 100px;
+	left: 300px;
 }

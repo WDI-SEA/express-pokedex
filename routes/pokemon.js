@@ -20,4 +20,15 @@ router.post('/', function(req, res) {
   })
 });
 
+router.delete('/:name', function(req, res) {
+	db.favorite.destroy({
+		where: {
+			name: req.params.name
+		}
+	}).then(function() {
+		res.send({message: 'did it boi' });
+	})
+})
+
+
 module.exports = router;
