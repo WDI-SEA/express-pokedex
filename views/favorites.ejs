@@ -1,1 +1,9 @@
-<h1>hi</h1>
+<div class="container">
+<h2 class="text-center">Favorites</h2>
+
+<% favorites.forEach(function(f) { %>
+	<h3><%= f.name %></h3>
+		<a href='/teams/<%= f.name %>' class="delete-link btn-sm btn-danger">Delete</a>
+	
+<% }); %>
+</div>

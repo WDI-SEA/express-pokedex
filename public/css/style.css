@@ -28,26 +28,25 @@ body {
 }
 
 .container {
+	height: 380px;
 	position: absolute;
-	height: 70%;
-	width: 30%;
-	margin: 0;
-	left: 55%;
-	top:  38%;
+	width: 35%;
+	padding-left: 2%;
 	overflow: scroll;
-	padding: 2%;
+	left: 12%;
+	top:  34%;
+	/*z-index: -1;*/
+	color: white;
 }
 
 .bodyContainer {
 	color: white;
 	background: rgba(0, 0, 0, 1);
-	position: absolute;
 	height: 80%;
 	width: 35%;
-	margin: 0;
-	left: 15%;
-	top:  37%;
-	overflow: scroll;
+	position: absolute;
+	left: 12%;
+	top:  25%;
 	padding: 2%;
 	z-index: -1;
 }
