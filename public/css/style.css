@@ -52,8 +52,8 @@ body {
 	z-index: -1;
 }
 
-.nav {
+nav {
 	position: absolute;
-	top: 100px;
-	left: 300px;
+	top: 110px;
+	left: 380px;
 }
