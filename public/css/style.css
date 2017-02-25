@@ -1,5 +1,10 @@
 .pokemon {
 	display: inline-block;
+	border-bottom: 1px solid white;
+}
+
+.pokemon:last-of-type {
+	border: none;
 }
 
 .pokemon h3 {
@@ -29,14 +34,14 @@ body {
 }
 
 .container {
+	text-align: center;
 	height: 380px;
 	position: absolute;
-	width: 35%;
+	width: 33%;
 	padding-left: 2%;
 	overflow: scroll;
 	left: 12%;
 	top:  34%;
-	/*z-index: -1;*/
 	color: white;
 }
 
@@ -56,4 +61,27 @@ nav {
 	position: absolute;
 	top: 110px;
 	left: 380px;
+}
+
+.img {
+	position: absolute;
+	left: 670px;
+	top: 195px;
+	z-index: 10;
+}
+
+.img hr {
+	border-style: dashed;
+	border-color: black;
+}
+
+.img img {
+	height: 200px;
+}
+
+
+
+.container h3 {
+	display: inline-block;
+	border-bottom: 1px solid white
 }
