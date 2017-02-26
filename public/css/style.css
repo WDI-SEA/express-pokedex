@@ -4,6 +4,7 @@ body {
 
 .leds {
     display: inline-block;
+    margin-top: 20px;
 }
 
 .led {
@@ -22,14 +23,27 @@ body {
   border: 0.5em solid lightGray;
 }
 
+.med-led {
+  height: 3em;
+  width: 3em;
+  border-radius: 50%;
+  border: black solid 1px;
+  margin-bottom: 20px;
+}
+
 .screen {
-  width: 30em;
+  margin: 0 auto 5px auto;
+  width: 90%;
   border-radius: 5%;
+  border: 1px black solid;
   background-color: lightGray;
+  height: 60%;
+  overflow-y:scroll
 }
 
 .small-screen {
-  margin: 10px auto;
+  margin: 35px auto 0 auto;
+  height: 40%;
   width: 80%;
   background-color: rgba(0,0,0,0.9);
 }
@@ -40,12 +54,31 @@ body {
 
 .button-grid {
   display: inline-block;
+  margin-bottom: 20px;
 }
 
 button {
   float: left;
+}
+
+.button-lg {
+    width: 80%;
+    height: 5em;
+    border:none;
+    border-radius: 3%;
+    margin-bottom: 10px;
+}
+
+.button-med {
   width: 4em;
   height: 3em;
+}
+
+.button-small {
+  width: 4em;
+  height: 0.7em;
+  margin: 5px;
+  margin-bottom: 20px;
 }
 
 .button-blue {
@@ -68,6 +101,40 @@ button {
   transform: translateY(5px);
 }
 
+.button-white {
+  color: #fff;
+  background-color: white;
+  border: 1px black solid;
+  border-radius: 8%;
+  box-shadow: 0 10px #999999;
+}
+
+.button-white:hover,
+.button-white.hover {
+  background-color: #cccccc;
+}
+
+.button-white:active,
+.button-white.active {
+  background-color:#cccccc;
+  box-shadow: 0 5px #999999;
+  transform: translateY(5px);
+}
+
+.button-black {
+  color: #fff;
+  background-color: rgba(0,0,0,0.9);
+  border: 1px black solid;
+  border-radius: 8%;
+}
+
+.pokedex {
+  border: 1px black solid;
+  border-radius: 2%;
+  height: 48em;
+}
+
+
 .text {
   margin-left: 10px;
 }
@@ -78,6 +145,10 @@ button {
 
 .red {
   background-color: red;
+}
+
+.black {
+  background-color: black;
 }
 
 .pokedex-red {
@@ -93,4 +164,8 @@ button {
 
 .left {
   float: left;
+}
+
+.right {
+  float: right;
 }
