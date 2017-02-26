@@ -1,2 +1,7 @@
 <h1>Favorite Pokemons</h1>
 
+<h3>Number of favorite Pokemon: <%= result.length%></h3>
+
+<% result.forEach(function(p) {%>
+	<h4><%=p.name%></h4>
+<% });%>
