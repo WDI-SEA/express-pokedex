@@ -8,7 +8,7 @@ router.get('/', function(req, res) {
   //retrive pokemon from database
   db.pokemon.findAll().then(function(result){
     //send list of pokemon names to page
-    res.render("pokemon/index", {favoritePokemon: result});
+    res.render("pokemon/index", {favoritePokemon: result, species: {flavor_text_entries: []}});
   })
   .catch(function(error){
     res.status(404).send("you stink");
@@ -44,11 +44,9 @@ router.get("/:name", function(req, res){
       request(speciesUrl, function(error1, response1, body1){
         if(!error1 && response1.statusCode == 200){
           var dataObj1 = JSON.parse(body1);
-          // res.send(dataObj);
           res.render("pokemon/show", {pokemon: dataObj, species: dataObj1});
         }
       });
-      // res.render("pokemon/show", {pokemon: dataObj});
     }
   });
 });

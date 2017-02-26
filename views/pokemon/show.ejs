@@ -9,6 +9,7 @@
     <h3>Height: <%= parseInt(pokemon.height)/10 %> m</h3>
     <h3>Weight: <%= parseInt(pokemon.weight)/10 %> kg</h3>
     <h3>
-      Desc: <%= species.flavor_text_entries[1].flavor_text %>
+      Also known as <%= species.names[3].name %> in German, <%= species.names[4].name %> in French,
+      and <%= species.names[8].name %> (<%= species.names[7].name %>) in Japanese.
     </h3>
 </div>

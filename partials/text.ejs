@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="text">
+        <h3 class="element">
+          <span id="typed"></span>
+        </h3>
+    </div>
+  </div>
+</div>
+
+<script src="//code.jquery.com/jquery.js"></script>
+<script>
+  $(function(){
+    <% if (species.flavor_text_entries.length){ %>
+      var str = [<%- JSON.stringify(species.flavor_text_entries[1].flavor_text.split(/\r?\n/).join(" ")); %>];
+      $("#typed").typed({
+        strings: str,
+        typeSpeed: 0
+      });
+    <% } %>
+  });
+</script>

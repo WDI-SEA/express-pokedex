@@ -2,6 +2,10 @@ body {
   font-family: 'VT323', monospace;
 }
 
+#d-pad {
+  margin-left: 30px;
+}
+
 .leds {
     display: inline-block;
     margin-top: 20px;
@@ -45,7 +49,9 @@ body {
   margin: 35px auto 0 auto;
   height: 40%;
   width: 80%;
+  overflow-y:scroll;
   background-color: rgba(0,0,0,0.9);
+  text-align: left;
 }
 
 .small-screen h3 {
@@ -168,4 +174,53 @@ button {
 
 .right {
   float: right;
+}
+
+.dpad-button {
+  margin-bottom: 0;
+  height: 2em;
+  width: 100%;
+  border: black solid 1px;
+}
+
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+@media only screen
+and (max-device-width: 425px){
+  .button-med {
+    height: 2em;
+    width: 3em;
+  }
+}
+
+@media only screen
+and (max-device-width: 768px){
+  .button-small {
+    width: 3em;
+  }
+
+  .button-lg {
+      width: 80%;
+      height: 3em;
+  }
 }

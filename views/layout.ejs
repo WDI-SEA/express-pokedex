@@ -18,7 +18,7 @@
     <div class="container">
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 pokedex-dark-red pokedex">
+        <div class="col-xs-offset-1 col-xs-5 pokedex-dark-red pokedex">
           <div class="leds">
             <div class="big-led left"></div>
             <div class="led red left"></div>
@@ -32,8 +32,10 @@
             <div class="col-xs-offset-1 col-xs-2">
               <div class="med-led black left"></div>
             </div>
-            <div class="col-xs-5">
+            <div class="col-xs-2">
               <button class="button-small button-black red left"></button>
+            </div>
+            <div class="col-xs-2">
               <button class="button-small button-black green left"></button>
             </div>
           </div>
@@ -41,25 +43,50 @@
             <div class="col-xs-offset-1 col-xs-5">
               <button class="green button-lg"></button>
             </div>
+            <div class="col-xs-5" id="d-pad">
+              <div class="row">
+                <div class="col-xs-offset-3 col-xs-4">
+                  <div class="black dpad-button"></div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-offset-1 col-xs-8">
+                  <div class="black dpad-button"></div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-offset-3 col-xs-4">
+                  <div class="black dpad-button"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="col-xs-6 pokedex-dark-red text-center pokedex">
+        <div class="col-xs-5 pokedex-dark-red pokedex text-center">
           <div class="small-screen">
+            <% include ../partials/text %>
           </div>
           <br>
           <div class="button-grid">
-            <button class="button-med button-blue"></button>
-            <button class="button-med button-blue"></button>
-            <button class="button-med button-blue"></button>
-            <button class="button-med button-blue"></button>
-            <button class="button-med button-blue"></button>
-            <br>
-            <button class="button-med button-blue"></button>
-            <button class="button-med button-blue"></button>
-            <button class="button-med button-blue"></button>
-            <button class="button-med button-blue"></button>
-            <button class="button-med button-blue"></button>
+            <div class="row">
+              <div class="col-xs-12">
+                <button class="button-med button-blue"></button>
+                <button class="button-med button-blue"></button>
+                <button class="button-med button-blue"></button>
+                <button class="button-med button-blue"></button>
+                <button class="button-med button-blue"></button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <button class="button-med button-blue"></button>
+                <button class="button-med button-blue"></button>
+                <button class="button-med button-blue"></button>
+                <button class="button-med button-blue"></button>
+                <button class="button-med button-blue"></button>
+              </div>
+            </div>
           </div>
 
           <div class="row">
@@ -67,18 +94,20 @@
               <div class="led red left"></div>
               <div class="led red left"></div>
             </div>
-            <div class="col-xs-5">
+            <div class="col-xs-2">
               <button class="button-small button-black right"></button>
+            </div>
+            <div class="col-xs-2">
               <button class="button-small button-black right"></button>
             </div>
           </div>
-
+          <br><br>
           <div class="row">
-            <div class="col-xs-offset-1 col-xs-5">
+            <div class="col-sm-offset-1 col-sm-6 col-md-5">
               <button class="button-med button-white"><a href="/">Home</a></button>
               <button class="button-med button-white"><a href="/pokemon">Favs</a></button>
             </div>
-            <div class="col-xs-5">
+            <div class="col-sm-4 col-md-5">
               <div class="med-led yellow right"></div>
             </div>
           </div>
@@ -91,21 +120,16 @@
               <button class="black button-lg right"></button>
             </div>
           </div>
-
-
         </div>
       </div>
       </div>
-
-
-
-
     </div>
 
     <!-- jQuery -->
     <script src="//code.jquery.com/jquery.js"></script>
     <!-- Bootstrap JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="/js/typed.js"></script>
     <script src="/js/main.js"></script>
   </body>
 </html>
