@@ -9,10 +9,6 @@
     <h3>Height: <%= parseInt(pokemon.height)/10 %> m</h3>
     <h3>Weight: <%= parseInt(pokemon.weight)/10 %> kg</h3>
     <h3>
-      Desc: <%= pokemon.name %> is a
-      <% pokemon.types.forEach(function(type){ %>
-        <%=type.type.name%>/
-      <% ; }) %>
-    pokemon.
+      Desc: <%= species.flavor_text_entries[1].flavor_text %>
     </h3>
 </div>

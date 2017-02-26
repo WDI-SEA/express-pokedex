@@ -36,12 +36,19 @@ router.get("/:name", function(req, res){
   // };
   // res.render("pokemon/show", {pokemon: dataObj});
   var pokemonUrl = "http://pokeapi.co/api/v2/pokemon/" + req.params.name;
+  var speciesUrl = "http://pokeapi.co/api/v2/pokemon-species/" + req.params.name;
 
   request(pokemonUrl, function(error, response, body){
     if(!error && response.statusCode == 200){
       var dataObj = JSON.parse(body);
-      // res.send(dataObj);
-      res.render("pokemon/show", {pokemon: dataObj});
+      request(speciesUrl, function(error1, response1, body1){
+        if(!error1 && response1.statusCode == 200){
+          var dataObj1 = JSON.parse(body1);
+          // res.send(dataObj);
+          res.render("pokemon/show", {pokemon: dataObj, species: dataObj1});
+        }
+      });
+      // res.render("pokemon/show", {pokemon: dataObj});
     }
   });
 });
