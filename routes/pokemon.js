@@ -5,6 +5,8 @@ var router = express.Router();
 router.get('/', function(req, res) {
   res.send('Render a page of favorites here');
 });
+//          ^^change to res.render
+
 
 // POST - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
