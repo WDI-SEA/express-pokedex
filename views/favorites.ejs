@@ -1,0 +1,14 @@
+<h2>Favorites page</h2>
+<div class="container-fluid">
+  <div class="well">
+    <h3>Number of pokemon: <%= name.length %></h3>
+    <a href='/' class="btn btn-primary">Back</a>
+    <% name.forEach(function(t){ %>
+      <div class="pokemon">
+        <h3><%= t.name %></h3>
+        <a href='/favorites/<%= t.name %>' class="btn btn-info">Info</a>
+        <a href='/favorites/delete/<%= t.name %>' class="btn btn-danger">Delete</a>
+      </div>
+    <% }); %>
+  </div>
+</div>
