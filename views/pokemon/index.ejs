@@ -1,0 +1,10 @@
+<h1 class="text-center">My Favorite Pokemon</h1>
+
+<% if(favoritePokemon.length){ %>
+<%  favoritePokemon.forEach(function(pokemon){ %>
+  <h2><%= pokemon.name %></h2>
+  <a href="/pokemon/<%= pokemon.name %>">More info</a>
+  /
+  <a href="/pokemon/<%= pokemon.name %>" class="delete-link">Remove from favorites</a>
+<%   }) %>
+<% } %>
