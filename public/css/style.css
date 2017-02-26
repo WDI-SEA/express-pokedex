@@ -1,6 +1,7 @@
 .pokemon {
 	display: inline-block;
 	border-bottom: 1px solid white;
+	padding-bottom: 10px;
 }
 
 .pokemon:last-of-type {
@@ -25,7 +26,7 @@ body {
 
 .pokedexContainer {
 	height: 700px;
-	width: 80%;
+	width: 900px;
 	background: url('../img/pokedex.png');
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -35,38 +36,39 @@ body {
 
 .container {
 	text-align: center;
-	height: 380px;
-	position: absolute;
+	height: 370px;
+	position: relative;
 	width: 33%;
 	padding-left: 2%;
 	overflow: scroll;
-	left: 12%;
-	top:  34%;
 	color: white;
+	margin:-300px 0 0 80px;
 }
 
 .bodyContainer {
 	color: white;
 	background: rgba(0, 0, 0, 1);
-	height: 80%;
-	width: 35%;
-	position: absolute;
+	height: 70%;
+	width: 400px;
+	position: relative;
 	left: 12%;
 	top:  25%;
+	margin: 25px 0 0 -80px;
 	padding: 2%;
 	z-index: -1;
 }
 
 nav {
 	position: absolute;
-	top: 110px;
-	left: 380px;
+	top: 135px;
+	left: 35%;
 }
 
 .img {
-	position: absolute;
-	left: 670px;
-	top: 195px;
+	width: 200px;
+	position: relative;
+	left: 590px;
+	top: -395px;
 	z-index: 10;
 }
 

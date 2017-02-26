@@ -13,4 +13,9 @@ $(function(){
 			window.location = '/favorites';
 		});
 	});
+
+	$(".fav").on("click", function(){
+		$(this).removeClass("btn-info")
+		$(this).addClass("btn-success")
+	})
 });

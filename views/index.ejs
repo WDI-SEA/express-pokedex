@@ -5,12 +5,13 @@
     <h3><%= pokemon.name %></h3>
     <form method="POST" action="/favorites">
       <input hidden type="text" name="name" value="<%= pokemon.name %>">
-      <button class="btn btn-info btn-xs" type="submit">Favorite</button>
+      <button class="btn btn-info btn-xs fav" type="submit">Favorite</button>
     </form>
     <form method="GET" action="/info">
      <input hidden type="text" name="name" value="<%= pokemon.name %>">
      <a class="btn btn-info btn-xs" href="/info/<%=pokemon.name%>">More Info</a>
     </form>
   </div>
+  <br>
   <% }); %>
 </div>
