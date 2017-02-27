@@ -1,0 +1,18 @@
+<div class="container">
+    <h1 class="text-center">More Info About:</h1>
+    <h1 class="text-center"><img src="<%- sprites.front_default %>"> <%- pokemon %></h1>
+    <p class="text-center">
+      <a href="/" class="text-success">All Pokemon</a>
+      <a href="/pokemon" class="text-primary">All Favorites</a>
+    </p>
+    <h3 class="text-primary">Height:</h3>
+      <p><%- height %></p>
+    <h3 class="text-primary">Weight:</h3>
+      <p><%- weight %></p>
+    <h3 class="text-info">Stats:</h3>
+    <ul>
+      <% stats.forEach(function(s){ %>
+        <li><%- s.stat.name %>: <%- s.base_stat %></li>
+      <% }); %>
+    </ul>
+</div>
