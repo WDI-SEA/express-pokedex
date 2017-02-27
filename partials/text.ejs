@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="text">
+        <h3 class="element">
+        </h3>
+    </div>
+  </div>
+</div>
+
+<script src="//code.jquery.com/jquery.js"></script>
+<script>
+  var str = "";
+  $(function(){
+    <% if (species.flavor_text_entries.length){ %>
+        str = [<%- JSON.stringify(species.flavor_text_entries[1].flavor_text.split(/\r?\n/).join(" ")); %>];
+    <% } else { %>
+        str = ["Welcome to your Pokedex, I am Dexter!"];
+    <% } %>
+
+    $(".element").typed({
+      strings: str,
+      typeSpeed: 0
+    });
+  });
+</script>
