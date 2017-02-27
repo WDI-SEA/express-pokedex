@@ -1,20 +1,17 @@
 $('document').ready(function() {
 	console.log('everything all set and ready to go');
 
-
-	$('.pokeFav').on('submit', function(e) {
+	$('.deleteBtn').on('click', function(e) {
 		e.preventDefault();
-		var pokemonFavForm = $(this);
-		var pokemon = pokemonFavForm.attr('action');
-		var pokemonData = pokemonFavForm.serialize();
+		pokemonElement = $(this);
+		pokemonUrl = pokemonElement.attr('href');
 
 		$.ajax({
-			method: 'POST',
-			url: pokemon,
-			data: pokemonData
-		}).done(function(data) {
+			method: 'DELETE',
+			url: pokemonUrl
+		}).done(function() {
+			pokemonElement.remove();
 			window.location = '/pokemon';
 		});
 	});
-
 })

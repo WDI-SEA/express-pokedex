@@ -3,5 +3,9 @@
 <h3>Number of favorite Pokemon: <%= result.length%></h3>
 
 <% result.forEach(function(p) {%>
-	<h4><%=p.name%></h4>
+	<div class='pokemonRow'>
+		<a href='/pokemon/<%= p.name %>' type='submit' class='btn btn-danger deleteBtn'>Delete</a>
+		<a href='/pokemon/<%= p.name %>' class='btn btn-info'>Info</a>
+		<h4><%=p.name%></h4>
+	</div>
 <% });%>

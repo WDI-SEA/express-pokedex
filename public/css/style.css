@@ -1,0 +1,19 @@
+.well {
+	display: inline-block;
+	text-align: center;
+	margin: 10px;
+}
+.pokemonRow h4 {
+	display: inline-block;
+	margin: 10px;
+}
+a {
+	margin: 5px;
+}
+.stats {
+	width: 140px;
+}
+img {
+	position: relative;
+	left: 35px;
+}

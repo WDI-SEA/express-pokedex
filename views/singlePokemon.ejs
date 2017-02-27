@@ -1,0 +1,7 @@
+<h1><%= result.name%></h1>
+<img src='<%=result.sprites.front_default%>'>
+<div class='stats'>
+	<%result.stats.forEach(function(stat) {%>
+		<p class='text-right'><%= stat.stat.name %> <%= stat.base_stat%></p>
+	<% });%>
+</div>
