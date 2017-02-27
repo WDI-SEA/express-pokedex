@@ -24,22 +24,6 @@ app.get('/', function(req, res) {
   });
 });
 
-
-// app.get('/pokemon', function(req, res) {
-//   var pokemon = {
-//       name: req.query.name
-//   };
-
-//   request({
-//   	url: 'http://pokeapi.co/api/v2/pokemon/?limit=151',
-//   	//qs: pokemon
-//   }, function(error, response, body){
-//   		var pokemon = JSON.parse(body).results;
-//   		res.render('index', { pokemon: pokemon });
-//   });
-// });
-
-
 //Listen 'nodemon'
 var server = app.listen(process.env.PORT || 3000);
 module.exports = server;
