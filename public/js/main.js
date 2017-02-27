@@ -14,6 +14,11 @@ $(document).ready(function(){
       console.log("deleted");
     });
   });
-
-
 });
+
+function welcomeMessage(){
+  $(".element").typed({
+  strings: ["Welcome to your Pokedex, I am Dexter!"],
+  typeSpeed: 0
+});
+}

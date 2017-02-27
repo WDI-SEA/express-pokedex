@@ -2,7 +2,6 @@
   <div class="col-xs-12">
     <div class="text">
         <h3 class="element">
-          <span id="typed"></span>
         </h3>
     </div>
   </div>
@@ -10,13 +9,17 @@
 
 <script src="//code.jquery.com/jquery.js"></script>
 <script>
+  var str = "";
   $(function(){
     <% if (species.flavor_text_entries.length){ %>
-      var str = [<%- JSON.stringify(species.flavor_text_entries[1].flavor_text.split(/\r?\n/).join(" ")); %>];
-      $("#typed").typed({
-        strings: str,
-        typeSpeed: 0
-      });
+        str = [<%- JSON.stringify(species.flavor_text_entries[1].flavor_text.split(/\r?\n/).join(" ")); %>];
+    <% } else { %>
+        str = ["Welcome to your Pokedex, I am Dexter!"];
     <% } %>
+
+    $(".element").typed({
+      strings: str,
+      typeSpeed: 0
+    });
   });
 </script>

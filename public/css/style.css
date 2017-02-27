@@ -4,14 +4,18 @@ body {
 
 #d-pad {
   margin-left: 30px;
+  margin-top: -30px;
 }
 
 .leds {
     display: inline-block;
-    margin-top: 20px;
+    width: 100%;
+    border: black solid 3px;
+    border-radius: 2%;
 }
 
 .led {
+  margin-top: 10px;
   height: 1em;
   width: 1em;
   border-radius: 50%;
@@ -20,6 +24,8 @@ body {
 }
 
 .big-led {
+  margin-top: 10px;
+  margin-bottom: 5px;
   height: 5em;
   width: 5em;
   border-radius: 50%;
@@ -36,13 +42,17 @@ body {
 }
 
 .screen {
-  margin: 0 auto 5px auto;
+  margin: 10px auto;
   width: 90%;
   border-radius: 5%;
   border: 1px black solid;
   background-color: lightGray;
   height: 60%;
   overflow-y:scroll
+}
+
+.screen-div {
+  height: 100%;
 }
 
 .small-screen {
@@ -61,6 +71,7 @@ body {
 .button-grid {
   display: inline-block;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 button {
@@ -135,9 +146,25 @@ button {
 }
 
 .pokedex {
+  border: 2px black solid;
+  border-radius: 2%;
+  height: 48em;
+}
+
+.pokedex-left {
+  border-radius: 2%;
+  height: 48em;
+}
+
+.pokedex-left .sm-middle {
+  border: none;
+}
+
+.pokedex-middle{
   border: 1px black solid;
   border-radius: 2%;
   height: 48em;
+  width: 4%;
 }
 
 
@@ -183,26 +210,20 @@ button {
   border: black solid 1px;
 }
 
-.typed-cursor{
-    opacity: 1;
-    -webkit-animation: blink 0.7s infinite;
-    -moz-animation: blink 0.7s infinite;
-    animation: blink 0.7s infinite;
+.sm-middle {
+  border: black solid 2px;
+  height: 10%;
 }
-@keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
+
+.lg-middle {
+  border: black solid 2px;
+  height: 80%;
 }
-@-webkit-keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-}
-@-moz-keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
+
+.lg-left {
+  border: black solid 2px;
+  height: 90%;
+  border-radius: 2%;
 }
 
 @media only screen

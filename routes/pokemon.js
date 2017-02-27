@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var request = require('request');
 var db = require("../models");
+var app = express();
+app.use(express.static(__dirname + "/public"));
 
 // GET - return a page with favorited Pokemon
 router.get('/', function(req, res) {

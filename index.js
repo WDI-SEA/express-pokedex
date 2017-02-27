@@ -18,8 +18,12 @@ app.get('/', function(req, res) {
     url: pokemonUrl,
     qs: qs,
   }, function(error, response, body) {
-    var pokemon = JSON.parse(body).results;
-    res.render('index', { pokemon: pokemon, species: {flavor_text_entries: []} });
+    if(!error && response.statusCode == 200){
+      var pokemon = JSON.parse(body).results;
+      res.render('index', { pokemon: pokemon, species: {flavor_text_entries: []} });
+    } else {
+      res.render('index', { pokemon: [], species: {flavor_text_entries: []} });
+    }
   });
 });
 
