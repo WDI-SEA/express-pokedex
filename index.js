@@ -18,7 +18,7 @@ app.use('/pokemon', require('./routes/pokemon'));
 app.get('/', function(req, res) {
 	var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
 	var s = {
-		limit: 25
+		limit: 151
 	}
 	request({
   		url: pokemonUrl,
