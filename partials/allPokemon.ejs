@@ -1,0 +1,15 @@
+<div class="container">
+  <br>
+  <% pokemon.forEach(function(pokemon) { %>
+  <div class="pokemon">
+    <h3><%= pokemon.name %></h3>
+    <form method="POST" action="/">
+      <input hidden type="text" name="name" value="<%= pokemon.name %>">
+      <button class="btn btn-info btn-xs" type="submit">Favorite</button>
+    </form>
+    <form>
+      <button class="btn btn-info btn-xs" type="submit">More Info</button>
+    </form
+  </div>
+  <% }); %>
+</div>

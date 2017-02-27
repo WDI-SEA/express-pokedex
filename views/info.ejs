@@ -1,0 +1,20 @@
+<div class="container">
+	<h2><%= pokemon.name  %></h2>
+	<hr>
+	<h3>TYPE</h3>
+	<% for (var i=0; i < pokemon.types.length; i++) { %>
+		<h4><%= pokemon.types[i].type.name  %></h4>
+	<% }; %>
+	<h4> Weight: <%= pokemon.weight %>
+	<h3>STATS</h3>
+	<% for (var i=0; i < pokemon.stats.length; i++) { %>
+		<p><%= pokemon.stats[i].stat.name  %>:
+		<%= pokemon.stats[i].base_stat  %></p>
+	<% }; %>
+</div>
+<div class="img">
+	<img class="sprite" src="<%= pokemon.sprites.front_default %>">
+	<hr>
+	<img class="sprite" src="<%= pokemon.sprites.back_default %>">
+
+</div>

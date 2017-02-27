@@ -1,0 +1,89 @@
+.pokemon {
+	display: inline-block;
+	border-bottom: 1px solid white;
+	padding-bottom: 10px;
+}
+
+.pokemon:last-of-type {
+	border: none;
+}
+
+.pokemon h3 {
+	display: inline-block;
+}
+
+.pokemon form {
+	display: inline-block;
+}
+
+body {
+	background: url("../img/hex.jpg");
+	background-repeat: no-repeat;
+	background-size: auto;
+	background-position: center;
+	font-family: 'VT323', monospace;
+}
+
+.pokedexContainer {
+	height: 700px;
+	width: 900px;
+	background: url('../img/pokedex.png');
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	margin: 10px auto;
+}
+
+.container {
+	text-align: center;
+	height: 370px;
+	position: relative;
+	width: 33%;
+	padding-left: 2%;
+	overflow: scroll;
+	color: white;
+	margin:-300px 0 0 80px;
+}
+
+.bodyContainer {
+	color: white;
+	background: rgba(0, 0, 0, 1);
+	height: 70%;
+	width: 400px;
+	position: relative;
+	left: 12%;
+	top:  25%;
+	margin: 25px 0 0 -80px;
+	padding: 2%;
+	z-index: -1;
+}
+
+nav {
+	position: absolute;
+	top: 135px;
+	left: 35%;
+}
+
+.img {
+	width: 200px;
+	position: relative;
+	left: 590px;
+	top: -395px;
+	z-index: 10;
+}
+
+.img hr {
+	border-style: dashed;
+	border-color: black;
+}
+
+.img img {
+	height: 200px;
+}
+
+
+
+.container h3 {
+	display: inline-block;
+	border-bottom: 1px solid white
+}
