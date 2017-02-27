@@ -2,8 +2,10 @@
 <h1>FAVS</h1>
 <hr>
 <h2>
+<div class='well'>
 <% pokemons.forEach(function(p){ %>
 	<h3><%= p.name %></h3><a href="/favorites/delete/<%= p.name %>" class="btn btn-danger">X</a>
 <% }); %>
+</div>
 </h2>
 </div>
