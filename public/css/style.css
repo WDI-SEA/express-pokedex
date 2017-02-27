@@ -1,5 +1,8 @@
 body {
   font-family: 'VT323', monospace;
+  background-color: rgba(0,0,0,0.8);
+  color: gray;
+  text-align: center;
 }
 
 #d-pad {
@@ -7,11 +10,22 @@ body {
   margin-top: -30px;
 }
 
+input {
+  width: 50%;
+}
+
+.pokeball {
+  height: 50px;
+}
+
+.fa {
+  color: #e6f5ff;
+}
+
 .leds {
     display: inline-block;
     width: 100%;
-    border: black solid 3px;
-    border-radius: 2%;
+    border: rgba(0,0,0,0.8) solid 3px;
 }
 
 .led {
@@ -41,14 +55,22 @@ body {
   margin-bottom: 20px;
 }
 
+.well {
+  background-color: #0099ff;
+  padding: 5px;
+  width: 100%;
+}
+
 .screen {
   margin: 10px auto;
   width: 90%;
   border-radius: 5%;
   border: 1px black solid;
-  background-color: lightGray;
+  background-color: #006bb3;
   height: 60%;
-  overflow-y:scroll
+  overflow-y:scroll;
+  color: #e6f5ff;
+  text-align: left;
 }
 
 .screen-div {
@@ -60,22 +82,30 @@ body {
   height: 40%;
   width: 80%;
   overflow-y:scroll;
-  background-color: rgba(0,0,0,0.9);
+  background-color: #264d00;
   text-align: left;
 }
 
 .small-screen h3 {
-  color: gray;
+  color: #ccff99;
 }
 
+.pokepic {
+  background-color: #e6f5ff;
+  border-radius: 50%;
+}
+
+.pokepic.starter {
+  margin-left: 2.5px;
+}
 .button-grid {
   display: inline-block;
   margin-bottom: 20px;
   margin-top: 20px;
 }
 
-button {
-  float: left;
+.well h3 {
+  margin-top: 0px;
 }
 
 .button-lg {
@@ -99,6 +129,7 @@ button {
 }
 
 .button-blue {
+  float: left;
   color: #fff;
   background-color: #6496c8;
   border: 1px black solid;
@@ -146,7 +177,7 @@ button {
 }
 
 .pokedex {
-  border: 2px black solid;
+  border: 2px rgba(0,0,0,0.8) solid;
   border-radius: 2%;
   height: 48em;
 }
@@ -161,7 +192,7 @@ button {
 }
 
 .pokedex-middle{
-  border: 1px black solid;
+  border: 1px rgba(0,0,0,0.8) solid;
   border-radius: 2%;
   height: 48em;
   width: 4%;
@@ -203,6 +234,10 @@ button {
   float: right;
 }
 
+.inline {
+  display: inline-block;
+}
+
 .dpad-button {
   margin-bottom: 0;
   height: 2em;
@@ -211,17 +246,17 @@ button {
 }
 
 .sm-middle {
-  border: black solid 2px;
+  border: rgba(0,0,0,0.8) solid 2px;
   height: 10%;
 }
 
 .lg-middle {
-  border: black solid 2px;
+  border: rgba(0,0,0,0.8) solid 2px;
   height: 80%;
 }
 
 .lg-left {
-  border: black solid 2px;
+  border: rgba(0,0,0,0.8) solid 2px;
   height: 90%;
   border-radius: 2%;
 }

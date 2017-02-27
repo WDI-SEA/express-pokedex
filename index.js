@@ -12,7 +12,7 @@ app.use(express.static(__dirname + "/public"));
 
 app.get('/', function(req, res) {
   var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
-  var qs = { limit: 1};
+  var qs = { limit: 151};
 
   request({
     url: pokemonUrl,

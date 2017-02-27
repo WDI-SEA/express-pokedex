@@ -3,12 +3,14 @@
   <div class="row">
 
     <% pokemon.forEach(function(pokemon) { %>
-      <div class="col-xs-offset-1 col-xs-11  col-sm-offset-1 col-sm-5">
-          <h2><%= pokemon.name %></h2>
+      <div class="col-xs-offset-1 col-xs-11 col-sm-offset-1 col-sm-5">
+        <div class="well">
+          <h3><%= pokemon.name %></h3>
           <form method="POST" action="/pokemon">
             <input hidden type="text" name="name" value="<%= pokemon.name %>">
             <button class="btn" type="submit"><i class="fa fa-heart" aria-hidden="true"></i></button>
           </form>
+        </div>
       </div>
     <% }); %>
   </div>
