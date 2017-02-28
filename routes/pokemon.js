@@ -4,7 +4,7 @@ var db = require('../models');
 
 router.get('/', function(req,res){
 	db.pokemon.findAll().then(function(faves){
-		res.render('pokemon', {pokemon: faves});
+		res.render('favorites', {pokemon: faves});
 	});
 });
 
