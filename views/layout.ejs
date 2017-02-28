@@ -3,12 +3,26 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pokedex</title>
+    <title>Pokeurdex</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <style type="text/css">
+      .well{
+        background-color: rgba(1,1,1,0.5)
+      }
+      h1{
+        color: red;
+        text-shadow: black;
+      }
+      h2{
+        color: white;
+      }
+    </style>
   </head>
-  <body>
+  <body class="container text-center" background="https://veekun.com/static/pokedex/downloads/heartgold-soulsilver-back.png">
+  <a href="/" class="btn btn-primary">HOME</a>
+  <a href="/favorites" class="btn btn-danger">Favorites</a>
     <%- body %>
 
     <!-- jQuery -->
