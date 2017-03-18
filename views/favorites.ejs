@@ -1,0 +1,10 @@
+<h1>All my favs</h1>
+
+<% favorites.forEach(function(f){ %>
+<h3> <%= f.name %> </h3>
+
+<h4> he had the id of <%= f.id%> in the favorite database</h4>
+<a class="deleteButton" href="/pokemon/<%= f.id%>">Delete<%= f.name %>??</a>
+
+<% });%>
+
