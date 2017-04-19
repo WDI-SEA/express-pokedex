@@ -115,7 +115,7 @@ This query string has three keys and values:
 | Key  | Value   |
 | ---  | ---     |
 | lat  | 40.284  |
-| long | 110.133 | 
+| long | 110.133 |
 | zoom | 12  |
 
 The Pokemon API is configured to read all sorts of keys and values from
@@ -128,7 +128,7 @@ Specify a limit of just one to see the first item in the list:
 Specify a limit of 151 to see all 151 pokemon!
 <http://pokeapi.co/api/v2/pokemon?limit=151>
 
-##Bonuses
+## Bonuses
 
 * Add the ability to DELETE Pokemon from the favorites list.
 * For each Pokemon on the favorites page, create a show page to display additional information about that Pokemon.
