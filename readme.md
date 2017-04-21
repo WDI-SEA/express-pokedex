@@ -44,13 +44,37 @@ We'll be using an existing application that uses the [PokeAPI](http://pokeapi.co
 
 Your first step will be to create a SQL database for your application as well as corresponding setup and seed files. Refer back to the notes as necessary.
 
-#### Part 2: Create a Pokemon Table
+#### Part 2: Create a Pokemon Table'
+
+Create a `pokemon` table with one column `name`.
+
+---
+
+##### If you are using `sequelize`
+
+Using the `sequelize` CLI, create your `pokemon` table. Then, run the migrations.
+
+Test it out by making a `db-test.js` file:
+
+```
+var db = require('./models');
+
+db.pokemon.create({
+  name: 'Pikachu'
+}).then(function(poke) {
+  console.log('created', poke.name);
+});
+```
+
+Test by running the file: `node db-test.js`.
+
+##### If you are using `knex`
 
 Your second step will involve writing a SQL setup file to create a SQL table in your database to store your favorite Pokemon. It's recommended that you name this table `pokemon`. It will only store one attribute, the Pokemon's `name`.
 
 Once you have created the setup file, run the file against your database to create your tables. (This of course, can be done directly in psql/postico if you wish.) Then be sure to test connectivity to and the functionality of your database. This can be done in a separate file. An example:
 
-**dbTest.js**
+**db-test.js**
 
 ```js
 
@@ -68,6 +92,8 @@ knex.raw(`
 
 ```
 
+---
+
 Be sure to also test querying against the pokemon table.
 
 #### Part 3: Integrating the database with the app
@@ -81,9 +107,15 @@ You'll want to add functionality to the following routes by incorporating the `p
   * View: none (redirect to `/pokemon`)
   * Purpose: Creates a new Pokemon and redirects back to `/pokemon`
 
-#### Part 4: Styling
+#### Part 4: Display more info on each pokemon
 
-When finished with the above, style the application appropriately with CSS.
+Add a route `GET /pokemon/:id` that renders a page with information about the pokemon (the pokemon with the corresponding row `id`).
+
+Check out the result of the pokemon API calls (or see the [doc page](http://pokeapi.co/)) for ideas on what data you could show. Show at least 4 peices of data.
+
+#### Part 5: Styling
+
+When finished with the above, style the application more to your liking with CSS.
 
 ## API Limits
 You might notice the API doesn't return all the data it has at once. It has a
@@ -128,6 +160,8 @@ Specify a limit of just one to see the first item in the list:
 Specify a limit of 151 to see all 151 pokemon!
 <http://pokeapi.co/api/v2/pokemon?limit=151>
 
+
+
 ## Bonuses
 
 * Add the ability to DELETE Pokemon from the favorites list.
@@ -135,7 +169,7 @@ Specify a limit of 151 to see all 151 pokemon!
   * You'll need to create an additional route.
   * You can get detailed information about a Pokemon by passing the Pokemon's name to PokeAPI. You can retrieve images, abilities, stats, and moves through the API.
   * Example: http://pokeapi.co/api/v2/pokemon/bulbasaur/
-
+* Rethink the `pokemon` table. Instead of it being a list of favorites, have it be a list of pokemon the user owns. What columns should the table have? `nickname`, `level`, etc... How would this change the app?
 ---
 
 ## Licensing

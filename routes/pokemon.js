@@ -3,12 +3,14 @@ var router = express.Router();
 
 // GET - return a page with favorited Pokemon
 router.get('/', function(req, res) {
-  res.send('Render a page of favorites here');
+    // TODO: render favorites
+    res.send('Render a page of favorites here');
 });
 
 // POST - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
-  res.send(req.body);
+    // TODO: add to database
+    res.send(req.body);
 });
 
 module.exports = router;
