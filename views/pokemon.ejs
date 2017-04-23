@@ -1,0 +1,21 @@
+<div>
+    <img src="<%= sprites.front_default%>">
+    <h1><%= species.name %></h1>
+
+    <p>Types:
+        <%types.forEach(function(types){ %>
+
+        <%= types.type.name %>
+
+          <% })%>
+  </p>
+  <p>Abilities:
+          <%abilities.forEach(function(abilities){%>
+
+          <%=abilities.ability.name%>
+
+          <% })%>
+   </p>
+</div>
+
+<a href='/pokemon'>Back to Favorites</a>

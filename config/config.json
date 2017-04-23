@@ -1,0 +1,23 @@
+{
+    "development": {
+        "username": "sara",
+        "password": "psql",
+        "database": "pokemon",
+        "host": "127.0.0.1",
+        "dialect": "postgres"
+    },
+    "test": {
+        "username": "sara",
+        "password": "psql",
+        "database": "pokemon_test",
+        "host": "127.0.0.1",
+        "dialect": "postgres"
+    },
+    "production": {
+        "username": "sara",
+        "password": "psql",
+        "database": "pokemon_production",
+        "host": "127.0.0.1",
+        "dialect": "postgres"
+    }
+}
