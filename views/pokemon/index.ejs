@@ -1,0 +1,15 @@
+<div class="container">
+  <h1 class="text-center">Favorite Pokemons</h1>
+  <p class="text-center">
+    <a href="/">Pokemon Home</a>
+  </p>
+
+  <!-- pokemons is an array of all favorite pokemon instances -->
+   <% pokemons.forEach(function(pokemon) { %>
+      <div class="well">
+       <h2>
+        <a href="/pokemon/<%= pokemon.id %>"><%= pokemon.name %> -- Click for more info</a>
+       </h2>
+     </div>
+    <% }) %>
+</div>
