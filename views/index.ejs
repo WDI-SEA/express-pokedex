@@ -1,11 +1,11 @@
 <div class="container">
-  <h1 class="text-center">The Original 151 Pokemon</h1>
+  <h1 class="text-center main-title">The Original 151 Pokemon</h1>
   <p class="text-center">
     <a href="/pokemon">Favorites</a>
   </p>
 
   <% pokemon.forEach(function(pokemon, index) { %>
-    <div class="well">
+    <div class="well-mine">
         <%index +=1%>
       <h2><a href='<%=/pokemon/ + index%>' ><%= pokemon.name %></a></h2>
       <form method="POST" action="/pokemon">

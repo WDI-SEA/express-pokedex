@@ -1,0 +1,60 @@
+@font-face {
+    font-family: "Pokemon GB";
+    src: url('/css/Pokemon GB.ttf');
+}
+
+html {
+    background-color: #CC2936;
+    text-align: center;
+}
+
+.container,
+.everything {
+    background-color: #CC2936;
+}
+
+div {
+    font-family: "Pokemon GB";
+}
+
+.well-mine {
+    background-color: #C2C1C9;
+    border: 5px ridge #C2C1C9;
+    min-height: 1.5em;
+    padding: 1.5em;
+    margin-bottom: 1.5em;
+    border-radius: 1em;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.pokemon,
+.favorites {
+    margin: 1em;
+    padding: 1em;
+    background-color: #C2C1C9;
+    border-radius: 1em;
+    border: 5px ridge #C2C1C9;
+}
+
+.main-title,
+.title {
+    color: #EF959D;
+}
+
+.title {
+    margin-top: 0;
+}
+
+.favorites-list {
+    list-style: none;
+    margin: 2em;
+}
+
+.pokemon p {
+    margin: 2em;
+}
+
+li {
+    margin: 0.5em;
+}
