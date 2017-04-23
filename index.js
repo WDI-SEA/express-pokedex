@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 
 app.get('/', function(req, res) {
-    var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
+    var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon?limit=151';
 
     request(pokemonUrl, function(error, response, body) {
         var pokemon = JSON.parse(body).results;
@@ -18,6 +18,7 @@ app.get('/', function(req, res) {
     });
 });
 
+// This uses the ./routes/pokemon.js file for the /pokemon path requests
 app.use('/pokemon', require('./routes/pokemon'));
 
 var server = app.listen(process.env.PORT || 3000);
