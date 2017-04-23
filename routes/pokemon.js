@@ -7,7 +7,7 @@ var request = require('request');
 router.get('/', function(req, res) {
     db.pokemon.findAll()
         .then(function(result) {
-            res.render('my0pokemon', { result: result });
+            res.render('mypokemon', { result: result });
         }).catch(function(error) {
             res.send('Error');
         });
@@ -27,20 +27,17 @@ router.post('/', function(req, res) {
 
     db.pokemon.create({ newPokemon })
         .then(function() {
-            res.status(404).redirect('/pokemon');
+            res.redirect('/pokemon');
         })
 });
 
 
-router.get('/:id ', function(req, res) {
-    var idOfPokemon = req.params.id;
-
-    request('http://pokeapi.co/api/v2/pokemon/' + idOfPokemon, function(err, response, body) {
-        var info = JSON.parse(body)
-        console.log(info);
-        res.render('pokemon-info', { info: info });
+router.get('/:name', function(req, res) {
+    var pokeUrl = 'http://pokeapi.co/api/v2/pokemon/' + req.params.name;
+    request(pokeUrl, function(err, response, body) {
+        var info = JSON.parse(body);
+        res.render('pokemon-info', { pokemon: info });
     });
 });
-
 
 module.exports = router;
