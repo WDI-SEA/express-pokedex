@@ -46,6 +46,10 @@ div {
     margin-top: 0;
 }
 
+.name {
+    text-transform: uppercase;
+}
+
 .favorites-list {
     list-style: none;
     margin: 2em;
