@@ -1,7 +1,7 @@
 var db = require('./models');
 
 db.pokemon.create({
-    name: 'Pikachu'
+    name: 'pikachu'
 }).then(function(poke) {
     console.log('created', poke.name);
 });
@@ -9,7 +9,7 @@ db.pokemon.create({
 console.log('------------');
 
 db.pokemon.findOne({
-    where: { name: 'Pikachu' }
+    where: { name: 'pikachu' }
 }).then(function(poke) {
     console.log('found', poke.name);
 });
