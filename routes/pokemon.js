@@ -33,5 +33,14 @@ router.get('/:id', function(req, res) {
     });
 });
 
+router.delete('/:name', function(req, res) {
+    var name = req.params.name;
+
+    db.pokemon.destroy({
+        where: { name: name }
+    }).then(function() {
+        res.status(204).redirect('/pokemon');
+    });
+});
 
 module.exports = router;
