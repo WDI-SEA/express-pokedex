@@ -1,28 +1,41 @@
-<div class="container">
-  <h1 class="text-center"><%= pokemon.name %></h1>
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Pokemon Info</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="author" href="humans.txt">
+        <script src="js/main.js"></script>
+    </head>
+    <body>
+        <div class="container">
+          <h1 class="text-center"><%= pokemon.name %></h1>
+          <p>
+          Name: <%= pokemon.name %>
+          </p>
 
-  <p>
-  Name: <%= pokemon.name %>
-  </p>
+          <p>
+          Species: <%= pokemon.species %>
+          </p>
 
-  <p>
-  Species: <%= pokemon.species %>
-  </p>
+          <p>
+          Abilities: <%= pokemon.abilities %>
+          </p>
 
-  <p>
-  Abilities: <%= pokemon.abilities %>
-  </p>
+          <p>
+          Forms: <%= pokemon.forms %>
+          </p>
 
-  <p>
-  Forms: <%= pokemon.forms %>
-  </p>
+          <p>
+          Stats: <%= pokemon.stats %>
+          </p>
 
-  <p>
-  Stats: <%= pokemon.stats %>
-  </p>
-
-  <p>
-  <a href="<%= "/pokemon/" %>">
-  Back to Favorites
-</a>
-</div>
+          <p>
+          <a href="<%= "/pokemon/" %>">
+          Back to Favorites
+        </a>
+        </div>
+    </body>
+</html>
