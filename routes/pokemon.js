@@ -54,21 +54,34 @@ router.get('/:id', function(req, res) {
         if (err) {
             console.log(err);
         }
-
         var pokemon = JSON.parse(body);
+        pokemon.typesCommaSeparated = pokemon.types.map(function(type) {
+            return type.type.name;
+        }).join(", ");
+
+        pokemon.abilitiesCommaSeparated = pokemon.abilities.map(function(ability) {
+            return ability.ability.name;
+        }).join(", ");
 
         res.render('pokemon', pokemon);
     });
 });
 
 router.get('/:name', function(req, res) {
-    var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + req.params.name;
+    var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + req.params.name.toLowerCase();
     request(pokemonUrl, function(err, response, body) {
         if (err) {
             console.log(err);
         }
 
         var pokemon = JSON.parse(body);
+        pokemon.typesCommaSeparated = pokemon.types.map(function(type) {
+            return type.type.name;
+        }).join(", ");
+
+        pokemon.abilitiesCommaSeparated = pokemon.abilities.map(function(ability) {
+            return ability.ability.name;
+        }).join(", ");
 
         res.render('pokemon', pokemon);
 
