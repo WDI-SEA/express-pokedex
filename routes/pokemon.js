@@ -32,6 +32,7 @@ router.post('/', function(req, res) {
         res.status(404).send(error);
     });
 });
+
 router.get('/:id', function(req, res) {
     var id = req.params.id;
     db.favorite.findOne({
@@ -39,32 +40,37 @@ router.get('/:id', function(req, res) {
             id: id
         }
     }).then(function(favorite) {
-        var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + favorite.name;
+        var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + name.toLowerCase();
         request(pokemonUrl, function(error, response, body) {
 
+            pokemon.typesCommaSeparated = pokemon.types.map(function(type) {
+                return type.type.name;
+
+            }).join(",");
 
         }).catch(function(error) {
             res.status(404).send('Not Found');
         });
     });
 
-    router.delete('/:id', function(req, res) {
-        console.log('delete' + req.params.id);
-        var id = req.params.id;
-        db.favorite.destroy({
-            where: {
-                id: id
-            }
-        }).then(function(favorite) {
-            res.redirect('/favorite');
+});
 
-        }).catch(function(error) {
-            res.send('error');
-        });
+router.delete('/:id', function(req, res) {
+    console.log('delete' + req.params.id);
+    var id = req.params.id;
+    db.favorite.destroy({
+        where: {
+            id: id
+        }
+    }).then(function(favorite) {
+        res.redirect('/favorite');
+
+        // }).catch(function(error) {
+        //     res.send('error');
+        // });
     });
 });
 
-res.redirect.body
 
 
 
