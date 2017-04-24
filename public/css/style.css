@@ -1,0 +1,22 @@
+header img {
+    width: 80%;
+    height: 100%;
+    margin-left: 10%;
+    margin-top: 2em;
+}
+
+body {
+    background-image: url('/img/allpokemon.png');
+}
+
+.pokemonlist {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.well {
+    text-align: center;
+    width: 80%;
+}

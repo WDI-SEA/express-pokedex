@@ -5,12 +5,14 @@ var ejsLayouts = require('express-ejs-layouts');
 var app = express();
 var db = require("./models");
 var rowdy = require('rowdy-logger');
+var path = require('path');
 
 rowdy.begin(app);
 
 app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(ejsLayouts);
 
 app.get('/', function(req, res) {
