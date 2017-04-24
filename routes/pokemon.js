@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var db = require("../models");
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // GET - return a page with favorited Pokemon
 router.get('/', function(req, res) {
