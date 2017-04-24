@@ -1,0 +1,23 @@
+.pokedex {
+    background: url(../img/pokedex_template.png);
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+h1 {
+    padding-top: 8em;
+    padding-left: 3em;
+}
+
+h3 {
+    padding-left: 3em;
+}
+
+p {
+    padding-left: 5em;
+}
+
+ul {
+    padding-left: 5em;
+    padding-bottom: 3em;
+}
