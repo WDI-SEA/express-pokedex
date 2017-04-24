@@ -26,11 +26,12 @@ p {
 }
 
 .navbar {
-    border-bottom: 2px solid white;
+    border-bottom: 5px solid #FFCB05;
 }
 
 .navbar a {
     text-transform: uppercase;
+    color: #FFCB05;
 }
 
 .navbar li {
@@ -44,4 +45,64 @@ p {
 
 .favs a {
     color: #FFCB05;
+}
+
+.normal {
+    color: gray;
+}
+
+.fire {
+    color: orange;
+}
+
+.water {
+    color: lightblue;
+}
+
+.grass {
+    color: green;
+}
+
+.electric {
+    color: yellow;
+}
+
+.psychic {
+    color: maroon;
+}
+
+.ice {
+    color: grey;
+}
+
+.fairy {
+    color: lightpink;
+}
+
+.bug {
+    color: olive;
+}
+
+.fighting {
+    color: red;
+}
+
+.flying {
+    color: navy;
+}
+
+.poison {
+    color: purple;
+}
+
+.ground {
+    color: tan;
+}
+
+.ghost {
+    color: white;
+}
+
+.steel {
+    color: darkgray;
 }

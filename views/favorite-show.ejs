@@ -11,8 +11,9 @@
     <p>height: <%= pokemon.height %> inches</p>
   </div>
   <div>
-    <p>type: <% pokemon.types.forEach(function(pokemonType){ %>
-     <%= pokemonType.type.name %>
+    <p> types:</p>
+    <% pokemon.types.forEach(function(pokemonType){ %>
+     <p class="<%= pokemonType.type.name %>"><%= pokemonType.type.name %></p> <!-- <%= pokemonType.type.name %> -->
     <% }) %></p>
   </div>
 </section>
