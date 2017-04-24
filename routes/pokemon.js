@@ -2,11 +2,14 @@ var db = require('../models');
 var express = require('express');
 var router = express.Router();
 var request = require('request');
+var path = require('path');
+
+router.use(express.static(path.join(__dirname, 'public')));
 
 // GET - return a page with favorited Pokemon
 router.get('/', function(req, res) {
-    db.pokemon.findAll().then(function(myFavorites) {
-        res.render('favorites', { pokemon: myFavorites });
+    db.pokemon.findAll().then(function(pokemon) {
+        res.render('favorites', { pokemon: pokemon });
     }).catch(function(error) {
         res.status(404).send(error);
     });
