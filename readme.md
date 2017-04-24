@@ -26,17 +26,49 @@ We'll be using an existing application that uses the [PokeAPI](http://pokeapi.co
 
 * After setup, **STOP**. You're using an existing application, so make sure to read the code and ensure what the application does. Some questions you may want to ask yourself:
   * How does the app retrieve a list of Pokemon?
+
+
+
   * How many Pokemon does the API call retrieve? Why that many?
+
+In groups of 20 unlessa different limit is specified in the query string parameters.
+
+
   * What are the routes defined in the application?
+
+The routes are 'GET' and 'POST' in the pokemon.js file in the routes folder although they share the same path.
+
+[posts are forms in .ajax.  gets are seekig urls]
+
+
   * Try adding a Pokemon to your favorites.
+
+It states "Render a page of favorites here"
+
+
     * How is this data being submitted?
+
+The data is being submitted through the index ejs.
+
+
     * What will you have to do to save this data to a database?
+
+post via the post action on line 11 of pokemon.js
+
     * What will you have to do to display favorite Pokemon?
+
+post via the post action on line 11 of pokemon.js
+
 
 ## User Stories
 
 * As a user, I want to select my favorite Pokemon and add them to a list of favorites.
+
+
+
 * As a user, once I add a Pokemon to my list of favorites, I want to be redirected to my favorites page.
+
+
 
 ## Requirements
 
