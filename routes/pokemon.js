@@ -5,16 +5,16 @@ var request = require('request');
 var bodyParser = require('body-parser');
 var app = express();
 
+app.use(bodyParser.urlencoded({ extended: false }));
+
 
 
 // GET - return a page with favorited Pokemon
 router.get('/', function(req, res) {
     // TODO: render favorites
-    res.send('Render a page of favorites here');
-    db.favorite.findAll({
-
-    }).then(function(favorite) {
-        res.render('', { favorite: name });
+    // res.send('Render a page of favorites here');
+    db.favorite.findAll().then(function(favorite) {
+        res.render('favorite', { favorite: name });
     });
 });
 
