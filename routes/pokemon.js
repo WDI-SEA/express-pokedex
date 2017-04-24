@@ -20,7 +20,6 @@ router.get('/', function(req, res) {
 
 // POST - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
-    res.send(req.body);
     var newFavoriteName = req.body;
     var newName = {
         name: newFavoriteName.name
