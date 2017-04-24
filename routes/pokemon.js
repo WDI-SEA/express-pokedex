@@ -26,7 +26,7 @@ router.post('/', function(req, res) {
         name: newPokeToFave.name
     };
 
-    db.pokemon.create(newPoke).then(function(pokemon) {
+    db.pokemon.findOrCreate({ where: newPoke }).then(function(pokemon) {
         res.status(303).redirect('/pokemon');
     }).catch(function(error) {
         res.status(404).send(error);
