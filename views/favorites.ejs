@@ -1,0 +1,15 @@
+<div class="favorites">
+    <h1 class="title">Favorites</h1>
+
+    <ul class="favorites-list">
+          <% for (var i = 0; i < pokemon.length; i++) {%>
+
+          <li>
+              <a class="name" href="<%='/pokemon/'+ pokemon[i].name%>"><%= pokemon[i].name %></a> ---- <a class="delete-pokemon" href="<%='/pokemon/'+ pokemon[i].name+ '?_method=DELETE'%>" >remove</a>
+          </li>
+
+          <%} %>
+    </ul>
+
+    <a href='/'>Back to Index</a>
+</div>
