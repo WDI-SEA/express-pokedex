@@ -1,0 +1,12 @@
+<h2>Favorite Pokemon</h2>
+
+<ul>
+<!-- looping through each of the pokemon.forEach(function(param)) from / page to list here if selected by user -->
+<% pokemon.forEach(function(pokemon){ %>
+
+  <li>
+    <a href="<%= "/pokemon" + pokemon.name %>">
+      <%= pokemon.name %>
+    </a>
+<% }) %>
+</ul>
