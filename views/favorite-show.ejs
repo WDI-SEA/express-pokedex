@@ -1,0 +1,19 @@
+<section>
+<h1>Pokemon Info.</h1>
+  <div>
+    <img src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>">
+    <p>name: <%= pokemon.name %></p>
+  </div>
+  <div>
+    <p>weight: <%= pokemon.weight %> lbs.</p>
+  </div>
+  <div>
+    <p>height: <%= pokemon.height %> inches</p>
+  </div>
+  <div>
+    <p> types:</p>
+    <% pokemon.types.forEach(function(pokemonType){ %>
+     <p class="<%= pokemonType.type.name %>"><%= pokemonType.type.name %></p> <!-- <%= pokemonType.type.name %> -->
+    <% }) %></p>
+  </div>
+</section>

@@ -1,0 +1,108 @@
+body {
+    font-size: 20px;
+    text-align: center;
+    background-color: #3C5AA6;
+}
+
+h1 {
+    font-size: 42px;
+    font-family: 'Press Start 2P', cursive;
+    color: #000;
+}
+
+div {
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+}
+
+img {
+    width: 400px;
+    height: 400px;
+}
+
+p {
+    color: #000;
+    text-transform: uppercase;
+}
+
+.navbar {
+    border-bottom: 5px solid #FFCB05;
+}
+
+.navbar a {
+    text-transform: uppercase;
+    color: #FFCB05;
+}
+
+.navbar li {
+    list-style: none;
+}
+
+.favs li {
+    list-style: none;
+    font-size: 40px;
+}
+
+.favs a {
+    color: #FFCB05;
+}
+
+.normal {
+    color: gray;
+}
+
+.fire {
+    color: orange;
+}
+
+.water {
+    color: lightblue;
+}
+
+.grass {
+    color: green;
+}
+
+.electric {
+    color: yellow;
+}
+
+.psychic {
+    color: maroon;
+}
+
+.ice {
+    color: grey;
+}
+
+.fairy {
+    color: lightpink;
+}
+
+.bug {
+    color: olive;
+}
+
+.fighting {
+    color: red;
+}
+
+.flying {
+    color: navy;
+}
+
+.poison {
+    color: purple;
+}
+
+.ground {
+    color: tan;
+}
+
+.ghost {
+    color: white;
+}
+
+.steel {
+    color: darkgray;
+}

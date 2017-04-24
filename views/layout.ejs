@@ -4,11 +4,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pokedex</title>
-
-    <!-- Bootstrap CSS -->
+    <!-- First Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Second CSS STYLESHEET: THIS WILL PREVENT BOOTSTRAP FROM OVERRIDING YOUR CSS -->
+     <link rel="stylesheet" type="text/css" href="/css/style.css">
+     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Roboto" rel="stylesheet">
   </head>
   <body>
+  <nav class="navbar">
+      <ul>
+          <li><a href="http://localhost:3000/">Home</a></li>
+      </ul>
+  </nav>
+
     <%- body %>
 
     <!-- jQuery -->
