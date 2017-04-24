@@ -1,0 +1,20 @@
+<div id="favorites">
+  <a href="/">Back to List of Pokemon</a>
+  <h1 id="fav-title">My Favorite Pokemon:</h1>
+  <p>Click on a Pokemon's name to learn more about it!</p>
+  <p>Click on the "x" next to their name to remove them as a favorite.</p>
+  <ul>
+    <% pokemon.forEach(function(pokemon) { %>
+    <li class="favs">
+      <form class="inline" method="POST" action="<%= "pokemon/" + pokemon.name + "?_method=DELETE" %>">
+         <button type="submit">x</button>
+      </form>
+      <span>---</span>
+      <a class="capitalize" href="<%='/pokemon/' + pokemon.name %>">
+        <%= pokemon.name %>
+      </a>
+    </li>
+    <% }); %>
+  </ul>
+</div>
+

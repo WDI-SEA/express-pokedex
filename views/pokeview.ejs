@@ -1,0 +1,16 @@
+<div id="pokeview">
+  <ul>
+    <li class="inline">
+      <a href="/">Back to List of Pokemon</a>
+    </li>
+    <li class="inline">
+      <a href="/pokemon">Back to Favorites</a>
+    </li>
+  </ul>
+  <h1 class="capitalize"> <%= pokemon.name %> </h1>
+  <img src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>">
+  <p> Id#: <%= pokemon.id %> </p>
+  <p> Type: <%= pokemon.types[0].type.name %> </p>
+  <p> Height: <%= pokemon.height %> dm</p>
+  <p> Weight: <%= pokemon.weight %> hg</p>
+</div>
