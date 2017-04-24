@@ -13,7 +13,6 @@ router.get('/', function(req, res) {
         });
 });
 
-
 router.get('/', function(req, res) {
     db.pokemon.findAll().then(function(pokemon) {
         res.render('index', { pokemon: pokemon });
@@ -23,12 +22,12 @@ router.get('/', function(req, res) {
 // POST - receive the name of a pokemon and add it to the database
 
 router.post('/', function(req, res) {
-    var newPokemon = req.body;
 
-    db.pokemon.create({ newPokemon })
-        .then(function() {
-            res.redirect('/pokemon');
-        })
+    db.pokemon.create({
+        name: req.body.name
+    }).then(function() {
+        res.redirect('/pokemon');
+    });
 });
 
 

@@ -1,27 +1,21 @@
 <div class="container">
-          <h1 class="text-center"><%= pokemon.info %></h1>
+<h1><%= pokemon.name %></h1>
+         <div class="well">
+         <p>
+          ID: <%= pokemon.id %></br>
+          Order: <%= pokemon.order %>
+          </p>
           <p>
-          Name: <%= pokemon.name %>
+          Height: <%= pokemon.height %> Poke feet</br>
+          Weight: <%= pokemon.weight %> Poke lbs
           </p>
 
           <p>
-          Species: <%= pokemon.species %>
+          Base Experience: <%= pokemon.base_experience %>
           </p>
 
-          <p>
-          Abilities: <%= pokemon.abilities %>
-          </p>
-
-          <p>
-          Forms: <%= pokemon.forms %>
-          </p>
-
-          <p>
-          Stats: <%= pokemon.stats %>
-          </p>
-
-          <p>
-          <a href="<%= "/pokemon/" %>">
-          Back to Favorites
+        <a href="<%= "/" %>">
+          Back to All Pokemon
         </a>
         </div>
+</div>

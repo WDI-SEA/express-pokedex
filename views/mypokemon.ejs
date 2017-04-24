@@ -1,9 +1,9 @@
 
     <h1>My Favorite Pokemon</h1>
 
-    <% result.forEach(function(p) {%>
+    <% result.forEach(function(pokemon) {%>
     <div class ="well">
-    <h3><%=p.name%></h3>
-    <a href='/pokemon/<%-p.name%>' class="btn">Learn More</a>
+    <h3><%= pokemon.name %></h3>
+     <a href="/pokemon/<%-pokemon.name %>" class="btn btn-primary">Get Info</a>
     </div>
     <% });%>
