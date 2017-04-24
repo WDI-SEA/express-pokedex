@@ -35,6 +35,9 @@ router.get('/:name', function(req, res) {
     var pokeUrl = 'http://pokeapi.co/api/v2/pokemon/' + req.params.name;
     request(pokeUrl, function(err, response, body) {
         var info = JSON.parse(body);
+        info.typesCommaSeperated = info.types.map(function(type) {
+            return type.type.name;
+        }).join(", ");
         res.render('pokemon-info', { pokemon: info });
     });
 });

@@ -7,6 +7,15 @@ header img {
 
 body {
     background-image: url('/img/allpokemon.png');
+    font-family: "Press Start 2P", cursive;
+}
+
+{
+    font-size: 2em;
+}
+
+.header-stuff {
+    text-align: center;
 }
 
 .pokemonlist {
@@ -16,7 +25,25 @@ body {
     flex-wrap: wrap;
 }
 
+.fave {
+    background-color: #FFCB05;
+    color: black;
+    font-size: 2em;
+    border: 0;
+    padding: 20px;
+    margin-top: 1em;
+}
+
 .well {
     text-align: center;
     width: 80%;
+    border: 0;
+}
+
+.btn-primary {
+    border: 0;
+}
+
+.btn-primary:hover {
+    background-color: #FFCB05;
 }
