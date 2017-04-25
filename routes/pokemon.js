@@ -38,6 +38,9 @@ router.get('/:name', function(req, res) {
         info.typesCommaSeperated = info.types.map(function(type) {
             return type.type.name;
         }).join(", ");
+        info.abilitiesCommaSeperated = info.abilities.map(function(ability) {
+            return ability.ability.name;
+        }).join(", ");
         res.render('pokemon-info', { pokemon: info });
     });
 });

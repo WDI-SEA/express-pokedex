@@ -1,4 +1,5 @@
-    <h2 class="btn fave"><a href="<%= "/" %>"> Back to All Pokemon</a></h2>
+    <div class="pokemonlist">
+    <h2 class="btn btn-primary fave"><a href="<%= "/" %>"> Back to All Pokemon</a></h2>
 
     <% result.forEach(function(pokemon) {%>
     <div class ="well">
@@ -6,3 +7,4 @@
      <a href="/pokemon/<%-pokemon.name %>" class="btn btn-primary">Poke Stats</a>
     </div>
     <% });%>
+    </div>
