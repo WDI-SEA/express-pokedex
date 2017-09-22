@@ -1,5 +1,6 @@
 var express = require('express');
 var request = require('request');
+var db = require('./models');
 var bodyParser = require('body-parser');
 var ejsLayouts = require('express-ejs-layouts');
 var app = express();
@@ -10,14 +11,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 
 app.get('/', function(req, res) {
-    var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
+    var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon?limit=151';
 
     request(pokemonUrl, function(error, response, body) {
         var pokemon = JSON.parse(body).results;
         res.render('index', { pokemon: pokemon });
     });
 });
-
+//this is how you separate routes into different files (aka all the app.get for /pokemon are in the routes/pokemon.js)
 app.use('/pokemon', require('./routes/pokemon'));
 
 var server = app.listen(process.env.PORT || 3000);
