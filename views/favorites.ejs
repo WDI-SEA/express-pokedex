@@ -1,0 +1,11 @@
+<div>
+	<a href="<%= "/" %>" class="btn btn-primary">Back to All Pokemon</a>
+
+	<% result.forEach(function(pokemon) {%>
+		<div>
+		<h3><%= pokemon.name %></h3>
+		<a href="/pokemon/<%-pokemon.name %>" class="btn btn-primary">More Info</a>
+		<a href="/pokemon/<%-pokemon.name %>" type="submit" class="btn btn-danger remove">Remove</a>
+		</div>
+	<% });%>
+</div>
