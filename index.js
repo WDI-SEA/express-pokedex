@@ -19,38 +19,16 @@ app.use(ejsLayouts);
 //data is being retrieved from API. URL stored in pokemonURL variable
 app.get('/', function(req, res) {
     var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/?limit=151';
-
-    request(pokemonUrl, function(error, response, body) {
+    request(pokemonUrl, function(error, res, body) {
       //what we're getting back from API
-        var pokemon = JSON.parse(body).results;
+    var pokemon = JSON.parse(body).results;
       //first pokemon is a key, the 2nd is the pokemon we are passing in from the JSON
-        res.render('index', { pokemon: pokemon });
+    res.render('index', { pokemon: pokemon });
     });
+
 });
 
-//posting pokemon to add to db
-app.post('/', function(req, res) {
-     db.pokemon.create({
-         name: req.body.name
-     }).then(function() {
-         res.redirect('/pokemon');
-     });
- });
 
-//getting name and abilities
-app.get('/:name', function(req, res) {
-     var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/?limit=151' + req.params.name;
-     request(pokeUrl, function(err, response, body) {
-         var info = JSON.parse(body);
-          info.typesCommaSeperated = info.types.map(function(type) {
-              return type.type.name;
-          }).join(", ");
-          info.abilitiesCommaSeperated = info.abilities.map(function(ability) {
-          return ability.ability.name;
-          }).join(", ");
-          res.render('pokemon-info', { pokemon: info });
-      });
-  });
 
 //this is how we separate our routes into separate files
 app.use('/pokemon', require('./routes/pokemon'));
