@@ -1,16 +1,15 @@
-
-
-$('document').ready(function() {
- 	$('.delete-link').on('click', function(e) {
- 		e.preventDefault();
- 		pokemonElement = $(this);
- 		pokemonUrl = pokemonElement.attr('href');
- 		$.ajax({
- 			method: 'DELETE',
- 			url: pokemonUrl
- 		}).done(function() {
- 			pokemonElement.remove();
- 			window.location = '/pokemon';
- 		});
- 	});
- })
+$( document ).ready(function(){
+  $(".delete-link").click(function(e){
+     e.preventDefault();
+     var element = $(this);
+     console.log('clicked');
+     var url = element.attr('href');
+     $.ajax({
+       method: 'DELETE',
+       url: url
+     }).done(function(data){
+       window.location = "/pokemon";
+       console.log("deleted");
+     });
+   });
+});

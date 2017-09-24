@@ -26,8 +26,6 @@ router.get("/:name", function(req, res){
       var dataObj = JSON.parse(body);
       request(speciesUrl, function(error2, response2, body2){
           var dataObj2 = JSON.parse(body2);
-          console.log(dataObj);
-          console.log(dataObj2);
           res.render("./show", {pokemon: dataObj, species: dataObj2});
       });
   });
@@ -38,10 +36,15 @@ router.get("/:name", function(req, res){
 router.delete("/:name", function(req, res){
   db.pokemon.destroy({
     where: {name: req.params.name}
-  }).then(function() {
-    res.send({message: "successful deletion"});
-  });
+  }).then(function(){
+   res.redirect("/pokemon");
+  })
 });
-
+// router.delete('/:id', function(req, res) {
+//   db.pokemon.findById(req.params.id).then(function(pokemon) {
+//   pokemon.destroy();
+//    res.send('Done!!!');
+//    });
+// });
 
 module.exports = router;

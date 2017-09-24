@@ -1,6 +1,6 @@
 body{
   width: 100%;
-  /*margin: 0 auto;*/
+  margin: 0 auto;
   text-align: center;
   background-image: url(/img/1.jpeg);
 }
@@ -19,7 +19,7 @@ body{
 }
 
 #logo{
-  height: 200px;
+  height: 150px;
 }
 
 #pokedex{
@@ -49,4 +49,51 @@ button{
 
 button:hover{
   background: #049DD9;
+}
+#blankPlayingCard{
+  position:relative;
+  height: 570px;
+}
+
+#pokeName{
+  position:relative;
+  top:-390px;
+  left:200px;
+  z-index:5;
+}
+#pokePic{
+  position:relative;
+  width:210px;
+  top:-530px;
+  left:-190px;
+  z-index:5;
+}
+
+#pokeId{
+  position:relative;
+  top: -160px;
+  left: -220px;
+}
+
+#pokeHeight{
+  position: relative;
+  top:-630px;
+  left:140px;
+  z-index:5;
+  font-size:14px;
+}
+
+#pokeWidth{
+  position: relative;
+  top:-660px;
+  left:230px;
+  z-index:5;
+  font-size:14px;
+}
+#pokeAbout{
+  width: 500px;
+  background: white;
+  opacity: .9;
+  margin: 0 auto;
+  border-radius: 2px;
 }

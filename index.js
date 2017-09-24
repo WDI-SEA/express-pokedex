@@ -23,7 +23,6 @@ app.get('/', function(req, res) {
     });
 });
 
-
 //this is how you separate routes into different files (aka all the app.get for /pokemon are in the routes/pokemon.js)
 app.use('/pokemon', require('./routes/pokemon'));
 
