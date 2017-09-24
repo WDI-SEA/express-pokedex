@@ -1,11 +1,14 @@
 <div class="container">
   <h1 class="text-center">My Pokedex</h1>
   <p class="text-center">
-    <a href="/">See All Pokemon</a>
+    <a href="/">View All Pokemon</a>
   </p>
-  <% myPokemon.forEach(function(pokemon) { %>
-  <div class="well">
-    <h2><%= myPokemon.name %></h2>
+
+    <% myPokemon.forEach(function(pokemon) { %>
+       <div class="myPokedex" id="<%= pokemon.id %>">
+        <a href="/pokemon/mypokedex/<%= pokemon.name %>"><h2><%= pokemon.name %></h2></a>
+        <a href="/pokemon/mypokedex" class="delete-Pokemon">Remove from Pokedex</a>
+       </div>
+     <% }); %>
+
   </div>
-  <% }); %>
-</div>

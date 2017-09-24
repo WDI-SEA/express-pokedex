@@ -1,0 +1,29 @@
+body {
+  background: blue;
+}
+
+
+.showContainer {
+  height: 500px;
+  width: 350px;
+  background-color: red;
+  margin: 0 auto;
+  text-align: center;
+  border: 3px solid black;
+  border-radius: 8%;
+}
+.showDiv {
+  display: inline-block;
+  height: 50px;
+  width: 350px;
+  margin: 20px 0px;
+}
+
+.pictureDiv {
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+  text-align: center;
+
+  margin: 10px 0px ;
+}
