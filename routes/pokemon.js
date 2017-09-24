@@ -1,5 +1,6 @@
+//this is just like index.js, but for all the '/pokemon routes'
 var express = require('express');
-var router = express.Router();
+var router = express.Router();//this is just configures my routes
 
 // GET - return a page with favorited Pokemon
 router.get('/', function(req, res) {
@@ -13,4 +14,5 @@ router.post('/', function(req, res) {
     res.send(req.body);
 });
 
+//this is where i'm exporting my '/pokemon' routes to index.js
 module.exports = router;
