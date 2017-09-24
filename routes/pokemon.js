@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
-var db = require('../models');
+var request = require('request');
+var db = require("../models");
+var app = express();
+app.use(express.static(__dirname + "/public"));
 
 // GET - return a page with favorited Pokemon
 router.get('/', function(req, res) {
@@ -16,11 +19,29 @@ router.post('/', function(req, res) {
    });
 });
 
-router.delete("/pokemon", function(req,res){
- 	db.pokemon.findById(req.params.id).then(function(pokemon) {
- 		pokemon.destroy();
- 	});
- });
+router.get("/:name", function(req, res){
+  var pokemonUrl = "http://pokeapi.co/api/v2/pokemon/" + req.params.name;
+  var speciesUrl = "http://pokeapi.co/api/v2/pokemon-species/" + req.params.name;
+  request(pokemonUrl, function(error, response, body){
+      var dataObj = JSON.parse(body);
+      request(speciesUrl, function(error2, response2, body2){
+          var dataObj2 = JSON.parse(body2);
+          console.log(dataObj);
+          console.log(dataObj2);
+          res.render("./show", {pokemon: dataObj, species: dataObj2});
+      });
+  });
+});
+
+
+//
+router.delete("/:name", function(req, res){
+  db.pokemon.destroy({
+    where: {name: req.params.name}
+  }).then(function() {
+    res.send({message: "successful deletion"});
+  });
+});
 
 
 module.exports = router;

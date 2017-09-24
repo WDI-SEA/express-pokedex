@@ -5,9 +5,9 @@
    </p>
 
    <% pokemon.forEach(function(pokemon) { %>
-     <div class="well" id="<%= pokemon.id %>">
-       <h2><%= pokemon.name %></h2>
-       <button class="btn btn-primary delete-link">Remove from Favorites</button>
+     <div class="pokeDiv" id="">
+      <a href="/pokemon/<%= pokemon.name %>"><h2><%= pokemon.name %></h2></a>
+       <button class="delete-link">Remove from Favorites</button>
      </div>
    <% }); %>
 

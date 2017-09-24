@@ -1,0 +1,52 @@
+body{
+  width: 100%;
+  /*margin: 0 auto;*/
+  text-align: center;
+  background-image: url(/img/1.jpeg);
+}
+
+.container{
+
+}
+.pokeDiv{
+ width: 200px;
+ background: #F2B705;
+ opacity: .9;
+ float: left;
+ padding: 10px;
+ margin: 10px;
+ border-radius: 5px;
+}
+
+#logo{
+  height: 200px;
+}
+
+#pokedex{
+  height: 150px;
+}
+
+h1{
+  color: #049DD9;
+}
+
+a{
+  color: #049DD9;
+  text-decoration: none;
+}
+
+a:hover{
+  color: #049DD9;
+  text-decoration: none;
+}
+
+button{
+  background: #F2CB05;
+  border: none;
+  padding: 10px;
+  border-radius: 2px;
+}
+
+button:hover{
+  background: #049DD9;
+}
