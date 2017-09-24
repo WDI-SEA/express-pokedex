@@ -25,6 +25,7 @@
     "morgan": "^1.8.1",
     "pg": "^6.4.1",
     "pg-hstore": "^2.3.2",
+    "pokemon-sprites": "github:PokeAPI/sprites",
     "request": "^2.72.0",
     "sequelize": "^3.30.4"
   }
