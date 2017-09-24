@@ -28,6 +28,30 @@ app.get('/', function(req, res) {
     });
 });
 
+//posting pokemon to add to db
+app.post('/', function(req, res) {
+     db.pokemon.create({
+         name: req.body.name
+     }).then(function() {
+         res.redirect('/pokemon');
+     });
+ });
+
+//getting name and abilities
+app.get('/:name', function(req, res) {
+     var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/?limit=151' + req.params.name;
+     request(pokeUrl, function(err, response, body) {
+         var info = JSON.parse(body);
+          info.typesCommaSeperated = info.types.map(function(type) {
+              return type.type.name;
+          }).join(", ");
+          info.abilitiesCommaSeperated = info.abilities.map(function(ability) {
+          return ability.ability.name;
+          }).join(", ");
+          res.render('pokemon-info', { pokemon: info });
+      });
+  });
+
 //this is how we separate our routes into separate files
 app.use('/pokemon', require('./routes/pokemon'));
 
