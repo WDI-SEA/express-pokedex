@@ -14,13 +14,36 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 
-
+var discogs = new Discogs({userToken: 'sWYaOjigCOMuqPmqDAoBZdzwvuDULDQZTTRbGlkJ'}).database();
 
 app.get('/', function(req, res){
 	res.render('index');
 });
 
-var discogs = new Discogs({userToken: 'sWYaOjigCOMuqPmqDAoBZdzwvuDULDQZTTRbGlkJ'}).database();
+app.get('/covet/:id', function(req, res){
+	var artistId = req.params.id;
+	discogs.getRelease(artistId).then(function(data){
+		var year = data.year;
+		var artists = [];
+		for(var i = 0; i<data.artists.length; i++){
+			artists.push(data.artists[i].name);
+		}
+		artists = artists.toString();
+		var image = data.thumb;
+		var trackList = [];
+		for(var i = 0; i<data.tracklist.length; i++){
+			trackList.push(data.tracklist[i].title + " (" + data.tracklist[i].duration + ")");
+		}
+		trackList = trackList.toString()
+		var formats = [];
+		for(var i = 0; i<data.formats.length; i++){
+			formats.push(data.formats[i].name);
+		}
+		formats = formats.toString();
+		console.log(year + artists + trackList + formats);
+	});
+	res.render('covet');
+});
 
 
 //gets artistId from search bar on any page and renders results page
@@ -44,8 +67,15 @@ app.post( '/',function(req, res){
 				});
 			} else if (data.results[i].type==='artist'){
 				artistInfo = data.results[i];
+				db.bootleg.create({
+					artistName: artistInfo.title,
+					discogsId: artistInfo.id,
+					imageUrl: artistInfo.thumb,
+					searchCount: 1
+				});
 			}
 		}	
+
 		res.render('results', { releases: releases, artistInfo: artistInfo, artistId: artistId });
 	});	
 });

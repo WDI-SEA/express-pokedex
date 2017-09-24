@@ -1,23 +1,23 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('pokemons', {
+    return queryInterface.createTable('bootlegs', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      artist_name: {
+      artistName: {
         type: Sequelize.STRING
       },
-      discogs_id: {
+      discogsId: {
         type: Sequelize.INTEGER
       },
-      image_url: {
+      imageUrl: {
         type: Sequelize.STRING
       },
-      search_count: {
+      searchCount: {
         type: Sequelize.INTEGER
       },
       createdAt: {
@@ -31,6 +31,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('pokemons');
+    return queryInterface.dropTable('bootlegs');
   }
 };

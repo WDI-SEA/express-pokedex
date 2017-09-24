@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Record Shelf</title>
-
+    <title>Bootleg</title>
+    <link rel="shortcut icon" href="../favicon.ico" /> 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
@@ -12,7 +12,7 @@
   </head>
   <body>
     <header>
-      <h2>Record Fiends</h2>
+      <a href="/"><h2>Bootleg</h2></a>
       <form action="/" method="POST">
         <input type="text" name="search" placeholder="Enter Artist Name">
         <input type="submit">
@@ -33,6 +33,7 @@
           </div>
           <div id="recentSearches">
             <p>Recent Searches</p>
+            <%- defineContent('recentSearches')%>
           </div>
         </div>
       </div>
