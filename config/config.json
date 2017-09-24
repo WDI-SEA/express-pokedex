@@ -1,0 +1,17 @@
+{
+  "development": {
+    "database": "pokedex",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "database": "pokedex",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "database": "pokedex",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}

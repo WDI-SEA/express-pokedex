@@ -1,0 +1,15 @@
+include layout.pug
+
+block content
+  .container
+    h1.text-center The Original 151 Pokemon
+    p.text-center
+      a(href='/pokemon') Favorites
+
+    each pokeman in pokemon
+      div.well
+        h2= pokeman.name
+        form(method='POST' action='/pokemon')
+          input(hidden type='text' name='name' value=pokeman.name)
+          button.btn.btn-primary(type='submit') Add to Favorite Pokemon
+          -console.log(pokeman.url)
