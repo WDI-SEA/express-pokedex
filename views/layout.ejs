@@ -3,13 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pokedex</title>
+    <title>My Record Shelf</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+
   </head>
   <body>
-    <%- body %>
+    <header>
+      <h2>Record Fiends</h2>
+      <form action="/" method="POST">
+        <input type="text" name="search" placeholder="Enter Artist Name">
+        <input type="submit">
+      </form>
+    </header>
+
+    <aside class="container-fluid">
+      <div class="row">
+        <div class="col-xs-8">
+          <%- body %>
+        </div>
+        <div class="col-xs-4">
+          <div class="asideLinks">
+            <p>Hoard</p>
+          </div>
+          <div class="asideLinks">
+            <p>Covet</p>
+          </div>
+          <div id="recentSearches">
+            <p>Recent Searches</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    
+    
 
     <!-- jQuery -->
     <script src="//code.jquery.com/jquery.js"></script>

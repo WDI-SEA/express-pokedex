@@ -1,0 +1,19 @@
+<div class="resultWrapper">
+	<div class="resultThumb"><img src="<%=artistInfo.thumb%>"></div>
+	<div class="resultInfo"><h1><%=artistInfo.title%></h1></div>
+</div>
+
+ 
+<% for(var i = 0; i<releases.length; i++){ %>
+  <div class="resultWrapper">
+		<div class="resultThumb"><img src="<%=releases[i].thumb%>"></div>
+		<div class="resultInfo">
+			<h5>Album: <%=releases[i].title%></h5>
+			<h5>Year: <%=releases[i].year%></h5>
+			<br>
+			<a href="#">Covet</a><p></p> 
+			<!--add attributes to href for adding to database-->
+			<a href="#">Add to Collection</a>
+		</div>
+	</div>
+<% } %>
