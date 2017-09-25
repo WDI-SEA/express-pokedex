@@ -1,0 +1,31 @@
+<style>
+.capitalize {
+    text-transform: capitalize;
+}
+ul {
+    list-style: none;
+    padding: 0;
+
+}
+li {
+    display: inline;
+    font-size: 1.2em;
+    padding-right: 2%;
+}
+p {
+
+}
+</style>
+
+<div class="container" id="pokedex">
+  <ul class="heading">
+    <li><a href="/">Catch 'Em All</a></li>
+    <li><a href="/pokemon">Back to Favorites</a></li>
+  </ul>
+  <h1 class="capitalize"> <%= pokemon.name %> </h1>
+  <img src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>">
+  <p> Id#: <%= pokemon.id %> </p>
+  <p> Type: <%= pokemon.types[0].type.name %> </p>
+  <p> Height: <%= parseInt(pokemon.height) / 10 %> m</p>
+  <p> Weight: <%= parseInt(pokemon.weight) / 10 %> kg</p>
+</div>
