@@ -1,16 +1,56 @@
+//this is just like index.js but for all the /pokemon routes
+//not in controller directory but this is the routing
 var express = require('express');
-var router = express.Router();
+var db = require("../models");
+var request = require("request");
+var router = express.Router(); //this just configured my routes
+var path = require("path");
+
+router.use(express.static(__dirname + '/public'));
 
 // GET - return a page with favorited Pokemon
 router.get('/', function(req, res) {
-    // TODO: render favorites
-    res.send('Render a page of favorites here');
+    //render favorites
+    db.pokemon.findAll()
+    .then(function(result) {
+        res.render("pokemon", { result: result });
+    }).catch(function(error) {
+        res.send("err");
+    });
 });
 
-// POST - receive the name of a pokemon and add it to the database
+router.get('/', function(req, res) {
+    db.pokemon.findAll().then(function(pokemon) {
+        res.render('index', {pokemon: pokemon});
+    });
+});
+
 router.post('/', function(req, res) {
-    // TODO: add to database
-    res.send(req.body);
+    db.pokemon.create({
+        name: req.body.name
+    }).then(function() {
+        res.redirect('/pokemon');
+    });
 });
 
+//second attempt
+router.get('/:name', function(req, res) {
+    var pokeName = req.params.name;
+    var pokeUrl = 'http://pokeapi.co/api/v2/pokemon/' + pokeName;
+    console.log(pokeUrl);
+    request({
+      url: pokeUrl
+    }, function(error, response, body) {
+      var pokemon = JSON.parse(body);
+      res.render('pokemonInfo', {
+        pokemon: pokemon
+      })
+    })
+});
+
+router.delete("/:idx", function(req, res) {
+  var deleteIndex = req.params.idx;
+})
+
+//this is where I'm exporting my /pokemon routes to index.js
 module.exports = router;
