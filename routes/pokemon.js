@@ -4,6 +4,12 @@ var express = require('express');
 var router = express.Router(); // this just configures my routes
 var request = require('request');
 var path = require('path');
+var bodyParser = require('body-parser');
+var app = express();
+var methodOverride = require('method-override');
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(methodOverride('_method'));
 
 var controllers = require('../controllers');
 var pokemon = controllers.pokemon;
@@ -41,13 +47,17 @@ router.get('/:id', function(req, res) {
     });
 });
 //delete not working
-router.delete('/:name', function(req, res) {
-    var name = req.params.name;
-
+router.delete('/:id', function(req, res) {
+    console.log('deleting' + req.params.id);
+    var idOfPoke = req.params.id;
     db.pokemon.destroy({
-        where: { name: name }
-    }).then(function() {
-        res.status(204).redirect('/pokemon');
+        where: {
+            id: idOfPoke
+        }
+    }).then(function(pokemon) {
+        res.redirect('/pokemon');
+    }).catch(function(error) {
+        res.send('error');
     });
 });
 

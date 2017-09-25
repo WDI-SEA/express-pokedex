@@ -6,9 +6,9 @@
   <ul>
     <% pokemon.forEach(function(pokemon) { %>
     <li class="favs">
-      <form class="inline" method="POST" action="<%= "pokemon/" + pokemon.name + "?_method=DELETE" %>">
-         <button type="submit">x</button>
-      </form>
+      <form class="delete" method="POST" action="<%= '/pokemon/'+pokemon.id+'?_method=DELETE'%>">
+         <button class="btn btn-danger" type="submit">Delete Pokemon</button>
+       </form>
       <a class="capitalize" href="<%='/pokemon/' + pokemon.name %>">
         <%= pokemon.name %>
       </a>

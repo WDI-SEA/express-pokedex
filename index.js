@@ -1,10 +1,3 @@
-// Express
-// Request => Middleware
-//                      => route  fetch shit from DB and render a page
-//                      => return status/cookies/non DB based operations immediately and call next();
-//                                                                                                   => Response
-
-
 var express = require('express');
 var request = require('request');
 var bodyParser = require('body-parser');

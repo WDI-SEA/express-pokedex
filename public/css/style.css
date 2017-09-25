@@ -16,6 +16,13 @@ ul {
     color: red;
 }
 
+.delete {
+    display: inline;
+    font-size: 10px;
+    padding: 0;
+    margin: 1%;
+}
+
 .inline {
     display: inline;
     color: green;
