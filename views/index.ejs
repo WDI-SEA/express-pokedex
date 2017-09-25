@@ -7,14 +7,15 @@
   </p>
 // the first pokemon is the key, the 2nd one is the big JSON one from o our API
   <% pokemon.forEach(function(pokemon) { %>
+    <%= JSON.stringify( pokemon ) %>
     <div class="well">
       <h2><%= pokemon.name %></h2>
       // Like charmander
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
         <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
-        
       </form>
+
     </div>
   <% }); %>
 </div>
