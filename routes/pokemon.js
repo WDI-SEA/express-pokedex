@@ -1,16 +1,33 @@
+//this is just like index.js but for all the /pokemon routes
+//not in controller directory but this is the routing
 var express = require('express');
-var router = express.Router();
+var db = require("../models");
+var router = express.Router(); //this just configured my routes
 
 // GET - return a page with favorited Pokemon
 router.get('/', function(req, res) {
     // TODO: render favorites
-    res.send('Render a page of favorites here');
+    db.pokemon.findAll()
+    .then(function(result) {
+        res.render("pokemon", { result: result });
+    }).catch(function(error) {
+        res.send("err");
+    });
 });
 
-// POST - receive the name of a pokemon and add it to the database
+router.get('/', function(req, res) {
+    db.pokemon.findAll().then(function(pokemon) {
+        res.render('index', {pokemon: pokemon});
+    });
+});
+
 router.post('/', function(req, res) {
-    // TODO: add to database
-    res.send(req.body);
+    db.pokemon.create({
+        name: req.body.name
+    }).then(function() {
+        res.redirect('/pokemon');
+    });
 });
 
+//this is where I'm exporting my /pokemon routes to index.js
 module.exports = router;
