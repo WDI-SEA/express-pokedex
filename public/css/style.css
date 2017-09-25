@@ -1,0 +1,27 @@
+.capitalize {
+    text-transform: capitalize;
+}
+
+.heading {
+    list-style: none;
+    color: green;
+}
+
+ul {
+    list-style: none;
+}
+
+.favs a {
+    font-size: 2em;
+    color: red;
+}
+
+.inline {
+    display: inline;
+    color: green;
+    font-size: 3em;
+}
+
+#pokedex {
+    background-color: red;
+}
