@@ -1,0 +1,19 @@
+<div class="pokemon">
+	<div class="pokemonImages">
+		<img src="<%= sprites.front_defualt%>">
+		<img src="<%= sprites.back_defualt%>">
+		<img src="<%= sprites.front_shiny%>">
+		<img src="<%= sprites.back_shiny%>">
+	</div>
+	<h1 class="pokemonName" class="title name <%= types[0].type.name%>"
+		data-secondtype="
+		<% if(types[1]) { %>
+			<%=types[1].type.name%>
+		<%}%>
+		"><%=species.name%></h1>
+
+		<p>Types: <%= typesCommaSeparated %></p>
+		
+
+	<a href='/pokemon'>To Your Favorites!</a>
+</div>

@@ -1,7 +1,7 @@
 // this is just like index.js but for all the '/pokemon routes'
 var ejsLayouts = require('express-ejs-layouts');
 var express = require('express');
-var db = require('..models');
+var db = require('../models');
 var request = require('request');
 var path = require('path');
 var methodOverride = require('method-override');
@@ -58,5 +58,36 @@ router.get('/:id', function(req, res) {
 		res.render('pokemon', pokemon);
 	});
 });
+
+router.get('/:name', function(req, res) {
+	var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + req.params.name.toLowerCase();
+	request(pokemonUrl, function(err, response, body) {
+		if(err) {
+			console.log(err);
+		}
+
+		var pokemon = JSON.parse(body);
+		pokemon.typesCommaSeparated = pokemon.types.map(function(type) {
+			return type.type.name;
+		}).join(", ");
+
+		pokemon.abilitiesCommaSeparated = pokemon.abilities.map(function(ability) {
+			return ability.ability.name;
+		}).join(", ")
+		res.render('pokemon', pokemon);
+	});
+});
+
+router.delete('/:name', function(req, res) {
+	var pokemonToDelete = req.params.name;
+	db.pokemon.destroy({
+		where: {
+			name: pokemonToDelete
+		}
+	}).then(function() {
+		res.status(204).redirect('/pokemon');
+	});
+});
+
 // this is where I'm exporting my '/pokemon' routes to index.js
 module.exports = router;
