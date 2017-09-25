@@ -24,7 +24,7 @@ router.get('/:id', function(req, res) {
     where: {id: pokeId}
   }).then(function(poke) {
     var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + poke.name;
-    console.log(poke.name);
+    console.log(pokemonUrl);
   // get route for our home
     request(pokemonUrl, function(error, response, body) {
         var pokemon = JSON.parse(body);
