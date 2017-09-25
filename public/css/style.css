@@ -1,7 +1,8 @@
 body {
-	background: black;
+	background: url("../img/original150.jpg") no-repeat center center fixed;
+	background-size: cover;
 	font-family: "courier new";
-	color: blue;
+	color: red;
 }
 
 a {
@@ -62,6 +63,18 @@ a {
 	left: 98px;
 }
 
+.back {
+	margin: 20px;
+}
+
+.eachFavorite {
+	background: black;
+	opacity: .85;
+	padding: 5px;
+	margin: 20px;
+}
+
 .well {
-	background: gray;
+	background: black;
+	opacity: .85;
 }
