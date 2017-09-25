@@ -1,15 +1,15 @@
-include layout.pug
+extends ./layout.pug
 
 block content
-  .container
+  div.container
     h1.text-center The Original 151 Pokemon
-    p.text-center
-      a(href='/pokemon') Favorites
-
+    br
     each pokeman in pokemon
-      div.well
-        h2= pokeman.name
+      div.row.well.well-small
         form(method='POST' action='/pokemon')
           input(hidden type='text' name='name' value=pokeman.name)
-          button.btn.btn-primary(type='submit') Add to Favorite Pokemon
-          -console.log(pokeman.url)
+          span.name
+            button.btn.btn-default(type='submit')
+              span.glyphicon.glyphicon-plus
+            label(for='name')
+              h3=pokeman.name

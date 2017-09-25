@@ -1,0 +1,20 @@
+extends ./layout.pug
+
+block content
+  br
+  br
+  div.container
+    h1.text-center= pokemon.name
+    div.well-small
+      h3 Pokemon ID
+      p=pokemon.id
+      h3 Sprite
+      img(src=pokemon.sprites.front_default)
+      h3 Height & Weight
+      p Height: #{pokemon.height} 
+      -if (pokemon.weight===69) {
+        p Weight: #{pokemon.weight} 
+          span(style='font-size: 30px') LOL
+      -} else {
+        p Weight: #{pokemon.weight}
+      -}

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "nodemon index.js",
     "lint:js": "node_modules/eslint/bin/eslint.js ./ ./**/*.js --fix; exit 0",
     "lint:css": "node_modules/csslint/cli.js public/css/; exit 0"
   },

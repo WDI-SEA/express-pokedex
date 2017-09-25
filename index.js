@@ -9,20 +9,23 @@ app.set('view options', {
 });
 
 app.use(require('morgan')('dev'));
-
+app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/', function(req, res) {
-    var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon-form?limit=151';
-    request(pokemonUrl, function(error, response, body) {
+    var apiUrl = 'http://pokeapi.co/api/v2/pokemon?limit=151';
+    request(apiUrl, function(error, response, body) {
         var pokemon = JSON.parse(body).results;
-        console.log(pokemon.bulbasaur);
         res.render('index', { pokemon: pokemon });
     });
 });
 
 // this is how we separate our routes into separate files
-app.use('/pokemon', require('./routes/pokemon'));
+app.use('/pokemon/', require('./routes/pokemon'));
+
+app.all('*', function(req, res) {
+  res.redirect("/");
+});
 
 var server = app.listen(process.env.PORT || 3000);
 
