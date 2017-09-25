@@ -13,24 +13,23 @@ router.get('/', function(req, res) {
 });
 
 // POST - receive the name of a pokemon and add it to the database
-router.post('/', function(req, res) {
-  db.pokemon.create(req.body).then(function(pokemon) {
-      res.redirect("/pokemon");
-   });
-});
-
 // router.post('/', function(req, res) {
-//   res.send(req.body);
-//   db.pokemon.findOrCreate({
-//     where: {
-//        name: req.body.name
-//      }
-//    }).spread(function(pokemon, created){
-//        res.redirect("./pokemon");
-//      }).error(function(err){
-//        console.log("already in pokedex")
-//      })
+//   db.pokemon.create(req.body).then(function(pokemon) {
+//       res.redirect("/pokemon");
 //    });
+// });
+
+router.post('/', function(req, res) {
+  db.pokemon.findOrCreate({
+    where: {
+       name: req.body.name
+     }
+   }).spread(function(pokemon, created){
+       res.redirect("/pokemon");
+     }).error(function(err){
+       console.log("already in pokedex");
+     });
+   });
 
 router.get("/:name", function(req, res){
   var pokemonUrl = "http://pokeapi.co/api/v2/pokemon/" + req.params.name;
