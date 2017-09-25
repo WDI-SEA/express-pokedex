@@ -16,6 +16,13 @@
 <% }; %>
 </div>
 
+<div class="showDiv">
+<h4 class="attributes">Moves</h4>
+<% for (var i = 0; i < pokemon.moves.length; i++) { %>
+<p class="moves"><%= pokemon.moves[i] %></p>
+<% }; %>
+</div>
+
 <div class="pictureDiv">
 <img src="<%= pokemon.sprite %>">
 <p class="attributes"><%= pokemon.name %></p>

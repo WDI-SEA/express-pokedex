@@ -14,7 +14,7 @@ span {
 }
 
 .showContainer {
-  height: 500px;
+  height: 650px;
   width: 350px;
   background-color: rgba(3, 3, 3, 0.2);
   margin: 0 auto;
@@ -68,6 +68,14 @@ span {
   width: 100px;
   margin: 5px auto;
   background-color: rgba(255, 0, 0, 0.5);
+  border-radius: 5%;
+  font-family: 'Hammersmith One', sans-serif;
+}
+
+.moves{
+  width: 100px;
+  margin: 5px auto;
+  background-color: rgba(0, 0, 255, 0.5);
   border-radius: 5%;
   font-family: 'Hammersmith One', sans-serif;
 }
