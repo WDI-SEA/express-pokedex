@@ -3,6 +3,7 @@ body {
 	background-size: cover;
 	font-family: "courier new";
 	color: red;
+	text-align: center
 }
 
 a {
@@ -70,11 +71,12 @@ a {
 .eachFavorite {
 	background: black;
 	opacity: .85;
-	padding: 5px;
-	margin: 20px;
+	padding: 10px;
 }
 
 .well {
 	background: black;
 	opacity: .85;
+	width: 400px;
+	display: inline-block;
 }

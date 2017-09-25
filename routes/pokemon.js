@@ -22,6 +22,7 @@ router.post('/', function(req, res) {
     });
 });
 
+//info page
 router.get('/:name', function(req, res) {
     var url = 'http://pokeapi.co/api/v2/pokemon/' + req.params.name;
     request({
@@ -32,6 +33,7 @@ router.get('/:name', function(req, res) {
     })
 })
 
+//remove pokemon from favorites
 router.delete('/:name', function(req, res) {
     db.pokemon.destroy({
         where: {name: req.params.name}
