@@ -1,13 +1,17 @@
 <div class="container">
-  <h1 class="text-center">My Pokedex</h1>
+  <div class="logo">
+    <img src="../img/logo.png" height="200" width="600">
+  </div>
+  <h1 class="text-center bigFont">My Pokedex</h1>
   <p class="text-center">
-    <a href="/">View All Pokemon</a>
+    <a href="/" class="linkFont">View All 151 Pokemon</a>
   </p>
+  <p class="linkFont">Click on a pokemon to view more info!<p>
 
     <% myPokemon.forEach(function(pokemon) { %>
        <div class="myPokedex" id="<%= pokemon.id %>">
-        <a href="/pokemon/mypokedex/<%= pokemon.name %>"><h2><%= pokemon.name %></h2></a>
-        <a href="/pokemon/mypokedex" class="delete-Pokemon">Remove from Pokedex</a>
+        <a href="/pokemon/mypokedex/<%= pokemon.name %>"><h2 class="nameLabel"><%= pokemon.name %></h2></a>
+        <a href="/pokemon/mypokedex" class="delete-Pokemon removeLink">Remove from Pokedex</a>
        </div>
      <% }); %>
 

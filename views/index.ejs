@@ -1,15 +1,18 @@
 <div class="container">
+<div class="logo">
+  <img src="../img/logo.png" height="200" width="600">
+</div>
   <h1 class="text-center">The Original 151 Pokemon</h1>
   <p class="text-center">
-    <a href="/pokemon/mypokedex">Pokedex</a>
+    <a href="/pokemon/mypokedex" class="bigFont">Go to My Pokedex</a>
   </p>
 
   <% pokemon.forEach(function(pokemon) { %>
     <div class="well">
-      <h2><%= pokemon.name %></h2>
+      <h2 class="nameLabel"><%= pokemon.name %></h2>
       <form method="POST" action="/pokemon" class="favorites-form">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
-        <button class="btn btn-danger" type="submit">Add to Favorite Pokemon</button>
+        <button class="btn btn-success addButton" type="submit">Add to Favorite Pokemon</button>
       </form>
     </div>
   <% }); %>

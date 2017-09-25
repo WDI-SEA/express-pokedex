@@ -61,5 +61,16 @@ router.post('/', function(req, res) {
 });
 
 
+//to delete later
+db.user.destroy({
+  where: {firstName: 'Jordan'}
+}).then(function() {
+  //do something
+});
+
+
+
+
+
 
 module.exports = router; //this is where routes are exported
