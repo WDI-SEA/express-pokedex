@@ -1,0 +1,101 @@
+body {
+  background-image: url("../img/stripes.jpg");
+  text-decoration: none;
+}
+
+span {
+  background-color: rgba(0, 255, 0, 0.3);
+}
+
+.logo {
+  height: 200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.showContainer {
+  height: 650px;
+  width: 350px;
+  background-color: rgba(3, 3, 3, 0.2);
+  margin: 0 auto;
+  text-align: center;
+  border: 3px solid black;
+  border-radius: 8%;
+}
+
+.nameLabel {
+  font-family: 'Hammersmith One', sans-serif;
+  font-size: 35px;
+}
+
+.addButton {
+  font-family: 'Waiting for the Sunrise', cursive;
+  font-size: 24px;
+  color: white;
+}
+
+.linkFont {
+  font-family: 'Waiting for the Sunrise', cursive;
+  font-size: 30px;
+  color: black;
+}
+
+.removeLink{
+  font-family: 'Waiting for the Sunrise', cursive;
+  font-size: 14px;
+  color: red;
+}
+
+.bigFont{
+  font-family: 'Rammetto One', cursive;
+  font-size:24px;
+}
+
+.attributes {
+  font-family: 'Hammersmith One', sans-serif;
+  font-size: 20px;
+}
+
+.types {
+  width: 100px;
+  margin: 5px auto;
+  background-color: rgba(0, 255, 0, 0.5);
+  border-radius: 5%;
+  font-family: 'Hammersmith One', sans-serif;
+}
+
+.abilities {
+  width: 100px;
+  margin: 5px auto;
+  background-color: rgba(255, 0, 0, 0.5);
+  border-radius: 5%;
+  font-family: 'Hammersmith One', sans-serif;
+}
+
+.moves{
+  width: 100px;
+  margin: 5px auto;
+  background-color: rgba(0, 0, 255, 0.5);
+  border-radius: 5%;
+  font-family: 'Hammersmith One', sans-serif;
+}
+
+.showDiv {
+  display: inline-block;
+  height: 50px;
+  width: 350px;
+  margin: 20px 0px;
+}
+
+.pictureDiv {
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+  text-align: center;
+  margin: 10px 0px ;
+}
+
+
+/*font-family: 'Hammersmith One', sans-serif;
+font-family: 'Rammetto One', cursive;
+font-family: 'Waiting for the Sunrise', cursive;*/

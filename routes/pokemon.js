@@ -1,16 +1,78 @@
+//this is just like index.js but for all the pokemon routes
 var express = require('express');
-var router = express.Router();
+var request = require('request');
+var router = express.Router(); //this just configures my routes
+var db = require('../models');
+
+
+
+//MAKE Pokemon object more manageble
+var trimPokemonObject = function(pokemon) {
+  var result = {
+    name: pokemon.forms[0].name,
+    types: [],
+    abilities: [],
+    sprite: pokemon.sprites.front_default,
+    moves: []
+  }
+  for (var i = 0; i < pokemon.types.length; i++) {
+    result.types.push(pokemon.types[i].type.name)
+  }
+  for (var i = 0; i < pokemon.abilities.length; i++) {
+    result.abilities.push(pokemon.abilities[i].ability.name)
+  }
+  for (var i = 0; i < 3; i++) {
+    result.moves.push(pokemon.moves[i].move.name)
+  }
+  return result;
+};
+
 
 // GET - return a page with favorited Pokemon
-router.get('/', function(req, res) {
-    // TODO: render favorites
-    res.send('Render a page of favorites here');
+router.get('/mypokedex', function(req, res) {
+  db.pokemon.findAll().then(function(myPokemon) {
+    res.render('favorites', {myPokemon: myPokemon});
+  });
 });
 
+
+//GET - info from api to match whats in db
+router.get('/mypokedex/:name', function(req,res) {
+  var pokemonName = req.params.name;
+  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + pokemonName;
+  request(pokemonUrl, function(error, response, body) {
+      var pokemonData = JSON.parse(body);
+      var pokemon = trimPokemonObject(pokemonData);
+      console.log(pokemon);
+      res.render('show', {pokemon: pokemon});
+  });
+});
+
+
+//SAVE pokemon to db
 // POST - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
-    // TODO: add to database
-    res.send(req.body);
-});
+    db.pokemon.findOrCreate({
+      where: {
+         name: req.body.name
+       }
+     }).spread(function(pokemon, created){
+         res.redirect('/pokemon/mypokedex');
+     });
+   });
 
-module.exports = router;
+
+//DELETE
+router.delete('/mypokedex/delete/:name', function(req, res) {
+    db.pokemon.destroy({
+      where: {name: req.params.name}
+    }).then(function() {
+      console.log('Deleted a pokemon');
+
+      res.redirect('/pokemon/mypokedex');
+    });
+  });
+
+
+
+module.exports = router; //this is where routes are exported

@@ -1,0 +1,34 @@
+<div class="showContainer">
+
+<h1 class="nameLabel"><%= pokemon.name %></h1>
+
+<div class="showDiv">
+<h4 class="attributes">Types</h4>
+<% for (var i = 0; i < pokemon.types.length; i++) { %>
+<p class="types"><%= pokemon.types[i] %></p>
+<% }; %>
+</div>
+
+<div class="showDiv">
+<h4 class="attributes">Abilities</h4>
+<% for (var i = 0; i < pokemon.abilities.length; i++) { %>
+<p class="abilities"><%= pokemon.abilities[i] %></p>
+<% }; %>
+</div>
+
+<div class="showDiv">
+<h4 class="attributes">Moves</h4>
+<% for (var i = 0; i < pokemon.moves.length; i++) { %>
+<p class="moves"><%= pokemon.moves[i] %></p>
+<% }; %>
+</div>
+
+<div class="pictureDiv">
+<img src="<%= pokemon.sprite %>">
+<p class="attributes"><%= pokemon.name %></p>
+</div>
+
+<div class="showDiv">
+<a href="/pokemon/mypokedex" class="linkFont">Back to Pokedex</a>
+</div>
+</div>
