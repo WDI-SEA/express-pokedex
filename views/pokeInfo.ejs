@@ -1,0 +1,10 @@
+<div class='pokemonContainer'>
+  <h1 id="pokemonName"><%= result.name %></h1>
+  <img class="picture" src="<%= result.sprites.front_default %>">
+  <p id='id'>#<%= result.id %></p>
+  <p id='types'>
+    Types: <%= result.types[0].type.name %>, <% if(result.types[1].type.name === !false){%>
+      <%= result.types[1].type.name %>
+      <% }; %>
+  </p>
+</div>
