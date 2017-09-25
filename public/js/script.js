@@ -10,6 +10,6 @@ $('document').ready(function() {
 		}).done(function(data) {
 			console.log(data);
 		});
-		window.location = '/pokemon/'
+		window.location = '/pokemon'
 	})
 })

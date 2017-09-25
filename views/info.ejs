@@ -2,15 +2,15 @@
 	<a href="/" id="home">Home</a>
 	<div id="infobox">
 		<h3><%= result.name%></h3>
-		<h4>Order: <%= result.order%></h4>
+		<h4>type: <%= result.types[0].type.name%></h4>
 		<img src='<%=result.sprites.front_default%>'>
 		<img src='<%=result.sprites.back_default%>'>
 	</div>
 	<div id="height">
-		<h4><%= result.height%></h4>
+		<h4><%= result.height/10%> m</h4>
 	</div>
 	<div id="weight">
-		<h4><%= result.weight%></h4>
+		<h4><%= result.weight/10%> kg</h4>
 	</div>
 	<div id="favorites">
 		<h4><a href="/pokemon/">Favorites</a></h4>
