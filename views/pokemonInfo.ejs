@@ -1,0 +1,26 @@
+ <div class="infoContainer">
+   <div class="poke">
+     <h1 class="names"><%= pokemon.name %></h1>
+      <img src="<%= pokemon.sprites.front_shiny %>" alt="<%= pokemon.name %>" class="sprite">
+      <img src="<%= pokemon.sprites.back_shiny %>" alt="<%= pokemon.name %>" class="sprite">
+      <p>
+        #: <%= pokemon.id %></br>
+      </p>
+      <p>
+        Height: <%= pokemon.height %> dm
+        <br>
+        Weight: <%= pokemon.weight %> hg
+      </p>
+      <p>
+        Base Experience: <%= pokemon.base_experience %>
+      </p>
+      <p>
+        Types: <%= pokemon.typesCommaSeperated %>
+      </p>
+      <p>
+        Abilities: <%= pokemon.abilitiesCommaSeperated %>
+      </p>
+
+      <a href="<%= "/" %>" class="btn btn-primary" role="button">Return to all Pokemon!</a>
+      </div>
+ </div>
