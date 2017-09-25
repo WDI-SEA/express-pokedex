@@ -1,0 +1,26 @@
+<div class="container">
+  <h1 class="text-center"><%= pokemon.name %></h1>
+  <p class="text-center">
+    <a href="/pokemon">Favorites</a>
+  </p>
+
+  <div class="well">
+      <h2>My weight is: <%= pokemon.weight %></h2>
+      <h2>My height is: <%= pokemon.height %></h2>
+      <h2>My stats are:
+       <ul>
+        <%pokemon.stats.forEach(function(stat, idx){ %>
+          <li><%= stat.stat.name %></li>
+        <% }) %>
+       </ul>
+      </h2>
+      <h2>My abilities are:
+       <ul>
+        <%pokemon.abilities.forEach(function(ability, idx){ %>
+          <li><%= ability.ability.name %></li>
+        <% }) %>
+       </ul>
+      </h2>
+  </div>
+</div>
+
