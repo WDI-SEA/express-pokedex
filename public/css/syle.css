@@ -3,15 +3,21 @@ header img {
     height: 100%;
     margin-left: 10%;
     margin-top: 2em;
+    background-color: lightblue;
+}
+
+head {
+    background-color: lightblue;
 }
 
 body {
-    background-image: url('/img/allpokemon.png');
+    background-color: lightblue;
     font-family: "Press Start 2P", cursive;
 }
 
 .header-stuff {
     text-align: center;
+    background-color: lightblue;
 }
 
 .pokemonlist {
@@ -38,6 +44,7 @@ body {
     text-align: center;
     width: 60%;
     border: 0;
+    background-color: lightblue;
 }
 
 .btn-primary {
