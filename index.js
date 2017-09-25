@@ -58,26 +58,47 @@ app.get('/covet', function(req, res){
 	});	
 });
 
-// app.get('/hoard/:id', function(req, res){
-// 	var artistId = req.params.id;
-// 	discogs.getRelease(artistId).then(function(data){
-// 		var year = data.year;
-// 		var artists = [];
-// 		for(var i = 0; i<data.artists.length; i++){
-// 			artists.push(data.artists[i].name);
-// 		}
-// 		artists = artists.toString();
-// 		var image = data.thumb;
-// 		var trackList = [];
-// 		for(var i = 0; i<data.tracklist.length; i++){
-// 			trackList.push(data.tracklist[i].title + " (" + data.tracklist[i].duration + ")");
-// 		}
-// 		trackList = trackList.toString()
-// 		var formats = [];
-// 		for(var i = 0; i<data.formats.length; i++){
-// 			formats.push(data.formats[i].name);
-// 		}
-// 		formats = formats.toString();
+app.get('/hoard/:id', function(req, res){
+	var artistId = req.params.id;
+	discogs.getRelease(artistId).then(function(data){
+		var year = data.year;
+		var artists = [];
+		for(var i = 0; i<data.artists.length; i++){
+			artists.push(data.artists[i].name);
+		}
+		artists = artists.toString();
+		var image = data.thumb;
+		var trackList = [];
+		for(var i = 0; i<data.tracklist.length; i++){
+			trackList.push(data.tracklist[i].title + " (" + data.tracklist[i].duration + ")");
+		}
+		trackList = trackList.toString()
+		var formats = [];
+		for(var i = 0; i<data.formats.length; i++){
+			formats.push(data.formats[i].name);
+		}
+		formats = formats.toString();
+		db.myList.create({
+			artist: artists,
+			year: year,
+			imageUrl: image,
+			trackList: trackList,
+			formats: formats,
+			listType: 'hoard'
+		});
+	});
+	res.redirect('/hoard');
+});
+
+app.get('/hoard', function(req, res){
+	db.myList.findAll({ where: { listType: 'hoard' } }).then(function(result){
+  		res.render('hoard',{ hoardList: result});
+	});	
+});
+
+// app.get('/swaptohoard/:dbId', function(req, res){
+// 	var databaseId = req.params.dbId;
+
 // 		db.myList.create({
 // 			artist: artists,
 // 			year: year,
@@ -88,12 +109,6 @@ app.get('/covet', function(req, res){
 // 		});
 // 	});
 // 	res.redirect('/hoard');
-// });
-
-// app.get('/hoard', function(req, res){
-// 	db.myList.findAll({ where: { listType: 'hoard' } }).then(function(result){
-//   		res.render('hoard',{ hoardList: result});
-// 	});	
 // });
 
 
