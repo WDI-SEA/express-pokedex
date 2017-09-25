@@ -1,0 +1,12 @@
+
+<div class="playingCard" id="blankPlayingCard">
+    <img id="blankCard" src ="/img/pokedex1.gif">
+    <h2 id="pokeName"><%= pokemon.name.toUpperCase(); %><h2>
+    <h2 id="pokeId"><%=pokemon.id%></h2>
+    <img class="pokemonPic bounce" id="pokePic" src="<%= pokemon.sprites.front_default %>">
+    <p id="pokeHeight"> <%= parseInt(pokemon.height)/10 %> m</p>
+    <p id="pokeWidth"> <%= parseInt(pokemon.weight)/10 %> kg</p>
+</div>
+<div id="pokeAbout">
+  <p> Fun fact: <%= species.flavor_text_entries[1].flavor_text %> </p>
+</div>

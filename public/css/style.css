@@ -1,0 +1,127 @@
+body{
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  background-image: url(/img/1.jpeg);
+}
+
+.pokeDiv{
+ width: 200px;
+ background: #F2B705;
+ opacity: .9;
+ float: left;
+ padding: 10px;
+ margin: 10px;
+ border-radius: 5px;
+}
+
+#logo{
+  height: 150px;
+}
+
+#pokedex{
+  height: 150px;
+}
+
+h1{
+  color: #049DD9;
+}
+
+a{
+  color: #049DD9;
+  text-decoration: none;
+}
+
+a:hover{
+  color: #049DD9;
+  text-decoration: none;
+}
+
+button{
+  background: #F2CB05;
+  border: none;
+  padding: 10px;
+  border-radius: 2px;
+}
+
+button:hover{
+  background: #049DD9;
+}
+#blankPlayingCard{
+  position:relative;
+  height: 570px;
+}
+
+#pokeName{
+  position:relative;
+  top:-390px;
+  left:200px;
+  z-index:5;
+}
+#pokePic{
+  position:relative;
+  width:210px;
+  top:-530px;
+  left:-190px;
+  z-index:5;
+}
+
+#pokeId{
+  position:relative;
+  top: -160px;
+  left: -220px;
+}
+
+#pokeHeight{
+  position: relative;
+  top:-630px;
+  left:140px;
+  z-index:5;
+  font-size:14px;
+}
+
+#pokeWidth{
+  position: relative;
+  top:-660px;
+  left:230px;
+  z-index:5;
+  font-size:14px;
+}
+#pokeAbout{
+  width: 500px;
+  background: white;
+  opacity: .9;
+  margin: 0 auto;
+  border-radius: 2px;
+  padding: 5px;
+}
+
+.bounce {
+ animation: bounce 2s infinite;
+ -webkit-animation: bounce 2s infinite;
+ -moz-animation: bounce 2s infinite;
+ -o-animation: bounce 2s infinite;
+}
+
+@-webkit-keyframes bounce {
+ 0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}
+ 40% {-webkit-transform: translateY(-30px);}
+ 60% {-webkit-transform: translateY(-15px);}
+}
+
+@-moz-keyframes bounce {
+ 0%, 20%, 50%, 80%, 100% {-moz-transform: translateY(0);}
+ 40% {-moz-transform: translateY(-30px);}
+ 60% {-moz-transform: translateY(-15px);}
+}
+
+@-o-keyframes bounce {
+ 0%, 20%, 50%, 80%, 100% {-o-transform: translateY(0);}
+ 40% {-o-transform: translateY(-30px);}
+ 60% {-o-transform: translateY(-15px);}
+}
+@keyframes bounce {
+ 0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+ 40% {transform: translateY(-30px);}
+ 60% {transform: translateY(-15px);}
+}
