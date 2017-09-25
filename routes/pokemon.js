@@ -1,7 +1,7 @@
 //This is just like index.js, but for all the '/pokemon routes'
 var express = require('express');
 var router = express.Router(); //This just configures my routes
-//var db = require('/..models');
+var db = require('/..models');
 var request = require('request');
 
 // GET - return a page with favorited Pokemon
@@ -43,3 +43,4 @@ router.delete('/:name', function(req, res) {
 });
 
 module.exports = router;
+
