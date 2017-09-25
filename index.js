@@ -21,16 +21,6 @@ app.get('/', function(req, res) {
     });
 });
 
-//can I jst make something here that will move the stuff to the db?
-//at the very least store this stuff in an array and then generate the
-//favorites list from there.
-//find out how to write to the dB later on
-
-//I think the migrations is how we transfer the stuff over to the db
-
-//be able to store the pokemon and its id into the array
-
-//this is how we separate our routes in separate files
 app.use('/pokemon', require('./routes/pokemon'));
 
 var server = app.listen(process.env.PORT || 3000);
