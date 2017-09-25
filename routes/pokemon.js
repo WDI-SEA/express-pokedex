@@ -5,17 +5,6 @@ var router = express.Router(); //this just configures my routes
 var db = require('../models');
 
 
-//SAVE pokemon to db
-var saveToDb = function(nameofPokemon){
-  db.pokemon.findOrCreate({
-    where: {
-      name: nameofPokemon
-    }
-  }).spread(function(data, created){
-    console.log('Found or created new Pokemon');
-  })
-};
-
 
 //MAKE Pokemon object more manageble
 var trimPokemonObject = function(pokemon) {
@@ -60,12 +49,17 @@ router.get('/mypokedex/:name', function(req,res) {
 });
 
 
+//SAVE pokemon to db
 // POST - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
-    var myNewPokemon = req.body.name;
-    saveToDb(myNewPokemon);
-    res.redirect('/pokemon/mypokedex');
-});
+    db.pokemon.findOrCreate({
+      where: {
+         name: req.body.name
+       }
+     }).spread(function(pokemon, created){
+         res.redirect('/pokemon/mypokedex');
+     });
+   });
 
 
 //DELETE
@@ -74,10 +68,10 @@ router.delete('/mypokedex/delete/:name', function(req, res) {
       where: {name: req.params.name}
     }).then(function() {
       console.log('Deleted a pokemon');
-    });
-    res.redirect('/');
-  });
 
+      res.redirect('/pokemon/mypokedex');
+    });
+  });
 
 
 
