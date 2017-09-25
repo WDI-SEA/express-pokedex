@@ -1,0 +1,13 @@
+<h1>Favorites:</h1>
+<ul>
+ <% pokemon.forEach(function(pokemon) { %>
+    <li>
+      <a href='<%="/pokemon/" + pokemon.name%>'>
+        <%= pokemon.name %>
+      </a>
+      <a href='<%="/pokemon/favorite"%>'>
+        Delete
+      </a>
+    </li>
+  <% }); %>
+</ul>
