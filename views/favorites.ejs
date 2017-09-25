@@ -1,0 +1,32 @@
+<div class="container">
+  <h1 class="text-center">Favorites</h1>
+  <p class="text-center">
+    <a href="/">All Pokemons</a>
+  </p>
+
+  <% pokemons.forEach(function(pokemon) { %>
+    <div class="well">
+      <h2><%= pokemon.name %></h2>
+      <a class="delete-link" href = "/pokemon" deleteUrl="/pokemon/<%=pokemon.name%>">Delete</a>
+      <a class="details-link" href = "/pokemon/<%=pokemon.name%>">Details</a>
+    </div>
+  <% }); %>
+</div>
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous">
+</script>
+
+
+<script>
+ $('.delete-link').on('click', function(e){
+    // e.preventDefault();
+    var deleteUrl =$(this).attr('deleteUrl');
+    $.ajax({
+      method: 'DELETE',
+      url: deleteUrl
+    });
+ });
+</script>
