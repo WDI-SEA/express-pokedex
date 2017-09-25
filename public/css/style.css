@@ -1,0 +1,82 @@
+body {
+	background: url("../img/original150.jpg") no-repeat center center fixed;
+	background-size: cover;
+	font-family: "courier new";
+	color: red;
+	text-align: center
+}
+
+a {
+	color: red;
+}
+
+#pokedex {
+	background-image: url("../img/pokedex1.gif");
+	background-repeat: no-repeat;
+	height: 700px;
+}
+
+#home {
+	color: red;
+	position: fixed;
+	top: 34px;
+	left: 55px;
+}
+
+#infobox {
+	height: 150px;
+	width: 250px;
+	position: absolute;
+	top: 150px;
+	left: 60px;
+	text-align: center;
+}
+
+#height {
+	height: 30px;
+	width: 50px;
+	position: absolute;
+	top:209px;
+	left: 535px;
+}
+
+#weight {
+	height: 30px;
+	width: 45px;
+	position: absolute;
+	top: 209px;
+	left: 635px;
+}
+
+#ability{
+	height: 30px;
+	width: 175px;
+	position: absolute;
+	top: 170px;
+	left: 475px;
+}
+
+#favorites {
+	height: 30px;
+	width: 120px;
+	position: absolute;
+	top: 455px;
+	left: 98px;
+}
+
+.back {
+	margin: 20px;
+}
+
+.eachFavorite {
+	background: black;
+	opacity: .85;
+	padding: 10px;
+}
+
+.well {
+	background: black;
+	opacity: .85;
+	width: 400px;
+	display: inline-block;
+}
