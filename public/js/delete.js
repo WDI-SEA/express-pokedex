@@ -8,8 +8,8 @@ $( document ).ready(function(){
        method: 'DELETE',
        url: url
      }).done(function(data){
-       window.location.reload();
        console.log("deleted");
      });
+     window.location = '/pokemon';
    });
 });

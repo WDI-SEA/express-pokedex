@@ -19,6 +19,19 @@ router.post('/', function(req, res) {
    });
 });
 
+// router.post('/', function(req, res) {
+//   res.send(req.body);
+//   db.pokemon.findOrCreate({
+//     where: {
+//        name: req.body.name
+//      }
+//    }).spread(function(pokemon, created){
+//        res.redirect("./pokemon");
+//      }).error(function(err){
+//        console.log("already in pokedex")
+//      })
+//    });
+
 router.get("/:name", function(req, res){
   var pokemonUrl = "http://pokeapi.co/api/v2/pokemon/" + req.params.name;
   var speciesUrl = "http://pokeapi.co/api/v2/pokemon-species/" + req.params.name;
