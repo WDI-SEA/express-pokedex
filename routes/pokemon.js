@@ -1,6 +1,8 @@
 //this is just like index.js, but for all the '/pokemon routes'
 var express = require('express');
 var router = express.Router();//this is just configures my routes
+var db = require('../models');
+var request = require('request');
 
 // // GET - return a page with favorited Pokemon
 // router.get('/', function(req, res) {
@@ -31,7 +33,7 @@ router.get('/', function(req, res) {
 //getting name and abilities
 router.get('/:name', function(req, res) {
      var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + req.params.name;
-     request(pokemonUrl, function(err, response, body) {
+     request(pokemonUrl, function(error, response, body) {
          var info = JSON.parse(body);
           info.typesCommaSeperated = info.types.map(function(type) {
               return type.type.name;
