@@ -2,7 +2,9 @@
 //not in controller directory but this is the routing
 var express = require('express');
 var db = require("../models");
+var request = require("request");
 var router = express.Router(); //this just configured my routes
+var path = require("path");
 
 router.use(express.static(__dirname + '/public'));
 
@@ -34,22 +36,21 @@ router.post('/', function(req, res) {
 //second attempt
 router.get('/:name', function(req, res) {
     var pokeName = req.params.name;
-    db.pokemon.findOne({
-        where: {
-            name: pokeName
-        }
-    }).then(function(pokemon) {
-        var pokeURL = 'http://pokeapi.co/api/v2/pokemon/' + pokeName;
-        request(pokeURL, function(error, response, body) {
-            var profile = JSON.parse(body);
-            res.render('pokemonInfo', { pokemon: pokemon });
-        });
-    }).catch(function(error) {
-        res.status(404).send('not found');
-    });
+    var pokeUrl = 'http://pokeapi.co/api/v2/pokemon/' + pokeName;
+    console.log(pokeUrl);
+    request({
+      url: pokeUrl
+    }, function(error, response, body) {
+      var pokemon = JSON.parse(body);
+      res.render('pokemonInfo', {
+        pokemon: pokemon
+      })
+    })
 });
 
-
+router.delete("/:idx", function(req, res) {
+  var deleteIndex = req.params.idx;
+})
 
 //this is where I'm exporting my /pokemon routes to index.js
 module.exports = router;
