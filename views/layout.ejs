@@ -3,13 +3,55 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pokedex</title>
-
+    <title>Bootleg</title>
+    <link rel="shortcut icon" href="../favicon.ico" /> 
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+
   </head>
   <body>
-    <%- body %>
+    <header>
+      <div class="formWrap">
+        <a href="/"><h2>Bootleg</h2></a>
+        <form action="/" method="POST">
+          <input type="text" name="search" placeholder="Enter Artist Name">
+          <input type="submit" class="button">
+        </form>
+      </div>
+      <div id="headerPower">
+        <p>Powered by Discogs</p>
+        <img src="/img/discLogo.png" width="35px"><br>
+      </div>
+      
+    </header>
+
+    <aside class="container-fluid">
+      <div class="row">
+        <div class="col-xs-8">
+          <%- body %>
+        </div>
+        <div class="col-xs-4">
+          <a href="/hoard">
+            <div class="asideLinks">
+              <p>Hoard</p>
+            </div>
+          </a> 
+          <a href="/covet">
+            <div class="asideLinks">
+              <p>Covet</p>
+            </div>
+          </a>
+          <div id="recentSearches">
+            <p>Recent Searches</p>
+            <%- defineContent('recentSearches')%>
+          </div>
+        </div>
+      </div>
+    </aside>
+    
+    
 
     <!-- jQuery -->
     <script src="//code.jquery.com/jquery.js"></script>
