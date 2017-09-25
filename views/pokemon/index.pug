@@ -1,0 +1,18 @@
+extends ../layout.pug
+
+block content
+  div.container
+    h1.text-center Favorites
+    br
+    each pokeman in pokemon
+      div.row.well.well-small
+        form(method='DELETE' action='/pokemon')
+          input(hidden type='text' name='name' value=pokeman.name)
+          span.name
+            button.btn.btn-default(type='submit')
+              span.glyphicon.glyphicon-remove
+            label(for='name')
+              h3=pokeman.name
+        span.name
+          a(href='/pokemon/search/' + pokeman.name) See more about this pokemon
+            span.glyphicon.glyphicon-chevron-right

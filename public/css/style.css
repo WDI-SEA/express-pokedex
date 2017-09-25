@@ -1,0 +1,12 @@
+.name {
+  display: flex;
+  align-items: center;
+}
+
+.name h3 {
+  margin-left: .5em;
+}
+
+h1 {
+  margin-top: 2.5em;
+}

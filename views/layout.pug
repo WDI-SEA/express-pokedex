@@ -1,0 +1,33 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Pokedex
+    // Bootstrap CSS
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', integrity='sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7', crossorigin='anonymous')
+    link(rel='icon', href='/img/favicon.ico', type='image/x-icon')
+    link(rel='stylesheet', type='text/css', href='css/style.css')
+  body
+    nav.navbar.navbar-default.navbar-fixed-top
+      div.navbar-header
+        button.navbar-toggle(type='button' data-target='#navbarCollapse' data-toggle='collapse' class='navbar-toggle')
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand(href='/')
+          img(src='img/pokeball.png' style='height: 25px; width: 25px')
+      div.collapse.navbar-collapse#navbarCollapse
+        ul.nav.navbar-nav
+          li
+            a(href='/') All Pokemon
+          li
+            a(href='/pokemon') Favorites
+        form.navbar-form.navbar-search.pull-right(method='GET' action='/pokemon/search/')
+          input.form-control(type='text' name='name' placeholder='Search')
+          button.btn.btn-default(type='submit')
+            span.glyphicon.glyphicon-search
+
+    block content
+      

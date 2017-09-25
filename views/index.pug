@@ -1,0 +1,15 @@
+extends ./layout.pug
+
+block content
+  div.container
+    h1.text-center The Original 151 Pokemon
+    br
+    each pokeman in pokemon
+      div.row.well.well-small
+        form(method='POST' action='/pokemon')
+          input(hidden type='text' name='name' value=pokeman.name)
+          span.name
+            button.btn.btn-default(type='submit')
+              span.glyphicon.glyphicon-plus
+            label(for='name')
+              h3=pokeman.name
