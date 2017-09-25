@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootleg</title>
     <link rel="shortcut icon" href="../favicon.ico" /> 
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
@@ -12,11 +13,18 @@
   </head>
   <body>
     <header>
-      <a href="/"><h2>Bootleg</h2></a>
-      <form action="/" method="POST">
-        <input type="text" name="search" placeholder="Enter Artist Name">
-        <input type="submit">
-      </form>
+      <div class="formWrap">
+        <a href="/"><h2>Bootleg</h2></a>
+        <form action="/" method="POST">
+          <input type="text" name="search" placeholder="Enter Artist Name">
+          <input type="submit" class="button">
+        </form>
+      </div>
+      <div id="headerPower">
+        <p>Powered by Discogs</p>
+        <img src="/img/discLogo.png" width="35px"><br>
+      </div>
+      
     </header>
 
     <aside class="container-fluid">
@@ -25,12 +33,16 @@
           <%- body %>
         </div>
         <div class="col-xs-4">
-          <div class="asideLinks">
-            <p>Hoard</p>
-          </div>
-          <div class="asideLinks">
-            <p>Covet</p>
-          </div>
+          <a href="/hoard">
+            <div class="asideLinks">
+              <p>Hoard</p>
+            </div>
+          </a> 
+          <a href="/covet">
+            <div class="asideLinks">
+              <p>Covet</p>
+            </div>
+          </a>
           <div id="recentSearches">
             <p>Recent Searches</p>
             <%- defineContent('recentSearches')%>

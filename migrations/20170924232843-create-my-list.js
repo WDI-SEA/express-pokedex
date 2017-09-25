@@ -8,7 +8,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      artists: {
+      artist: {
         type: Sequelize.STRING
       },
       year: {

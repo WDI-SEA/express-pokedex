@@ -1,16 +1,24 @@
 html, body, div{
 	margin: 0;
 	padding: 0;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+body{
+	min-width: 680px;
+	overflow: auto;
 }
 
 header {
-	display: inline-block;
+	display: flex;
+	justify-content: space-between;
 	margin:0;
 	padding: 0;
   	width: 100%;
  	height: 100px;
-  	background-color: blue;
+  	background-color: #252c36;
 }
+
 
 h1, h5 , p{
 	margin: 0;
@@ -26,13 +34,19 @@ input{
 	margin: 8px;
 }
 
+.button{
+	background-color: #fe4a3c;
+	border-color: #fe4a3c;
+	color: white; 
+}
+
 .innerHeader{
 	text-align: center;
 	padding: 5px 25px;
 }
 
 .img-responsive{
-	padding: 5px 25px;
+	padding: 10px 30px;
 }
 
 .asideLinks {
@@ -49,6 +63,11 @@ input{
 .col-xs-4{
 	margin: 0;
 	padding: 0;
+	color: #252c36;
+}
+
+.col-xs-4 p{
+	color: #252c36;
 }
 
 .col-xs-8{
@@ -74,9 +93,42 @@ input{
 	width: 150px;
 }
 
+.formWrap{
+	display: inline-block;
+	margin: 5px;
+}
+
+#hiFiImage{
+	position: relative;
+	text-align: center;
+}
+
+#hiFiImage h1{
+	position: absolute;
+	bottom: 8px;
+	left: 0;
+	right: 0;
+	color: white;
+	/*margin: auto;*/
+}
+
 #recentSearches {
 	text-align: center;
 	padding: 8px;
+}
+
+#headerPower{
+	margin: 5px;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	color: #19c4cc;
+}
+
+#headerPower img{
+	margin: 5px;
+	display: block;
+	color: #19c4cc;
 }
 
 

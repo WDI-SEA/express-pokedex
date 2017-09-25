@@ -11,9 +11,9 @@
 			<h5>Album: <%=releases[i].title%></h5>
 			<h5>Year: <%=releases[i].year%></h5>
 			<br>
-			<a href='/covet/<%=releases[i].id%>'>Covet</a><p></p> 
+			<a href='/covet/<%=releases[i].id%>'>Add to Covet List</a><p></p> 
 			<!--add attributes to href for adding to database-->
-			<a href="#">Add to Collection</a>
+			<a href='/hoard/<%=releases[i].id%>'>Add to Hoard List</a>
 		</div>
 	</div>
 <% } %>

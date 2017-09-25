@@ -2,4 +2,18 @@
   <h1>Though shalt not covet thy neighbor's vinyl</h1>
 </div>
 
+ 
+<% for(var i = 0; i<covetList.length; i++){ %>
+  <div class="resultWrapper">
+		<div class="resultThumb"><img src="<%=covetList[i].imageUrl%>"></div>
+		<div class="resultInfo">
+			<h5>Artist: <%=covetList[i].artist%></h5>
+			<h5>Year: <%=covetList[i].year%></h5>
+			<h5>Formats: <%=covetList[i].formats%></h5>
+			<h5>Track List: <%=covetList[i].trackList%></h5>
+			<br>
+			<a href="#">Add to Hoard List</a>
+		</div>
+	</div>
+<% } %>
 

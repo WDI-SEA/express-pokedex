@@ -1,0 +1,19 @@
+<div class="innerHeader">
+  <h1>Thy shelf if half full</h1>
+</div>
+
+ 
+<% for(var i = 0; i<hoardList.length; i++){ %>
+  <div class="resultWrapper">
+		<div class="resultThumb"><img src="<%=hoardList[i].imageUrl%>"></div>
+		<div class="resultInfo">
+			<h5>Artist: <%=hoardList[i].artist%></h5>
+			<h5>Year: <%=hoardList[i].year%></h5>
+			<h5>Formats: <%=hoardList[i].formats%></h5>
+			<h5>Track List: <%=hoardList[i].trackList%></h5>
+			<br>
+			<a href="#">Add to Covet List</a>
+		</div>
+	</div>
+<% } %>
+

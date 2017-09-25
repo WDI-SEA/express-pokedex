@@ -1,7 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var myLists = sequelize.define('myLists', {
-    artists: DataTypes.STRING,
+  var myList = sequelize.define('myList', {
+    artist: DataTypes.STRING,
     year: DataTypes.INTEGER,
     imageUrl: DataTypes.STRING,
     trackList: DataTypes.STRING,
@@ -14,5 +14,5 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
-  return myLists;
+  return myList;
 };
