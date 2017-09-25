@@ -12,7 +12,7 @@ app.set('view engine', 'ejs');
 
 app.use(ejsLayouts);
 
-app.use(express.static(__dirname, + '/public'));
+app.use(express.static(__dirname + '/public'));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -25,15 +25,6 @@ app.get('/', function(req, res) {
     });
 });
 
-//var pokemon might need to be defined as a global variable, testing with console log
-// app.get('/pokemon/:id', function(req, res) {
-// 	var pokemonFavorite = pokemon()[req.params.id];
-// 	pokemonFavorite.id = req.params.id;
-// 	res.render('favorites', { pokemon: pokemon });
-// 	console.log('testing pokemon variable' + pokemon);
-// });
-
-//this is how we seperate our routes into seperate files
 app.use('/pokemon', require('./routes/pokemon'));
 
 var server = app.listen(process.env.PORT || 3000);

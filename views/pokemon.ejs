@@ -1,19 +1,13 @@
-<div class="pokemon">
-	<div class="pokemonImages">
-		<img src="<%= sprites.front_defualt%>">
-		<img src="<%= sprites.back_defualt%>">
-		<img src="<%= sprites.front_shiny%>">
-		<img src="<%= sprites.back_shiny%>">
+	<div class="top pokemon">
+		<h1>Your Favorite Pokèmons!</h1>
+			<p>
+				<a href=("/")>Back to All Pokèmons!</a>
+			</p>
+		<% pokemon.forEach(function(pokemon) { %>	
+		<div class="well">
+			<h2><%= pokemon.name%></h2>
+			<a href="/pokemon/<%= pokemon.name %>"><h2><%= pokemon.name %></h2></a>
+			<button class="delete-link">Remove this Pokèmon from your Favorites List</button>
 	</div>
-	<h1 class="pokemonName" class="title name <%= types[0].type.name%>"
-		data-secondtype="
-		<% if(types[1]) { %>
-			<%=types[1].type.name%>
-		<%}%>
-		"><%=species.name%></h1>
-
-		<p>Types: <%= typesCommaSeparated %></p>
-		
-
-	<a href='/pokemon'>To Your Favorites!</a>
+	<% }); %>
 </div>
