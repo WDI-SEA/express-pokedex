@@ -40,11 +40,5 @@ router.delete("/:name", function(req, res){
    res.redirect("/pokemon");
   })
 });
-// router.delete('/:id', function(req, res) {
-//   db.pokemon.findById(req.params.id).then(function(pokemon) {
-//   pokemon.destroy();
-//    res.send('Done!!!');
-//    });
-// });
 
 module.exports = router;
