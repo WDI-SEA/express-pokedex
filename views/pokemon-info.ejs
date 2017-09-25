@@ -1,0 +1,30 @@
+<div class="infobox container">
+        <div class="well">
+        <h1 class="pokenames"><%= pokemon.name %></h1>
+        <img src="<%= pokemon.sprites.front_shiny %>" alt="<%= pokemon.name %>" class="sprite">
+        <img src="<%= pokemon.sprites.back_shiny %>" alt="<%= pokemon.name %>" class="sprite">
+         <p>
+          ID: <%= pokemon.id %></br>
+          Order: <%= pokemon.order %>
+          </p>
+          <p>
+          Height: <%= pokemon.height %> dm</br>
+          Weight: <%= pokemon.weight %> hg
+          </p>
+
+          <p>
+          Base Experience: <%= pokemon.base_experience %>
+          </p>
+
+          <p>
+          Types: <%= pokemon.typesCommaSeperated %>
+          </p>
+
+          Abilities: <%= pokemon.abilitiesCommaSeperated %>
+          </p>
+</br>
+        <a href="<%= "/" %>" class="btn btn-primary">
+          Back to All Pokemon
+        </a>
+        </div>
+</div>
