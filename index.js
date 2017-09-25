@@ -5,6 +5,7 @@ var request = require('request');
 //bodyParser takes form data and makes it usable (for JSON)
 var bodyParser = require('body-parser');
 var ejsLayouts = require('express-ejs-layouts');
+var db = require('./models');
 
 //express being called and stored in app variable
 var app = express();
@@ -29,7 +30,11 @@ app.get('/', function(req, res) {
 
 });
 
-
+app.delete('/pokemon/:idx', function(req, res) {
+  var deleteIndex = req.params.idx;
+  deleteIndex = parseInt(deleteIndex);
+    pokemon.splice(deleteIndex,1);
+  });
 
 //this is how we separate our routes into separate files
 app.use('/pokemon', require('./routes/pokemon'));

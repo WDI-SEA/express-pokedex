@@ -1,0 +1,1845 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3000/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pokedex</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="./Pokedex_files/style.css">
+    <link href="./Pokedex_files/css" rel="stylesheet">
+    <link href="./Pokedex_files/css(1)" rel="stylesheet">
+    <link rel="stylesheet" href="./Pokedex_files/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  </head>
+  <body cz-shortcut-listen="true">
+    <!-- This ejs file is storing styling for the page that contains the list of Pokemon -->
+
+<div class="container">
+  <h1 id="mainHeader"><img src="./Pokedex_files/pikaPika.gif" id="pikaPika">The Original 151 Pokemon<img src="./Pokedex_files/charmander.gif" id="charmander"></h1>
+  <p class="text-center">
+    <a href="http://localhost:3000/pokemon" class="btn btn-primary" id="myPokedex">My Pokedex</a>
+  </p>
+
+  
+    <div class="well">
+      <h2>bulbasaur</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="bulbasaur">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/bulbasaur" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>ivysaur</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="ivysaur">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/ivysaur" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>venusaur</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="venusaur">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/venusaur" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>charmander</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="charmander">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/charmander" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>charmeleon</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="charmeleon">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/charmeleon" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>charizard</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="charizard">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/charizard" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>squirtle</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="squirtle">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/squirtle" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>wartortle</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="wartortle">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/wartortle" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>blastoise</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="blastoise">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/blastoise" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>caterpie</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="caterpie">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/caterpie" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>metapod</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="metapod">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/metapod" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>butterfree</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="butterfree">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/butterfree" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>weedle</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="weedle">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/weedle" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>kakuna</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="kakuna">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/kakuna" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>beedrill</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="beedrill">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/beedrill" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>pidgey</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="pidgey">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/pidgey" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>pidgeotto</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="pidgeotto">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/pidgeotto" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>pidgeot</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="pidgeot">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/pidgeot" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>rattata</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="rattata">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/rattata" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>raticate</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="raticate">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/raticate" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>spearow</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="spearow">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/spearow" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>fearow</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="fearow">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/fearow" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>ekans</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="ekans">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/ekans" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>arbok</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="arbok">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/arbok" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>pikachu</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="pikachu">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/pikachu" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>raichu</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="raichu">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/raichu" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>sandshrew</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="sandshrew">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/sandshrew" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>sandslash</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="sandslash">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/sandslash" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>nidoran-f</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="nidoran-f">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/nidoran-f" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>nidorina</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="nidorina">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/nidorina" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>nidoqueen</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="nidoqueen">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/nidoqueen" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>nidoran-m</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="nidoran-m">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/nidoran-m" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>nidorino</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="nidorino">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/nidorino" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>nidoking</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="nidoking">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/nidoking" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>clefairy</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="clefairy">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/clefairy" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>clefable</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="clefable">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/clefable" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>vulpix</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="vulpix">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/vulpix" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>ninetales</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="ninetales">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/ninetales" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>jigglypuff</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="jigglypuff">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/jigglypuff" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>wigglytuff</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="wigglytuff">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/wigglytuff" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>zubat</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="zubat">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/zubat" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>golbat</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="golbat">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/golbat" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>oddish</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="oddish">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/oddish" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>gloom</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="gloom">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/gloom" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>vileplume</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="vileplume">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/vileplume" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>paras</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="paras">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/paras" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>parasect</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="parasect">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/parasect" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>venonat</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="venonat">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/venonat" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>venomoth</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="venomoth">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/venomoth" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>diglett</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="diglett">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/diglett" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>dugtrio</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="dugtrio">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/dugtrio" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>meowth</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="meowth">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/meowth" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>persian</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="persian">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/persian" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>psyduck</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="psyduck">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/psyduck" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>golduck</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="golduck">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/golduck" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>mankey</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="mankey">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/mankey" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>primeape</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="primeape">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/primeape" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>growlithe</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="growlithe">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/growlithe" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>arcanine</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="arcanine">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/arcanine" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>poliwag</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="poliwag">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/poliwag" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>poliwhirl</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="poliwhirl">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/poliwhirl" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>poliwrath</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="poliwrath">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/poliwrath" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>abra</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="abra">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/abra" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>kadabra</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="kadabra">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/kadabra" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>alakazam</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="alakazam">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/alakazam" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>machop</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="machop">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/machop" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>machoke</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="machoke">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/machoke" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>machamp</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="machamp">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/machamp" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>bellsprout</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="bellsprout">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/bellsprout" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>weepinbell</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="weepinbell">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/weepinbell" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>victreebel</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="victreebel">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/victreebel" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>tentacool</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="tentacool">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/tentacool" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>tentacruel</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="tentacruel">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/tentacruel" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>geodude</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="geodude">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/geodude" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>graveler</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="graveler">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/graveler" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>golem</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="golem">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/golem" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>ponyta</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="ponyta">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/ponyta" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>rapidash</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="rapidash">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/rapidash" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>slowpoke</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="slowpoke">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/slowpoke" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>slowbro</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="slowbro">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/slowbro" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>magnemite</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="magnemite">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/magnemite" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>magneton</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="magneton">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/magneton" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>farfetchd</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="farfetchd">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/farfetchd" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>doduo</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="doduo">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/doduo" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>dodrio</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="dodrio">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/dodrio" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>seel</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="seel">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/seel" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>dewgong</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="dewgong">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/dewgong" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>grimer</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="grimer">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/grimer" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>muk</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="muk">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/muk" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>shellder</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="shellder">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/shellder" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>cloyster</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="cloyster">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/cloyster" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>gastly</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="gastly">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/gastly" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>haunter</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="haunter">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/haunter" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>gengar</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="gengar">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/gengar" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>onix</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="onix">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/onix" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>drowzee</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="drowzee">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/drowzee" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>hypno</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="hypno">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/hypno" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>krabby</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="krabby">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/krabby" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>kingler</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="kingler">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/kingler" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>voltorb</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="voltorb">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/voltorb" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>electrode</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="electrode">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/electrode" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>exeggcute</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="exeggcute">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/exeggcute" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>exeggutor</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="exeggutor">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/exeggutor" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>cubone</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="cubone">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/cubone" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>marowak</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="marowak">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/marowak" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>hitmonlee</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="hitmonlee">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/hitmonlee" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>hitmonchan</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="hitmonchan">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/hitmonchan" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>lickitung</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="lickitung">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/lickitung" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>koffing</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="koffing">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/koffing" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>weezing</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="weezing">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/weezing" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>rhyhorn</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="rhyhorn">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/rhyhorn" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>rhydon</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="rhydon">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/rhydon" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>chansey</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="chansey">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/chansey" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>tangela</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="tangela">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/tangela" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>kangaskhan</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="kangaskhan">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/kangaskhan" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>horsea</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="horsea">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/horsea" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>seadra</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="seadra">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/seadra" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>goldeen</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="goldeen">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/goldeen" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>seaking</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="seaking">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/seaking" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>staryu</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="staryu">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/staryu" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>starmie</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="starmie">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/starmie" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>mr-mime</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="mr-mime">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/mr-mime" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>scyther</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="scyther">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/scyther" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>jynx</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="jynx">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/jynx" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>electabuzz</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="electabuzz">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/electabuzz" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>magmar</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="magmar">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/magmar" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>pinsir</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="pinsir">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/pinsir" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>tauros</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="tauros">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/tauros" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>magikarp</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="magikarp">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/magikarp" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>gyarados</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="gyarados">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/gyarados" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>lapras</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="lapras">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/lapras" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>ditto</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="ditto">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/ditto" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>eevee</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="eevee">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/eevee" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>vaporeon</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="vaporeon">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/vaporeon" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>jolteon</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="jolteon">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/jolteon" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>flareon</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="flareon">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/flareon" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>porygon</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="porygon">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/porygon" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>omanyte</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="omanyte">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/omanyte" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>omastar</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="omastar">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/omastar" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>kabuto</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="kabuto">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/kabuto" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>kabutops</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="kabutops">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/kabutops" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>aerodactyl</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="aerodactyl">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/aerodactyl" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>snorlax</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="snorlax">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/snorlax" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>articuno</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="articuno">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/articuno" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>zapdos</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="zapdos">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/zapdos" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>moltres</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="moltres">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/moltres" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>dratini</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="dratini">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/dratini" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>dragonair</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="dragonair">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/dragonair" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>dragonite</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="dragonite">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/dragonite" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>mewtwo</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="mewtwo">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/mewtwo" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+    <div class="well">
+      <h2>mew</h2>
+
+      <form method="POST" action="http://localhost:3000/pokemon">
+        <input hidden="" type="text" name="name" value="mew">
+        <button class="btn btn-primary" type="submit">
+          Add to My Pokedex!
+        </button>
+        <a href="http://localhost:3000/pokemon/mew" class="btn btn-primary">Stats</a>
+      </form>
+    </div>
+  
+</div>
+
+
+    <!-- jQuery -->
+    <script src="./Pokedex_files/jquery.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="./Pokedex_files/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  
+
+</body></html>

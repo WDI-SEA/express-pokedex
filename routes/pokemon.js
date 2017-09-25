@@ -4,27 +4,17 @@ var router = express.Router();//this is just configures my routes
 var db = require('../models');
 var request = require('request');
 
-// // GET - return a page with favorited Pokemon
-// router.get('/', function(req, res) {
-//     // TODO: render favorites
-//     res.send('Render a page of favorites here');
-// });
-//
-// // POST - receive the name of a pokemon and add it to the database
-// router.post('/', function(req, res) {
-//     // TODO: add to database
-//     res.send(req.body);
-// });
 
 router.get('/', function(req, res) {
      db.pokemon.findAll().then(function(result) {
              res.render('favPokemon', { result: result });
          }).catch(function(error) {
-             res.send('Error');
+             res.send('There is some kind of error!');
          });
  });
 
- router.get('/', function(req, res) {
+
+router.get('/', function(req, res) {
      db.pokemon.findAll().then(function(pokemon) {
          res.render('index', { pokemon: pokemon });
      });

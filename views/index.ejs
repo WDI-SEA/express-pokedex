@@ -1,20 +1,21 @@
 <!-- This ejs file is storing styling for the page that contains the list of Pokemon -->
 
 <div class="container">
-  <h1 class="text-center">The Original 151 Pokemon</h1>
+  <h1 id="mainHeader"><img src="/img/pikaPika.gif" id="pikaPika">The Original 151 Pokemon<img src="/img/charmander.gif" id="charmander"></h1>
   <p class="text-center">
-    <a href="/pokemon">Favorites</a>
+    <a href="/pokemon" class="btn btn-primary" id="myPokedex">My Pokedex</a>
   </p>
 
   <% pokemon.forEach(function(pokemon) { %>
     <div class="well">
       <h2><%= pokemon.name %></h2>
-      <p></p>
+
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
         <button class="btn btn-primary" type="submit">
-          Add to Favorite Pokemon
+          Add to My Pokedex!
         </button>
+        <a href="/pokemon/<%-pokemon.name %>" class="btn btn-primary">Stats</a>
       </form>
     </div>
   <% }); %>
