@@ -4,6 +4,7 @@
 	<% result.forEach(function(pokemon) { %>
 	<div class='well'>
 		<h4><%=pokemon.name %> </h4>
+		<a href='/pokemon/<%-pokemon.name %>'>Pokemon Info</a>
 	</div>
 <% }) %>
 </div>
