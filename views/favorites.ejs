@@ -1,3 +1,9 @@
 <div class='container'>
 	<h2><a href='/'>Back to Pokemon list</a></h2>
+
+	<% result.forEach(function(pokemon) { %>
+	<div class='well'>
+		<h4><%=pokemon.name %> </h4>
+	</div>
+<% }) %>
 </div>
