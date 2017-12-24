@@ -4,7 +4,9 @@
 
 var expect = require('chai').expect;
 var request = require('supertest');
-var app = require('../index');
+var app = require('../index.js');
+
+
 
 //describe('what are we testing', fx())
 describe('GET /', function(){
