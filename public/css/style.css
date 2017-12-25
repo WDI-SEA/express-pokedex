@@ -1,0 +1,66 @@
+.pokedex {
+	background: url('https://orig00.deviantart.net/db8c/f/2016/310/c/7/pokemon_twitch_theme_a_2a_b1_by_masterq2-dani3t2.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 800px;
+	width: 800px;
+	padding: 7px 10px;
+	position: relative;
+	top: 150px;
+	margin: 0 auto;
+}
+
+.all-pokemon {	
+	width: 477px;
+	max-height: 340px;
+	overflow:scroll;
+	position: relative;
+	top: -80px;
+	left: -15px;
+}
+
+.home {
+
+	position:relative;
+	top: -140px;
+	right: 20px;
+	background: rgba(211,10,64,.8);
+	padding: 5px 10px;
+	width: 790px;
+	border: 2px solid black;
+	border-radius: 5px;
+}
+
+.list {
+	border-right: 2px solid black;	
+	border-left: 2px solid black;	
+	border-top: 3px double black;
+	border-bottom: 3px double black;
+	width: 450px;
+
+}
+
+.list h2{
+	font-size: 22px !important;
+	position:relative;
+	top:2px;
+}
+
+.list button {
+	position: relative;
+	top:-45px;
+	left: 200px;
+}
+
+.list img {
+	width: 60px;
+	position: relative;
+	top: 2px;
+}
+
+.items {
+	position:relative;
+	top: 17px;
+	left: 20px;
+
+}
