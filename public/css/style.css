@@ -1,34 +1,51 @@
+@font-face {
+	font-family: 'pokemon';
+	src: url('./pokemonsolid.ttf');
+}
+
+body {
+	background: url('https://pre00.deviantart.net/bd05/th/pre/f/2015/070/9/1/pixel_wallpaper_by_horrorfangirl-d8lb5c6.png');
+}
+
 .pokedex {
 	background: url('https://orig00.deviantart.net/db8c/f/2016/310/c/7/pokemon_twitch_theme_a_2a_b1_by_masterq2-dani3t2.png');
 	background-size: contain;
 	background-repeat: no-repeat;
-	height: 800px;
+	height: 450px;
 	width: 800px;
 	padding: 7px 10px;
 	position: relative;
-	top: 150px;
+	top: 50px;
 	margin: 0 auto;
+	box-shadow: 0 0 50px 10px rgba(211,10,64,.2);
+	font-family: monospace;
+	border-radius: 4px;
 }
 
 .all-pokemon {	
-	width: 477px;
-	max-height: 340px;
+	width: 490px;
+	max-height: 365px;
 	overflow:scroll;
 	position: relative;
-	top: -80px;
-	left: -15px;
+	top: -107px;
+	left:-12px;
+	background: white;
+	padding: 10px;
+	box-shadow: 0 0 50px 20px rgba(255,255,255,.2);
 }
 
-.home {
-
+.homebanner {
+	font-family: 'pokemon';
 	position:relative;
-	top: -140px;
-	right: 20px;
+	top: -170px;
+	right: -40px;
 	background: rgba(211,10,64,.8);
 	padding: 5px 10px;
-	width: 790px;
+	width: 680px;
 	border: 2px solid black;
 	border-radius: 5px;
+	letter-spacing: 3px;
+	box-shadow: 0 0 50px 10px rgba(211,10,64,.2);
 }
 
 .list {
@@ -37,7 +54,8 @@
 	border-top: 3px double black;
 	border-bottom: 3px double black;
 	width: 450px;
-
+	background:white;
+	padding: 3px;
 }
 
 .list h2{
@@ -50,6 +68,8 @@
 	position: relative;
 	top:-45px;
 	left: 200px;
+	width: 200px;
+	overflow: inherit;
 }
 
 .list img {
@@ -63,4 +83,41 @@
 	top: 17px;
 	left: 20px;
 
+}
+
+.search {
+	position:relative;
+	top: -100px;
+	left: 293px;
+}
+
+.srch-btn {
+	letter-spacing: 3px;
+}
+
+.navbar-form {
+	padding: 5px !important;
+	font-family: monospace;
+	font-size: 12px !important;
+	border-radius: 4px !important;
+	font-weight: 600;
+}
+
+.unknown {
+	background: url('http://i5.photobucket.com/albums/y184/Angel_Kerrigan/Pokemon/FloatingSpinningUnknown.gif');
+	background-size: cover;
+	width: 200px;
+	height: 150px;
+	position: relative;
+	top:215px;
+	left: 280px;
+	margin: 0 auto;
+	box-shadow: 0 0 50px 20px rgba(255,255,255,.2);
+}
+
+.srch-btn {
+	position:relative;
+	top:50px;
+	right:110px;
+	font-family: 'pokemon';
 }

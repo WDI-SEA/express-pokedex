@@ -16,6 +16,13 @@ app.use('/', express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 
+var db = require("./models");
+// db.pokemon.create({
+//   name: 'Pikachu',
+// }).then(function(poke) {
+//  console.log("created",poke.name);
+// });
+
 app.get('/', function(req, res) {
     var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
 

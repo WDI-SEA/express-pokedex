@@ -1,11 +1,11 @@
 $(function(){
 	$('.add-favorite').submit(function(e){
 		e.preventDefault();
-		var url = $(this).attr('name');
+		var name = $(this).attr('url');
 		var data = $(this).serialize();
 
 		$.ajax({
-			url: url,
+			name: name,
 			method: 'POST',
 			data: data
 		}).done(function(){
