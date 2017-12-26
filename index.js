@@ -27,4 +27,4 @@ if (!module.parent) { server = app.listen(process.env.PORT || 3333)};
 
 console.log('App up and listening on port', server);
 
-module.exports = server;
+module.exports = app;
