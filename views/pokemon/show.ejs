@@ -7,17 +7,18 @@
 </div>
     <div class="all-pokemon">
     	<div class="favebg">
+<% pokemon.forEach(function(pokemon){ %>
       <div class="list">
         <div class="items">
-          <h2><img src="http://pixelartmaker.com/art/b73566a14633720.png"></h2>
-          <form class="add-favorite" method="POST" action="./pokemon">
+          <h2><img src="http://pixelartmaker.com/art/b73566a14633720.png"><%= pokemon.name.abilities[0] %></h2>
+          <form class="add-favorite" method="DELETE" action="./pokemon">
             <input hidden type="text" name="url">
             <input class="pokemon-name" hidden type="text" name="name" value="">
             <button class="btn btn-primary" type="submit">Remove From Favorites</button>
-
        </form>
         </div>
       </div>
+      <% }); %>
       </div>
     </div>
 

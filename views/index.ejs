@@ -9,7 +9,9 @@
   <% pokemon.forEach(function(pokemon) { %>
  <div class="list">
   <div class="items">
-      <h2><img src="http://pixelartmaker.com/art/b73566a14633720.png"><%= pokemon.name %></h2>
+      <h2>
+        <img src="http://pixelartmaker.com/art/b73566a14633720.png"><a href="/pokemon/<%= pokemon.id %>">
+          <%= pokemon.name %></a></h2>
       <form class="add-favorite" method="POST" action="./pokemon">
         <input hidden type="text" name="url">
         <input class="pokemon-name" hidden type="text" name="name" value="<%= pokemon.name %>">

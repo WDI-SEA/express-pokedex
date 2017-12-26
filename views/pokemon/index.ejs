@@ -1,0 +1,26 @@
+<div class="container">
+	<div class="homebanner">
+  <h1 class="text-center">Your Favorites</h1>
+  <p class="text-center">
+    Explore the PokeMon API!
+  </p>
+</div>
+    <div class="all-pokemon">
+    	<div class="favebg">
+<% pokemon.forEach(function(pokemon){ %>
+      <div class="list">
+        <div class="items">
+          <h2><img src="http://pixelartmaker.com/art/b73566a14633720.png"><%= pokemon.name %></h2>
+          <form class="rmv-favorite" method="PUT" action="./pokemon">
+            <input hidden type="text" name="url">
+            <input class="pokemon-name" hidden type="text" name="name" value="<%= pokemon.name %>">
+            <button class="btn btn-primary" type="submit">Remove From Favorites</button>
+       </form>
+        </div>
+      </div>
+      <% }); %>
+      </div>
+    </div>
+
+
+</div>
