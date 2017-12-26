@@ -1,0 +1,9 @@
+@font-face {
+    font-family: pokemonFont;
+    src: url('fonts/PokemonSolid.ttf');
+}
+
+
+h2 {
+	font-family: pokemonFont;
+}

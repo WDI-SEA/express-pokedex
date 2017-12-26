@@ -27,13 +27,36 @@ router.post('/', function(req, res) {
 router.get('/:id', function(req, res) {
 	var pokeURL = "http://pokeapi.co/api/v2/pokemon/" + req.params.id;
 	request(pokeURL, function(error, response, body) {
+		// Get all data
 		var data = JSON.parse(body)
-		var form = data.forms
-		console.log('body', form[0].name);
+
+		// Retrieve pokemon name
+		var name = data.forms[0].name;
+		// Retrieve pokemon speed
+		var speed = data.stats[0].base_stat;
+
+		// Ability
+		//var ability = data.abilities[0];
+		var abilities = data.abilities[0][Object.keys(data.abilities[0])[Object.keys(data.abilities[0]).length-1]]
+		var ability = abilities.name
+		
+		// Retrieve Pokemon Image
+		var sprite = data.sprites;
+		var image_front = sprite[Object.keys(sprite)[Object.keys(sprite).length -1]]
+		var image_back = sprite[Object.keys(sprite)[Object.keys(sprite).length -3]]
+		
+
+		//var form[0].name);
 		//console.log('body', form[name]);
     	
         //var pokemon = JSON.parse(body).results;
-        res.render('pokemon/single');
+        res.render('pokemon/single', {
+        	name: name,
+        	speed: speed,
+        	ability: ability,
+        	image_front: image_front,
+        	image_back: image_back
+        });
     });
 
 })
