@@ -11,6 +11,7 @@ body {
   background-size: auto;
   background-position: bottom;
   font-family: 'game-font';
+
 }
 
 .container {
@@ -37,6 +38,18 @@ body {
   z-index: 1;
 }
 
+ul {
+  padding: 10px;
+  list-style: none;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+}
+
 form {
   width: 40px;
 }
@@ -48,28 +61,33 @@ form {
 
 .display-2 {
   position: relative;
-  top: 232px;
-  left: 177px;
-  height: 114px;
-  width: 244px;
-  background-color: ##3FF92F;
-  z-index: 1;
+  top: 229px;
+  left: 194px;
+  height: 120px;
+  width: 266px;
+  background-color: #3FF92F;
+  border: solid 3px #222;
+  border-radius: 10px;
+  z-index: 10;
 }
 
 .btn-menu {
   display: flex;
   justify-content: space-between;
   position: relative;
-  top: 526px;
-  right: 53px;
-  width: 227px;
-  height: 40px;
+  top: 520px;
+  right: 46px;
+  width: 258px;
+  height: 44px;
   z-index: 1;
 }
 
 .btn-nav {
-  width: 97px;
-  /*margin: 0 20px;*/
+  width: 114px;
+  height: 52px;
+  text-align: center;
+  font-size: 16px;
+  border: solid 3px #222;
 
 }
 

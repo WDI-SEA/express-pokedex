@@ -1,13 +1,15 @@
 <div class="display-1">
-  <% pokemons.forEach(function(pokemon) { %>
-    <div class="poke-list">
-      <a href="/pokemon/<%= pokemon.name %>" class="name"><%= pokemon.name %></a>
-      <form method="POST" action="/favorites/<%= pokemon.name %>">
-        <input hidden type="text" name="name" value="<%= pokemon.name %>">
-        <button class="btn btn-primary" type="submit">+</button>
-      </form>
-    </div>
-  <% }); %>
+  <ul>
+    <% pokemons.forEach(function(pokemon) { %>
+      <li>
+        <a href="/pokemon/<%= pokemon.name %>" class="name"><%= pokemon.name %></a>
+        <form method="POST" action="/favorites/<%= pokemon.name %>">
+          <input hidden type="text" name="name" value="<%= pokemon.name %>">
+          <button class="btn btn-primary" type="submit">+</button>
+        </form>
+      </li>
+    <% }); %>
+  </ul>
 </div>
 <div class="display-2">
   <h1>Pokedex: Home</h1>

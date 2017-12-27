@@ -2,12 +2,14 @@
   <% if (favorites.length <= 0){ %>
     <h3>You have no favorite Pokemon!</h3>
   <% } else { %>
-    <% favorites.forEach(function(favorite) { %>
-      <div class="poke-list">
-        <a href="/pokemon/<%= favorite.name %>" class="name"><%= favorite.name %></a>
-        <a href="/favorites/<%= favorite.name %>" class="btn btn-danger delete-fav">X</a>
-      </div>
-    <% }); %>
+    <ul>
+      <% favorites.forEach(function(favorite) { %>
+        <li>
+          <a href="/pokemon/<%= favorite.name %>" class="name"><%= favorite.name %></a>
+          <a href="/favorites/<%= favorite.name %>" class="btn btn-danger delete-fav">X</a>
+        </li>
+      <% }); %>
+    </ul>
   <% }; %>
 </div>
 <div class="display-2">  
