@@ -1,21 +1,8 @@
 <div class="container">
   <h1 class="text-center">The Original 151 Pokemon</h1>
   <p class="text-center">
-    <a href="/pokemon">Your Pokemon</a>
   </p>
 
-    <div class="well">
-      <h2><%= pokemon.name %></h2>
-      <img src="<%= pokemon.imagesrc %>"> <br>
+  Rules here!
 
-      <form method="POST" action="/pokemon">
-        <input hidden type="text" name="name" value="<%= pokemon.name %>">
-        <input hidden type="text" name="pokemonapi_id" value="<%= pokemon.pokemonapi_id %>">
-        <input hidden type="text" name="imagesrc" value="<%= pokemon.imagesrc %>">
-        <input hidden type="text" name="height" value="<%= pokemon.height %>">
-        <input hidden type="text" name="weight" value="<%= pokemon.weight %>">
-        <input hidden type="text" name="experience" value="<%= pokemon.experience %>">
-        <button class="btn btn-primary" type="submit">Catch</button>
-      </form>
-    </div>
 </div>

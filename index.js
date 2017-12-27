@@ -13,17 +13,17 @@ app.use(ejsLayouts);
 app.use(express.static(__dirname + '/public/'));
 
 app.get('/', function(req, res) {
+	res.render('index');
+});
+
+// GET - The page to play
+app.get('/play', function(req, res) {
 
 	// Pull a random pokemon from the API (of 151 pokemon so we can "catch" them
 	var pokemonRandom = Math.floor(Math.random() * 151) + 1;
-	// To do: needs to be a number not in the database
-
     var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + pokemonRandom;
-
-    console.log(pokemonUrl);
-
+    
     request(pokemonUrl, function(error, response, body) {
-
     //Pulls the stats we want out of the API for the one randomly selected pokemon
    	var pokeStats = {
    		pokemonapi_id: JSON.parse(body).id,
@@ -34,10 +34,11 @@ app.get('/', function(req, res) {
 	    experience: JSON.parse(body).base_experience
 	 }
 
-	res.render('index', { pokemon: pokeStats });
+	res.render('play', { pokemon: pokeStats });
 
     });
 });
+
 
 app.use('/pokemon', require('./routes/pokemon'));
 

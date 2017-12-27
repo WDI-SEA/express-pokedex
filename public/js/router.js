@@ -5,6 +5,6 @@ $('.delete-link').click(function(event){
 		url: $(this).attr('href'),
 		method: 'DELETE'
 	}).success(function(data){
-		window.location.href = './pokemon'; //Reloads the current page on success
+		window.location.href = '/pokemon'; //Reloads the current page on success
 	});
 });

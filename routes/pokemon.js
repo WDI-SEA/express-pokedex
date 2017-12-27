@@ -4,8 +4,8 @@ var request = require('request');
 var bodyParser = require('body-parser');
 var db = require('../models');
 
-
 router.use(bodyParser.urlencoded({ extended: false }));
+
 
 // GET - return a page with favorited Pokemon
 router.get('/', function(req, res) {
@@ -17,11 +17,20 @@ router.get('/', function(req, res) {
 // POST - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
 
-    db.pokemon_database.create(req.body).then(function(place) {
-        res.redirect('pokemon');
-    }).catch(function(err) {
-        res.send({ message: 'error', error: err });
-    });
+	var catchPokemon = Math.floor(Math.random() * 10) + 1;
+
+	if (catchPokemon % 2 === 0) {
+		db.pokemon_database.create(req.body).then(function(place) {
+        	res.redirect('pokemon');
+    	}).catch(function(err) {
+        	res.send({ message: 'error', error: err });
+   		});
+	} else {
+		console.log("You didn't catch the pokemon");
+		// Remove event listener?
+		res.redirect('/play');
+	}
+
 });
 
 //Deleting from favorites
@@ -41,9 +50,10 @@ router.delete('/:id', function(req, res){
 router.get('/:id', function(req, res){
 
 	db.pokemon_database.findById(req.params.id).then(function(favoritePokemon){
-	
+
 		// Pulls data from the database
 	    var pokeStats = {
+	    	id: favoritePokemon.id,
 	    	name: favoritePokemon.name,
 	    	imagesrc: favoritePokemon.imagesrc,
 	    	height: favoritePokemon.height,
