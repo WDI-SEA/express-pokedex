@@ -1,4 +1,5 @@
-$(function(){
+console.log("Hello from script.js");
+
 	$('.add-favorite').submit(function(e){
 		e.preventDefault();
 		var name = $(this).val();
@@ -20,10 +21,8 @@ $(function(){
 		console.log("Deleted: ",name);
 		$.ajax({
 			name: name,
-			method: 'DELETE',
-			data: data
+			method: 'DELETE'
 		}).done(function(){
 			window.location.href = '/pokemon';
 		});
 	});
-});

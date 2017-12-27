@@ -2,14 +2,15 @@ var express = require('express');
 var router = express.Router();
 var db = require("../models");
 
+router.use('/', express.static('public'));
+
+
 // GET - return a page with favorited Pokemon
 router.get('/', function(req, res) {
 	db.pokemon.findAll().then(function(pokemon) {
     	res.render('./pokemon/index', {pokemon:pokemon});
 	})
 });
-
-router.use('/', express.static('public'));
 
 
 
@@ -24,27 +25,29 @@ db.pokemon.create(req.body).then(function(pokemon){
 })
 });
 
-// router.get('/:id', function(req,res){
-// 	db.pokemon.findById(req.params.id).then(function(pokemon) {
-// 		if (pokemon) {
-// 			res.render('/pokemon/show/:id', {pokemon: pokemon});
-// 		} else {
-// 			res.status(404).render('error');
-// 		}
-// 	}).catch(function(err) {
-// 		res.status(500).render('error');
-// 	});
-// });
-
-router.delete('/', function(req,res){
-		db.pokemon.destroy(req.body).then(function(pokemon) {
+router.get('/:id', function(req,res){
+	db.pokemon.findById(req.params.id).then(function(pokemon) {
 		if (pokemon) {
-			res.render('/pokemon', {pokemon: pokemon});
+			res.render('./pokemon/index', {pokemon: pokemon});
 		} else {
-			res.status(404).render('error');
+			res.status(404).send('error');
 		}
 	}).catch(function(err) {
-		res.status(500).render('error');
+		res.status(500).send('error');
 	});
-})
+});
+
+
+router.delete('/:id', function(req,res){
+	console.log('Delete route. ID= ', req.params.id);
+	db.pokemon.destroy({
+		where: { id: name}
+	}).then(function(deleted){
+		console.log('deleted = ', deleted);
+		res.send('success');
+	}).catch(function(err){
+		console.log('An error happened', err);
+		res.send('fail');
+	})
+});
 module.exports = router;
