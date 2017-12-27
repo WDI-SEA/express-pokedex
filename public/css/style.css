@@ -3,6 +3,17 @@ body {
 	font-family: 'Raleway', sans-serif;
 	margin: 0 auto;
 	color: #383838;
+	line-height: 1.5em;
+}
+
+a {
+	color: #7f81f9;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+p a:hover {
+	border-bottom: 2px solid #7f81f9;;
 }
 
 nav {
@@ -11,8 +22,6 @@ nav {
 
 nav a, .pokemon-grid a {
 	color: white;
-	text-decoration: none;
-	font-weight: bold;
 }
 
 .navitem a {
@@ -23,12 +32,13 @@ nav a, .pokemon-grid a {
 .navitem a:hover {
 	background: white;
 	color: #FE0067;
+	border: 0;
 }
 
 header {
 	background: url("https://media.giphy.com/media/vsyKKf1t22nmw/giphy.gif");
 	background-attachment: fixed;
-	margin: -40px auto 0 auto;
+	margin: 0 auto;
 	background-position: 0 55%;
 	background-size: cover;
 	height: 550px;
@@ -36,19 +46,31 @@ header {
 
 h1 {
 	color: #FE0067;
-	margin-top: 40px;
+	margin-top: 50px;
 }
 
 header h1 {
 	color: white;
 	position: relative;
 	top: 250px;
+	margin-top: 0;
 	font-size: 4em;
 }
 
 .container {
 	width: 75%;
 	margin: 0 auto;
+}
+
+button {
+	background: #7dcaf8;
+	font-family: 'Raleway', sans-serif;
+	color: white;
+	font-weight: bold;
+	padding: 20px;
+	border: 0;
+	font-size: 1.25em;
+	margin-bottom: 10px;
 }
 
 footer {
@@ -62,8 +84,32 @@ footer {
 	background: #7dcaf8;
 }
 
+.pokemon-grid:hover {
+	background: url("https://media.giphy.com/media/vsyKKf1t22nmw/giphy.gif");
+	background-position: center left;
+}
+
+
+@keyframes jumping-pokemon {
+	0% {
+		transform: translate(0, 0) rotate(0deg);
+	}
+	25% {
+		transform: translate(0, -10px) rotate(-5deg);
+	}
+	50% {
+		transform: translate(0, -20px) rotate(0deg);
+	}
+	75% {
+		transform: translate(0, -10px) rotate(5deg);
+	}
+	100% {
+		transform: translate(0, 0) rotate(0deg);
+  	}
+}
+
 .pokemon-grid img:hover {
-	transform: translate(0px, -20px);
+	animation: jumping-pokemon .6s infinite;
 }
 
 .pokemon-grid img {
@@ -79,11 +125,48 @@ footer {
 	letter-spacing: .5px;
 }
 
+.pokemon-single-title {
+	background: white;
+	border-bottom: 8px solid #FE0067;
+	width: 50%;
+	padding: 20px;
+	margin: 40px auto 0 auto;
+}
+
 .pokemon-single {
-	background: #7dcaf8;
+	background: #edeff4;
 	display: inline-block;
+	width: 50%;
+	padding: 20px;
+}
+
+.pokemon-single-description {
+	text-align: left;
+	width: 60%
 }
 
 .pokemon-single-image, .pokemon-single-description {
 	display: inline-block;
+	padding: 20px;
+}
+
+.back-link, .delete-link {
+	color: #7dcaf8;
+	border: 2px solid #7dcaf8;
+	padding: 10px;
+	float: right;
+	margin: 10px;
+}
+
+.back-link {
+	background: #7dcaf8;
+	color: white;
+}
+
+/*****/
+/* For when you're trying to catch the pokemon: */
+
+.pokemon-catchme {
+	animation: jumping-pokemon .6s infinite;
+	margin: 20px 0 -30px 0;
 }

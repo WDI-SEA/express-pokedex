@@ -1,7 +1,9 @@
-  <h1>The Original 151 Pokemon</h1>
-      <h2><%= pokemon.name %></h2>
-      <img src="<%= pokemon.imagesrc %>"> <br>
-        <p id="status-message">Try and catch me!</p>
+  <h1 class="pokemon-single-title">Build Your Pokédex</h1>
+     
+     <div class="pokemon-single">
+      <img src="<%= pokemon.imagesrc %>" class="pokemon-catchme">
+       <h2><%= pokemon.name %></h2>
+       <p>"Try again sweaty"</p>
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
         <input hidden type="text" name="pokemonapi_id" value="<%= pokemon.pokemonapi_id %>">
@@ -11,3 +13,4 @@
         <input hidden type="text" name="experience" value="<%= pokemon.experience %>">
         <button class="btn btn-primary" type="submit">Catch</button>
       </form>
+    </div>
