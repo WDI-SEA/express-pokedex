@@ -1,3 +1,7 @@
+/**/
+/* OVERALL PAGE STYLES */
+/**/
+
 body {
 	text-align: center;
 	font-family: 'Raleway', sans-serif;
@@ -36,7 +40,8 @@ nav a, .pokemon-grid a {
 }
 
 header {
-	background: url("https://media.giphy.com/media/vsyKKf1t22nmw/giphy.gif");
+	background: #7f81f9;
+	background: url("../img/pokemon-hotline-bling.gif");
 	background-attachment: fixed;
 	margin: 0 auto;
 	background-position: 0 55%;
@@ -47,6 +52,7 @@ header {
 h1 {
 	color: #FE0067;
 	margin-top: 50px;
+	line-height: 1.5em;
 }
 
 header h1 {
@@ -62,33 +68,13 @@ header h1 {
 	margin: 0 auto;
 }
 
-button {
-	background: #7dcaf8;
-	font-family: 'Raleway', sans-serif;
-	color: white;
-	font-weight: bold;
-	padding: 20px;
-	border: 0;
-	font-size: 1.25em;
-	margin-bottom: 10px;
-}
-
 footer {
 	padding: 20px;
 }
 
-.pokemon-grid {
-	display: inline-block;
-	width: 130px;
-	margin: 10px;
-	background: #7dcaf8;
-}
-
-.pokemon-grid:hover {
-	background: url("https://media.giphy.com/media/vsyKKf1t22nmw/giphy.gif");
-	background-position: center left;
-}
-
+/**/
+/* KEYFRAMES FOR POKEMON ANIMATIONS */
+/**/
 
 @keyframes jumping-pokemon {
 	0% {
@@ -108,13 +94,82 @@ footer {
   	}
 }
 
-.pokemon-grid img:hover {
-	animation: jumping-pokemon .6s infinite;
+@keyframes running-pokemon {
+	0% {
+		transform: translate(0, 0);
+	}
+	25% {
+		transform: translate(-50px, 0);
+	}
+	50% {
+		transform: translate(0px, 0);
+	}
+	75% {
+		transform: translate(50px, 0);
+	}
+	100% {
+		transform: translate(0, 0);
+  	}
 }
 
-.pokemon-grid img {
-	margin-bottom: -35px;
-	margin-top: 30px;
+
+/**/
+/* LINK AND BUTTON STYLES */
+/**/
+
+button {
+	background: #FE0067;
+	font-family: 'Raleway', sans-serif;
+	color: white;
+	font-weight: bold;
+	padding: 20px;
+	border: 0;
+	font-size: 1.25em;
+	margin-bottom: 10px;
+	box-shadow: 5px 5px #7dcaf8;
+}
+
+button:hover {
+	box-shadow: 0 0;
+	outline: 0;
+	transform: translate(5px, 5px);
+}
+
+.back-link, .delete-link {
+	color: #FE0067;
+	border: 2px solid #FE0067;
+	padding: 10px;
+	float: right;
+	margin: 10px;
+	box-shadow: 5px 5px #7dcaf8;
+}
+
+.back-link:hover, .delete-link:hover {
+	box-shadow: 0 0;
+	transform: translate(5px, 5px);
+}
+
+.back-link {
+	background: #FE0067;
+	color: white;
+}
+
+
+/**/
+/* YOUR POKEDEX PAGE STYLES */
+/**/
+
+.pokemon-grid {
+	display: inline-block;
+	width: 130px;
+	margin: 10px;
+	background: #7dcaf8;
+}
+
+.pokemon-grid:hover {
+	background: #7dcaf8;
+	background: url("../img/pokemon-hotline-bling.gif");
+	background-position: center left;
 }
 
 .pokemon-grid h4 {
@@ -125,13 +180,19 @@ footer {
 	letter-spacing: .5px;
 }
 
-.pokemon-single-title {
-	background: white;
-	border-bottom: 8px solid #FE0067;
-	width: 50%;
-	padding: 20px;
-	margin: 40px auto 0 auto;
+.pokemon-grid img {
+	margin-bottom: -35px;
+	margin-top: 30px;
 }
+
+.pokemon-grid img:hover {
+	animation: jumping-pokemon .6s infinite;
+}
+
+
+/**/
+/* INDIVIDUAL POKEMON DETAILS PAGE */
+/**/
 
 .pokemon-single {
 	background: #edeff4;
@@ -140,9 +201,12 @@ footer {
 	padding: 20px;
 }
 
-.pokemon-single-description {
-	text-align: left;
-	width: 60%
+.pokemon-single-title {
+	background: white;
+	border-bottom: 8px solid #FE0067;
+	width: 50%;
+	padding: 20px;
+	margin: 40px auto 0 auto;
 }
 
 .pokemon-single-image, .pokemon-single-description {
@@ -150,23 +214,44 @@ footer {
 	padding: 20px;
 }
 
-.back-link, .delete-link {
-	color: #7dcaf8;
-	border: 2px solid #7dcaf8;
-	padding: 10px;
-	float: right;
-	margin: 10px;
+.pokemon-single-description {
+	text-align: left;
+	width: 60%
 }
 
-.back-link {
-	background: #7dcaf8;
-	color: white;
+.pokemon-single-image:hover {
+	background: url("../img/pokemon-hotline-bling.gif");
+	box-shadow: 5px 5px white;
 }
+
+.pokemon-single-image img:hover {
+	position: relative;
+	top: 15px;
+	animation: jumping-pokemon .6s infinite;
+}
+
 
 /*****/
-/* For when you're trying to catch the pokemon: */
+/* CATCH POKEMON PAGE */
+/**/
 
 .pokemon-catchme {
 	animation: jumping-pokemon .6s infinite;
 	margin: 20px 0 -30px 0;
 }
+
+.pokemon-catchme:hover {
+	animation: running-pokemon .6s infinite;
+}
+
+
+/**/
+/* RESPONSIVE STYLES */
+/**/
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+.container {
+	width: 95%;
+}
+
