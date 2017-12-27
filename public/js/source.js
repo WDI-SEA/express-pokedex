@@ -1,3 +1,3 @@
-$('.btn-flipper').click(function(){
+$('.img-flip').click(function(){
   $('.img-flip').toggle();
 });

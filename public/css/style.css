@@ -12,27 +12,43 @@ body {
   padding: 0;
   justify-content: center;
   align-items: flex-end;
-}
-
-.pokedex {
   background-image: url(/img/pokedex1.gif);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  /*background-color: #aec;*/
   height: 540px;
   width: 720px;
-/*  overflow: auto;*/
 }
 
 
 
-.name {
-  font-size: 28px;
+.display-1 {
+  background-color: : #888;
+  overflow: auto;
+  z-index: 10;
+  height: 200px;
+  width: 240px;
+}
+
+.img-flip {
+  /*height: 50%;*/
+  width: 55%;
+}
+
+.display-2 {
+  height: 100px;
+  width: 220px;
+  position: sticky;
+  background-color: ##3FF92F
 }
 
 .btn-menu {
+  width: 240px;
   position: sticky;
   top: 200px;
   right: 100px;
+}
+
+.name {
+  font-size: 28px;
 }
