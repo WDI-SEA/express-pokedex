@@ -1,5 +1,10 @@
 body {
-  /*background: blue;*/
+  text-align: center;
+  background: url(/img/pika-background.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% auto;
+  background-position: bottom;
 }
 
 .name {

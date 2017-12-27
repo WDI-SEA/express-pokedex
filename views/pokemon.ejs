@@ -1,20 +1,14 @@
-<div class="container">
-  <h1 class="text-center">The Original 151 Pokemon</h1>
-  <p class="text-center">
-    <a href="/">Home</a>
-    <a href="/favorites">Favorites</a>
-  </p>
-
-  <div class="well">
-      <img class="img-flip" src="<%= selected.sprites.front_default %>">
-      <img hidden class="img-flip" src="<%= selected.sprites.back_default %>">
-      <button class="btn btn-link btn-flipper">flip</button>
-      <h2><%= selected.name %></h2>
-      <p>Weight: <%= selected.weight %></p>
-      <p>Height: <%= selected.height %></p>
-      <p>Abilities: </p>
-      <% selected.abilities.forEach(function(abilities){ %>
-        <p><%= abilities.ability.name %></p>
-      <% }); %>
+<div>
+  <div>
+    <img class="img-flip" src="<%= selected.sprites.front_default %>">
+    <img hidden class="img-flip" src="<%= selected.sprites.back_default %>">
+    <button class="btn btn-link btn-flipper">flip</button>
   </div>
+  <h2><%= selected.name %></h2>
+  <p>Weight: <%= selected.weight %></p>
+  <p>Height: <%= selected.height %></p>
+  <p>Abilities: </p>
+  <% selected.abilities.forEach(function(abilities){ %>
+    <p><%= abilities.ability.name %></p>
+  <% }); %>
 </div>
