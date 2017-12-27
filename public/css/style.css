@@ -1,5 +1,21 @@
 body {
-  /*background: blue;*/
+  text-align: center;
+  background-image: url(/img/pika-background.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% auto;
+  background-position: bottom;
+}
+
+.pokedex {
+  background-image: url(/img/pokedex1.gif);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  /*background-color: #eee;*/
+  /*heigth: 540px;*/
+  /*width: 720px;*/
+
 }
 
 .name {
