@@ -1,6 +1,16 @@
-<h2><%= pokemon.name %></h2>
-<img src="<%= pokemon.imagesrc %>"> <br>
-Height: <%= pokemon.height %> <br>
-Weight: <%= pokemon.weight %> <br>
-Experience Needed to Defeat: <%= pokemon.experience %><br>
-<a href="/pokemon/<%= pokemon.id %>" class="btn btn-danger delete-link">Delete</a>
+
+	<h1><%= pokemon.name %></h1>
+	<div class="pokemon-single">
+		<div class="pokemon-single-image">
+			<img src="<%= pokemon.imagesrc %>"> 
+		</div>
+		<div class="pokemon-single-description">
+			<p>Height: <%= pokemon.height %></p>
+			<p>Weight: <%= pokemon.weight %></p>
+			<p>Experience Needed to Defeat: <%= pokemon.experience %></p>
+			<p><a href="/pokemon/<%= pokemon.id %>" class="delete-link">Delete</a></p>
+		</div>
+	</div>
+	<p>
+		<a href="/pokemon">Back</a>
+	</p>

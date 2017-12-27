@@ -1,0 +1,89 @@
+body {
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
+	margin: 0 auto;
+	color: #383838;
+}
+
+nav {
+	background: #FE0067;
+}
+
+nav a, .pokemon-grid a {
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.navitem a {
+	padding: 20px;
+	display: inline-block;
+}
+
+.navitem a:hover {
+	background: white;
+	color: #FE0067;
+}
+
+header {
+	background: url("https://media.giphy.com/media/vsyKKf1t22nmw/giphy.gif");
+	background-attachment: fixed;
+	margin: -40px auto 0 auto;
+	background-position: 0 55%;
+	background-size: cover;
+	height: 550px;
+}
+
+h1 {
+	color: #FE0067;
+	margin-top: 40px;
+}
+
+header h1 {
+	color: white;
+	position: relative;
+	top: 250px;
+	font-size: 4em;
+}
+
+.container {
+	width: 75%;
+	margin: 0 auto;
+}
+
+footer {
+	padding: 20px;
+}
+
+.pokemon-grid {
+	display: inline-block;
+	width: 130px;
+	margin: 10px;
+	background: #7dcaf8;
+}
+
+.pokemon-grid img:hover {
+	transform: translate(0px, -20px);
+}
+
+.pokemon-grid img {
+	margin-bottom: -35px;
+	margin-top: 30px;
+}
+
+.pokemon-grid h4 {
+	background: #7f81f9;
+	padding: 20px;
+	margin-bottom: 0;
+	margin-top: 0;
+	letter-spacing: .5px;
+}
+
+.pokemon-single {
+	background: #7dcaf8;
+	display: inline-block;
+}
+
+.pokemon-single-image, .pokemon-single-description {
+	display: inline-block;
+}
