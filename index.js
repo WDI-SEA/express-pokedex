@@ -3,6 +3,8 @@ var request = require('request');
 var bodyParser = require('body-parser');
 var ejsLayouts = require('express-ejs-layouts');
 var app = express();
+var db = require ('./models');
+var path = require('path');
 
 app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');

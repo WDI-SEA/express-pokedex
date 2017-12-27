@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var pokedex = sequelize.define('pokedex', {
+  var pokemon = sequelize.define('pokemon', {
     name: DataTypes.STRING
   }, {
     classMethods: {
@@ -9,5 +9,5 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
-  return pokedex;
+  return pokemon;
 };
