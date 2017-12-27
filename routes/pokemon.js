@@ -5,7 +5,12 @@ var db = require('../models/');
 // GET - return a page with favorited Pokemon
 router.get('/', function(req, res) {
     // TODO: render favorites
-  res.send('Render a page of favorites here');
+  db.pokemon.findAll()
+    .then(function(pokemons){
+      res.send(pokemons);
+    });
+
+  
 
 
 
@@ -15,6 +20,9 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
     // TODO: add to database
     db.pokemon.create(req.body)
+    .catch(function(err){
+      res.status(500).render('error');
+    });
  
 });
 
