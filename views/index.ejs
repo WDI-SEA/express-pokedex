@@ -5,10 +5,9 @@
   </p>
 
   <% pokemons.forEach(function(pokemon) { %>
-  <%var imgUrl = pokemon.url;%>
-  <%-console.log(imgUrl);%>
+ 
     <div class="well">
-      <h2><%= %></h2>
+      <h2><%=pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);%></h2>
       <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon<%=pokemon.url.match(/\/\d+/)%>.png">
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
