@@ -1,14 +1,13 @@
-<h1 class="text-center">Pokedex: Favorites</h1>
-<% if (favorites.length <= 0){ %>
-  <h3>You have no favorite Pokemon!</h3>
-<% } else { %>
-  <h3>Behold: Your Favorite Pokemon</h3>
-  <% favorites.forEach(function(favorite) { %>
-    <div>
-      <a href="/pokemon/<%= favorite.name %>" class="name"><%= favorite.name %></h2>
-      <a href="/favorites/<%= favorite.name %>" class="btn btn-danger delete-fav">
-        Remove Favorite
-      </a>
+<div class="display-1">
+  <% if (favorites.length <= 0){ %>
+    <h3>You have no favorite Pokemon!</h3>
+  <% } else { %>
+    <% favorites.forEach(function(favorite) { %>
+      <a href="/pokemon/<%= favorite.name %>" class="name"><%= favorite.name %></a>
+      <a href="/favorites/<%= favorite.name %>" class="btn btn-danger delete-fav">Remove Favorite</a>
     </div>
   <% }); %>
 <% }; %>
+<div class="display-2">  
+  <h1>Pokedex: Favorites</h1>
+</div>

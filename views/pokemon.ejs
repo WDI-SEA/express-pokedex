@@ -1,14 +1,17 @@
 <div>
-  <div>
+  <div class="display-1">
     <img class="img-flip" src="<%= selected.sprites.front_default %>">
     <img hidden class="img-flip" src="<%= selected.sprites.back_default %>">
     <button class="btn btn-link btn-flipper">flip</button>
+    <p>Abilities: </p>
+    <% selected.abilities.forEach(function(abilities){ %>
+      <p><%= abilities.ability.name %></p>
+    <% }); %>
   </div>
-  <h2><%= selected.name %></h2>
-  <p>Weight: <%= selected.weight %></p>
-  <p>Height: <%= selected.height %></p>
-  <p>Abilities: </p>
-  <% selected.abilities.forEach(function(abilities){ %>
-    <p><%= abilities.ability.name %></p>
-  <% }); %>
+  <div class="display-2">
+    <h2># <%= selected.id %></h2>
+    <h2><%= selected.name %></h2>
+    <p>Weight: <%= selected.weight %></p>
+    <p>Height: <%= selected.height %></p>
+  </div>
 </div>

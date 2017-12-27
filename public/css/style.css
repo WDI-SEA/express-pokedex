@@ -1,10 +1,17 @@
 body {
   text-align: center;
-  background-image: url(/img/pika-background.jpg);
+  background-image: url(/img/nature-background.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 100% auto;
+  background-size: auto;
   background-position: bottom;
+}
+
+.container {
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .pokedex {
@@ -12,12 +19,20 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  /*background-color: #eee;*/
-  /*heigth: 540px;*/
-  /*width: 720px;*/
-
+  /*background-color: #aec;*/
+  height: 540px;
+  width: 720px;
+/*  overflow: auto;*/
 }
+
+
 
 .name {
   font-size: 28px;
+}
+
+.btn-menu {
+  position: sticky;
+  top: 200px;
+  right: 100px;
 }
