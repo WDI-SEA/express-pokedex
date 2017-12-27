@@ -1,10 +1,12 @@
 <div class="display-1">
   <% pokemons.forEach(function(pokemon) { %>
-    <a href="/pokemon/<%= pokemon.name %>" class="name"><%= pokemon.name %></a>
-    <form method="POST" action="/favorites/<%= pokemon.name %>">
-      <input hidden type="text" name="name" value="<%= pokemon.name %>">
-      <button class="btn btn-primary" type="submit">Add to Favorites</button>
-    </form>
+    <div class="poke-list">
+      <a href="/pokemon/<%= pokemon.name %>" class="name"><%= pokemon.name %></a>
+      <form method="POST" action="/favorites/<%= pokemon.name %>">
+        <input hidden type="text" name="name" value="<%= pokemon.name %>">
+        <button class="btn btn-primary" type="submit">+</button>
+      </form>
+    </div>
   <% }); %>
 </div>
 <div class="display-2">

@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'game-font';
+  src: url('/font/slkscr.ttf');
+}
+
 body {
   text-align: center;
   background-image: url(/img/nature-background.jpg);
@@ -5,29 +10,35 @@ body {
   background-attachment: fixed;
   background-size: auto;
   background-position: bottom;
+  font-family: 'game-font';
 }
 
 .container {
   display: flex;
   padding: 0;
-  justify-content: center;
-  align-items: flex-end;
+  /*justify-content: center;*/
+  /*align-items: center;*/
   background-image: url(/img/pokedex1.gif);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  height: 540px;
+  min-height: 600px;
   width: 720px;
 }
 
 
-
 .display-1 {
-  background-color: : #888;
+  position: relative;
   overflow: auto;
-  z-index: 10;
-  height: 200px;
-  width: 240px;
+  top: 220px;
+  left: 40px;
+  height: 175px;
+  width: 261px;
+  z-index: 1;
+}
+
+form {
+  width: 40px;
 }
 
 .img-flip {
@@ -36,19 +47,32 @@ body {
 }
 
 .display-2 {
-  height: 100px;
-  width: 220px;
-  position: sticky;
-  background-color: ##3FF92F
+  position: relative;
+  top: 232px;
+  left: 177px;
+  height: 114px;
+  width: 244px;
+  background-color: ##3FF92F;
+  z-index: 1;
 }
 
 .btn-menu {
-  width: 240px;
-  position: sticky;
-  top: 200px;
-  right: 100px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: 526px;
+  right: 53px;
+  width: 227px;
+  height: 40px;
+  z-index: 1;
+}
+
+.btn-nav {
+  width: 97px;
+  /*margin: 0 20px;*/
+
 }
 
 .name {
-  font-size: 28px;
+  font-size: 24px;
 }

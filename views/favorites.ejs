@@ -3,8 +3,10 @@
     <h3>You have no favorite Pokemon!</h3>
   <% } else { %>
     <% favorites.forEach(function(favorite) { %>
-      <a href="/pokemon/<%= favorite.name %>" class="name"><%= favorite.name %></a>
-      <a href="/favorites/<%= favorite.name %>" class="btn btn-danger delete-fav">Remove Favorite</a>
+      <div class="poke-list">
+        <a href="/pokemon/<%= favorite.name %>" class="name"><%= favorite.name %></a>
+        <a href="/favorites/<%= favorite.name %>" class="btn btn-danger delete-fav">X</a>
+      </div>
     <% }); %>
   <% }; %>
 </div>
