@@ -6,11 +6,9 @@ var request = require('request');
 // GET - return a page with favorited Pokemon
 router.get('/', function(req, res) {
     // TODO: render favorites
-
-    res.render('/favorites');
-    // db.pokemon.findAll().then(function(result){
-    	  // res.render('favorites', {result: result});
-    // });
+    db.pokemon.findAll().then(function(result){
+    	  res.render('favorites', {result: result});
+    });
 });
 
 
@@ -23,5 +21,24 @@ router.post('/', function(req, res) {
     	res.redirect('/pokemon');
     });
 });
+
+
+//GET - return a page with favorite pokemon's stats
+router.get('/:name', function(req, res) {
+  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/'+ req.params.name;
+  request(pokemonUrl, function(error, response, body) {
+  	var pokemon = JSON.parse(body);
+    res.render('stats', { pokemon: pokemon });
+  });
+});
+
+
+
+
+// router.get('/:id', function(req, res){
+// 	db.dailyplanet.findById(req.params.id).then(function(article){
+// 		res.render('articles/show.ejs', {result: articles});
+// 	})
+// })
 
 module.exports = router;
