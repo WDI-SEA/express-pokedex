@@ -1,29 +1,20 @@
-
-
-
 <div class="container">
-  <h1 class="text-center">Behold: Your Favorite Pokemon</h1>
+  <h1 class="text-center">The Original 151 Pokemon</h1>
   <p class="text-center">
     <a href="/">Home</a>
+    <a href="/favorites">Favorites</a>
   </p>
 
-
-
-  <% if (favorites.length <= 0){ %>
-    <h2>You have no favorite Pokemon!</h2>
-  <% } else { %>
-    <% favorites.forEach(function(favorite) { %>
-      <div class="well">
-        <a href="/pokemon/<%= favorite.name %>" class="name"><%= favorite.name %></h2>
-        <a href="/pokemon/<%= favorite.name %>" class="btn btn-danger delete-fav">
-          Remove Favorite
-        </a>
-      </div>
-    <% }); %>
-  <% }; %>
-
-
-
-
-
+  <div class="well">
+      <img class="img-flip" src="<%= selected.sprites.front_default %>">
+      <img hidden class="img-flip" src="<%= selected.sprites.back_default %>">
+      <button class="btn btn-link btn-flipper">flip</button>
+      <h2><%= selected.name %></h2>
+      <p>Weight: <%= selected.weight %></p>
+      <p>Height: <%= selected.height %></p>
+      <p>Abilities: </p>
+      <% selected.abilities.forEach(function(abilities){ %>
+        <p><%= abilities.ability.name %></p>
+      <% }); %>
+  </div>
 </div>

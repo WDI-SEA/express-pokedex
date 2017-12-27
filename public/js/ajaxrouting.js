@@ -5,6 +5,6 @@ $('.delete-fav').click(function(e){
     method: 'DELETE'
   }).done(function(data){
     //reloads page
-    window.location.href = '/pokemon';
+    window.location.href = '/favorites';
   });
 });

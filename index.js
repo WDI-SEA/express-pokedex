@@ -17,13 +17,14 @@ app.get('/', function(req, res) {
 
   request(pokemonUrl, function(error, response, body) {
     var pokemon = JSON.parse(body).results;
-    res.render('index.ejs', { pokemon: pokemon });
+    res.render('index.ejs', { pokemons: pokemon });
   });
 });
 
 
 //declaring routes
 app.use('/pokemon', require('./routes/pokemon.js'));
+app.use('/favorites', require('./routes/favorites.js'));
 
 //set up listener port
 var server = app.listen(process.env.PORT || 3000);
