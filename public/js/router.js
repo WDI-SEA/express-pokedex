@@ -1,5 +1,3 @@
-console.log("Hello from router.js");
-
 $('.delete-link').click(function(event){
 	event.preventDefault(); //Defaut behavior of the link is to go to the URL linked
 	//But we want to intercept it and change it to delete
@@ -7,6 +5,6 @@ $('.delete-link').click(function(event){
 		url: $(this).attr('href'),
 		method: 'DELETE'
 	}).success(function(data){
-		window.location.href = 'pokemon'; //Reloads the current page on success
+		window.location.href = './pokemon'; //Reloads the current page on success
 	});
 });

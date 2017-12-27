@@ -1,12 +1,14 @@
 var express = require('express');
 var router = express.Router();
 var request = require('request');
-var db = require('../models');
 var bodyParser = require('body-parser');
+var db = require('../models');
+
+
+router.use(bodyParser.urlencoded({ extended: false }));
 
 // GET - return a page with favorited Pokemon
 router.get('/', function(req, res) {
-    // TODO: render favorites
     db.pokemon_database.findAll().then(function(pokemon){
     	res.render('pokemon', {results: pokemon});
     })
@@ -14,13 +16,11 @@ router.get('/', function(req, res) {
 
 // POST - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
-    // TODO: add to database
+
+	console.log("The name is " + req.body.name);
 
 	db.pokemon_database.create(req.body).then(function(newPokemon){
-		//Redirect always goes to root route, use it like its in index.js!
 		res.redirect('pokemon');
-		console.log(newPokemon.name);
-		// res.redirect('/pokemon/' + newPokemon.id); //Takes to specific new article page
 	}).catch(function(err){
 		res.send('uh oh', err); //Incase there's an error, what it do?
 	});
@@ -44,7 +44,21 @@ router.delete('/:id', function(req, res){
 router.get('/:id', function(req, res){
 
 	db.pokemon_database.findById(req.params.id).then(function(favoritePokemon){
-		res.render('single', {result: favoritePokemon});
+
+	    var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + favoritePokemon.name;
+	    request(pokemonUrl, function(error, response, body) {
+
+	    var pokeStats = {
+	    	name: favoritePokemon.name,
+	    	imagesrc: JSON.parse(body).sprites.front_shiny,
+	    	height: JSON.parse(body).height,
+	    	weight: JSON.parse(body).weight,
+	    	species: JSON.parse(body).species.name,
+	    	experience: JSON.parse(body).base_experience
+	    }
+	        res.render('single', { pokemon: pokeStats });
+	    });
+
 	});
 
 });
