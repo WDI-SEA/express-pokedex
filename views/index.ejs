@@ -4,9 +4,12 @@
     <a href="/pokemon">Favorites</a>
   </p>
 
-  <% pokemon.forEach(function(pokemon) { %>
+  <% pokemons.forEach(function(pokemon) { %>
+  <%var imgUrl = pokemon.url;%>
+  <%-console.log(imgUrl);%>
     <div class="well">
-      <h2><%= pokemon.name %></h2>
+      <h2><%= %></h2>
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon<%=pokemon.url.match(/\/\d+/)%>.png">
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
         <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>

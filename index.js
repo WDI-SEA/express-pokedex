@@ -12,11 +12,12 @@ app.use(express.static(__dirname + '/public/'));
 
 
 app.get('/', function(req, res) {
-  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
-
+  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/?limit=10';
   request(pokemonUrl, function(error, response, body) {
-    var pokemon = JSON.parse(body).results;
-    res.render('index', { pokemon: pokemon });
+    var pokemons = JSON.parse(body).results;
+
+
+    res.render('index', { pokemons: pokemons });
   });
 });
 
