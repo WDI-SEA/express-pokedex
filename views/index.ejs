@@ -1,9 +1,10 @@
+<h1 class="text-center">Pokedex: Home</h1>
 <% pokemons.forEach(function(pokemon) { %>
   <div>
     <a href="/pokemon/<%= pokemon.name %>" class="name"><%= pokemon.name %></a>
     <form method="POST" action="/favorites/<%= pokemon.name %>">
       <input hidden type="text" name="name" value="<%= pokemon.name %>">
-      <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
+      <button class="btn btn-primary" type="submit">Add to Favorites</button>
     </form>
   </div>
 <% }); %>
