@@ -17,15 +17,12 @@ router.get('/', function(req, res) {
 // POST - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
 
-	console.log("The name is " + req.body.name);
-
-	db.pokemon_database.create(req.body).then(function(newPokemon){
-		res.redirect('pokemon');
-	}).catch(function(err){
-		res.send('uh oh', err); //Incase there's an error, what it do?
-	});
+    db.pokemon_database.create(req.body).then(function(place) {
+        res.redirect('pokemon');
+    }).catch(function(err) {
+        res.send({ message: 'error', error: err });
+    });
 });
-
 
 //Deleting from favorites
 router.delete('/:id', function(req, res){
@@ -44,22 +41,17 @@ router.delete('/:id', function(req, res){
 router.get('/:id', function(req, res){
 
 	db.pokemon_database.findById(req.params.id).then(function(favoritePokemon){
-
-	    var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + favoritePokemon.name;
-	    request(pokemonUrl, function(error, response, body) {
-
+	
+		// Pulls data from the database
 	    var pokeStats = {
 	    	name: favoritePokemon.name,
-	    	imagesrc: JSON.parse(body).sprites.front_shiny,
-	    	height: JSON.parse(body).height,
-	    	weight: JSON.parse(body).weight,
-	    	species: JSON.parse(body).species.name,
-	    	experience: JSON.parse(body).base_experience
+	    	imagesrc: favoritePokemon.imagesrc,
+	    	height: favoritePokemon.height,
+	    	weight: favoritePokemon.weight,
+	    	experience: favoritePokemon.experience
 	    }
 	        res.render('single', { pokemon: pokeStats });
 	    });
-
-	});
 
 });
 
