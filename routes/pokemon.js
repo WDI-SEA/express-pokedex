@@ -7,7 +7,8 @@ router.get('/', function(req, res) {
     // TODO: render favorites
   db.pokemon.findAll()
     .then(function(pokemons){
-      res.send(pokemons);
+     // res.send(pokemons);
+     res.render('pokemon/favourites.ejs', {pokemons:pokemons});
     });
 
   

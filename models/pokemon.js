@@ -2,7 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
   var pokemon = sequelize.define('pokemon', {
     name: DataTypes.STRING,
-    imgId: DataTypes.STRING
+    imgUrl: DataTypes.STRING
   }, {
     classMethods: {
       associate: function(models) {

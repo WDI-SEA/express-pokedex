@@ -3,15 +3,33 @@
   <p class="text-center">
     <a href="/pokemon">Favorites</a>
   </p>
+<%
+  var imagesUrl = 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/'
 
+  function getPokemonId(url){
+    var result = url.match(/\/\d+/);
+    return result[0].slice(1);
+  }
+
+//Pad the pokemon id with leading 0s 
+function padId(id){
+    switch(true){
+        case id.length<10:
+            return id.padStart(3, "0");
+        case id.length>=10:
+            return id.padStart(2, "0");
+        case id.length >99:
+            return id;           
+    }  
+}  
+%>
   <% pokemons.forEach(function(pokemon) { %>
- 
     <div class="well">
       <h2><%=pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);%></h2>
-      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon<%=pokemon.url.match(/\/\d+/)%>.png">
+      <img src="<%=imagesUrl + padId(getPokemonId(pokemon.url))%>.png">
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
-        <input hidden type="text" name="imgId" value="<%= pokemon.url.match(/\/\d+/)%>.png %>">
+        <input hidden type="text" name="imgId" value="<%=imagesUrl + padId(getPokemonId(pokemon.url))%>.png%>">
         <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
       </form>
     </div>

@@ -11,7 +11,7 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
-      imgId: {
+      imgUrl: {
         type: Sequelize.STRING
       },
       createdAt: {
