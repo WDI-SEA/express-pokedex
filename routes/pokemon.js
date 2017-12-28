@@ -25,11 +25,23 @@ router.get('/:id', function(req, res){
     if(pokemon){
       res.render('pokemon', {pokemon:poke});
     } else {
-      res.status(404).send('error');
+      res.status(404).send('nope404', err);
     }
   }).catch(function(err) {
-    res.status(500).send('error');
+    res.status(500).send('nope505', err);
   });
 });
-
+router.delete('/:id', function(req, res) {
+  console.log('delete Route ID = ', req.params.id);
+  db.pokemon.distroy({
+    where:{
+      id: req.params.id}
+    }).then(function(deleted) {
+      console.log('deleted = ', deleted);
+      res.send('deleted!!!');
+    }).catch(function(err) {
+      console.log('error happend', err);
+      res.send('failed');
+    });
+  });
 module.exports = router;
