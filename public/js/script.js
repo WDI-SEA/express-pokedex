@@ -6,8 +6,8 @@ console.log("Hello from script.js");
 		var data = $(this).serialize();
 		console.log("added: ", name);
 		$.ajax({
-			name: name,
-			method: 'PUT',
+			url: name,
+			method: 'DELETE',
 			data: data
 		}).done(function(){
 			window.location.href = '/pokemon';
@@ -20,8 +20,9 @@ console.log("Hello from script.js");
 		var data = $(this).serialize();
 		console.log("Deleted: ",name);
 		$.ajax({
-			name: name,
-			method: 'DELETE'
+			url: name,
+			method: 'DELETE',
+			data: data
 		}).done(function(){
 			window.location.href = '/pokemon';
 		});

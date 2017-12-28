@@ -21,11 +21,11 @@ db.pokemon.create(req.body).then(function(pokemon){
 	res.redirect('/pokemon')
 	console.log("created: ",req.body.name)
 	  }).catch(function(err) {
-    res.status(500).render('error');
+    res.status(500).send('error');
 })
 });
 
-router.get('/:name', function(req,res){
+router.get('/:id', function(req,res){
 	db.pokemon.findById(req.params.name).then(function(pokemon) {
 		if (pokemon) {
 			res.render('./pokemon/show', {pokemon: pokemon});
@@ -38,16 +38,16 @@ router.get('/:name', function(req,res){
 });
 
 
-// router.delete('/:id', function(req,res){
-// 	console.log('Delete route. ID= ', req.params.id);
-// 	db.pokemon.destroy({
-// 		where: { id: name}
-// 	}).then(function(deleted){
-// 		console.log('deleted = ', deleted);
-// 		res.send('success');
-// 	}).catch(function(err){
-// 		console.log('An error happened', err);
-// 		res.send('fail');
-// 	})
-// });
+router.delete('/:id', function(req,res){
+	console.log('Delete route. ID= ', req.params.id);
+	db.pokemon.destroy({
+		where: { id: id}
+	}).then(function(deleted){
+		console.log('deleted = ', deleted);
+		res.send('success');
+	}).catch(function(err){
+		console.log('An error happened', err);
+		res.send('fail');
+	})
+});
 module.exports = router;
