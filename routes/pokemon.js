@@ -25,10 +25,10 @@ db.pokemon.create(req.body).then(function(pokemon){
 })
 });
 
-router.get('/:id', function(req,res){
-	db.pokemon.findById(req.params.id).then(function(pokemon) {
+router.get('/:name', function(req,res){
+	db.pokemon.findById(req.params.name).then(function(pokemon) {
 		if (pokemon) {
-			res.render('./pokemon/index', {pokemon: pokemon});
+			res.render('./pokemon/show', {pokemon: pokemon});
 		} else {
 			res.status(404).send('error');
 		}
@@ -38,16 +38,16 @@ router.get('/:id', function(req,res){
 });
 
 
-router.delete('/:id', function(req,res){
-	console.log('Delete route. ID= ', req.params.id);
-	db.pokemon.destroy({
-		where: { id: name}
-	}).then(function(deleted){
-		console.log('deleted = ', deleted);
-		res.send('success');
-	}).catch(function(err){
-		console.log('An error happened', err);
-		res.send('fail');
-	})
-});
+// router.delete('/:id', function(req,res){
+// 	console.log('Delete route. ID= ', req.params.id);
+// 	db.pokemon.destroy({
+// 		where: { id: name}
+// 	}).then(function(deleted){
+// 		console.log('deleted = ', deleted);
+// 		res.send('success');
+// 	}).catch(function(err){
+// 		console.log('An error happened', err);
+// 		res.send('fail');
+// 	})
+// });
 module.exports = router;

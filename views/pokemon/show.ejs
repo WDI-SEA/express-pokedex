@@ -1,16 +1,15 @@
 <div class="container">
 	<div class="homebanner">
-  <h1 class="text-center">Your Favorites</h1>
+  <h1 class="text-center"><%= pokemon.name %></h1>
   <p class="text-center">
-    Explore the PokeMon API!
+    More info about this Pokemon! <a href="/">Return to all pokemon</a> || <a href="/pokemon">Return to favorites</a>
   </p>
 </div>
     <div class="all-pokemon">
     	<div class="favebg">
-<% pokemon.forEach(function(pokemon){ %>
       <div class="list">
         <div class="items">
-          <h2><img src="http://pixelartmaker.com/art/b73566a14633720.png"><%= pokemon.name.abilities[0] %></h2>
+          <h2><img src="http://pixelartmaker.com/art/b73566a14633720.png"><%= pokemon.name %></h2>
           <form class="add-favorite" method="DELETE" action="./pokemon">
             <input hidden type="text" name="url">
             <input class="pokemon-name" hidden type="text" name="name" value="">
@@ -18,7 +17,6 @@
        </form>
         </div>
       </div>
-      <% }); %>
       </div>
     </div>
 
