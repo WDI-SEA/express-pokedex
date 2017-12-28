@@ -1,22 +1,24 @@
 <div class="container">
 	<div class="homebanner">
-  <h1 class="text-center"><%= pokemon.name %></h1>
+  <h3 class="text-center">
+    More info about this Pokemon!
+  </h3>
   <p class="text-center">
-    More info about this Pokemon! <a href="/">Return to all pokemon</a> || <a href="/pokemon">Return to favorites</a>
+   <a href="/">Return to all pokemon</a>
+  </p>
+  <p class="text-center">
+   <a href="/pokemon">Return to favorites</a>
   </p>
 </div>
-    <div class="all-pokemon">
-    	<div class="favebg">
-      <div class="list">
-        <div class="items">
+    <div class="show-pokemon text-center">
+    	<div class="showbg">
           <h2><img src="http://pixelartmaker.com/art/b73566a14633720.png"><%= pokemon.name %></h2>
-          <form class="rmv-favorite" method="DELETE" action="./pokemon">
-            <input hidden type="text" name="url">
-            <input class="pokemon-name" hidden type="text" name="name" value="">
-            <button class="btn btn-primary" type="submit">Remove From Favorites</button>
-       </form>
-        </div>
-      </div>
+          <ul>
+            <li>Type:</li>
+            <li>Abilities:</li>
+            <li>Weight:</li>
+            <li>Can fly?</li>
+          </ul>
       </div>
     </div>
 

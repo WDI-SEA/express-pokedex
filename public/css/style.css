@@ -32,6 +32,30 @@ body {
 	background: white;
 	padding: 10px;
 	box-shadow: 0 0 50px 20px rgba(255,255,255,.2);
+	border-radius: 2px;
+}
+.show-pokemon {	
+	width: 489px;
+	height: 362px;
+	position: relative;
+	top: -122px;
+	left:-12px;
+	background: white;
+	padding: 10px;
+	box-shadow: 0 0 50px 20px rgba(255,255,255,.2);
+	border-radius: 3px;
+}
+
+.showbg{
+display: inline-block;
+line-height: 50px;
+}
+
+.showbg ul {
+	list-style: none;
+}
+.showbg img {
+	width:60px;
 }
 
 .homebanner {
@@ -46,6 +70,18 @@ body {
 	border-radius: 5px;
 	letter-spacing: 3px;
 	box-shadow: 0 0 50px 10px rgba(211,10,64,.2);
+}
+
+.favebg{
+	width: 489px;
+	height: 362px;
+	background:white;
+
+}
+
+.btn-primary {
+	width: 130px !important;
+	font-size: 12px !important;
 }
 
 .list {
@@ -67,9 +103,10 @@ body {
 .list button {
 	position: relative;
 	top:-45px;
-	left: 200px;
+	left: 265px;
 	width: 200px;
 	overflow: inherit;
+	font-size: 12px !important;
 }
 
 .list img {
@@ -121,3 +158,4 @@ body {
 	right:110px;
 	font-family: 'pokemon';
 }
+

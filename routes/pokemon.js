@@ -3,6 +3,7 @@ var router = express.Router();
 var db = require("../models");
 
 router.use('/', express.static('public'));
+router.use(express.static(__dirname + '/public'))
 
 
 // GET - return a page with favorited Pokemon
@@ -26,7 +27,7 @@ db.pokemon.create(req.body).then(function(pokemon){
 });
 
 router.get('/:id', function(req,res){
-	db.pokemon.findById(req.params.name).then(function(pokemon) {
+	db.pokemon.findById(req.params.id).then(function(pokemon) {
 		if (pokemon) {
 			res.render('./pokemon/show', {pokemon: pokemon});
 		} else {
@@ -41,7 +42,7 @@ router.get('/:id', function(req,res){
 router.delete('/:id', function(req,res){
 	console.log('Delete route. ID= ', req.params.id);
 	db.pokemon.destroy({
-		where: { id: id}
+		where: { id: req.params.id}
 	}).then(function(deleted){
 		console.log('deleted = ', deleted);
 		res.send('success');
