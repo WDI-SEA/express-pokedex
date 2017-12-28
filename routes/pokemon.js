@@ -20,6 +20,7 @@ router.post('/', function(req, res) {
   });
     // res.send(req.body);
 });
+//route to get id
 router.get('/:id', function(req, res){
   db.pokemon.findById(req.params.id).then(function(pokemon){
     if(pokemon){
@@ -31,6 +32,7 @@ router.get('/:id', function(req, res){
     res.status(500).send('nope505', err);
   });
 });
+//route to delete id
 router.delete('/:id', function(req, res) {
   console.log('delete Route ID = ', req.params.id);
   db.pokemon.distroy({
