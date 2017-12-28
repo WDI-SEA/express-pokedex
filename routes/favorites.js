@@ -17,8 +17,6 @@ router.post('/:id', function(req, res) {
   db.pokemon.create(req.body).then(function(newFav){
     //redirect to /pokemon
     res.redirect('/favorites');
-    // TODO: add to database
-    // res.send(req.body);
   });
 });
 

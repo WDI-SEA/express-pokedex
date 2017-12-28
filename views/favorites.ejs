@@ -6,12 +6,13 @@
       <% favorites.forEach(function(favorite) { %>
         <li>
           <a href="/pokemon/<%= favorite.name %>" class="name"><%= favorite.name %></a>
-          <a href="/favorites/<%= favorite.name %>" class="btn btn-danger delete-fav">X</a>
+          <a href="/favorites/<%= favorite.name %>" class="btn btn-danger list-btn delete-fav">X</a>
         </li>
       <% }); %>
     </ul>
   <% }; %>
 </div>
+
 <div class="display-2">  
   <h1>Pokedex: Favorites</h1>
 </div>
