@@ -10,7 +10,8 @@
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
         <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
-        <button class="btn btn-danger" type="delete">Remove Pokemon</button>
+        <!-- <input hidden type="text" name="name" value="<%= pokemon.id %>"> -->
+        <button class="btn btn-danger delete" type="delete">Remove Pokemon</button>
       </form>
     </div>
   <% }); %>

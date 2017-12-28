@@ -1,5 +1,5 @@
 console.log('hello from routing.js!');
-$('.delete-link').click(function(e) {
+$('.delete').click(function(e) {
   e.preventDefault();
   $.ajax({
     url: $(this).attr('href'),
