@@ -21,8 +21,14 @@ router.post('/', function(req, res) {
     // res.send(req.body);
 });
 router.get('/:id', function(req, res){
-  db.pokemon.findById(req.params.id).then(function(poke){
-    res.render('pokemon', {pokemon:poke});
+  db.pokemon.findById(req.params.id).then(function(pokemon){
+    if(pokemon){
+      res.render('pokemon', {pokemon:poke});
+    } else {
+      res.status(404).send('error');
+    }
+  }).catch(function(err) {
+    res.status(500).send('error');
   });
 });
 
