@@ -3,7 +3,7 @@
      <div class="pokemon-single">
       <img src="<%= pokemon.imagesrc %>" class="pokemon-catchme">
        <h2><%= pokemon.name %></h2>
-       <p>"Try again sweaty"</p>
+       <p id="status-message">"Try again sweaty"</p>
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
         <input hidden type="text" name="pokemonapi_id" value="<%= pokemon.pokemonapi_id %>">

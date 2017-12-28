@@ -8,13 +8,3 @@ $('.delete-link').click(function(event){
 		window.location.href = '/pokemon'; //Reloads the current page on success
 	});
 });
-
-// $('.catch-link').click(function(event){
-// 	event.preventDefault().success(function(data){
-	
-		
-
-// 	});
-// });
-
-

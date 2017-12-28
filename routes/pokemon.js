@@ -33,7 +33,7 @@ router.post('/', function(req, res) {
 
 });
 
-//Deleting from favorites
+//Deleting from library
 router.delete('/:id', function(req, res){
 	db.pokemon_database.destroy({
 		where: { id: req.params.id }
