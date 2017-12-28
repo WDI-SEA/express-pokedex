@@ -1,0 +1,45 @@
+
+.main-top{
+	color: rgb(253, 203, 42);
+	background-color: rgba(54, 108, 178, .7);
+	font-family: 'Audiowide', cursive;
+	padding: 15px 50px;
+	margin-bottom: 20px;
+}
+
+.favorites, 
+.home-button{
+	background-color: rgba(253, 203, 42, .9);
+	color: rgb(54, 108, 178);
+	font-family: 'Audiowide', cursive;
+	padding: 6px 50px;
+	height: 59px;
+}
+
+.each-poke{
+	background-color: rgba(227, 81, 52, .7);
+	text-align: center;
+	margin-left: 30%;
+	width: 450px;
+	font-family: 'Audiowide', cursive;
+
+}
+
+.pokemon{
+	font-size: 30px;
+}
+
+.well{
+	color: rgb(253, 203, 42);
+	font-family: 'Audiowide', cursive;
+	width: 260px;
+	height: 130px;
+	padding-top: 10px;
+	text-align: center;
+	display: inline-block;
+	margin: 10px 10px;
+}
+
+#main{
+	background-image: url("/img/PokeGo.png");
+}
