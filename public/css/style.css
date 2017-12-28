@@ -1,6 +1,6 @@
-/**/
+/***********************/
 /* OVERALL PAGE STYLES */
-/**/
+/***********************/
 
 body {
 	text-align: center;
@@ -70,11 +70,18 @@ header h1 {
 
 footer {
 	padding: 20px;
+	font-size: .8em;
 }
 
-/**/
+footer img {
+	height: 10px;
+	width: 10px;
+	margin-right: 5px;
+}
+
+/************************************/
 /* KEYFRAMES FOR POKEMON ANIMATIONS */
-/**/
+/************************************/
 
 @keyframes jumping-pokemon {
 	0% {
@@ -112,10 +119,9 @@ footer {
   	}
 }
 
-
-/**/
+/**************************/
 /* LINK AND BUTTON STYLES */
-/**/
+/**************************/
 
 button {
 	background: #FE0067;
@@ -125,7 +131,7 @@ button {
 	padding: 20px;
 	border: 0;
 	font-size: 1.25em;
-	margin-bottom: 10px;
+	margin: 20px 0;
 	box-shadow: 5px 5px #7dcaf8;
 }
 
@@ -155,9 +161,9 @@ button:hover {
 }
 
 
-/**/
+/****************************/
 /* YOUR POKEDEX PAGE STYLES */
-/**/
+/****************************/
 
 .pokemon-grid {
 	display: inline-block;
@@ -190,9 +196,9 @@ button:hover {
 }
 
 
-/**/
+/***********************************/
 /* INDIVIDUAL POKEMON DETAILS PAGE */
-/**/
+/***********************************/
 
 .pokemon-single {
 	background: #edeff4;
@@ -231,9 +237,9 @@ button:hover {
 }
 
 
-/*****/
+/**********************/
 /* CATCH POKEMON PAGE */
-/**/
+/**********************/
 
 .pokemon-catchme {
 	animation: jumping-pokemon .6s infinite;
@@ -245,9 +251,9 @@ button:hover {
 }
 
 
-/**/
+/*********************/
 /* RESPONSIVE STYLES */
-/**/
+/*********************/
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 
