@@ -1,0 +1,11 @@
+<h2 class="text-center">Favorites Page</h2>
+<a class="btn btn-primary" href="/">Back to Pokemon</a>
+<div class="container" class="text-center">
+<% pokemon.forEach(function(item) {%>
+<p>
+	<%= item.name %>
+</p>
+<a class="btn btn-primary" href="/pokemon/">See More</a>
+<button type="button" id="delete" class="btn btn-danger" >Delete From Favorites</button>
+<% }); %>
+</div>
