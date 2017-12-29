@@ -4,6 +4,8 @@
     <a href="/pokemon">Favorites</a>
   </p>
 <%
+  var dbPokemons =[];
+
   var imagesUrl = 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/'
 
   function getPokemonId(url){
@@ -22,10 +24,16 @@ function padId(id){
             return id;           
     }  
 }  
+
+favPokemons.forEach(function(pokemon){
+  dbPokemons.push(pokemon.name);
+})
+
+
 %>
 
 
-<h1><%=favPokemons%></h1>
+<h1><%=(dbPokemons);%></h1>
 
 <section class="section ">
   <ul>
@@ -42,7 +50,9 @@ function padId(id){
       
     </div>
     <div class="info">
-      
+      <p id="pokemonId"><%=getPokemonId(pokemon.url);%></p>
+      <h4><%=pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);%></h4>
+
     </div>
     </div>
     

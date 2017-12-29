@@ -37,9 +37,9 @@ app.get('/', function(req, res, next) {
     next()
 }, function (req, res){
     res.render('index', {favPokemons:favPokemons, pokemons:pokemons});
-    // res.render('index', {pokemons:pokemons, 
-    //                     favPokemons:favPokemons
-    //         });
+    res.render('index', {pokemons:pokemons, 
+                        favPokemons:favPokemons
+            });
 }); 
 
 app.use('/pokemon', require('./routes/pokemon'));
