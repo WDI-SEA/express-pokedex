@@ -8,13 +8,4 @@ $(document).ready(function(){
 			window.location.href = '/pokemon';
 		});
 	});
-	$('.favorite-link').click(function(e){
-		e.preventDefault();
-		$.ajax({
-			name: $(this).attr('name'),
-			method: 'POST'
-		}).done(function(data){
-			console.log('hi');
-		});
-	});
 });

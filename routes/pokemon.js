@@ -5,8 +5,8 @@ var router = express.Router();
 // GET - return a page with favorited Pokemon
 router.get('/', function(req,res){
     // TODO: render favorites
-    db.pokemon.findAll().then(function(pokemons) {
-    	res.render('./favorites/index', {pokemons: pokemons});
+    db.pokemon.findAll().then(function(pokemon) {
+    	res.render('./favorites/index', {pokemon: pokemon});
   	});
 });
 
@@ -34,13 +34,6 @@ router.delete('/:id', function(req,res){
   }).catch(function(err) {
     res.status(500).send({msg: 'error'});
   });
-	// db.pokemon.destroy({
-	// 	where: {id: req.params.id}
-	// }).then(function(deleted){
-	// 	res.send('success');
-	// }).catch(function(err){
-	// 	res.send('error');
-	// });
 });
 
 // POST - receive the name of a pokemon and add it to the database
