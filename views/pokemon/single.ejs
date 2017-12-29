@@ -1,8 +1,14 @@
 <div id="pokecard">
-	<h2 id="pokemon_name"> <%= name %></h2>
-	<div id="pokemon_img">
-		<img src="<%=image_front%>">
+	<h2 id = "pokemonName"> <%= name %></h2>
+	<div id="pokemonImage">
+	<div class="w3-content w3-display-container">
+		<button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+		<img class = "mySlides" src="<%=image_front%>">
+		<img class = "mySlides" src="<%=image_back%>">
+		<button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+
 	</div>
+</div>
 	<div id="pokemon_info">
 		<h3> Ability: <%=ability%></h3>
 		<h3> Speed: <%=speed%></h3>

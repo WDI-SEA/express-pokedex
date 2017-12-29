@@ -3,7 +3,45 @@
     src: url('fonts/PokemonSolid.ttf');
 }
 
-
-h2 {
-	font-family: pokemonFont;
+body {
+	text-align: center;
 }
+
+
+
+#pokecard{
+	text-align: center;
+	background-color: red;
+	border: 1px black solid;
+	width: 50%;
+	height: 400px;
+  	margin: 0 auto;
+  	margin-top: 20px;
+}
+
+#pokemonName{
+	font-family: pokemonFont;
+	text-transform: uppercase;
+	font-size: 38px;
+}
+
+#pokemonImage{
+	width: 200px;
+    margin: 0 auto;
+}
+
+.w3-content{
+	width: 50%;
+	width: 200px;
+	height: 200px;
+	background-color: white;
+	border: 1px #c5c6c2;
+	border-style: solid double;
+}
+
+.mySlides {
+	margin-top: 50px;
+	display: none;
+}
+
+
