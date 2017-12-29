@@ -14,7 +14,7 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
     // TODO: add to database
   db.pokemon.create(req.body).then(function(pokemon){
-    res.redirect('/pokemon/')
+    res.redirect('/pokemon')
   }).catch(function(err){
     res.send('nope', err);
   });
@@ -24,7 +24,7 @@ router.post('/', function(req, res) {
 router.get('/:id', function(req, res){
   db.pokemon.findById(req.params.id).then(function(pokemon){
     if(pokemon){
-      res.render('pokemon', {pokemon:poke});
+      res.render('index/pokemon', {pokemon:poke});
     } else {
       res.status(404).send('nope404', err);
     }
