@@ -6,6 +6,7 @@
 <%
   var dbPokemons =[];
 
+
   var imagesUrl = 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/'
 
   function getPokemonId(url){
@@ -38,7 +39,9 @@ favPokemons.forEach(function(pokemon){
 <section class="section ">
   <ul>
     
-<%pokemons.forEach(function(pokemon){%>
+<%pokemons.forEach(function(pokemon){
+  var isInFavorites = false;
+  %>
   <li class="animate">
     <figure>
       <a href="#">
@@ -48,7 +51,8 @@ favPokemons.forEach(function(pokemon){
     <div class="stats-wrapper">
       <div class="favourite">
       
-      <% if(dbPokemons.indexOf(pokemon.name) !== -1){%>
+      <% if(dbPokemons.indexOf(pokemon.name) !== -1){
+        isInFavorites = true;%>
         <p>In favorites</p>
       <%} else {%>
         <p>Not in favourite</p>
@@ -63,8 +67,8 @@ favPokemons.forEach(function(pokemon){
     
 <form method="POST" action="/pokemon">
   <input hidden type="text" name="name" value="<%= pokemon.name %>">
-        <input hidden type="text" name="imgId" value="<%=imagesUrl + padId(getPokemonId(pokemon.url))%>.png">
-        <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
+        <input hidden type="text" name="imgUrl" value="<%=imagesUrl + padId(getPokemonId(pokemon.url))%>.png">
+        <button <%if(isInFavorites){%>disabled<%}%>  class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
 </form>
 
   </li>
