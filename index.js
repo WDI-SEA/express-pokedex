@@ -1,5 +1,6 @@
 var express = require('express');
 var request = require('request');
+var pokemonGif = require('pokemon-gif');
 var bodyParser = require('body-parser');
 var ejsLayouts = require('express-ejs-layouts');
 var app = express();
