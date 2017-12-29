@@ -48,6 +48,11 @@ favPokemons.forEach(function(pokemon){
     <div class="stats-wrapper">
       <div class="favourite">
       
+      <% if(dbPokemons.indexOf(pokemon.name) !== -1){%>
+        <p>In favorites</p>
+      <%} else {%>
+        <p>Not in favourite</p>
+      <%}%>
     </div>
     <div class="info">
       <p id="pokemonId"><%=getPokemonId(pokemon.url);%></p>
