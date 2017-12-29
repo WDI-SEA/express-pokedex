@@ -1,0 +1,7 @@
+<h1>favorites</h1>
+<% pokemons.forEach(function(pokemon) { %>
+<div class="well">
+  <h2><a href="/pokemon/<%=pokemon.id%>"><%= pokemon.name %></a></h2>
+  <a href="/pokemon/<%= pokemon.id %>" class="btn btn-danger glyphicon glyphicon-trash delete-link"></a>
+  </div>
+<% }); %>
