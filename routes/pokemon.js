@@ -5,7 +5,6 @@ var db = require("../models");
 var request = require('request');
 
 
-
 // GET - return a page with favorited Pokemon
 router.get("/", function(req, res) {
     db.pokemon.findAll().then(function(favorites){
@@ -14,29 +13,23 @@ router.get("/", function(req, res) {
 });
 
 router.post("/", function(req, res) {
-	db.pokemon.create(req.body).then(function(newFavorite){
+	db.pokemon.create(req.body).then(function(){
 		res.redirect("/pokemon")
 	}).catch(function(err){
 		res.send("error error!", err);
 	});
 });
 
+
 //see page with each pokemon
-router.get("/:id", function(req, res){
-		var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + req.params.name;
-    	request(pokemonUrl, function(error, response, body) {
-        	var pokemon = JSON.parse(body).results;
-        	res.render("favorites/poke", { pokemon: pokemon});
+router.get("/:name", function(req, res){
+		var pokemonOne = 'http://pokeapi.co/api/v2/pokemon/' + req.params.name;
+		res.send(pokemonOne);
+    	request(pokemonOne, function(error, response, body) {
+        	var pokemon = JSON.parse(body);
+        	res.render("favorites/poke", {pokemon: pokemon});
 		});
-});
-
-// //see page with each pokemon
-// router.get("/:id", function(req, res){
-// 	db.pokemon.findById(req.params.id).then(function(favorite){
-// 		res.render("favorites/poke", {result: favorite});
-// 	});
-// });
-
+	});
 
 //delete pokemon from favorites page and db
 router.delete("/:id", function(req, res){
@@ -52,3 +45,7 @@ router.delete("/:id", function(req, res){
 });
 
 module.exports = router;
+
+
+
+
