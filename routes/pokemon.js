@@ -52,16 +52,18 @@ router.post('/', function(req, res) {
 
 //BONUS TODO: delete
 router.delete("/:id", function(req,res) {
-   db.pokemon.destroy({
-      where: { "id": req.params.id }
-   }).then(
-      function(deleted) {
-         console.log("db delete",req.params.id);
-         res.redirect("/pokemon");
-   }).catch(
-      function(err) {
-         res.send("DB error:"+err);
-   });
+   if(req.params.id) {
+      db.pokemon.destroy({
+         where: { "id": req.params.id }
+      }).then(
+         function(deleted) {
+            console.log("db delete",req.params.id);
+            res.send(success);
+      }).catch(
+         function(err) {
+            res.send("DB error:"+err);
+      });
+   }
 });
 
 module.exports = router;
