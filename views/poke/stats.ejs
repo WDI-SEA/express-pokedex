@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="text-center">The Original 151 Pokemon</h1>
+  <h1 class="text-center">Pokemon Stats</h1>
 <p class="text-center">
   <a href="/" class="btn btn-info">Home</a>
 </p>
@@ -7,7 +7,7 @@
   <div class="well">
     <h2><%= pokemon.name %></h2>
     <form class="delete-fav" action="./pokemon/<%= pokemon.id %>">
-      <button class="btn btn-danger glyphicon glyphicon-trash" type="submit"></button>
+      <button class="btn btn-danger" type="submit">Remove Pokemon</button>
     </form>
   </div>
 <% }); %>

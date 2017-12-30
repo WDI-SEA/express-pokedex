@@ -1,4 +1,4 @@
-console.log('hello from routing.js!');
+// console.log('hello from routing.js!');
 $('.delete-fav').click(function(e) {
   e.preventDefault();
   $.ajax({
