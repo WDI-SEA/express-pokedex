@@ -1,5 +1,5 @@
 console.log('hello from routing.js!');
-$('.delete').click(function(e) {
+$('.delete-fav').click(function(e) {
   e.preventDefault();
   $.ajax({
     url: $(this).attr('action'),

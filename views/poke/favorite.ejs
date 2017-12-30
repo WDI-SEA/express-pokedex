@@ -1,14 +1,13 @@
-<!-- <div class="container">
+<div class="container">
   <h1 class="text-center">The Original 151 Pokemon</h1>
 <p class="text-center">
   <a href="/">Home</a>
-</p> -->
+</p>
 <% pokemon.forEach(function(pokemon) { %>
   <div class="well">
     <h2><%= pokemon.name %></h2>
-    <form action="./<%= pokemon.id %>">
-      <input hidden type="text" name="name" value="<%= pokemon.name %>">
-      <button class="btn btn-danger delete" type="delete">Remove Pokemon</button>
+    <form class="delete-fav" action="./pokemon/<%= pokemon.id %>">
+      <button class="btn btn-danger" type="submit">Remove Pokemon</button>
     </form>
   </div>
 <% }); %>
