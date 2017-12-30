@@ -1,0 +1,10 @@
+<% favorite.forEach(function(favorite) { %>
+  <div class="well">
+    <h2><%= favorite.name %></h2>
+    <form class="delete-fav" action="./pokemon/<%= favorite.id %>">
+    <button type="submit" class="btn btn-danger">
+      Delete Favorite
+    </button>
+  </form>
+  </div>
+<% }); %>
