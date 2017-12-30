@@ -4,7 +4,6 @@ var bodyParser = require('body-parser');
 var db = require("../models");
 var request = require('request');
 
-
 // GET - return a page with favorited Pokemon
 router.get("/", function(req, res) {
     db.pokemon.findAll().then(function(favorites){
@@ -19,7 +18,6 @@ router.post("/", function(req, res) {
 		res.send("error error!", err);
 	});
 });
-
 
 //see page with each pokemon
 router.get("/:name", function(req, res){

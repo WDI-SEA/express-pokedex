@@ -1,12 +1,12 @@
-
-.main-top{
+#main{
+	background-image: url("/img/PokeGo.png");
+}.main-top{
 	color: rgb(253, 203, 42);
 	background-color: rgba(54, 108, 178, .8);
 	font-family: 'Audiowide', cursive;
 	padding: 15px 50px;
 	margin-bottom: 20px;
 }
-
 .flex-buttons{
 	margin-left:25%;
 	width:50%;
@@ -16,7 +16,6 @@
 	margin-left: 15%;
 	display: flex;
 }
-
 .favorites, 
 .home-button{
 	background-color: rgba(253, 203, 42, .9);
@@ -26,7 +25,6 @@
 	height: 59px;
 	margin: 10px 20px;
 }
-
 .well{
 	color: rgb(253, 203, 42);
 	font-size: 30px;
@@ -38,24 +36,18 @@
 	display: inline-block;
 	margin: 10px 10px;
 }
-
 .pokename{
 	font-size: 45px;
 }
-
 .indv-poke{
 	background-color: rgba(54, 108, 178, .9);
 	color: rgb(253, 203, 42);
 	font-family: 'Audiowide', cursive;
-	height: 310px;
+	height: 330px;
 	padding-top: 10px;
 	text-align: center;
 	margin-top: 20px;
 	margin-left:27.5%;
 	width:45%;
 	position:relative;
-}
-
-#main{
-	background-image: url("/img/PokeGo.png");
 }
