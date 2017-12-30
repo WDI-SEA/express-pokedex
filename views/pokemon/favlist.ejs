@@ -1,0 +1,28 @@
+<h1 class="text-center">Your Pokemon Favorites</h1>
+
+<div class="row nav">
+   <div class="col-sm-4 col-sm-offset-4 text-center">
+      <a class="btn btn-primary fav-button" href="/">All Pokemon</a>
+   </div>
+</div>
+
+<div class="container">
+   <% itemList.forEach(function(poke) { %>
+     <div class="row well center-block">
+
+          <div class="col-sm-4">
+
+             <h2><%= poke.name; %></h2>
+          </div>
+          <div class="col-sm-4 col-sm-offset-4">
+             <a class="btn btn-primary info-button" href="/pokemon/<%= poke.id; %>">Info</a>
+             <form  class="delete-button" method="DELETE" action="/pokemon">
+                 <input hidden type="text" name="name" value="<%= poke.name %>">
+                 <button class="btn btn-danger" type="submit">
+                    Remove Pokemon
+                 </button>
+             </form>
+          </div>
+     </div>
+   <% }); %>
+</div>

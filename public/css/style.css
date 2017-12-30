@@ -1,0 +1,36 @@
+
+.nav {
+   padding: 20px;
+}
+
+.star {
+   height: 20px;
+   width: 20px;
+   margin-right: 10px;
+}
+
+.info-button {
+   display: inline-block;
+}
+
+.delete-button {
+   display: inline-block;
+}
+
+.star-button {
+   text-align: right;
+   display: inline-block;
+
+}
+
+.star-button button{
+   font-size: 0.8em;
+}
+
+.fav-button {
+   font-size: 1.2em;
+}
+
+h2 {
+   /*display: inline-block;*/
+}
