@@ -1,0 +1,8 @@
+.rotom {
+  background-image: url("../img/rotemdex.png");
+  background-repeat: no-repeat;
+  background-size: 100% 150%;
+  background-position: 0 -300px;
+  background-color: black;
+  height: 700px;
+}

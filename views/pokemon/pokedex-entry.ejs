@@ -1,0 +1,19 @@
+
+<div class="rotom">
+  <div class="pokedex-container">
+    <h2 class="text-center">
+      <%= pokemon.name %>
+    </h2>
+    <img src="<%= pokemon.sprites.front_default %>" alt="image of <%= pokemon.name %>">
+    <p>height: <%= pokemon.height %></p>
+    <p>weight: <%= pokemon.weight %></p>
+    <p>baseXP: <%= pokemon.base_experience %></p>
+    <p>
+      Type: 
+      <% for(var i = 0; i < pokemon.types.length; i++) { %>
+        <%= pokemon.types[i].type.name %>
+        &nbsp
+      <% } %>
+    </p>
+  </div>
+</div>
