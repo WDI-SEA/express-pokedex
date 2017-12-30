@@ -1,9 +1,12 @@
 <div class="container">
-  <h1 class="text-center">The Original 151 Pokemon</h1>
+  <h1 class="text-center">My Favorite Pokemon</h1>
 <p class="text-center">
   <a href="/" class="btn btn-info">Home</a>
 </p>
-<% pokemon.forEach(function(pokemon) { %>
+<% if(pokemon.length <=0) { %>
+  <h2>No Pokemon have been added!</h2>
+<%} else {%>
+  <% pokemon.forEach(function(pokemon){%>
   <div class="well">
     <h2><%= pokemon.name %></h2>
     <form class="delete-fav" action="./pokemon/<%= pokemon.id %>">
@@ -11,4 +14,5 @@
     </form>
   </div>
 <% }); %>
+<%}%>
 </div>

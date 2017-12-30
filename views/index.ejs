@@ -8,6 +8,7 @@
       <h2><%= pokemon.name %></h2>
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
+        <button class="btn btn-primary" type="submit">Info</button>
         <button class="btn btn-primary glyphicon glyphicon-heart" type="submit"></button>
         <!-- <input hidden type="text" name="name" value="<%= pokemon.id %>"> -->
         <!-- <button class="btn btn-danger delete" type="delete">Remove Pokemon</button> -->

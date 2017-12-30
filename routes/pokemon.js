@@ -20,19 +20,28 @@ router.post('/', function(req, res) {
   });
     // res.send(req.body);
 });
-//route to get id
-router.get('/:id', function(req, res){
-  db.pokemon.findById(req.params.id).then(function(pokemon){
-    if(pokemon){
-      res.render('index/pokemon', {pokemon:pokemon});
-    } else {
-      res.status(404).send('nope404', err);
-    }
-  }).catch(function(err) {
-    res.status(500).send('nope505', err);
-  });
+//maybe route by name?
+router.get('/name', function(req, res){
+  var pokeStat = 'http://pokeapi.com/api/v2/pokemon/' + req.params.name;
+    request(pokeStat, function(err, res, body) {
+      var stats = JSON.parse(body);
+      res.render('/poke/stats', {pokemon:pokemon});
+    });
 });
-//route to delete id
+
+//route to get id
+// router.get('/:id', function(req, res){
+//   db.pokemon.findById(req.params.id).then(function(pokemon){
+//     if(pokemon){
+//       res.render('index/pokemon', {pokemon:pokemon});
+//     } else {
+//       res.status(404).send('nope404', err);
+//     }
+//   }).catch(function(err) {
+//     res.status(500).send('nope505', err);
+//   });
+// });
+//route to delete id or pokemon
 router.delete('/:id', function(req, res) {
   console.log('delete Route ID = ', req.params.id);
   db.pokemon.destroy({
