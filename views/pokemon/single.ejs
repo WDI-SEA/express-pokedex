@@ -1,17 +1,24 @@
-<div id="pokecard">
-	<h2 id = "pokemonName"> <%= name %></h2>
-	<div id="pokemonImage">
-	<div class="w3-content w3-display-container">
-		<button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-		<img class = "mySlides" src="<%=image_front%>">
-		<img class = "mySlides" src="<%=image_back%>">
-		<button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+<div id="pokecard-shape">
+<div id="back-pokecard">
+<a href="#" onClick="flipCard()"><img src="/img/cardback2.png" id="card-back-image" title="Click to flip card"></a>
+</div>	
+	<div id="pokecard">
+		<div id="interior-card">
+		<h2 id = "pokemonName"> <%= name %></h2>
+		<div id="pokemonImage">
+		<div class="w3-content w3-display-container">
+			<button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+			<img class = "mySlides image" src="<%=image_front%>">
+			<img class = "mySlides" src="<%=image_back%>">
+			<button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
 
+		</div>
+	</div>
+		<div id="pokemon_info">
+			<h3 id="info-header"> Ability: </h3><p><%=ability%></p>
+			<h3 id="info-header"> Speed: </h3><p><%=speed%></p>
+		</div>
 	</div>
 </div>
-	<div id="pokemon_info">
-		<h3> Ability: <%=ability%></h3>
-		<h3> Speed: <%=speed%></h3>
-	</div>
 </div>
 

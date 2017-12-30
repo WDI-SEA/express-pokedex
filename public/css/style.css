@@ -45,31 +45,68 @@ body {
 #favorites-link {
 	vertical-align: middle;
 	display: inline;
-	font-size: 28px;
+	font-size: 30px;
 	text-transform: uppercase;
 	color: white;
 	text-shadow: 2px 2px #6f7376;
 }
 
-#pokemon-link {
-	font-family: pokemonFont;
-	text-transform: uppercase;
+/* Pokemon Card on Main Page */
 
+.well {
+	display: inline-block;
+	margin-top: 5px;
+	width: 30%;
+
+}
+
+#pokemon-link {
+	text-transform: uppercase;
+	font-weight: 900;
+	font-size: 22px;
+	text-shadow: 2px 1px #6f7376;
+}
+
+#favorites-button {
+	border: 2px solid #FECA30;
+	color: white;
+	text-transform: uppercase;
+	font-size: 10px;
 }
 
 /********************/
 /* Individual Pages */
 /********************/
 
+#pokecard-shape{
+	margin: 0 auto;
+	margin-top: 20px;
+	text-align: center;
+	height: 380px;
+	width: 275px;
+}
+
+#card-back-image{
+	height: 380px;
+
+}
 
 #pokecard{
-	text-align: center;
-	background-color: red;
-	border: 1px black solid;
-	width: 50%;
-	height: 400px;
-  	margin: 0 auto;
-  	margin-top: 20px;
+	background-color: #FDD64B;
+	border-radius: 25px;
+	height: 380px;
+	width: 275px;
+}
+
+#interior-card{
+	display: inline-block;
+	margin: 0 auto;
+	margin-top: 14px;
+	height: 350px;
+	width: 245px;
+	background: url('/img/pokemoncard-background.png') no-repeat;
+    background-size: 100%;
+
 }
 
 #pokemonName{
@@ -84,12 +121,11 @@ body {
 }
 
 .w3-content{
-	width: 50%;
 	width: 200px;
-	height: 200px;
-	background-color: white;
-	border: 1px #c5c6c2;
-	border-style: solid double;
+	height: 130px;
+	background: url('/img/sprite_back1.jpeg') no-repeat;
+	background-size: 100%;
+	border: 6px solid #FDD64B;	
 }
 
 .mySlides {
