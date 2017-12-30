@@ -9,6 +9,14 @@ router.get('/', function(req, res) {
      });
 });
 
+router.get('/pokemon/:id', function(req, res) {
+    var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon?limit=151';
+
+    request(pokemonUrl, function(error, response, body) {
+        res.render('index', { descriptions: description });
+    });
+});
+
 // POST - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
     db.favorite.create(req.body).then(function(createArticle){

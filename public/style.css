@@ -1,0 +1,15 @@
+body {
+  background-image: url("../img/journal.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.container {
+  top: 100px;
+  right: 200px;
+  position: relative;
+  float: right;
+  height: 600px;
+  width: 250px;
+  background-color: inherit;
+  overflow: scroll;
+}

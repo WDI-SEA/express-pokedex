@@ -6,9 +6,10 @@ var app = express();
 
 app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/public'));
+app.use('/', express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(ejsLayouts);
-app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res) {
     var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon?limit=151';
