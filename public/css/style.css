@@ -31,6 +31,24 @@
    font-size: 1.2em;
 }
 
+.poke-name {
+   font-size: 1.8em;
+}
+
+.info-text {
+   font-size: 1.0em;
+}
+
+.text-xs-center {
+   text-align: left;
+}
+
+@media (max-width: 767px) {
+  .text-xs-center {
+    text-align: center;
+  }
+}
+
 h2 {
    /*display: inline-block;*/
 }

@@ -3,13 +3,13 @@
 
 
      <div class="row nav">
-        <div class="col-sm-1 col-sm-offset-3 text-center">
+        <div class="col-sm-1 col-sm-offset-3 col-xs-2 text-center">
            <a class="btn btn-primary fav-button" href="/l"><<</a>
         </div>
-        <div class="col-sm-4 text-center">
+        <div class="col-sm-4 col-xs-8 text-center">
            <a class="btn btn-primary fav-button" href="/pokemon">See All Favorites</a>
         </div>
-        <div class="col-sm-1 text-center">
+        <div class="col-sm-1 col-xs-2 text-center">
            <a class="btn btn-primary fav-button" href="/r">>></a>
         </div>
      </div>
@@ -17,11 +17,10 @@
      <% pokemon.forEach(function(pokemon) { %>
         <div class="row well center-block">
 
-             <div class="col-sm-4">
-                <%= console.log(pokemon); %>
+             <div class="col-sm-4 col-xs-12 text-xs-center">
                 <h2><%= pokemon.name; %></h2>
              </div>
-             <div class="col-sm-4 col-sm-offset-4">
+             <div class="col-sm-3 col-sm-offset-5 text-xs-center">
                 <form  class="star-button" method="POST" action="/pokemon">
                    <input hidden type="text" name="name" value="<%= pokemon.name %>">
                    <button class="btn btn-primary " type="submit">
