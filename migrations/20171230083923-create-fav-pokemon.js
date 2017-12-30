@@ -11,7 +11,7 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
-      index:{
+      index: {
         type: Sequelize.INTEGER
       },
       createdAt: {
