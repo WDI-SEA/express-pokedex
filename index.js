@@ -20,6 +20,7 @@ app.get('/', function(req, res) {
 });
 
 app.use('/pokemon', require('./routes/pokemon'));
+// app.use('/favorite', require('./routes/favorites'));
 
 var server = app.listen(process.env.PORT || 3000);
 
