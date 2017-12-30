@@ -1,8 +1,12 @@
 <div class="container">
-  <h1 class="text-center">The Original 151 Pokemon</h1>
-  <p class="text-center">
-    <a href="/pokemon">Favorites</a>
-  </p>
+  <div id="header-image">
+    <img id = "logo" src="/img/logo.png">
+  </div>
+  <div id ="favorites-container">
+      <img class="pokeball" id="pokeball1" src="/img/pokeball.png">
+      <a id= "favorites-link" href="/pokemon">Favorites</a>
+      <img class="pokeball" id="pokeball2" src="/img/pokeball.png">
+  </div>
 
   <% pokemon.forEach(function(pokemon) { %>
   <% var url = pokemon.url %>
@@ -10,11 +14,11 @@
   <% var id = url_short.substring((url_short.lastIndexOf('/'))+1); %>
     <div class="well">
       <h2>
-        <a href="/pokemon/<%=id%>" id="pokemon"><%= pokemon.name %></a>
+        <a href="/pokemon/<%=id%>" id="pokemon-link"><%= pokemon.name %></a>
       </h2>
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
-        <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
+        <button class="btn btn-primary" type="submit">Add to Favorites!</button>
       </form>
     </div>
   <% }); %>

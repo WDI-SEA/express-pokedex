@@ -4,9 +4,62 @@
 }
 
 body {
+	font-family: 'Merriweather Sans', sans-serif;
 	text-align: center;
 }
 
+/********************/
+/* Main Landing Page*/
+/********************/
+
+#header-image{
+	margin-top: 20px;
+	background-color: black;
+}
+
+#logo {
+	width: 80%;
+}
+
+#favorites-container {
+	background-color: #356BB0;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border: 1px solid #6f7376;
+	
+}
+
+.pokeball {
+	height: 35px;
+	vertical-align: middle;
+}
+
+#pokeball1 {
+	margin-right: 10px;
+}
+
+#pokeball2 {
+	margin-left: 10px;
+}
+
+#favorites-link {
+	vertical-align: middle;
+	display: inline;
+	font-size: 28px;
+	text-transform: uppercase;
+	color: white;
+	text-shadow: 2px 2px #6f7376;
+}
+
+#pokemon-link {
+	font-family: pokemonFont;
+	text-transform: uppercase;
+
+}
+
+/********************/
+/* Individual Pages */
+/********************/
 
 
 #pokecard{
