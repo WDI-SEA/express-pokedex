@@ -1,10 +1,20 @@
 
 .main-top{
 	color: rgb(253, 203, 42);
-	background-color: rgba(54, 108, 178, .7);
+	background-color: rgba(54, 108, 178, .8);
 	font-family: 'Audiowide', cursive;
 	padding: 15px 50px;
 	margin-bottom: 20px;
+}
+
+.flex-buttons{
+	margin-left:25%;
+	width:50%;
+	text-align: center;
+}
+.two-buttons{
+	margin-left: 15%;
+	display: flex;
 }
 
 .favorites, 
@@ -14,23 +24,12 @@
 	font-family: 'Audiowide', cursive;
 	padding: 6px 50px;
 	height: 59px;
-}
-
-.each-poke{
-	background-color: rgba(227, 81, 52, .7);
-	text-align: center;
-	margin-left: 30%;
-	width: 450px;
-	font-family: 'Audiowide', cursive;
-
-}
-
-.pokemon{
-	font-size: 30px;
+	margin: 10px 20px;
 }
 
 .well{
 	color: rgb(253, 203, 42);
+	font-size: 30px;
 	font-family: 'Audiowide', cursive;
 	width: 260px;
 	height: 130px;
@@ -38,6 +37,23 @@
 	text-align: center;
 	display: inline-block;
 	margin: 10px 10px;
+}
+
+.pokename{
+	font-size: 45px;
+}
+
+.indv-poke{
+	background-color: rgba(54, 108, 178, .9);
+	color: rgb(253, 203, 42);
+	font-family: 'Audiowide', cursive;
+	height: 310px;
+	padding-top: 10px;
+	text-align: center;
+	margin-top: 20px;
+	margin-left:27.5%;
+	width:45%;
+	position:relative;
 }
 
 #main{

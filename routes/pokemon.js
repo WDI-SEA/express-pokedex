@@ -23,8 +23,7 @@ router.post("/", function(req, res) {
 
 //see page with each pokemon
 router.get("/:name", function(req, res){
-		var pokemonOne = 'http://pokeapi.co/api/v2/pokemon/' + req.params.name;
-		res.send(pokemonOne);
+		var pokemonOne = 'http://pokeapi.co/api/v2/pokemon/' + req.params.name
     	request(pokemonOne, function(error, response, body) {
         	var pokemon = JSON.parse(body);
         	res.render("favorites/poke", {pokemon: pokemon});

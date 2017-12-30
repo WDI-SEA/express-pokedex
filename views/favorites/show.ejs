@@ -11,7 +11,7 @@
 	<%} else {%>
 		<% results.forEach(function(item){ %>
 			<div class="well">
-				<p class="pokemon text-center"><a href="/pokemon/<%= item.id %>"><%=item.name%></a></p>
+				<p class="text-center"><a href="/pokemon/<%= item.name %>"><%=item.name%></a></p>
 				<a href="/pokemon/<%= item.id %>" class="btn btn-danger delete-link">Remove</a>
 			</div>
 		<%});%>
