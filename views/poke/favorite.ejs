@@ -1,0 +1,13 @@
+<p class="text-center">
+  <a href="/">Home</a>
+</p>
+<% pokemon.forEach(function(pokemon) { %>
+  <div class="well">
+    <h2><%= pokemon.name %></h2>
+    <form action="./<%= pokemon.id %>">
+      <input hidden type="text" name="name" value="<%= pokemon.name %>">
+      <button class="btn btn-danger delete" type="delete">Remove Pokemon</button>
+    </form>
+  </div>
+<% }); %>
+</div>
