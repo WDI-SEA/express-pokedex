@@ -51,4 +51,13 @@ router.delete('/:id', function(req,res){
 		res.send('fail');
 	})
 });
+
+router.get('/stats/:name', function(req, res) {
+    var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/?limit=150&offset=0';
+    request(pokemonUrl, function(error, response, body) {
+        var pokemon = JSON.parse(body).results;
+        res.render('./pokemon/show', { pokemon: pokemon });
+    });
+});
+
 module.exports = router;

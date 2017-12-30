@@ -79,10 +79,6 @@ line-height: 50px;
 
 }
 
-.btn-primary {
-	width: 130px !important;
-	font-size: 12px !important;
-}
 
 .list {
 	border-right: 2px solid black;	
@@ -100,13 +96,17 @@ line-height: 50px;
 	top:2px;
 }
 
-.list button {
-	position: relative;
-	top:-45px;
-	left: 265px;
-	width: 200px;
-	overflow: inherit;
+.my-btn {
+	position: relative !important;
+	top:-45px !important;
+	left: 245px !important;
+	width: 170px !important;
 	font-size: 12px !important;
+	text-align: center !important;
+}
+
+.buttonp {
+	vertical-align: middle;
 }
 
 .list img {
@@ -128,9 +128,6 @@ line-height: 50px;
 	left: 293px;
 }
 
-.srch-btn {
-	letter-spacing: 3px;
-}
 
 .navbar-form {
 	padding: 5px !important;
@@ -157,5 +154,6 @@ line-height: 50px;
 	top:50px;
 	right:110px;
 	font-family: 'pokemon';
+	letter-spacing: 3px;
 }
 
