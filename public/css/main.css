@@ -1,0 +1,21 @@
+.pokemon-name{
+	color:blue;
+}
+.pokemon-sprite{
+	position: absolute;
+	top: 13em;
+	width: 250px;
+	margin: 0;
+	left: 8em;
+	transform: rotate(4deg);
+	margin-top:5em;
+}
+.pokedex-wrapper{
+	position:relative;
+	width: 729px;
+	height: 649px;
+	left: 26vw;
+}
+.pokedex{
+	transform: rotate(-17deg);
+}

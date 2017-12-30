@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+<body>
+  <h2 class="pokemon-name"></h2>
+  <div class="pokedex-wrapper">
+  	<img class="pokedex" src="/img/pokedex.png">
+  </div>
+<%results.forEach(function(item){ %>
+	<%if((item.index&&item.name.length)>0){%>
+  	<img class="pokemon-sprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%=item.index%>.png">
+	<%}%>
+<% }); %>
+</body>
+</html>
