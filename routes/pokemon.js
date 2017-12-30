@@ -17,5 +17,19 @@ router.post('/', function(req, res) {
     });
 });
 
+//DELETE route
+router.delete("/:id", function(req, res){
+	console.log("delete route ID =", req.params.id);
+	db.favorite.destroy({
+		where: {id: req.params.id}
+	}).then(function(deleted){
+		console.log("deleted = ", deleted);
+		res.send("success");
+	}).catch(function(err){
+		console.log("error happend", err);
+		res.sen("fail");
+	});
+});
+
 
 module.exports = router;

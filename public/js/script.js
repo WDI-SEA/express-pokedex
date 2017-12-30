@@ -3,7 +3,7 @@ $(".delete-pokemon").click(function(e){
 		console.log("delete this shit");
 		$.ajax({
 			method: "DELETE",
-			url: $(this).attr("action")
+			url: $(this).attr("action"),
 		}).done(function(data){
 			window.location.href = "/pokemon";
 		});
