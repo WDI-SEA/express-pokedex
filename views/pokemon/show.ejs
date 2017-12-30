@@ -1,11 +1,43 @@
-<h2>Results Here</h2>
+<a class="btn btn-success" href="/">Back to Pokemon</a>
+<a class="btn btn-success" href="/pokemon">Back to Favorites</a>
+<h2 class="text-center">More About...</h2>
 
-<h3>Name:</h3>
-<%= JSON.stringify(results.forms[0].name) %>
 
-<h3>Abilities:</h3>
-<%= JSON.stringify(results.abilities[0].ability.name) %>
-<%= JSON.stringify(results.abilities[1].ability.name) %>
+<h1>
+	<%= JSON.stringify(results.forms[0].name).split('"').join('') %>
+</h1>
 
-<h3>Stat:</h3>
-<%=JSON.stringify(results.stats[0].stat.name) %>
+<div id="accordion">
+	<h3>Abilities:</h3>
+	<div>
+		<ul>
+			<% for(var i = 0; i < results.abilities.length; i++) { %>
+				<li>
+				<%=JSON.stringify(results.abilities[i].ability.name).split('"').join('') %>
+				</li>
+			<% } %>
+		</ul>
+	</div>
+
+	<h3>Stats:</h3>
+	<div>
+		<ul>
+			<% for(var i = 0; i < results.stats.length; i++) { %>
+				<li>
+				<%=JSON.stringify(results.stats[i].stat.name).split('"').join('') %>
+				</li>
+			<% } %>
+		</ul>
+	</div>
+
+	<h3>Moves (First Ten):</h3>
+	<div>
+		<ul>
+			<% for(var i = 0; i < 10; i++) { %>
+				<li>
+				<%=JSON.stringify(results.moves[i].move.name).split('"').join('') %>
+				</li>
+			<% } %>
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,35 @@
+body{
+	background-color: pink;
+	text-align: center;
+	font-family: 'Indie Flower', cursive;
+}
+.well {
+	background-color: green;
+	width: 200px;
+	height: 200px;
+	display: inline-block;
+}
+
+#sortable { 
+  	list-style-type: none; 
+  	margin: 0 auto; 
+  	padding: 0; 
+  	width: 60%; 
+}
+#sortable li { 
+  	margin: 0 3px 3px 3px; 
+  	padding: 0.4em; 
+  	padding-left: 1.5em; 
+  	font-size: 1.4em; 
+  	height: 100px; 
+}
+
+#sortable li span { 
+  	position: absolute; 
+  	margin-left: -1.3em; 
+}
+
+#accordion {
+	max-width: 60%;
+	margin: 0 auto;
+}

@@ -17,16 +17,15 @@ router.post('/', function(req, res) {
     }); 
 });
 
+
+
 router.get('/:id', function(req, res){
-	// db.pokemon.findById(req.params.id).then(function(){
-	// console.log(req.params);
  	db.pokemon.findOrCreate({
  		where: { id: req.params.id }
  	}).spread(function(pokemon, created){
  		var name = pokemon.name
  	
  		console.log(name);
-	// var name = 'bulbasaur';
 	var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + name + '/';
 
     request({
@@ -37,11 +36,14 @@ router.get('/:id', function(req, res){
    		});
     });
 });
-// });
 
-//DELETE - delete from faves by name
-// router.delete('/:name', function(req, res){
-// 	res.send('DELETE ROUTE');
-// });
+
+router.delete('/:id', function(req, res){
+	db.pokemon.destroy({
+		where: { id: req.params.id }
+	}).then(function(pokemon){
+		res.send("success");
+	});
+});
 
 module.exports = router;
