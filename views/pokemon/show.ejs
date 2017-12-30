@@ -1,3 +1,6 @@
+<% var thisPoke = JSON.parse(JSON.stringify(pokemon.url)) %>
+
+
 <div class="container">
 	<div class="homebanner">
   <h3 class="text-center">
@@ -14,10 +17,10 @@
     	<div class="showbg">
           <h2><img src="http://pixelartmaker.com/art/b73566a14633720.png"><%= pokemon.name %></h2>
           <ul>
-            <li>Type:</li>
-            <li>Abilities:</li>
-            <li>Weight:</li>
-            <li>Can fly?</li>
+            <li>Type:<%= thisPoke %>.keyForType </li>
+            <li>Abilities: <%= thisPoke %>.keyForAbility</li>
+            <li>Weight: <%= thisPoke %>.weight</li>
+            <li></li>
           </ul>
       </div>
     </div>

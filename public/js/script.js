@@ -9,3 +9,4 @@ $('.rmv-favorite').submit(function(e){
 		window.location.href = '/pokemon';
 	});
 });
+

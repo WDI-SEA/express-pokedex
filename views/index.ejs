@@ -13,7 +13,7 @@
         <img src="http://pixelartmaker.com/art/b73566a14633720.png"><a href="/pokemon/<%= pokemon.name %>">
           <%= pokemon.name %></a></h2>
       <form class="add-favorite" method="POST" action="./pokemon">
-        <input hidden type="text" name="url">
+        <input hidden type="text" name="url" value="<%= pokemon.url %>">
         <input class="pokemon-name" hidden type="text" name="name" value="<%= pokemon.name %>">
         <button class="btn btn-primary my-btn" type="submit"><p class="buttonp">Add to Favorites</button>
       </form>
