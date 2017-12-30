@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var db = require('../models/');
+var request = require('request');
 
 // GET - return a page with favorited Pokemon
 router.get('/', function(req, res) {
@@ -25,6 +26,19 @@ router.post('/', function(req, res) {
       res.status(500).render('error');
     });
     
+});
+
+// GET a specific pokemon and display more data about it. 
+router.get('/:id', function(req, res,next){
+  var detailsUrl = 'https://pokeapi.co/api/v2/pokemon/';
+  
+  request(detailsUrl + req.params.id, function(err, response, body){
+    var pokemon = JSON.parse(body);
+
+    res.render('pokemon/singlePokeView', {pokemon:pokemon});
+  });
+
+
 });
 
 module.exports = router;

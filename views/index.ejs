@@ -44,7 +44,7 @@ favPokemons.forEach(function(pokemon){
   %>
   <li class="animate">
     <figure>
-      <a href="#">
+      <a href="pokemon/<%=getPokemonId(pokemon.url)%>">
         <img src="<%=imagesUrl + padId(getPokemonId(pokemon.url))%>.png">
       </a>
     </figure>
