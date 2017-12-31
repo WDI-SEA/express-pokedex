@@ -38,7 +38,7 @@ router.post('/', function(req, res) {
   });
     // res.send(req.body);
 });
-//maybe route by name?
+// maybe route by name?
 // router.get('/:name', function(req, res){
 //   var pokeStat = 'http://pokeapi.com/api/v2/pokemon/' + req.params.name
 //     request(pokeStat, function(error, response, body) {
