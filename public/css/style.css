@@ -1,13 +1,15 @@
 body{
-	background-color: pink;
+	background-color: salmon;
 	text-align: center;
 	font-family: 'Indie Flower', cursive;
 }
 .well {
-	background-color: green;
+	background-color:#7fe896;
 	width: 200px;
-	height: 200px;
+	height: 220px;
 	display: inline-block;
+	border-radius: 15px;
+	border: 5px solid green;
 }
 
 #sortable { 
@@ -22,6 +24,9 @@ body{
   	padding-left: 1.5em; 
   	font-size: 1.4em; 
   	height: 100px; 
+  	border-radius: 15px;
+  	background-color:#7fe896;
+  	border: 5px solid green;
 }
 
 #sortable li span { 
@@ -32,4 +37,13 @@ body{
 #accordion {
 	max-width: 60%;
 	margin: 0 auto;
+	font-family: 'Indie Flower', cursive;
+}
+
+.list {
+	font-size: 25px;
+}
+
+#poke-name {
+	font-size: 80px;
 }

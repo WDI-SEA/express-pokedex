@@ -3,14 +3,14 @@
 <h2 class="text-center">More About...</h2>
 
 
-<h1>
+<h1 id="poke-name">
 	<%= JSON.stringify(results.forms[0].name).split('"').join('') %>
 </h1>
 
 <div id="accordion">
-	<h3>Abilities:</h3>
+	<h2 class="section">Abilities:</h2>
 	<div>
-		<ul>
+		<ul class="list">
 			<% for(var i = 0; i < results.abilities.length; i++) { %>
 				<li>
 				<%=JSON.stringify(results.abilities[i].ability.name).split('"').join('') %>
@@ -19,9 +19,9 @@
 		</ul>
 	</div>
 
-	<h3>Stats:</h3>
+	<h2 class="section">Stats:</h2>
 	<div>
-		<ul>
+		<ul class="list">
 			<% for(var i = 0; i < results.stats.length; i++) { %>
 				<li>
 				<%=JSON.stringify(results.stats[i].stat.name).split('"').join('') %>
@@ -30,9 +30,9 @@
 		</ul>
 	</div>
 
-	<h3>Moves (First Ten):</h3>
+	<h2 class="section">Moves (First Ten):</h2>
 	<div>
-		<ul>
+		<ul class="list">
 			<% for(var i = 0; i < 10; i++) { %>
 				<li>
 				<%=JSON.stringify(results.moves[i].move.name).split('"').join('') %>
