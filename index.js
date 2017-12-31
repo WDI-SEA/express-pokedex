@@ -11,7 +11,7 @@ app.use(ejsLayouts);
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res) {
-    var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
+    var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon?limit=151';
 
     request(pokemonUrl, function(error, response, body) {
         var pokemon = JSON.parse(body).results;
@@ -19,8 +19,8 @@ app.get('/', function(req, res) {
     });
 });
 
-app.use('/pokemon', require('./routes/pokemon'));
-
+app.use('/poke/favorite', require('./routes/pokemon'));
+app.use('/poke/stats', require('./routes/pokemon'));
 var server = app.listen(process.env.PORT || 3000);
 
 module.exports = server;

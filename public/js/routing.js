@@ -5,6 +5,6 @@ $('.delete-fav').click(function(e) {
     url: $(this).attr('action'),
     method: 'DELETE'
   }).success(function(data){
-    window.location.href = '/pokemon';
+    window.location.href = '/poke/favorite';
   });
 });

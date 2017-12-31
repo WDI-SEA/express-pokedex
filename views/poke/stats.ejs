@@ -1,14 +1,10 @@
-<div class="container">
-  <h1 class="text-center">Pokemon Stats</h1>
-<p class="text-center">
-  <a href="/" class="btn btn-info">Home</a>
-</p>
-<% pokemon.forEach(function(pokemon) { %>
-  <div class="well">
-    <h2><%= pokemon.name %></h2>
-    <form class="delete-fav" action="./pokemon/<%= pokemon.id %>">
-      <button class="btn btn-danger" type="submit">Remove Pokemon</button>
-    </form>
-  </div>
-<% }); %>
-</div>
+<h1><%= pokemon.forms[0].name %></h1>
+
+<h2>weight: <%= pokemon.weight %></h2>
+
+<h2>base experience: <%= pokemon.base_experience %></h2>
+
+<img src="<%=pokemon.sprites.front_default%>">
+<br>
+
+<% console.log(pokemon.abilities[0].ability);%>
