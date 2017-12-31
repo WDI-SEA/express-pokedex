@@ -1,0 +1,29 @@
+@font-face {
+	font-family: pokemon;
+	src: url('Pokemon Hollow.ttf');
+}
+.navbar-brand-img {
+	width: auto;
+	height: 80px;
+	margin-left: 20px;
+}
+.main-title {
+	font-family: pokemon, sans-serif;
+	color: black;
+	font-weight: 700;
+	font-variant: titling-caps;
+}
+/*.tooltiptext {
+	visibility: hidden;
+	width: 120px;
+	background-color: gray;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+}
+.hover-button:hover .tooltiptext {
+	visibility: visible !important;
+}*/

@@ -8,4 +8,5 @@ $(document).ready(function(){
 			window.location.href = '/pokemon';
 		});
 	});
+	$('.tooltip').tooltip('show');
 });
