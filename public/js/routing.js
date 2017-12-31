@@ -18,6 +18,9 @@ $(".delete-button").click(function(e) {
 });
 
 $(".star-button").click(function(e) {
-   $($(this).siblings()[0]).removeClass("hidden");
-   console.log($(this).siblings());
+   $("#spinner-"+e.target.id).removeClass("hidden");
+});
+
+$(".info-button").click(function(e) {
+   $("#spinner-"+e.target.id).removeClass("hidden");
 });

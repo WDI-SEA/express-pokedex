@@ -20,13 +20,13 @@
              <div class="col-sm-4 col-xs-12 text-xs-center">
                 <h2><%= pokemon.name; %></h2>
              </div>
-             <div class="col-sm-1 col-sm-offset-4 ">
-                <img class="ajax-spinner hidden" src="/img/ajax_loader_gray_64.gif">
+             <div class="col-sm-1 col-xs-1 col-sm-offset-4 ">
+                <img class="ajax-spinner hidden" id="spinner-<%=pokemon.name%>" src="/img/ajax_loader_gray_64.gif">
              </div>
-             <div class="col-sm-3 text-xs-center">
-                <form  class="star-button" method="POST" action="/pokemon">
+             <div class="col-sm-3 col-xs-10 text-xs-center">
+                <form class="star-button" method="POST" action="/pokemon">
                    <input hidden type="text" name="name" value="<%= pokemon.name %>">
-                   <button class="btn btn-primary add-button" type="submit">
+                   <button class="btn btn-primary add-button" type="submit" id="<%= pokemon.name %>">
                       <img class="star" src="img/favourite-star.svg">Add to Favorite Pokemon
                    </button>
                 </form>

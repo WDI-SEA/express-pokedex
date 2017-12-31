@@ -15,12 +15,16 @@
              <img class="pull-right" src="<%= poke.imageurl; %>">
              <div class="info-text">Base Exp: <%= poke.baseexp %></div>
           </div>
-          <div class="col-sm-4 col-sm-offset-4 col-xs-12 text-center">
-             <a class="btn btn-primary info-button" href="/pokemon/<%= poke.id;%>">Info</a>
+          <div class="col-sm-offset-3 col-sm-1 col-xs-2 text-right">
+             <img class="ajax-spinner hidden" id="spinner-<%=poke.id;%>" src="/img/ajax_loader_gray_64.gif">
+          </div>
+          <div class="col-sm-4 col-xs-8 text-center">
+             <a class="btn btn-primary info-button" href="/pokemon/<%= poke.id;%>" id="<%= poke.id;%>">Info</a>
 
              <a class="btn btn-danger delete-button" href="/pokemon/<%=poke.id;%>">Remove Pokemon</a>
 
           </div>
+          <div class="col-sm-4"></div>
      </div>
    <% }); %>
 </div>
