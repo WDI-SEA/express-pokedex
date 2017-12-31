@@ -48,14 +48,24 @@ body {
 
 .showbg{
 display: inline-block;
-line-height: 50px;
+line-height: 30px;
+letter-spacing: 3px;
+font-size: 17px;
+margin: 0;
+position: relative;
+top:-27px;
 }
 
 .showbg ul {
 	list-style: none;
 }
+
+.showbg li {
+	background: rgba(0,0,0,.1);
+	margin: 3px;
+}
 .showbg img {
-	width:60px;
+	width:50px;
 }
 
 .homebanner {
@@ -107,6 +117,9 @@ line-height: 50px;
 
 .buttonp {
 	vertical-align: middle;
+	position:relative;
+	left:-3px;
+	top: 4px;
 }
 
 .list img {
@@ -119,6 +132,11 @@ line-height: 50px;
 	position:relative;
 	top: 17px;
 	left: 20px;
+
+}
+
+.sprite {
+	min-width: 125px;
 
 }
 

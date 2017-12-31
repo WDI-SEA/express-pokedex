@@ -1,4 +1,3 @@
-<% var thisPoke = JSON.parse(JSON.stringify(pokemon.url)) %>
 
 
 <div class="container">
@@ -15,11 +14,11 @@
 </div>
     <div class="show-pokemon text-center">
     	<div class="showbg">
-          <h2><img src="http://pixelartmaker.com/art/b73566a14633720.png"><%= pokemon.name %></h2>
+          <h2><img src="http://pixelartmaker.com/art/b73566a14633720.png"><%= pokemon.name %> #<%= pokemon.id %> <img class="sprite" src='<%= pokemon.sprites.front_default %> '></h2>
           <ul>
-            <li>Type:<%= thisPoke %>.keyForType </li>
-            <li>Abilities: <%= thisPoke %>.keyForAbility</li>
-            <li>Weight: <%= thisPoke %>.weight</li>
+            <li>TYPE:  <%= pokemon.types[0].type.name %></li>
+            <li>ABILITIES: <br>- <%= pokemon.abilities[0].ability.name %><br>- <%= pokemon.abilities[1].ability.name %></li>
+            <li>WEIGHT: <%= pokemon.weight %></li>
             <li></li>
           </ul>
       </div>
