@@ -4,14 +4,44 @@
   <link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 <body>
-  <h2 class="pokemon-name"></h2>
-  <div class="pokedex-wrapper">
-  	<img class="pokedex" src="/img/pokedex.png">
-  </div>
+  <%var pokemonArr = [];%>
 <%results.forEach(function(item){ %>
 	<%if((item.index&&item.name.length)>0){%>
-  	<img class="pokemon-sprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%=item.index%>.png">
+		<%pokemonArr.push({name:item.name,index:item.index});%>
 	<%}%>
 <% }); %>
+  <div class="pokedex-wrapper">
+  	<h2 class="pokemon-name"><%=pokemonArr[0].name%></h2>
+  	<img class="pokedex" src="/img/pokedex.png">
+  	<img class="pokemon-sprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%=pokemonArr[0].index%>.png">
+  	<div id="arrow-controls">
+  		<div id="right-btn" onclick="nextPokemon()"></div>
+  		<div id="left-btn" onclick="prevPokemon()"></div>
+  	</div>
+  	<div id="pokemon-index">
+  		<a id="pokemon-count">1/<%=pokemonArr.length%></a>
+  	</div>
+  </div>
+  <script type="text/javascript">
+  	let pokemon = <%-JSON.stringify(pokemonArr)%>
+  	let pokemonArrIndex = 0;
+  	function nextPokemon(){
+  		if(pokemonArrIndex < pokemon.length - 1){
+  			pokemonArrIndex++;
+  			updateDisplay(pokemonArrIndex);
+  		}
+  	}
+  	function prevPokemon(){
+  		if(pokemonArrIndex>0){
+  			pokemonArrIndex--;
+  			updateDisplay(pokemonArrIndex);
+  		}
+  	}
+  	function updateDisplay(i){
+  		document.getElementById("pokemon-count").innerText = (i+1) +"/"+ pokemon.length;
+  		document.getElementsByClassName("pokemon-sprite")[0].src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+pokemon[i].index+".png";
+  		document.getElementsByClassName("pokemon-name")[0].innerText = pokemon[i].name;
+  	}
+  </script>
 </body>
 </html>
