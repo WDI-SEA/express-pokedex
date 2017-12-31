@@ -6,7 +6,7 @@ var db = require("../models");
 router.get('/', function(req, res) {
     // TODO: render favorites
 	db.favorite.findAll().then(function(favorite) {
-		res.render("./pokemon/inde", {favorite:favorite});
+		res.render("./pokemon/show", {favorite:favorite});
 	});
 });
 
