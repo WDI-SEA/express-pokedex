@@ -1,3 +1,7 @@
 body{
-  background-image: url("css/background.png");
+  background-image: url("/css/background.png");
+}
+.text-center li{
+  list-style-type: none;
+  text-align: center;
 }
