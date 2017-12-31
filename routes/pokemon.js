@@ -8,7 +8,7 @@ var db = require('../models');
 router.get('/', function(req, res) {
     // TODO: render favorites
     db.pokemon.findAll().then(function(pokemon){
-      res.render('index', {pokemon: pokemon});
+      res.render('favorites', {pokemon: pokemon});
       // res.send('Render a page of favorites here');
     });
 });
@@ -26,6 +26,19 @@ router.post('/', function(req, res) {
     });
 });
 
+// Delete pokemon from favorites list
+router.delete('/:id', function(req, res){
+  db.pokemon.destroy({
+    where: { id: req.params.id }
+  }).then(function(deleted){
+  console.log("deleted ", deleted);
+  res.send('Success');
+  }).catch(function(err){
+  console.log("Uh oh error", err);
+  res.send('Fail');
+  });
+});
+
 
 // GET - see each favorite with additional info
 router.get('/:id', function(req, res){
@@ -35,7 +48,7 @@ router.get('/:id', function(req, res){
 
     request(pokemonFav, function(error, response, body){
       var pokemon = JSON.parse(body);
-      res.render('show', {pokemon: pokemon});
+      res.render('single', {pokemon: pokemon});
     });
   });
 });
