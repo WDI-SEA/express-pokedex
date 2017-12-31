@@ -8,7 +8,9 @@
 <%} else {%>
   <% pokemon.forEach(function(pokemon){%>
   <div class="well">
-    <h2><%= pokemon.name %></h2>
+    <p><a href="/poke/show/<%= pokemon.id %>">
+          <h2><%= pokemon.name %></h2>
+    </a></p>
     <form class="delete-fav" action="/poke/favorite/<%= pokemon.id %>">
       <button class="btn btn-danger glyphicon glyphicon-trash" type="submit"></button>
     </form>

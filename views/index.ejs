@@ -5,13 +5,13 @@
   </p>
   <% pokemon.forEach(function(pokemon) { %>
     <div class="well">
-      <h2><%= pokemon.name %></h2>
+      <p>
+          <h2><%= pokemon.name %></h2>
+      </p>
       <form method="POST" action="./poke/favorite">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
         <button class="btn btn-primary glyphicon glyphicon-heart" type="submit"></button>
       </form>
-        <!-- <input hidden type="text" name="name" value="<%= pokemon.id %>"> -->
-        <!-- <button class="btn btn-danger delete" type="delete">Remove Pokemon</button> -->
     </div>
   <% }); %>
 </div>
