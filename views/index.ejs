@@ -20,7 +20,10 @@
              <div class="col-sm-4 col-xs-12 text-xs-center">
                 <h2><%= pokemon.name; %></h2>
              </div>
-             <div class="col-sm-3 col-sm-offset-5 text-xs-center">
+             <div class="col-sm-1 col-sm-offset-4 ">
+                <img class="ajax-spinner hidden" src="/img/ajax_loader_gray_64.gif">
+             </div>
+             <div class="col-sm-3 text-xs-center">
                 <form  class="star-button" method="POST" action="/pokemon">
                    <input hidden type="text" name="name" value="<%= pokemon.name %>">
                    <button class="btn btn-primary add-button" type="submit">

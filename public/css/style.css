@@ -59,3 +59,8 @@ h2 {
 .info-title {
    font-size:4.0em;
 }
+
+.ajax-spinner {
+   width: 20px;
+   height: 20px;
+}

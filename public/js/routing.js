@@ -16,3 +16,8 @@ $(".delete-button").click(function(e) {
       console.log("Ajax error.",err);
    });
 });
+
+$(".star-button").click(function(e) {
+   $($(this).siblings()[0]).removeClass("hidden");
+   console.log($(this).siblings());
+});
