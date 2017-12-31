@@ -1,3 +1,6 @@
+.well-height {
+   height: 136px;
+}
 
 .nav {
    padding: 20px;
@@ -51,4 +54,8 @@
 
 h2 {
    /*display: inline-block;*/
+}
+
+.info-title {
+   font-size:4.0em;
 }

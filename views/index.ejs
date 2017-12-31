@@ -15,7 +15,7 @@
      </div>
 
      <% pokemon.forEach(function(pokemon) { %>
-        <div class="row well center-block">
+        <div class="row well center-block well-height">
 
              <div class="col-sm-4 col-xs-12 text-xs-center">
                 <h2><%= pokemon.name; %></h2>
@@ -23,7 +23,7 @@
              <div class="col-sm-3 col-sm-offset-5 text-xs-center">
                 <form  class="star-button" method="POST" action="/pokemon">
                    <input hidden type="text" name="name" value="<%= pokemon.name %>">
-                   <button class="btn btn-primary " type="submit">
+                   <button class="btn btn-primary add-button" type="submit">
                       <img class="star" src="img/favourite-star.svg">Add to Favorite Pokemon
                    </button>
                 </form>
