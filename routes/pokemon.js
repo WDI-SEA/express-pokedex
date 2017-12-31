@@ -6,7 +6,7 @@ var db = require("../models");
 router.get('/', function(req, res) {
     // TODO: render favorites
 	db.favorite.findAll().then(function(favorite) {
-		res.render("./pokemon/index", {favorite:favorite});
+		res.render("./pokemon/inde", {favorite:favorite});
 	});
 });
 
@@ -17,7 +17,7 @@ router.post('/', function(req, res) {
     });
 });
 
-//DELETE route
+//DELETE route to delete pokemon from db and from favorites page
 router.delete("/:id", function(req, res){
 	console.log("delete route ID =", req.params.id);
 	db.favorite.destroy({
