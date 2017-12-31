@@ -15,7 +15,7 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
     // TODO: add to database
     var n = req.body.url;
-    n = parseInt(n.substring(n.length - 2, n.length - 1));
+    n = parseInt(n.replace("https://pokeapi.co/api/v2/pokemon/",'').replace("/",""));
     req.body.url = n;
     //check db for existing items:
     db.fav_pokemon.findAll().then(function(favPokemon) {

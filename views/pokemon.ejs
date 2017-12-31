@@ -24,6 +24,7 @@
   </div>
   <script type="text/javascript">
   	let pokemon = <%-JSON.stringify(pokemonArr)%>
+  	console.log(pokemon);
   	let pokemonArrIndex = 0;
   	function nextPokemon(){
   		if(pokemonArrIndex < pokemon.length - 1){

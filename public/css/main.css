@@ -9,12 +9,13 @@ html,body{
 	z-index: 1;
 	width: 215px;
 	text-align: center;
-	color: snow;
+	color: #fffafab5;
 }
 .pokemon-sprite{
 	position: absolute;
-	top: 16.6em;
+	top: 17em;
 	width: 150px;
+	height: 135px;
 	margin: 0;
 	left: 11.5em;
 	transform: rotate(4deg);
@@ -66,7 +67,7 @@ html,body{
 }
 #pokemon-index a{
 	font-size: 2em;
-	color: #101010;
+	color: #101010b5;
 	text-decoration: none;
 	user-select: none;
 }
