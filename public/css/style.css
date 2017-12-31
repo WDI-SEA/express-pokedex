@@ -34,7 +34,7 @@ hr {
 	width: 80%;
 }
 
-#favorites-container {
+.favorites-container {
 	background-color: #356BB0;
 	padding-top: 5px;
 	padding-bottom: 5px;
@@ -55,7 +55,7 @@ hr {
 	margin-left: 10px;
 }
 
-#favorites-link {
+.favorites-link {
 	vertical-align: middle;
 	display: inline;
 	font-size: 30px;
@@ -194,4 +194,23 @@ h3 {
 /********************/
 /* Favorites Pages  */
 /********************/
+
+ul {
+    list-style-image: url('/img/pokeball_small.png');
+	background-color: #edefec;
+	border: 1px solid gray;
+
+}
+
+li {
+	margin-left: 10px;
+	padding-left: 1em;
+	margin-bottom: 15px;
+	text-align: left;
+	font-family: 'Merriweather Sans', sans-serif;
+	text-transform: uppercase;
+	font-weight: 900;
+	font-size: 28px;
+
+}
 
