@@ -3,6 +3,8 @@ var router = express.Router();
 var db = require ('../models');
 var request = require('request');
 
+
+
 // GET - return a page with favorited Pokemon
 router.get('/', function(req, res) {
     // TODO: render favorites
@@ -32,7 +34,6 @@ router.get('/:name', function(req, res) {
 
 // Delete - remove pokemon from db and favorites page
 router.delete('/:name', function(req, res){
-
 	db.pokemon.destroy({
 		where: {name: req.params.name}
 	}).then(function(deleted){
@@ -43,6 +44,5 @@ router.delete('/:name', function(req, res){
 		res.send('fail');
 	});
 });
-
 
 module.exports = router;

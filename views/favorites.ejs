@@ -1,13 +1,11 @@
-<div class='text-center'>
-<h2 >Favorite Pokemon</h2>
-
+<div class='poke text-center'>
+<h2 >My Favorite Pokemon</h2>
 <% result.forEach(function(pokemon) {%>
-	<div class='well'>
+	<div class='pokemon'>
 		<h3><%= pokemon.name %></h3>
-		<a href='/pokemon/<%= pokemon.name %>' class= 'btn btn-success'>Stats</a>
-		<a href='/pokemon/<%= pokemon.name %>' class='btn btn-danger delete-link'>Delete</a>
+		<a href='/pokemon/<%= pokemon.name %>' class= 'button'>Stats</a>
+		<a href='/pokemon/<%= pokemon.name %>' class='button delete-link'>Delete</a>
 	</div>
 <% });%>
-
 </div>
 	
