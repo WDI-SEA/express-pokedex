@@ -23,7 +23,7 @@
     "express": "^4.13.4",
     "express-ejs-layouts": "^2.1.0",
     "morgan": "^1.8.1",
-    "nodemon": "^1.14.3",
+    "nodemon": "^1.14.6",
     "pg": "^7.4.0",
     "pg-hstore": "^2.3.2",
     "request": "^2.72.0",

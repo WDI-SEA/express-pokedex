@@ -1,8 +1,8 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var pokemon = sequelize.define('pokemon', {
-    name: DataTypes.STRING,
-    url: DataTypes.STRING
+  var pokefav = sequelize.define('pokefav', {
+    height: DataTypes.INTEGER,
+    base_experience: DataTypes.INTEGER
   }, {
     classMethods: {
       associate: function(models) {
@@ -10,5 +10,5 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
-  return pokemon;
+  return pokefav;
 };

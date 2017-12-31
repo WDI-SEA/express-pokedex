@@ -1,4 +1,7 @@
 var express = require('express');
+var request = require('request');
+var bodyParser = require('body-parser');
+var ejsLayouts = require('express-ejs-layouts');
 var db = require('../models');
 var router = express.Router();
 
@@ -13,12 +16,19 @@ router.get('/', function(req,res){
 router.get('/:id', function(req,res){
 	db.pokemon.findById(req.params.id).then(function(pokemon){
 		if(pokemon){
-			res.render('favorites/show', {pokemon: pokemon});
+			var pokeURL = 'http://pokeapi.co/api/v2/pokemon/'+pokemon.name+'/';
+			console.log(pokeURL);
+			request(pokeURL,function(error,response,body){
+				var pokemon = JSON.parse(body);
+				console.log(pokemon);
+				res.render('favorites/show', { pokemon: pokemon });
+			});
 		}else{
-			res.status(404).render('error');
+			res.status(404).send('error in the if');
 		}
 	}).catch(function(err){
-		res.status(500).render('error');
+		res.status(500).send('error to do request');
+		console.log(err);
 	});
 });
 
@@ -42,7 +52,7 @@ router.post('/', function(req,res){
     	res.redirect('/pokemon');
     	console.log(pokemon, 'this added');
     }).catch(function(err){
-    	res.status(500).render('error');
+    	res.status(500);
     });
 });
 
