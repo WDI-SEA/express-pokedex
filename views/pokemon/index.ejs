@@ -1,15 +1,12 @@
-<div class="container">
+<div class="container1">
   <a href="/">Back To All</a>
   <% favorite.forEach(function(favorite) { %>
     <div class="head">
-      <h2><%= favorite.name %></h2>
+      <a href="/pokemon/<%= favorite.id %>"><h2><%= favorite.name %></h2></a>
        <h3><%= favorite.description %></h3>
-
-      <form class="delete-fav" action="./pokemon/<%= favorite.id %>">
-      <button type="submit" class="btn btn-danger">
+      <a href="/pokemon/<%= favorite.id %>" class="btn btn-danger delete-fav">
         Delete Favorite
-      </button>
-    </form>
+      </a>
     </div>
   <% }); %>
 </div>

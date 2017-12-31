@@ -1,6 +1,9 @@
 var express = require('express');
-var router = express.Router();
+var request = require('request');
+var bodyParser = require('body-parser');
+var ejsLayouts = require('express-ejs-Layouts');
 var db = require('../models');
+var router = express.Router();
 
 // GET - return a page with favorited Pokemon
 router.get('/', function(req, res) {
@@ -9,14 +12,24 @@ router.get('/', function(req, res) {
      });
 });
 
-router.get('/pokemon/:id', function(req, res) {
-    var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon?limit=151';
-
-    request(pokemonUrl, function(error, response, body) {
-        res.render('index', { descriptions: description });
+router.get('/:id', function(req,res){
+    db.favorite.findById(req.params.id).then(function(favorite){
+        if(favorite){
+            var pokeURL = 'http://pokeapi.co/api/v2/pokemon/'+favorite.name+'/';
+            console.log(pokeURL);
+            request(pokeURL,function(error,response,body){
+                var favorite = JSON.parse(body);
+                console.log(favorite);
+                res.render('./pokemon/show', { favorite: favorite });
+            });
+        }else{
+            res.status(404).send('error in the if');
+        }
+    }).catch(function(err){
+        res.status(500).send('error to do request');
+        console.log(err);
     });
 });
-
 // POST - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
     db.favorite.create(req.body).then(function(createArticle){
