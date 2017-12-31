@@ -8,6 +8,10 @@ body {
 	text-align: center;
 }
 
+h2 {
+	margin: 0px;
+}
+
 /********************/
 /* Main Landing Page*/
 /********************/
@@ -52,26 +56,39 @@ body {
 }
 
 /* Pokemon Card on Main Page */
+/* Back of Cards */
 
-.well {
+.back-pokecard{
 	display: inline-block;
-	margin-top: 5px;
-	width: 30%;
+	margin: 5px;
+}
 
+.card-back-image{
+	height: 200px;
+}
+
+.well{
+	display: none;
+	margin-top: 0px;
+	height: 200px;
+	width: 145px;
 }
 
 #pokemon-link {
+	text-align: center;
 	text-transform: uppercase;
 	font-weight: 900;
-	font-size: 22px;
+	font-size: 16px;
 	text-shadow: 2px 1px #6f7376;
 }
 
 #favorites-button {
+	margin-top: 50px;
 	border: 2px solid #FECA30;
 	color: white;
 	text-transform: uppercase;
 	font-size: 10px;
+	padding: 2px 4px;
 }
 
 /********************/
@@ -86,10 +103,6 @@ body {
 	width: 275px;
 }
 
-#card-back-image{
-	height: 380px;
-
-}
 
 #pokecard{
 	background-color: #FDD64B;
@@ -116,7 +129,7 @@ body {
 }
 
 #pokemonImage{
-	width: 200px;
+	width: 250px;
     margin: 0 auto;
 }
 
@@ -128,9 +141,9 @@ body {
 	border: 6px solid #FDD64B;	
 }
 
-.mySlides {
-	margin-top: 50px;
-	display: none;
+.w3-button {
+	background-color: black;
+	color: white;
+	padding: 4px;
 }
-
 
