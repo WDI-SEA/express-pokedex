@@ -1,7 +1,8 @@
 $(".delete-button").click(function(e) {
    e.preventDefault();
    $(this).off("click");
-
+   $("#spinner-"+e.target.id).removeClass("hidden");
+   
    $.ajax({
       url: $(this).attr("href"),
       method: "DELETE"
