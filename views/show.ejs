@@ -1,7 +1,18 @@
-<h2 class="text-center"><%= pokemon.name %></h2>
+<h2 class="text-center">More about a favorite:</h2> 
+<h2 class="text-center"><em><%= pokemon.name %></em></h2>
 
-<h4 class="text-center">More about one of your favorites: <em><%= pokemon.name %></em></h4>
-
-
+<div class="favStats">
+  <h4>Height: <%= pokemon.height %></h4>
+  <h4>Weight: <%= pokemon.weight %></h4>
+  <h4>Abilities:</h4>
+    <ul>
+      <% for(var i = 0; i < pokemon.abilities.length; i++) { %>
+      <li>
+        <%= JSON.stringify(pokemon.abilities[i].ability.name).split('"').join('') %>
+      </li>
+        <% } %>
+    </ul>
+  <img src="<%= pokemon.sprites.front_shiny %>" height=140>
+</div>
 
 

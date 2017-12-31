@@ -1,5 +1,6 @@
 var express = require('express');
 var request = require('request');
+var bodyParser = require('body-parser');
 var router = express.Router();
 var db = require('../models');
 
@@ -15,7 +16,7 @@ router.get('/', function(req, res) {
 
 // POST - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
-    // TODO: add to database
+    // Add to database
     db.pokemon.create(req.body).then(function(createdFavorite){
     // redirect to pokemon page
     res.redirect('/pokemon');
@@ -26,14 +27,17 @@ router.post('/', function(req, res) {
 });
 
 
-// GET - renders a page with additional info on a specific/ fav'd pokemon
+// GET - see each favorite with additional info
 router.get('/:id', function(req, res){
   db.pokemon.findById(req.params.id).then(function(pokemon){
-    res.render('show', {pokemon: pokemon});
+    var favName = pokemon.name
+    var pokemonFav = 'http://pokeapi.co/api/v2/pokemon/' + favName + '/';
+
+    request(pokemonFav, function(error, response, body){
+      var pokemon = JSON.parse(body);
+      res.render('show', {pokemon: pokemon});
+    });
   });
 });
-
-
-
 
 module.exports = router;
