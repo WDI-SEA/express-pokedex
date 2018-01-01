@@ -1,4 +1,3 @@
-
 //run this everytime I hit this crazy ass button
 $(".delete-pokemon").click(function(e){
 		e.preventDefault();
