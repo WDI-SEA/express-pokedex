@@ -1,31 +1,57 @@
 body {
+  text-align: center;
   background-image: url("../img/journal.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
+  font-family: 'Cookie', cursive;
+  font-size: 32px;
+}
+button {
+  font-family: 'Cookie', cursive;
+  background-color: inherit;
+  font-size: 24px;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+img {
+  display: block;
+  height: 250px;
+  width: 250px;
+  position: relative;
+  left: 150px;
 }
 .container1 {
   top: 100px;
-  right: 200px;
+  right: 250px;
   position: relative;
   float: right;
-  height: 600px;
+  height: 550px;
   width: 250px;
   background-color: inherit;
   overflow: scroll;
 }
-.container2 {
+.entry {
   top: 100px;
-  left: 200px;
+  left: 250px;
   position: relative;
   height: 400px;
-  width: 300px;
-  line-height: 30px;
+  width: 350px;
+  line-height: 35px;
 }
-.container3 {
+.pic {
+  top: 50px;
+  right: 100px;
+  position: absolute;
+  float: right;
+  height: 550px;
+  width: 550px;
+}
+.pokeInfo {
   top: 100px;
-  left: 200px;
+  left: 250px;
   position: relative;
   height: 400px;
-  width: 300px;
-  line-height: 30px;
+  width: 400px;
 }

@@ -1,23 +1,22 @@
 <div class="container1">
-  <h1 class="text-center">The Original 151 Pokemon</h1>
   <p class="text-center">
-    <a href="/pokemon">Favorites</a>
+    <a href="/pokemon">View Favorites</a>
   </p>
-
+  <h1 class="text-center">"Po-ke-mon"</h1>
   <% pokemon.forEach(function(pokemon) { %>
     <div class="head">
       <h2><%= pokemon.name %></h2>
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
-        <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
+        <button type="submit">Add to Favorite Pokemon</button>
       </form>
     </div>
   <% }); %>
 </div>
-<div class="container2">
+<div class="entry">
   <h2>Field Journal Entry. Twenty seventh day of February, year of our Lord 1897. </h2>
   <p>It has been three months since my arrival in Kanto. I feel that all my hard work is finally starting to pay off,
-    as I have begun to notice creatures of the most peculiar nature. It shall be my greatest joy as a biologist
+    as I have begun to notice creatures of the most peculiar nature. I've decided to call them "Pokemon". It shall be my greatest joy as a biologist
     to document these new findings. The following pages of this journal shall be intriguing indeed.
    </p>
 </div>
