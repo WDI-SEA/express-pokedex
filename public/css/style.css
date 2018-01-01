@@ -15,7 +15,7 @@ hr {
     box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
 }
 
-#hr2{
+.hr2{
 	margin-top: 10px;
 	box-shadow: inset 0 12px -12px 12px rgba(0, 0, 0, 0.5);
 }
@@ -86,18 +86,32 @@ hr {
 }
 
 .well{
+	vertical-align: -webkit-baseline-middle;
 	display: none;
-	margin-top: 0px;
-	height: 200px;
+	margin-top: 10px;
 	width: 145px;
+	height: 200px;
+	padding: 0px;
+
+}
+
+#link-container {
+	margin-top: 30px;
+	height: 40px;
+	display: block;
+	background-color: #356BB0;
+	border-top: 1px solid #6f7376;
 }
 
 #pokemon-link {
+	line-height: 40px;
 	text-align: center;
 	text-transform: uppercase;
 	font-weight: 900;
-	font-size: 16px;
+	font-size: 18px;
 	text-shadow: 2px 1px #6f7376;
+	color: white;
+
 }
 
 #favorites-button {

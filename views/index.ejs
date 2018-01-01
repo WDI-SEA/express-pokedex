@@ -18,7 +18,10 @@
       <div class="back-pokecard" id="<%=id%>">
         <img src="/img/cardback2.png" class="card-back-image" id="cardback-<%=id%>" title="Click to flip card">
         <div class = "well" id="pokemon-<%=id%>">
-            <a href="/pokemon/<%=id%>" id="pokemon-link"><%= pokemon.name %></a>
+            <div id="link-container">
+              <a href="/pokemon/<%=id%>" id="pokemon-link"><%= pokemon.name %></a>
+            </div>
+            <hr>
           <form method="POST" action="/pokemon">
             <input hidden type="text" name="name" value="<%= pokemon.name %>">
             <button class="btn btn-primary" id="favorites-button" type="submit">Add to Favorites!</button>
