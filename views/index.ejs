@@ -1,16 +1,36 @@
 <div class="container">
-  <h1 class="text-center">The Original 151 Pokemon</h1>
-  <p class="text-center">
-    <a href="/pokemon">Favorites</a>
-  </p>
+   <div class="row text-center">
+      <img class="pikachu-image" src="/img/pikachu.png">
+      <h1 class="text-center">The Original 151 Pokemon</h1>
+   </div>
+     <div class="row nav ">
+        <div class="col-sm-1 col-sm-offset-3 col-xs-2 text-center">
+           <a class="btn btn-primary fav-button" href="/l"><<</a>
+        </div>
+        <div class="col-sm-4 col-xs-8 text-center">
+           <a class="btn btn-primary fav-button" href="/pokemon">See All Favorites</a>
+        </div>
+        <div class="col-sm-1 col-xs-2 text-center">
+           <a class="btn btn-primary fav-button" href="/r">>></a>
+        </div>
+     </div>
+     <% pokemon.forEach(function(pokemon) { %>
+        <div class="row well center-block well-height">
+             <div class="col-sm-4 col-xs-12 text-xs-center">
+                <h2><%= pokemon.name; %></h2>
+             </div>
+             <div class="col-sm-1 col-xs-1 col-sm-offset-4 ">
+                <img class="ajax-spinner hidden" id="spinner-<%=pokemon.name%>" src="/img/ajax_loader_gray_64.gif">
+             </div>
+             <div class="col-sm-3 col-xs-10 text-xs-center">
+                <form class="star-button" method="POST" action="/pokemon">
+                   <input hidden type="text" name="name" value="<%= pokemon.name %>">
+                   <button class="btn btn-primary add-button" type="submit" id="<%= pokemon.name %>">
+                      <img class="star" src="img/favourite-star.svg">Add to Favorite Pokemon
+                   </button>
+                </form>
+             </div>
 
-  <% pokemon.forEach(function(pokemon) { %>
-    <div class="well">
-      <h2><%= pokemon.name %></h2>
-      <form method="POST" action="/pokemon">
-        <input hidden type="text" name="name" value="<%= pokemon.name %>">
-        <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
-      </form>
-    </div>
-  <% }); %>
+       </div>
+    <% }); %>
 </div>

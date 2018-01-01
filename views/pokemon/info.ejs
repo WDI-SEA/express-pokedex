@@ -1,0 +1,36 @@
+<div class="text-center info-title"><%= pokemon.name %></div>
+
+<div class="row nav">
+   <div class="col-sm-4 col-sm-offset-4 text-center">
+      <a class="btn btn-primary fav-button" href="/pokemon">See All Favorites</a>
+   </div>
+</div>
+<div class="row">
+   <div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 text-center well">
+      <div class="col-sm-12"><img src="<%= pokemon.sprites.front_default%>"></div>
+      <div class="col-sm-4">Base Exp: <%=pokemon.base_experience%></div>
+      <div class="col-sm-4">Height: <%=pokemon.height%></div>
+      <div class="col-sm-4">Weight: <%=pokemon.weight%></div>
+      <div class="col-sm-6 col-xs-12 text-xs-center text-left">
+         <h3>Abilities:</h3>
+         <ul class="list-unstyled">
+            <% for(var i=0; i<pokemon.abilities.length; i++) { %>
+               <li>
+                  <%= pokemon.abilities[i].ability.name %>
+               </li>
+            <% } %>
+         </ul>
+      </div>
+      <div class="col-sm-6 col-xs-12 text-xs-center text-left">
+         <h3>Base Stats:</h3>
+         <ul class="list-unstyled">
+            <% for(var i=0; i<pokemon.stats.length; i++) { %>
+               <li>
+                  <%= pokemon.stats[i].stat.name %>: <%=pokemon.stats[i].base_stat %>
+               </li>
+            <% } %>
+         </ul>
+      </div>
+   </div>
+</div>
+<div class="col-sm-2 col-xs-1"></div>
