@@ -1,25 +1,37 @@
+<div class="header-image">
+	<img class = "logo" src="/img/logo_small.png">
+</div>
+<div class ="link-container">
+  <img class="pokeball" id="pokeball1" src="/img/pokeball.png">
+  <a class= "link" href="/">Home</a>
+  <img class="pokeball" id="pokeball2" src="/img/pokeball.png">
+</div>
+<div id="instructions">
+  Read up on the selected pokemon before battle!
+</div>
 <div id="pokecard-shape">
 	<div id="pokecard">
 		<div id="interior-card">
-		<h2 id = "pokemonName"> <%= name %></h2>
-		<div id="pokemonImage">
-		<div class="w3-content w3-display-container">
-			<button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-			<img class = "mySlides" src="<%=image_front%>">
-			<img class = "mySlides" src="<%=image_back%>">
-			<button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
-
+			<h2 id = "pokemonName"> <%= name %></h2>
+			<div id="pokemonImage">
+				<div class="w3-content w3-display-container">
+					<button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+					<img class = "mySlides" src="<%=image_front%>">
+					<img class = "mySlides" src="<%=image_back%>">
+					<button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+				</div>
+			</div>
+			<hr>
+			<div id="stats">
+				<div class="pokemon_info">
+					<h3> Ability: </h3><%=ability%>
+				</div>
+				<div class="pokemon_info">
+					<h3>Speed: </h3><%=speed%>
+				</div>
+			</div>
+			<hr class="hr2">
 		</div>
 	</div>
-	<hr>
-	<div id="stats">
-		<div class="pokemon_info"><h3> Ability: </h3><%=ability%>
-		</div>
-		<div class="pokemon_info"><h3>Speed: </h3><%=speed%>
-		</div>
-	</div>
-	<hr class="hr2">
-	</div>
-</div>
 </div>
 

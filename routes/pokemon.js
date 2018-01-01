@@ -18,9 +18,19 @@ router.get('/', function(req, res) {
 // POST - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
     // TODO: add to database
-    models.pokemon.create({ name: req.body.name }).then(function() {
-    res.redirect('/');
-  });
+    // Check if favorite exists in database
+
+    var favorites = models.pokemon.findAll({where: {name: req.body.name}});
+    console.log(favorites);
+    if(favorites.length = 0){
+    	models.pokemon.create({ name: req.body.name }).then(function() {
+    		res.redirect('/');
+    	});
+    } else {
+    	res.redirect('/');
+    }
+
+
 });
 
 // GET -  return a page with more information about a specific pokemon

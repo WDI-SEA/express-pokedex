@@ -26,7 +26,7 @@ hr {
 /********************/
 
 .header-image{
-	margin-top: 20px;
+	margin-top: 10px;
 	background-color: black;
 }
 
@@ -34,7 +34,7 @@ hr {
 	width: 80%;
 }
 
-.favorites-container {
+.link-container {
 	background-color: #356BB0;
 	padding-top: 5px;
 	padding-bottom: 5px;
@@ -55,7 +55,7 @@ hr {
 	margin-left: 10px;
 }
 
-.favorites-link {
+.link {
 	vertical-align: middle;
 	display: inline;
 	font-size: 30px;
@@ -65,6 +65,8 @@ hr {
 }
 
 #instructions{
+	padding-top: 5px;
+	padding-bottom: 5px;
 	background-color: #edefec;
 	border: 1px solid gray;
 	font-style: italic;
@@ -210,10 +212,8 @@ h3 {
 /********************/
 
 ul {
+	margin-top: 10px;
     list-style-image: url('/img/pokeball_small.png');
-	background-color: #edefec;
-	border: 1px solid gray;
-
 }
 
 li {
@@ -225,6 +225,5 @@ li {
 	text-transform: uppercase;
 	font-weight: 900;
 	font-size: 28px;
-
 }
 
