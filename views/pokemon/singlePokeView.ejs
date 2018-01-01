@@ -1,3 +1,25 @@
 
 <h1>This is the single pokemon view</h1>
+
+
+
 <%=pokemon.forms[0].name%>
+
+
+<div>
+<figure>
+  <img src="<%=pokemon.sprites.front_default%>" alt="">
+  <img src="<%= pokemon.sprites.back_default%>" alt="">
+
+</figure>
+
+  <h3>Stats</h3>
+<ul>
+  <li>HP <%=pokemon.stats[5].base_stat  %></li>
+  <li>Attack <%= pokemon.stats[4].base_stat %></li>
+  <li>Devence <%=pokemon.stats[3].base_stat %></li>
+  <li>Special Attack <%=pokemon.stats[2].base_stat%></li>
+  <li>Special Defence <%=pokemon.stats[1].base_stat %></li>
+  <li>Speed <%= pokemon.stats[0].base_stat %></li>
+</ul>
+</div>
