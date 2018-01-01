@@ -1,8 +1,19 @@
-<h1 class="fav-title text-center">Favorites</h1>
-<a href="/" class="btn btn-info">&larr; Back</a>
-<% pokemon.forEach(function(pokemon) { %>
-<div class="well">
-  <h2><a href="/pokemon/<%=pokemon.id%>"><%= pokemon.name %></a></h2>
-  <a href="/pokemon/<%=pokemon.id%>" class="btn btn-danger glyphicon glyphicon-trash delete-link"></a>
-  </div>
-<% }); %>
+<div class="container">
+	<h1 class="fav-title text-center">Favorite Pokemon</h1>
+	<div class="well">
+		<% pokemon.forEach(function(pokemon) { %>
+  			<div class="favorite-pokemon">
+  				<h2 class="pokemon-name favorites-text"><a class="pokemon-name-link favorites-text" href="/pokemon/<%=pokemon.id%>" data-toggle="tooltip" data-trigger="hover" data-placement="right" title="All about this Pokemon"><%= pokemon.name %></a></h2>
+  				<div class="tooltip bs-tooltip-right" role="tooltip">
+          			<div class="arrow"></div>
+          			<div class="tooltip-inner">All about this Pokemon</div>
+        		</div>
+  				<a href="/pokemon/<%=pokemon.id%>" class="btn btn-danger glyphicon glyphicon-trash delete-link favorites-text" data-toggle="tooltip" data-trigger="hover" data-placement="right" title="Delete From Favorites"></a>
+  				<div class="tooltip bs-tooltip-right" role="tooltip">
+          			<div class="arrow"></div>
+          			<div class="tooltip-inner">Delete From Favorites</div>
+        		</div>
+        	</div>
+		<% }); %>
+	</div>
+</div>

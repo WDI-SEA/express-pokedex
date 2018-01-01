@@ -3,14 +3,14 @@
 
   <% pokemon.forEach(function(pokemon) { %>
     <div class="well">
-      <h2><%= pokemon.name %></h2>
+      <h2 class="pokemon-name"><%= pokemon.name %></h2>
       <form method="POST" action="/pokemon">
         <input hidden type="string" name="name" value="<%= pokemon.name %>">
         <input hidden type="string" name="url" value="<%=pokemon.url%>">
-        <button class="btn btn-primary glyphicon glyphicon-heart" data-toggle="tooltip" data-placement="right" type="submit"></button>
-        <div class="tooltip bs-tooltip-top" data-animation="hover-focus" role="tooltip">
+        <button class="btn btn-primary glyphicon glyphicon-heart" data-toggle="tooltip" data-trigger="hover" data-placement="right" title="Add to Favorites!" type="submit"></button>
+        <div class="tooltip bs-tooltip-right" role="tooltip">
           <div class="arrow"></div>
-          <div class="tooltip-inner">Add to Favorite Pokemon!</div>
+          <div class="tooltip-inner">Add to Favorites!</div>
         </div>
       </form>
     </div>
