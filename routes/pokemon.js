@@ -27,6 +27,10 @@ router.get("/:id", function(req,res) {
             res.render("pokemon/info", {pokemon:cacheInfo});
          } else {
             request(POKEMON_URL+poke.name, function(error, response, body) {
+               if (error) {
+                  res.send("Request error.");
+                  return 0;
+               }
                cacheName = poke.name;
                var pokemon = JSON.parse(body);
                cacheInfo = pokemon;
@@ -48,6 +52,10 @@ router.post('/', function(req, res) {
 
    lastreq = req.body.name;
    request(POKEMON_URL+req.body.name, function(error, response, body) {
+      if (error) {
+         res.send("Request error.");
+         return 0;
+      }
       var pokemon = JSON.parse(body);
       let obj = {
          "name": pokemon.name,

@@ -22,6 +22,10 @@ app.get('/', function(req, res) {
 
     if (pokemonUrl != cachePage || cache ==={}) {
       request(pokemonUrl, function(error, response, body) {
+         if (error) {
+            res.send("Request error.");
+            return 0;
+         }
          var pokemon = JSON.parse(body).results;
          cache = pokemon;
          cachePage = pokemonUrl;

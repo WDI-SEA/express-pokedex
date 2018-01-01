@@ -1,8 +1,9 @@
 <div class="container">
-  <h1 class="text-center">The Original 151 Pokemon</h1>
-
-
-     <div class="row nav">
+   <div class="row text-center">
+      <img class="pikachu-image" src="/img/pikachu.png">
+      <h1 class="text-center">The Original 151 Pokemon</h1>
+   </div>
+     <div class="row nav ">
         <div class="col-sm-1 col-sm-offset-3 col-xs-2 text-center">
            <a class="btn btn-primary fav-button" href="/l"><<</a>
         </div>
@@ -13,10 +14,8 @@
            <a class="btn btn-primary fav-button" href="/r">>></a>
         </div>
      </div>
-
      <% pokemon.forEach(function(pokemon) { %>
         <div class="row well center-block well-height">
-
              <div class="col-sm-4 col-xs-12 text-xs-center">
                 <h2><%= pokemon.name; %></h2>
              </div>
@@ -34,6 +33,4 @@
 
        </div>
     <% }); %>
-
-
 </div>

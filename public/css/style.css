@@ -1,9 +1,15 @@
-.body {
+body {
    font-family: sans-serif;
+   background-color: #ffd000;
+}
+
+.pikachu-image {
+   height:30%;
+   width:30%;
 }
 
 .well-height {
-   height: 136px;
+   height: 100px;
 }
 
 .nav {
