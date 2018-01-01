@@ -1,5 +1,6 @@
 // delete pokemon here
 $(document).ready(function() {
+
 	console.log('delete ready');
 	$('.delete-link').on('click', function(e){
 		e.preventDefault();
@@ -12,4 +13,5 @@ $(document).ready(function() {
 			window.location= '/pokemon';
 		});
 	});
+
 });

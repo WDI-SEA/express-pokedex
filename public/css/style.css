@@ -1,5 +1,6 @@
 body{ 
 	text-align: center;
+	background-image: url('/img/pokemon-background2.png');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -13,13 +14,10 @@ body{
 	height: 1000px;
 	margin:0 auto;
 }
-img {
- 	width:500px;
-}
 #navbar {
   	width: auto;
-  	position: absolute;
-  	margin-right: 200px;
+  	position: fixed;
+  	margin: 20px;
 }
 #navbar a {
 	display: block;
@@ -29,6 +27,7 @@ img {
 	border: 2px solid black;
 	background-color: grey;
  	font-size: 20px;
+ 	margin:5px;
 }
 #navbar a:hover{
  	background-color: white;
@@ -47,22 +46,30 @@ img {
 	border-radius: 2em;
 	margin:0 auto;
 	background-color: grey;
+	text-transform: capitalize;
 }
 .pokemon{
 	font-size: 24px;
+	/*position: fixed;*/
 }
 .button{
 	display: inline-block;
 	color: white;
 	padding: 14px;
  	font-size: 20px;
- 	border: 2px solid white;
  	border-radius: 1em;
+ 	border: 2px solid blue;
 }
+.delete-link{
+	border: 2px solid red;
+}
+
 .button:hover{
  	background-color: white;
- 	color: grey;
  	font-size: 30px;
+}
+.sprite{
+	height: 200px;
 }
 
 
