@@ -1,15 +1,12 @@
 <h1 class="text-center">Your Pokemon Favorites</h1>
-
 <div class="row nav">
    <div class="col-sm-4 col-sm-offset-4 text-center">
       <a class="btn btn-primary fav-button" href="/">All Pokemon</a>
    </div>
 </div>
-
 <div class="container">
    <% itemList.forEach(function(poke) { %>
      <div class="row well center-block">
-
           <div class="col-sm-4 col-xs-12">
              <span class="poke-name"><%= poke.name; %></span>
              <img class="pull-right" src="<%= poke.imageurl; %>">
@@ -20,9 +17,7 @@
           </div>
           <div class="col-sm-4 col-xs-8 text-center">
              <a class="btn btn-primary info-button" href="/pokemon/<%= poke.id;%>" id="<%= poke.id;%>">Info</a>
-
              <a class="btn btn-danger delete-button" href="/pokemon/<%=poke.id;%>" id="<%= poke.id;%>">Remove Pokemon</a>
-
           </div>
           <div class="col-sm-4"></div>
      </div>
