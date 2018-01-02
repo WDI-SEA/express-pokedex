@@ -21,7 +21,7 @@ router.post('/', function(req, res) {
     db.fav_pokemon.findAll().then(function(favPokemon) {
     	i=true;
     	favPokemon.forEach(function(item){
-    		if(n===item.index){
+    		if(n==item.index || req.body.name ==item.name){
     			i =  false;
     			return false;
     		}else{
@@ -42,5 +42,16 @@ router.post('/', function(req, res) {
     }
     });
 });
-
+router.delete("/",function(req,res){
+	console.log("REQUEST",req);
+	db.fav_pokemon.destroy({
+		where:{name: req.body.name}
+	}).then(function(deleted){
+		console.log("delted",deleted);
+		res.send("success");
+	}).catch(function(err){
+		console.log("an error happened",err);
+		res.send("fail");
+	});
+});
 module.exports = router;

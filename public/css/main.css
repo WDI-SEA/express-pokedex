@@ -71,3 +71,12 @@ html,body{
 	text-decoration: none;
 	user-select: none;
 }
+#delete-btn{
+	position: absolute;
+	width: 42px;
+	height: 15px;
+	top: 29.2em;
+	left: 10em;
+	transform: rotate(3deg);
+	cursor: pointer;
+}
