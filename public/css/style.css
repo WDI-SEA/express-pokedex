@@ -2,11 +2,15 @@ body{
   background-image: url("/img/background.png");
   background-repeat: no-repeat;
   background-size: auto;
-  font-family:'Paytone One', sans-serif;
+  /*font-family:'Paytone One', sans-serif;*/
 }
 .text-center li{
-  /*list-style-image: url('/img/pokeball.png');*/
-  font-size: 10%;
-  text-align: center;
+  /*list-style-image: url('/img/pokeball.png');
+  height:10px;*/
+}
+.text-center{
+  font-family:'Paytone One', sans-serif;
+}
+.well{
   font-family:'Paytone One', sans-serif;
 }
