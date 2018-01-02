@@ -1,9 +1,6 @@
 
-<h1>This is the single pokemon view</h1>
 
-
-
-<%=pokemon.forms[0].name%>
+<h1><%=pokemon.forms[0].name.charAt(0).toUpperCase() + pokemon.forms[0].name.slice(1);%></h1>
 
 
 <div>
@@ -13,13 +10,14 @@
 
 </figure>
 
-  <h3>Stats</h3>
+<h3>Stats</h3>
 <ul>
-  <li>HP <%=pokemon.stats[5].base_stat  %></li>
-  <li>Attack <%= pokemon.stats[4].base_stat %></li>
-  <li>Devence <%=pokemon.stats[3].base_stat %></li>
-  <li>Special Attack <%=pokemon.stats[2].base_stat%></li>
-  <li>Special Defence <%=pokemon.stats[1].base_stat %></li>
-  <li>Speed <%= pokemon.stats[0].base_stat %></li>
+  <li>HP <span class="bold"><%=pokemon.stats[5].base_stat%></span></li>
+  <li>Attack <span class="bold"><%=pokemon.stats[4].base_stat%></span></li>
+  <li>Defence <span class="bold"><%=pokemon.stats[3].base_stat%></span></li>
+  <li>Special Attack <span class="bold"><%=pokemon.stats[2].base_stat%></span></li>
+  <li>Special Defence <span class="bold"><%=pokemon.stats[1].base_stat%></span></li>
+  <li>Speed <span class="bold"><%=pokemon.stats[0].base_stat%></span></li>
 </ul>
 </div>
+

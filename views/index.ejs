@@ -1,4 +1,4 @@
-<div class="container">
+
  
 <%
   var dbPokemons =[];
@@ -26,8 +26,8 @@ favPokemons.forEach(function(pokemon){
 });
 %>
 
-<section class="section ">
-  <ul>
+<section class="section">
+  <ul class="cardList">
     
 <%pokemons.forEach(function(pokemon){
   var isInFavorites = false;
@@ -43,17 +43,16 @@ favPokemons.forEach(function(pokemon){
       
       <% if(dbPokemons.indexOf(pokemon.name) !== -1){
         isInFavorites = true;%>
-        <p>In favorites</p>
-      <%} else {%>
-        <p>Not in favourite</p>
+        
       <%}%>
+       
     </div>
     <div class="info">
       <p id="pokemonId">#<%=padId(getPokemonId(pokemon.url));%></p>
       <h4><%=pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);%></h4>
 
     </div>
-    </div>
+   
     
 <form method="POST" action="/pokemon">
   <input hidden type="text" name="name" value="<%= pokemon.name %>">
