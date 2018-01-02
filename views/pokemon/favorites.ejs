@@ -1,0 +1,19 @@
+<div class="header-image">
+	<img class = "logo" src="/img/logo_small.png">
+</div>
+<div class ="link-container">
+  <img class="pokeball" id="pokeball1" src="/img/pokeball.png">
+  <a class= "link" href="/">Home</a>
+  <img class="pokeball" id="pokeball2" src="/img/pokeball.png">
+</div>
+<div id="instructions">
+  Your favorite pokemon for battle:
+</div>
+<ul id="favorite">
+  <% pokemon.forEach(function(pokemon) { %>
+    <li>
+      <%= pokemon.name %>
+    </li>
+  <% }) %>
+</ul>
+</div>

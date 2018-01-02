@@ -1,16 +1,33 @@
 <div class="container">
-  <h1 class="text-center">The Original 151 Pokemon</h1>
-  <p class="text-center">
-    <a href="/pokemon">Favorites</a>
-  </p>
-
-  <% pokemon.forEach(function(pokemon) { %>
-    <div class="well">
-      <h2><%= pokemon.name %></h2>
-      <form method="POST" action="/pokemon">
-        <input hidden type="text" name="name" value="<%= pokemon.name %>">
-        <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
-      </form>
+  <div class="header-image">
+    <img class = "logo" src="/img/logo.png">
+  </div>
+  <div class ="link-container">
+      <img class="pokeball" id="pokeball1" src="/img/pokeball.png">
+      <a class= "link" href="/pokemon">Favorites</a>
+      <img class="pokeball" id="pokeball2" src="/img/pokeball.png">
+  </div>
+  <div id="instructions">
+    Click on a card to reveal the pokemon
+  </div>
+  <div id = "pokecards-container">
+   <% pokemon.forEach(function(pokemon) { %>
+      <% var url = pokemon.url %>
+      <% var url_short = url.substring(0,url.length -1)%>
+      <% var id = url_short.substring((url_short.lastIndexOf('/'))+1); %>
+      <div class="back-pokecard" id="<%=id%>">
+        <img src="/img/cardback2.png" class="card-back-image" id="cardback-<%=id%>" title="Click to flip card">
+        <div class = "well" id="pokemon-<%=id%>">
+            <div id="link-container">
+              <a href="/pokemon/<%=id%>" id="pokemon-link"><%= pokemon.name %></a>
+            </div>
+            <hr>
+          <form method="POST" action="/pokemon">
+            <input hidden type="text" name="name" value="<%= pokemon.name %>">
+            <button class="btn btn-primary" id="favorites-button" type="submit">Add to Favorites!</button>
+          </form>
+        </div>
     </div>
-  <% }); %>
+    <% }); %>
+  </div>
 </div>

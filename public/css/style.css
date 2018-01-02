@@ -1,0 +1,230 @@
+@font-face {
+    font-family: pokemonFont;
+    src: url('fonts/PokemonSolid.ttf');
+}
+
+body {
+	font-family: 'Merriweather Sans', sans-serif;
+	text-align: center;
+}
+
+hr {
+	border: none;
+    height: 12px;
+    margin: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+}
+
+.hr2{
+	margin-top: 10px;
+	box-shadow: inset 0 12px -12px 12px rgba(0, 0, 0, 0.5);
+}
+
+
+/********************/
+/* Main Landing Page*/
+/********************/
+
+.header-image{
+	margin-top: 10px;
+	background-color: black;
+}
+
+.logo {
+	width: 80%;
+}
+
+.link-container {
+	background-color: #356BB0;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border: 1px solid #6f7376;
+	
+}
+
+.pokeball {
+	height: 35px;
+	vertical-align: middle;
+}
+
+#pokeball1 {
+	margin-right: 10px;
+}
+
+#pokeball2 {
+	margin-left: 10px;
+}
+
+.link {
+	vertical-align: middle;
+	display: inline;
+	font-size: 30px;
+	text-transform: uppercase;
+	color: white;
+	text-shadow: 2px 2px #6f7376;
+}
+
+#instructions{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: #edefec;
+	border: 1px solid gray;
+	font-style: italic;
+	font-size: 14px;
+	margin: 0;
+}
+/* Pokemon Card on Main Page */
+/* Back of Cards */
+
+
+
+.back-pokecard{
+	display: inline-block;
+	margin: 5px;
+}
+
+.card-back-image{
+	height: 200px;
+}
+
+.well{
+	vertical-align: -webkit-baseline-middle;
+	display: none;
+	margin-top: 10px;
+	width: 145px;
+	height: 200px;
+	padding: 0px;
+
+}
+
+#link-container {
+	margin-top: 30px;
+	height: 40px;
+	display: block;
+	background-color: #356BB0;
+	border-top: 1px solid #6f7376;
+}
+
+#pokemon-link {
+	line-height: 40px;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 900;
+	font-size: 18px;
+	text-shadow: 2px 1px #6f7376;
+	color: white;
+
+}
+
+#favorites-button {
+	margin-top: 50px;
+	border: 2px solid #FECA30;
+	color: white;
+	text-transform: uppercase;
+	font-size: 10px;
+	padding: 2px 4px;
+}
+
+/*****************************/
+/* Individual Pokemon Pages */
+/*****************************/
+
+#pokecard-shape{
+	margin: 0 auto;
+	margin-top: 20px;
+	text-align: center;
+	height: 380px;
+	width: 275px;
+}
+
+
+#pokecard{
+	background-color: #FDD64B;
+	border-radius: 25px;
+	height: 380px;
+	width: 275px;
+}
+
+#interior-card{
+	display: inline-block;
+	margin: 0 auto;
+	margin-top: 14px;
+	height: 350px;
+	width: 245px;
+	background: url('/img/pokemoncard-background.png') no-repeat;
+    background-size: 100%;
+
+}
+
+#pokemonName{
+	margin-top: 10px;
+	margin-bottom: 5px;
+	font-family: pokemonFont;
+	text-transform: uppercase;
+	font-size: 30px;
+}
+
+#pokemonImage{
+	width: 250px;
+    margin: 0 auto;
+}
+
+.w3-content{
+	width: 200px;
+	height: 130px;
+	background: url('/img/sprite_back1.jpeg') no-repeat;
+	background-size: 100%;
+	border: 6px solid #FDD64B;	
+	margin-bottom: 20px;
+}
+
+.w3-button {
+	background-color: #FDD64B;
+	color: white;
+	padding: 4px;
+}
+
+/*Pokemon Stats*/
+
+#stats {
+	background:rgba(255,255,255,0.2);
+}
+
+
+.pokemon_info {
+	margin-left: 5px;
+	text-align: left;
+	font-size: 16px;
+}
+
+
+h3 {
+	display: inline-block;
+	text-align: left;
+	font-size: 20px;
+	text-transform: uppercase;
+	font-weight: 900;
+	margin-right: 5px;
+
+}
+
+/********************/
+/* Favorites Pages  */
+/********************/
+
+ul {
+	margin-top: 10px;
+    list-style-image: url('/img/pokeball_small.png');
+}
+
+li {
+	margin-left: 10px;
+	padding-left: 1em;
+	margin-bottom: 15px;
+	text-align: left;
+	font-family: 'Merriweather Sans', sans-serif;
+	text-transform: uppercase;
+	font-weight: 900;
+	font-size: 28px;
+}
+
