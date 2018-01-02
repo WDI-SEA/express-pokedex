@@ -1,18 +1,20 @@
 <div class="container">
   <h1 class="main-title text-center">The Original 151 Pokemon</h1>
 
-  <% pokemon.forEach(function(pokemon) { %>
-    <div class="well">
-      <h2 class="pokemon-name"><%= pokemon.name %></h2>
-      <form method="POST" action="/pokemon">
-        <input hidden type="string" name="name" value="<%= pokemon.name %>">
-        <input hidden type="string" name="url" value="<%=pokemon.url%>">
-        <button class="btn btn-primary glyphicon glyphicon-heart" data-toggle="tooltip" data-trigger="hover" data-placement="right" title="Add to Favorites!" type="submit"></button>
-        <div class="tooltip bs-tooltip-right" role="tooltip">
-          <div class="arrow"></div>
-          <div class="tooltip-inner">Add to Favorites!</div>
-        </div>
-      </form>
-    </div>
-  <% }); %>
+  <div>
+    <% pokemon.forEach(function(pokemon) { %>
+      <div class="well home-pokemon">
+        <h2 class="pokemon-name home-text"><%= pokemon.name %></h2>
+        <form class="home-text" method="POST" action="/pokemon">
+          <input hidden type="string" name="name" value="<%= pokemon.name %>">
+          <input hidden type="string" name="url" value="<%=pokemon.url%>">
+          <button class="btn btn-primary glyphicon glyphicon-heart home-text" data-toggle="tooltip" data-trigger="hover" data-placement="right" title="Add to Favorites!" type="submit"></button>
+          <div class="tooltip bs-tooltip-right" role="tooltip">
+            <div class="arrow"></div>
+            <div class="tooltip-inner">Add to Favorites!</div>
+          </div>
+        </form>
+      </div>
+    <% }); %>
+  </div>
 </div>

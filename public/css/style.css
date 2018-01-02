@@ -26,6 +26,15 @@ ul{
 	font-weight: 700;
 	font-variant: titling-caps;
 }
+.home-pokemon {
+	display: inline-block;
+	padding: 5px;
+	margin: 15px;
+}
+.home-text {
+	display: inline;
+	line-height: 30px;
+}
 .pokemon-name {
 	font-family:'Bungee', cursive;
 }
