@@ -8,7 +8,7 @@ var favPokemons;
 var pokemons;
 var db = require('./models/')
 
-const pokeApiUrl = 'http://pokeapi.co/api/v2/pokemon/?limit=10';
+const pokeApiUrl = 'http://pokeapi.co/api/v2/pokemon/?limit=151';
 
 app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
@@ -16,18 +16,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 app.use(express.static(__dirname + '/public/'));
 
-function getFavPokemon(req, res, next){
-    db.pokemon.findAll().then(function(data){
-        favPokemon = data;
-        next();
-    });
-    
-}
-
 app.get('/', function(req, res, next) {
   request(pokeApiUrl, function(error, response, body) {
     pokemons = JSON.parse(body).results;
-    console.log(pokemons);
+
   });
   next();
 }, function(req, res, next){
@@ -36,10 +28,9 @@ app.get('/', function(req, res, next) {
     });
     next()
 }, function (req, res){
-    res.render('index', {favPokemons:favPokemons, pokemons:pokemons});
     res.render('index', {pokemons:pokemons, 
                         favPokemons:favPokemons
-            });
+    });
 }); 
 
 app.use('/pokemon', require('./routes/pokemon'));
