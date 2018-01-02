@@ -1,3 +1,5 @@
+// Flip Card Back Over
+// I am not sure why this funciton is not working. I would love some help debugging it and understanding why! Thanks!
 var cardFlipped = function (){
 	var poke_id = $(this).attr('id');
 	var id = poke_id.substring(poke_id.length -1)
@@ -18,7 +20,6 @@ var cardClicked = function (){
 	document.getElementById('pokemon-'+poke_id+'').style.display = 'inline-block';
 	document.getElementById('cardback-'+poke_id+'').style.display = 'none';
 	reflipCard(poke_id);
-
 }
 
 
@@ -30,9 +31,7 @@ var addCardEventListeners= function () {
 	}
 }
 
-//
 document.addEventListener("DOMContentLoaded", function() {
-	//document.getElementById('reset').addEventListener('click', reset);
 	addCardEventListeners();
 });
 
