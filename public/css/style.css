@@ -1,5 +1,19 @@
 body {
-	background-image: url("img/pokemon_background.png");
+	background-image: url("/img/background.png");
 	background-repeat: no-repeat;
-	background-size: auto;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+.text-center {
+	color: white;
+}
+
+.well {
+	width: 250px;
+	height: 150px;
+	text-align: center;
+	display: inline-block;
+	margin: 10px 10px;
+	font-size: 30px;
 }

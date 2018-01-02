@@ -1,10 +1,10 @@
 //run this everytime I hit this crazy ass button
 $(".delete-pokemon").click(function(e){
-		e.preventDefault();
 		console.log("DELETED!");
+		e.preventDefault();
 		$.ajax({
-			method: "DELETE",
 			url: $(this).attr("action"),
+			method: "DELETE",
 		}).done(function(data){
 			window.location.href = "/pokemon";
 		});
