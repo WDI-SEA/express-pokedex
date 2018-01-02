@@ -1,16 +1,70 @@
-<div class="container">
-  <h1 class="text-center">The Original 151 Pokemon</h1>
-  <p class="text-center">
-    <a href="/pokemon">Favorites</a>
-  </p>
 
-  <% pokemon.forEach(function(pokemon) { %>
-    <div class="well">
-      <h2><%= pokemon.name %></h2>
-      <form method="POST" action="/pokemon">
-        <input hidden type="text" name="name" value="<%= pokemon.name %>">
-        <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
-      </form>
+ 
+<%
+  var dbPokemons =[];
+  var imagesUrl = 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/'
+
+  function getPokemonId(url){
+    var result = url.match(/\/\d+/);
+    return result[0].slice(1);
+  }
+
+//Pad the pokemon id with leading 0s 
+function padId(id){
+    switch(true){
+        case id.length<10:
+            return id.padStart(3, "0");
+        case id.length>=10:
+            return id.padStart(2, "0");
+        case id.length >99:
+            return id;           
+    }  
+}  
+
+favPokemons.forEach(function(pokemon){
+  dbPokemons.push(pokemon.name);
+});
+%>
+
+<section class="section">
+  <ul class="cardList">
+    
+<%pokemons.forEach(function(pokemon){
+  var isInFavorites = false;
+  %>
+  <li class="animate">
+    <figure>
+      <a href="pokemon/<%=getPokemonId(pokemon.url)%>">
+        <img src="<%=imagesUrl + padId(getPokemonId(pokemon.url))%>.png">
+      </a>
+    </figure>
+    <div class="stats-wrapper">
+      <div class="favourite">
+      
+      <% if(dbPokemons.indexOf(pokemon.name) !== -1){
+        isInFavorites = true;%>
+        
+      <%}%>
+       
     </div>
-  <% }); %>
-</div>
+    <div class="info">
+      <p id="pokemonId">#<%=padId(getPokemonId(pokemon.url));%></p>
+      <h4><%=pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);%></h4>
+
+    </div>
+   
+    
+<form method="POST" action="/pokemon">
+  <input hidden type="text" name="name" value="<%= pokemon.name %>">
+        <input hidden type="text" name="imgUrl" value="<%=imagesUrl + padId(getPokemonId(pokemon.url))%>.png">
+        <input hidden type="text" name="pokemonId" value="<%=getPokemonId(pokemon.url)%>">
+        <button <%if(isInFavorites){%>disabled<%}%>  class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
+</form>
+
+  </li>
+
+<%});%>
+
+  </ul>
+
+</section>

@@ -1,0 +1,23 @@
+
+
+<h1><%=pokemon.forms[0].name.charAt(0).toUpperCase() + pokemon.forms[0].name.slice(1);%></h1>
+
+
+<div>
+<figure>
+  <img src="<%=pokemon.sprites.front_default%>" alt="">
+  <img src="<%= pokemon.sprites.back_default%>" alt="">
+
+</figure>
+
+<h3>Stats</h3>
+<ul>
+  <li>HP <span class="bold"><%=pokemon.stats[5].base_stat%></span></li>
+  <li>Attack <span class="bold"><%=pokemon.stats[4].base_stat%></span></li>
+  <li>Defence <span class="bold"><%=pokemon.stats[3].base_stat%></span></li>
+  <li>Special Attack <span class="bold"><%=pokemon.stats[2].base_stat%></span></li>
+  <li>Special Defence <span class="bold"><%=pokemon.stats[1].base_stat%></span></li>
+  <li>Speed <span class="bold"><%=pokemon.stats[0].base_stat%></span></li>
+</ul>
+</div>
+

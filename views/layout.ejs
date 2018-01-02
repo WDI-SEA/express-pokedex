@@ -4,16 +4,36 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pokedex</title>
-
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
   </head>
   <body>
-    <%- body %>
+
+    <div class="jumbotron">
+      <h1 class="text-center">The OG Pokedex</h1>
+   
+       <ul class="nav nav-pills">
+      <li role="presentation" class="">
+        <a href="/">See All</a>
+      </li>
+      <li role="presentation">
+        <a href="/pokemon">Favorites</a>
+      </li>
+    </ul>
+
+    </div>
+
+    <div class="container">
+       <%-body %>
+    </div>
+   
 
     <!-- jQuery -->
     <script src="//code.jquery.com/jquery.js"></script>
     <!-- Bootstrap JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/script.js"></script>
   </body>
 </html>

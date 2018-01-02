@@ -1,0 +1,53 @@
+
+<% 
+  function padId(id){
+    switch(true){
+        case id.length<10:
+            return id.padStart(3, "0");
+        case id.length>=10:
+            return id.padStart(2, "0");
+        case id.length >99:
+            return id;           
+    }  
+}  
+%>
+
+
+  
+
+
+<section>
+  <ul class="cardList">
+<%pokemons.forEach(function(pokemon){%>
+  
+  <li class="animate">
+    <figure>
+      <a href="pokemon/<%=pokemon.pokemonId%>">
+      <img src="<%=pokemon.imgUrl%>" alt="">
+    </a>  
+    </figure>
+    
+  
+
+  <div class="info">
+    <p>#<%=padId(pokemon.pokemonId)%></p>
+  
+    <h4><%=pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);%></h4>
+  </div>
+
+<form method="DELETE" action="/pokemon">
+  <input hidden type="text" name="name" value="<%= pokemon.name %>">
+        
+        <button class="btn btn-warning delete-btn" type="submit" data-id="<%=pokemon.pokemonId%>">Remove from favs</button>
+
+</li>
+<%});%>
+
+  </ul>
+</section>
+
+
+
+
+
+       

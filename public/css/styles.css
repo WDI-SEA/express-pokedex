@@ -1,0 +1,25 @@
+body{
+font-family: "Ubuntu", sans-serif;
+}
+
+.cardList{
+display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px;
+  grid-auto-rows: minmax(100px, auto);
+}
+    
+li {
+  list-style: none;
+  padding: 30px;
+}
+
+
+.animate{
+    border: 1px solid #DDD;
+    border-radius: 8px;
+}
+
+.bold{
+    font-weight: 600;
+}
