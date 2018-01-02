@@ -1,0 +1,73 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-image: url('/img/pokebackground.png');
+  padding-top: 50px;
+}
+
+h1 {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.container {
+  width: 650px;
+}
+
+.navbar {
+  margin-bottom: 0;
+  background-color: #313131;
+  color: #fff;
+}
+
+a .navbar { 
+  color: #FFF;
+}
+
+div .pull-right a{
+  color: #313131;
+}
+
+.page-header{
+  background-color: #FC2A20;
+  color: #fff;
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 10px 0;
+}
+
+.well {
+  background-color: #F5F5F5;
+  border-radius: 20px;
+}
+
+#add {
+  font-family: 'Poppins', sans-serif;
+}
+
+#favoritesName {
+  margin-top: 0px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+}
+
+
+#listLink {
+  color: #fff;
+  font-size: 16px;
+}
+
+#stats {
+  background-color: #F5F5F5;
+  border-radius: 40px;
+  border: 1px solid black;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+}
+
+li {
+  font-style: italic;
+}
+
+#homeList {
+  padding-bottom: 30px;
+}
