@@ -1,0 +1,12 @@
+<h1 class="text-center">Favorited Pokemon</h1>
+
+<% if(results.length<1) {%>
+	<h3>So much for catching them all... looks like your pocket is empty!</h3>
+<% } else { %>
+	<% results.forEach(function(pokemon){ %>
+		<%var pokeID= pokemon.id%>
+		<a class = "btn btn-success btn-block" href=<%=pokeID%>>
+			<h2><%= pokemon.name.toUpperCase() %></h2>
+		</a>
+	<% }); %>
+<% } %>
