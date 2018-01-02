@@ -1,15 +1,19 @@
+<div class="page-header">
+  <h1 id="favorite" class="text-center">Favorite Pokémon</h1>
+</div>
 <div class="container">
-  <h1 class="text-center">Favorite Pokemon</h1>
-
   <% pokemon.forEach(function(pokemon) { %>
     <div class="well">
-      <h2><%= pokemon.name %></h2>
-      <a class="btn btn-info btn-xs" href="/pokemon/<%= pokemon.id %>">
-      Details
-    </a>
-      <a href="/pokemon/<%= pokemon.id %>" class="delete">
-      Remove
-      </a>
+      <div class="pull-right">
+        <span><i class="glyphicon glyphicon-flash"><a href="/pokemon/<%= pokemon.id %>" class="details"></i> 
+          See Details
+          </a>
+          <hr>
+          <i class="glyphicon glyphicon-remove"><a href="/pokemon/<%= pokemon.id %>" class="delete"></i>
+           Remove
+          </a></span>
+      </div>
+      <h2 id="favoritesName"><%= pokemon.name %></h2>
     </div>
   <% }); %>
 </div>
