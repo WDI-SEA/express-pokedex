@@ -30,6 +30,7 @@ nav a, .pokemon-grid a {
 
 .navitem a {
 	padding: 20px;
+	transition: all .75s ease;
 	display: inline-block;
 }
 
@@ -170,6 +171,7 @@ button:hover {
 	width: 130px;
 	margin: 10px;
 	background: #7dcaf8;
+	transition: all 1s ease;
 }
 
 .pokemon-grid:hover {
@@ -195,7 +197,6 @@ button:hover {
 	animation: jumping-pokemon .6s infinite;
 }
 
-
 /***********************************/
 /* INDIVIDUAL POKEMON DETAILS PAGE */
 /***********************************/
@@ -205,6 +206,7 @@ button:hover {
 	display: inline-block;
 	width: 50%;
 	padding: 20px;
+	transition: all 2s;
 }
 
 .pokemon-single-title {
@@ -212,6 +214,7 @@ button:hover {
 	border-bottom: 8px solid #FE0067;
 	width: 50%;
 	padding: 20px;
+	text-transform: capitalize;
 	margin: 40px auto 0 auto;
 }
 
