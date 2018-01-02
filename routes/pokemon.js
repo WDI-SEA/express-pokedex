@@ -37,4 +37,14 @@ router.get('/:id', function(req, res,next){
 
 });
 
+
+router.delete('/:id', function(req, res){
+  console.log(req.params.id);
+  db.pokemon.destroy({where:{
+    pokemonId: req.params.id
+
+  }});
+
+});
+
 module.exports = router;
