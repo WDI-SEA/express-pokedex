@@ -68,6 +68,7 @@ favPokemons.forEach(function(pokemon){
 <form method="POST" action="/pokemon">
   <input hidden type="text" name="name" value="<%= pokemon.name %>">
         <input hidden type="text" name="imgUrl" value="<%=imagesUrl + padId(getPokemonId(pokemon.url))%>.png">
+        <input hidden type="text" name="pokemonId" value="<%=getPokemonId(pokemon.url)%>">
         <button <%if(isInFavorites){%>disabled<%}%>  class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
 </form>
 

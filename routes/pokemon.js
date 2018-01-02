@@ -12,10 +12,6 @@ router.get('/', function(req, res) {
      res.render('pokemon/favourites.ejs', {pokemons:pokemons});
     });
 
-  
-
-
-
 });
 
 // POST - receive the name of a pokemon and add it to the database

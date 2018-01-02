@@ -1,16 +1,31 @@
 <h1>My deck</h1>
 
-<div class="carousel">
-  <figure class="spinner">
-       <%pokemons.forEach(function(pokemon){%>
-    
+
+<section>
+  <ul>
+<%pokemons.forEach(function(pokemon){%>
+  <li>
+    <figure>
+
+      <a href="pokemon/<%=pokemon.pokemonId%>">
+        <img src="<%=pokemon.imgUrl %>">
+      </a>
+    </figure>
+  </li>
+
+
 <h1><%=pokemon.name%></h1>
-<img src="<%=pokemon.imgUrl %>" alt="">
+
 
 
 <%});%>  
 
-  </figure>
+
+  </ul>
+</section>
+
+       
+
  
 
 </div>

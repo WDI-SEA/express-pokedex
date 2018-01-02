@@ -14,6 +14,9 @@ module.exports = {
       imgUrl: {
         type: Sequelize.STRING
       },
+      pokemonId: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
