@@ -9,6 +9,10 @@ h1 {
   margin-bottom: 10px;
 }
 
+.container {
+  width: 650px;
+}
+
 .navbar {
   margin-bottom: 0;
   background-color: #313131;
