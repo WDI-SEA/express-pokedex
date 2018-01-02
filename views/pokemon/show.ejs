@@ -1,0 +1,28 @@
+
+
+<div class="container">
+	<div class="homebanner">
+  <h3 class="text-center">
+    More info about this Pokemon!
+  </h3>
+  <p class="text-center">
+   <a href="/">Return to all pokemon</a>
+  </p>
+  <p class="text-center">
+   <a href="/pokemon">Return to favorites</a>
+  </p>
+</div>
+    <div class="show-pokemon text-center">
+    	<div class="showbg">
+          <h2><img src="http://pixelartmaker.com/art/b73566a14633720.png"><%= pokemon.name %> #<%= pokemon.id %> <img class="sprite" src='<%= pokemon.sprites.front_default %> '></h2>
+          <ul>
+            <li>TYPE:  <%= pokemon.types[0].type.name %></li>
+            <li>ABILITIES: <br>- <%= pokemon.abilities[0].ability.name %><br>- <%= pokemon.abilities[1].ability.name %></li>
+            <li>WEIGHT: <%= pokemon.weight %></li>
+            <li></li>
+          </ul>
+      </div>
+    </div>
+
+
+</div>

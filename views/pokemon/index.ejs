@@ -1,0 +1,29 @@
+<div class="container">
+	<div class="homebanner">
+  <h1 class="text-center">Your Favorites</h1>
+  <p class="text-center">
+   <a href="/">Return to all pokemon</a>
+  </p>
+
+
+
+</div>
+    <div class="all-pokemon">
+    	<div class="favebg">
+<% pokemon.forEach(function(pokemon){ %>
+      <div class="list">
+        <div class="items">
+          <h2><img src="http://pixelartmaker.com/art/b73566a14633720.png"><a href="/pokemon/<%=pokemon.id%>"><%= pokemon.name %></a></h2>
+    <form class="rmv-favorite" action="./<%= pokemon.id %>">
+    <button class="btn btn-primary my-btn" type="submit">
+    <p class="buttonp">Remove From Favorites<p>
+    </button>
+</form>
+        </div>
+      </div>
+      <% }); %>
+      </div>
+    </div>
+
+
+</div>
