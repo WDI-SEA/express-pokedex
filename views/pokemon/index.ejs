@@ -5,7 +5,7 @@
 <% } else { %>
 	<% results.forEach(function(pokemon){ %>
 		<%var pokeID= pokemon.id%>
-		<a class = "btn btn-success btn-block" href=<%=pokeID%>>
+		<a class = "btn btn-success btn-block" href='/pokemon/<%=pokeID%>'>
 			<h2><%= pokemon.name.toUpperCase() %></h2>
 		</a>
 	<% }); %>
