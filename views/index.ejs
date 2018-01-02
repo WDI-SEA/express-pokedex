@@ -23,13 +23,8 @@ function padId(id){
 
 favPokemons.forEach(function(pokemon){
   dbPokemons.push(pokemon.name);
-})
-
-
+});
 %>
-
-
-<h1><%=(dbPokemons);%></h1>
 
 <section class="section ">
   <ul>
@@ -54,7 +49,7 @@ favPokemons.forEach(function(pokemon){
       <%}%>
     </div>
     <div class="info">
-      <p id="pokemonId"><%=getPokemonId(pokemon.url);%></p>
+      <p id="pokemonId">#<%=padId(getPokemonId(pokemon.url));%></p>
       <h4><%=pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);%></h4>
 
     </div>
@@ -74,20 +69,3 @@ favPokemons.forEach(function(pokemon){
   </ul>
 
 </section>
-  
-
-
-<!-- <div>
-  <% pokemons.forEach(function(pokemon) { %>
-    <div class="well">
-      <h2><%=pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);%></h2>
-      <img src="<%=imagesUrl + padId(getPokemonId(pokemon.url))%>.png">
-      <form method="POST" action="/pokemon">
-        <input hidden type="text" name="name" value="<%= pokemon.name %>">
-        <input hidden type="text" name="imgId" value="<%=imagesUrl + padId(getPokemonId(pokemon.url))%>.png%>">
-        <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
-      </form>
-    </div>
-  <% }); %>
-</div>
- -->

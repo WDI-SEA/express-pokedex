@@ -1,31 +1,52 @@
-<h1>My deck</h1>
+
+<% 
+  function padId(id){
+    switch(true){
+        case id.length<10:
+            return id.padStart(3, "0");
+        case id.length>=10:
+            return id.padStart(2, "0");
+        case id.length >99:
+            return id;           
+    }  
+}  
+%>
+
+
+<div class="container">
+  <h1>My deck</h1>
 
 
 <section>
   <ul>
 <%pokemons.forEach(function(pokemon){%>
-  <li>
-    <figure>
-
-      <a href="pokemon/<%=pokemon.pokemonId%>">
-        <img src="<%=pokemon.imgUrl %>">
-      </a>
-    </figure>
+  
+  <li class="animate">
+    <a href="">
+      <img src="<%=pokemon.imgUrl%>" alt="">
+    </a>
   </li>
 
+  <div class="info">
+    <p>#<%=padId(pokemon.pokemonId)%></p>
+  
+    <h4><%=pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);%></h4>
+  </div>
 
-<h1><%=pokemon.name%></h1>
+<form method="DELETE" action="/pokemon">
+  <input hidden type="text" name="name" value="<%= pokemon.name %>">
+        
+        <button class="btn btn-warning" type="submit">Remove from favs</button>
 
 
-
-<%});%>  
+<%});%>
 
 
   </ul>
 </section>
 
-       
-
- 
-
 </div>
+
+
+
+       

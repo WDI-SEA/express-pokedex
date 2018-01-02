@@ -17,21 +17,19 @@ app.use(ejsLayouts);
 app.use(express.static(__dirname + '/public/'));
 
 app.get('/', function(req, res, next) {
+  
+  db.pokemon.findAll().then(function(dbpoke){
+        favPokemons = dbpoke;
+    });
+
   request(pokeApiUrl, function(error, response, body) {
     pokemons = JSON.parse(body).results;
 
-  });
-  next();
-}, function(req, res, next){
-    db.pokemon.findAll().then(function(dbpoke){
-        favPokemons = dbpoke;
-    });
-    next()
-}, function (req, res){
     res.render('index', {pokemons:pokemons, 
                         favPokemons:favPokemons
     });
-}); 
+  })
+});
 
 app.use('/pokemon', require('./routes/pokemon'));
 
