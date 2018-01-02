@@ -1,0 +1,12 @@
+<div class="container1">
+  <a href="/">Back To Front Page</a>
+  <h3>My personal favorite</h3>
+  <% favorite.forEach(function(favorite) { %>
+    <div class="head">
+      <a href="/pokemon/<%= favorite.id %>"><h2><%= favorite.name %></h2></a>
+      <a href="/pokemon/<%= favorite.id %>" class="delete-fav">
+        Delete Favorite
+      </a>
+    </div>
+  <% }); %>
+</div>

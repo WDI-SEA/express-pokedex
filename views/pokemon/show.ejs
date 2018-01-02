@@ -1,0 +1,30 @@
+<div class="pokeInfo">
+  <a href="/">Back To Front Page</a>
+  <h1><%= favorite.forms[0].name %></h1>
+
+  <p>Adult Length: <%= favorite.height %> feet</p>
+
+  <p>Adult Weight: <%= favorite.weight %> pounds </p>
+
+  <p>Species Classification: <% for(i = 0; i < favorite.types.length; i++) { %>
+      <%= favorite.types[i].type.name %> type
+    <% } %>  </p>
+
+  <p>Curious Capabilities: <%
+    var pokeMoves = [];
+    for(n = 0; n < favorite.moves.length; n++){
+      pokeMoves.push(favorite.moves[n].move.name);
+    }
+     { %></p>
+    <p>
+      <%= pokeMoves[0]%> , <%= pokeMoves[1]%> , <%= pokeMoves[2]%> , <%= pokeMoves[3]%> , <%= pokeMoves[4]%>
+    <p>
+    <% } %>
+</div>
+<div class="pic">
+    <h2>Sketches</h2>
+    <p>Anterior View</p>
+    <img src="<%=favorite.sprites.front_default%>">
+    <p>Posterior View</p>
+    <img src="<%=favorite.sprites.back_default%>">
+</div>
