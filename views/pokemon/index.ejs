@@ -1,0 +1,18 @@
+<a class="btn btn-success" href="/">Back to Pokemon</a>
+<h2 class="text-center">Favorites Page</h2>
+
+<div class="container">
+	<ul id="sortable">
+	<% pokemon.forEach(function(item) {%>
+		<div class="favorites">
+			<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
+				<h3>
+					<%= item.name %>
+				</h3>
+				<a class="btn btn-primary" href="/pokemon/<%= item.id %>">See More</a>
+				<a id="delete" class="btn btn-danger" href="/pokemon/<%= item.id %>">Delete</a>
+			</li>
+		</div>
+	<% }); %>
+	</ul>
+</div>
