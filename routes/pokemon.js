@@ -7,7 +7,6 @@ var bodyParser = require("body-parser");
 
 // GET - return a page with favorited Pokemon
 router.get('/', function(req, res) {
-    // TODO: render favorites
 	db.favorite.findAll().then(function(favorite) {
 		res.render("./pokemon/show", {favorite:favorite});
 	});
@@ -20,6 +19,10 @@ router.post('/', function(req, res) {
     });
 });
 
+//To see a particular pokemon
+router.get("/:id", function(req, res){
+	db
+});
 //DELETE route to delete pokemon from db and from favorites page
 router.delete("/:id", function(req, res){
 	console.log("delete route ID =", req.params.id);

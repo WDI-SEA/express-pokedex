@@ -1,10 +1,24 @@
-<% favorite.forEach(function(favorite) { %>
-<div class ="well">
-	<h2><%= favorite.name %></h2>
-	<form class="delete-pokemon" action="./pokemon/<%= favorite.id %>">
-		<button type="submit" class="btn btn-danger">
-			Delete Favorite
-		</button>
-	</form>
+<div>
+	<div class="main-top">
+		<h1 class= "text-center">My Favorite pokemon
+		</h1>
+	</div>
+		<p class="text-center">
+		<a class="home-button" href="/">Home</a>
+		</p>
+
+	<% if(favorite.length <=0) {%>
+		<p> Whoa!  Gotta go to Bellevue park and get some mons.</p>
+	<%} else {%>
+		<% favorite.forEach(function(favorite) { %>
+			<div class ="well">
+				<h2><%= favorite.name %></h2>
+				<form class="delete-pokemon" action="./pokemon/<%= favorite.id %>">
+					<button type="submit" class="btn btn-danger">
+						Delete Favorite
+					</button>
+				</form>
+			</div>
+		<% }); %>
+	<% }%>
 </div>
-<% }); %>

@@ -17,3 +17,13 @@ body {
 	margin: 10px 10px;
 	font-size: 30px;
 }
+.favorites,
+.home-button {
+	color: white;
+	padding: 5px 50px;
+	height: 59px;
+}
+
+p {
+	color: white;
+}
