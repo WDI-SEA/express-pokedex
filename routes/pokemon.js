@@ -19,10 +19,13 @@ router.get('/:id', function(req, res) {
 				if (!error && response.statusCode == 200) {
     				var fullPokeData = JSON.parse(body);
     				var data = {
+    					id: req.params.id,
     					name: fullPokeData.name.toUpperCase(),
     					abilities: fullPokeData.abilities,
     					weight: fullPokeData.weight,
-    					sprites: fullPokeData.sprites
+    					height: fullPokeData.height,
+    					sprites: fullPokeData.sprites,
+    					base_experience: fullPokeData.base_experience
     				};
 					res.render('pokemon/show.ejs', data);
     			}
@@ -42,6 +45,19 @@ router.post('/', function(req, res) {
 		res.redirect('/pokemon');
 	}).catch(function(err){
 		res.send('Well that did not go as planned', err);
+	});
+});
+
+router.delete('/:id', function(req, res) {
+	console.log('Delete route ID = ', req.params.id);
+	db.pokemon.destroy({
+		where : { id: req.params.id }
+	}).then(function(deleted){
+		console.log(deleted);
+		res.send('success');
+	}).catch(function(err) {
+		console.log('An error happened', err);
+		res.send('fail');
 	});
 });
 
