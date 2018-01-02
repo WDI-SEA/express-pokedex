@@ -4,10 +4,6 @@ var bodyParser = require("body-parser");
 var router = express.Router();
 var db = require("../models");
 
-
-
-
-
 // GET - return a page with favorited Pokemon
 router.get('/', function(req, res) {
     db.pokemon.findAll().then(function(pokemons) {
@@ -29,9 +25,22 @@ router.get("/:id", function(req, res) {
   db.pokemon.findById(req.params.id).then(function(pokemon) {
     request(pokemon.url, function(error, response, body) {
       var pokeMore = JSON.parse(body);
-      console.log("this is the extra information: ", pokeMore);
+      // console.log("this is the extra information: ", pokeMore);
       res.render("pokemon/pokedex-entry", {pokemon: pokeMore});
     });
+  });
+});
+
+router.delete(":/id", function(req, res) {
+  console.log("delete route ID = ", req.params.id);
+  db.pokemon.destroy({
+    where: {id: req.params.id}
+  }).then(function(deleted) {
+    console.log("deleted = ", deleted);
+    res.send("success");
+  }).catch(function(err) {
+    console.log("an error happened", err);
+    res.send("fail");
   });
 });
 

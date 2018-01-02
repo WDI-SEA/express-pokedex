@@ -4,6 +4,10 @@
   <h2>Nothing in the database yet!</h2>
 <% } else { %>
   <% pokemons.forEach(function(item) { %>
-    <h3> <%= item.name %></h3>
+    <h3> <%= item.name %> <%= item.id %></h3>
+
+    <a href="/pokemon/<%= item.id %>"" class="btn btn-danger delete-link">
+      Delete
+    </a>
   <% }); %>
 <% } %>
