@@ -1,0 +1,20 @@
+<h2 class="pokemon-name">
+  <%= pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) %>
+</h2>
+<img class="pokemon-sprite" src="<%= pokemon.sprites.front_default %>" alt="image of <%= pokemon.name %>">
+<div class="pokemon-stats">
+  <p>Height: <%= pokemon.height %> dm</p>
+  <p>Weight: <%= pokemon.weight %> hg</p>
+  <p>
+    Type: 
+    <% for(var i = 0; i < pokemon.types.length; i++) { %>
+      <%= pokemon.types[i].type.name %>
+      &nbsp
+    <% } %>
+  </p>
+</div>
+
+<div class="pokemon-nav-bar">
+  <button type="button" class="btn btn-primary">Profile</button>
+  <button type="button" class="btn btn-info more-info-button">More Info</button>
+</div>
