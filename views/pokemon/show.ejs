@@ -24,7 +24,7 @@
 		<ul class="list">
 			<% for(var i = 0; i < results.stats.length; i++) { %>
 				<li>
-				<%=JSON.stringify(results.stats[i].stat.name).split('"').join('') %>
+				<%=JSON.stringify(results.stats[i].stat.name).split('"').join('') %> : <%= JSON.stringify(results.stats[i].base_stat) %>
 				</li>
 			<% } %>
 		</ul>
