@@ -1,1 +1,5 @@
-style.css
+body {
+	background-image: url("img/pokemon_background.png");
+	background-repeat: no-repeat;
+	background-size: auto;
+}

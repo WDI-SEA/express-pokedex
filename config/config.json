@@ -2,7 +2,8 @@
   "development": {
     "database": "pokemon",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "operatorsAliases": "false"
   },
   "test": {
     "username": "root",

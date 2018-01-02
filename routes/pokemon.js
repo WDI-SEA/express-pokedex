@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var db = require("../models");
+var request = require("request");
+var ejsLayouts = require("express-ejs-Layouts");
 
 // GET - return a page with favorited Pokemon
 router.get('/', function(req, res) {
