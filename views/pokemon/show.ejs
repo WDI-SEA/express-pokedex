@@ -1,0 +1,16 @@
+<h2><%= name %></h2>
+<% for (var key in sprites) { %>
+	<%if (sprites[key]) {%>
+    	<img src="<%=sprites[key]%>">
+    <% } %>
+<% } %>
+<ul>
+	<li>Abilities:
+		<ul>
+		<% abilities.forEach(function(ability) { %>
+			 <li> <%= ability.ability.name %> </li>
+		<% }); %>
+		</ul>
+	</li>
+	<li>Weight: <%= weight %></li>
+</ul>
