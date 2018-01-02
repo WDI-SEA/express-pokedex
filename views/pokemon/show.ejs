@@ -1,0 +1,23 @@
+<header class="text-center">
+	<h2><%= name %></h2>
+		<% for (var key in sprites) { %>
+			<%if (sprites[key]) {%>
+    		<img src="<%=sprites[key]%>">
+    	<% } %>
+	<% } %>
+</header>
+<main>
+	<ul>
+	<li>Weight: <%= weight %></li>
+	<li>Height: <%= height %></li>
+	<li>Base Experience: <%= base_experience %> </li>
+	<li>Abilities:
+		<ul>
+		<% abilities.forEach(function(ability) { %>
+			 <li> <%= ability.ability.name %> </li>
+		<% }); %>
+		</ul>
+	</li>
+	</ul>
+		<a href="/pokemon/<%= id %>" class="btn btn-danger delete-link">Delete</a>
+</main>
