@@ -1,16 +1,20 @@
 body{
   background-image: url("/img/background.png");
-  background-repeat: no-repeat;
+  /*background-repeat: no-repeat;*/
   background-size: auto;
   /*font-family:'Paytone One', sans-serif;*/
 }
 .text-center li{
   /*list-style-image: url('/img/pokeball.png');
   height:10px;*/
+  list-style-type: none;
 }
 .text-center{
   font-family:'Paytone One', sans-serif;
 }
 .well{
+  font-family:'Paytone One', sans-serif;
+}
+.btn{
   font-family:'Paytone One', sans-serif;
 }
