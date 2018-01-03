@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require("body-parser");
+var request = require('request');
 var fs = require('fs');
 // ejsLayouts
 //request!!!
@@ -10,9 +11,9 @@ var router = express.Router();
 
 // GET - return a page with favorited Pokemon
 router.get('/', function(req, res) {
-  db.favorite.findAll().then(function(user){
-    //console.log(user);
-    res.render('pokemon', { user: user });
+  db.favorite.findAll().then(function(pokemon){
+    //console.log(pokemon);
+    res.render('pokemon', { pokemon: pokemon });
   });
 });
 
@@ -38,19 +39,19 @@ router.post('/', function(req, res) {
 router.get('/:id', function(req, res){
   db.favorite.findById(req.params.id).then(function(pokemon){
     if(pokemon){
-            var pokeUrl = 'http://pokeapi.co/api/v2/pokemon/'+pokemon.name+'/';
-            console.log(pokeURL);
-            request(pokeURL, function(error,response,body){
-                var pokemon = JSON.parse(body);
-                console.log(pokemon);
-                res.render('pokemon/show', {pokemon:pokemon});
-            });
-          }else{
-            res.status(404).send('error with the if');
-          }
+      var pokeUrl = 'http://pokeapi.co/api/v2/pokemon/'+pokemon.name+'/';
+      // console.log(pokeURL);
+      request(pokeUrl, function(error,response,body){
+          var pokemonDetail = JSON.parse(body);
+          console.log(pokemonDetail);
+          res.render('pokemon/show', {pokemon:pokemonDetail});
+      });
+    }else{
+      res.status(404).send('error with the if');
+    }
   }).catch(function(err){
-        res.status(500).send('error with the request');
-        console.log(err);
+    console.log('err', err);
+    res.status(500).send('error with the request');
   });
 });
 

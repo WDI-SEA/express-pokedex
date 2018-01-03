@@ -1,7 +1,9 @@
 /*whole page of 151 pokemon  */
 .container{
-
+background-color: 808080;
 }
+
+
 /* foreach pokemon box */
 .well{
 
@@ -23,10 +25,12 @@ display: inline-block;
 .og-poke{
     position: absolute;
   	margin-right: 20px;
+    background-color: black;
 }
 /* pokemon name listed in 151 */
 .pokemon-name{
 font-family: pokemon, sans-serif;
+color: blue;
 }
 /* overall body of favorites list page  */
 .fav-page{
