@@ -1,0 +1,18 @@
+{
+  "development": {
+    "database": "pokemon",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "operatorsAlises": "false"
+  },
+  "test": {
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
