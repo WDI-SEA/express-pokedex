@@ -1,7 +1,9 @@
 var express = require('express');
 var router = express.Router();
+var request = require('request');
 var db = require("../models");
 
+// CREATE DB ENTRY
 // db.pokemon.create({
 //   name: 'Eevee'
 // }).then(function(poke) {
@@ -20,6 +22,31 @@ router.get('/', function(req, res) {
   // res.send('Render a page of favorites here');
   // res.send(db.pokemon.findAll());
 });
+
+router.get('/:id', function(req, res) {
+    // TODO: render favorites
+    db.pokemon.findOne({
+      where: {id: req.params.id}
+  // db.pokemon.findById(id, function(err, pokemon){
+  //   console.log(req.body);
+}).then(function(pokemon) {
+    // res.send(pokemon);
+  // });
+    var pokeUrl = 'http://pokeapi.co/api/v2/pokemon/' + pokemon.name.toLowerCase();
+    request(pokeUrl, function(error, response, body) {
+      var pokeData = JSON.parse(body);
+      res.render('pokemon/single', { result: pokeData });
+    });
+    // res.send(pokeUrl);
+    // users will be an array of all User instances
+  });
+});
+
+// FIND?
+// db.user.find({
+//   where: {id: 2}
+// }).then(function(user) {
+// });
 
 router.delete('/:id', function(req, res){
   console.log('Delete route. Id = ', req.params.id);
@@ -53,12 +80,5 @@ router.post('/', function(req, res) {
 //   res.send(req.body);
 // });
 
-// router.post('/', function(req, res){
-//   db.article.create(req.body).then(function(createdArticle){
-//     res.redirect('/articles/' + createdArticle.id);
-//   }).catch(function(err){
-//     res.send('uh oh!', err);
-//   });
-// });
 
 module.exports = router;

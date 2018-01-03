@@ -1,5 +1,19 @@
-<h2 class="text-center"><%= result.name %></h2>
-<!-- <em> By <%= result.author %></em> -->
-<p>
-  <%= result.content %>
-</p>
+<style>
+body {background-color: powderblue;
+      text-align: center;}
+h1   {color: blue;}
+p    {color: red;}
+
+</style>
+<div>
+  <h2 class="text-center"><%=result.forms[0].name.toUpperCase();%></h2>
+  <!-- <% var rabbitHole = result.forms[0].url %>
+  <p><%=rabbitHole%></p>  -->
+  <img src="<%=result.sprites.front_default%>" height="400" width="400">
+  <p>Weighing in at <%= result.weight%> pounds,
+  <%=result.forms[0].name%> has an HP of <%=result.stats[5].base_stat%>,
+  a speed of <%=result.stats[0].base_stat%>,
+  a defense of <%=result.stats[3].base_stat%>,
+  and an attack at <%=result.stats[4].base_stat%>.
+  </p>
+</div>
