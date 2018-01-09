@@ -12,16 +12,29 @@ router.get('/', function(req, res) {
 	});
 });
 
+router.get("/:id", function(req, res){
+	db.favorite.findById(req.params.id).then(function(favorite){
+		if(favorite){
+			var pokemonUrl = "http://pokeapi.co/api/v2/pokemon/"+favorite.name+"/";
+			request(pokemonUrl, function(error,response,body){
+				var pokemon = JSON.parse(body);
+				res.render("./pokemon/favorite", {favorite:favorite, pokemon:pokemon});
+			});
+		}
+		else{
+			res.status(404).send("Check the if statment");
+		}
+	}).catch(function(err){
+		res.status(500).send("Error in the request")
+	});
+});
 // POST - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
     db.favorite.create(req.body).then(function(createArticle){
     	res.redirect("/pokemon");
-    });
-});
-
-//To see a particular pokemon
-router.get("/:id", function(req, res){
-	db
+    }).catch(function(err){
+    	res.send("Ohnoes", err);
+    })
 });
 //DELETE route to delete pokemon from db and from favorites page
 router.delete("/:id", function(req, res){

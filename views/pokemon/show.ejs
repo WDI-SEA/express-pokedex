@@ -12,7 +12,9 @@
 	<%} else {%>
 		<% favorite.forEach(function(favorite) { %>
 			<div class ="well">
-				<h2><%= favorite.name %></h2>
+				<p><a href="/pokemon/favorite/<%= favorite.id%>"><%= favorite.name %></a>
+				</p>
+				<!-- <h2><%= favorite.name %></h2> -->
 				<form class="delete-pokemon" action="./pokemon/<%= favorite.id %>">
 					<button type="submit" class="btn btn-danger">
 						Delete Favorite
