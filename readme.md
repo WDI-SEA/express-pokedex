@@ -10,8 +10,6 @@ If you're not familiar with Pokemon, Pokemon is a franchise/universe created by 
 * The Pokemon universe extends to games, trading cards, and TV
 * [The Pokemon Company](https://en.wikipedia.org/wiki/The_Pok%C3%A9mon_Company) is headquartered in Bellevue, WA.
 
-![Pikachu Image](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/English_Pok%C3%A9mon_logo.svg/2000px-English_Pok%C3%A9mon_logo.svg.png)
-
 ## Getting Started
 
 We'll be using an existing application that uses the [PokeAPI](http://pokeapi.co/), a Pokemon API that allows us to get a list of Pokemon.
@@ -42,15 +40,11 @@ We'll be using an existing application that uses the [PokeAPI](http://pokeapi.co
 
 #### Part 1: Setup Database
 
-Your first step will be to create a SQL database for your application as well as corresponding setup and seed files. Refer back to the notes as necessary.
+Your first step will be to create a SQL database for your application. We will be using Sequelize so please refer back to the notes as necessary.
 
 #### Part 2: Create a Pokemon Table'
 
 Create a `pokemon` table with one column `name`.
-
----
-
-##### If you are using `sequelize`
 
 Using the `sequelize` CLI, create your `pokemon` table. Then, run the migrations.
 
@@ -67,32 +61,6 @@ db.pokemon.create({
 ```
 
 Test by running the file: `node db-test.js`.
-
-##### If you are using `knex`
-
-Your second step will involve writing a SQL setup file to create a SQL table in your database to store your favorite Pokemon. It's recommended that you name this table `pokemon`. It will only store one attribute, the Pokemon's `name`.
-
-Once you have created the setup file, run the file against your database to create your tables. (This of course, can be done directly in psql/postico if you wish.) Then be sure to test connectivity to and the functionality of your database. This can be done in a separate file. An example:
-
-**db-test.js**
-
-```js
-
-var knex = require('knex')({
-  client: 'pg',
-  connection: process.env.DATABASE_URL
-});
-
-knex.raw(`
-  INSERT INTO pokemon(name)
-  VALUES (?);
-`, ['Pikachu']).then(function(data) {
-  console.log(data);
-});
-
-```
-
----
 
 Be sure to also test querying against the pokemon table.
 
