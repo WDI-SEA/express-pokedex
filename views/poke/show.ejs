@@ -1,0 +1,33 @@
+<div class="container">
+  <h1 class="text-center">About this Pokemon</h1>
+<p class="text-center">
+  <a href="/" class="btn btn-info">Home</a>
+  <a href="/poke/favorite" class="btn btn-info">Favorite</a>
+<br>
+<div class="pokeinfo text-center">
+    <img src="<%= pokemon.sprites.front_default %>" height="200">
+      <h1><%= pokemon.forms[0].name %></h1>
+      <h2>Weight: <%= pokemon.weight %>lbs</h2>
+      <h2>Base Experience: <%= pokemon.base_experience %></h2>
+      <h2>Type:</h2>
+      <ul>
+        <% for(var i = 0; i < pokemon.types.length; i++) { %>
+          <li>
+            <h3 class="text-center">
+              <%= (pokemon.types[i].type.name) %>
+            </h3>
+          </li>
+          <% } %>
+        </ul>
+      <h2>Abilities:</h2>
+        <ul>
+          <% for(var i = 0; i < pokemon.abilities.length; i++) { %>
+          <li>
+            <h3 class="text-center">
+              <%= (pokemon.abilities[i].ability.name)%>
+            </h3>
+          </li>
+          <% } %>
+        </ul>
+  </div>
+</div>
