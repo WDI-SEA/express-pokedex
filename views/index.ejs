@@ -1,12 +1,17 @@
+<link rel="stylesheet" type="text/css" src="/public/css/style.css">
+
 <div class="container">
-  <h1 class="text-center">The Original 151 Pokemon</h1>
-  <p class="text-center">
+  <h1 class="title">The Original 151 Pokemon</h1>
+  <!-- used to be class="text-center" -->
+  <p class="link-to-favs">
     <a href="/pokemon">Favorites</a>
   </p>
-
+<!-- use SeanSw picture routing for pokemon here -->
   <% pokemon.forEach(function(pokemon) { %>
-    <div class="well">
-      <h2><%= pokemon.name %></h2>
+    <div class="og-poke">
+      <h2><img src="http://pixelartmaker.com/art/b73566a14633720.png"><a href="/pokemon/<%=pokemon.id%>"></a></h2>
+      <h2 class="pokemon-name"><%= pokemon.name %></h2>
+      <!-- <h3><%= pokemon.url %></h3> -->
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
         <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>

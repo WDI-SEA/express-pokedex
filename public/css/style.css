@@ -1,0 +1,44 @@
+/*whole page of 151 pokemon  */
+.container{
+background-color: 808080;
+}
+
+
+/* foreach pokemon box */
+.well{
+
+}
+/* add to favorites button on main page  */
+.btn btn-primary{
+display: inline-block;
+}
+
+/* the original 151 pokemon  */
+.title{
+
+}
+/* button to nav to favs page */
+.link-to-favs{
+
+}
+/* layout div of 151 pokemon on main page */
+.og-poke{
+    position: absolute;
+  	margin-right: 20px;
+    background-color: black;
+}
+/* pokemon name listed in 151 */
+.pokemon-name{
+font-family: pokemon, sans-serif;
+color: blue;
+}
+/* overall body of favorites list page  */
+.fav-page{
+  font-family: pokemon, sans-serif;
+}
+/* for each fav poke picked on favs page  */
+.poke-picks{
+    display: inline-block;
+  	padding: 5px;
+  	margin: 15px;
+}
