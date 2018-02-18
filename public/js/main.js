@@ -15,3 +15,5 @@ $('.delete-pokemon').on('click', function(e) {
 		window.location = '/pokemon';
 	});
 });
+
+$(".button-collapse").sideNav();
