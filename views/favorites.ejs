@@ -1,0 +1,10 @@
+<div class="container">
+  <h1 class="text-center">Favorites</h1>
+  <h2 class=><%= pokemon.name %></h2>
+
+  <% pokemon.forEach(function(pokemon) { %>
+    <div class="well">
+      <h2><%= pokemon.name %></h2>
+    </div>
+  <% }); %>
+</div>
