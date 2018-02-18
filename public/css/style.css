@@ -8,16 +8,25 @@ html, body{
 
 h1 {
 	font-family: 'Ubuntu Mono', monospace;
+	margin-top: 50px;
 	text-align: center;
 	color: #FFD062;
 }
 
-h2 {
-	color: #FD3D00;
+.card-title {
+	color: #e57373;
+}
+
+.show {
+	margin-top: 50px;
 }
 
 a {
 	color: #395BA3;;
+}
+
+#github, #linkedin, #email {
+	width: 25px;
 }
 
 .card {
@@ -32,16 +41,20 @@ a {
 	text-align: center;
 }
 
-.pokedex {
+.pokeball {
 	width: 50px;
 	float: right;
 }
 
-.pokedex:hover {
+.pokeball:hover {
 	animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
+}
+
+.pokedex {
+	width: 100px;
 }
 
 @keyframes shake {
@@ -62,6 +75,7 @@ a {
   }
 }
 
+
 .card-action {
 	padding: 5px;
 }
@@ -71,10 +85,20 @@ button {
 	border: none;
 }
 
+.footer {
+	position: absolute;
+	bottom: 0;
+}
+
 .container {
 	margin: 0 auto;
 }
 
 img {
 	width: 250px;
+}
+
+#copyright {
+	text-align: right;
+	margin-right: 25px;
 }

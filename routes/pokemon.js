@@ -38,14 +38,31 @@ router.post('/', function(req, res) {
 	});
 }); 
 
+
 // GET specific pokemon ID 
 router.get('/:name', function(req, res) {
-	db.pokemon.find({
-		where: {name: req.params.name}
-	}).then(function(data) {
-		res.render('pokemon/show', {pokemon: data.dataValues});
+	//this finds out if the table has a pokemon with this name already 
+  	db.pokemon.count({where: {name: req.params.name}}).then(function(data) {
+    //if pokemon exists, find all the information for it 
+    console.log('the count is' + data);
+	    if(data !== 0) {
+			db.pokemon.find({
+				where: {name: req.params.name}
+			}).then(function(data) {
+				res.render('pokemon/show', {pokemon: data.dataValues});
+			});
+		} else {
+			var pokeName = req.params.name;
+			var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + pokeName;
+			request(pokemonUrl, function(error, response, body) {
+				pokeShow = JSON.parse(body);
+				console.log(pokeShow);
+				res.render('pokemon/show', {pokemon: pokeShow });
+			});
+		}
 	});
-});
+  });
+
 
 // DELETE - delete the name and info of a pokemon in the database
 router.delete('/:name', function(req, res) {
