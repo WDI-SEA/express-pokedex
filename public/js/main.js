@@ -1,9 +1,9 @@
-// listen for clicks on "delete" links. use AJAX to send a DELETE HTTP request
-// to the appropriate URL
-
-// code here ...
-
-$('.delete-pokemon').on('click', function(e) {
+//this prevents the default functionality upon 
+//clicking the delete pokemon button
+//it picks the specific pokemon that's being deleted,
+//gets the destination and specifies the DELETE method
+//and then reloads back to the /pokemon page
+$('#delete-pokemon').on('click', function(e) {
 	e.preventDefault();
 	var specificPokemon = $(this);
 	var destination = specificPokemon.attr('action');
@@ -16,4 +16,8 @@ $('.delete-pokemon').on('click', function(e) {
 	});
 });
 
+//for mobile nav
 $(".button-collapse").sideNav();
+
+//for carousel
+$(document).ready(function(){$('.carousel').carousel();});

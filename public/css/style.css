@@ -4,6 +4,12 @@ font-family: 'Ubuntu Mono', monospace;*/
 html, body{
 	font-family: 'Josefin Sans', sans-serif;
 	background-color: #395BA3;
+	position: relative;
+	font-size: 18px;
+}
+
+a {
+	text-transform: capitalize;
 }
 
 h1 {
@@ -13,20 +19,48 @@ h1 {
 	color: #FFD062;
 }
 
+h4 {
+	font-size: 24px;
+}
+
 .card-title {
 	color: #e57373;
+	text-transform: capitalize;
 }
 
 .show {
 	margin-top: 13%;
 }
 
-a {
-	color: #395BA3;;
+.viewdetails {
+	color: #395BA3;
+}
+
+.viewdetails:hover {
+	text-decoration: none;
+	color: #FFD062;
+}
+
+#delete-pokemon {
+	color: #395BA3;
+}
+
+#delete-pokemon:hover {
+	text-decoration: none;
+	color: #e57373;
 }
 
 #github, #linkedin, #email {
 	width: 25px;
+	filter: invert(35%);
+}
+
+.fave-page {
+	font-size: 15px;
+}
+
+i {
+	margin: 0!important;
 }
 
 .card {
@@ -46,7 +80,7 @@ a {
 	float: right;
 }
 
-.pokeball:hover {
+.pokeball:hover, .sprite:hover {
 	animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
@@ -55,6 +89,11 @@ a {
 
 .pokedex {
 	width: 100px;
+	margin-bottom: 25px;
+}
+
+.carousel {
+	height: 300px;
 }
 
 @keyframes shake {
@@ -87,7 +126,7 @@ button {
 
 .footer {
 	position: absolute;
-	bottom: 0;
+	bottom: -150px;
 }
 
 .container {
@@ -101,4 +140,50 @@ img {
 #copyright {
 	text-align: right;
 	margin-right: 25px;
+	margin-bottom: -5px;
+}
+
+.moves, .types, .stats {
+	overflow: scroll;
+	background-color: rgba(0,0,0,0.2);
+	width: 200px;
+	height: 150px;
+	border-radius: 15px;
+	border: solid #FFD062 5px;
+}
+
+.flying, .normal {
+	color: lightgrey;
+}
+
+.bug, .grass {
+	color: #66bb6a;
+}
+
+.fighting, .rock, .ground {
+	color: #a1887f;
+}
+
+.electric {
+	color: #FFD062;
+}
+
+.dark {
+	color: darkgrey;
+}
+
+.steel {
+	color: silver;
+}
+
+.water, .ice {
+	color: #80deea;
+}
+
+.fire {
+	color: #ff7043;
+}
+
+.psychic, .ghost, .poison {
+	color: #7e57c2;
 }

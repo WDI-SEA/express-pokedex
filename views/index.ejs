@@ -1,27 +1,22 @@
 <!DOCTYPE html>
 <%- include ./partials/header.ejs %>
-  <h1>All 151 Original Pokémon</h1>
-<div class="row">
-  <% pokemon.forEach(function(pokemon) { %>
-        <div class="col s12 m6 l3">
-          <div class="card yellow darken-1">
-            <div class="card-content white-text">
-              <span class="card-title"><%= pokemon.name %></span>
-               <form method="POST" action="/pokemon">
-                 <input hidden type="text" name="name" value="<%= pokemon.name %>">
-                 <button type="submit"><img class = 'pokeball' src='https://png.icons8.com/color/1600/pokeball-2.png'></button>
-                 <p id='catch'>Catch 'em!</p>
-               </form>
-            </div>
-            <div class="card-action">
-              <a href="./pokemon/<%= pokemon.name %>">View Details</a>
-
-            </div>
-          </div>
-        </div>
-            
-  <% }); %>
-
+  <h1>The Original 151 Pokémon</h1>
+  <div class="carousel">
+      <% pokemon.forEach(function(pokemon) { %>
+              <div class="card yellow darken-1 carousel-item">
+                <div class="card-content white-text">
+                  <span class="card-title"><%= pokemon.name %></span>
+                   <form method="POST" action="/pokemon">
+                     <input hidden type="text" name="name" value="<%= pokemon.name %>">
+                     <button type="submit"><img class = 'pokeball responsive-img' src='https://png.icons8.com/color/1600/pokeball-2.png'></button>
+                     <p id='catch'>Catch 'em!</p>
+                   </form>
+                </div>
+                <div class="card-action">
+                  <a href="./pokemon/<%= pokemon.name %>">View Details</a>
+                </div>
+              </div>
+      <% }); %>
    </div>
 <%- include ./partials/footer.ejs %>
 

@@ -16,14 +16,14 @@ router.post('/', function(req, res) {
     var pokeName = req.body.name;
  	//this finds out if the table has a pokemon with this name already 
   	db.pokemon.count({where: {name: pokeName}}).then(function(data) {
-    //if pokemon exists, find all the information for it 
+    //if pokemon exists, find all the information for it and display
 	    if(data !== 0) {
 	      db.pokemon.find({where: {name: pokeName}}).then(function(data) {
 	      	console.log(data.dataValues);
 	        res.redirect('/pokemon');
 	      });
     	} else {
-
+    		//if the pokemon didn't exist, it runs an API call to create it
 		    var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + pokeName;
 			request(pokemonUrl, function(error, response, body) {
 				var pokemonImage = JSON.parse(body).sprites.front_default;
@@ -41,27 +41,15 @@ router.post('/', function(req, res) {
 
 // GET specific pokemon ID 
 router.get('/:name', function(req, res) {
-	//this finds out if the table has a pokemon with this name already 
-  	db.pokemon.count({where: {name: req.params.name}}).then(function(data) {
-    //if pokemon exists, find all the information for it 
-    console.log('the count is' + data);
-	    if(data !== 0) {
-			db.pokemon.find({
-				where: {name: req.params.name}
-			}).then(function(data) {
-				res.render('pokemon/show', {pokemon: data.dataValues});
-			});
-		} else {
-			var pokeName = req.params.name;
-			var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + pokeName;
-			request(pokemonUrl, function(error, response, body) {
-				pokeShow = JSON.parse(body);
-				console.log(pokeShow);
-				res.render('pokemon/show', {pokemon: pokeShow });
-			});
-		}
+	var pokeName = req.params.name;
+	var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + pokeName;
+	request(pokemonUrl, function(error, response, body) {
+		pokeShow = JSON.parse(body);
+		console.log(pokeShow);
+		res.render('pokemon/show', {pokemon: pokeShow });
 	});
-  });
+});
+
 
 
 // DELETE - delete the name and info of a pokemon in the database

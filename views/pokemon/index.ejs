@@ -6,10 +6,11 @@
 	<% pokemon.forEach(function(pokemon) { %>
 	<div class="col s12 m12 l12">
 	    <div class="well">
-	      <h2><a href='/pokemon/<%= pokemon.name %>'><%= pokemon.name %></a></h2>
-	      <img src='<%= pokemon.image %>'>
-	      <p><%= pokemon.description %></p>
-	      <button class="delete-pokemon" type="button" action="/pokemon/<%= pokemon.name %>">Remove From Favorites</button>
+	      <h2><a class='viewdetails' href='./pokemon/<%= pokemon.name %>'><%= pokemon.name %></a></h2>
+	      <img class='responsive-img sprite' src='<%= pokemon.image %>'>
+	      <p></p>
+           <a class='viewdetails' href="./pokemon/<%= pokemon.name %>">View Details <i class="fave-page material-icons">more_horiz</i></a>
+	      <span id="delete-pokemon" action="/pokemon/<%= pokemon.name %>">Release <i class="fave-page material-icons">cancel</i></span>
 	    </div>
 	</div>
 	<% }); %>

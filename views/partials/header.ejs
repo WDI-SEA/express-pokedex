@@ -12,20 +12,23 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Ubuntu+Mono" rel="stylesheet">
     <link href='/css/style.css' rel='stylesheet'>
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src='/js/main.js'></script>
   </head>
 
-<ul id="dropdown1" class="dropdown-content">
-  <li><a href="http://www.github.com/egarrett94/express-pokedex"><img id = 'github' src='https://www.shareicon.net/download/2016/07/09/118688_repository_512x512.png'> GitHub</a></li>
-  <li class="divider"></li>
-  <li><a href="http://www.linkedin.com/in/emilymariegarrett94"><img id = 'linkedin' src="http://icons.iconarchive.com/icons/icons8/ios7/512/Logos-Linkedin-icon.png"> LinkedIn</a></li>
-  <li class="divider"></li>
-  <li><a href="mail-to:e.marie.garrett@gmail.com"><img id = 'email' src="https://d30y9cdsu7xlg0.cloudfront.net/png/15467-200.png"> Email</a></li>
-</ul>
-
   <body>
+    <ul id="dropdown1" class="dropdown-content">
+      <li><a href="http://www.github.com/egarrett94/express-pokedex"><img id = 'github' src='https://www.shareicon.net/download/2016/07/09/118688_repository_512x512.png'> GitHub</a></li>
+      <li class="divider"></li>
+      <li><a href="http://www.linkedin.com/in/emilymariegarrett94"><img id = 'linkedin' src="http://icons.iconarchive.com/icons/icons8/ios7/512/Logos-Linkedin-icon.png"> LinkedIn</a></li>
+      <li class="divider"></li>
+      <li><a href="mail-to:e.marie.garrett@gmail.com"><img id = 'email' src="https://d30y9cdsu7xlg0.cloudfront.net/png/15467-200.png"> Email</a></li>
+    </ul>
     <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo center"><img class='pokedex' src="https://www.shareicon.net/download/2016/08/01/640628_game_512x512.png"></a>
+      <a href="#" class="brand-logo center"><img class='pokedex responsive-img' src="https://www.shareicon.net/download/2016/08/01/640628_game_512x512.png"></a>
        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li><a href="/">Gallery</a></li>
@@ -33,8 +36,8 @@
         <li><a class="dropdown-button" href="#!" data-activates="dropdown1">About the Dev<i class="material-icons right">arrow_drop_down</i></a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
-        <li><a href="/">Gallery</a></li>
-        <li><a href="/pokemon">My Pokémon</a></li>
+        <li><a href="/"><i class="material-icons">collections</i> Gallery</a></li>
+        <li><a href="/pokemon"><i class="material-icons">favorite</i> My Pokémon</a></li>
         <li><a href="http://www.github.com/egarrett94/express-pokedex"><img id = 'github' src='https://www.shareicon.net/download/2016/07/09/118688_repository_512x512.png'> GitHub</a></li>
         <li><a href="http://www.linkedin.com/in/emilymariegarrett94"><img id = 'linkedin' src="http://icons.iconarchive.com/icons/icons8/ios7/512/Logos-Linkedin-icon.png"> LinkedIn</a></li>
         <li><a href="mail-to:e.marie.garrett@gmail.com"><img id = 'email' src="https://d30y9cdsu7xlg0.cloudfront.net/png/15467-200.png"> Email</a></li>
