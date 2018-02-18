@@ -13,12 +13,19 @@ app.use(ejsLayouts);
 app.use(express.static(path.join(__dirname, '/public')));
 
 app.get('/', function(req, res) {
+	var pokemon = null;
+	var sprite = null;
     var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon?limit=151';
+    var pokemonImageUrl = 'http://pokeapi.co/api/v2/pokemon-form?limit=151';
     request(pokemonUrl, function(error, response, body) {
-        var pokemon = JSON.parse(body).results;
+        pokemon = JSON.parse(body).results;
         console.log(pokemon);
-        res.render('index', { pokemon: pokemon});
+         res.render('index', { pokemon: pokemon});
     });
+    //  request(pokemonImageUrl, function(error, response, body) {
+    //     sprite = JSON.parse(body).sprites[3];      
+    //     console.log(sprite);
+    // });
 });
 
 // app.get('/', function(req, res) {

@@ -7,7 +7,6 @@
           <div class="card yellow darken-1">
             <div class="card-content white-text">
               <span class="card-title"><%= pokemon.name %></span>
-              <img src='<%= pokemon.image %>'>
                <form method="POST" action="/pokemon">
                  <input hidden type="text" name="name" value="<%= pokemon.name %>">
                  <button class="btn btn-primary red" type="submit">+ Favorite</button>

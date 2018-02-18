@@ -1,16 +1,16 @@
-<!DOCTYPE html>
 
-<%- include ./partials/header.ejs %>
+<%- include ../partials/header.ejs %>
 
 
 <div class="row">
-        <div class="col s12 m6">
+        <div class="col s3 m3">
           <div class="card yellow darken-1">
             <div class="card-content white-text">
               <span class="card-title"><%= pokemon.name %></span>
+              <img src='<%= pokemon.image %>'>
             </div>
           </div>
         </div>
 </div>
 
-<%- include ./partials/footer.ejs %>
+<%- include ../partials/footer.ejs %>

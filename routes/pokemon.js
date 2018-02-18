@@ -11,9 +11,8 @@ router.get('/', function(req, res) {
     })
 });
 
-// POST - receive the name of a pokemon and add it to the database
+// POST - receive the name and image url of a pokemon and add it to the database
 router.post('/', function(req, res) {
-    // TODO: add to database
     var pokeName = req.body.name;
     var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + pokeName + '';
 	request(pokemonUrl, function(error, response, body) {
@@ -28,17 +27,16 @@ router.post('/', function(req, res) {
 }); 
 
 // GET specific pokemon ID 
-router.get('/pokemon/:name', function(req,res) {
+router.get('/:name', function(req, res) {
 	db.pokemon.find({
 		where: {name: req.params.name}
 	}).then(function(data) {
-		res.render('/pokemon/show', {pokemon: data});
+		res.render('pokemon/show', {pokemon: data});
 	});
 });
 
 // DELETE - delete the name and info of a pokemon in the database
-router.delete('/:name', function(req,res) {
-	console.log('we are in the delete route');
+router.delete('/:name', function(req, res) {
 	db.pokemon.destroy({
 		where: {name: req.params.name}
 	}).then(function(data) {

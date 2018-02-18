@@ -5,6 +5,7 @@
 	<% pokemon.forEach(function(pokemon) { %>
     <div class="well">
       <h2><a href='/pokemon/<%= pokemon.name %>'><%= pokemon.name %></a></h2>
+      <img src='<%= pokemon.image %>'>
       <p><%= pokemon.description %></p>
       <button class="delete-pokemon" type="button" action="/pokemon/<%= pokemon.name %>">Remove From Favorites</button>
     </div>
