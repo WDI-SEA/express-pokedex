@@ -1,0 +1,13 @@
+/*font-family: 'Josefin Sans', sans-serif;
+font-family: 'Ubuntu Mono', monospace;*/
+
+html, body{
+	margin: 0;
+	padding: 0;
+	font-family: 'Josefin Sans', sans-serif;
+	text-align: center;
+}
+
+h1 {
+	font-family: 'Ubuntu Mono', monospace;
+}
