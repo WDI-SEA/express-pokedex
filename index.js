@@ -14,9 +14,9 @@ app.use(ejsLayouts);
 // SET STATIC VIEWS
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'partials')));
+// SET VIEWS
+app.set('views', path.join(__dirname, 'views'));
 
-// POKEMON GET router
-app.use('/pokemon', require('./routes/pokemon'));
 // MAIN GET route
 app.get('/', function(req, res) {
     var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/?limit=10';
@@ -28,6 +28,8 @@ app.get('/', function(req, res) {
     });
 });
 
+// POKEMON GET router
+app.use('/pokemon', require('./routes/pokemon'));
 
 var server = app.listen(process.env.PORT || 3000);
 

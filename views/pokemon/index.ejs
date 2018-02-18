@@ -1,7 +1,24 @@
 <!-- POKEMON INDEX -->
+<div class="container">
+  <h1 clas="text-center">My List of Favorite Pokemon</h1>
+  <p class="text-center">
+    <a href="/">Search for another Pokemon</a>
+  </p>
 
-<% pokemons.forEach(function(pokemon){ %>
-  <h1><%= pokemon.name %></h1>
-<% }); %>
+  <% pokemons.forEach(function(pokemon){ %>
+    <div class="well">
+        <h2><a href="/favs/<%= pokemon.name %>"><%= pokemon.name %></a></h2>
+        <ul>
+          <li>Created: <%= pokemon.createdAt %></li>
+          <li>Updated: <%= pokemon.updatedAt %></li>
+          <li>ID: <%= pokemon.id %></li>
+          <li>add more shit</li>
+          <li>
+            <a href="delete/<%= pokemon.id %>" class="delete-item">Remove Pokemon</a>
+          </li>
+        </ul>
+    </div>
+  <% }); %>
 
-<a href="http://pokeapi.co/" target="_blank">Pokemon API</a>
+  <a href="http://pokeapi.co/" target="_blank">Pokemon API</a>
+</div>

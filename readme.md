@@ -66,7 +66,7 @@ db.pokemon.create({
 You'll want to add functionality to the following routes by incorporating the `pokemon` table you created.
 
 * `GET /pokemon`
-  * View: `views/pokemon/index.ejs`
+  [x] View: `views/pokemon/index.ejs`
   * Purpose: Retrieve all favorited Pokemon and display them on the page
 * `POST /pokemon`
   [x] View: none (redirect to `/pokemon`)
@@ -94,7 +94,7 @@ the query string. The limit allows you to ask the API to return more than it's
 default amount.
 
 Remember, query strings are parameters passed in the URL after a question mark
-and seperated with ampersands. They look like this:
+and separated with ampersands. They look like this:
 
 ```
 http://mapwebsite.com/?lat=40.284&long=110.133&zoom=12

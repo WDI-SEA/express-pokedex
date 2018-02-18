@@ -1,22 +1,30 @@
 var express = require('express');
 var router = express.Router();
 var db = require('../models');
+var sequelize = require('sequelize');
 
 // GET - return a page with favorited Pokemon
 router.get('/', function(req, res) {
     // TODO: render favorites
-    console.log(req.params.name);
+    console.log(req.dataValues);
     db.pokemon.findAll().then(function(data){
     // res.send('Render a page of favorites here');
-    res.render('/index', {pokemon:data});
+    // console.log(data);
+      // dataValues:
+      //  { id: 35,
+      //    name: 'caterpie',
+      //    createdAt: 2018-02-18T20:42:49.581Z,
+      //    updatedAt: 2018-02-18T20:42:49.581Z }
+      res.render('pokemon/index', {pokemons:data});
     });
 });
 
-router.get('/index', function(req,res){
-    console.log('in GET INDEX path');
-
+// GET /pokemon/:id
+router.get('/pokemon/:id', function(req,res){
+  // TODO: render a list of details for pokemon/id
+  console.log(req.params.id);
+  // res.render('/pokemon/details', {pokemon:data});
 });
-
 
 // POST - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
