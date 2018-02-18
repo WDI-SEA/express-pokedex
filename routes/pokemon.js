@@ -14,15 +14,26 @@ router.get('/', function(req, res) {
 // POST - receive the name and image url of a pokemon and add it to the database
 router.post('/', function(req, res) {
     var pokeName = req.body.name;
-    var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + pokeName + '';
-	request(pokemonUrl, function(error, response, body) {
-		var pokemonImage = JSON.parse(body).sprites.front_default;
-		db.pokemon.create({
-			name: pokeName,
-			image: pokemonImage
-		}).then(function(data) {
-			res.redirect('/pokemon');
-		});
+ 	//this finds out if the table has a pokemon with this name already 
+  	db.pokemon.count({where: {name: pokeName}}).then(function(data) {
+    //if pokemon exists, find all the information for it 
+	    if(data !== 0) {
+	      db.pokemon.findOne({where: {name: pokeName}}).then(function(data) {
+	        res.render('pokemon/index', { pokemon: data });
+	      });
+    	} else {
+
+		    var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + pokeName + '';
+			request(pokemonUrl, function(error, response, body) {
+				var pokemonImage = JSON.parse(body).sprites.front_default;
+				db.pokemon.create({
+					name: pokeName,
+					image: pokemonImage
+				}).then(function(data) {
+					res.redirect('/pokemon');
+				});
+			});
+		}
 	});
 }); 
 
@@ -31,7 +42,7 @@ router.get('/:name', function(req, res) {
 	db.pokemon.find({
 		where: {name: req.params.name}
 	}).then(function(data) {
-		res.render('pokemon/show', {pokemon: data});
+		res.render('pokemon/show', {pokemon: data.dataValues});
 	});
 });
 
