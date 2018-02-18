@@ -18,12 +18,13 @@ router.post('/', function(req, res) {
   	db.pokemon.count({where: {name: pokeName}}).then(function(data) {
     //if pokemon exists, find all the information for it 
 	    if(data !== 0) {
-	      db.pokemon.findOne({where: {name: pokeName}}).then(function(data) {
-	        res.render('pokemon/index', { pokemon: data });
+	      db.pokemon.find({where: {name: pokeName}}).then(function(data) {
+	      	console.log(data.dataValues);
+	        res.redirect('/pokemon');
 	      });
     	} else {
 
-		    var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + pokeName + '';
+		    var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + pokeName;
 			request(pokemonUrl, function(error, response, body) {
 				var pokemonImage = JSON.parse(body).sprites.front_default;
 				db.pokemon.create({
