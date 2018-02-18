@@ -1,0 +1,13 @@
+<% var name = pokemon.name; %>
+<% name = name.charAt(0).toUpperCase() + name.slice(1); %>
+<h1>More info on <%= name %></h1>
+<img src='<%= pokemon.sprites.front_default %>'>
+<p>Type: <% pokemon.types.forEach(function(item, index) { %>
+        <% if (index > 0) { %>
+        <%= 'and ' %>
+        <% } %>
+        <%= item.type.name %>
+    <% }); %>
+</p>
+<p>Weight: <%= pokemon.weight %></p>
+<p>Height: <%= pokemon.height %></p>

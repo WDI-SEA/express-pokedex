@@ -1,0 +1,14 @@
+<h1>My Favorite Pokemon</h1>
+<ul>
+    <% console.log(favorites); %>
+    <% favorites.forEach(function(item) { %>
+        <% var name = item.name; %>
+        <% name = name.charAt(0).toUpperCase() + name.slice(1); %>
+        <li id="li-<%= item.id %>">
+            <a href="/pokemon/<%= item.name %>">
+                <%= name %>
+            </a> |
+            <a class='delete-link' href="/pokemon/<%= item.id %>" data-id="<%= item.id %>">Delete</a>
+        </li>
+    <% }); %>
+</ul>
