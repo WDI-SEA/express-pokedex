@@ -10,15 +10,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 
 app.get('/', function(req, res) {
-    var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
+  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/?limit=150';
 
-    request(pokemonUrl, function(error, response, body) {
-        var pokemon = JSON.parse(body).results;
-        res.render('index', { pokemon: pokemon });
-    });
+  request(pokemonUrl, function(error, response, body) {
+    var pokemon = JSON.parse(body).results;
+    res.render('index', { pokemon: pokemon });
+  });
 });
 
 app.use('/pokemon', require('./routes/pokemon'));
+app.use(express.static(__dirname + '/public/'));
 
 var server = app.listen(process.env.PORT || 3000);
 

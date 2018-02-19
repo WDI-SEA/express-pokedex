@@ -1,0 +1,17 @@
+<h1 class="text-center">All the Favs</h1>
+<a class="btn btn-primary center-block" href="/">Back Home</a>
+<% if(results.length <= 0){ %>
+    <h2>Nothing in the database yet!</h2>
+<% } else { %>
+    <% results.forEach(function(item){ %>
+      <h3>
+        <a href="/pokemon/<%= item.id %>">
+        <%= item.name %>
+        </a>
+      </h3>
+      <a href="/pokemon/<%= item.id %>" class="btn btn-danger delete-link">
+        Delete post
+      </a>
+      <!-- <%= item.content %> -->
+    <% }); %>
+<% } %>
