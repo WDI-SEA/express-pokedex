@@ -12,7 +12,7 @@ $('.delete-item').on('click', function(e){
     url: pokemonUrl
   }).done(function(data){
     // window.location = '/';
-  })
+  });
 });
 
 // PUT
@@ -22,9 +22,10 @@ $('.update-item').on('submit', function(e){
   var pokemonUrl = pokemonToUpdate.attr('href');
   console.log(pokemonUrl);
   console.log("you clicked update for " + $(this) + dataValues.id);
-  // do the stuff
-  // href
-  //ajax
-  //method
-  // blah
+  // $.ajax({
+  //   method: 'PUT',
+  //   url: pokemonUrl
+  // }).done(function(data){
+  //   // window.location = '/';
+  // });
 });

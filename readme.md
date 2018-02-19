@@ -34,7 +34,7 @@ We'll be using an existing application that uses the [PokeAPI](http://pokeapi.co
 ## User Stories
 
 [x] As a user, I want to select my favorite Pokemon and add them to a list of favorites.
-* As a user, once I add a Pokemon to my list of favorites, I want to be redirected to my favorites page.
+[x] As a user, once I add a Pokemon to my list of favorites, I want to be redirected to my favorites page.
 
 ## Requirements
 
@@ -74,9 +74,9 @@ You'll want to add functionality to the following routes by incorporating the `p
 
 #### Part 4: Display more info on each pokemon
 
-Add a route `GET /pokemon/:id` that renders a page with information about the pokemon (the pokemon with the corresponding row `id`).
+[x] Add a route `GET /pokemon/:id` that renders a page with information about the pokemon (the pokemon with the corresponding row `id`).
 
-Check out the result of the pokemon API calls (or see the [doc page](http://pokeapi.co/)) for ideas on what data you could show. Show at least 4 peices of data.
+Check out the result of the pokemon API calls (or see the [doc page](http://pokeapi.co/)) for ideas on what data you could show. Show at least 4 pieces of data.
 
 #### Part 5: Styling
 

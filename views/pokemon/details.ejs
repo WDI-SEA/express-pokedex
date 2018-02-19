@@ -1,15 +1,19 @@
 <!-- DETAILS VIEW -->
 <div class="container">
+  <h1 clas="text-center">Details about this Favorite</h1>
+  <p class="text-center">
+    <a href="/pokemon">Favorites</a>
+  </p>
   <div class="well">
-    <h2 class="text-center">Information about: <%= pokemon.name %></h2>
-    <form class="" action="/" method="PUT">
+    <h2>Information about: <%= pokemon.name %></h2>
+    <form action="/" method="PUT">
       <ul>
         <li>ID: <%= pokemon.id %></li>
         <li>Created: <%= pokemon.createdAt %></li>
         <li>Updated: <%= pokemon.updatedAt %></li>
       </ul>
-      <label for="notes"></label>
-      <input type="text" name="notes" value="">
+      <label for="notes">Notes about this pokemon:</label><br>
+      <input type="text" name="notes" value=""><br>
       <button type="submit" class="btn btn-primary">Submit Update</button>
     </form>
   </div>
