@@ -19,14 +19,7 @@ $('#delete-pokemon').on('click', function(e) {
 //for mobile nav
 $(".button-collapse").sideNav();
 
-//for carousel
-// $(document).ready(function(){
-// 	 $('.carousel.carousel-slider').carousel({fullWidth: true,
-// 	 dist:0,
-//     shift:0,
-//     padding:20});
-// });
-
+//flickity init
 $('.main-gallery').flickity({
   // options
   cellAlign: 'left',
