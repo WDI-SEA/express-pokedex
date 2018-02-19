@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="text-center">The Original 151 Pokemon</h1>
+  <h1 class="text-center">Pokemon</h1>
   <p class="text-center">
     <a href="/pokemon">Favorites</a>
   </p>
@@ -7,8 +7,12 @@
   <% pokemon.forEach(function(pokemon) { %>
     <div class="well">
       <h2><%= pokemon.name %></h2>
-      <form method="POST" action="/pokemon">
+      <form class="pokemonbox" method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
+        <!-- This is an interesting way of doing things -->
+        <!-- we need to submit the pokemon name on the to the fav list -->
+        <!-- it needs to be inlcuded in the form, so we hide it -->
+        <!-- the h2 title is not submitted with the form -->
         <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
       </form>
     </div>
