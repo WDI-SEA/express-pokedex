@@ -1,4 +1,33 @@
-<div class="container">
-  <img src='<%= pokemon.image %>'>
-  <div><h2><%= pokemon.name %></h2>
-</div>
+<main class="container show">
+    <h1 class="center-align indextitle">Congrads you caught <span class="capitol"><%= pokemon.name %>!</span></h1>
+    <div class="row">
+      <div class="col s6 m6">
+        <div class="card colcard">
+          <div class="card-title grey-text center-align"><b>Pokemon Type:</b></div>
+          <div class="card-action typecard">
+            <ul>
+              <% pokemon.types.forEach(function(type) { %>
+                <div class="row">
+                  <li id="<%= type %>" class="types capitol left"><%= type %></li><div class="right type"><img class="<%= type %> icon" src=""></div>
+                </div>
+              <% }); %>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col s6 m4 center-align">
+        <div class="rela">
+          <img class="pokesingle img-responsive" src='<%= pokemon.image %>'>
+          <img class="openball img-responsive" src="/img/ballopen.png">
+        </div>
+      </div>
+      <div class="col s12 m12 center-align">
+        <div class="card black">
+          <div class="card-title white-text center-align">Pokemon Info:</div>
+          <div class="card-action">
+            <p class="blue-text left-align"><%= pokemon.info %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>

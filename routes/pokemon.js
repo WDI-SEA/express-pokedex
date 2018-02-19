@@ -22,16 +22,56 @@ router.post('/', function(req, res) {
     } else {
       //pokemon doesn't exist in table already, do another api call to store name and image
       var pokemonUrlI = 'http://pokeapi.co/api/v2/pokemon/'+pokeName+'';
-      request(pokemonUrlI, function(error, response, body) {
-          var pokemonImage = JSON.parse(body).sprites.front_default;
-          var pokeSpecies = JSON.parse(body).types[0].type.name;
-          var pokeInfoUrl = JSON.parse(body).species.url;
-          // JSON.parse(body).results.sprites.front_default.;
-          db.pokemon.create({
-            name: pokeName,
-            image: pokemonImage
-          }).then(function(data) {
-          res.render('show', {pokemon: data.dataValues});
+      var pokeUrlInfo = 'http://pokeapi.co/api/v2/pokemon-species/'+pokeName+'';
+      request(pokeUrlInfo, function(error, response, body) {
+        var count = 0;
+        var pokeInfoLangauge = JSON.parse(body).flavor_text_entries[count].language.name;
+        var pokeInfo;
+        while(pokeInfoLangauge !== 'en') {
+          count++
+          pokeInfoLangauge = JSON.parse(body).flavor_text_entries[count].language.name;
+          if(pokeInfoLangauge === 'en') {
+            pokeInfo = JSON.parse(body).flavor_text_entries[count].flavor_text;
+          }
+        }
+        request(pokemonUrlI, function(error, response, body) {
+            var pokemonImage = JSON.parse(body).sprites.front_default;
+            var pokeTypesRequest = JSON.parse(body).types;
+            var pokeStats = JSON.parse(body).stats
+            var pokeTypes = [];
+            var pokeStatDef = 0;
+            var pokeStatAtt = 0;
+            var pokeStatHp = 0;
+            pokeTypesRequest.forEach(function(type) {
+              var typeName = type.type.name;
+              pokeTypes.push(typeName);
+            });
+            for(var i = 0; i < pokeStats.length; i++) {
+              if(pokeStats[i].stat.name === "defense") {
+                console.log('success');
+                pokeStatDef = pokeStats[i].base_stat;
+              }
+              if(pokeStats[i].stat.name === "attack") {
+                console.log('success');
+                pokeStatAtt = pokeStats[i].base_stat;
+              }
+              if(pokeStats[i].stat.name === "hp") {
+                console.log('success');
+                pokeStatHp = pokeStats[i].base_stat;
+              }
+            };
+            db.pokemon.create({
+              name: pokeName,
+              image: pokemonImage,
+              info: pokeInfo,
+              types: pokeTypes,
+              defense: pokeStatDef,
+              attack: pokeStatAtt,
+              health: pokeStatHp
+            }).then(function(data) {
+
+            res.render('show', {pokemon: data.dataValues});
+          });
         });
       });
     }

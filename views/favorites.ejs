@@ -1,4 +1,4 @@
-<div class="container">
+<main class="container">
   <div class="row">
     <% pokemon.forEach(function(pokemon) { %>
       <div class="col s6 m4 l3 center-align">
@@ -6,14 +6,17 @@
           <div class="card-image">
             <img class="cardback" src="<%= pokemon.image %>">
           </div>
-          <div class="card-title black-text center-align"><%= pokemon.name %></div>
+          <div class="card-title black-text center-align capitol"><%= pokemon.name %></div>
           <div class="card-content">
+            <p>HP : <%= pokemon.health %></p>
+            <p>Attack : <%= pokemon.attack %></p>
+            <p>Defense : <%= pokemon.defense %></p>
           </div>
         </div>
         <a class="delete-link" href="/pokemon/<%= pokemon.name %>">
-          <button class="btn hoverable #424242 grey darken-3">REMOVE!</button>
+          <button class="btn hoverable #424242 grey darken-3">Release!</button>
         </a>
       </div>
     <% }); %>
   </div>
-</div>
+</main>

@@ -1,5 +1,48 @@
 body {
-  background: blue;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background: blue;
+}
+main {
+    flex: 1 0 auto;
+}
+.show {
+  margin: auto auto auto auto;
+  padding: 0;
+  width: 95%;
+}
+.colcard {
+  height: 40vh;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+@media (max-width:830px) {
+  .colcard {
+    height: 35vh;
+  }
+}
+.indextitle {
+  margin-bottom: 0;
+}
+.types {
+  font-size: 3em;
+}
+.type {
+  display: inline-block;
+}
+.icon {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  border: 1px solid black;
+}
+.catch {
+  font-size: 35px;
+  font-family: Arial Black;
+}
+.padrem {
+  padding: 5px;
 }
 .cardback {
   position: absolute;
@@ -20,4 +63,32 @@ body {
 .delete-link {
   width: 20px;
   margin:0 auto;
+}
+.capitol {
+  text-transform: capitalize;
+}
+.rela {
+  position: relative;
+  width: 100%;
+  height: 40vh;
+}
+.pokesingle, .openball {
+  position: absolute;
+  top:10px;
+}
+.pokesingle {
+  width: 100%;
+  height: auto;
+  z-index: 2;
+  left: 5%
+}
+.openball {
+  width: 70%;
+  z-index: 1;
+  right: 1%;
+}
+@media (min-width:1050px) {
+  .pokesingle {
+    width:90%;
+  }
 }

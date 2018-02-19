@@ -1,23 +1,25 @@
-<div class="container">
-  <h1 class="center-align">The Original 151 Pokemon</h1>
-  <p class="center-align">
-    <a href="/pokemon">Favorites</a>
-  </p>
+<main class="container">
   <div class="row">
-    <% pokemon.forEach(function(pokemon) { %>
-      <div class="col s6 m4 l3">
-        <div class="card blue-grey darken-1">
-          <div class="card-content white-text">
-            <span class="card-title"><%= pokemon.name %></span>
-            <div class="card-action">
-              <form method="POST" action="/pokemon" class="input-field center-align">
+    <h1 class="center-align indextitle">The Original 151 Pokemon</h1>
+    <div class="carousel">
+      <% pokemon.forEach(function(pokemon) { %>
+        <div class="col s6 m5 l4 carousel-item">
+          <div class="card blue darken-1 center-align">
+            <div class="card-title">
+              <h4 class="catch">Catch</h4>
+            </div>
+            <div class="card-image">
+              <form method="POST" action="/pokemon" class="input-field">
                 <input hidden type="text" name="name" value="<%= pokemon.name %>">
-                <button type="submit" class="btn">Favorite</button>
+                <input type="image" src="/img/ball.png" alt="Submit" width="100" height="100">
               </form>
+            </div>
+            <div class="card-content padrem">
+              <p class="card-title capitol catch"><%= pokemon.name %></p>
             </div>
           </div>
         </div>
-      </div>
-    <% }); %>
+      <% }); %>
+    </div>
   </div>
-</div>
+</main>

@@ -9,20 +9,30 @@
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
   </head>
   <body>
-    <div class="navbar-fixed">
-      <nav>
-        <div class="nav-wrapper">
-          <img class="brand-logo top" src="/img/pokedex2.png">
-          <ul class="right hide-on-med-and-down">
-            <li><a href="/">Home</a></li>
-            <li><a href="/pokemon">Favorites</a></li>
-          </ul>
-        </div>
-      </nav>
-    </div>
+    <nav class="nav-extended">
+      <div class="nav-wrapper blue">
+        <img class="brand-logo top" src="/img/pokedex2.png">
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/">Home</a></li>
+          <li><a href="/pokemon">Your Pokemon</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="/">Home</a></li>
+          <li><a href="/pokemon">Favorites</a></li>
+        </ul>
+      </div>
+    </nav>
     <%- body %>
 
-
+    <footer class="page-footer black">
+      <div class="footer-copyright">
+        <div class="container">
+          <i class="material-icons">copyright</i> 2018 Copyright Brantchyoga
+          <a class="grey-text text-lighten-4 right" href="https://github.com/brantchyoga">GitHub</a>
+        </div>
+      </div>
+    </footer>
     <script src="//code.jquery.com/jquery.js"></script>
     <script src="/js/scripts.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
