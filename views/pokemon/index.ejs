@@ -7,14 +7,17 @@
 
       <% pokemons.forEach(function(pokemon){ %>
         <div class="well">
-            <h2><a href="/favs/<%= pokemon.name %>"><%= pokemon.name %></a></h2>
+            <h2><a href="/<%= pokemon.name %>"><%= pokemon.name %></a></h2>
             <ul>
               <li>Created: <%= pokemon.createdAt %></li>
               <li>Updated: <%= pokemon.updatedAt %></li>
               <li>ID: <%= pokemon.id %></li>
-              <li>add more shit</li>
+              <li>add notes section here</li>
               <li>
                 <a href="delete/<%= pokemon.id %>" class="delete-item">Remove Pokemon</a>
+              </li>
+              <li>
+                <a href="pokemon/details/<%= pokemon.id %>" class="update-item">Update Pokemon</a>
               </li>
             </ul>
         </div>

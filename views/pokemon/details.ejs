@@ -1,0 +1,16 @@
+<!-- DETAILS VIEW -->
+<div class="container">
+  <div class="well">
+    <h2 class="text-center">Information about: <%= pokemon.name %></h2>
+    <form class="" action="/" method="PUT">
+      <ul>
+        <li>ID: <%= pokemon.id %></li>
+        <li>Created: <%= pokemon.createdAt %></li>
+        <li>Updated: <%= pokemon.updatedAt %></li>
+      </ul>
+      <label for="notes"></label>
+      <input type="text" name="notes" value="">
+      <button type="submit" class="btn btn-primary">Submit Update</button>
+    </form>
+  </div>
+</div>

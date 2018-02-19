@@ -6,10 +6,9 @@ var sequelize = require('sequelize');
 // GET - return a page with favorited Pokemon
 router.get('/', function(req, res) {
     // TODO: render favorites
-    console.log(req.dataValues);
     db.pokemon.findAll().then(function(data){
     // res.send('Render a page of favorites here');
-    // console.log(data);
+    console.log(data);
       // dataValues:
       //  { id: 35,
       //    name: 'caterpie',
@@ -20,10 +19,15 @@ router.get('/', function(req, res) {
 });
 
 // GET /pokemon/:id
-router.get('/pokemon/:id', function(req,res){
+router.get('/details/:id', function(req,res){
   // TODO: render a list of details for pokemon/id
   console.log(req.params.id);
-  // res.render('/pokemon/details', {pokemon:data});
+  db.pokemon.find({
+    where: {id:req.params.id}
+  }).then(function(data){
+    console.log(data);
+    res.render('pokemon/details', {pokemon:data});
+  });
 });
 
 // POST - receive the name of a pokemon and add it to the database
@@ -36,5 +40,9 @@ router.post('/', function(req, res) {
       res.redirect('/pokemon');
     });
 });
+
+// PUT route
+
+// DELETE route
 
 module.exports = router;
