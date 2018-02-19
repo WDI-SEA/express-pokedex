@@ -1,18 +1,18 @@
 <div class="container">
   <div class="row">
     <% pokemon.forEach(function(pokemon) { %>
-      <div class="col s6 m4 l3">
-        <div class="card">
+      <div class="col s6 m4 l3 center-align">
+        <div class="card card-panel hoverable border">
           <div class="card-image">
-            <img src="<%= pokemon.image %>">
-            <span class="card-title"><%= pokemon.name %></span>
+            <img class="cardback" src="<%= pokemon.image %>">
           </div>
+          <div class="card-title black-text center-align"><%= pokemon.name %></div>
           <div class="card-content">
-            <div class="card-action">
-              <a id="delete-link" href="/pokemon/<%= pokemon.name %>/destroy">Delete From Favorites</a>
-            </div>
           </div>
         </div>
+        <a class="delete-link" href="/pokemon/<%= pokemon.name %>">
+          <button class="btn hoverable #424242 grey darken-3">REMOVE!</button>
+        </a>
       </div>
     <% }); %>
   </div>
