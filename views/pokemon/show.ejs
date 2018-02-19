@@ -2,27 +2,28 @@
 <%- include ../partials/header.ejs %>
 
 
-<!-- <div class=" show row"> -->
+<!-- <div class="show row"> -->
         <div class="show col s3 m6 l12">
-          <div class="card yellow darken-1">
+          <div class="show card yellow darken-1">
             <div class="card-content white-text">
               <span class="card-title"><%= pokemon.name %></span>
               <img class='responsive-img sprite' src='<%= pokemon.sprites.front_default %>'>
                <div class='row'>
-                <div class='types col s12 m4 l4'>
-                  <h4>Types: </h4>
-                  <ul>
-                  <% pokemon.types.forEach(function(pokemon) { %>
-                     <li class='<%= pokemon.type.name %>'><%= pokemon.type.name %></li>
-                  <% }) %>
-                  </ul>
-                </div>
 
                 <div class='moves col s12 m4 l4'>
                   <h4>Moves: </h4>
                   <ul>
                   <% pokemon.moves.forEach(function(pokemon) { %>
                      <li><%= pokemon.move.name %></li>
+                  <% }) %>
+                  </ul>
+                </div>
+
+                <div class='types col s12 m4 l4'>
+                  <h4>Types: </h4>
+                  <ul>
+                  <% pokemon.types.forEach(function(pokemon) { %>
+                     <li class='<%= pokemon.type.name %>'><%= pokemon.type.name %></li>
                   <% }) %>
                   </ul>
                 </div>

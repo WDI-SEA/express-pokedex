@@ -6,37 +6,52 @@ html, body{
 	background-color: #395BA3;
 	position: relative;
 	font-size: 18px;
+	height: 100%;
+}
+
+body {
+	height: 100%;
 }
 
 a {
 	text-transform: capitalize;
 }
 
-h1 {
+h1, h2 {
 	font-family: 'Ubuntu Mono', monospace;
-	margin-top: 50px;
+	margin: 75px 0;
 	text-align: center;
 	color: #FFD062;
 	font-size: 60px;
 }
 
 h2 {
+	margin: 30px 0;
+}
+
+h3 {
 	font-size: 40px;
-	margin-top: 50px;
 }
 
 h4 {
 	font-size: 24px;
+	color: #395BA3;
 }
 
 .container{ 
 	position: relative;
 	z-index: 1;
+	height: 90%;
+	width: 100%;
 }
 
 #deets {
 	color: #ffb74d;
 	text-decoration: none;
+}
+
+.main {
+	height: 100%;
 }
 
 .whoops {
@@ -49,20 +64,18 @@ h4 {
 	position: absolute;
 }
 
-.filler {
-	height: 260px;
-	z-index: -2000;
-	position: relative;
+.pokename {
+	color: #e57373;
 }
-
 
 .card-title {
 	color: #e57373;
 	text-transform: capitalize;
 }
 
-.show {
-	margin-top: 13%;
+.show{
+	margin: 5% auto;
+	width: 66%;
 }
 
 .viewdetails {
@@ -145,13 +158,12 @@ i {
 }
 
 .faves {
-	width: 500px;
+	width: 400px;
 	margin: 0 auto;
-	height: 500px;
+	height: 400px;
 	border-radius: 50%;
-	border: solid #395BA3 5px;
+	border: solid #395BA3 15px;
 }
-
 
 .card-action {
 	padding: 5px;
@@ -160,11 +172,6 @@ i {
 button {
 	background: transparent;
 	border: none;
-}
-
-.footer {
-	position: absolute;
-	bottom: -150px;
 }
 
 /* position dots up a bit */
@@ -206,22 +213,26 @@ button {
 
 .main-gallery {
 	height: 200px;
-}
-
-.gallery-cell {
-  width: 33%;
-  height: 180px;
-  margin-right: 10px;
-}
-.gallery-cell.size-180 { width: 180px; }
-.gallery-cell.size-large { width: 75%; }
-
-.container {
+	width: 500px;
 	margin: 0 auto;
 }
 
+.gallery-cell {
+  width: 32%;
+  height: 180px;
+  margin-right: 10px;
+}
+.gallery-cell.size-180 { 
+	width: 180px; 
+}
+
+.gallery-cell.size-large { 
+	width: 75%; 
+}
+
+
 img {
-	width: 250px;
+	width: 175px;
 }
 
 #copyright {
