@@ -1,0 +1,23 @@
+<div class="display-1 info-box">
+  <div class="sprites-box">
+    <img class="img-flip" src="<%= selected.sprites.front_default %>">
+    <img hidden class="img-flip" src="<%= selected.sprites.back_default %>">
+  </div>
+  <div class="ability-box">
+    <h4>Abilities:</h4>
+    <% selected.abilities.forEach(function(abilities){ %>
+      <p><%= abilities.ability.name %></p>
+    <% }); %>
+  </div>
+</div>
+
+<div class="display-2">
+  <div class="name-box">
+    <h5>#<%= selected.id %>:</h5>
+    <h3><%= selected.name %></h3>
+  </div>
+  <div class="metrics-box">
+    <p>Weight: <%= selected.weight %></p>
+    <p>Height: <%= selected.height %></p>
+  </div>
+</div>

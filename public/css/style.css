@@ -1,0 +1,130 @@
+@font-face {
+  font-family: 'game-font';
+  src: url('/font/slkscr.ttf');
+}
+
+body {
+  text-align: center;
+  background-image: url(/img/nature-background.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: auto;
+  background-position: bottom;
+  font-family: 'game-font';
+}
+
+.container {
+  display: flex;
+  padding: 0;
+  background-image: url(/img/pokedex1.gif);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  min-height: 600px;
+  width: 720px;
+}
+
+.display-1 {
+  position: relative;
+  overflow: auto;
+  top: 220px;
+  left: 40px;
+  height: 175px;
+  width: 274px;
+  margin: 0 15px;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-start;
+  /*align-items: center;*/
+}
+
+ul {
+  width: 290px;
+  padding: 10px;
+  list-style: none;
+  display: inline;
+  flex-direction: column;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.name {
+  font-size: 24px;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-btn {
+  height: 25px;
+  width: 25px;
+}
+
+.info-box {
+  display: flex;
+  align-items: center;
+}
+
+.ability-box {
+  width: 135px;
+}
+
+.display-2 {
+  position: relative;
+  top: 229px;
+  left: 190px;
+  height: 120px;
+  width: 310px;
+  background-color: #3FF92F;
+  border: solid 3px #222;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.name-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 50px;
+  margin: 12px 0;
+}
+
+h3 {
+  margin: 0;
+}
+
+h5 {
+  margin: 0;
+}
+
+.metrics-box {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: 520px;
+  right: 48px;
+  width: 300px;
+  height: 44px;
+  z-index: 1;
+}
+
+.btn-nav {
+  width: 114px;
+  height: 52px;
+  text-align: center;
+  font-size: 16px;
+  border: solid 3px #222;
+
+}

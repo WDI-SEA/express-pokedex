@@ -7,12 +7,25 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
   </head>
-  <body>
-    <%- body %>
 
+  <body>
+    <div class="container">
+
+
+      <%- body %>
+
+
+      <div class="btn-container">
+        <a class="btn btn-info btn-nav" href="/">Home</a>
+        <a class="btn btn-info btn-nav" href="/favorites">Favorites</a>
+      </div>
+    </div>
     <!-- jQuery -->
     <script src="//code.jquery.com/jquery.js"></script>
+    <script src="/js/ajaxrouting.js"></script>
+    <script src="/js/source.js"></script>
     <!-- Bootstrap JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   </body>
