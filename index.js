@@ -14,9 +14,10 @@ app.use(ejsLayouts);
 app.use(express.static('public'));
 
 app.get('/', function(req, res) {
-    var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
+    var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/?limit=151';
     request(pokemonUrl, function(error, response, body) {
         var pokemon = JSON.parse(body).results;
+        console.log(pokemon);
         res.render('index', { pokemon: pokemon });
     });
 });
