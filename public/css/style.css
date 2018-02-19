@@ -1,0 +1,29 @@
+body {
+	background-image: url("/img/background.png");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+.text-center {
+	color: white;
+}
+
+.well {
+	width: 250px;
+	height: 150px;
+	text-align: center;
+	display: inline-block;
+	margin: 10px 10px;
+	font-size: 30px;
+}
+.favorites,
+.home-button {
+	color: white;
+	padding: 5px 50px;
+	height: 59px;
+}
+
+p {
+	color: white;
+}
