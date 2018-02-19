@@ -20,4 +20,15 @@ $('#delete-pokemon').on('click', function(e) {
 $(".button-collapse").sideNav();
 
 //for carousel
-$(document).ready(function(){$('.carousel').carousel();});
+// $(document).ready(function(){
+// 	 $('.carousel.carousel-slider').carousel({fullWidth: true,
+// 	 dist:0,
+//     shift:0,
+//     padding:20});
+// });
+
+$('.main-gallery').flickity({
+  // options
+  cellAlign: 'left',
+  contain: true
+});

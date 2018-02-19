@@ -22,7 +22,7 @@
                   <h4>Moves: </h4>
                   <ul>
                   <% pokemon.moves.forEach(function(pokemon) { %>
-                     <li class='<%= pokemon.move.name %>'><%= pokemon.move.name %></li>
+                     <li><%= pokemon.move.name %></li>
                   <% }) %>
                   </ul>
                 </div>
@@ -31,7 +31,7 @@
                   <h4>Base Stats: </h4>
                   <ul>
                   <% pokemon.stats.forEach(function(pokemon) { %>
-                     <li class='<%= pokemon.base_stat %>'><%= pokemon.stat.name %> : <%= pokemon.base_stat %></li>
+                     <li><%= pokemon.stat.name %> : <%= pokemon.base_stat %></li>
                   <% }) %>
                   </ul>
                 </div>

@@ -17,11 +17,44 @@ h1 {
 	margin-top: 50px;
 	text-align: center;
 	color: #FFD062;
+	font-size: 60px;
+}
+
+h2 {
+	font-size: 40px;
+	margin-top: 50px;
 }
 
 h4 {
 	font-size: 24px;
 }
+
+.container{ 
+	position: relative;
+	z-index: 1;
+}
+
+#deets {
+	color: #ffb74d;
+	text-decoration: none;
+}
+
+.whoops {
+	z-index: -10;
+	top: 200px;
+	width: 20%;
+	text-align: center;
+	left: 40%;
+	color: lightgrey;
+	position: absolute;
+}
+
+.filler {
+	height: 260px;
+	z-index: -2000;
+	position: relative;
+}
+
 
 .card-title {
 	color: #e57373;
@@ -48,6 +81,7 @@ h4 {
 #delete-pokemon:hover {
 	text-decoration: none;
 	color: #e57373;
+	cursor: pointer;
 }
 
 #github, #linkedin, #email {
@@ -82,9 +116,9 @@ i {
 
 .pokeball:hover, .sprite:hover {
 	animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
+	transform: translate3d(0, 0, 0);
+	backface-visibility: hidden;
+	perspective: 1000px;
 }
 
 .pokedex {
@@ -114,6 +148,14 @@ i {
   }
 }
 
+.faves {
+	width: 500px;
+	margin: 0 auto;
+	height: 500px;
+	border-radius: 50%;
+	border: solid #395BA3 5px;
+}
+
 
 .card-action {
 	padding: 5px;
@@ -128,6 +170,55 @@ button {
 	position: absolute;
 	bottom: -150px;
 }
+
+/* position dots up a bit */
+.flickity-page-dots {
+  bottom: -22px;
+}
+/* dots are lines */
+.flickity-page-dots .dot {
+  height: 4px;
+  width: 2px;
+  margin: 0;
+  border-radius: 0;
+}
+
+/* smaller, dark, rounded square */
+.flickity-prev-next-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  background: #e57373;
+}
+.flickity-prev-next-button:hover {
+  background: #ef9a9a;
+}
+/* arrow color */
+.flickity-prev-next-button .arrow {
+  fill: white;
+}
+.flickity-prev-next-button.no-svg {
+  color: white;
+}
+/* position outside */
+.flickity-prev-next-button.previous {
+  left: -40px;
+}
+.flickity-prev-next-button.next {
+  right: -40px;
+}
+
+.main-gallery {
+	height: 200px;
+}
+
+.gallery-cell {
+  width: 33%;
+  height: 180px;
+  margin-right: 10px;
+}
+.gallery-cell.size-180 { width: 180px; }
+.gallery-cell.size-large { width: 75%; }
 
 .container {
 	margin: 0 auto;
@@ -145,11 +236,11 @@ img {
 
 .moves, .types, .stats {
 	overflow: scroll;
-	background-color: rgba(0,0,0,0.2);
+	background-color: rgba(245, 127, 23, 0.5);
 	width: 200px;
 	height: 150px;
 	border-radius: 15px;
-	border: solid #FFD062 5px;
+	border: solid #fdd835 5px;
 }
 
 .flying, .normal {
@@ -186,4 +277,8 @@ img {
 
 .psychic, .ghost, .poison {
 	color: #7e57c2;
+}
+
+.dragon {
+	color: gold;
 }

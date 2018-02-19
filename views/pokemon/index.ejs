@@ -2,17 +2,23 @@
 <%- include ../partials/header.ejs %>
 
 	<h1>Your Pokémon</h1>
+	<div class='whoops'>
+		<h4>Whoops! You haven't caught a Pokémon yet.</h2>
+	</div>
+
 <div class="row">
 	<% pokemon.forEach(function(pokemon) { %>
-	<div class="col s12 m12 l12">
-	    <div class="well">
+	<!-- <div class="col s12 m12 l12"> -->
+	    <div class="faves well">
 	      <h2><a class='viewdetails' href='./pokemon/<%= pokemon.name %>'><%= pokemon.name %></a></h2>
 	      <img class='responsive-img sprite' src='<%= pokemon.image %>'>
 	      <p></p>
            <a class='viewdetails' href="./pokemon/<%= pokemon.name %>">View Details <i class="fave-page material-icons">more_horiz</i></a>
 	      <span id="delete-pokemon" action="/pokemon/<%= pokemon.name %>">Release <i class="fave-page material-icons">cancel</i></span>
 	    </div>
-	</div>
+	<!-- </div> -->
 	<% }); %>
+</div>
+<div class='filler'>
 </div>
 <%- include ../partials/footer.ejs %>

@@ -21,7 +21,7 @@ app.get('/', function(req, res) {
     request(pokemonUrl, function(error, response, body) {
         pokemon = JSON.parse(body).results;
         console.log(pokemon);
-         res.render('index', { pokemon: pokemon});
+         res.render('index', { pokemon: pokemon });
     });
 });
 
