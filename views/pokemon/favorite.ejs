@@ -1,0 +1,23 @@
+<div class="container">
+	<h1 class="text-center"> Favorites</h1>
+	<div class="all-pokemon">
+		<div class="list">
+			<div class="items">
+				<!-- for each pokemon -->
+				<% pokemon.forEach(function(p){ %> 
+					<!-- <a href="/pokemon/favorite"> -->
+					 <h2><%= p.title %></h2>
+					 <a href="<%= p.content %>">Click here</a>
+					<!-- </a> -->
+				<% }); %>
+			</div>
+				<form class="add-favorite" method="POST" action="./pokemon/favorite">
+					<input hidden type="text" name="title">
+					<input class="pokemon-name" hidden type="text" name="content" value="">
+					<button class="btn btn-success" type="submit">Remove</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
