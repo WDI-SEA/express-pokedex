@@ -78,6 +78,15 @@ router.post('/', function(req, res) {
   });
 });
 
+router.get('/:name', function(req, res) {
+  db.pokemon.find({
+    where: {name : req.params.name}
+  }).then(function(data) {
+    console.log(data);
+    res.render('show', {pokemon: data});
+  })
+});
+
 router.delete('/:name', function(req, res) {
   var pokeToDie = req.params.name;
   console.log(pokeToDie);
