@@ -21,19 +21,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.get('/', function(req, res) {
 
     var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/?limit=10';
-    // if (pokemon){
-    //   // search for a particular pokemon
-    //   pokemonUrl += 'pokemon/:' + name;
-    // } else if (type) {
-    //   // search for a particular type of pokemon
-    //   pokemonUrl += 'type/:' + id;
-    // } else if (ability){
-    //   // search for a particular pokemon ability
-    //   pokemonUrl += 'ability/:' + id;
-    // }
+
     request(pokemonUrl, function(error, response, body) {
         var pokemon = JSON.parse(body).results;
-        // console.log(pokemon);
         res.render('index', { pokemon: pokemon });
     });
 });

@@ -9,20 +9,18 @@
     <form name="update-item" class="update-item" action="/pokemon/<%= pokemon.id %>" method="PUT">
       <ul>
         <li>ID: <%= pokemon.id %></li>
-        <li>Custom Name:
+        <li>Weight: <%= pokemon.pokeWeight %></li>
+        <li>Height: <%= pokemon.pokeHeight %></li>
+        <li> <img src="<%= pokemon.pokeImage %>" alt="Image of pokemon"></li>
+        <li>Created: <%= pokemon.createdAt %></li>
+        <li>Updated: <%= pokemon.updatedAt %></li>
+        <!-- <li>Custom Name:
           <% if (pokemon.customName) { %>
             <%= pokemon.customName %>
           <% } else { %>
             <%= pokemon.name %>
-          <% } %>
+          <% } %> -->
         </li>
-        <li>Type: <%= pokemon.type %></li>
-        <li>Habitat: <%= pokemon.habitat %></li>
-        <li>Characteristic: <%= pokemon.characteristic %></li>
-        <li>Egg Group: <%= pokemon.eggGroup %></li>
-        <li>Gender: <%= pokemon.gender %></li>
-        <li>Created: <%= pokemon.createdAt %></li>
-        <li>Updated: <%= pokemon.updatedAt %></li>
         <!-- <li>Notes: <%= pokemon.notes %></li> -->
       </ul>
       <!-- <label for="customName">Change Custom Name:</label><br>

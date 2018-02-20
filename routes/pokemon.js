@@ -4,6 +4,8 @@ var db = require('../models');
 var sequelize = require('sequelize');
 var pg = require('pg');
 var hstore = require('pg-hstore');
+var path = require('path');
+var request = require('request');
 
 // GET - return a page with favorited Pokemon
 router.get('/', function(req,res) {
@@ -17,9 +19,10 @@ router.get('/', function(req,res) {
     //   //    createdAt: 2018-02-18T20:42:49.581Z,
     //   //    updatedAt: 2018-02-18T20:42:49.581Z }
     db.pokemon.findAll().then(function(data){
+      // console.log(data);
       res.render('pokemon/index', {pokemons:data});
     });
-    
+
 });
 
 // GET /pokemon/:id
@@ -36,13 +39,23 @@ router.get('/:id', function(req,res){
 // POST - receive the name of a pokemon and add it to the database
 router.post('/', function(req,res) {
     console.log("in the /POST PATH");
+    // query api for pokemon data
+    // pokemon to search for
     var pokemon = req.body.name;
-    // query the db to see if it is there
-    db.pokemon.findOrCreate({
-      where: { name:pokemon }
-    }).spread(function(pokemon, created) {
-      // returns info about the pokemon if exists
-      res.redirect('/pokemon');
+    var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + pokemon;
+    console.log(pokemonUrl);
+    request(pokemonUrl, function(error, response, body) {
+        var pokeImage = JSON.parse(body).sprites.front_default;
+        var pokeHeight = JSON.parse(body).height;
+        var pokeWeight = JSON.parse(body).weight;
+
+        db.pokemon.findOrCreate({
+          where: { name:pokemon },
+          defaults: { pokeImage:pokeImage, pokeHeight:pokeHeight, pokeWeight:pokeWeight}
+        }).spread(function(pokemon, created) {
+          // returns info about the pokemon if exists
+          res.redirect('/pokemon');
+        });
     });
 });
 
@@ -60,7 +73,7 @@ router.put('/:id', function(req,res){
     },{
       where: { id:pokemonToUpdate }
     }).then(function(data){
-      console.log("successfully updated " + req.params.id);
+      console.log("successfully updated " + pokemonToUpdate);
       res.redirect('/pokemon');
     });
   });

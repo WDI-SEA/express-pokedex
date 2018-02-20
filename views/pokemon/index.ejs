@@ -7,16 +7,14 @@
 
       <% pokemons.forEach(function(pokemon){ %>
         <div class="well">
-            <h2><a href="/<%= pokemon.name %>"><%= pokemon.name %></a></h2>
+            <h2><%= pokemon.name %></h2>
             <ul>
+              <li>ID: <%= pokemon.id %></li>
+              <li>Weight: <%= pokemon.pokeWeight %></li>
+              <li>Height: <%= pokemon.pokeHeight %></li>
               <li>Created: <%= pokemon.createdAt %></li>
               <li>Updated: <%= pokemon.updatedAt %></li>
-              <li>ID: <%= pokemon.id %></li>
-              <li>Type: <%= pokemon.type %></li>
-              <li>Habitat: <%= pokemon.habitat %></li>
-              <li>Characteristic: <%= pokemon.characteristic %></li>
-              <li>Egg Group: <%= pokemon.eggGroup %></li>
-              <li>Gender: <%= pokemon.gender %></li>
+              <li> <img src="<%= pokemon.pokeImage %>" alt="Image of pokemon"></li>
               <!-- <li>Custom Name:
                 <% if (pokemon.customName) { %>
                   <%= pokemon.customName %>

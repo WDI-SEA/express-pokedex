@@ -12,26 +12,14 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
-      customName: {
+      pokeImage: {
         type: Sequelize.STRING
       },
-      notes: {
-        type: Sequelize.STRING
-      },
-      type: {
-        type: Sequelize.STRING
-      },
-      habitat: {
-        type: Sequelize.STRING
-      },
-      characteristic: {
+      pokeHeight: {
         type: Sequelize.INTEGER
       },
-      eggGroup: {
-        type: Sequelize.STRING
-      },
-      gender: {
-        type: Sequelize.STRING
+      pokeWeight: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
