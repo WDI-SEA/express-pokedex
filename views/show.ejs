@@ -3,28 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pokedex</title>
+    <title>Favorites</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   </head>
 
   <body>
-    <div class="container">
-      <h1 class="text-center">The Original 151 Pokemon</h1>
-      <p class="text-center">
-        <a href="/pokemon">Favorites</a>
-      </p>
 
-      <% pokemon.forEach(function(pokemon) { %>
-        <div class="well">
-          <h2><%= pokemon.name %></h2>
-          <form method="POST" action="/pokemon">
-            <input hidden type="text" name="name" value="<%= pokemon.name %>">
-            <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
-          </form>
-        </div>
-      <% }); %>
+    <div class="container">
+      <div class="well">
+        <h1 class="text-center"><%= pokemon.name %></h1>
+        <ul class="text-center">
+          <li>Id: <%= pokemon.id %></li>
+          <li>Base Experience: <%= pokemon.base_experience %> </li>
+          <li>Types: <%= pokemon.types.type.name %> </li>
+        <ul>
+      </div>
     </div>
 
     <script src="//code.jquery.com/jquery.js"></script>
