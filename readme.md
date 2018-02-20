@@ -14,9 +14,9 @@ If you're not familiar with Pokemon, Pokemon is a franchise/universe created by 
 
 We'll be using an existing application that uses the [PokeAPI](http://pokeapi.co/), a Pokemon API that allows us to get a list of Pokemon.
 
-* Fork and clone this repository
-* Run `npm install` to install dependencies
-  * Use `nodemon` to start the server
+[x] Fork and clone this repository
+[x] Run `npm install` to install dependencies
+[x] Use `nodemon` to start the server
   * Use `npm run lint:js` to lint your JS
   * Use `npm run lint:css` to lint your CSS
 
@@ -33,8 +33,8 @@ We'll be using an existing application that uses the [PokeAPI](http://pokeapi.co
 
 ## User Stories
 
-* As a user, I want to select my favorite Pokemon and add them to a list of favorites.
-* As a user, once I add a Pokemon to my list of favorites, I want to be redirected to my favorites page.
+[x] As a user, I want to select my favorite Pokemon and add them to a list of favorites.
+[x] As a user, once I add a Pokemon to my list of favorites, I want to be redirected to my favorites page.
 
 ## Requirements
 
@@ -44,11 +44,9 @@ Your first step will be to create a SQL database for your application. We will b
 
 #### Part 2: Create a Pokemon Table'
 
-Create a `pokemon` table with one column `name`.
-
-Using the `sequelize` CLI, create your `pokemon` table. Then, run the migrations.
-
-Test it out by making a `db-test.js` file:
+[x] Create a `pokemon` table with one column `name`.
+[x] Using the `sequelize` CLI, create your `pokemon` table. Then, run the migrations.
+[x] Test it out by making a `db-test.js` file:
 
 ```
 var db = require('./models');
@@ -60,26 +58,25 @@ db.pokemon.create({
 });
 ```
 
-Test by running the file: `node db-test.js`.
-
-Be sure to also test querying against the pokemon table.
+[x] Test by running the file: `node db-test.js`.
+[x] Be sure to also test querying against the pokemon table.
 
 #### Part 3: Integrating the database with the app
 
 You'll want to add functionality to the following routes by incorporating the `pokemon` table you created.
 
 * `GET /pokemon`
-  * View: `views/pokemon/index.ejs`
+  [x] View: `views/pokemon/index.ejs`
   * Purpose: Retrieve all favorited Pokemon and display them on the page
 * `POST /pokemon`
-  * View: none (redirect to `/pokemon`)
+  [x] View: none (redirect to `/pokemon`)
   * Purpose: Creates a new Pokemon and redirects back to `/pokemon`
 
 #### Part 4: Display more info on each pokemon
 
-Add a route `GET /pokemon/:id` that renders a page with information about the pokemon (the pokemon with the corresponding row `id`).
+[x] Add a route `GET /pokemon/:id` that renders a page with information about the pokemon (the pokemon with the corresponding row `id`).
 
-Check out the result of the pokemon API calls (or see the [doc page](http://pokeapi.co/)) for ideas on what data you could show. Show at least 4 peices of data.
+Check out the result of the pokemon API calls (or see the [doc page](http://pokeapi.co/)) for ideas on what data you could show. Show at least 4 pieces of data.
 
 #### Part 5: Styling
 
@@ -97,7 +94,7 @@ the query string. The limit allows you to ask the API to return more than it's
 default amount.
 
 Remember, query strings are parameters passed in the URL after a question mark
-and seperated with ampersands. They look like this:
+and separated with ampersands. They look like this:
 
 ```
 http://mapwebsite.com/?lat=40.284&long=110.133&zoom=12

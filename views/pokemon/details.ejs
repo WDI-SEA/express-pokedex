@@ -1,0 +1,33 @@
+<!-- DETAILS VIEW -->
+<div class="container">
+  <h1 clas="text-center">Details about this Favorite</h1>
+  <p class="text-center">
+    <a href="/pokemon">Favorites</a>
+  </p>
+  <div class="well">
+    <h2>Information about your: <%= pokemon.name %></h2>
+    <form name="update-item" class="update-item" action="/pokemon/<%= pokemon.id %>" method="PUT">
+      <ul>
+        <li>ID: <%= pokemon.id %></li>
+        <li>Weight: <%= pokemon.pokeWeight %></li>
+        <li>Height: <%= pokemon.pokeHeight %></li>
+        <li> <img src="<%= pokemon.pokeImage %>" alt="Image of pokemon"></li>
+        <li>Created: <%= pokemon.createdAt %></li>
+        <li>Updated: <%= pokemon.updatedAt %></li>
+        <!-- <li>Custom Name:
+          <% if (pokemon.customName) { %>
+            <%= pokemon.customName %>
+          <% } else { %>
+            <%= pokemon.name %>
+          <% } %> -->
+        </li>
+        <!-- <li>Notes: <%= pokemon.notes %></li> -->
+      </ul>
+      <!-- <label for="customName">Change Custom Name:</label><br>
+      <input type="text" name="customName" value="<%= pokemon.customName %>"><br>
+      <label for="notes">Notes about this pokemon:</label><br>
+      <input type="text" name="notes" value="<%= pokemon.notes %>"><br>
+      <button type="submit" class="btn btn-primary update-item">Submit Update</button> -->
+    </form>
+  </div>
+</div>

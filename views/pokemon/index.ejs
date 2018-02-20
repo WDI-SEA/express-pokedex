@@ -1,0 +1,35 @@
+    <!-- POKEMON INDEX -->
+    <div class="container">
+      <h1 clas="text-center">My List of Favorite Pokemon</h1>
+      <p class="text-center">
+        <a href="/">Search for another Pokemon</a>
+      </p>
+
+      <% pokemons.forEach(function(pokemon){ %>
+        <div class="well">
+            <h2><%= pokemon.name %></h2>
+            <ul>
+              <li>ID: <%= pokemon.id %></li>
+              <li>Weight: <%= pokemon.pokeWeight %></li>
+              <li>Height: <%= pokemon.pokeHeight %></li>
+              <li>Created: <%= pokemon.createdAt %></li>
+              <li>Updated: <%= pokemon.updatedAt %></li>
+              <li> <img src="<%= pokemon.pokeImage %>" alt="Image of pokemon"></li>
+              <!-- <li>Custom Name:
+                <% if (pokemon.customName) { %>
+                  <%= pokemon.customName %>
+                <% } else { %>
+                  <%= pokemon.name %>
+                <% } %>
+              </li> -->
+              <!-- <li>Notes: <%= pokemon.notes %></li> -->
+              <li>
+                <a href="pokemon/delete/<%= pokemon.id %>" class="delete-item">Remove Pokemon</a>
+              </li>
+              <!-- <li>
+                <a href="pokemon/<%= pokemon.id %>" class="update-item">Update Pokemon</a>
+              </li> -->
+            </ul>
+        </div>
+      <% }); %>
+    </div>
