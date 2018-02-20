@@ -1,0 +1,8 @@
+<h2>My Favorite Pokemon</h2>
+<ul class="list-group">
+	<% pokemon.forEach(function(item) { %>
+		<li class="list-group-item"><%= item.name %>
+			<a class="delete-link" href="/pokemon/<%= item.name %>">More info</a>
+		</li>
+	<% }); %>
+</ul>
