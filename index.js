@@ -25,8 +25,12 @@ app.get('/', function(req, res) {
 app.use('/pokemon', require('./controllers/pokemon'));
 
 var server = null;
-db.sequelize.sync().then(function() {
-    server = app.listen(3000);
-})
+db.sequelize.sync()
+    .then(function() {
+        server = app.listen(3000);
+    })
+    .catch(function(err) {
+        console.log(err);
+    });
 
 module.exports = server;
