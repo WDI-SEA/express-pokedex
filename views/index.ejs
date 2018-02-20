@@ -1,16 +1,20 @@
-<div class="container">
-  <h1 class="text-center">The Original 151 Pokemon</h1>
-  <p class="text-center">
-    <a href="/pokemon">Favorites</a>
-  </p>
+<!DOCTYPE html>
+<%- include ./partials/header.ejs %>
+  <h1>The Original 151 Pokémon</h1>
+  <div class="main-gallery">
+      <% pokemon.forEach(function(pokemon) { %>
+              <div class="card yellow darken-1 gallery-cell">
+                <div class="card-content white-text">
+                  <span class="card-title"><%= pokemon.name %></span>
+                   <form id='sub' method="POST" action="/pokemon">
+                     <input hidden type="text" name="name" value="<%= pokemon.name %>">
+                     <button type="submit"><img class = 'pokeball responsive-img' src='https://png.icons8.com/color/1600/pokeball-2.png'></button>
+                     <p id='catch'>Catch 'em!</p>
+                     <a id='deets' href="./pokemon/<%= pokemon.name %>">View Details</a>
+                   </form>
+                </div>
+              </div>
+      <% }); %>
 
-  <% pokemon.forEach(function(pokemon) { %>
-    <div class="well">
-      <h2><%= pokemon.name %></h2>
-      <form method="POST" action="/pokemon">
-        <input hidden type="text" name="name" value="<%= pokemon.name %>">
-        <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
-      </form>
-    </div>
-  <% }); %>
-</div>
+<%- include ./partials/footer.ejs %>
+
