@@ -7,7 +7,8 @@
   <div class="well">
     <h2><%= pokemon.name %></h2>
 
-      <div class="btn btn-primary delete-link" href="pokemon/<%=pokemon.name%>">Delete From Favorite Pokemon</div>
+      <div class="btn btn-primary delete-link" href="/pokemon/<%=pokemon.name%>">Delete From Favorite Pokemon</div>
+      <div class="btn btn-primary"><a style='color:white' href="/pokemon/<%=pokemon.id%>">See Stats</a></div>
 
   </div>
 <% }); %>
