@@ -4,7 +4,16 @@
 <% pokemon.abilities.forEach(function(ability){ %>
   <p><%= ability.ability.name %></p>
 <% }) %>
+
+<h2>Types</h2>
+<% pokemon.types.forEach(function(i){ %>
+  <p> Type: <%= i.type.name %></p>
+<% }) %>
+
 <h2>Stats</h2>
+<p> Weight: <%= pokemon.weight %></p>
+<p> Height: <%= pokemon.height %></p>
+
 <% pokemon.stats.forEach(function(stat){ %>
  <p> <%= stat.stat.name %>: <%= stat.base_stat %></p>
 <% }) %>
