@@ -1,3 +1,4 @@
+var db = require("./models");
 var express = require('express');
 var request = require('request');
 var bodyParser = require('body-parser');
@@ -11,7 +12,6 @@ app.use(ejsLayouts);
 
 app.get('/', function(req, res) {
     var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
-
     request(pokemonUrl, function(error, response, body) {
         var pokemon = JSON.parse(body).results;
         res.render('index', { pokemon: pokemon });

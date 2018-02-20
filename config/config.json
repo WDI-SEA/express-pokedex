@@ -1,0 +1,17 @@
+{
+  "development": {
+    "database": "pokemonDeliv",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "database": "pokemonDeliv",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "database": "pokemonDeliv",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}

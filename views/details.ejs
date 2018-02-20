@@ -1,0 +1,10 @@
+<h1><%= pokemon.name %> Details</h1>
+<img src="<%= pokemon.sprites.front_default %>" height="150" width="150">
+<h2> Abilities </h2>
+<% pokemon.abilities.forEach(function(ability){ %>
+  <p><%= ability.ability.name %></p>
+<% }) %>
+<h2>Stats</h2>
+<% pokemon.stats.forEach(function(stat){ %>
+ <p> <%= stat.stat.name %>: <%= stat.base_stat %></p>
+<% }) %>
