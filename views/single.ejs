@@ -1,0 +1,15 @@
+<h1 class="pokemon-single-title"><%= pokemon.name %></h1>
+<div class="pokemon-single">
+	<div class="pokemon-single-image">
+		<img src="<%= pokemon.imagesrc %>"> 
+	</div>
+	<div class="pokemon-single-description">
+		<p><b>Height:</b> <%= pokemon.height %></p>
+		<p><b>Weight:</b> <%= pokemon.weight %></p>
+		<p><b>Experience Level:</b> <%= pokemon.experience %></p>
+		<span>
+			<a href="/pokemon/<%= pokemon.id %>" class="delete-link">Delete</a>
+			<a href="/pokemon" class="back-link">Back</a>				
+		</span>
+	</div>
+</div>

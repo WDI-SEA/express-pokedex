@@ -9,17 +9,40 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 
-app.get('/', function(req, res) {
-    var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
+// For images, front end JS, CSS, etc:
+app.use(express.static(__dirname + '/public/'));
 
+app.get('/', function(req, res) {
+	res.render('index');
+});
+
+// GET - The page to play
+app.get('/play', function(req, res) {
+
+	// Pull a random pokemon from the API (of 151 pokemon so we can "catch" them
+	var pokemonRandom = Math.floor(Math.random() * 151) + 1;
+    var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + pokemonRandom;
+    
     request(pokemonUrl, function(error, response, body) {
-        var pokemon = JSON.parse(body).results;
-        res.render('index', { pokemon: pokemon });
+    //Pulls the stats we want out of the API for the one randomly selected pokemon
+   	var pokeStats = {
+   		pokemonapi_id: JSON.parse(body).id,
+	    name: JSON.parse(body).name,
+	    imagesrc: JSON.parse(body).sprites.front_shiny,
+	    height: JSON.parse(body).height,
+	    weight: JSON.parse(body).weight,
+	    experience: JSON.parse(body).base_experience
+	 }
+
+	res.render('play', { pokemon: pokeStats });
+
     });
 });
+
 
 app.use('/pokemon', require('./routes/pokemon'));
 
 var server = app.listen(process.env.PORT || 3000);
 
 module.exports = server;
+
