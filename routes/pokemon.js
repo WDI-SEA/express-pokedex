@@ -5,77 +5,81 @@ var sequelize = require('sequelize');
 var pg = require('pg');
 var hstore = require('pg-hstore');
 
-// const { Client } = require('pg');
-// const client = new Client();
-
 // GET - return a page with favorited Pokemon
 router.get('/', function(req,res) {
     // TODO: render favorites
-
-    db.pokemon.findAll().then(function(reqData){
-    // // console.log(data);
-      res.render('pokemon/index', {pokemons:reqData});
-    });
-
-    // client.connect();
-
+    console.log("in the /PATH");
     //   // dataValues:
     //   //  { id: 35,
     //   //    name: 'caterpie',
+    //   //    customName: 'caterpie',
+    //   //    notes: 'notes',
     //   //    createdAt: 2018-02-18T20:42:49.581Z,
     //   //    updatedAt: 2018-02-18T20:42:49.581Z }
-
-    // client.query('SELECT * FROM pokemons', (err, res) => {
-    //   console.log(err ? err.stack : res.rows[0].data);
-    //   client.end();
-    // })
+    db.pokemon.findAll().then(function(data){
+      res.render('pokemon/index', {pokemons:data});
+    });
+    
 });
 
 // GET /pokemon/:id
 router.get('/:id', function(req,res){
-  // TODO: render a list of details for pokemon/id
-  // console.log(req.params);
+  console.log("in the /:id PATH");
+  var pokemonToRetrieve = parseInt(req.params.id);
   db.pokemon.find({
-    where: {id:req.params.id}
+    where: {id:pokemonToRetrieve}
   }).then(function(data){
-    // console.log(data);
     res.render('pokemon/details', {pokemon:data});
   });
 });
 
 // POST - receive the name of a pokemon and add it to the database
 router.post('/', function(req,res) {
-    // TODO: add to database
-    // console.log(req);
-    var pokeToAdd = req.body.name;
-    db.pokemon.create({
-      name:pokeToAdd
-    }).then(function(data){
+    console.log("in the /POST PATH");
+    var pokemon = req.body.name;
+    // query the db to see if it is there
+    db.pokemon.findOrCreate({
+      where: { name:pokemon }
+    }).spread(function(pokemon, created) {
+      // returns info about the pokemon if exists
       res.redirect('/pokemon');
     });
 });
 
 // PUT route
-router.put('/pokemon/:name', function(req,res){
-  console.log("in PUT path.....!");
-  console.log(req.params.id);
-  db.game.update({
-    name:req.body.name
-  },{
-    where: { id:req.params.id }
-  }).then(function(data){
-    res.send("success");
+router.put('/:id', function(req,res){
+  console.log("in /PUT path.....!");
+  console.log(req.body);
+
+  var pokemonToUpdate = parseInt(req.params.id);
+  db.pokemon.findById(pokemonToUpdate)
+  .then(function(data){
+    db.pokemon.update({
+      customName:req.body.customName,
+      notes:req.body.notes
+    },{
+      where: { id:pokemonToUpdate }
+    }).then(function(data){
+      console.log("successfully updated " + req.params.id);
+      res.redirect('/pokemon');
+    });
   });
+
 });
+
 // DELETE route
 router.delete('/delete/:id', function(req,res){
-  console.log('in delete path');
-  db.user.destroy({
-    where: {id:req.params.id}
-  }).then(function(data){
-    console.log('deleted object');
-    // res.redirect('/index');
-  });
+  console.log('in DELETE path....!');
+  var pokemonToDelete = parseInt(req.params.id);
+  db.pokemon.findById(pokemonToDelete)
+  .then(function(data){
+    db.pokemon.destroy({
+      where: {id:pokemonToDelete}
+    })
+    .then(function(data){
+      console.log('deleted object: ' + data);
+    });
+  })
 });
 
 module.exports = router;

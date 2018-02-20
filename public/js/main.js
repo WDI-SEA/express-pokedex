@@ -11,7 +11,7 @@ $('.delete-item').on('click', function(e){
     method: 'DELETE',
     url: pokemonUrl
   }).done(function(data){
-    // window.location = '/';
+    window.location = '/';
   });
 });
 
@@ -21,11 +21,11 @@ $('.update-item').on('submit', function(e){
   var pokemonToUpdate = $(this);
   var pokemonUrl = pokemonToUpdate.attr('href');
   console.log(pokemonUrl);
-  console.log("you clicked update for " + $(this) + dataValues.id);
-  // $.ajax({
-  //   method: 'PUT',
-  //   url: pokemonUrl
-  // }).done(function(data){
-  //   // window.location = '/';
-  // });
+  console.log("you clicked update for " + $(this));
+  $.ajax({
+    method: 'PUT',
+    url: pokemonUrl
+  }).done(function(data){
+    console.log("item updated")
+  });
 });

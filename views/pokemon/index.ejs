@@ -12,13 +12,25 @@
               <li>Created: <%= pokemon.createdAt %></li>
               <li>Updated: <%= pokemon.updatedAt %></li>
               <li>ID: <%= pokemon.id %></li>
-              <li>add notes section here</li>
+              <li>Type: <%= pokemon.type %></li>
+              <li>Habitat: <%= pokemon.habitat %></li>
+              <li>Characteristic: <%= pokemon.characteristic %></li>
+              <li>Egg Group: <%= pokemon.eggGroup %></li>
+              <li>Gender: <%= pokemon.gender %></li>
+              <!-- <li>Custom Name:
+                <% if (pokemon.customName) { %>
+                  <%= pokemon.customName %>
+                <% } else { %>
+                  <%= pokemon.name %>
+                <% } %>
+              </li> -->
+              <!-- <li>Notes: <%= pokemon.notes %></li> -->
               <li>
-                <a href="delete/<%= pokemon.id %>" class="delete-item">Remove Pokemon</a>
+                <a href="pokemon/delete/<%= pokemon.id %>" class="delete-item">Remove Pokemon</a>
               </li>
-              <li>
+              <!-- <li>
                 <a href="pokemon/<%= pokemon.id %>" class="update-item">Update Pokemon</a>
-              </li>
+              </li> -->
             </ul>
         </div>
       <% }); %>
