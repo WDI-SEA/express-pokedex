@@ -25,15 +25,21 @@ router.get('/', function(req, res) {
 
 
 // GRAB ALL THE DETAILS OF EACH POKEMON - ID, MORE DETAILS NEEDED FOR SHOW/DETAILS PAGE
-router.get('/:id', function(req, res) {
-  db.pokemon.findById(req.params.id).then(function(pokemon) {
-    var thisPokemon = 'http://pokeapi.co/api/v2/pokemon/'+pokemon.name+'/'; //grab THIS pokemon at this URl
+router.get('/:name', function(req, res) {
+  var pokemonName = req.params.name;
+
+    var thisPokemon = 'http://pokeapi.co/api/v2/pokemon/'+pokemonName+'/'; //grab THIS pokemon at this URl
     request(thisPokemon, function(error, response, body){
       var pokemon = JSON.parse(body); //grab all the info from THIS pokemon's object array in that URL & parse
+      console.log('show');
+      console.log(pokemon);
       res.render('show', {pokemon:pokemon}); //render it all to show page, for displaying pokemon details
-    }); //now we've  allowed all the info for THIS pokemon to be displayed on the show page
+     //now we've  allowed all the info for THIS pokemon to be displayed on the show page
+
   }); //need to link up the action that will call this (when we click on a individual pokemon for details)
 });
+
+
 
 
 // ADD THAT POKEMON TO MY DATABASE OF FAVORITES
