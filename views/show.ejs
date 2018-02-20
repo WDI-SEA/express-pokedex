@@ -17,7 +17,9 @@
         <ul class="text-center">
           <li>Id: <%= pokemon.id %></li>
           <li>Base Experience: <%= pokemon.base_experience %> </li>
-
+          <% pokemon.types.forEach(function(pokemon) { %>
+          <li>  <%= pokemon.type.name %> </li>
+        <% }) %>
         <ul>
       </div>
     </div>
