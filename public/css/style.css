@@ -1,0 +1,98 @@
+@font-face {
+	font-family: pokemon;
+	src: url('Pokemon Hollow.ttf');
+}
+ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.row{
+	margin: 10px !important;
+}
+.navbar-brand-img {
+	width: auto;
+	height: 80px;
+	margin-left: 20px;
+}
+.nav-item {
+	font-family: pokemon, sans-serif;
+	font-weight: 700;
+	font-size: 25px;
+}
+.main-title {
+	font-family: pokemon, sans-serif;
+	color: black;
+	font-weight: 700;
+	font-variant: titling-caps;
+}
+.home-pokemon {
+	display: inline-block;
+	padding: 5px;
+	margin: 15px;
+}
+.home-text {
+	display: inline;
+	line-height: 30px;
+}
+.pokemon-name {
+	font-family:'Bungee', cursive;
+}
+.pokemon-name-link {
+	text-decoration: none !important;
+	font-weight: 500 !important;
+}
+.fav-title {
+	font-family: pokemon, sans-serif;
+}
+.favorite-pokemon {
+	display: inline-block;
+	padding: 5px;
+	margin: 15px;
+}
+.favorites-text{
+	display: inline;
+	line-height: 30px;
+}
+.delete-link{
+	margin-top: -20px;
+}
+.pokemon-sprite {
+	text-align: center !important;
+	margin-left: 45%;
+	margin-top: -10px;
+	height: 130px;
+	width: 130px;
+}
+.info-page-title {
+	font-family: pokemon, sans-serif;
+	margin-top: -10px;
+	margin-bottom: 20px;
+}
+.info-page-title::first-letter {
+	text-transform: uppercase;
+}
+.poke-info-div {
+	display: inline-block;
+	width: 45%;
+	margin: 0 10px auto 10px;
+	position: relative;
+}
+.poke-info-left {
+	position: absolute;
+	margin-right: 20px;
+}
+.poke-info-right {
+	overflow-wrap: break-word;
+	margin-top: 10px;
+	margin-left: 20px;
+}
+.poke-info-text {
+	display: inline;
+	font-family: 'Righteous', cursive;
+}
+/*font-family: 'Roboto Mono', monospace;
+font-family: 'Bungee', cursive;
+font-family: 'Acme', sans-serif;
+font-family: 'Kanit', sans-serif;
+font-family: 'Righteous', cursive;*/

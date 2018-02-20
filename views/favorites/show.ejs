@@ -1,0 +1,71 @@
+<div>
+	<img class="pokemon-sprite" src="<%=pokemon.sprites.front_default%>">
+
+	<h1 class="pokemon-name info-page-title text-center"><%= pokemon.forms[0].name %></h1>
+</div>
+
+<div class="poke-info-div poke-info-right">
+	<div class="well">
+		<div class="row">
+			<div class="col-xs-6">
+				<h2 class="poke-info-text poke-info-title">Height </h2><span class="badge poke-info-text"><%= pokemon.height %></span>
+			</div>
+			<div class="col-xs-6">
+				<h2 class="poke-info-text poke-info-title">Weight </h2><span class="badge poke-info-text"><%= pokemon.weight %></span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-9">
+				<h2 class="poke-info-text poke-info-title">Base Experience </h2><span class="badge poke-info-text"><%= pokemon.base_experience %></span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6">
+				<h2 class="poke-info-text">Stats</h2>
+				<ul>
+					<% for(var i=0; i<(pokemon.stats.length); i++){%>
+						<li class="poke-info-text"><%=pokemon.stats[i].stat.name%>
+							<span class="badge poke-info-text"><%=pokemon.stats[i].base_stat%>
+							</span>
+						</li>
+						<br>
+					<%}%>
+				</ul>
+			</div>
+			<div class="col-xs-6">
+				<h2 class="poke-info-text">Abilities</h2>
+				<ul>
+					<% for(var i=0; i<(pokemon.abilities.length); i++){%>
+						<li class="poke-info-text"><%=pokemon.abilities[i].ability.name%></li>
+						<br>
+					<%}%>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="poke-info-div poke-info-left">
+	<div class="well row">
+		<ul><div class="col-xs-9"><h2 class="poke-info-text">Moves</h2></div>
+			<div class="col-xs-4">
+				<% for(var i=0; i<30; i++){%>
+					<li class="poke-info-text"><%=pokemon.moves[i].move.name%></li>
+					<br>
+				<%}%>
+			</div>
+			<div class="col-xs-4">
+				<% for(var i=30; i<60; i++){%>
+					<li class="poke-info-text"><%=pokemon.moves[i].move.name%></li>
+					<br>
+				<%}%>
+			</div>
+			<div class="col-xs-4">
+				<% for(var i=60; i<(pokemon.moves.length); i++){%>
+					<li class="poke-info-text"><%=pokemon.moves[i].move.name%></li>
+					<br>
+				<%}%>
+			</div>
+		</ul>
+	</div>
+</div>
