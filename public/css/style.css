@@ -1,0 +1,52 @@
+@font-face {
+    font-family: "pokemon";
+    src: url("/css/fonts/pokemon.ttf");
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: red;
+    font-family: "pokemon";
+}
+
+img {
+    image-rendering: pixelated;
+    width: 20em;
+    height: 20em;
+}
+
+.container {
+    background: white;
+    margin: 4em auto;
+    padding: 3em;
+    width: 90%;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.card {
+    display: inline-block;
+    margin: 0.5em;
+}
+
+.poke-name {
+    color: white;
+}
+
+.pokeball {
+    display: inline-block !important;
+    width: 58px !important;
+    height: 58px !important;
+    position: relative !important;
+    top: -10px !important;
+    left: -7.5px !important;
+}
+
+.modal {
+    text-align: left;
+}

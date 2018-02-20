@@ -1,0 +1,32 @@
+    <h1>My Pokemon</h1>
+    <p class="text-center">
+        [ <a href="/">View All</a> ]
+    </p>
+
+    <ul>
+        <% console.log(favorites); %>
+        <table class="highlight">
+            <thead>
+                <tr>
+                    <th>Nickname</th>
+                    <th>Type</th>
+                    <th>Level</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+        <% favorites.forEach(function(item) { %>
+            <% var type = item.name; %>
+            <% type = type.charAt(0).toUpperCase() + type.slice(1); %>
+            <tr id="li-<%= item.id %>">
+                <td><%= item.nickname %></td>
+                <td>
+                    <a href="/pokemon/<%= item.name %>"><%= type %></a>
+                </td>
+                <td><%= item.level %></td>
+                <td>
+                    <a class='delete-link' href="/pokemon/<%= item.id %>" data-id="<%= item.id %>">Delete</a>
+                </td>
+            </tr>
+        <% }); %>
+        </table>
+    </ul>

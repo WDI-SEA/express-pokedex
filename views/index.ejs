@@ -1,16 +1,48 @@
-<div class="container">
   <h1 class="text-center">The Original 151 Pokemon</h1>
   <p class="text-center">
-    <a href="/pokemon">Favorites</a>
+    [ <a href="/pokemon">Favorites</a> ]
   </p>
 
-  <% pokemon.forEach(function(pokemon) { %>
-    <div class="well">
-      <h2><%= pokemon.name %></h2>
-      <form method="POST" action="/pokemon">
-        <input hidden type="text" name="name" value="<%= pokemon.name %>">
-        <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
-      </form>
-    </div>
+  <% pokemon.forEach(function(pokemon, index) { %>
+    <% var name = pokemon.name; %>
+    <% name = name.charAt(0).toUpperCase() + name.slice(1); %>
+    <% var imageFile = "/img/"; %>
+    <% if (index < 9) { %>
+    <%   imageFile += "00" + (index + 1) + ".png" %>
+    <% } else if (index < 99) { %>
+    <%   imageFile += "0" + (index + 1) + ".png" %>
+    <% } else { %>
+    <%   imageFile += (index + 1) + ".png" %>
+    <% } %>
+
+      <div class="card z-depth-4">
+        <div class="card-image">
+          <img src="<%= imageFile %>">
+          <a class="btn-floating halfway-fab waves-effect waves-light modal-trigger capture-button red" data-name="<%= pokemon.name %>" href="#modal1">
+            <img class='pokeball' src='/img/pokeball.png'>
+          </a>
+        </div>
+        <div class="card-content grey darken-2">
+          <p><span class="bold poke-name"><%= name %></span></p>
+        </div>
+      </div>
+
   <% }); %>
-</div>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <form method="POST" id="capture-form" action="/pokemon">
+      <div class="modal-content">
+        <h4>Pokemon Details</h4>
+        <p>Provide some additional information about the Pokemon you've captured:</p>
+        <input hidden type="text" name="name" id="pokemon-name" value="">
+        <label for="nickname">Nickname:</label><br>
+        <input type="text" name="nickname" id="nickname" required><br>
+        <label for="level">Level:</label><br>
+        <input type="number" name="level" id="level" required><br>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
+      </div>
+    </form>
+  </div>

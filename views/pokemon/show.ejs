@@ -1,0 +1,24 @@
+    <% var name = pokemon.name; %>
+    <% name = name.charAt(0).toUpperCase() + name.slice(1); %>
+    <h1>More info on <%= name %></h1>
+    <p class="text-center">
+        [ <a href="/">View All</a> | <a href="/pokemon">Favorites</a> ]
+    </p>
+
+    <img src='<%= pokemon.sprites.front_default %>'>
+    <p><span class="bold">Type(s)</span>: <% pokemon.types.forEach(function(item, index) { %>
+            <% if (index > 0) { %>
+            <%= 'and ' %>
+            <% } %>
+            <%= item.type.name %>
+        <% }); %>
+    </p>
+    <p><span class="bold">Weight</span>: <%= pokemon.weight %></p>
+    <p><span class="bold">Height</span>: <%= pokemon.height %></p>
+    <p><span class="bold">Starting Abilities</span>: <% pokemon.abilities.forEach(function(item, index) { %>
+            <% if (index > 0) { %>
+            <%= ', ' %>
+            <% } %>
+            <%= item.ability.name %>
+        <% }); %>
+    </p>
