@@ -1,0 +1,30 @@
+<div class="container">
+<h1 class="text-center">My Favorite Pokemon</h1>
+<p class="text-center">
+  <a href="/">Find More Pokemon</a>
+</p>
+<% pokemon.forEach(function(pokemon) { %>
+  <div class="well">
+    <h2><%= pokemon.name %></h2>
+
+      <div class="btn btn-primary delete-link" href="pokemon/<%=pokemon.name%>">Delete From Favorite Pokemon</div>
+
+  </div>
+<% }); %>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript">
+$('.delete-link').on("click", function(e) {
+   e.preventDefault();
+   var pokeElement = $(this);
+   var pokeUrl = pokeElement.attr('href');
+   $.ajax({
+     method: 'DELETE',
+     url: pokeUrl
+   }).done(function(data) {
+     window.location = "/pokemon";
+   });
+ });
+</script>

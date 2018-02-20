@@ -1,0 +1,16 @@
+<div class="container">
+  <p class="text-center">
+    <a href="/pokemon">Back to Favorites</a>
+  </p>
+  <div class='text-center well'>
+    <img class='text-center' src="<%= pokemon.sprites.front_default %>">
+
+    <h1><%= pokemon.name %> </h1>
+    <ul style='list-style:none'>
+      <li>Pokemon # <%= pokemon.order %></li>
+      <li><%= pokemon.height %> PokeHeight Units</li>
+      <li><%= pokemon.weight %> PokeWeight Units</li>
+      <li>Base Experience: <%= pokemon.base_experience %></li>
+    </ul>
+    </div>
+</div>
