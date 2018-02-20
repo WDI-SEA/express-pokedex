@@ -1,6 +1,6 @@
     <!-- POKEMON INDEX -->
     <div class="container">
-      <h1 clas="text-center">My List of Favorite Pokemon</h1>
+      <h1 class="text-center">My List of Favorite Pokemon</h1>
       <p class="text-center">
         <a href="/">Search for another Pokemon</a>
       </p>
@@ -8,13 +8,13 @@
       <% pokemons.forEach(function(pokemon){ %>
         <div class="well">
             <h2><%= pokemon.name %></h2>
-            <ul>
-              <li>ID: <%= pokemon.id %></li>
-              <li>Weight: <%= pokemon.pokeWeight %></li>
-              <li>Height: <%= pokemon.pokeHeight %></li>
-              <li>Created: <%= pokemon.createdAt %></li>
-              <li>Updated: <%= pokemon.updatedAt %></li>
-              <li> <img src="<%= pokemon.pokeImage %>" alt="Image of pokemon"></li>
+            <ul class="list-group">
+              <li class="list-group-item">ID: <%= pokemon.id %></li>
+              <li class="list-group-item">Weight: <%= pokemon.pokeWeight %></li>
+              <li class="list-group-item">Height: <%= pokemon.pokeHeight %></li>
+              <li class="list-group-item">Created: <%= pokemon.createdAt %></li>
+              <li class="list-group-item">Updated: <%= pokemon.updatedAt %></li>
+              <li class="list-group-item"> <img src="<%= pokemon.pokeImage %>" alt="Image of pokemon"></li>
               <!-- <li>Custom Name:
                 <% if (pokemon.customName) { %>
                   <%= pokemon.customName %>
@@ -23,12 +23,12 @@
                 <% } %>
               </li> -->
               <!-- <li>Notes: <%= pokemon.notes %></li> -->
-              <li>
+              <li class="list-group-item">
                 <a href="pokemon/delete/<%= pokemon.id %>" class="delete-item">Remove Pokemon</a>
               </li>
-              <!-- <li>
-                <a href="pokemon/<%= pokemon.id %>" class="update-item">Update Pokemon</a>
-              </li> -->
+              <li class="list-group-item">
+                <a href="pokemon/<%= pokemon.id %>" class="update-item">See Pokemon</a>
+              </li>
             </ul>
         </div>
       <% }); %>
