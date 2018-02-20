@@ -1,16 +1,33 @@
+
 <div class="container">
   <h1 class="text-center">The Original 151 Pokemon</h1>
   <p class="text-center">
     <a href="/pokemon">Favorites</a>
   </p>
 
+  <div class="row search-row">
+    <div class="col-6 col-offset-3 text-center">
+      <form id="search-form">
+        <a class="warning-pop" tabindex="0" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="Incorrect Characters" data-content="Cannot use numbers or special characters">
+          <input id="search-input" class="no-outline" type="text" name="name" placeholder="Pokemon name...">
+        </a>
+        <button class="btn btn-primary search-button" type="submit">Search for a Pokemon</button>
+        <br>
+        <small id="input-help" class="form-text text-muted">
+        Search using letters only
+        </small>
+      </form>
+    </div>
+  </div>
+
   <% pokemon.forEach(function(pokemon) { %>
     <div class="well">
-      <h2><%= pokemon.name %></h2>
+      <h2><a href="/pokemon/<%= pokemon.name %>"><%= pokemon.name %></a></h2>
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
         <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
       </form>
     </div>
   <% }); %>
+
 </div>

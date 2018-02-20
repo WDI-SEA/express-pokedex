@@ -1,0 +1,42 @@
+.search-row {
+  margin: 3%;
+}
+
+.popover-title, .popover-content {
+  color: red;
+}
+
+.wrong-regex {
+  border: 2px solid red;
+  outline: 1px solid red;
+}
+
+.right-regex {
+  border: 2px solid green;
+  outline: 1px solid green;
+}
+
+.no-outline {
+  outline: none;
+}
+
+.sprite {
+  height: 30%;
+  width: 30%;
+  position: relative;
+  left: -7%;
+}
+
+.run:hover {
+  animation: run 5s 1;
+}
+
+@keyframes run {
+  10% {transform: rotate(20deg);}
+  45% {transform: translateX(250%) rotate(10deg);}
+  60% {transform: translateX(250%) rotate(-20deg);}
+  85% {transform: translateX(0%) rotate(-5deg);}
+  90% {transform: rotate(10deg);}
+
+  /* 60% {transform: translateX(500%) rotate(-10deg);} */
+}

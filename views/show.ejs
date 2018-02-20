@@ -1,0 +1,25 @@
+
+<div class="container">
+
+  <h1 class="text-center"><%= pokemon.forms[0].name %></h1>
+  <p class="text-center">
+    <a href="/">Back to pokedex</a>
+  </p>
+  <p class="text-center">
+    <a href="/pokemon">Favorites</a>
+  </p>
+
+    <div class="well">
+      <img class="sprite run" src="<%= pokemon.sprites.front_default %>">
+      <h2><%= pokemon.forms[0].name %></h2>
+      <p><%= pokemon.stats[5].stat.name %>: <%= pokemon.stats[5].base_stat %></p>
+      <p><%= pokemon.stats[0].stat.name %>: <%= pokemon.stats[0].base_stat %></p>
+      <p><%= pokemon.stats[4].stat.name %>: <%= pokemon.stats[4].base_stat %></p>
+      <p><%= pokemon.stats[3].stat.name %>: <%= pokemon.stats[3].base_stat %></p>
+      <form method="POST" action="/pokemon">
+        <input hidden type="text" name="name" value="<%= pokemon.name %>">
+        <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
+      </form>
+    </div>
+
+</div>
