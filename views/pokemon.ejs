@@ -1,0 +1,9 @@
+<h2>Favourite List</h2>
+<ul class="list-group">
+	<% pokemon.forEach(function(item) { %>
+		<li class="list-group-item"><%= item.name %>
+			<a class="delete" href="/pokemon/<%= item.name %>/destroy">Delete</a>
+		</li>
+
+	<% }); %>
+</ul>
