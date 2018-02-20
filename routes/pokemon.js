@@ -3,6 +3,7 @@ var request = require('request');
 var express = require('express');
 var router = express.Router();
 
+
 // GET - return a page with favorited Pokemon
 router.get('/', function(req, res) {
     db.pokemon.findAll().then(function(data){
@@ -19,6 +20,14 @@ router.post('/', function(req, res) {
     });
     //res.send(req.body);
 });
+
+router.delete('/:id', function(req, res){
+  db.pokemon.destroy({
+    where: {id: req.params.id}
+  }).then(function(){
+    res.send();
+  });
+})
 
 router.get("/:id", function(req, res){
   db.pokemon.find({
