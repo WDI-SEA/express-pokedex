@@ -11,7 +11,7 @@ $('.delete-item').on('click', function(e){
     method: 'DELETE',
     url: pokemonUrl
   }).done(function(data){
-    window.location = '/';
+    window.location = 'pokemon';
   });
 });
 

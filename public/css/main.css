@@ -1,3 +1,7 @@
 h1 {
   background-color: lightblue;
 }
+
+.differentStyleSameData {
+  padding: 1em;
+}
