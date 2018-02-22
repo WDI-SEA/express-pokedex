@@ -1,0 +1,19 @@
+<h2><%= pokemon.name %></h2>
+<p> Height: <%= pokemon.height %></p>
+<p> Weight: <%= pokemon.weight %></p>
+
+<h4>Types</h4>
+  <ul>
+    <% pokemon.types.forEach(function(type) { %>
+      <li><%= type.type.name %></li>
+    <% }); %>
+  </ul>
+
+<h4>Abilities</h4>
+  <ul>
+    <% pokemon.abilities.forEach(function(ability) { %>
+      <li><%= ability.ability.name %></li>
+    <% }); %>
+  </ul>
+
+  <img src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %> pic" height='300' width='300'>
