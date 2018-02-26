@@ -1,0 +1,20 @@
+
+  <div class="well">
+    <h2><%= pokemon.name %></h2>
+    <h2>Weight: <%= pokemon.weight %></h2>
+    <h2>Height: <%= pokemon.height %></h2>
+    <h2>Abilities: <%= pokemon.abilities[0].ability.name %></h2>
+    <h2>Order: <%= pokemon.order %></h2>
+    <h2>Species: <%= pokemon.species.name %></h2>
+    <img src="<%= pokemon.sprites.front_default %>">
+
+
+
+
+
+
+
+    <a href="/pokemon/<%= pokemon.name %>">Show Details</a>
+  </div>
+
+</div>
