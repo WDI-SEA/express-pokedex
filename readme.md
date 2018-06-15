@@ -26,8 +26,8 @@ We'll be using an existing application that uses the [PokeAPI](http://pokeapi.co
   * How does the app retrieve a list of Pokemon?
   * How many Pokemon does the API call retrieve? Why that many?
   * What are the routes defined in the application?
-  * Try adding a Pokemon to your favorites.
-    * How is this data being submitted?
+  * Think about adding a Pokemon to your favorites.
+    * How will this data be submitted?
     * What will you have to do to save this data to a database?
     * What will you have to do to display favorite Pokemon?
 
@@ -60,7 +60,7 @@ Our data model needs only one attribute: `name`.
 We can test our DB connectivity by making a `db-test.js` file in our project root:
 
 ```
-// Make sure to require your models
+// Make sure to require your models in the files where they will be used.
 var db = require('./models');
 
 db.pokemon.create({
