@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "nodemon index.js",
     "lint:js": "node_modules/eslint/bin/eslint.js ./ ./**/*.js --fix; exit 0",
     "lint:css": "node_modules/csslint/cli.js public/css/; exit 0"
   },
@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "body-parser": "^1.15.1",
+    "dotenv": "^6.0.0",
     "ejs": "^2.4.2",
     "express": "^4.13.4",
     "express-ejs-layouts": "^2.1.0",

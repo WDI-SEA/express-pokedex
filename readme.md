@@ -40,29 +40,41 @@ We'll be using an existing application that uses the [PokeAPI](http://pokeapi.co
 
 #### Part 1: Setup Database
 
-Your first step will be to create a SQL database for your application. We will be using Sequelize so please refer back to the notes as necessary.
+Your first step will be to create a SQL database for your application. Recall the process:
 
-#### Part 2: Create a Pokemon Table'
+1. Use `npm` to install the required modules for postgres and sequelize:
+  a. `pg@6`, `pg-hstore`, `sequelize`
+2. Make sure your Postgres server is running (check the elephant).
+3. Create your database with the `createdb` command followed by your database name.
+4. Run `sequelize init` to initialize Sequelize.
+5. Update your newly created `config/config.json` file as we did in class.
 
-Create a `pokemon` table with one column `name`.
+#### Part 2: Create your Pokemon Model and Table
 
-Using the `sequelize` CLI, create your `pokemon` table. Then, run the migrations.
+Our data model needs only one attribute: `name`.
 
-Test it out by making a `db-test.js` file:
+1. Use the `sequelize model:create` command to make the `pokemon` model.
+  a. This creates both the model JS and the migration JS files.
+2. Use the `sequelize db:migrate` command to apply the migrations.
+
+We can test our DB connectivity by making a `db-test.js` file in our project root:
 
 ```
+// Make sure to require your models
 var db = require('./models');
 
 db.pokemon.create({
   name: 'Pikachu'
 }).then(function(poke) {
-  console.log('created', poke.name);
+  console.log('Created: ', poke.name);
+});
+
+db.pokemon.findAll().then(function(poke) {
+  console.log('Found: ', poke.name)
 });
 ```
 
 Test by running the file: `node db-test.js`.
-
-Be sure to also test querying against the pokemon table.
 
 #### Part 3: Integrating the database with the app
 
@@ -71,15 +83,21 @@ You'll want to add functionality to the following routes by incorporating the `p
 * `GET /pokemon`
   * View: `views/pokemon/index.ejs`
   * Purpose: Retrieve all favorited Pokemon and display them on the page
+  * What sequelize function will do this for us?
 * `POST /pokemon`
+  * The form for adding is already included on the main index page
   * View: none (redirect to `/pokemon`)
   * Purpose: Creates a new Pokemon and redirects back to `/pokemon`
+  * What is the sequelize function we use here?
 
-#### Part 4: Display more info on each pokemon
+#### Part 4: Display more info on each Pokemon
 
-Add a route `GET /pokemon/:id` that renders a page with information about the pokemon (the pokemon with the corresponding row `id`).
+Add a route `GET /pokemon/:id` that renders a `show` page with information about the Pokemon with the corresponding row `id`.
 
-Check out the result of the pokemon API calls (or see the [doc page](http://pokeapi.co/)) for ideas on what data you could show. Show at least 4 peices of data.
+* You can get detailed information about a Pokemon by passing the Pokemon's name to PokeAPI. You can retrieve images, abilities, stats, and moves through the API.
+* Example: http://pokeapi.co/api/v2/pokemon/bulbasaur/
+
+Check out the result of the pokemon API calls (or see the [doc page](http://pokeapi.co/)) for ideas on what data you could show. Show at least 4 pieces of data (e.g. attacks, habitat, etc.)
 
 #### Part 5: Styling
 
@@ -97,7 +115,7 @@ the query string. The limit allows you to ask the API to return more than it's
 default amount.
 
 Remember, query strings are parameters passed in the URL after a question mark
-and seperated with ampersands. They look like this:
+and separated with ampersands. They look like this:
 
 ```
 http://mapwebsite.com/?lat=40.284&long=110.133&zoom=12
@@ -128,15 +146,9 @@ Specify a limit of just one to see the first item in the list:
 Specify a limit of 151 to see all 151 pokemon!
 <http://pokeapi.co/api/v2/pokemon?limit=151>
 
-
-
 ## Bonuses
 
-* Add the ability to DELETE Pokemon from the favorites list.
-* For each Pokemon on the favorites page, create a show page to display additional information about that Pokemon.
-  * You'll need to create an additional route.
-  * You can get detailed information about a Pokemon by passing the Pokemon's name to PokeAPI. You can retrieve images, abilities, stats, and moves through the API.
-  * Example: http://pokeapi.co/api/v2/pokemon/bulbasaur/
+* Add the ability to DELETE Pokemon from the favorites list.  
 * Rethink the `pokemon` table. Instead of it being a list of favorites, have it be a list of pokemon the user owns. What columns should the table have? `nickname`, `level`, etc... How would this change the app?
 ---
 
