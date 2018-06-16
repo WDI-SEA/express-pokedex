@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-
+var request = require('request');
 var db = require('../models');
 
 // GET /pokemon - return a page with favorited Pokemon
@@ -20,15 +20,18 @@ router.post('/', function(req, res) {
   });
 });
 
-// GET /pokemon/:id - get info about specific pokemon and display
-// router.get('/:id', function(req, res) {
-//   var id = parseInt(req.params.id);
-//     db.pokemon.find({
-//       where: {id: req.params.id}
-//     }).then(function(data) {
-//         res.render('show', {pokemon: data});
-//     });
-// });
+// GET /pokemon/:name - get info about specific pokemon and display
+router.get('/:name', function(req, res) {
+  var name = req.params.name;
+  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + name;
+  console.log(pokemonUrl);
+  // Use request to call the API for specific pokemon
+  request(pokemonUrl, function(error, response, body) {
+    var pokeInfo = JSON.parse(body).forms;
+    console.log("poke Info is: ", pokeInfo[0].name);
+    res.render('pokemon/show', {pokeInfo: pokeInfo});
+  });
+});
 
 // DELETE - /pokemon/:id 
 router.delete("/:id", function(req, res) {
