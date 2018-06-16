@@ -1,5 +1,5 @@
 <% pokemon.forEach( function(pokemon) { %>
     <ul>
-        <li> <%= pokemon.name %> </li>
+        <li> <a href="/pokemon/<%= pokemon.id %>"><%= pokemon.name %></a> </li>
     </ul>
 <% }) %>

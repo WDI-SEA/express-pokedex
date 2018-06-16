@@ -24,6 +24,14 @@ app.get('/', function(req, res) {
 // Imports all routes from the pokemon routes file
 app.use('/pokemon', require('./routes/pokemon'));
 
+// helper function to prettify data returns
+app.locals.titleCase = function(str) {
+  var splitStr = str.split("");
+  // pretty sure there aren't any Mc's, Mac's or De's in the pokemon dataset
+  splitStr[0] = splitStr[0].toUpperCase(); 
+  return splitStr.join("");
+}
+
 var server = app.listen(process.env.PORT || 3000);
 
 module.exports = server;
