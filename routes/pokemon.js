@@ -19,6 +19,8 @@ router.post('/', function(req, res) {
   })
 });
 
+
+// GET /pokemon/:id - show
 router.get('/:id', function(req, res) {
   db.pokemon.find({
     where: {id: req.params.id}
@@ -34,6 +36,7 @@ router.get('/:id', function(req, res) {
   })
 })
 
+// DELETE /pokemon/:id
 router.delete('/:id', function(req, res) {
   db.pokemon.destroy({
     where: {id: req.params.id}
