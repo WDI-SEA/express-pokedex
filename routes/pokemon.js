@@ -32,7 +32,24 @@ router.post('/', function(req, res) {
 				res.redirect('/pokemon');
 			}
 		});
-	})
+	});
 });
+
+router.get("/:id", function(req, res) {
+	var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + req.params.id;
+	request(pokemonUrl, function(error, response, body) {
+		db.pokemon.find({
+			where: {id: req.params.id}
+		}).then(function(data) {
+			if (data === null) {
+				res.render("pokemon/404");
+			} else {
+				res.render("pokemon/show", {pokemon: data});
+			};
+		});
+	});
+});
+
+
 
 module.exports = router;
