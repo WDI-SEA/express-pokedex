@@ -1,0 +1,33 @@
+body {
+  font-family: 'VT323', sans-serif;
+  background-color: #c3cfa1;
+  color: #11614e;
+}
+
+button {
+  background-color: #6e755a;
+  color: #c3cfa1;
+}
+
+.a {
+  color: #6e755a;
+}
+
+.well {
+  background: rgba(#1213b9, 0.65);
+}
+
+.whosthat {
+  background-image: url("/img/whosthat.jpg");
+  background-repeat: no-repeat;
+}
+
+.pokemon {
+  filter: brightness(0%) contrast(200%);
+  -webkit-filter: brightness(0%) contrast(200%);
+}
+
+.tint {
+  -webkit-filter: sepia(1) hue-rotate(46deg);
+  filter: sepia(1) hue-rotate(46deg);
+}
