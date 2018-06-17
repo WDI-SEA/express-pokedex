@@ -1,1 +1,6 @@
 <h1>You have landed on the favorites page!</h1>
+
+<% pokemon.forEach(function(pokemon) { %>
+<h2><%= pokemon.name %></h2>
+<img src="<%= pokemon.sprite %>">
+<% }); %>

@@ -19,7 +19,7 @@ router.post('/', function(req, res) {
 		var sprite = JSON.parse(body).sprites.front_default;
 		db.pokemon.create({
 			name: req.body.name,
-			sprite: req.body.sprite
+			sprite: sprite
 		}).then(function(data) {
 			res.redirect("/pokemon");
 		});
