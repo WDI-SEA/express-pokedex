@@ -1,5 +1,6 @@
 var express = require('express');
 var request = require('request');
+var moment = require('moment');
 var router = express.Router();
 var db = require('../models');
 
@@ -25,12 +26,12 @@ router.get('/:id', function(req, res) {
     where: {id: req.params.id}
   }).then( function(pokemon) {
     // look into moment.js
-    var caughtAt = pokemon.createdAt;
+    var caughtOn = moment(pokemon.createdAt).fromNow();
     var url = pokeapiRequestUrlFor(pokemon.name)
     request(pokeapiRequestUrlFor(pokemon.name), function(err, resp, body) {
       var pokemon = JSON.parse(body);
       // res.send(pokemon)
-      res.render('pokemon/show', {pokemon, caughtAt, id: req.params.id});
+      res.render('pokemon/show', {pokemon, caughtOn, id: req.params.id});
     })
   })
 })
