@@ -1,27 +1,47 @@
 body {
 	font-family: sans-serif;
-	background-image: url("/img/pokeball-bg.jpg");
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-position: cover;
-	height: 110%;
-	width: 110%;
+	background-color: #f0f0f0;
+}
+
+nav {
+	background-color: #ee1515;
+}
+
+nav ul a {
+	font-size: 2em;
+}
+
+#search {
+	margin: 0;
+	padding: 0;
+	font-size: 2em;
+	margin-top: 0.3em;
+	padding-left: 20px;
+	border: 0;
+	outline-style:none;
+	box-shadow:none;
+	border-color:transparent;
+	background-color: white;
+
+}
+
+#search:hover {
+	border: 0;
+}
+
+::placeholder {
+	color: gray;
 }
 
 .card-action {
 	background-color: white;
-	border: 1px solid black;
 	text-align: center;
 }
 
 .card .card-content {
 	text-align: center;
 	background-color: white;
-	border: 1px solid black;
-}
-
-.card .card-action {
-	border-radius: 10%;
+	border-bottom: 0.1em solid black;
 }
 
 .btn {
@@ -34,4 +54,16 @@ body {
 
 .btn:focus {
 	background-color: #c12126;
+}
+
+a {
+	color: black;
+}
+
+.caps {
+	text-transform: capitalize;;
+}
+
+.logo {
+	height: 4em;
 }

@@ -8,6 +8,20 @@
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
+    <nav>
+      <div class="nav-wrapper">
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><img src="img/pokeLogo.png" class="logo"></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/pokemon">Favorite Pokemon</a></li>
+          <li>
+            <form >
+              <input id="search" type="search" placeholder="Find Pokemon..." required>
+            </form>
+          </li>
+        </ul>
+      </div>
+  </nav>
     <%- body %>
     <script src="//code.jquery.com/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
