@@ -13,10 +13,12 @@ app.use(ejsLayouts);
 // GET / - main index of site
 app.get('/', function(req, res) {
   var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
-  // Use request to call the API
   request(pokemonUrl, function(error, response, body) {
     var pokemon = JSON.parse(body).results;
-    res.render('index', { pokemon: pokemon });
+    res.render('main', {
+        pokemon: pokemon
+      }
+    );
   });
 });
 
