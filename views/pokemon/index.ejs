@@ -1,12 +1,21 @@
 <div class="container">
-  <h1 class="text-center">Your Favorite Pokemon!</h1>
-
+  <h1>Your Favorite Pokemon!</h1>
+  <div class="row">
   <% pokemon.forEach(function(pokemon) { %>
-    <div class="well">
-      <h2><%= pokemon.name %></h2>
-        <a href="/pokemon/<%= pokemon.id %>" class="delete btn btn-primary">Remove from Favorites</a>
-      </form>
-      <a class="btn btn-secondary" href="/pokemon/<%= pokemon.name %>">More Info</a>
+    <div class="col s12 m3">
+      <div class="card medium">
+        <div class="card-image">
+          <img class="responsive-img" src="img/<%= pokemon.name%>.png">
+        </div>
+        <div class="card-content">
+          <p><%= pokemon.name %></p>
+        </div>
+        <div class="card-action">
+        	<a href="/pokemon/<%= pokemon.name %>">Info</a>
+          <a class='btn red' href="/pokemon/<%= pokemon.id %>" class="delete">Remove</a>
+        </div>
+      </div>
     </div>
   <% }); %>
+  </div>
 </div>

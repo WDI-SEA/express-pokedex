@@ -1,21 +1,21 @@
 <div class="container">
-  <h1>The Original 151 Pokemon</h1>
+  <h1>The Original 150 Pokemon</h1>
   <div class="row">
   <% pokemon.forEach(function(pokemon) { %>
-    <div class="col s12 m4">
+    <div class="col s12 m3">
       <div class="card small">
-        <!-- <div class="card-image"> -->
-          <span class="card-title"><%= pokemon.name %></span>
-        <!-- </div> -->
+        <div class="card-image">
+          <img class="responsive-img" src="img/<%= pokemon.name%>.png">
+        </div>
         <div class="card-content">
-          <p>I am a very simple card.</p>
+          <p><%= pokemon.name %></p>
         </div>
         <div class="card-action">
           <form method="POST" action="/pokemon">
-        <input hidden type="text" name="name" value="<%= pokemon.name %>">
-        <button class="btn btn-primary" type="submit">Add to Faves</button>
-      </form>
-      <a class="btn btn-secondary" href="/pokemon/<%= pokemon.name %>">More Info</a>
+            <input hidden type="text" name="name" value="<%= pokemon.name %>">
+            <a href="/pokemon/<%= pokemon.name %>">More Info</a>
+            <button class="btn blue" type="submit">Add</button>
+          </form>
         </div>
       </div>
     </div>
