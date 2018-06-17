@@ -11,22 +11,36 @@
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
-    <header>
+    
+  <header>
       <div class="jumbotron">
-      <div class="stripe"></div>
-      <a href="/">
-      <div>
-      <h1 class="text-center">PokeDex Express</h1>
-      </div>
-      </a>
-      <div class="stripe"></div>
+        <div class="stripe"></div>
+        <a href="/">
+          <div>
+            <h1 class="text-center">PokeDex Express</h1>
+          </div>
+        </a>
+        <div class="stripe"></div>
       </div>
     </header>
+
     <main class="container">
       <%- body %>
     </main>
+    
     <footer>
-
+      <div class="row">
+        <div class="col-sm-12">
+          <nav class="navbar navbar-inverse navbar-fixed-bottom">
+            <div class="container-fluid">
+              <ul class="nav navbar-nav">
+                <li><a href="/">Original 151</a></li>
+                <li><a href="/pokemon">Your Collection</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
     </footer>
     <!-- jQuery -->
     <script src="//code.jquery.com/jquery.js"></script>

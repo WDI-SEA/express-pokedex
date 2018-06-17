@@ -2,12 +2,6 @@ body {
     background: #000;
 }
 
-header a, header a:hover {
-    font-family: 'Fascinate', cursive;
-    color: white;
-    text-decoration: none;
-}
-
 h1,h2,h3,h4,h5 {
     font-family: 'Fascinate', cursive;
 }
@@ -16,16 +10,29 @@ p,li {
     font-family: 'Cutive Mono', monospace;
 }
 
+header a, header a:hover {
+    font-family: 'Fascinate', cursive;
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    margin-bottom: 1em;
+}
+
+footer {
+margin-top: 4em;
+}
+
 .jumbotron {
     background-color: #D92231;
     margin: 0;
     color: #FFF;
 }
 
-.container {
-    /* background: #ececec; */
-    background: #FEC930;
 
+.container {
+    background: #FEC930;
 }
 
 .ball {
@@ -69,15 +76,11 @@ p,li {
     height: 9em;
 }
 
-.card-body .stats {
+.card {
     background: #ececec;
     padding: 1em;
     border-radius: 1em;
     margin: 0.5em;
-}
-
-.spacer {
-
 }
 
 .rotate {
