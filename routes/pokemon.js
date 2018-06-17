@@ -33,7 +33,7 @@ router.post('/', function(req, res) {
     where: {name: req.body.name}
   }).then(function(data) {
     console.log(data);
-    res.redirect('/pokemon');
+    // res.redirect('/pokemon');
   });
 });
 
