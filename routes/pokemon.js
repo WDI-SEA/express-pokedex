@@ -17,11 +17,20 @@ router.post('/', function(req, res) {
 	var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + req.body.name;
 	request(pokemonUrl, function(error, response, body) {
 		var sprite = JSON.parse(body).sprites.front_default;
-		db.pokemon.create({
-			name: req.body.name,
-			sprite: sprite
+		db.pokemon.find({
+			where: {name: req.body.name}
 		}).then(function(data) {
-			res.redirect("/pokemon");
+			console.log(data);
+			if (data === null) {
+				db.pokemon.create({
+					name: req.body.name,
+					sprite: sprite
+				}).then(function(data) {
+					res.redirect("/pokemon");
+				});
+			} else {
+				res.redirect('/pokemon');
+			}
 		});
 	})
 });
