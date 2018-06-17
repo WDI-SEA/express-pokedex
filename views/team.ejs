@@ -1,0 +1,18 @@
+<div class="container">
+<h1 class="text-center">My Pokemon Team</h1>
+<p class="text-center">
+  <a href="/">Catch More!</a>
+</p>
+<% pokemon.forEach(function(pokemon) { %>
+  <div class="well">
+    <h1><%= pokemon.name %></h1>
+		<div class="btn btn-primary delete" href="/pokemon/<%=pokemon.name%>">Release</div>
+        <div class="btn btn-warning"><a href="/pokemon/<%=pokemon.name%>">More Info</a></div>
+  </div>
+<% }); %>
+</div>
+
+
+
+
+
