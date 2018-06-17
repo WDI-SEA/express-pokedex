@@ -1,8 +1,22 @@
 
 <div class="container">
-  <p class="text-center">
+  <div class="header">
+    <h3>Catch a Wild Pokemon!</h3>
+    <a id="instructions" class="waves-effect waves-light btn modal-trigger" href="#modal1">Instructions</a>
+  </div>
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Welcome to the World of Pokemon!</h4>
+      <img id="oak" src="/img/oak.png">
+      <p>Lo-fi tumblr taxidermy tote bag pour-over. Photo booth cloud bread vaporware YOLO pickled selvage pitchfork polaroid you probably haven't heard of them viral affogato twee pour-over cardigan. Distillery beard pug poke affogato. Live-edge craft beer cray tilde, pok pok schlitz venmo. </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Okay!</a>
+    </div>
+  </div>
+          <img id="pokeball" class="bounce-in-top" src="/img/pokeball.png">
   <% pokemon.forEach(function(pokemon) { %>
-      <h2><%= pokemon.name %></h2>
+      <h4><%= pokemon.name %></h4>
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
         <button class="btn btn-primary" onclick="catchPokemon()" type="submit">Throw Pokeball!</button>
