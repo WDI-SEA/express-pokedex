@@ -19,7 +19,6 @@ router.post('/', function(req, res) {
   })
 });
 
-
 // GET /pokemon/:id - show
 router.get('/:id', function(req, res) {
   db.pokemon.find({

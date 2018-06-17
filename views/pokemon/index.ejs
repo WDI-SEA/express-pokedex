@@ -1,5 +1,19 @@
-<% pokemon.forEach( function(pokemon) { %>
-    <ul>
-        <li> <a href="/pokemon/<%= pokemon.id %>"><%= pokemon.name %></a> </li>
-    </ul>
-<% }) %>
+<div class="row">
+    <div class="col-sm-12">
+        <h1>Pokemon that ye have caught:</h1>
+    </div>
+</div>
+<div class="row text-center">    
+    
+    <% pokemon.forEach( function(pokemon) { %>
+        <a href="/pokemon/<%= pokemon.id %>">
+            <div class="ball">
+                <div class="top"></div>
+                <div class="stripe">
+                    <h3 ><%= titleCase(pokemon.name) %></h3>
+                </div>
+                <div class="bottom"></div>
+            </div>
+        </a>
+    <% }) %>
+</div>
