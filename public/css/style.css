@@ -1,0 +1,37 @@
+body {
+	font-family: sans-serif;
+	background-image: url("/img/pokeball-bg.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: cover;
+	height: 110%;
+	width: 110%;
+}
+
+.card-action {
+	background-color: white;
+	border: 1px solid black;
+	text-align: center;
+}
+
+.card .card-content {
+	text-align: center;
+	background-color: white;
+	border: 1px solid black;
+}
+
+.card .card-action {
+	border-radius: 10%;
+}
+
+.btn {
+	background-color: #c12126;
+}
+
+.btn:hover {
+	background-color: #c12126;
+}
+
+.btn:focus {
+	background-color: #c12126;
+}
