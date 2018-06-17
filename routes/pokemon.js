@@ -35,24 +35,25 @@ router.post('/', function(req, res) {
 	});
 });
 
-router.get("/:id", function(req, res) {
-	var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + req.params.id;
+router.get("/:name", function(req, res) {
+	var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + req.params.name;
 	request(pokemonUrl, function(error, response, body) {
+		pokemonData = JSON.parse(body);
 		db.pokemon.find({
-			where: {id: req.params.id}
+			where: {name: req.params.name}
 		}).then(function(data) {
 			if (data === null) {
 				res.render("pokemon/404");
 			} else {
-				res.render("pokemon/show", {pokemon: data});
+				res.render('pokemon/show', {pokemon: pokemonData });
 			};
 		});
 	});
 });
 
-router.delete("/:id", function(req, res) {
+router.delete("/:name", function(req, res) {
 	db.pokemon.destroy({
-		where: {id: req.params.id}
+		where: {name: req.params.name}
 	}).then(function(data) {
 		res.sendStatus(200);
 	});

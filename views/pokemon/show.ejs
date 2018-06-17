@@ -1,1 +1,8 @@
 <h1>You are on a specific page!</h1>
+
+<h4>Move Pool: </h4>
+<ul>
+	<% pokemon.moves.forEach(function(pokemon) { %>
+ 		<li><%= pokemon.move.name %></li>
+	<% }) %>
+</ul>

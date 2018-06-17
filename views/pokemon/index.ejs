@@ -1,7 +1,8 @@
 <h1>You have landed on the favorites page!</h1>
 
 <% pokemon.forEach(function(pokemon) { %>
-<h2><%= pokemon.name %></h2>
-<img src="<%= pokemon.sprite %>">
-<a href="/pokemon/<%= pokemon.id %>" class="delete btn btn-primary">Remove Pokemon </a>
+<h2><a href="./pokemon/<%= pokemon.name %>"><%= pokemon.name %></a></h2>
+<a href="./pokemon/<%= pokemon.name %>"><img src="<%= pokemon.sprite %>"></a>
+<a href="/pokemon/<%= pokemon.name %>" class="btn btn-primary">More Details</a>
+<a href="/pokemon/<%= pokemon.name %>" class="delete btn btn-primary">Remove Pokemon </a>
 <% }); %>
