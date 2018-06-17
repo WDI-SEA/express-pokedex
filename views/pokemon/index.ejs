@@ -3,4 +3,5 @@
 <% pokemon.forEach(function(pokemon) { %>
 <h2><%= pokemon.name %></h2>
 <img src="<%= pokemon.sprite %>">
+<a href="/pokemon/<%= pokemon.id %>" class="delete btn btn-primary">Remove Pokemon </a>
 <% }); %>

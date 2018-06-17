@@ -50,6 +50,12 @@ router.get("/:id", function(req, res) {
 	});
 });
 
-
+router.delete("/:id", function(req, res) {
+	db.pokemon.destroy({
+		where: {id: req.params.id}
+	}).then(function(data) {
+		res.sendStatus(200);
+	});
+})
 
 module.exports = router;
