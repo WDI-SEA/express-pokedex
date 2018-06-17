@@ -1,16 +1,29 @@
 var express = require('express');
+var request = require('request');
+var db = require('../models');
 var router = express.Router();
 
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', function(req, res) {
   // TODO: Get all records from the DB and render to view
-  res.send('Render a page of favorites here');
+  db.pokemon.findAll().then(function(data) {
+  	res.render("pokemon/index", {pokemon: data});
+  });
 });
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
-  // TODO: Get form data and add a new record to DB
-  res.send(req.body);
+	// TODO: Get form data and add a new record to DB
+	var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + req.body.name;
+	request(pokemonUrl, function(error, response, body) {
+		var sprite = JSON.parse(body).sprites.front_default;
+		db.pokemon.create({
+			name: req.body.name,
+			sprite: req.body.sprite
+		}).then(function(data) {
+			res.redirect("/pokemon");
+		});
+	})
 });
 
 module.exports = router;
