@@ -1,0 +1,10 @@
+<h1>My Favorite Pokémon</h1>
+
+<% pokemon.forEach(function(pokemon) { %>
+  <div class="well">
+    <img class='tint' src="<%= pokemon.img %>" height:"60px">
+    <a href="/pokemon/<%= pokemon.id %>"><h2><%= pokemon.name %></h2></a><a href="/pokemon/<%= pokemon.id %>" class="delete"> delete from faves</a>
+  </div>
+<% }); %>
+
+<h3><a href="/">home</a></h3>
