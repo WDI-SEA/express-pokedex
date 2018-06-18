@@ -32,10 +32,9 @@ router.post('/', function(req, res) {
   db.pokemon.findOrCreate({
     where: {name: req.body.name}
   }).then(function(data) {
-    console.log(data);
-    // res.redirect('/pokemon');
   });
 });
+
 
 // DELETE - "release" the Pokemon from your team
 router.delete('/:name', function(req, res) {

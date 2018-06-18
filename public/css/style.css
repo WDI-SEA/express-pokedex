@@ -1,5 +1,10 @@
 .container {
 	padding-top: 4em;
+	background-image: url(/img/background.png);
+	background-repeat: no-repeat;
+	width: 100%;
+	background-attachment: fixed;
+	background-size: cover;
 }
 
 .header {
@@ -38,8 +43,10 @@ h3 {
 
 #pokeball {
     visibility: hidden;
-    min-width: 10%;
-    float: right;
+    position: sticky;
+    top: 8em; left: 4em;
+	min-width: 10%
+	float: right;
 }
 
 #pokeball.show {
@@ -166,13 +173,14 @@ h3 {
     min-width: 50%;
     background-color: red;
     color: white;
+    font-size: 1em;
     text-align: center;
     border-radius: 4px;
-    padding: 2em;
+    padding: 1.5em;
     position: fixed;
     z-index: 50;
-    left: 50%;
-    bottom: 3em;
+    left: 30%;
+    bottom: 1.5em;
     font-size: 1.5em;
 }
 
