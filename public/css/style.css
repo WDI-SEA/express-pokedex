@@ -84,18 +84,18 @@ margin-top: 4em;
 }
 
 .rotate {
-  animation: 3s linear infinite rotate;
-  position: relative;
-  top: 0;
-  transform-origin: 100% 100%;
-  border-bottom: 1px solid black;
+    animation: 3s linear infinite rotate;
+    position: relative;
+    top: 0;
+    transform-origin: 100% 100%;
+    border-bottom: 1px solid black;
 }
 
 @keyframes rotate {
-  from {
-    transform: rotate(0deg)
-  }
-  to {
-    transform: rotate(90deg)
-  }
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(90deg)
+    }
 }

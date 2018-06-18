@@ -10,7 +10,6 @@ $(document).ready( function() {
             method: 'DELETE',
             url: url
         }).done( function(data) {
-            console.log('pokemans dleeeeeeted');
             window.location = '/pokemon';
         })
     })
