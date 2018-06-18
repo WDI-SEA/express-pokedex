@@ -7,7 +7,7 @@
       url: url
     }).done(function(data) {
       console.log(data);
-      window.location = '/pokemon';
+      window.location = '/index';
     });
   });
 });
