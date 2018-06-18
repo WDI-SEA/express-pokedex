@@ -1,6 +1,8 @@
 var express = require('express');
 var db = require('../models');
 var router = express.Router();
+var request = require('request');
+
 
 router.get('/', function(req, res) {
   db.pokemon.findAll().then(function(data) {
@@ -18,31 +20,21 @@ router.post('/', function(req, res) {
    });
 });
 
-
-
-
-
-router.get('/pokemon/:index', function(req, res) {
-  var index = parseInt(req.params.index);
-  db.pokemon.find({
-//add addtional params here for additional items to display.
-    where: {id: req.params.index}
-    }).then(function(data) {
-      console.log(data);
-      if(data != null){
-        res.render('pokemon/show', {pokemon: data});
-      } else {
-        res.render('pokemon/404');
-      }
+//GET /pokemon - display pokemon by itself
+router.get('/:name', function(req, res) {
+  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + req.params.name;
+  request(pokemonUrl, function(error, response, body) {
+    var pokemon = JSON.parse(body);
+    res.render('pokemon/show', {pokemon: pokemon});
+    //res.send(pokemon)
     });
 });
 
-//TODO fix delete bug, causing everything on page to disappear.
-router.delete('/pokemon/:index', function(req,res) {
+//DELETE /p
+router.delete('/:id', function(req,res) {
   db.pokemon.destroy({
-    where: {id: req.params.index}
+    where: {id: req.params.id}
   }).then(function(data) {
-    console.log(data);
     res.sendStatus(200);
   });
 });

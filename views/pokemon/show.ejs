@@ -1,0 +1,14 @@
+<div class="container">
+
+<h1>This is a show page!</h1>
+<% pokemon.forEach(function(pokemon) { %>
+
+    <div class="well">
+      <a href="/pokemon/<%= pokemon.name %>"><h2><%= pokemon.name %></h2></a>
+
+      <p><%= pokemon.weight %></p>
+      <p><%= pokemon.abilities %></p>
+
+    </div>
+    <% }); %>
+</div>
