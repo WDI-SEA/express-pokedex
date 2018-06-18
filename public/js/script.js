@@ -1,6 +1,15 @@
 $(document).ready(function(){
     console.log("hello");
-    $('.pokemon').on('submit', function() {
-        console.log("submit function");
+    $('.delete').on('click', function(e) {
+        console.log("delete button clicked");
+        e.preventDefault();
+        var url = $(this).attr('href');
+        $.ajax({
+            method: 'DELETE',
+            url: url
+        }).done(function(data) {
+            console.log(data);
+            window.location = '/pokemon';
+        })
     })
 });
