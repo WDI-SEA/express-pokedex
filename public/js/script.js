@@ -1,6 +1,5 @@
-console.log("Connected to script-js");
-
 $(document).ready(function() {
+	// On click, deletes a pokemon and redirects to the favorites page
 	$(".delete").on("click", function(e) {
 		e.preventDefault();
 		var url = $(this).attr("href");
@@ -8,7 +7,6 @@ $(document).ready(function() {
 			method: "DELETE",
 			url: url
 		}).done(function(data) {
-			console.log("Pokemon Removed");
 			window.location = "/pokemon";
 		});
 	});

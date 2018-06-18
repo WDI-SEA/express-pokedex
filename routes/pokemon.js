@@ -34,6 +34,7 @@ router.post('/', function(req, res) {
 	});
 });
 
+// GET /pokemon/:id - receive the name of a pokemon and if in the database, returns a show page of their information
 router.get("/:name", function(req, res) {
 	var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + req.params.name;
 	request(pokemonUrl, function(error, response, body) {
@@ -50,10 +51,7 @@ router.get("/:name", function(req, res) {
 	});
 });
 
-router.post("/:name", function(req, res) {
-
-})
-
+// DELETE /pokemon/:id - receive the name of a pokemon and remove it from the database
 router.delete("/:name", function(req, res) {
 	db.pokemon.destroy({
 		where: {name: req.params.name}
