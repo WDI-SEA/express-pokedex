@@ -1,0 +1,45 @@
+<% var name = pokemon.name.split(''); %>
+<% name[0] = name[0].toUpperCase() %>
+<% name = name.join(''); %>
+<div class="show-flex">
+	<div class="pokemon-show-container">
+
+		<div class="flex-left">
+			<h1><%= name %></h1>
+
+			<div class="sprite-container">
+				<img src="<%= pokemon.sprites.front_default %>" />
+			</div>
+		</div>
+
+		<div class="flex-right">
+			<h3 class="weight">Weight: <%= (pokemon.weight / 10) %> kg</h3>
+			<h3 class="height">Height: <%= (pokemon.height / 10)%> m</h3>
+			<hr />
+			<h3>Abilities</h3>
+			<ul class="abilities">
+				<% pokemon.abilities.forEach(function(ability) { %>
+					<li><%= ability.ability.name %></li>
+				<% }); %>
+			</ul>
+			<hr />
+			<h3>Stats</h3>
+			<table>
+				<tr>
+					<th>Name</th>
+					<th>Effort</th>
+					<th>Base Stat</th>
+				</tr>
+				<% pokemon.stats.forEach(function(stat) {%>
+					<tr>
+						<td><%= stat.stat.name %></td>
+						<td><%= stat.effort %></td>
+						<td><%= stat.base_stat %></td>
+					</tr>
+				<% }); %>
+			</table>
+		</div>
+
+	</div>
+</div>
+

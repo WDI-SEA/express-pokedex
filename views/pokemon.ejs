@@ -1,0 +1,17 @@
+
+<div class="container">
+	<h1>Favorites</h1>
+	<div id="sortable">
+		<% pokemons.forEach(function(pokemon) { %>
+			<% var name = pokemon.name.split(''); %>
+			<% name[0] = name[0].toUpperCase() %>
+			<% name = name.join(''); %>
+			<div class="well ui-state-default fave">
+				<h2><%= name %></h2>
+				<a href="/pokemon/<%= pokemon.name %>"><button class="btn btn-warning more-btn">SEE INFO</button></a>
+				<button class="btn btn-danger remove-btn" href="/pokemon/<%= pokemon.id %>">REMOVE</button>
+			</div>
+	  	<% }); %>
+	</div>
+
+</div>

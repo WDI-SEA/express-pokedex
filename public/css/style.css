@@ -1,0 +1,139 @@
+body, html{
+	position: relative;
+	height: 100%;
+	background-color: #000;
+	z-index: -2000;
+	margin: 0;
+	padding: 0;
+}
+
+h1, h3, ul, a, p, table {
+	color: #ebedfb;
+}
+
+a:hover {
+	color: #feca30;
+}
+
+.well {
+	background-color: rgba(245,245,245,0.9);
+}
+
+.logo {
+	text-align: center;
+}
+
+.logo img{
+	width: 300px;
+}
+
+.bg-div {
+	height: 100%;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background-color: black;
+	z-index: -1000;
+	opacity: 0.7;
+}
+
+.bg-top {
+	height: 50%;
+	background-color: #c8201b;	
+	border-bottom: 10px solid #000100;
+}
+
+.bg-bottom {
+	height: 50%;
+	background-color: #ebedfb;	
+	border-top: 10px solid #000100;
+}
+
+.bg-circle {
+	width: 200px;
+	height: 200px;
+	border: 20px solid #000100;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 100%;
+	background-color: #fff;
+}
+
+.pages {
+	text-align: center;
+	padding: 20px 0;
+	margin: 30px 0;
+	border-top: 5px solid #feca30;
+	border-bottom: 5px solid #feca30;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.container-fluid {
+	padding: 0;
+}
+
+.pages a {
+	font-size: 1.5em;
+	margin: 0 15px;
+}
+
+.show-flex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100%;
+	padding: 30px 0 100px 0;
+}
+
+.pokemon-show-container {
+	padding: 50px 0;
+	display: flex;
+	width: 85%;
+	border: 5px solid #feca30;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.fave {
+	cursor: pointer;
+}
+
+.flex-left {
+	flex: 0.5;
+	border-right: 1px solid #ebedfb;
+	padding: 20px;
+	text-align: center;
+}
+
+.flex-right {
+	flex: 1;
+	padding: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    background-color: rgba(55,55,55,0.7);
+}
+
+table, th, td {
+    border: 1px solid #ebedfb;
+}
+
+th {
+	height: 50px;
+	width: 20%;
+	text-align: center;
+}
+
+td {
+	padding: 10px 30px;
+}
+
+
+
+
+
+
+
+
