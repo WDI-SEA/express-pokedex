@@ -34,10 +34,37 @@ nav ul a {
 	height: 13em;
 }
 
-/*.detailTable {
+.detail-table {
 	text-align: left;
-	margin:;
-}*/
+	background-color: white;
+	width: 50%;
+	margin: 0 auto;
+	border-radius: 2em;
+	border-top-right-radius: 4em;
+	border-top-left-radius: 4em;
+}
+
+.detail-table h3 {
+	background-color: #ee1515;
+	text-align: center;
+	color: white;
+	margin: 0;
+	padding: 0.1em;
+}
+
+.detail-table p {
+	padding-left: 1em;
+	font-weight: bold;
+}
+
+.table-top {
+	border-top-right-radius: 15em;
+	border-top-left-radius: 15em;
+}
+
+.movePool ul {
+	columns: 5;
+}
 
 .indexCard {
 	background-color: white;

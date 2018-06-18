@@ -20,7 +20,6 @@ router.post('/', function(req, res) {
 		db.pokemon.find({
 			where: {name: req.body.name}
 		}).then(function(data) {
-			console.log(data);
 			if (data === null) {
 				db.pokemon.create({
 					name: req.body.name,
@@ -52,7 +51,7 @@ router.get("/:name", function(req, res) {
 });
 
 router.post("/:name", function(req, res) {
-	
+
 })
 
 router.delete("/:name", function(req, res) {
