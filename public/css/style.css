@@ -1,8 +1,15 @@
-
 nav .brand-logo {
     margin-left: 1%;
 }
 
+nav {
+    margin: 0;
+}
+
 h1 {
     text-decoration: underline; 
+}
+
+i {
+    font-size: 4rem !important;
 }

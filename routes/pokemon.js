@@ -6,8 +6,7 @@ var db = require('../models');
 router.get('/', function(req, res) {
   // TODO: Get all records from the DB and render to view
   db.pokemon.findAll().then(function(data) {
-    // var pokemon = JSON.parse(body).results;
-    res.render('favorites/index');
+    res.render('favorites/index', {pokemon: data});
     console.log(data);
   });
 });
@@ -25,10 +24,14 @@ router.get('/:id', function(req, res) {
   db.pokemon.find({
     where: {id: pokeId}
   }).then(function(data) {
-    res.render('favorites/show');
+    if (data != null) {
+      res.render('favorites/show', {pokemon: data});
+    } else {
+      res.render('404');
+    }
     console.log(data);
-  })
-})
+  });
+});
 
 
 
