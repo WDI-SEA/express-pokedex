@@ -9,7 +9,7 @@ $('.delete').on("click", function(e) {
      url: pokeUrl
    }).done(function(data) {
    	releasePokemon();
-   	window.setTimeout(function(){location.reload()},3000)
+   	window.setTimeout(function(){location.reload()},2000)
    });
  });
 

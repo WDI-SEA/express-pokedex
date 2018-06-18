@@ -1,5 +1,6 @@
 <div class="container">
-    <h1><%= pokemon.name %> </h1>
+    <div class="pokemon-bio">
+      <h1><%= pokemon.name %> </h1>
     <img class='sprite' src="<%= pokemon.sprites.front_default %>">
       <h5>Type: </h5>
       <ul>
@@ -21,4 +22,5 @@
           <li><%= pokemon.move.name %></li>
         <% }) %>
       </ul>
+    </div>
 </div>

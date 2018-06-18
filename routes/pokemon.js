@@ -32,9 +32,9 @@ router.post('/', function(req, res) {
   db.pokemon.findOrCreate({
     where: {name: req.body.name}
   }).then(function(data) {
+  	// TODO: Fix the redirect after catch, probably using res.render. 
   });
 });
-
 
 // DELETE - "release" the Pokemon from your team
 router.delete('/:name', function(req, res) {
