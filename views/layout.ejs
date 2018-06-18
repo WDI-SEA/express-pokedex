@@ -7,13 +7,35 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
   </head>
+
+  <header>
+    <div class="logo">
+      <img src="https://vignette.wikia.nocookie.net/logopedia/images/2/2b/Pokemon_2D_logo.svg/revision/latest?cb=20170115063554" />
+    </div>
+    <p class="text-center">
+      <a href="/">Home</a> &nbsp;
+      <a href="/pokemon">Favorites</a>
+    </p>
+  </header>
+
   <body>
+    <div class="bg-div">
+      <div class="bg-top"></div>
+      <div class="bg-bottom"></div>
+      <div class="bg-circle"></div>
+    </div>
     <%- body %>
 
     <!-- jQuery -->
     <script src="//code.jquery.com/jquery.js"></script>
+    <script
+      src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+      integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+      crossorigin="anonymous"></script>
     <!-- Bootstrap JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="../js/main.js"></script>
   </body>
 </html>

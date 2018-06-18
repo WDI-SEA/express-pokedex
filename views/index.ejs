@@ -1,16 +1,42 @@
 <div class="container">
   <h1 class="text-center">The Original 151 Pokemon</h1>
-  <p class="text-center">
-    <a href="/pokemon">Favorites</a>
-  </p>
+</div>
 
+<div class="container-fluid">
+  <div class="pages">
+    <p>Pages</p>
+    <a href="/">1</a>
+    <a href="/index2">2</a>
+    <a href="/index3">3</a>
+    <a href="/index4">4</a>
+    <a href="/index5">5</a>
+    <a href="/index6">6</a>
+  </div>
+</div>
+
+<div class="container">
   <% pokemon.forEach(function(pokemon) { %>
+    <% var name = pokemon.name.split(''); %>
+    <% name[0] = name[0].toUpperCase() %>
+    <% name = name.join(''); %>
     <div class="well">
-      <h2><%= pokemon.name %></h2>
-      <form method="POST" action="/pokemon">
+      <h2><%= name %></h2>
+      <form class="select-fav-form" method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
-        <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
+        <button class="btn btn-primary fave-btn" type="submit">Add to Favorite Pokemon</button>
       </form>
     </div>
   <% }); %>
+</div>
+
+<div class="container-fluid">
+  <div class="pages">
+    <p>Pages</p>
+    <a href="/">1</a>
+    <a href="/index2">2</a>
+    <a href="/index3">3</a>
+    <a href="/index4">4</a>
+    <a href="/index5">5</a>
+    <a href="/index6">6</a>
+  </div>
 </div>
