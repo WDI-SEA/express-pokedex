@@ -1,0 +1,10 @@
+
+<a href="/">Home</a>
+<a href="/pokemon">Pokemon</a>
+<p> Name: <%= favoritePokemon.name %> </p>
+<p> First ability: <%= favoritePokemon.abilities[0].ability.name %> </p>
+
+
+<% favoritePokemon.abilities.forEach(function(ability) { %>
+  <p> <%= ability.ability.name %> </p>
+<% }); %>

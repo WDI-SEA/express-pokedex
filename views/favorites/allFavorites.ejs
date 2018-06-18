@@ -2,6 +2,6 @@
 <a href="/">Home</a>
 
 <% pokemon.forEach(function(pokemon) { %>
-  <p> <%= pokemon.name %> </p>
+  <a href="/pokemon/<%= pokemon.id %>"> <%= pokemon.name %> </a>
   <a class="btn btn-primary delete" href="/pokemon/<%= pokemon.id %>">DELETE</a>
 <% }); %>

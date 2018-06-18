@@ -1,6 +1,7 @@
 
 var express = require('express');
 var router = express.Router();
+var request = require('request');
 var db = require('../models');
 
 // GET /pokemon - return a page with favorited Pokemon
@@ -11,26 +12,24 @@ router.get('/', function(req, res) {
   })
 });
 
-// GET single Pokemon
-router.get('/pokemon/:id', function(req, res) {
-  var id = parseInt(req.params.id); 
-})
-
-// GET /articles/:index - gets a specific article
-app.get('/articles/:index', function(req, res) {
-  var index = parseInt(req.params.index);
-  db.article.find({
-    where: {id: req.params.index}
-  }).then(function(data) {
-    // console.log(data)
-    if(data != null) {
-      res.render('articles/show', {article: data });
-    }else{
-      res.render('articles/404')
+// GET single Pokemon Page
+router.get('/:id', function(req, res) {
+  var id = parseInt(req.params.id);
+  db.pokemon.find({
+    where: {
+      id: id
     }
-  })
-  // res.send('Error');
+  }).then(function(data) {
+    var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + data.name;
+    request(pokemonUrl, function(error, response, body) {
+      var favoritePokemon = JSON.parse(body);
+      res.render('favorites/show', {
+        favoritePokemon: favoritePokemon
+      })
+    })
+  });
 });
+
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
