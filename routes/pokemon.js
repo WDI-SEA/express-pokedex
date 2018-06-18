@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var db = require('../models');
+var request = require('request');
 
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', function(req, res) {
@@ -20,10 +21,10 @@ router.post('/', function(req, res) {
   }) 
 });
 
-// GET /pokemon/:id - return a page for a specific Pokemon
+// GET /pokemon/:id - return a page for a specific Pokemon with details about the Pokemon
 router.get('/:id', function(req, res) {
   var pokeId = parseInt(req.params.id);
-  // var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/ability/';
+  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + req.body.name;
   // TODO: Get one record from the DB and render to view
   db.pokemon.find({
     where: {id: pokeId}
@@ -34,17 +35,13 @@ router.get('/:id', function(req, res) {
       res.render('404');
     }
   });
+  // TODO: Get details about specific Pokemon
+  request(pokemonUrl, function (error, response, body) {
+    var pokemon = JSON.parse(body).results;
+    console.log(pokemon);
+    // res.render('favorites/show', { pokemon: pokemon });
+  });
 });
-
-// GET pokemon abilities from api
-// router.get('/', function (req, res) {
-//   var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/ability/{id or name}';
-//   // Use request to call the API
-//   request(pokemonUrl, function (error, response, body) {
-//     var pokemon = JSON.parse(body).results;
-//     res.render('favorites/show', { pokemon: pokemon });
-//   });
-// });
 
 // DELETE
 router.delete('/:id', function(req, res) {
@@ -52,6 +49,7 @@ router.delete('/:id', function(req, res) {
   db.pokemon.destroy({
     where: {id: pokeId}
   }).then(function(data){
+    console.log(data);
     res.sendStatus(200);
     res.render('favorites/index')
   });

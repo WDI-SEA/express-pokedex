@@ -3,7 +3,6 @@ var express = require('express');
 var request = require('request');
 var bodyParser = require('body-parser');
 var ejsLayouts = require('express-ejs-layouts');
-var db = require('./models');
 var app = express();
 
 app.use(require('morgan')('dev'));
