@@ -23,8 +23,15 @@ router.post('/', function(req, res) {
 
 // GET /pokemon/:id - return a page for a specific Pokemon with details about the Pokemon
 router.get('/:id', function(req, res) {
+  console.log(req.body.name);
   var pokeId = parseInt(req.params.id);
   var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + req.body.name;
+  // TODO: Get details about specific Pokemon
+  request(pokemonUrl, function (error, response, body) {
+    var pokemon = JSON.parse(body).results;
+    console.log(pokemonUrl);
+    // res.render('favorites/show', { pokemon: pokemon });
+  });
   // TODO: Get one record from the DB and render to view
   db.pokemon.find({
     where: {id: pokeId}
@@ -35,12 +42,7 @@ router.get('/:id', function(req, res) {
       res.render('404');
     }
   });
-  // TODO: Get details about specific Pokemon
-  request(pokemonUrl, function (error, response, body) {
-    var pokemon = JSON.parse(body).results;
-    console.log(pokemon);
-    // res.render('favorites/show', { pokemon: pokemon });
-  });
+  
 });
 
 // DELETE
