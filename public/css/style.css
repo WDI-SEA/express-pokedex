@@ -11,6 +11,38 @@ nav ul a {
 	font-size: 2em;
 }
 
+.title {
+	text-align: center;
+	background-color: white;
+	border-radius: 10em;
+}
+
+.showContainer {
+	text-align: center;
+}
+
+.showTitle {
+	text-align: center;
+	margin: 0 auto;
+	background-color: white;
+	border-radius: 10em;
+	width: 10em;
+	margin-top: 3%;
+}
+
+.showContainer img {
+	height: 13em;
+}
+
+/*.detailTable {
+	text-align: left;
+	margin:;
+}*/
+
+.indexCard {
+	background-color: white;
+}
+
 #search {
 	margin: 0;
 	padding: 0;
@@ -35,20 +67,23 @@ nav ul a {
 .card-action {
 	background-color: white;
 	text-align: center;
+	border: 3px solid #222224;
 }
 
 .card .card-content {
 	text-align: center;
 	background-color: white;
+	border: 3px solid #222224;
 	border-bottom: 0.1em solid #222224;
 }
 
 .btn {
-	background-color: #c12126;
+	background-color: #ee1515;
+	margin-bottom: 0.5em;
 }
 
 .btn:hover {
-	background-color: #c12126;
+	background-color: #27A3F1;
 }
 
 .btn:focus {
@@ -59,8 +94,14 @@ a {
 	color: #222224;
 }
 
-.caps {
+.cardCaps {
 	text-transform: capitalize;;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+.capitalize {
+	text-transform: capitalize;
 }
 
 .logo {

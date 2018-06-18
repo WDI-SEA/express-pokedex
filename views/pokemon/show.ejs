@@ -1,3 +1,18 @@
+<div class="showContainer">
+  <h1 class="showTitle capitalize"><%= pokemon.name %></h1>
+  <br />
+  <img src="<%= pokemon.sprites.front_default %>">
+  <div class="detail-table">
+  	<h3>Stats:</h3>
+  	<ul>
+    	<% pokemon.stats.forEach(function(pokemon) { %>
+         <li><%= pokemon.stat.name %> : <%= pokemon.base_stat %></li>
+     	<% }) %>
+      </ul>
+  </div>
+</div>
+
+
 <h1>You are on a specific page!</h1>
 
 <h4>Move Pool: </h4>
