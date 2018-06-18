@@ -6,9 +6,16 @@ var db = require('../models');
 router.get('/', function(req, res) {
   // TODO: Get all records from the DB and render to view
   db.pokemon.findAll().then(function(data) {
+    // var pokemon = JSON.parse(body).results;
     res.render('favorites/index');
     console.log(data);
   });
+});
+// POST /pokemon - receive the name of a pokemon and add it to the database
+router.post('/', function(req, res) {
+  // TODO: Get form data and add a new record to DB
+  // res.send(req.body);
+  res.render('favorites/index');
 });
 
 // GET /pokemon/:id - return a page for a specific Pokemon
@@ -23,10 +30,6 @@ router.get('/:id', function(req, res) {
   })
 })
 
-// POST /pokemon - receive the name of a pokemon and add it to the database
-router.post('/', function(req, res) {
-  // TODO: Get form data and add a new record to DB
-  res.send(req.body);
-});
+
 
 module.exports = router;

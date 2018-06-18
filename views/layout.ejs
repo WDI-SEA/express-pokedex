@@ -4,14 +4,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pokedex</title>
-    <!-- Materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"/>
     <link rel="stylesheet" href="/css/style.css"/>
     <script src="//code.jquery.com/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
   </head>
-  <body>
+  <body class="white-text grey darken-4">
+    <nav>
+      <div class="nav-wrapper deep-purple darken-1">
+        <a href="/" class="brand-logo">Pokedex</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/">Home</a></li>
+          <li><a href="/pokemon">Favorites</a></li>
+        </ul>
+      </div>
+    </nav>
     <%- body %>
-
+  <script src="/js/script.js"></script>
   </body>
 </html>
