@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var db = require('../models')
+var db = require('../models');
+var request = require('request');
 // GET /pokemon - return a page with favorited Pokemon
 // router.get('/', function(req, res) {
 //   // TODO: Get all records from the DB and render to view
@@ -27,14 +28,21 @@ router.get('/:index', function(req, res){
   db.pokemon.find({
   where: {id: index}}).then(function(data){
   var pokeName = data.name;
-  var urlPokemon = 'http://pokeapi.co/api/v2/pokemon/'+pokeName;
-  request({urlPokemon}, function(error, response, body){
+  console.log(pokeName)
+  var pokeString= pokeName.toString();
+ var urlPokemon = 'http://pokeapi.co/api/v2/pokemon/' + pokeString; 
+ request({
+        url: urlPokemon
+
+       },
+
+
+  function(error, response, body){
 
     var objData = JSON.parse(body);
-    console.log(objData);
+   console.log(objData);
 
-
-  })
+   })
   })
 })
 
