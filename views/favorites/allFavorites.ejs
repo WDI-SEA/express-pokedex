@@ -1,0 +1,7 @@
+<h1>A List of My Favorite Pokemon</h1>
+<a href="/">Home</a>
+
+<% pokemon.forEach(function(pokemon) { %>
+  <a href="/pokemon/<%= pokemon.id %>"> <%= pokemon.name %> </a>
+  <a class="btn btn-primary delete" href="/pokemon/<%= pokemon.id %>">DELETE</a>
+<% }); %>
