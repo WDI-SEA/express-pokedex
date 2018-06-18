@@ -1,4 +1,7 @@
 .env
+models
+migrations
+config
 
 # Created by https://www.gitignore.io/api/node,osx,linux
 
