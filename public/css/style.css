@@ -14,7 +14,6 @@ nav ul a {
 .title {
 	text-align: center;
 	background-color: white;
-	border-radius: 10em;
 }
 
 .showContainer {
@@ -68,6 +67,15 @@ nav ul a {
 
 .indexCard {
 	background-color: white;
+	display: inline-block;
+	margin: 0.5em 0.5em;
+	padding: 1em;
+	text-align: center;
+	border: 0.2em solid #222224;
+}
+
+.indexCard h2 {
+	font-size: 20px;
 }
 
 #search {
