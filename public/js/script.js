@@ -12,4 +12,9 @@ $(document).ready(function() {
 			window.location = "/pokemon";
 		});
 	});
+	$(".searchBar").on("submit", function(e) {
+		e.preventDefault();
+		var search = $("#search").val();
+		window.location = "/pokemon/" + search
+	});
 });

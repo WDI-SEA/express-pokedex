@@ -11,12 +11,12 @@
     <nav>
       <div class="nav-wrapper">
         <ul id="nav-mobile" class="left hide-on-med-and-down">
-          <li><img src="img/pokeLogo.png" class="logo"></li>
+          <li><a href="/"><img src="http://localhost:3000/img/pokeLogo.png" class="logo"></a></li>
           <li><a href="/">Home</a></li>
           <li><a href="/pokemon">Favorite Pokemon</a></li>
           <li>
-            <form >
-              <input id="search" type="search" placeholder="Find Pokemon..." required>
+             <form method="GET" action="/pokemon" class="searchBar">
+              <input id="search" type="search" placeholder="Search Favorites..." required>
             </form>
           </li>
         </ul>

@@ -51,6 +51,10 @@ router.get("/:name", function(req, res) {
 	});
 });
 
+router.post("/:name", function(req, res) {
+	
+})
+
 router.delete("/:name", function(req, res) {
 	db.pokemon.destroy({
 		where: {name: req.params.name}

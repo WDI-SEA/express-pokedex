@@ -22,7 +22,6 @@ nav ul a {
 	box-shadow:none;
 	border-color:transparent;
 	background-color: white;
-
 }
 
 #search:hover {
@@ -41,7 +40,7 @@ nav ul a {
 .card .card-content {
 	text-align: center;
 	background-color: white;
-	border-bottom: 0.1em solid black;
+	border-bottom: 0.1em solid #222224;
 }
 
 .btn {
@@ -57,7 +56,7 @@ nav ul a {
 }
 
 a {
-	color: black;
+	color: #222224;
 }
 
 .caps {
@@ -65,5 +64,27 @@ a {
 }
 
 .logo {
-	height: 4em;
+	height: 2em;
+}
+
+nav ul a:hover {
+	background-color: transparent;
+}
+
+.error-message {
+	text-align: center;
+}
+
+.missingNo {
+	animation: fadein 15s;
+	height: 25em;
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
 }
