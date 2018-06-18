@@ -1,0 +1,101 @@
+body {
+    background: #000;
+}
+
+h1,h2,h3,h4,h5 {
+    font-family: 'Fascinate', cursive;
+}
+
+p,li {
+    font-family: 'Cutive Mono', monospace;
+}
+
+header a, header a:hover {
+    font-family: 'Fascinate', cursive;
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    margin-bottom: 1em;
+}
+
+footer {
+margin-top: 4em;
+}
+
+.jumbotron {
+    background-color: #D92231;
+    margin: 0;
+    color: #FFF;
+}
+
+
+.container {
+    background: #FEC930;
+}
+
+.ball {
+    height: 20em;
+    width: 20em;
+    /* margin: 1em; */
+    display: inline-block;
+}
+
+.top,.stripe,.bottom {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.stripe h3 {
+    color: #FFF;
+    text-shadow: 2px 2px 2px #838383;
+    margin: 0;
+}
+
+.top {
+    background: #D92231;
+    border-top: 1px solid #000;
+    border-top-left-radius: 10em;
+    border-top-right-radius: 10em;
+    height: 9em;
+}
+
+.stripe {
+    width: 100%;
+    height: 2em;
+    background: #000;
+    
+}
+
+.bottom {
+    background: #FFF;
+    border-bottom: 1px solid black;
+    border-bottom-left-radius: 10em;
+    border-bottom-right-radius: 10em;
+    height: 9em;
+}
+
+.card {
+    background: #ececec;
+    padding: 1em;
+    border-radius: 1em;
+    margin: 0.5em;
+}
+
+.rotate {
+    animation: 3s linear infinite rotate;
+    position: relative;
+    top: 0;
+    transform-origin: 100% 100%;
+    border-bottom: 1px solid black;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(90deg)
+    }
+}

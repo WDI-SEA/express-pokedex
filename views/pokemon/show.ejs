@@ -1,0 +1,70 @@
+<div class="row">
+    <div class="col-sm-12 text-center">
+        <h1><img src="<%= pokemon.sprites.back_default%>" /><%= pokemon.name.toUpperCase(); %><img src="<%= pokemon.sprites.front_default%>" /></h1>
+        <h4>Caught <%= caughtOn %></h4>
+    </div>
+</div>
+
+<div class="card-body">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card">
+                <h3>Type:</h3>
+                <ul>
+                    <% pokemon.types.forEach( function(pokemon) { %>
+                    <li><%= titleCase(pokemon.type.name)%></li>
+                    <% }) %>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="col-lg-4">
+            <div class="card">
+                <h3>Base Stats:</h3>
+                <ul>
+                    <li>Weight: <%= pokemon.weight %></li>
+                    <% pokemon.stats.forEach( function(pokemon) { %>
+                        <li><%= titleCase(pokemon.stat.name)%>: <%= pokemon.base_stat%> </li>
+                    <% }) %>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="col-lg-4">
+            <div class="card">
+                <h3>Forms:</h3>
+                <ul>
+                    <% pokemon.forms.forEach( function(pokemon) { %>
+                        <li><%= titleCase(pokemon.name)%></li>
+                    <% }) %>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <h3>Moves:</h3>
+                    <p>
+                    <% pokemon.moves.forEach( function(pokemon) { %>
+                        <%= titleCase(pokemon.move.name)%>,&nbsp;
+                    <% }) %>
+                    </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-12 text-center">  
+            <div class="card">
+            <a class="btn btn-primary" href="/pokemon">Back to Your Collection</a>
+            <a class="btn btn-warning" href="/">Back to All </a>
+            <button class="btn btn-danger" href="/pokemon/<%= id %>">Lose from collection</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="spacer"></div>

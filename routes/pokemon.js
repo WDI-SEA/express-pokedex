@@ -1,16 +1,51 @@
 var express = require('express');
+var request = require('request');
+var moment = require('moment');
 var router = express.Router();
+var db = require('../models');
 
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', function(req, res) {
-  // TODO: Get all records from the DB and render to view
-  res.send('Render a page of favorites here');
+  db.pokemon.findAll().then( function(pokemon) {
+    res.render('pokemon/index', {pokemon});
+  })
 });
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
-  // TODO: Get form data and add a new record to DB
-  res.send(req.body);
+  db.pokemon.create({
+    name: req.body.name
+  }).then( function(pokemon) {
+    res.redirect('pokemon');
+  })
 });
+
+// GET /pokemon/:id - show
+router.get('/:id', function(req, res) {
+  db.pokemon.find({
+    where: {id: req.params.id}
+  }).then( function(pokemon) {
+    var caughtOn = moment(pokemon.createdAt).fromNow();
+    request(pokeapiRequestUrlFor(pokemon.name), function(err, resp, body) {
+      var pokemon = JSON.parse(body);
+      res.render('pokemon/show', {pokemon, caughtOn, id: req.params.id});
+    })
+  })
+})
+
+// DELETE /pokemon/:id
+router.delete('/:id', function(req, res) {
+  db.pokemon.destroy({
+    where: {id: req.params.id}
+  }).then( function(data) {
+    console.log(data);
+    res.sendStatus('200');
+  })
+})
+
+// helper function
+var pokeapiRequestUrlFor = function(name) {
+  return 'http://pokeapi.co/api/v2/pokemon/' + name.toString().toLowerCase();
+}
 
 module.exports = router;
