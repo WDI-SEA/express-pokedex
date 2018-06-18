@@ -1,0 +1,7 @@
+<div class="container">
+  <h2 class="text-center"><%= pokemon.name %></h2>
+  <form method="POST" action="/pokemon">
+    <input hidden type="text" name="name" value="<%= pokemon.name %>"/>
+    <button class="waves-effect waves-light purple btn" type="submit">Delete</button>
+  </form>
+</div>
