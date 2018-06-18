@@ -6,7 +6,8 @@
 
 <% pokemon.forEach(function(pokemon){ %>
 
-  <li><a href="#"><%= pokemon.name %></a></li>
+  <li><a href="pokemon/<%= pokemon.name %> "><%= pokemon.name %></a></li>
+  <button class= 'submit'>Delete</button>
 
 
 <% }); %>

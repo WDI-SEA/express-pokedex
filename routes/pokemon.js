@@ -23,14 +23,9 @@ router.post('/', function(req, res){
 })
 
 
-router.get('/:index', function(req, res){
-  var index = parseInt(req.params.index);
-  db.pokemon.find({
-  where: {id: index}}).then(function(data){
-  var pokeName = data.name;
-  console.log(pokeName)
-  var pokeString= pokeName.toString();
- var urlPokemon = 'http://pokeapi.co/api/v2/pokemon/' + pokeString; 
+router.get('/:name', function(req, res){
+
+ var urlPokemon = 'http://pokeapi.co/api/v2/pokemon/' + req.params.name;
  request({
         url: urlPokemon
 
@@ -39,12 +34,12 @@ router.get('/:index', function(req, res){
 
   function(error, response, body){
 
-    var objData = JSON.parse(body);
-   console.log(objData);
-
+    var pokeData = JSON.parse(body);
+   res.render('selectpokemon', {pokeData: pokeData});
+   console.log(pokeData);
+   console.log(pokeData.stats);
    })
-  })
-})
+ });
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
 // router.post('/', function(req, res) {
