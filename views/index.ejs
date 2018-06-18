@@ -1,16 +1,29 @@
-<div class="container">
-  <h1 class="text-center">The Original 151 Pokemon</h1>
-  <p class="text-center">
-    <a href="/pokemon">Favorites</a>
-  </p>
 
+<div class="container">
+  <div class="header">
+    <h3>Catch a Wild Pokemon!</h3>
+    <a id="instructions" class="waves-effect waves-light btn modal-trigger" href="#modal1">Instructions</a>
+  </div>
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h2>Hello there! Welcome to the world of Pokemon!</h2>
+      <img id="oak" src="/img/oak.png">
+      <p>This world is inhabited by creatures called POKEMON! For some people, Pokemon are pets. Others use them for fights. Myself... I study Pokemon as a profession. Throw a Pokeball at a wild Pokemon to catch it!</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Okay!</a>
+    </div>
+  </div>
+      <img id="pokeball" class="bounce-in-top" src="/img/pokeball.png">
   <% pokemon.forEach(function(pokemon) { %>
-    <div class="well">
-      <h2><%= pokemon.name %></h2>
-      <form method="POST" action="/pokemon">
-        <input hidden type="text" name="name" value="<%= pokemon.name %>">
-        <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
-      </form>
+      <div class="pokemon-dudes">
+        <h5><%= pokemon.name %></h5>
+        <form method="POST" action="/pokemon">
+          <input class="form" hidden type="text" name="name" value="<%= pokemon.name %>">
+          <button class="btn btn-primary" onclick="catchPokemon()" type="submit">Throw Pokeball!</button>
+        </form>
+      </div>
+    <div id="snackbar">You caught it! Click <a class="here" href="/pokemon">HERE</a> to view your team.
     </div>
   <% }); %>
 </div>
