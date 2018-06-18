@@ -20,6 +20,9 @@ router.post('/', function(req, res) {
     if(isUnique) {
       res.redirect('/pokemon');
     }
+    else {
+      res.redirect('/')
+    }
   });
 
 
