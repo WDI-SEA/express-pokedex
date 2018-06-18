@@ -1,0 +1,45 @@
+<div class="container">
+  <h1 class="headline"><%= pokeInfo.forms[0].name.toUpperCase(); %></h1>
+  <div class="row">
+    <div class="col s12 l3">
+      <img class="responsive-img" src="../img/<%= pokeInfo.forms[0].name%>.png">
+    </div>
+    <div class="col s12 l3">
+      <h4>Height:</h4>
+      <h5><%= pokeInfo.height / 10 %>m</h5>  
+    </div>
+    <div class="col s12 l3">
+      <h4>Weight:</h4>
+      <h5><%= pokeInfo.weight / 10 %>kg</h5>  
+    </div>
+    <div class= "col s12 l3">
+      <h4>Abilities:</h4>
+      <% pokeInfo.abilities.forEach(function(ability) { %>
+          <h5><%= ability.ability.name %></h5>  
+       <% }); %>
+    </div>
+  </div>
+  <div class="row">
+    <div class= "col l12">
+      <h4>Stats:</h4>
+      <table>
+        <tr>
+          <th></th>
+          <th>0<% for(let i = 0; i < 100; i++) { %>
+                   <span class="scale">.</span>
+              <% }; %>100
+          </th>
+        </tr>
+      <% pokeInfo.stats.forEach(function(stat) { %>
+        <tr>
+          <td class="stat"><%= stat.stat.name.toUpperCase(); %></td>
+          <td><% for(let i = 0; i < stat.base_stat; i++) { %>
+               <span class="graph">.</span>
+               <% }; %>
+          <% }); %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
