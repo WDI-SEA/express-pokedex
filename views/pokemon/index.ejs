@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Your Favorite Pokemon!</h1>
+  <h1 class="headline">Your Favorite Pokemon!</h1>
   <div class="row">
   <% pokemon.forEach(function(pokemon) { %>
     <div class="col s12 m3">
@@ -11,8 +11,8 @@
           <p><%= pokemon.name %></p>
         </div>
         <div class="card-action">
-        	<a href="/pokemon/<%= pokemon.name %>">Info</a>
-          <a class='btn red' href="/pokemon/<%= pokemon.id %>" class="delete">Remove</a>
+          <a href="/pokemon/<%= pokemon.name %>">Info</a>
+          <a class='btn red delete' href="/pokemon/<%= pokemon.id %>"><i class="material-icons">delete</i></a>
         </div>
       </div>
     </div>

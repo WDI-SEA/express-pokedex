@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // GET / - main index of site
 app.get('/', function(req, res) {
-  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon?limit=50';
+  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon?limit=100';
   // Use request to call the API
   request(pokemonUrl, function(error, response, body) {
     var pokemon = JSON.parse(body).results;

@@ -1,14 +1,14 @@
 <div class="container">
-  <h1>The Original 150 Pokemon</h1>
+  <h1 class="headline">The Original 150 Pokemon</h1>
   <div class="row">
   <% pokemon.forEach(function(pokemon) { %>
-    <div class="col s12 m3">
+    <div class="col s12 m4 l3">
       <div class="card small">
         <div class="card-image">
-          <img class="responsive-img" src="img/<%= pokemon.name%>.png">
+          <img src="img/<%= pokemon.name%>.png">
         </div>
         <div class="card-content">
-          <p><%= pokemon.name %></p>
+          <p><%= pokemon.name.toUpperCase(); %></p>
         </div>
         <div class="card-action">
           <form method="POST" action="/pokemon">

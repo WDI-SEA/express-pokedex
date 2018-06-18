@@ -7,16 +7,18 @@
     <link rel="stylesheet" href="/css/style.css">
     <!-- Materialize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Titan+One|Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body>
     <!-- Materialize nav bar with links -->
     <nav>
-      <div class="nav-wrapper">
-        <a class="brand-logo center">Pokedex</a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-          <li><a class="/">Home</a></li>
-          <li><a href="/pokemon">Favorites</a></li>
+      <div class="nav-wrapper white">
+        <a class="brand-logo center black-text">Pokedex</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger black-text"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down black-text">
+          <li><a class="black-text" href="/">Home</a></li>
+          <li><a class="black-text" href="/pokemon">Favorites</a></li>
         </ul>
       </div>
     </nav>
@@ -25,15 +27,15 @@
     <ul class="sidenav" id="mobile-demo">
       <li><a class="/">Home</a></li>
       <li><a href="/pokemon">Favorites</a></li>
-   </ul>
+    </ul>
 
     <%- body %>
 
-    <!-- jQuery -->
-    <script src="//code.jquery.com/jquery.js"></script>
     <!-- Materialize JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- My main script -->
     <script src="/js/script.js"></script>
   </body>
 </html>
