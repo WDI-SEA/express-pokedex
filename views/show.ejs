@@ -1,0 +1,10 @@
+<h1 class="text-center"><%= pokemon.name %></h1>
+
+<div class="well text-center">
+  <img src="<%= pokemon.sprites.front_default %>">
+  <h3>Moves</h3>
+  <% pokemon.moves.forEach(function(move) { %>
+    <li><%= move.move.name %></li>
+  <% }); %>
+  <h3>Weight: <%= pokemon.weight %></h3>
+</div>
