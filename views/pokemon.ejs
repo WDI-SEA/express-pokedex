@@ -1,0 +1,8 @@
+
+
+    <h1>Top Pokemon!!!</h1>
+    <ul>
+      <% pokemon.forEach(function(pokemon) { %>
+          <li id="favoritePokemon"><a href="/pokemon/<%= pokemon.name %>"><%= pokemon.name %></a><button type="button" name="button" class="deleteButton" href="/pokemon/<%= pokemon.id %>">DELETE</button></li>
+      <% }); %>
+    </ul>
