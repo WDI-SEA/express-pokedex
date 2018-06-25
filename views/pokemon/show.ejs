@@ -1,0 +1,34 @@
+<div class="showContainer">
+  	<h1 class="showTitle capitalize"><%= pokemon.name %></h1>
+  	<img src="<%= pokemon.sprites.front_default %>">
+  	<div class="detail-table">
+	  	<h3 class="table-top">Types:</h3>
+	  	<ul>
+	      	<% pokemon.types.forEach(function(pokemon) { %>
+	         	<li><p class="stats capitalize"><%= pokemon.type.name %></p></li>
+	     	<% }) %>
+	    </ul>
+	  	<h3>Stats:</h3>
+	  	<p class="stats capitalize"><%= pokemonData.stats[5].stat.name %>: <%= pokemonData.stats[5].base_stat %></p>
+	  	<p class="stats capitalize"><%= pokemonData.stats[4].stat.name %>: <%= pokemonData.stats[4].base_stat %></p>
+	  	<p class="stats capitalize"><%= pokemonData.stats[3].stat.name %>: <%= pokemonData.stats[3].base_stat %></p>
+	  	<p class="stats capitalize"><%= pokemonData.stats[2].stat.name %>: <%= pokemonData.stats[2].base_stat %></p>
+	  	<p class="stats capitalize"><%= pokemonData.stats[1].stat.name %>: <%= pokemonData.stats[1].base_stat %></p>
+	  	<p class="stats capitalize"><%= pokemonData.stats[0].stat.name %>: <%= pokemonData.stats[0].base_stat %></p>
+	  	<h3>Abilities:</h3>
+	  	<div class="movePool">
+	  	<ul>
+	      	<% pokemon.abilities.forEach(function(pokemon) { %>
+	        	<li><p class="stats capitalize"><%= pokemon.ability.name %></p></li>
+	      	<% }) %>
+	    </ul>
+	    <h3>Movepool:</h3>
+	    <ul>
+			<% pokemon.moves.forEach(function(pokemon) { %>
+	 			<li><p class="stats capitalize"><%= pokemon.move.name %></p></li>
+			<% }) %>
+		</ul>
+		</div>
+	</div>
+</div>
+

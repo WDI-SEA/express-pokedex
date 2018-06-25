@@ -1,0 +1,19 @@
+<div class="container">
+<h1 class="title">Favorites</h1>
+<div class="row">
+<% pokemon.forEach(function(pokemon) { %>
+	    <div class="col s12 m4">
+	      <div class="card">
+	        <div class="card-content">
+	          <span class="card-title"><a href="./pokemon/<%= pokemon.name %>" class="cardCaps"><%= pokemon.name %></a></span>
+	         <a href="./pokemon/<%= pokemon.name %>"><img src="<%= pokemon.sprite %>"></a>
+	        </div>
+	        <div class="card-action">
+	          <a href="/pokemon/<%= pokemon.name %>" class="waves-effect waves-light btn">More Details</a>
+	          <a href="/pokemon/<%= pokemon.name %>" class=" delete waves-effect waves-light btn">Release Favorite </a>
+	        </div>
+	      </div>
+	    </div>
+<% }); %>
+</div>
+</div>
