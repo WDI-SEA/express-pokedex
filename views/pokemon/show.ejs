@@ -1,0 +1,24 @@
+<div class="container">
+
+<h1>This is a show page!</h1>
+
+    <div class="well">
+      <h2><%= pokemon.name %></h2>
+      <p>Weight: <%= pokemon.weight %> tonnes</p>
+
+      <p>These are my abilities:</p>
+      <ul>
+        <% pokemon.abilities.forEach(function(ability) { %>
+          <li><%= ability.ability.name %></li>
+        <% }); %>
+      </ul>
+
+      <p>These are my moves:</p>
+      <ul>
+        <% pokemon.moves.forEach(function(move) { %>
+          <li><%= move.move.name %></li>
+        <% }); %>
+      </ul>
+
+    </div>
+</div>
