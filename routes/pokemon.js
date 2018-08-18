@@ -1,16 +1,25 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+
+const db = require('../models');
+const router = express.Router();
 
 // GET /pokemon - return a page with favorited Pokemon
-router.get('/', function(req, res) {
+router.get('/', (req, res) => {
   // TODO: Get all records from the DB and render to view
+
   res.send('Render a page of favorites here');
 });
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
-router.post('/', function(req, res) {
-  // TODO: Get form data and add a new record to DB
-  res.send(req.body);
+router.post('/', (req, res) => {
+  db.favorites.create(req.body)
+  .then( (favorite) => {
+    console.log('saved favorite', favorite);
+    res.redirect('/pokemon'); })
+  .catch( (err) => {
+    console.log('that was unexpected');
+    res.send("File not found");
+  });
 });
 
 module.exports = router;

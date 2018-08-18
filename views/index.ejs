@@ -9,7 +9,8 @@
       <h2><%= pokemon.name %></h2>
       <%# Really cool utilization of hidden input to get simple form data,  Remember for future use. %>
       <form method="POST" action="/pokemon">
-        <input hidden type="text" name="name" value="<%= pokemon.name %>">
+        <input hidden type="text" name="url" value="<%= pokemon.url %>" />
+        <input hidden type="text" name="name" value="<%= pokemon.name %>" />
         <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
       </form>
     </div>

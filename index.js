@@ -1,22 +1,21 @@
 // All dependencies
 require('dotenv').config();
-const express = require('express');
-const request = require('request');
 const bodyParser = require('body-parser');
 const ejsLayouts = require('express-ejs-layouts');
+const express = require('express');
+const request = require('request');
 
 // Global var
 const app = express();
 
 // Sets and uses
-app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
+app.use(require('morgan')('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 
 // --- ROUTES ---
 app.use('/pokemon', require('./routes/pokemon'));
-
 
 // GET / - main index of site
 app.get('/', (req, res) => {
