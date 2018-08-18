@@ -1,0 +1,12 @@
+<div class="container">
+  <h1 class="text-center">Your favorites</h1>
+  <p class="text-center">
+    <a href="/">Home</a>
+  </p>
+
+  <% favorites.forEach( (favorite) => { %>
+    <div class="well">
+      <h2><%= favorite.name %></h2>
+    </div>
+  <% }); %>
+</div>

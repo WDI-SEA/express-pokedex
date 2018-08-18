@@ -6,8 +6,13 @@ const router = express.Router();
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', (req, res) => {
   // TODO: Get all records from the DB and render to view
-
-  res.send('Render a page of favorites here');
+  db.favorites.findAll()
+  .then( (favorites) => {
+    console.log('collected all favorites from db');
+    res.render('pokemon/index', { favorites }) })
+  .catch( (err) => {
+    console.log('something happened', err);
+    res.send('Render a page of favorites here'); });
 });
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
