@@ -34,11 +34,11 @@ router.get('/', function(req, res) {
 router.get('/:name', function(req, res) {
   // get name of requested pokemon
   var name = req.params.name;
+  console.log('name type is', typeof name);
   console.log('name of wanted pokemon:', name);
-  db.pokemon.findOne({where: {name: name}}).then(function(fetched) {
+  db.pokemon.findOne({ where: { name: name } }).then(function(fetched) {
     // yes...i'm using the name to get the name...practice using models
-    var fetchedName = fetched.dataValues.name;
-    res.render('pokemon/show', fetched.dataValues.name);
+    res.send('found ' + fetched.dataValues.name);
   }).catch(function(err) {
     console.log('could not fetch pokemon with name', name);
     res.send('pokemon ' + name + ' is not favorited');
