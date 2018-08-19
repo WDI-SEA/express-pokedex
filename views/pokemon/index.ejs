@@ -13,12 +13,13 @@
 		$(".delete-btn").click(function(e){
 			e.preventDefault();
 			var url = $(this).attr("href");
+			console.log("delete url", url)
 
 			$.ajax({
 				method: "DELETE",
 				url: url
 			}).done(function(data){
-				window.location="/books";
+				window.location="/pokemon";
 			}).fail(function(err){
 				console.log("error!", error);
 			});

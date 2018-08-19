@@ -25,12 +25,34 @@ router.post('/', function(req, res){
 	})
 });
 
+router.get("/:id", function(req, res) {
+	db.pokemon.findById(req.params.id).then(function(foundPokemon){
+		console.log("found Pokemon:", foundPokemon);
+		res.render('pokemon/:id', foundPokemon);
+	}).catch(function(error) {
+		console.log("error:", error);
+		res.render("pokemon/404");
+	});
+});
+
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
   // TODO: Get form data and add a new record to DB
   res.send(req.body);
 });
 
+router.delete("/:id", function(req, res){
+	console.log(req.params.id);
+	db.pokemon.destroy({
+		where: {id: req.params.id}
+	}).then(function(justDestroyed){
+		console.log("deleted:", justDestroyed);
+		res.send("successfully deleted");
+	}).catch(function(error){
+		console.log("error:", error);
+		res.send("yikes");
+	});
+});
 
 
 module.exports = router;
