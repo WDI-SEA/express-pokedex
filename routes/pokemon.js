@@ -27,4 +27,15 @@ router.post('/', (req, res) => {
   });
 });
 
+router.delete('/:id', (req, res) => {
+  db.favorites.destroy( { where: { id: req.params.id } })
+  .then( (destroyed) => {
+    console.log('destroyed', destroyed);
+    res.send('deleted'); })
+  .catch( (err) => {
+    console.log('err', err);
+    res.send('fail');
+  });
+});
+
 module.exports = router;

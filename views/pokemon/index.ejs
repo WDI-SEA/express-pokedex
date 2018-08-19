@@ -6,7 +6,13 @@
 
   <% favorites.forEach( (favorite) => { %>
     <div class="well">
-      <h2><%= favorite.name %></h2>
+      <h2><a href="pokemon/<%= favorite.id %>">
+        <%= favorite.name %>
+      </a></h2>
+      <a href="pokemon/<%= favorite.id %>" class="remove-btn btn btn-danger">Remove the favorite</a>
     </div>
   <% }); %>
 </div>
+
+<script src="//code.jquery.com/jquery.js"></script>
+<script src="/js/removeButton.js"></script>
