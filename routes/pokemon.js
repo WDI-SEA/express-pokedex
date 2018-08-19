@@ -1,6 +1,10 @@
+var bodyParser = require('body-parser');
 var db = require('../models');
 var express = require('express');
+var request = require('request');
 var router = express.Router();
+
+router.use(bodyParser.urlencoded({ extended: false }));
 
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', function(req, res) {
@@ -19,16 +23,24 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res){
 	db.pokemon.create(req.body).then(function(newPokemon){
 		console.log('caught pokemon:', newPokemon);
+
 		res.redirect('/pokemon');
 	}).catch(function(err){
 		res.send('見つけなかった...');
 	})
 });
 
-router.get("/:id", function(req, res) {
+router.get('/:id', function(req, res) {
 	db.pokemon.findById(req.params.id).then(function(foundPokemon){
-		console.log("found Pokemon:", foundPokemon);
-		res.render('pokemon/:id', foundPokemon);
+		var pokemonName = foundPokemon.name;
+		pokemonName = pokemonName.toLowerCase();
+		var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + pokemonName;
+		console.log(pokemonUrl); //works to here!
+		request(pokemonUrl, function(error, response, body) {
+    	var pokemon = JSON.parse(body).results;
+    	console.log("POKEMON", pokemon);
+  });
+		res.render('pokemon/show', {foundPokemon: foundPokemon});
 	}).catch(function(error) {
 		console.log("error:", error);
 		res.render("pokemon/404");
@@ -53,6 +65,7 @@ router.delete("/:id", function(req, res){
 		res.send("yikes");
 	});
 });
+
 
 
 module.exports = router;

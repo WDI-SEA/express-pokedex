@@ -24,5 +24,17 @@
 				console.log("error!", error);
 			});
 		});
+		//try to acquire info from pokemon API
+		/*function getData(pokemon) {
+			console.log(pokemon);
+			const baseURL = "http://pokeapi.co/api/v2/";
+			$.ajax({
+			  url: baseURL + pokemon,
+			  dataType:'json',
+			}).then(data => {
+			  console.log(data);
+			}).catch( e  => console.log(e));
+
+		}; */
 	});
 </script>
