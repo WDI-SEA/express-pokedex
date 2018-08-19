@@ -1,9 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
+// models/index.js exports db
+var db = require('../models');
+
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', function(req, res) {
-  // TODO: Get all records from the DB and render to view
+  // get list of pokemon
+  var list = db.pokemon.findAll();
+  console.log('db.pokemon.findAll is:', list);
   res.render('pokemon/index');
 });
 
