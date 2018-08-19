@@ -1,3 +1,4 @@
+require('dotenv').config();
 var bodyParser = require('body-parser');
 var db = require('../models');
 var express = require('express');
@@ -5,6 +6,8 @@ var request = require('request');
 var router = express.Router();
 
 router.use(bodyParser.urlencoded({ extended: false }));
+router.use(require('morgan')('dev'));
+
 
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', function(req, res) {
@@ -32,15 +35,17 @@ router.post('/', function(req, res){
 
 router.get('/:id', function(req, res) {
 	db.pokemon.findById(req.params.id).then(function(foundPokemon){
-		var pokemonName = foundPokemon.name;
+		var pokemonName = foundPokemon.name + "/";
 		pokemonName = pokemonName.toLowerCase();
 		var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + pokemonName;
-		console.log(pokemonUrl); //works to here!
+		console.log(pokemonUrl); 
 		request(pokemonUrl, function(error, response, body) {
-    	var pokemon = JSON.parse(body).results;
-    	console.log("POKEMON", pokemon);
+			 console.log('error:', error);
+			 console.log('statusCode:', response && response.statusCode); 
+    		var pokemon = JSON.parse(body);
+    		console.log(pokemon.name, pokemon.weight, pokemon.sprites.front_shiny); //getting data from JSON!!
+		res.render('pokemon/show', {pokemon: pokemon});
   });
-		res.render('pokemon/show', {foundPokemon: foundPokemon});
 	}).catch(function(error) {
 		console.log("error:", error);
 		res.render("pokemon/404");
