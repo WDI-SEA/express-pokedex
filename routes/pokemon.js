@@ -28,6 +28,14 @@ router.get('/', function(req, res) {
   });
 });
 
+// i know instructions wanted row id, but it doesn't make sense for the user
+router.get('/:name', function(req, res) {
+  // get name of requested pokemon
+  var name = req.params.name;
+  console.log('name of wanted pokemon:', name);
+  res.send('getting you ' + name);
+});
+
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
   // get to-favorite pokemon's name
