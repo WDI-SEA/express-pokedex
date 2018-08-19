@@ -61,5 +61,24 @@
 	color: #b2293b!important;
 }
 
+#sprite-holder {
+	margin: 0 auto;
+	width: 400px;
+	height: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+}
+
+.sprite {
+	animation: bounce 0.7s;
+  	animation-direction: alternate;
+ 	animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  from { transform: translate3d(0, 0, 0);     }
+  to   { transform: translate3d(0, -70px, 0); }
+}
 
 

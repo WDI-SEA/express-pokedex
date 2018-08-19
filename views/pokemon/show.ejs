@@ -5,8 +5,10 @@
 
 	<p> weight: <%= pokemon.weight %></p>
 	<p> height: <%= pokemon.height %> </p>
-	<p> <img src= "<%= pokemon.sprites.front_shiny%>"> </p>
-	<p> <img src= "<%= pokemon.sprites.back_shiny%>"> </p>
+	<div id='sprite-holder'>
+		<p class='sprite'> <img src= "<%= pokemon.sprites.front_default%>"> </p>
+		<p class='sprite'> <img src= "<%= pokemon.sprites.back_default%>"> </p>
+	</div>
 
 <a class="waves-effect waves-light btn" href="/"> Back to Main Page</a>
 <a class="waves-effect waves-light btn" href="/pokemon"> Back to My Pokedex</a>
