@@ -1,6 +1,13 @@
-<h4> <%= pokemon.name %></h4>
+<img id="ball" src= "https://res.cloudinary.com/kelseygreen/image/upload/v1534657435/pokeball.png">
 
-<p> weight: <%= pokemon.weight %></p>
-<p> height: <%= pokemon.height %> </p>
-<p> <img src= "<%= pokemon.sprites.front_shiny%>"> </p>
-<p> <img src= "<%= pokemon.sprites.back_shiny%>"> </p>
+<div id="pokeEntry">
+	<h4> <%= pokemon.name %></h4>
+
+	<p> weight: <%= pokemon.weight %></p>
+	<p> height: <%= pokemon.height %> </p>
+	<p> <img src= "<%= pokemon.sprites.front_shiny%>"> </p>
+	<p> <img src= "<%= pokemon.sprites.back_shiny%>"> </p>
+
+<a class="waves-effect waves-light btn" href="/"> Back to Main Page</a>
+<a class="waves-effect waves-light btn" href="/pokemon"> Back to My Pokedex</a>
+</div>

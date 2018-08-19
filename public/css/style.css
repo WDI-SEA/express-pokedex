@@ -1,0 +1,65 @@
+#inline-pic {
+	display: inline-block;
+}
+
+#pokeEntry {
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 10px;
+	width: 500px;
+	border: 2px solid #b2293b;
+    padding: 30px;
+    border-radius: 25px;
+    background-color: #f9f4f5;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#ball {
+	width: 150px;
+	margin: 0 auto;
+	text-align: center;
+	display: block;
+}
+
+#indexBall {
+	width: 100px;
+	margin: 0 auto;
+	text-align: center;
+	display: block;
+	margin-top: 20px;
+}
+
+#pokeBody {
+	background-color: #474142;
+}
+
+.waves-light {
+	background-color: #b2293b!important;
+}
+
+.headline {
+	color: #f9f4f5;
+	margin-top: 10px;
+}
+
+.pokeList {
+	text-align: center;
+	margin: 0 auto;
+	width: 700px;
+}
+
+.pokeName {
+	color: #2d2325;
+	font-weight: bold;
+}
+
+.pokeName:hover {
+	color: #b2293b ;
+}
+
+.pokeName:active {
+	color: #b2293b!important;
+}
+
+
+
