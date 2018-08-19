@@ -10,12 +10,12 @@ router.get('/', function(req, res) {
   var nameList = [];
   // get list of pokemon from database
   db.pokemon.findAll().then(function(pokemons) {
-    // console log entirety of fulfilled promise
-    console.log('fulfilled promise from pokemon.findAll()', pokemons);
+    // // console log entirety of fulfilled promise
+    // console.log('fulfilled promise from pokemon.findAll()', pokemons);
     pokemons.forEach(function(pokemon) {
       // console log structure of data returned
-      console.log('an ele in pokemons[]', pokemon);
-      console.log('dataValues of ele:', pokemon.dataValues);
+      // console.log('an ele in pokemons[]', pokemon);
+      // console.log('dataValues of ele:', pokemon.dataValues);
       console.log('name of pokemon:', pokemon.dataValues.name);
       // add pokemon name to name list
       nameList.push(pokemon.dataValues.name);
@@ -29,11 +29,20 @@ router.get('/', function(req, res) {
 });
 
 // i know instructions wanted row id, but it doesn't make sense for the user
+// i'm still making the DB call, even though i have the name already
+// justification: ensures the given name is a favorited pokemon
 router.get('/:name', function(req, res) {
   // get name of requested pokemon
   var name = req.params.name;
   console.log('name of wanted pokemon:', name);
-  res.send('getting you ' + name);
+  db.pokemon.findOne({where: {name: name}}).then(function(fetched) {
+    // yes...i'm using the name to get the name...practice using models
+    var fetchedName = fetched.dataValues.name;
+    res.render('pokemon/show', fetched.dataValues.name);
+  }).catch(function(err) {
+    console.log('could not fetch pokemon with name', name);
+    res.send('pokemon ' + name + ' is not favorited');
+  });
 });
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
