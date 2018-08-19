@@ -1,0 +1,35 @@
+
+<img id=indexBall src="https://res.cloudinary.com/kelseygreen/image/upload/v1534657435/pokeball.png">
+<h2 class="text-center headline">My Favorite Pokemon</h2>
+<% pokemon.forEach(function(mon){%>
+ <div class="well pokeList">
+<h4><a class="pokeName" href="/pokemon/<%=mon.id%>"><%= mon.name %></h4>
+<hr>
+<a href="/pokemon/<%=mon.id%>" class="delete-btn waves-effect waves-light btn-small">Delete Pokemon</a>
+</div>
+<% }); %>
+<div class="text-center">
+<a class="waves-effect waves-light btn" href="/"> Back to Main Page</a>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$(".delete-btn").click(function(e){
+			e.preventDefault();
+			var url = $(this).attr("href");
+			console.log("delete url", url)
+
+			$.ajax({
+				method: "DELETE",
+				url: url
+			}).done(function(data){
+				window.location="/pokemon";
+			}).fail(function(err){
+				console.log("error!", error);
+			});
+		});
+	
+	});
+</script>
