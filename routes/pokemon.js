@@ -30,8 +30,19 @@ router.get('/', function(req, res) {
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
-  // TODO: Get form data and add a new record to DB
-  res.send(req.body);
+  // get to-favorite pokemon's name
+  var name = req.body.name;
+  console.log('recieved req to favorite:', name);
+  // "favorite" the pokemon, if it isn't already favorited
+  db.pokemon.findOrCreate({where: {name: name }}).then(function(favorited) {
+    // send user to their favorites AFTER it has updated
+    res.redirect('/pokemon');
+  }).catch(function(err) {
+    console.log('favoriting failed with err', err);
+    res.send('failed to favorite that pokemon');
+  });
+  // console.log('after favorited, found:', db.pokemon.find({where:
+    // {name: name}}).dataValues.name);
 });
 
 /** @suppress {missingRequire} */
