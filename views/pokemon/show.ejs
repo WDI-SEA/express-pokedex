@@ -20,7 +20,7 @@
   <h2>Stats:</h2>
   <ul class="list-group">
     <% pokemon.stats.forEach( (stat) => { %>
-      <li class="list-group-item"><%= stat.stat.name %>: <%= stat.base_stat %></li>
+      <li class="list-group-item"><%= stat.stat.name %>: <strong><%= stat.base_stat %></strong></li>
     <% }); %>
   </ul>
 </div>

@@ -7,7 +7,7 @@ const router = express.Router();
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', (req, res) => {
   db.favorites.findAll()
-  .then( (favorites) => { res.render('pokemon/index', { favorites }) })
+  .then( favorites => res.render('pokemon/index', { favorites }))
   .catch( (err) => {
     console.log('something happened', err);
     res.send('error');
@@ -28,10 +28,9 @@ router.get('/:id', (req, res) => {
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/', (req, res) => {
-  db.favorites.create(req.body)
-  .then( (favorite) => {
-    console.log('saved favorite', favorite);
-    res.redirect('/pokemon'); })
+  db.favorites.findOrCreate({ where: { name: req.body.name } })
+  .spread( (pokemon, created) => {
+    res.redirect('/pokemon') })
   .catch( (err) => {
     console.log('that was unexpected');
     res.send("File not found");
