@@ -1,6 +1,8 @@
 require('dotenv').config();
 var express = require('express');
+var bodyParser = require('body-parser');
 var router = express.Router();
+var request = require('request');
 var db = require('../models');
 
 
@@ -32,7 +34,16 @@ router.post('/', function(req, res){
 
 router.get('/:id', function(req, res){
 	db.pokemon.findById(req.params.id).then(function(foundPokemon){
-		res.render('pokemon/show', {pokemon: pokemon});
+		var pokemonName = foundPokemon.name + "/";
+		pokemonName = pokemonName.toLowerCase();
+		console.log("pokemon name is", pokemonName);
+		var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + pokemonName;
+
+		request(pokemonUrl, function(error, response, body) {
+			var pokemon = JSON.parse(body);
+			res.render('pokemon/show', {pokemon: pokemon}); 
+		})
+		
 	}).catch(function(err){
 		console.log('err', err);
 		res.render('404');
@@ -55,10 +66,7 @@ router.delete("/:id", function(req, res){
 });
 
 
-
-
 module.exports = router;
-
 
 
 
