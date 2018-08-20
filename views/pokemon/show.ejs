@@ -1,0 +1,14 @@
+<a class="top-link" href="/">Home </a><span>|<span>
+<a class="top-link" href="/pokemon"> Favorites</a></span><span>|</span>
+<span><%= pokemon.name%></span>
+<br />
+
+<h2>Current Pokemon: <%= pokemon.name%> <img src="<%= image%>"/></h2>
+<h2>EXP: <%= exp%></h2>
+<h2>TYPE: <%= type%></h2>
+<h2>Abilities: </h2>
+<ol>
+	<% for (var i = 0; i < abilities.length; i++) { %>
+		<li><%= abilities[i].ability.name%></li>
+	<%}%>
+</ol>
