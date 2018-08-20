@@ -5,13 +5,14 @@
   		</p>
 	
 	 	
-	 	<% pokemon.forEach(function(mon){%>
+	<% pokemon.forEach(function(pokemon){%>
 
-	<div class="well">
-		<h2><a href="/pokemon/<%=mon.id%>"><%= mon.name %></h2>
-		
-		<a href="/pokemon/<%=mon.id%>" class="delete-btn btn btn-danger">Delete</a>
-	</div>
+		<div class="well">
+	
+			<h2><a href="/pokemon/<%=pokemon.id%>"><%= pokemon.name %></h2>
+
+			<a href="/pokemon/<%=pokemon.id%>" class="delete-btn btn btn-danger">Delete</a>
+		</div>
 	<% }); %>
 	<hr>
 	<a href="/" class="btn btn-info">Back</a>

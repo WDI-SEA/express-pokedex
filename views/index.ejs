@@ -6,7 +6,7 @@
 
   <% pokemon.forEach(function(pokemon) { %>
     <div class="well">
-      <a href="../pokemon/<%= pokemon.name %>">
+      <a href="pokemon/<%= pokemon.id %>">
         <h2><%= pokemon.name %></h2>
       </a>
       <form method="POST" action="/pokemon">

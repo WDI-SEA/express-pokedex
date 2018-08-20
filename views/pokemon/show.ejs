@@ -4,7 +4,13 @@
 		<a href="/" class="btn btn-info">Return to Pokemon</a>
 	</p>
 	<div class=container>
-		<h3> <%= pokemon.name %> </h3>
+		<img src="<%= pokemon.sprites.front_default %>">
+		<img src="<%= pokemon.sprites.back_default %>">
+		<h2> <%= pokemon.name %> </h2>
+		<hr>
+		<h3>Height: <%= pokemon.height %> </h3>
+		<h3>Weight: <%= pokemon.weight %> </h3>
+
 
 	</div>
 </div>
