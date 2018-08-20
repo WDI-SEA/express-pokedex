@@ -1,0 +1,31 @@
+body {
+	margin: 40px auto;
+	width: 75%;
+}
+label{
+	font-weight: bold;
+	font-size: 16px;
+	margin-right: 5px;
+}
+span{
+	margin-right: 10px;
+}
+.pokemon-name {
+	display: inline;
+}
+@keyframes bounce {
+	from {
+		transform: translate3d(0,0,0); 
+	}	
+	to {
+		transform: translate3d(0,-50px,0);
+	}
+}
+.sprite{
+	animation: bounce 0.7s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+.top-link {
+	margin-right: 10px;
+}

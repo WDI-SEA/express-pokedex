@@ -1,0 +1,8 @@
+<a class="top-link" href="/">Home</a><span>|</span><span>Favorites</span><br><br>
+<h1>Favorite Pokemon</h1>
+<br>
+<ul>
+	<% favorites.forEach( function(pokemon) { %>
+		<h2><a href="pokemon/<%= pokemon.name %>"><%= pokemon.name %></a></h2>
+	<% }) %>
+</ul>

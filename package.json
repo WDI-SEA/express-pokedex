@@ -24,6 +24,10 @@
     "express": "^4.13.4",
     "express-ejs-layouts": "^2.1.0",
     "morgan": "^1.8.1",
-    "request": "^2.72.0"
+    "pg": "^6.4.2",
+    "pg-hstore": "^2.3.2",
+    "request": "^2.72.0",
+    "sequelize": "^4.38.0",
+    "sequelize-cli": "^4.1.0"
   }
 }
