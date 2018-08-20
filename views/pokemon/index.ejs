@@ -2,6 +2,7 @@
     <h3>Favorites:</h3>
     <% nameList.forEach(function(name) { %>
         <p><%= name %></p>
+        <a class="btn btn-primary" href="/pokemon/<%= name %>">Stats</a>
         <hr />
     <% }); %>
 </div>
