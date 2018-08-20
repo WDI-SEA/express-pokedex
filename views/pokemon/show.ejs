@@ -1,6 +1,32 @@
 <div class="container">
   <h2><%= stats.forms[0].name %> stats</h2>
 
+  <div class="container">
+    <h3>abilities:</h3>
+    <ul>
+
+      <% stats.abilities.forEach(function(ability) { %>
+        <li><%= ability.ability.name %></li>
+      <% }); %>
+    </ul>
+  </div>
+
+  <div class="container">
+    <h3>moves:</h3>
+    <ul>
+
+    <% stats.moves.forEach(function(move) { %>
+      <li><%= move.move.name %></li>
+    <% }); %>
+    </ul>
+  </div>
+
+  <div class="container">
+    <h4>weight:</h4>
+
+    <p><%= stats.weight %></p>
+  </div>
+
   <button id="del-fav" class="btn btn-danger"
     action="/pokemon/<%= stats.forms[0].name %>">
     Unfavorite
