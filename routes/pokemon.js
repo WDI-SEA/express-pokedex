@@ -18,7 +18,13 @@ router.get('/:id', (req, res) => {
   db.favorites.find({ where: { id: req.params.id } })
   .then( (favorite) => {request(favorite.url, function(error, response, body) {
     let pokemon = JSON.parse(body);
-    res.render('pokemon/show', { pokemon });
+    res.render('pokemon/show', {
+      name: pokemon.name,
+      sprite: pokemon.sprites.front_default,
+      types: pokemon.types,
+      abilities: pokemon.abilities,
+      stats: pokemon.stats
+      });
   })})
   .catch( (err) => {
     console.log('something happened', err);

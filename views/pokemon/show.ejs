@@ -1,25 +1,25 @@
 <div class="container">
-  <h1 class="card-title"><%= pokemon.name %></h1>
+  <h1 class="card-title"><%= name %></h1>
 
-  <img src="<%= pokemon.sprites.front_default %>" />
+  <img src="<%= sprite %>" />
 
   <h2>Types:</h2>
   <ul class="list-group">
-    <% pokemon.types.forEach( (type) => { %>
+    <% types.forEach( (type) => { %>
       <li class="list-group-item"><%= type.type.name %></li>
     <% }); %>
   </ul>
 
   <h2>Abilities:</h2>
   <ul class="list-group">
-    <% pokemon.abilities.forEach( (ability) => { %>
+    <% abilities.forEach( (ability) => { %>
       <li class="list-group-item"><%= ability.ability.name %></li>
     <% }); %>
   </ul>
 
   <h2>Stats:</h2>
   <ul class="list-group">
-    <% pokemon.stats.forEach( (stat) => { %>
+    <% stats.forEach( (stat) => { %>
       <li class="list-group-item"><%= stat.stat.name %>: <strong><%= stat.base_stat %></strong></li>
     <% }); %>
   </ul>
