@@ -1,0 +1,44 @@
+<div class="container">
+	<h2 class="text-center">Favorite Pokemon</h2>
+	 	 <p class="text-center">
+    <a href="/" class="btn btn-info">Return to Pokemon</a>
+  		</p>
+	
+	 	
+	<% pokemon.forEach(function(pokemon){%>
+
+		<div class="well">
+	
+			<h2><a href="/pokemon/<%=pokemon.id%>"><%= pokemon.name %></h2>
+
+			<a href="/pokemon/<%=pokemon.id%>" class="delete-btn btn btn-danger">Delete</a>
+		</div>
+	<% }); %>
+	<hr>
+	<a href="/" class="btn btn-info">Back</a>
+</div>
+
+
+
+
+<%#JQuery + AJAX below. Need to move/refactor%>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$(".delete-btn").click(function(e){
+			e.preventDefault();
+			var url = $(this).attr("href");
+ 			$.ajax({
+				method: "DELETE",
+				url: url
+			}).done(function(data){
+				window.location="/pokemon";
+			}).fail(function(err){
+				console.log("error!", error);
+			});
+		});
+	});
+</script> 
+
+
+
