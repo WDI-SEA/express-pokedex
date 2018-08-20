@@ -8,4 +8,10 @@ Part 1: Setup Database   (DONE)
 	4. Run sequelize init to initialize Sequelize.
 	5. Update your newly created config/config.json file as we did in class.
 
-Part 2: 
+Part 2: Create your Pokemon Model and Table:
+
+Part 3: Integrating the database with the app:
+
+Part 4: Display more info on each Pokemon:
+
+Part 5: Styling;
