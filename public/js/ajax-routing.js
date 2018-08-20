@@ -13,6 +13,7 @@ $(document).ready(function() {
       method: 'DELETE'
     }).done(function(data) {
       console.log('finished unfavorite', data);
+      window.location = '/pokemon';
     }).fail(function(err) {
       console.log('failed to unfavorite with err', err);
     });
