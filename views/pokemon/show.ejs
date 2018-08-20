@@ -2,6 +2,13 @@
   <h2><%= stats.forms[0].name %> stats</h2>
 
   <div class="container">
+    <button id="del-fav" class="btn btn-danger"
+      action="/pokemon/<%= stats.forms[0].name %>">
+      Unfavorite
+    </button>
+  </div>
+
+  <div class="container">
     <h3>abilities:</h3>
     <ul>
 
@@ -26,10 +33,5 @@
 
     <p><%= stats.weight %></p>
   </div>
-
-  <button id="del-fav" class="btn btn-danger"
-    action="/pokemon/<%= stats.forms[0].name %>">
-    Unfavorite
-  </button>
 
 </div>

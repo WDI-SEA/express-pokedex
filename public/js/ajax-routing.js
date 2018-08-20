@@ -1,11 +1,11 @@
 $(document).ready(function() {
   console.log('ajax routing reached on this page');
 
-  // get route and param
 
   var unfav = $('#del-fav').click(function(e) {
     e.preventDefault();
 
+    // get route and param
     var url = $('#del-fav').attr('href');
 
     $.ajax({
