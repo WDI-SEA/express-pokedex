@@ -1,18 +1,29 @@
 const express = require('express');
+const request = require('request');
 
 const db = require('../models');
 const router = express.Router();
 
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', (req, res) => {
-  // TODO: Get all records from the DB and render to view
   db.favorites.findAll()
-  .then( (favorites) => {
-    console.log('collected all favorites from db');
-    res.render('pokemon/index', { favorites }) })
+  .then( (favorites) => { res.render('pokemon/index', { favorites }) })
   .catch( (err) => {
     console.log('something happened', err);
-    res.send('Render a page of favorites here'); });
+    res.send('error');
+  });
+});
+
+router.get('/:id', (req, res) => {
+  db.favorites.find({ where: { id: req.params.id } })
+  .then( (favorite) => {request(favorite.url, function(error, response, body) {
+    let pokemon = JSON.parse(body);
+    res.render('pokemon/show', { pokemon });
+  })})
+  .catch( (err) => {
+    console.log('something happened', err);
+    res.send('error');
+  });
 });
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
