@@ -1,15 +1,17 @@
 <div class="container">
   <h1 class="text-center">Your favorites</h1>
   <p class="text-center">
-    <a href="/">Home</a>
+    <a href="/" class="btn btn-danger">Home</a>
   </p>
 
   <% favorites.forEach( (favorite) => { %>
-    <div class="well">
-      <h2><a href="pokemon/<%= favorite.id %>">
-        <%= favorite.name %>
-      </a></h2>
-      <a href="pokemon/<%= favorite.id %>" class="remove-btn btn btn-danger">Remove the favorite</a>
+    <div class="card w-50 text-center m-2 border border-danger">
+      <div class="card-body">
+        <h2><a href="pokemon/<%= favorite.id %>" class="text-danger">
+          <%= favorite.name %>
+        </a></h2>
+        <a href="pokemon/<%= favorite.id %>" class="remove-btn btn btn-outline-danger">Remove the favorite</a>
+      </div>
     </div>
   <% }); %>
 </div>

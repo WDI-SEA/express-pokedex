@@ -1,18 +1,20 @@
 <div class="container">
-  <h1 class="text-center">The Original 151 Pokemon</h1>
+  <h1 class="text-center">Pokemon Picker</h1>
   <p class="text-center">
-    <a href="/pokemon">Favorites</a>
+    <a href="/pokemon" class="btn btn-danger">Favorites</a>
   </p>
 
   <% pokemon.forEach(function(pokemon) { %>
-    <div class="well">
-      <h2><%= pokemon.name %></h2>
+    <div class="card w-50 text-center m-2 border border-danger">
+      <div class="card-body">
+      <h2 class="card-title"><%= pokemon.name %></h2>
       <%# Really cool utilization of hidden input to get simple form data,  Remember for future use. %>
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="url" value="<%= pokemon.url %>" />
         <input hidden type="text" name="name" value="<%= pokemon.name %>" />
-        <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
+        <input class="btn btn-warning" type="submit" value="Favorite" />
       </form>
+      </div>
     </div>
   <% }); %>
 </div>
