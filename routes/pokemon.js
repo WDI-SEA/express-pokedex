@@ -41,16 +41,16 @@ router.get('/:name', function(req, res) {
   db.pokemon.findOne({ where: { name: name } }).then(function(fetched) {
     // yes...i'm using the name to get the name...practice using models
     var fetchedName = fetched.dataValues.name;
-    // // setup api call, using string interpolation to insert the name
-    // var api = `http://pokeapi.co/api/v2/pokemon/${fetchedName}/`;
-    // request(api, function(error, response, body) {
-      // console.log('request for pokestats reached');
-      // // turn stringified body back into json
-      // // TODO handle "not found" reply
-      // var stats = JSON.parse(body);
-      // res.render('/pokemon/show', { stats: stats });
-    // });
-    res.render('pokemon/show', { name: 'bulbasaur' });
+    // setup api call, using string interpolation to insert the name
+    var api = `http://pokeapi.co/api/v2/pokemon/${fetchedName}/`;
+    request(api, function(error, response, body) {
+      console.log('request for pokestats reached');
+      // turn stringified body back into json
+      // TODO handle "not found" reply
+      var stats = JSON.parse(body);
+      res.render('/pokemon/show', { stats: stats });
+    });
+    res.render('pokemon/show', { stats: stats });
   }).catch(function(err) {
     console.log('could not fetch pokemon with name', name);
     res.send('pokemon ' + name + ' is not favorited');
