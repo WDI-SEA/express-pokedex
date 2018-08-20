@@ -1,0 +1,24 @@
+<a class="top-link" href="/">Home</a><span>|</span>
+<a class="top-link" href="/pokemon">Favorites</a><span>|</span>
+<span><%= name %></span><br><br>
+<h1 class="pokemon-name">More about <%= name %></h1>
+<img src="<%= image2 %>" class="sprite">
+<img src="<%= image %>" class="sprite"><br>
+<label>EXP: <%= exp %></label><br>
+<label>Type: <%= type%></label><br>
+<label>Abilities:</label><br>
+<ol>
+	<% for (let i = 0; i < abilities.length; i++) {%>
+	<li><%= abilities[i].ability.name %></li>
+	<% } %>
+</ol>
+<label>Stats:</label><br>
+<ul>
+	<% stats.forEach(function(stat) { %>
+		<li><%= stat.stat.name %>: <b><%= stat.base_stat %></b></li>
+	<% }); %>
+</ul>
+<br>
+<form method="POST" action="/pokemon/<%= name %>">
+	<input type="submit" class="btn btn-danger" value="Delete from Favorites"/>
+</form>
