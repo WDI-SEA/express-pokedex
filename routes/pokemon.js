@@ -48,9 +48,8 @@ router.get('/:name', function(req, res) {
       // turn stringified body back into json
       // TODO handle "not found" reply
       var stats = JSON.parse(body);
-      res.render('/pokemon/show', { stats: stats });
+      res.render('pokemon/show', { stats: stats });
     });
-    res.render('pokemon/show', { stats: stats });
   }).catch(function(err) {
     console.log('could not fetch pokemon with name', name);
     res.send('pokemon ' + name + ' is not favorited');
