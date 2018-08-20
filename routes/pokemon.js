@@ -77,10 +77,12 @@ router.delete('/:name', function(req, res) {
   var name = req.params.name;
   console.log('delete requested for', name);
   db.pokemon.destroy({where: { name: name }}).then(function() {
+    // send to ajax
     res.send('successful deletion');
   }).catch(function() {
     console.log('unfavorite had an error');
-    res.send('error...error....ERROR!');
+    // send to ajax
+    res.send('faiiled to unfavorite');
   });
 });
 
