@@ -46,8 +46,9 @@ router.get('/:name', function(req, res) {
     request(api, function(error, response, body) {
       console.log('request for pokestats reached');
       // turn stringified body back into json
+      // TODO handle "not found" reply
       var stats = JSON.parse(body);
-      res.send(stats);
+      res.render('/pokemon/show', { stats: stats });
     });
   }).catch(function(err) {
     console.log('could not fetch pokemon with name', name);
@@ -70,6 +71,11 @@ router.post('/', function(req, res) {
   });
   // console.log('after favorited, found:', db.pokemon.find({where:
     // {name: name}}).dataValues.name);
+});
+
+router.delete('/:name', function(req, res) {
+  var name = req.body.name;
+  console.log('delete requested for', name);
 });
 
 /** @suppress {missingRequire} */
