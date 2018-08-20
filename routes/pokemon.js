@@ -1,3 +1,5 @@
+var request = require('request');
+var bodyParser = require('body-parser');
 var express = require('express');
 var router = express.Router();
 
@@ -38,7 +40,15 @@ router.get('/:name', function(req, res) {
   console.log('name of wanted pokemon:', name);
   db.pokemon.findOne({ where: { name: name } }).then(function(fetched) {
     // yes...i'm using the name to get the name...practice using models
-    res.send('found ' + fetched.dataValues.name);
+    var fetchedName = fetched.dataValues.name;
+    // setup api call, using string interpolation to insert the name
+    var api = `http://pokeapi.co/api/v2/pokemon/${fetchedName}/`;
+    request(api, function(error, response, body) {
+      console.log('request for pokestats reached');
+      // turn stringified body back into json
+      var stats = JSON.parse(body);
+      res.send(stats);
+    });
   }).catch(function(err) {
     console.log('could not fetch pokemon with name', name);
     res.send('pokemon ' + name + ' is not favorited');
