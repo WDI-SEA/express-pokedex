@@ -1,0 +1,17 @@
+
+Part 1: Setup Database   (DONE)
+	Your first step will be to create a SQL database for your application. Recall the process:
+
+	1. Use npm to install the required modules for postgres and sequelize: a. pg@6, pg-hstore, sequelize
+	2. Make sure your Postgres server is running (check the elephant).
+	3. Create your database with the createdb command followed by your database name.
+	4. Run sequelize init to initialize Sequelize.
+	5. Update your newly created config/config.json file as we did in class.
+
+Part 2: Create your Pokemon Model and Table:
+
+Part 3: Integrating the database with the app:
+
+Part 4: Display more info on each Pokemon:
+
+Part 5: Styling;
