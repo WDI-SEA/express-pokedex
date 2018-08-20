@@ -1,0 +1,15 @@
+<h1><%= pokemon.name %></h1>
+
+<h3>Moves</h3>
+<ul>
+<% pokemon.abilities.forEach(function (a) { %>
+    <li><h4><%=a.ability.name%></h4></li>
+<% }); %>
+</ul>
+<h3>Stats</h3>
+<ul>
+<% pokemon.stats.forEach(function (s) { %>
+    <li><h4><%=s.stat.name%>: <%=s.base_stat%></h4></li>
+<% }); %>
+</ul>
+<a href="/pokemon/<%=id%>" id="delete-btn">Delete</a>
