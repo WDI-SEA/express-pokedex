@@ -1,11 +1,26 @@
-<h2>Favorite Pokemon</h2>
- <% pokemon.forEach(function(mon){%>
-<div>
-<h4><a href="/pokemon/<%=mon.id%>"><%= mon.name %></h4>
-<a href="/pokemon/<%=mon.id%>" class="delete-btn">Delete</a>
-<br>
+<div class="container">
+	<h2 class="text-center">Favorite Pokemon</h2>
+	 	 <p class="text-center">
+    <a href="/" class="btn btn-info">Return to Pokemon</a>
+  		</p>
+	
+	 	
+	 	<% pokemon.forEach(function(mon){%>
+
+	<div class="well">
+		<h2><a href="/pokemon/<%=mon.id%>"><%= mon.name %></h2>
+		
+		<a href="/pokemon/<%=mon.id%>" class="delete-btn btn btn-danger">Delete</a>
+	</div>
+	<% }); %>
+	<hr>
+	<a href="/" class="btn btn-info">Back</a>
 </div>
-<% }); %>
+
+
+
+
+<%#JQuery + AJAX below. Need to move/refactor%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 	$(document).ready(function(){
@@ -23,3 +38,6 @@
 		});
 	});
 </script> 
+
+
+
