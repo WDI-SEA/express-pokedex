@@ -32,7 +32,7 @@ router.post('/', function(req, res){
 
 router.get('/:id', function(req, res){
 	db.pokemon.findById(req.params.id).then(function(foundPokemon){
-		res.render('pokemon/show');
+		res.render('pokemon/show', {pokemon: pokemon});
 	}).catch(function(err){
 		console.log('err', err);
 		res.render('404');
@@ -58,4 +58,7 @@ router.delete("/:id", function(req, res){
 
 
 module.exports = router;
+
+
+
 
