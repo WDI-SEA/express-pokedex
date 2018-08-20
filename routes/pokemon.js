@@ -74,7 +74,7 @@ router.post('/', function(req, res) {
 });
 
 router.delete('/:name', function(req, res) {
-  var name = req.body.name;
+  var name = req.params.name;
   console.log('delete requested for', name);
 });
 
