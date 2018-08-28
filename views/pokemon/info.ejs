@@ -1,0 +1,19 @@
+<span><%= name %></span><br><br>
+
+<h1 class="pokemon-name">More about <%= name %></h1>
+<img class="sprite" src="<%= image %>"><br>
+
+<label>Exp:</label><%= exp %><br>
+<label>Type:</label><%= type %><br>
+<label>Abilities:</label><br>
+<ol>
+  <% for (let i = 0; i < abilities.length; i++) { %>
+    <li><%= abilities[i].ability.name %></li>
+  <% } %>
+</ol>
+<label>Stats:</label><br>
+<ul>
+  <% stats.forEach(function(stat) { %>
+    <li><%= stat.stat.name %>: <b><%= stat.base_stat %></b></li>
+  <% }) %>
+</ul>

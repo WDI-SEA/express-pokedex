@@ -2,6 +2,6 @@
 
 <% pokemon.forEach(function(p){ %>
 	<div>
-		<p> <%= p.name %> </p>
+		<a href="/pokemon/<%= p.id %>"> <%= p.name %> </a>
 	</div>
 <% }); %>
