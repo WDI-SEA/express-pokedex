@@ -2,18 +2,20 @@ extends layout.pug
 
 block content
   div  
-  h1.text-center The Original 151 Pokemon
-  p.text-center
+  h1(class="avenir tc") The Original 151 Pokemon
+  h3(class="avenir tc")
     a(href="/pokemon") Favorites
-  //-  
-    <% pokemon.forEach(function(pokemon) { %>
-  div.well
+
+  section(class="cf w-100 pa2-ns tc")
     h2.text-centerreflow Pokemon 
    
     each pokemon in pokemons
-      form(method="POST" action="/pokemon")
-        div.card= pokemon.name
-          img.card-img-top(src=pokemon.image)
+      article(class="avenir fl w-50 w-25-m w-10-ns pa2-ns ma2 ba dark-grey")
+        form(method="POST" action="/pokemon")
           input.card-body(hidden type="text" name="name" value=pokemon.name)
           input.card-body(hidden type="text" name="number" value=pokemon.number)
-          button(class="btn btn-primary" type="submit") Add to Favorite Pokemon
+            
+          div(class="aspect-ratio aspect-ratio--1x1")
+            img(width="100%" src=pokemon.image)
+          h3(class="avenir f5 f4-ns mb0 black-90 tc")= pokemon.name
+            button(class="avenir f5 no-underline black bg-white bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4 tc " type="submit") 🖤
