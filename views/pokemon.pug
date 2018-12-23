@@ -1,0 +1,13 @@
+extends layout.pug
+
+block content
+  div  
+  h1.text-center Favorite Pokemon
+  p.text-center
+    a(href="/") Home
+
+  div.well
+    h2.text-center Pokemon    
+    each pokemon in pokemons
+      div.card= pokemon.name
+        img.card-img-top(src=pokemon.image)

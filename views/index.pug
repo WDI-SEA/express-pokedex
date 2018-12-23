@@ -1,0 +1,19 @@
+extends layout.pug
+
+block content
+  div  
+  h1.text-center The Original 151 Pokemon
+  p.text-center
+    a(href="/pokemon") Favorites
+  //-  
+    <% pokemon.forEach(function(pokemon) { %>
+  div.well
+    h2.text-centerreflow Pokemon 
+   
+    each pokemon in pokemons
+      form(method="POST" action="/pokemon")
+        div.card= pokemon.name
+          img.card-img-top(src=pokemon.image)
+          input.card-body(hidden type="text" name="name" value=pokemon.name)
+          input.card-body(hidden type="text" name="number" value=pokemon.number)
+          button(class="btn btn-primary" type="submit") Add to Favorite Pokemon

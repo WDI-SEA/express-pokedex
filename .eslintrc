@@ -1,6 +1,4 @@
 {
-  "extends": "airbnb/legacy",
-
   "env": {
     "browser": true,
     "jquery": true,
@@ -8,6 +6,8 @@
   },
 
   "globals": {},
+
+  "parserOptions": { "ecmaVersion": 2017 },
 
   "rules": {
     "vars-on-top": 0,
