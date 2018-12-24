@@ -20,13 +20,14 @@ router.get('/:idx', function(req, res) {
   var pokemonUrl = `http://pokeapi.co/api/v2/pokemon/${queryName}`;
   // Use request to call the API
   request(pokemonUrl, function(error, response, body) {
-    console.log(parsePokemonAPIPokemon(body));
-    res.render('show', { pokemon: parsePokemonAPIPokemon(body) });
+    // Use DB to get number of pokemon to generate image URL
+    db.pokemon.find({ where: { name: queryName } }).then(function(pokemon) {
+      res.render('show', { pokemon: parsePokemonAPIPokemon(body) });
+    });
   });
 });
 
 router.delete('/:idx', function(req, res) {
-  console.log('delete', req.params.idx);
   db.pokemon
     .destroy({
       where: { name: req.params.idx },
@@ -83,7 +84,7 @@ function parsePokemonAPIPokemon(body) {
     ),
     name: pokemonDescription.name,
     number: pokemonDescription.order,
-    image: createImgString(pokemonDescription.name, pokemonDescription.order),
+    image: createImgString(pokemonDescription.name, pokemonDescription.id),
     moves: pokemonDescription.moves.map(move => move.move.name),
     height: pokemonDescription.height,
     weight: pokemonDescription.weight,
