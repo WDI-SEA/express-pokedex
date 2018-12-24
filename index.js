@@ -20,7 +20,7 @@ app.get('/', function(req, res) {
   var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
   // Use request to call the API
   request(pokemonUrl, function(error, response, body) {
-    res.render('index', { pokemons: parsePokemonAPI(body) });
+    res.render('index', { pokemons: parsePokemonAPIRoot(body) });
   });
 });
 
@@ -31,9 +31,9 @@ var server = app.listen(process.env.PORT || 3000);
 
 module.exports = server;
 
-// Pokemon from https://theartificial.com/pokemonicons
 
-function parsePokemonAPI(body) {
+
+function parsePokemonAPIRoot(body) {
   var pokemonsLong = JSON.parse(body).results;
   var pokemons = pokemonsLong.filter((pokemon, i) => i < 151);
   var pokemonsWithImgs = pokemons.map(pokemon => {

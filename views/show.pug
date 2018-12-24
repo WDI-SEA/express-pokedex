@@ -1,0 +1,19 @@
+extends layout.pug
+
+block content
+
+  article.avenir.pb5
+    header.avenir.tc-l.ph3.ph4-ns.pt4.pt5-ns
+      h1.f3.f2-m.f-f-subheadline-l.measure.lh-title.fw1.mt0= pokemon.name
+      img.w-10.dib.measure.f3(src=pokemon.image)
+    h3 Abilities:
+    .ph3.ph4-m.ph5-l
+      p.f4.mb4.center.measure.lh-copy
+        each ability in pokemon.abilities
+          p= ability
+    h3 Moves:
+    .ph3.ph4-m.ph5-l
+      p.f4.mb4.center.measure.lh-copy
+        each move in pokemon.moves
+          p= move
+    p I got properties passed into this route. Someone who understands Pokemon should implement this.

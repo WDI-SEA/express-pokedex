@@ -1,12 +1,27 @@
 var express = require('express');
 var router = express.Router();
+var request = require('request');
+var bodyParser = require('body-parser');
 var db = require('../models');
+
+// app.use(bodyParser.urlencoded({ extended: false }));
 
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', function(req, res) {
   // TODO: Get all records from the DB and render to view
   db.pokemon.findAll().then(pokemons => {
     res.render('pokemon', { pokemons: pokemonObjectToTemplate(pokemons) });
+  });
+});
+
+router.get('/:idx', function(req, res) {
+  var queryName = req.params.idx;
+
+  var pokemonUrl = `http://pokeapi.co/api/v2/pokemon/${queryName}`;
+  // Use request to call the API
+  request(pokemonUrl, function(error, response, body) {
+    console.log(parsePokemonAPIPokemon(body));
+    res.render('show', { pokemon: parsePokemonAPIPokemon(body) });
   });
 });
 
@@ -47,6 +62,21 @@ function pokemonObjectToTemplate(pokemons) {
       image: createImgString(dbEntry.name, dbEntry.number),
     };
   });
+}
+
+function parsePokemonAPIPokemon(body) {
+  var pokemonDescription = JSON.parse(body);
+  return {
+    abilities: pokemonDescription.abilities.map(
+      ability => ability.ability.name
+    ),
+    name: pokemonDescription.name,
+    number: pokemonDescription.order,
+    image: createImgString(pokemonDescription.name, pokemonDescription.order),
+    moves: pokemonDescription.moves.map(move => move.move.name),
+    height: pokemonDescription.height,
+    weight: pokemonDescription.weight,
+  };
 }
 
 module.exports = router;
