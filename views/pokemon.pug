@@ -14,8 +14,9 @@ block content
         form(method="POST" action=`/pokemon/${pokemon.name}?_method=DELETE`)
           input.card-body(hidden type="text" name="name" value=pokemon.name)
           input.card-body(hidden type="text" name="number" value=pokemon.number)
-
-          div(class="aspect-ratio aspect-ratio--1x1")
-            img(width="100%" src=pokemon.image)
-          h3(class="avenir f5 f4-ns mb0 black-90 tc")= pokemon.name
+          div
+            a(href=`/pokemon/${pokemon.name}`)
+              div(class="aspect-ratio aspect-ratio--1x1")
+                img(width="100%" src=pokemon.image)
+              h3(class="avenir f5 f4-ns mb0 black-90 tc")= pokemon.name
           button(class="avenir f5 no-underline black bg-white bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4 tc" type="submit") 🗑️

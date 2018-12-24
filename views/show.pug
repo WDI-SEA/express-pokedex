@@ -2,10 +2,21 @@ extends layout.pug
 
 block content
 
+  h1.avenir.tc= pokemon.name
+  h3(class="avenir tc")
+    a(href="/") Home
+  h3(class="avenir tc")
+    a(href="/pokemon") Favorites
+
   article.avenir.pb5
     header.avenir.tc-l.ph3.ph4-ns.pt4.pt5-ns
-      h1.f3.f2-m.f-f-subheadline-l.measure.lh-title.fw1.mt0= pokemon.name
+      //- h1.f3.f2-m.f-f-subheadline-l.measure.lh-title.fw1.mt0= pokemon.name
       img.w-10.dib.measure.f3(src=`${pokemon.image}`)
+      form(method="POST" action="/pokemon")
+        input.card-body(hidden type="text" name="name" value=pokemon.name)
+        input.card-body(hidden type="text" name="number" value=pokemon.number)
+        button(class="avenir f5 no-underline black bg-white bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4 tc " type="submit") 🖤
+
     h3 Abilities:
     .ph3.ph4-m.ph5-l
       p.f4.mb4.center.measure.lh-copy

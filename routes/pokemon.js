@@ -45,7 +45,6 @@ router.post('/', function(req, res) {
       where: { name: req.body.name, number: req.body.number },
     })
     .spread((pokemon, created) => {
-      console.log(req.body);
       db.pokemon.findAll().then(pokemons => {
         res.render('pokemon', { pokemons: pokemonObjectToTemplate(pokemons) });
       });
@@ -83,7 +82,7 @@ function parsePokemonAPIPokemon(body) {
       ability => ability.ability.name
     ),
     name: pokemonDescription.name,
-    number: pokemonDescription.order,
+    number: pokemonDescription.id,
     image: createImgString(pokemonDescription.name, pokemonDescription.id),
     moves: pokemonDescription.moves.map(move => move.move.name),
     height: pokemonDescription.height,
