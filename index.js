@@ -4,12 +4,14 @@ var request = require('request');
 var bodyParser = require('body-parser');
 var pug = require('pug');
 var app = express();
+var methodOverride = require('method-override');
 
 // Middlewares
 
 app.use(require('morgan')('dev'));
 app.set('view engine', 'pug');
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(methodOverride('_method'));
 
 // Serve static files
 
@@ -30,8 +32,6 @@ app.use('/pokemon', require('./routes/pokemon'));
 var server = app.listen(process.env.PORT || 3000);
 
 module.exports = server;
-
-
 
 function parsePokemonAPIRoot(body) {
   var pokemonsLong = JSON.parse(body).results;

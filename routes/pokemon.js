@@ -25,6 +25,17 @@ router.get('/:idx', function(req, res) {
   });
 });
 
+router.delete('/:idx', function(req, res) {
+  console.log('delete', req.params.idx);
+  db.pokemon
+    .destroy({
+      where: { name: req.params.idx },
+    })
+    .then(() => {
+      res.redirect('/pokemon');
+    });
+});
+
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
   // TODO: Get form data and add a new record to DB
