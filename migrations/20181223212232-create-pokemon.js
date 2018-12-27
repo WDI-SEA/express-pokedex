@@ -18,7 +18,7 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
-      }
+      },
       pokemonId: {
         type: Sequelize.INTEGER
       }
