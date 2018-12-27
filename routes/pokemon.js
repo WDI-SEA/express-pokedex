@@ -47,7 +47,6 @@ router.get('/:idx', function(req, res) {
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
-  // TODO: Get form data and add a new record to DB
   db.pokemon.findOrCreate({
     where: {
       name: req.body.name,
@@ -62,9 +61,45 @@ router.post('/', function(req, res) {
 
 });
 
+// GET /pokemon/edit/id - Edit/Delete form for fave pokemon
+router.get('/edit/:idx', (req, res) => {
+  db.pokemon.findOne({
+    attributes: ['id', 'name'],
+    where: {id: req.params.idx}
+  })
+  .then(selectedPokemon => {
+    if (!selectedPokemon) {
+      throw 'No pokemon with that id';
+    }
+    res.render('pokemon/edit', { pokemon: selectedPokemon });
+  })
+  .catch(err => {
+    console.log(`Error: ${err}`);
+    res.render('error');
+    // ADD SOMETHING HERE
+  })
+});
 
-router.delete('/idx', (req, res) => {
 
+// POST/DELETE /pokemon/id - Remove pokemon from database
+router.delete('/:idx', (req, res) => {
+  db.pokemon.destroy({
+    where: {id: req.params.idx},
+  })
+  .then(destroyedPokemon => {
+    res.redirect('/pokemon');
+  })
+  .catch(err => {
+    console.log(`Error: ${err}`);
+    res.render('error');
+    // ADD SOMETHING HERE
+  })
+
+})
+
+// POST/PUT /pokemon/id - Update pokemon info in database
+router.put('/:idx', (req, res) => {
+  res.send(`Trying to update ${req.params.idx}`);
 })
 
 

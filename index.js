@@ -1,9 +1,13 @@
 require('dotenv').config();
-var express = require('express');
-var request = require('request');
-var bodyParser = require('body-parser');
-var ejsLayouts = require('express-ejs-layouts');
-var app = express();
+const express = require('express');
+const request = require('request');
+const bodyParser = require('body-parser');
+const ejsLayouts = require('express-ejs-layouts');
+const methodOverride = require('method-override')
+const app = express();
+
+// override with POST having ?_method=DELETE or ?_method=PUT
+app.use(methodOverride('_method'))
 
 app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
