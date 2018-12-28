@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var db = require('./models');
+var db = require('../models');
 
 
 // GET /pokemon - return a page with favorited Pokemon
@@ -8,7 +8,7 @@ router.get('/', function(req, res) {
   // TODO: Get all records from the DB and render to view
   db.pokemon.findAll()
   .then(function(foundPokemon){
-  	res.render('./views/results', { pokemons: foundPokemon })
+  	res.render('../views/results', { pokemons: foundPokemon })
   })
   .catch(function(error){
   	console.log('Error Message', error);
