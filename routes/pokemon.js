@@ -3,7 +3,6 @@ var router = express.Router();
 var db = require('../models');
 var request = require('request');
 
-
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', function(req, res) {
   // TODO: Get all records from the DB and render to view

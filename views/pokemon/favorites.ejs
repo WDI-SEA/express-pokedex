@@ -1,10 +1,21 @@
-<div class="container">
-  <h1 class="text-center">Favorites</h1>
- <% pokemon.forEach(function(pokemon) { %>
-      <h2><%= pokemon.dataValues.name %></h2>
-      <form method="GET" action="/pokemon/<%= pokemon.name %>">
-      <input type="submit" name="userquery" value="More Info">
-      </form>
-	 <% }) %>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Favorite Pokemons</title>
+	<link rel="stylesheet" type="text/css" href="../style.css">
+	<link href="https://fonts.googleapis.com/css?family=Muli|Ubuntu" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+	  <h1>Your Favorite Pokemons</h1>
+		<% pokemon.forEach(function(pokemon) { %>
+	      <h2 class="favorites"><%= pokemon.dataValues.name %></h2>
+		      <form method="GET" action="/pokemon/<%= pokemon.name %>">
+		      	<input id="moreInfo" type="submit" name="userquery" value="More Info">
+		      </form>
+		<% }) %>
+	</div>
+</body>
+</html>
+
 

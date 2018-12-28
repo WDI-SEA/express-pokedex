@@ -1,45 +1,40 @@
-
-<img src="<%= results.sprites.front_default %>">
-
-<br>
-
-<label>Name</label>
-<ul>
-	<li><%= results.name %></li>
-</ul>
-
-<label>Pokemon ID</label>
-<ul>
-	<li><%= results.id %></li>
-</ul>
-
-
-<label>Weight & Height</label>
-<ul>
-	<li> <%= results.weight %> & <%= results.height %></li>
-</ul>
-<label>Base Experience</label>
-<ul>
-	<li> <%= results.base_experience %> </li>
-</ul>
-
-<label>Abilities</label>
- <% results.abilities.forEach(function(pokemon) { %>
-    <ul>
-      <li><%= pokemon.ability.name %></li>
-    </ul>
-<% }) %>
-
-<label>Types</label>
- <% results.types.forEach(function(pokemon) { %>
-	<ul>
-		<li> <%= pokemon.type.name %> </li>
-	</ul>
-<% }) %>
-
-<label>Items</label>
- <% results.held_items.forEach(function(pokemon) { %>
-	<ul>
-		<li> <%= pokemon.item.name %> </li>
-	</ul>
-<% }) %>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>About your Pokemon</title>
+	<link rel="stylesheet" type="text/css" href="../style.css">
+	<link href="https://fonts.googleapis.com/css?family=Muli|Ubuntu" rel="stylesheet">
+</head>
+<body>
+	<div class = "infoContainer">
+		<img src="<%= results.sprites.front_default %>">
+		<br>
+		<label>Name</label>
+			<li><%= results.name %></li>
+		<hr>
+		<label>Pokemon ID</label>
+			<li><%= results.id %></li>
+		<hr>
+		<label>Weight & Height</label>
+			<li> <%= results.weight %> & <%= results.height %></li>
+		<hr>
+		<label>Base Experience</label>
+			<li> <%= results.base_experience %> </li>
+		<hr>
+		<label>Abilities</label>
+		 <% results.abilities.forEach(function(pokemon) { %>
+		    <li><%= pokemon.ability.name %></li>
+		<% }) %>
+		<hr>
+		<label>Types</label>
+		 <% results.types.forEach(function(pokemon) { %>
+			<li> <%= pokemon.type.name %> </li>
+		<% }) %>
+		<hr>
+		<label>Items</label>
+		 <% results.held_items.forEach(function(pokemon) { %>
+			<li> <%= pokemon.item.name %> </li>			
+		<% }) %>
+	</div>
+</body>
+</html>

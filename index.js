@@ -8,6 +8,7 @@ var app = express();
 app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static('static'));
 app.use(ejsLayouts);
 
 // GET / - main index of site
