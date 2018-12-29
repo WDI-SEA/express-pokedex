@@ -1,7 +1,12 @@
+<h1>Favorite Pokemon</h1>
+
 <ul>
-	<% favePokemon.forEach((pokemon) => { %>
+	<% favePokemon.forEach((pokemon, index) => { %>
 		<li>
 			<%= pokemon.name %>
+			<form method="POST" action="/pokemon/<%= index %>/?_method=DELETE">
+				<input type="submit" value="Delete">
+			</form>
 		</li>
-	<% }) %>
+	<% }); %>
 </ul>

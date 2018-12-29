@@ -31,14 +31,19 @@ router.post('/', function(req, res) {
 router.get('/:id', (req, res) => {
 	var findName = db.pokemon.findById(parseInt(req.params.id))
 	.then((pokeName) => {
-		console.log(pokeName.name);
 		var resultUrl = 'http://pokeapi.co/api/v2/pokemon/'+ pokeName.name.toLowerCase();
-		console.log(resultUrl);
-		// request(resultUrl, function (error, response, body) {
-		// 	var pokemonData = JSON.parse(body);
-		// 	res.render('show', {pokemon: pokemonData});
-		// });
-	})
+		request(resultUrl, function (error, response, body) {
+			var pokemonData = JSON.parse(body);
+			res.render('show', {pokemon: pokemonData});
+      console.log(pokemonData.types[0].type.name)
+		})
+	});
+
+
+router.delete('/:id', (req, res) => {
+  pokemon.splice(req.params.id, 1);
+  res.redirect('/');
+})
 	
 });
 
