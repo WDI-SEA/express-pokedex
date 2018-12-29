@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var db = require('../models');
+var request = require('request');
 
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', function(req, res) {
@@ -21,10 +22,24 @@ router.post('/', function(req, res) {
   db.pokemon.findOrCreate({
   	where: {name: req.body.name}
   	}).spread((pokemon, created) => {
-  	console.log(pokemon.get());
-  	console.log(created);
-  	res.redirect('/pokemon');
+  		res.redirect('/pokemon');
   	})
+});
+
+
+// Show route
+router.get('/:id', (req, res) => {
+	var findName = db.pokemon.findById(parseInt(req.params.id))
+	.then((pokeName) => {
+		console.log(pokeName.name);
+		var resultUrl = 'http://pokeapi.co/api/v2/pokemon/'+ pokeName.name.toLowerCase();
+		console.log(resultUrl);
+		// request(resultUrl, function (error, response, body) {
+		// 	var pokemonData = JSON.parse(body);
+		// 	res.render('show', {pokemon: pokemonData});
+		// });
+	})
+	
 });
 
 module.exports = router;
