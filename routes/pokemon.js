@@ -35,15 +35,9 @@ router.get('/:id', (req, res) => {
 		request(resultUrl, function (error, response, body) {
 			var pokemonData = JSON.parse(body);
 			res.render('show', {pokemon: pokemonData});
-      console.log(pokemonData.types[0].type.name)
 		})
 	});
 
-
-router.delete('/:id', (req, res) => {
-  pokemon.splice(req.params.id, 1);
-  res.redirect('/');
-})
 	
 });
 

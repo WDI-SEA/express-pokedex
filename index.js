@@ -5,7 +5,6 @@ var bodyParser = require('body-parser');
 var ejsLayouts = require('express-ejs-layouts');
 var app = express();
 
-app.use(methodOverride('_method'));
 // Middleware, morgan - http request logger
 app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
