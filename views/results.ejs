@@ -1,7 +1,13 @@
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
 <h1>My Favorite Pokemons!</h1>
+
 
 <% pokemons.forEach(function(p){ %>
 	<div>
-		<h3><%= p.name %></h3>
+		<h3><%= p.name %></h3><a href="/pokemon/<%= p.name.toLowerCase() %>">More info</a>
+		<form method="POST" action="/pokemon/<%= p.name.toLowerCase() %>/?_method=DELETE">
+				<input type="submit" value="Delete">
+		</form>
 	</div>
 <% }) %>

@@ -1,0 +1,14 @@
+
+<h1>More on <%= pokemon.name %><img src="<%= pokemon.sprites.front_default %>"></h1>
+
+<p>Height: <%= pokemon.height %> Weight: <%= pokemon.weight %> </p>
+
+<h3>Abilities</h3>
+	<% abilties.forEach(function(a){ %>
+		<li><%= a.ability.name %></li>
+	<% }) %>
+
+<h3>Moves</h3>
+	<% moves.forEach((m) => { %>
+		<li><%= m.move.name %></li>
+	<% }) %>
