@@ -1,5 +1,35 @@
 body {
-	text-align: center;
+	background: url("https://i.imgur.com/OEFl4jq.png");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	padding-bottom: 40px; 
 }
 
+p, li {
+	font-size: 20px;
+}
 
+span {
+	margin-left: 20px;
+}
+
+h1 {
+	margin-bottom: 0;
+}
+
+input {
+     background: none;
+     border: none; 
+     padding: 0;
+     color: #337ab7;
+}
+
+input:hover {
+	text-decoration: underline;
+	color: #23527c;
+}
+
+.showPageP_tag {
+	margin: 0;
+	font-size: 13px;
+}

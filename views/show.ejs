@@ -1,14 +1,18 @@
 
-<h1>More on <%= pokemon.name %><img src="<%= pokemon.sprites.front_default %>"></h1>
+<p class="showPageP_tag text-right"><a href="/pokemon">Back to Favorites</a></p>
+<p class="showPageP_tag text-right"><a href="/">Back to Original Pokemons</a></p>
 
-<p>Height: <%= pokemon.height %> Weight: <%= pokemon.weight %> </p>
+<h1 class="text-center">More on <%= pokemon.name %><img src="<%= pokemon.sprites.front_default %>"></h1>
 
-<h3>Abilities</h3>
+
+<p class="text-center"><span>Height: <%= pokemon.height %></span><span>Weight: <%= pokemon.weight %></span><span>Base Experience: <%= pokemon.base_experience %></span></p>
+
+<h3 class="text-center">Abilities</h3>
 	<% abilties.forEach(function(a){ %>
-		<li><%= a.ability.name %></li>
+		<li class="text-center list-unstyled"><%= a.ability.name %></li>
 	<% }) %>
 
-<h3>Moves</h3>
+<h3 class="text-center">Moves</h3>
 	<% moves.forEach((m) => { %>
-		<li><%= m.move.name %></li>
+		<li class="text-center list-unstyled"><%= m.move.name %></li>
 	<% }) %>

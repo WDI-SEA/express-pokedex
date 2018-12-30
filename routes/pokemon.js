@@ -17,7 +17,7 @@ router.get('/', function(req, res) {
   })
 });
 
-// render more info on the pokemon selected
+// Show Route -- render more info on the pokemon selected
 router.get('/:name', function(req, res) {
   var pokemonURL = 'http://pokeapi.co/api/v2/pokemon/' + req.params.name;
   request(pokemonURL, function(error, response, body){
@@ -28,6 +28,7 @@ router.get('/:name', function(req, res) {
         console.log('Error! Check your logs', error);
       }
       else {
+        console.log(myPokemon.held_items)
         res.render('../views/show', { pokemon: myPokemon, abilties: pokemonAbilities, moves: pokeMoves })
       }
   })
@@ -36,16 +37,12 @@ router.get('/:name', function(req, res) {
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
   // TODO: Get form data and add a new record to DB
-  db.pokemon.create({
-  	name: req.body.name
+  db.pokemon.findOrCreate({
+    where: { name: req.body.name }
   })
-  .then(function(data){
-  	console.log(req.body.name, ' has been added to your favorites');
-  	res.redirect('/pokemon');
-  })
-  .catch(function(error){
-	console.log('There\'s been an error', error);
-  })
+  .spread(function(pokemon, create){
+    res.redirect('/pokemon');
+  });
 });
 
 // delete route
