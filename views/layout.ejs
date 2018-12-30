@@ -5,15 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pokedex</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="/css/materialize.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/styles.css" type="text/css">
   </head>
   <body>
+
+    <% include ./partials/header.ejs %> 
+
     <%- body %>
 
-    <!-- jQuery -->
+    <% include ./partials/footer.ejs %> 
+
+    <!-- jQuery --
     <script src="//code.jquery.com/jquery.js"></script>
-    <!-- Bootstrap JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    -->
+    <!-- Materialize JS -->
+    <script src="/js/materialize.min.js"></script>
   </body>
 </html>
