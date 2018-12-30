@@ -1,0 +1,56 @@
+.favetitle {
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 400;
+	letter-spacing: 1px;
+	font-size: 50px;
+}
+
+.menu {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 800;
+	letter-spacing: 1px;
+	font-size: 25px;
+	color: #E80C7A;
+}
+
+.menu2 {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 800;
+	letter-spacing: 1px;
+	font-size: 25px;
+	color: #1D0CE8;
+}
+
+.btn2 {
+	background: #E80C7A;
+}
+
+.name {
+	color: white;
+}
+
+body {
+	background: url("https://wallpapercave.com/wp/cqhO8rQ.jpg");
+  	background-repeat: no-repeat;
+  	background-attachment: fixed;
+  	background-size: cover;
+}
+
+.well {
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.flashit{
+  	color: white;
+	-webkit-animation: flash linear 2s infinite;
+	animation: flash linear 2s infinite;}
+@-webkit-keyframes flash {
+	0% { opacity: 1; } 
+	50% { opacity: .1; } 
+	100% { opacity: 1; }}
+@keyframes flash {
+	0% { opacity: 1; } 
+	50% { opacity: .1; } 
+	100% { opacity: 1; }
+}

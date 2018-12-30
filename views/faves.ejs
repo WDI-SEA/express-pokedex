@@ -1,0 +1,23 @@
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+<div class="container">
+  <h1 class="text-center flashit">Your favorite Pokemons!</h1>
+  <p class="text-center">
+    <a class="menu2" href="/">Main Menu</a>
+  </p>
+
+  <% favorite.forEach(function(favorite) { %>
+    <div class="well">
+      <h2 class="name"><%= favorite.name %></h2>
+      <form method="POST" action="/pokemon/?_method=DELETE">
+        <input hidden type="text" name="name" value="<%= favorite.name %>">
+        <button id="fave2" class="btn btn2 btn-primary" type="submit">Remove from List</button>
+        <input hidden type="text" name="name" value="<%= favorite.name %>">
+        <button id="fave3" class="btn btn2 btn-primary" type="submit">Details</button>
+      </form>
+    </div>
+  <% }); %>
+
+
+
+</div>
