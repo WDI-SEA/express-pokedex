@@ -26,6 +26,8 @@ app.get('/', function(req, res) {
 
 // Imports all routes from the pokemon routes file
 app.use('/pokemon', require('./routes/pokemon'));
+app.use('/faves', require('./routes/faves'));
+// app.use('/caught', require('./routes/caught'));
 
 var server = app.listen(process.env.PORT || 3000);
 

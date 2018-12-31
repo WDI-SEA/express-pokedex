@@ -1,26 +1,22 @@
+<h1 class="center-align">The Original 151 Pokemon</h1>
+<p class="center-align">
+  <a href="/pokemon">Favorites</a>
+</p>
 
-
-<div class="container">
-  <h1 class="center-align">The Original 151 Pokemon</h1>
-  <p class="center-align">
-    <a href="/pokemon">Favorites</a>
-  </p>
-
-  <% pokemon.slice(0,151).forEach(function(pokemon, i) { %>
-    <div class="z-depth-2">
-      <h2><%= i+1 %> <%= pokemon.name %></h2>
-      <form method="POST" action="/pokemon">
-        <input hidden type="text" name="name" value="<%= pokemon.name %>">
-        <button class="waves-effect waves-light btn red darken-4" type="submit">Add to Faves</button>
-      </form>
-      <form method="POST" action="/pokemon">
-        <input hidden type="text" name="name" value="<%= pokemon.name %>">
-        <button class="waves-effect waves-light btn red darken-4" type="submit">Catch</button>
-      </form>
-      <form method="POST" action="/pokemon">
-        <input hidden type="text" name="name" value="<%= pokemon.name %>">
-        <button class="waves-effect waves-light btn red darken-4" type="submit">Inspect</button>
-      </form>
-    </div>
-  <% }); %>
-</div>
+<% pokemon.slice(0,151).forEach(function(pokemon, i) { %>
+  <div class="z-depth-2">
+    <h2><%= i+1 %> <%= pokemon.name %></h2>
+    <form method="POST" action="/faves">
+      <input hidden type="text" name="species" value="<%= pokemon.name %>">
+      <button class="waves-effect waves-light btn red darken-4" type="submit">Add to Faves</button>
+    </form>
+    <form method="POST" action="/caught/catch">
+      <input hidden type="text" name="name" value="<%= pokemon.name %>">
+      <button class="waves-effect waves-light btn red darken-4" type="submit">Catch</button>
+    </form>
+    <form method="POST" action="/pokemon/show">
+      <input hidden type="text" name="name" value="<%= pokemon.name %>">
+      <button class="waves-effect waves-light btn red darken-4" type="submit">Inspect</button>
+    </form>
+  </div>
+<% }); %>
