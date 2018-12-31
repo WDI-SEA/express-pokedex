@@ -2,7 +2,7 @@
 var db = require('./models');
 
 db.pokeman.create({
-  name: 'Pikachu'
+  name: 'Bulbasaur'
 }).then(function(poke) {
   console.log('Created: ', poke.name);
 });

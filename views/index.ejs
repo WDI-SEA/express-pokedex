@@ -5,7 +5,15 @@
   </p>
 
   <% pokemon.forEach(function(pokemon, index) { %>
-    <% if(index<151){ %>
+    <% if(pokemon.isFave){ %>
+      <div class="well">
+        <h2><%= pokemon.name %></h2>
+        <form method="POST" action="/pokemon">
+          <input hidden type="text" name="name" value="<%= pokemon.name %>">
+          <button class="btn btn-primary disabled" type="submit">Already in Your Favorites</button>
+        </form>
+      </div>
+    <% } else { %>
       <div class="well">
         <h2><%= pokemon.name %></h2>
         <form method="POST" action="/pokemon">
