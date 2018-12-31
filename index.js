@@ -16,18 +16,13 @@ app.use(express.static(__dirname + '/public'));
 
 // GET / - main index of site
 app.get('/', function(req, res) {
-  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
-  // Use request to call the API
-  request(pokemonUrl, (error, response, body) => {
-    var pokemon = JSON.parse(body).results;
-    res.render('index', { pokemon: pokemon });
-  });
+  res.send('Home Page');
 });
 
 // Imports all routes from the pokemon routes file
 app.use('/pokemon', require('./routes/pokemon'));
 app.use('/faves', require('./routes/faves'));
-// app.use('/caught', require('./routes/caught'));
+app.use('/caught', require('./routes/caught'));
 
 var server = app.listen(process.env.PORT || 3000);
 
