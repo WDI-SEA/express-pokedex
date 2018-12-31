@@ -1,0 +1,11 @@
+<h1>Favorite Pokemon</h1>
+
+<% faves.forEach(item => { %>
+  <div>
+    <h3><%= item.species %><h3> 
+  </div>
+
+  <form method="POST" action="/faves/<%= item.id %>?_method=DELETE">
+    <button type="submit">X</button>
+  </form>
+<% }) %>

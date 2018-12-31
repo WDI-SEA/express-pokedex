@@ -1,0 +1,19 @@
+<h1>Edit Favorite</h1>
+
+<form method="POST" action="/caught/<%= pokemon.id %>?_method=PUT">
+  <div>
+    <label for="nickname">Nickname</label>
+    <input type="text" name="nickname" id="nickname" value="<%= pokemon.nickname %>" required>
+  </div>
+
+  <div>
+    <label for="level">Level</label>
+    <input type="number" name="level" id="level" value="<%= pokemon.level %>" required>
+  </div>
+
+  <button type="submit">Update</button>
+</form>
+
+<form method="POST" action="/caught/<%= pokemon.id %>?_method=DELETE">
+  <button type="submit">DELETE</button>
+</form>

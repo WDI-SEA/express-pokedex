@@ -1,0 +1,22 @@
+<h1>Detailed Look at <%= pokemon.species.name %></h1>
+
+<h2>Types</h2>
+<% pokemon.types.forEach(type => { %>
+  <div>
+    <h4><%= type.type.name %></h4> 
+  </div>
+<% }) %>
+
+<h2>Abilites</h2>
+<% pokemon.abilities.forEach(ability => { %>
+  <div>
+    <h4><%= ability.ability.name %></h4> 
+  </div>
+<% }) %>
+
+<h2>Stats</h2>
+<% pokemon.stats.forEach(stat => { %>
+  <div>
+    <h4><%= stat.stat.name %>: <%= stat.base_stat %></h4> 
+  </div>
+<% }) %>

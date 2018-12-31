@@ -1,0 +1,18 @@
+<h2>Trying to catch...</h2>
+<h1><%= species %></h1>
+
+<form method="POST" action="/caught">
+  <div>
+    <label for="nickname">Nickname</label>
+    <input type="text" name="nickname" id="nickname" required>
+  </div>
+
+  <div>
+    <label for="level">Level</label>
+    <input type="number" name="level" id="level" required>
+  </div>
+  
+  <input type="hidden" name="species" value="<%= species %> ">
+
+  <button type="submit">Catch</button>
+</form>

@@ -1,0 +1,9 @@
+<h1>Your Pokemon</h1>
+
+<% pokemon.forEach(p => { %>
+  <div>
+    <h3><%= p.nickname %><h3> 
+    <h4>Lvl <%= p.level %> <%= p.species %></h4>
+    <a href="/caught/<%= p.id %>">Details</a>
+  </div>
+<% }) %>
