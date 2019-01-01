@@ -3,5 +3,9 @@
   <p class="text-center">
     <a href="/">Original 151 Pokemon</a>
   </p>
-<%= pokemon %>
+  <% pokemon.forEach(function(pokemon) { %>
+    <div class="well">
+      <h2><%= pokemon.name %></h2>
+    </div>
+  <% }); %>
 </div>
