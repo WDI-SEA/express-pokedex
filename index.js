@@ -10,6 +10,7 @@ app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(ejsLayouts);
+app.use(express.static('public'));
 
 // Helper Function
 function capitaliseFirstLetter(string) {
@@ -30,9 +31,7 @@ app.get('/', function(req, res) {
         favePokemon.forEach((favePokeman)=>{
           if (pokeman.name === favePokeman.name) {
             pokeman.isFave = true;
-            console.log(favePokeman.name);
-          } else {
-            pokeman.isFave = false;
+            console.log(favePokeman.name, pokeman.isFave);
           }
         })
       })

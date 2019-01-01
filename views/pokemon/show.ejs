@@ -1,0 +1,13 @@
+<div>
+    <h1><%= pokemon %></h1>
+    <img src="<%= pokeData.sprites.front_default %>" alt="Image of <%= pokemon %>">
+    <h4>Stats</h4>
+    <% pokeData.stats.forEach((stat)=>{ %>
+        <h6><%= stat.stat.name %></h6>
+        <p>Base: <%= stat.base_stat %></p>
+    <% }) %>
+    <h4>Type</h4>
+    <% pokeData.types.forEach((type)=>{ %>
+        <p><%= type.type.name %></p>
+    <% }) %>
+</div>

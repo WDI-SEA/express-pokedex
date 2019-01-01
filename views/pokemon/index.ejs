@@ -1,4 +1,7 @@
-<h1>Favourite Pokemen</h1>
+<h1 class="text-center">Favourite Pokemen</h1>
+<p class="text-center">
+    <a href="/">Home</a>
+</p>
 <% pokemon.forEach((pokemon)=>{ %>
-    <h3><%= pokemon.name %></h3>
+    <h3><a href="/pokemon/<%= pokemon.name %>"><%= pokemon.name %></a></h3>
 <% }) %>
