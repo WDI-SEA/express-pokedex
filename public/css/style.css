@@ -1,3 +1,7 @@
 body {
     background: #ded8e7;
 }
+
+a {
+    padding: 0 10px;
+}

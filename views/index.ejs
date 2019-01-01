@@ -1,29 +1,31 @@
 <div class="container">
   <h1 class="text-center">The Original 151 Pokemon</h1>
-  <p class="text-center">
-    <a href="/pokemon">Favorites</a>
-  </p>
+  <hr>
 
   <% pokemon.forEach(function(pokemon) { %>
     <% if(pokemon.isFave){ %>
-      <div class="card">
-        <div class="card-body">
-          <h2 class="card-title"><%= pokemon.name %></h2>
-          <form method="POST" action="/pokemon">
-            <input hidden type="text" name="name" value="<%= pokemon.name %>">
-            <button class="btn btn-primary disabled" type="submit">Already in Your Favorites</button>
-          </form>
-        </div>
+      <div class="text-center col-sm-6 col-md-4">
+        <div class="card">
+            <div class="card-body">
+              <h2 class="card-title"><%= pokemon.name %></h2>
+              <form>
+                <input hidden type="text" name="name" value="<%= pokemon.name %>">
+                <button class="btn btn-primary disabled" type="button">Already in Your Favorites</button>
+              </form>
+            </div>
+          </div>
       </div>
     <% } else { %>
-      <div class="card">
-        <div class="card-body">
-          <h2 class="card-title"><%= pokemon.name %></h2>
-          <form method="POST" action="/pokemon">
-            <input hidden type="text" name="name" value="<%= pokemon.name %>">
-            <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
-          </form>
-        </div>
+      <div class="text-center col-sm-6 col-md-4">
+        <div class="card">
+            <div class="card-body">
+              <h2 class="card-title"><%= pokemon.name %></h2>
+              <form method="POST" action="/pokemon">
+                <input hidden type="text" name="name" value="<%= pokemon.name %>">
+                <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
+              </form>
+            </div>
+          </div>
       </div>
     <% } %>
   <% }); %>
