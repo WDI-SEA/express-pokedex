@@ -4,7 +4,10 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
   }, {});
   pokemon.associate = function(models) {
-    // associations can be defined here
+ // pokemon.hasMany(models.pokemon,{
+ //        foreignKey: 'pokemonId',
+ //        as: 'pokemon',
+ //    }); 
   };
   return pokemon;
 };
