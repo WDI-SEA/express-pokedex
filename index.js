@@ -16,7 +16,7 @@ app.use(express.static(__dirname + '/public'));
 
 // GET / - main index of site
 app.get('/', function(req, res) {
-  res.send('Home Page');
+  res.render('home', { layout: 'home_layout.ejs' });
 });
 
 // Imports all routes from the pokemon routes file

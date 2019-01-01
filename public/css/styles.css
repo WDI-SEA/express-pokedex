@@ -64,3 +64,81 @@
   padding-top: 50px;
   padding-bottom: 60px;
 }
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.pokecard-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokecard {
+  min-width: 300px;
+  width: 500px;
+  height: 150px;
+  padding: 20px;
+  text-align: center;
+  margin: 5px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.pokecard-btn {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  padding: 1px 2px;
+  margin: 1px;
+  text-align: left;
+  height: 35px;
+  width: 100px;
+}
+
+.button-icon {
+  width: 25px;
+  height: auto;
+}
+
+.fave-btn:hover:after{
+  content: 'Fave';
+}
+
+.catch-btn:hover:after{
+  content: 'Catch';
+}
+
+.info-btn:hover:after{
+  content: 'Info';
+}
+
+.poke-num {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 2px;
+}
+
+.poke-title {
+  display: block;
+  width: 100%;
+  margin: 0;
+}
+
+
+@media only screen and (min-width: 740px)  {
+  .pokecard {
+    width: 300px;
+    height: 200px;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}

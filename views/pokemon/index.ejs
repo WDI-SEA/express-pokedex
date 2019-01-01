@@ -1,17 +1,20 @@
-<h1 class="center-align">The Original 151 Pokemon</h1>
+<h2 class="center-align">The Original 151 Pokemon</h2>
 
+<div class="pokecard-container">
 <% pokemon.slice(0,151).forEach(function(pokemon, i) { %>
-  <div class="z-depth-2">
-    <h2><%= i+1 %> <%= pokemon.name %></h2>
+  <div class="z-depth-2 card pokecard">
+    <h5 class="poke-num">#<%= i+1 %></h5>
+    <h3 class="capitalize poke-title"><%= pokemon.name %></h3> 
     <form method="POST" action="/faves">
       <input hidden type="text" name="species" value="<%= pokemon.name %>">
-      <button class="waves-effect waves-light btn red darken-4" type="submit">Add to Faves</button>
+      <button class="waves-effect waves-light btn red darken-1 pokecard-btn fave-btn" type="submit"><img src="/img/fave.png" class="button-icon"></button>
     </form>
     <form method="GET" action="/caught/catch/<%= pokemon.name %>">
-      <button class="waves-effect waves-light btn red darken-4" type="submit">Catch</button>
+      <button class="waves-effect waves-light btn red darken-1 pokecard-btn catch-btn" type="submit"><img src="/img/pokeball.png" class="button-icon"></button>
     </form>
     <form method="GET" action="/pokemon/<%= pokemon.name %>">
-      <button class="waves-effect waves-light btn red darken-4" type="submit">Inspect</button>
+      <button class="waves-effect waves-light btn red darken-1 pokecard-btn info-btn" type="submit"><img src="/img/info.png" class="button-icon"></button>
     </form>
   </div>
 <% }); %>
+</div>
