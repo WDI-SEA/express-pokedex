@@ -39,7 +39,7 @@ router.get('/:idx', function (req, res) {
       res.render('Error', {userInput: req.body.locationInput});
     } else {
       var pokeData = JSON.parse(body);
-      res.render('pokemon/show', {pokemon: req.params.id, pokeData: pokeData});
+      res.render('pokemon/show', {pokemon: req.params.idx, pokeData: pokeData});
     }
   })
 })
