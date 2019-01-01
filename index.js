@@ -5,12 +5,14 @@ var bodyParser = require('body-parser');
 var ejsLayouts = require('express-ejs-layouts');
 var app = express();
 var db = require('./models');
+var methodOverride = require('method-override');
 
 app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 app.use(express.static('public'));
+app.use(methodOverride('_method'));
 
 // Helper Function
 function capitaliseFirstLetter(string) {
@@ -31,7 +33,6 @@ app.get('/', function(req, res) {
         favePokemon.forEach((favePokeman)=>{
           if (pokeman.name === favePokeman.name) {
             pokeman.isFave = true;
-            console.log(favePokeman.name, pokeman.isFave);
           }
         })
       })

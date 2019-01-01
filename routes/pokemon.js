@@ -12,7 +12,7 @@ router.get('/', function(req, res) {
 });
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
-router.post('/', function(req, res) {
+router.post('/', (req, res)=>{
   // TODO: Get form data and add a new record to DB
   db.pokeman.create({
     name: req.body.name
@@ -21,15 +21,24 @@ router.post('/', function(req, res) {
   }).catch((err)=>console.log("Bad news bears, db.pokemon.create has an error", err))
 });
 
-router.get('/:id', function (req, res) {
-  var pokeAddress = req.params.id.toLowerCase();
+router.delete('/:id', (req, res)=>{
+  var faveId = req.params.id;
+  db.pokeman.destroy({
+    where: {id: faveId}
+  }).then(deletedFave => {
+    console.log(deletedFave);
+    res.redirect("/pokemon");
+  }).catch((err)=>console.log("Deleting error ", err));
+})
+
+router.get('/:idx', function (req, res) {
+  var pokeAddress = req.params.idx.toLowerCase();
   request(`http://pokeapi.co/api/v2/pokemon/${pokeAddress}`, function(error, response, body){
     if (error) {
       console.log('Rutron Spaghettion, ', error);
       res.render('Error', {userInput: req.body.locationInput});
     } else {
-      var results = JSON.parse(body);
-      var pokeData = results;
+      var pokeData = JSON.parse(body);
       res.render('pokemon/show', {pokemon: req.params.id, pokeData: pokeData});
     }
   })
