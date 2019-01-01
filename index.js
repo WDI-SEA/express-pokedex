@@ -3,9 +3,19 @@ var express = require('express');
 var request = require('request');
 var bodyParser = require('body-parser');
 var ejsLayouts = require('express-ejs-layouts');
+var db = require('./models');
+
 var app = express();
 
-app.use(require('morgan')('dev'));
+// db.pdex.create({
+// 	name: 'Miasaurus'
+// }).then(function(poke) {
+// 	console.log('Created: ', poke.name);
+// });
+
+
+
+app.use(require('morgan')('dev'));  
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(ejsLayouts);
@@ -14,11 +24,35 @@ app.use(ejsLayouts);
 app.get('/', function(req, res) {
   var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
   // Use request to call the API
+  console.log("who dat?"); // "back to all pokemon" on favorites page
   request(pokemonUrl, function(error, response, body) {
     var pokemon = JSON.parse(body).results;
     res.render('index', { pokemon: pokemon });
   });
 });
+
+
+// GET / - favorites index
+app.get('/pokemon', function(req, res) {
+	console.log("anyone listening?") //"favorites button on main page"
+    res.render('pokemon/index');
+
+});
+
+
+
+
+// GET / - favorites index
+// app.get('/pokemon', function(req, res) {
+//   var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
+//   // Use request to call the API
+//   request(pokemonUrl, function(error, response, body) {
+//     var pokemon = JSON.parse(body).results;
+//     res.render('pokemon/index', { pokemon: pokemon });
+//   });
+// });
+
+
 
 // Imports all routes from the pokemon routes file
 app.use('/pokemon', require('./routes/pokemon'));
