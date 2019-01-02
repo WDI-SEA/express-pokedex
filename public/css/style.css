@@ -21,3 +21,9 @@ a {
     border: 3px solid rgba(0, 0, 0, 0.16);
     border-radius: .5rem;
 }
+
+.title-btn {
+    background: none;
+    border: none;
+    padding: 0;
+}

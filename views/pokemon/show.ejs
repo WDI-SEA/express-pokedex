@@ -5,12 +5,12 @@
             <img src="<%= pokeData.sprites.front_default %>" alt="Image of <%= pokemon %>" class="card-img">
         </div>
     </div>
-    <div class="row justify-content-center align-content-start">
-        <div class="accordion" id="pokeInfo">
-            <div class="card col-lg-3 col-sm-auto justify-self-center" style="width: 18rem;">
+    <div class="accordion" id="pokeInfo"></div>
+        <div class="row justify-content-around align-content-start">
+            <div class="card col-lg-7 col-sm-auto justify-self-center" style="width: 18rem;">
                 <div class="card-title text-content-center" id="typeCard">
                     <h4 class="mb-0">
-                        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#typeList" aria-expanded="true" aria-controls="typeList">
+                        <button class="title-btn btn collapsed" type="button" data-toggle="collapse" data-target="#typeList" aria-expanded="true" aria-controls="typeList">
                             Type
                         </button>
                     </h4>
@@ -26,10 +26,31 @@
                 </div>
             </div>
 
-            <div class="card col-lg-3 col-sm-auto justify-self-center" style="width: 18rem;">
+            <div class="card col-lg-7 col-sm-auto justify-self-center" style="width: 18rem;">
+                <div class="card-title text-content-center" id="abilitiesCard">
+                    <h4 class="mb-0">
+                        <button class="title-btn btn collapsed" type="button" data-toggle="collapse" data-target="#abilitiesList" aria-expanded="true" aria-controls="abilitiesList">
+                            Abilities
+                        </button>
+                    </h4>
+                    <hr>
+                </div>
+
+                <div id="abilitiesList" class="collapse" aria-labelledby="abilitiesCard" data-parent="#pokeInfo">
+                    <div class="card-body">
+                    <% pokeData.abilities.forEach((ability)=>{ %>
+                        <div class="card-text">
+                            <p><%= ability.ability.name %></p>
+                        </div>
+                    <% }) %>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="card col-lg-7 col-sm-auto justify-self-center" style="width: 18rem;">
                 <div class="card-title text-content-center" id="statsCard">
                     <h4 class="mb-0">
-                        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#statList" aria-expanded="true" aria-controls="statList">
+                        <button class="title-btn btn collapsed" type="button" data-toggle="collapse" data-target="#statList" aria-expanded="true" aria-controls="statList">
                             Stats
                         </button>
                     </h4>
@@ -48,32 +69,10 @@
                 </div> 
             </div>
 
-
-            <div class="card col-lg-3 col-sm-auto justify-self-center" style="width: 18rem;">
-                <div class="card-title text-content-center" id="abilitiesCard">
-                    <h4 class="mb-0">
-                        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#abilitiesList" aria-expanded="true" aria-controls="abilitiesList">
-                            Abilities
-                        </button>
-                    </h4>
-                    <hr>
-                </div>
-
-                <div id="abilitiesList" class="collapse" aria-labelledby="abilitiesCard" data-parent="#pokeInfo">
-                    <div class="card-body">
-                   <% pokeData.abilities.forEach((ability)=>{ %>
-                        <div class="card-text">
-                            <p><%= ability.ability.name %></p>
-                        </div>
-                    <% }) %>
-                    </div>
-                </div> 
-            </div>
-
-            <div class="card col-lg-3 col-sm-auto justify-self-center" style="width: 18rem;">
+            <div class="card col-lg-7 col-sm-auto justify-self-center" style="width: 18rem;">
                 <div class="card-title text-content-center" id="movesCard">
                     <h4 class="mb-0">
-                        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#movesList" aria-expanded="true" aria-controls="movesList">
+                        <button class="title-btn btn collapsed" type="button" data-toggle="collapse" data-target="#movesList" aria-expanded="true" aria-controls="movesList">
                             Moves
                         </button>
                     </h4>
