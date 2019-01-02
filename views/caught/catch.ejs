@@ -1,18 +1,22 @@
-<h2>Trying to catch...</h2>
-<h1><%= species %></h1>
+<h2 class="block-header">Trying to catch...</h2>
+<h1 class="block-header"><span class="capitalize"><%= species %></span></h1>
 
-<form method="POST" action="/caught">
-  <div>
-    <label for="nickname">Nickname</label>
-    <input type="text" name="nickname" id="nickname" required>
-  </div>
+<div class="card edit-card detail-card">
+  <form method="POST" action="/caught">
+    <div>
+      <label for="nickname">Nickname</label>
+      <input type="text" name="nickname" id="nickname" required>
+    </div>
 
-  <div>
-    <label for="level">Level</label>
-    <input type="number" name="level" id="level" required>
-  </div>
-  
-  <input type="hidden" name="species" value="<%= species %> ">
+    <div>
+      <label for="level">Level</label>
+      <input type="number" name="level" id="level" required>
+    </div>
+    
+    <input type="hidden" name="species" value="<%= species %> ">
 
-  <button type="submit">Catch</button>
-</form>
+    <div class="spaced-button">
+      <button type="submit" class="waves-effect waves-light btn red darken-1 pokecard-btn catch-btn"><img src="/img/pokeball.png" class="button-icon"></button>
+    </div>
+  </form>
+</div>
