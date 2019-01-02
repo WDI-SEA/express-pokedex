@@ -69,6 +69,31 @@
                     </div>
                 </div> 
             </div>
+
+            <div class="card col-lg-3 col-sm-auto justify-self-center" style="width: 18rem;">
+                <div class="card-title text-content-center" id="movesCard">
+                    <h4 class="mb-0">
+                        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#movesList" aria-expanded="true" aria-controls="movesList">
+                            Moves
+                        </button>
+                    </h4>
+                    <hr>
+                </div>
+
+                <div id="movesList" class="collapse" aria-labelledby="movesCard" data-parent="#pokeInfo">
+                    <div class="card-body">
+                    <% pokeData.moves.forEach((move)=>{ %>
+                        <% move.version_group_details.forEach((version)=>{ %>
+                            <% if(version.level_learned_at == 0 && version.version_group.name == "red-blue") { %>
+                        <div class="card-text">
+                                <p><%= move.move.name %></p>
+                        </div>
+                            <% } %>
+                        <% }) %>
+                    <% }) %>
+                    </div>
+                </div> 
+            </div>
         </div>
     </div>
 </div>
