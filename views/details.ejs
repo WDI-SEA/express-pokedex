@@ -1,7 +1,13 @@
 <div class="container">
-  <h1 class="text-center">Your Favorite Pokemon List</h1>
+  <h1 class="text-center">Pokemon Details</h1>
   <p class="text-center">
     <a href="/pokemon">Favorites</a>
   </p>
-  <%= pokemon.id %>
+  <%= pokemon %>
+  <% abilities.forEach(function(abilities) { %>
+    <div class="well">
+      <h2><%= abilities %></h2>
+      </div>
+  <% }); %>
+
 </div>
