@@ -44,7 +44,7 @@ router.post('/', function(req, res) {
 
 		console.log(faveObject);
 
-		res.redirect('/pokemon', faveObject);
+		res.redirect('/pokemon');
 	});
 
 
