@@ -26,15 +26,13 @@ router.post('/', function(req, res) {
   			})
 });
 
-
 router.get('/:name', function(req, res) {
-  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + req.params.name;
-  request(pokemonUrl, function(error, response, body) {
-    var pokemonDetail = JSON.parse(body);
-    res.render('show', { pokemon: pokemonDetail });
-  });
+	var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + req.params.name;
+ 	request(pokemonUrl, function(error, response, body) {
+    	var pokemonDetail = JSON.parse(body);
+    	res.render('show', { pokemon: pokemonDetail });
+  	});
 });
-
 
 router.delete('/', function(req, res) {
 	db.pokemon.destroy({
