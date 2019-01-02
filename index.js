@@ -24,6 +24,9 @@ app.get('/', function(req, res) {
   var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
   // Use request to call the API
   request(pokemonUrl, function(error, response, body) {
+    if (error || response.statusCode != 200) {
+      res.render("error", {error: error, errorLocale: "Main index of the site: index.js, line: 28"})
+    } 
     var pokemon = JSON.parse(body).results;
     pokemon = pokemon.slice(0, 151);
 

@@ -8,7 +8,7 @@
     <div class="accordion" id="pokeInfo"></div>
         <div class="row justify-content-around align-content-start">
             <div class="card col-lg-7 col-sm-auto justify-self-center" style="width: 18rem;">
-                <div class="card-title text-content-center" id="typeCard">
+                <div class="card-title text-center" id="typeCard">
                     <h4 class="mb-0">
                         <button class="title-btn btn collapsed" type="button" data-toggle="collapse" data-target="#typeList" aria-expanded="true" aria-controls="typeList">
                             Type
@@ -20,14 +20,14 @@
                 <div id="typeList" class="collapse" aria-labelledby="typeCard" data-parent="#pokeInfo">
                      <div class="card-body">
                     <% pokeData.types.forEach((type)=>{ %>
-                        <p><%= type.type.name %></p>
+                        <p><%= capitalise(type.type.name) %></p>
                     <% }) %>
                      </div>
                 </div>
             </div>
 
             <div class="card col-lg-7 col-sm-auto justify-self-center" style="width: 18rem;">
-                <div class="card-title text-content-center" id="abilitiesCard">
+                <div class="card-title text-center" id="abilitiesCard">
                     <h4 class="mb-0">
                         <button class="title-btn btn collapsed" type="button" data-toggle="collapse" data-target="#abilitiesList" aria-expanded="true" aria-controls="abilitiesList">
                             Abilities
@@ -40,7 +40,7 @@
                     <div class="card-body">
                     <% pokeData.abilities.forEach((ability)=>{ %>
                         <div class="card-text">
-                            <p><%= ability.ability.name %></p>
+                            <p><%= capitalise(ability.ability.name) %></p>
                         </div>
                     <% }) %>
                     </div>
@@ -48,7 +48,7 @@
             </div>
 
             <div class="card col-lg-7 col-sm-auto justify-self-center" style="width: 18rem;">
-                <div class="card-title text-content-center" id="statsCard">
+                <div class="card-title text-center" id="statsCard">
                     <h4 class="mb-0">
                         <button class="title-btn btn collapsed" type="button" data-toggle="collapse" data-target="#statList" aria-expanded="true" aria-controls="statList">
                             Stats
@@ -61,7 +61,7 @@
                     <div class="card-body">
                         <% pokeData.stats.forEach((stat)=>{ %>
                             <div class="card-text">
-                                <p class="text"><strong><%= stat.stat.name %>:</strong></p>
+                                <p class="text"><strong><%= capitalise(stat.stat.name) %>:</strong></p>
                                 <p>Base: <%= stat.base_stat %></p>
                             </div>
                         <% }) %>
@@ -70,7 +70,7 @@
             </div>
 
             <div class="card col-lg-7 col-sm-auto justify-self-center" style="width: 18rem;">
-                <div class="card-title text-content-center" id="movesCard">
+                <div class="card-title text-center" id="movesCard">
                     <h4 class="mb-0">
                         <button class="title-btn btn collapsed" type="button" data-toggle="collapse" data-target="#movesList" aria-expanded="true" aria-controls="movesList">
                             Moves
@@ -85,7 +85,7 @@
                         <% move.version_group_details.forEach((version)=>{ %>
                             <% if(version.level_learned_at == 0 && version.version_group.name == "red-blue") { %>
                         <div class="card-text">
-                                <p><%= move.move.name %></p>
+                                <p><%= capitalise(move.move.name) %></p>
                         </div>
                             <% } %>
                         <% }) %>
