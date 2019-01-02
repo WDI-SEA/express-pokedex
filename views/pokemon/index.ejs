@@ -1,6 +1,7 @@
 <h1 class="text-center">Favorite Pokemen</h1>
+<div class="row justify-content-around">
 <% pokemon.forEach((pokemon)=>{ %>
-    <div class="text-center col-sm-6 col-md-4">
+    <div class="col-sm-auto col-md-4">
         <div class="card">
             <div class="card-body">
                 <h2 class="card-title"><a href="/pokemon/<%= pokemon.name %>"><%= pokemon.name %></a></h2>
@@ -12,3 +13,4 @@
         </div>
     </div>
 <% }) %>
+</div>

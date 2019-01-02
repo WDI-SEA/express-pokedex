@@ -1,19 +1,42 @@
-<div>
-    <img src="<%= pokeData.sprites.front_default %>" alt="Image of <%= pokemon %>">
-    <div>
-        <h2><%= pokemon %></h2>
-        <div class="card col-sm-4">
-            <h4 class="card-title">Stats</h4>
-            <% pokeData.stats.forEach((stat)=>{ %>
-                <p class="card-text"><strong><%= stat.stat.name %></strong></p>
-                <p class="card-text">Base: <%= stat.base_stat %></p>
-            <% }) %>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="card col-auto" id="title-card">
+            <h2><%= pokemon %></h2>
+            <img src="<%= pokeData.sprites.front_default %>" alt="Image of <%= pokemon %>" class="card-img">
         </div>
-        <div>
-            <h4 class="card-title">Type</h4>
-            <% pokeData.types.forEach((type)=>{ %>
-                <p class="card-text"><%= type.type.name %></p>
-            <% }) %>
+    </div>
+    <div class="row justify-content-center align-content-start">
+        <div class="card col-lg-3 col-sm-auto justify-self-center" style="width: 18rem;" id="type-card">
+            <div class="card-body">
+                <h4 class="card-title text-content-center">Type</h4><hr>
+                <% pokeData.types.forEach((type)=>{ %>
+                <div class="card-text">
+                    <p><%= type.type.name %></p>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+        <div class="card col-lg-3 col-sm-auto justify-self-center" style="width: 18rem;" id="stat-card">
+            <div class="card-body">
+                <h4 class="card-title text-content-center">Stats</h4><hr>
+                <% pokeData.stats.forEach((stat)=>{ %>
+                <div class="card-text">
+                    <p><strong><%= stat.stat.name %></strong></p>
+                    <p>Base: <%= stat.base_stat %></p>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+        <div class="card col-lg-3 col-sm-auto justify-self-center" style="width: 18rem;" id="ability-card">
+            <div class="card-body">
+                <h4 class="card-title text-content-center">Abilities</h4><hr>
+                <% pokeData.abilities.forEach((ability)=>{ %>
+                <div class="card-text">
+                    <p><%= ability.ability.name %></p>
+                </div>
+                <% }) %>
+            </div>
         </div>
     </div>
 </div>
+

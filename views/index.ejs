@@ -1,22 +1,22 @@
 <div class="container">
   <h1 class="text-center">The Original 151 Pokemon</h1>
   <hr>
-
+  <div class="row justify-content-around">
   <% pokemon.forEach(function(pokemon) { %>
     <% if(pokemon.isFave){ %>
-      <div class="text-center col-sm-6 col-md-4">
-        <div class="card">
+      <div class="col-sm-6 col-lg-4">
+        <div class="card in-faves">
             <div class="card-body">
               <h2 class="card-title"><%= pokemon.name %></h2>
               <form>
                 <input hidden type="text" name="name" value="<%= pokemon.name %>">
-                <button class="btn btn-primary disabled" type="button">Already in Your Favorites</button>
+                <button class="btn disabled" type="button">Already in Your Favorites</button>
               </form>
             </div>
           </div>
       </div>
     <% } else { %>
-      <div class="text-center col-sm-6 col-md-4">
+      <div class="col-sm-6 col-lg-4">
         <div class="card">
             <div class="card-body">
               <h2 class="card-title"><%= pokemon.name %></h2>
@@ -29,4 +29,5 @@
       </div>
     <% } %>
   <% }); %>
+  </div>
 </div>
