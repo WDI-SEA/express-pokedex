@@ -12,12 +12,13 @@
       <form method="POST" action="/pokemon/?_method=DELETE">
         <input hidden type="text" name="name" value="<%= favorite.name %>">
         <button id="fave2" class="btn btn2 btn-primary" type="submit">Remove from List</button>
-        <input hidden type="text" name="name" value="<%= favorite.name %>">
-        <button id="fave3" class="btn btn2 btn-primary" type="submit">Details</button>
       </form>
+
+      <form method="GET" action="/pokemon/<%= favorite.name %>">
+      	<input id="show" class="btn btn2 btn-primary" type="submit" name="userquery" value="More Info">
+      </form>
+
     </div>
   <% }); %>
-
-
-
 </div>
+
