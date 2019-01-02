@@ -220,8 +220,18 @@
   align-items: center;
 }
 
+.caught-show-card {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-content: center;
+  max-width: 600px;
+  margin: 10px auto;
+}
+
 .edit-card {
   max-width: 600px;
+  margin: 10px auto;
 }
 
 .offset-link {

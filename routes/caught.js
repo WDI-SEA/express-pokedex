@@ -88,7 +88,7 @@ router.get('/edit/:idx', (req, res) => {
     if (!selectedPokemon) {
       throw 'No pokemon with that id';
     }
-    res.render('caught/edit', { pokemon: selectedPokemon });
+    res.render('caught/edit', { pokemon: selectedPokemon, back: req.query.back });
   })
   .catch(err => {
     console.log(`Error: ${err}`);
