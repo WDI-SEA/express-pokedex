@@ -115,7 +115,7 @@
   width: 100px;
 }
 
-.fave-btn {
+.fave-list-btn {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -253,6 +253,18 @@
   display: block;
   margin: 5px auto;
   text-align: center;
+}
+
+.img-card {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-container {
+  width: 100px;
+  height: 100px;
 }
 
 @media only screen and (min-width: 500px)  {

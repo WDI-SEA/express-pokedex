@@ -5,6 +5,16 @@
 <div class="card detail-card">
 <h1 class="capitalize poke-title"><%= pokemon.species.name %></h1>
 
+<div class="card img-card">
+  <% for(const sprite in pokemon.sprites) { %> 
+    <% if (pokemon.sprites[sprite]) { %>
+      <div class="img-container">
+        <img src="<%= pokemon.sprites[sprite] %>">
+      </div>
+    <% } %>
+  <% } %>
+</div>
+
 <div class="card">
 <h2>Type</h2>
 <% pokemon.types.forEach(type => { %>

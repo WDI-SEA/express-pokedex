@@ -8,7 +8,7 @@
 
     <form method="GET" action="/pokemon/<%= item.species %>">
       <input type="hidden" name="back" id="back" value="/faves/#fave<%= i+1 %>">
-      <button class="waves-effect waves-light btn red darken-1 fave-btn info-btn" type="submit"><img src="/img/info.png" class="button-icon"></button>
+      <button class="waves-effect waves-light btn red darken-1 fave-list-btn info-btn" type="submit"><img src="/img/info.png" class="button-icon"></button>
     </form>
 
     <form method="POST" action="/faves/<%= item.id %>?_method=DELETE">
