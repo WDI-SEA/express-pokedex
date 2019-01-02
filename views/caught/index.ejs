@@ -1,9 +1,15 @@
-<h1>Your Pokemon</h1>
+<h1 class="block-header">Your Pokémon</h1>
 
 <% pokemon.forEach(p => { %>
-  <div>
-    <h3><%= p.nickname %><h3> 
-    <h4>Lvl <%= p.level %> <%= p.species %></h4>
-    <a href="/caught/<%= p.id %>">Details</a>
+  <div class="card detail-card caught-card">
+    <a name="caught<%= p.id %>" class="offset-link"></a>
+    <h3 class="poke-title"><%= p.nickname %></h3>
+    <h4>Lvl <%= p.level %> <span class="capitalize"><%= p.species %></span></h4>
+
+    <form method="GET" action="/caught/<%= p.id %>">
+      <input type="hidden" name="back" id="back" value="/caught/#caught<%= p.id %>">
+      <button class="waves-effect waves-light btn red darken-1 pokecard-btn details-btn" type="submit"><img src="/img/details.png" class="button-icon"></button>
+    </form>
+
   </div>
 <% }) %>

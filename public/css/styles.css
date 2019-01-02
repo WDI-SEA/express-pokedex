@@ -74,7 +74,7 @@
 }
 
 .container {
-  padding-top: 70px;
+  padding-top: 75px;
   padding-bottom: 60px;
 }
 
@@ -169,6 +169,10 @@
   content: 'Unfave';
 }
 
+.details-btn:hover:after{
+  content: 'Details';
+}
+
 .poke-num {
   position: absolute;
   top: 0;
@@ -185,6 +189,15 @@
 .detail-card {
   padding: 20px;
   text-align: center;
+}
+
+.caught-card {
+  max-width: 600px;
+  margin: 5px auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .offset-link {
@@ -214,7 +227,7 @@
   }
 
   .container {
-    padding-top: 60px;
+    padding-top: 65px;
   }
 
   .pokeball-top-latch {
