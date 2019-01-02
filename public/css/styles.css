@@ -74,7 +74,7 @@
 }
 
 .container {
-  padding-top: 50px;
+  padding-top: 70px;
   padding-bottom: 60px;
 }
 
@@ -199,12 +199,29 @@
   align-items: center;
   padding: 5px;
   max-width: 500px;
+  margin: 5px auto;
+}
+
+.block-header {
+  display: block;
+  margin: 5px auto;
+  text-align: center;
 }
 
 @media only screen and (min-width: 500px)  {
   .fixed-header {
     height: 60px;
   }
+
+  .container {
+    padding-top: 60px;
+  }
+
+  .pokeball-top-latch {
+    top: 54%;
+    left: 47.5%;
+  }
+
 }
 
 
@@ -215,11 +232,6 @@
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-  }
-
-  .pokeball-top-latch {
-    top: 50%;
-    left: 45%;
   }
 
 }
