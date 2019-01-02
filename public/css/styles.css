@@ -102,6 +102,35 @@
   width: 100px;
 }
 
+.fave-btn {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  padding: 1px 0;
+  margin: 1px;
+  text-align: left;
+  height: 35px;
+  width: 80px;
+}
+
+.delete-btn {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  padding: 1px 0;
+  margin: 1px;
+  text-align: left;
+  height: 35px;
+  min-width: 25px;
+  max-width: 100px;
+  margin-left: 5px;
+}
+
+
 .button-icon {
   width: 25px;
   height: auto;
@@ -121,6 +150,10 @@
 
 .edit-btn:hover:after{
   content: 'Edit';
+}
+
+.unfave-btn:hover:after{
+  content: 'Unfave';
 }
 
 .poke-num {
@@ -145,6 +178,16 @@
   position: absolute;
   top: -50px;
 }
+
+.fave-card {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  max-width: 500px;
+}
+
 
 
 @media only screen and (min-width: 740px)  {

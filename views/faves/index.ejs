@@ -1,11 +1,18 @@
-<h1>Favorite Pokemon</h1>
+<h1>Favorites</h1>
 
-<% faves.forEach(item => { %>
-  <div>
-    <h3><%= item.species %><h3> 
+<% faves.forEach((item, i) => { %>
+  <div class="card fave-card">
+  <a name="fave<%= i+1 %>" class="offset-link"></a>
+    <h4 class="poke-title capitalize"><%= item.species %></h4> 
+
+
+    <form method="GET" action="/pokemon/<%= item.species %>">
+      <input type="hidden" name="back" id="back" value="/faves/#fave<%= i+1 %>">
+      <button class="waves-effect waves-light btn red darken-1 fave-btn info-btn" type="submit"><img src="/img/info.png" class="button-icon"></button>
+    </form>
+
+    <form method="POST" action="/faves/<%= item.id %>?_method=DELETE">
+      <button class="waves-effect waves-light btn red darken-1 delete-btn unfave-btn" type="submit"><img class="button-icon" src="/img/clear.png" alt="Clear button"></button>
+    </form>
   </div>
-
-  <form method="POST" action="/faves/<%= item.id %>?_method=DELETE">
-    <button type="submit">X</button>
-  </form>
 <% }) %>
