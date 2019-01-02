@@ -24,34 +24,12 @@ app.use(ejsLayouts);
 app.get('/', function(req, res) {
   var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
   // Use request to call the API
-  console.log("who dat?"); // "back to all pokemon" on favorites page
+  console.log("main page loads"); // "back to all pokemon" on favorites page
   request(pokemonUrl, function(error, response, body) {
     var pokemon = JSON.parse(body).results;
     res.render('index', { pokemon: pokemon });
   });
 });
-
-
-// GET / - favorites index
-app.get('/pokemon', function(req, res) {
-	console.log("anyone listening?") //"favorites button on main page"
-    res.render('pokemon/index');
-
-});
-
-
-
-
-// GET / - favorites index
-// app.get('/pokemon', function(req, res) {
-//   var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
-//   // Use request to call the API
-//   request(pokemonUrl, function(error, response, body) {
-//     var pokemon = JSON.parse(body).results;
-//     res.render('pokemon/index', { pokemon: pokemon });
-//   });
-// });
-
 
 
 // Imports all routes from the pokemon routes file
