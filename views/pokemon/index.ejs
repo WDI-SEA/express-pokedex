@@ -3,6 +3,7 @@
 <div class="pokecard-container">
 <% pokemon.slice(0,151).forEach(function(pokemon, i) { %>
   <div class="z-depth-2 card pokecard">
+    <a name="poke<%= i+1 %>" class="offset-link"></a>
     <h5 class="poke-num">#<%= i+1 %></h5>
     <h3 class="capitalize poke-title"><%= pokemon.name %></h3> 
     <form method="POST" action="/faves">
@@ -13,6 +14,7 @@
       <button class="waves-effect waves-light btn red darken-1 pokecard-btn catch-btn" type="submit"><img src="/img/pokeball.png" class="button-icon"></button>
     </form>
     <form method="GET" action="/pokemon/<%= pokemon.name %>">
+      <input type="hidden" name="back" id="back" value="/pokemon/#poke<%= i+1 %>">
       <button class="waves-effect waves-light btn red darken-1 pokecard-btn info-btn" type="submit"><img src="/img/info.png" class="button-icon"></button>
     </form>
   </div>

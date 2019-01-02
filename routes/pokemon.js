@@ -21,7 +21,7 @@ router.get('/:name', function(req, res) {
       res.render('error');
     }
     const pokemon = JSON.parse(body);
-    res.render('pokemon/show', { pokemon: pokemon });
+    res.render('pokemon/show', { pokemon: pokemon , back: req.query.back });
   })
 });
 

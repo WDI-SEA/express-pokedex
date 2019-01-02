@@ -1,5 +1,10 @@
 <h1><%= pokemon.nickname %></h1>
 <h2>Level: <%= pokemon.level %> </h2>
 <h2>Species: <%= pokemon.species %> </h2>
-<a href="/pokemon/<%= pokemon.species %>">Learn more about this species</a>
-<a href="/caught/edit/<%= pokemon.id %>"><button>Edit</button></a>
+
+<form method="GET" action="/pokemon/<%= pokemon.species %>">
+  <input type="hidden" name="back" id="back" value="/caught/<%= pokemon.id %>">
+  <button class="waves-effect waves-light btn red darken-1 pokecard-btn info-btn" type="submit"><img src="/img/info.png" class="button-icon"></button>
+</form>
+
+<a href="/caught/edit/<%= pokemon.id %>" class="waves-effect waves-light btn red darken-1 pokecard-btn edit-btn"><img src="/img/edit.png" class="button-icon"></a>
