@@ -16,7 +16,7 @@ app.get('/', function(req, res) {
   // Use request to call the API
   request(pokemonUrl, function(error, response, body) {
     var pokemon = JSON.parse(body).results;
-    res.render('index', { pokemon: pokemon });
+    res.render('index', { pokemon: pokemon.slice(0, 151) });
   });
 });
 
