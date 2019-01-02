@@ -1,19 +1,28 @@
-<h1>Edit Favorite</h1>
+<h2 class="block-header">Update Pokémon Info</h2>
 
-<form method="POST" action="/caught/<%= pokemon.id %>?_method=PUT">
-  <div>
+<div class="card detail-card">
+
+<form class="update-form" method="POST" action="/caught/<%= pokemon.id %>?_method=PUT">
+  <div class="input-field">
     <label for="nickname">Nickname</label>
     <input type="text" name="nickname" id="nickname" value="<%= pokemon.nickname %>" required>
   </div>
 
-  <div>
+  <div class="input-field">
     <label for="level">Level</label>
     <input type="number" name="level" id="level" value="<%= pokemon.level %>" required>
   </div>
 
-  <button type="submit">Update</button>
+
+  <div class="spaced-button">
+  <button class="waves-effect waves-light btn red darken-1 pokecard-btn update-btn" type="submit"><img src="/img/edit.png" class="button-icon"></button>
+  </div>
 </form>
 
-<form method="POST" action="/caught/<%= pokemon.id %>?_method=DELETE">
-  <button type="submit">DELETE</button>
-</form>
+<div class="spaced-button">
+  <form method="POST" action="/caught/<%= pokemon.id %>?_method=DELETE">
+    <button class="waves-effect waves-light btn red darken-1 pokecard-btn release-btn" type="submit"><img src="/img/clear.png" class="button-icon"></button>
+  </form>
+</div>
+
+</div>

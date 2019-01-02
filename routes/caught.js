@@ -4,6 +4,7 @@ const request = require('request');
 
 // DATABASE
 const db = require("../models");
+const sequelize = require('sequelize');
 
 // GET /caught - return a page with successfully caught Pokemon
 router.get('/', function(req, res) {
@@ -37,6 +38,7 @@ router.get('/:idx', function(req, res) {
       'species',
       'level',
       'id',
+      'createdAt',
     ],
     where: {id: req.params.idx}
   })

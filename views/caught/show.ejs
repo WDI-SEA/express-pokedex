@@ -1,8 +1,11 @@
 <a href="<%= back ? back : '/caught' %>">Go Back</a>
 
+<div class="card detail-card">
+
 <h1><%= pokemon.nickname %></h1>
 <h2>Level: <%= pokemon.level %> </h2>
 <h2>Species: <%= pokemon.species %> </h2>
+<h2>Caught on: <%= pokemon.createdAt %></h2> 
 
 <form method="GET" action="/pokemon/<%= pokemon.species %>">
   <input type="hidden" name="back" id="back" value="/caught/<%= pokemon.id %>">
@@ -10,3 +13,5 @@
 </form>
 
 <a href="/caught/edit/<%= pokemon.id %>" class="waves-effect waves-light btn red darken-1 pokecard-btn edit-btn"><img src="/img/edit.png" class="button-icon"></a>
+
+</div>
