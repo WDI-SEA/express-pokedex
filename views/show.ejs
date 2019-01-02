@@ -1,0 +1,60 @@
+<div class="container">
+  <div class='text-center well'>
+
+    <h1><%= pokemon.name %> </h1>
+    <img class='text-center' src="<%= pokemon.sprites.front_default %>">
+
+  <!--   <h1><%= pokemon.id %></h1> -->
+
+ <h5>Type of Pokemon: </h5>
+ <ul>
+      <% pokemon.types.forEach(function(pokemon) { %>
+      <li><%= pokemon.type.name %></li>
+	<% }) %>
+</ul>
+
+<h5> Stats: </h5>
+<ul>
+	<% pokemon.stats.forEach(function(pokemon) { %>
+	<li><%= pokemon.stat.name %> : <%= pokemon.base_stat %></li> 
+
+	<% }) %>
+</ul>
+
+<h5> Abilities: </h5>
+<ul>
+	<% pokemon.abilities.forEach(function(pokemon) { %>
+	<li><%= pokemon.ability.name %></li>
+
+	<% }) %>
+</ul>
+
+
+<h5> Moves: </h5>
+<ul>
+	<% pokemon.moves.forEach(function(pokemon) { %>
+	<li><%= pokemon.move.name %></li>
+
+	<% }) %>
+</ul>
+ </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
