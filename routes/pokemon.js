@@ -4,6 +4,9 @@ var router = express.Router();
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', function(req, res) {
   // TODO: Get all records from the DB and render to view
+  db.pokemon.findAll().then(function(pokemons) {
+    res.render('/pokemon', {pokemons})
+  })
   res.send('Render a page of favorites here');
 });
 
