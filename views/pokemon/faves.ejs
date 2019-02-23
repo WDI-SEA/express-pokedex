@@ -4,11 +4,11 @@
       <a href="/">Home</a>
     </p>
   
-    <% pokemon.forEach(function(pokemon) { %>
+    <% faves.forEach(function(pokemon) { %>
     <div class="well">
       <h2><%= pokemon.name%></h2>
   
-      <form method="POST" action="/pokemon">
+      <form method="POST" action="/pokemon/<%= pokemon.name %>?_method=DELETE">
         <input
           hidden
           type="text"
@@ -16,7 +16,7 @@
           value="<%= pokemon.name %>"
         />
         <button class="btn btn-primary" type="submit">
-          Add to Favorite Pokemon TODO :remove
+          Remove from Favorite Pokemon
         </button>
       </form>
       <a href="/pokemon/<%=pokemon.name%>">

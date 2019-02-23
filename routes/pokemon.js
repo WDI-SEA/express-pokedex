@@ -1,18 +1,26 @@
 var express = require("express");
 var request = require("request");
+const db = require("../models");
 var router = express.Router();
 
 // GET /pokemon - return a page with favorited Pokemon
 router.get("/", function(req, res) {
   // TODO: Get all records from the DB and render to view
-  // res.send("Render a page of favorites here");
-  res.render("pokemon/faves", {});
+  db.fave.findAll().then(faves => {
+    res.render("pokemon/faves", { faves });
+  });
 });
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post("/", function(req, res) {
   // TODO: Get form data and add a new record to DB
-  res.send(req.body);
+  db.fave
+    .findOrCreate({
+      where: { name: req.body.name }
+    })
+    .spread((fave, created) => {
+      res.redirect("/pokemon");
+    });
 });
 
 router.get("/:search", (req, res) => {
@@ -38,6 +46,16 @@ router.get("/:search", (req, res) => {
       }
     });
   });
+});
+
+router.delete("/:search", (req, res) => {
+  db.fave
+    .destroy({
+      where: { name: req.body.name }
+    })
+    .then(() => {
+      res.redirect("/pokemon");
+    });
 });
 
 module.exports = router;
