@@ -1,0 +1,14 @@
+<!-- we pass in single pokemon data here -->
+<% const {name, id, sprites, types} = pokemon; %>
+
+<h1><%= name %></h1>
+<h2><%= id %></h2>
+<img src="<%= sprites.front_default %>" alt="" />
+
+<% types.forEach(type => { %>
+<p><%= type.type.name %></p>
+<% }) %>
+
+<p>
+<%= text.flavor_text %>
+</p>

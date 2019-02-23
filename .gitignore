@@ -1,4 +1,5 @@
 .env
+.prettierignore
 
 # Created by https://www.gitignore.io/api/node,osx,linux
 
