@@ -1,0 +1,93 @@
+body {
+    margin: 30px;
+    background-color: red;
+}
+
+.text-center {
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+    text-decoration: underline;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+.attribute {
+    letter-spacing: 30px;
+    margin-top: 20px;
+    font-size: 36px;
+    text-align: center;
+    font-family: 'Rock Salt';
+}
+
+p {
+    text-align: center;
+    font-size: 24px;
+    
+}
+
+div {
+    text-align: center;
+
+}
+
+.well {
+    text-align: center;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+.moves {
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+.value {
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+#show-main {
+    margin-top: 80px;
+    text-align: center;
+    margin: 0 auto;
+    width: 50%;
+    border: 2px solid black;
+
+}
+.physical-attribute {
+    letter-spacing: 10px;
+    margin-top: 20px;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Rock Salt';
+}
+
+.name-display {
+    width: 100%;
+    margin-top: 100px;
+}
+
+.name-attribute {
+    font-family: 'Rock Salt';
+    font-size: 60px;
+    border: 2px solid black;
+    display: inline;
+    border-radius: 90%;
+}
+
+.physical {
+    margin-top: 100px;
+}
+.combat {
+    margin-top: 50px;
+    letter-spacing: 10px;
+}
+
+#img {
+    margin-left: 30px;
+}
+
+img {
+    margin-top: 50px;
+    width: 25%;
+    height: 25%;
+}

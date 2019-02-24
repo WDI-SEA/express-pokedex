@@ -1,0 +1,27 @@
+
+<main id="show-main">
+    <div id="img">
+        <img src="<%=image%>">
+    </div>
+    <div class="name-display">
+        <p class="name-attribute"><%= name %></p>
+    </div>
+    <div class="physical">
+        <p class="physical-attribute">WEIGHT: <%= weight %> &nbsp       &nbsp HEIGHT: <%= height %> </p>    
+    </div>
+
+    <div class="combat">
+        <p class="attribute">ATTACKS:</p> 
+        <%let maxAttacks = 5%>
+        <%for(let i = 0;i < maxAttacks;i++) {%>
+        <p class="moves"><%=moves[i].move.name.toUpperCase()%></p>
+        <%}%>
+        <p class="attribute">ABILITIES:</p>
+        <%for(let i = 0;i < abilities.length;i++) {%>
+        <p class="moves"><%=abilities[i].ability.name.toUpperCase()%></p>
+        <%}%>
+    </div>
+</main>
+
+
+

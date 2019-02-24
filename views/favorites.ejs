@@ -1,0 +1,8 @@
+<h1>FAVORITES</h1>
+<section>
+<% pokemon.forEach(function(pokemon) { %>
+    <div>
+        <a href="/pokemon/<%= pokemon.id %>"><%= pokemon.name %></a>
+        
+<%})%>
+
