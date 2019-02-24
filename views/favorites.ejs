@@ -1,8 +1,17 @@
-<h1>FAVORITES</h1>
-<section>
-<% pokemon.forEach(function(pokemon) { %>
-    <div>
-        <a href="/pokemon/<%= pokemon.id %>"><%= pokemon.name %></a>
-        
-<%})%>
+<body class="favorites-main">
+<h1 class="favorites-header">FAVORITES</h1>
 
+<section class="favorites-container">
+<% pokemon.forEach(function(pokemon) { %>
+    <div class="favorites-list">
+        <a href="/pokemon/<%= pokemon.id %>"><%= pokemon.name.toUpperCase() %></a>
+        <form method="POST" action="/pokemon/<%= pokemon.id %>?_method=DELETE">
+    <input class="btn" type="submit" value="Remove From Favorites">
+</form>
+    </div>   
+<%})%>
+</section>
+<section class="link-box">
+<a class="back-home-link" href="/">Back to Home</a>
+</section>
+</body>

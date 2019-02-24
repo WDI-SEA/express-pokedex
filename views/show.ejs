@@ -1,10 +1,13 @@
-
-<main id="show-main">
+<body class="show-main">
+<div class="favorites-link">
+<a href="/pokemon/">Back to Favorites</a>
+</div>
+    <section class="card">
     <div id="img">
         <img src="<%=image%>">
     </div>
     <div class="name-display">
-        <p class="name-attribute"><%= name %></p>
+        <p class="name-attribute"><%= name.toUpperCase() %></p>
     </div>
     <div class="physical">
         <p class="physical-attribute">WEIGHT: <%= weight %> &nbsp       &nbsp HEIGHT: <%= height %> </p>    
@@ -21,7 +24,8 @@
         <p class="moves"><%=abilities[i].ability.name.toUpperCase()%></p>
         <%}%>
     </div>
-</main>
+    </section>
+</body>
 
 
 

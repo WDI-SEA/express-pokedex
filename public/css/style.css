@@ -1,38 +1,110 @@
-body {
-    margin: 30px;
-    background-color: red;
+/* HOME PAGE */
+
+.homepage-main {
+    border: 10px solid #00A388;
+    background-color: #FFFF9D;
+    /* background-image: url('/Users/garrettmoore/Code/Unit2/express-pokedex/public/crossline-dots.png'); */
+}
+
+.container {
+    margin: 70px;
+    background-color: #FF6138;
+    box-shadow: 18px 14px 9px 10px rgba(0,0,0,0.32);
+}
+
+.well {
+    margin: 0 auto;
+    background-color: #FF6138;
+}
+.well * {
+    display: inline;
+    margin: 0 auto;
+    font-family: 'Gloria Hallelujah', cursive;
+    color: #00A388;
+}
+
+.main-name {
+    margin-left: 50px;
 }
 
 .text-center {
-    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 34px;
 }
 
-h1 {
-    font-size: 24px;
+.btn-main {
+    margin-left: 600px;
+}
+
+
+/* FAVORITES PAGE */
+
+.favorites-main {
+    margin: 0 auto;
+    height: 100%;
+    background-color: #FFFF9D;
+
+}
+
+.favorites-header {
+    margin-top: 100px;
+    margin-bottom: 80px;
+    font-size: 82px;
     text-align: center;
     text-decoration: underline;
     font-family: 'Gloria Hallelujah', cursive;
 }
+
+.link-box {
+    margin: 30px;
+    bottom: 0;
+    position: fixed;
+}
+.back-home-link {
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 36px;
+    margin-left: 700px;
+}
+.favorites-container {
+    text-align: center;
+    vertical-align: top;
+}
+
+.favorites-list {
+    background-color: #00A388;
+    padding: 5px;
+    display: inline-block;
+    font-size: 36px;
+    border: 2px solid #00A388;
+    margin: 20px;
+    font-family: 'Gloria Hallelujah', cursive;
+    box-shadow: 11px 10px 5px 0px rgba(0,0,0,0.32);
+}
+
+.btn {
+    background-color: #FF6138;
+}
+/* SHOW ONE PAGE */
+
+.show-main {
+    background-color: #FFFF9D;
+}
+
+.favorites-link {
+    font-size: 36px;
+    font-family: 'Gloria Hallelujah', cursive;
+    text-align: center;
+    margin-top: 60px;
+    margin-right: 100px;
+}
+.text-center {
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+
 .attribute {
     letter-spacing: 30px;
     margin-top: 20px;
-    font-size: 36px;
-    text-align: center;
-    font-family: 'Rock Salt';
-}
-
-p {
-    text-align: center;
-    font-size: 24px;
-    
-}
-
-div {
-    text-align: center;
-
-}
-
-.well {
+    font-size: 34px;
     text-align: center;
     font-family: 'Gloria Hallelujah', cursive;
 }
@@ -45,33 +117,41 @@ div {
     font-family: 'Gloria Hallelujah', cursive;
 }
 
-#show-main {
-    margin-top: 80px;
-    text-align: center;
+.card {
+    background-color: #BEEB9F;
+    border: 6px solid #FF6138;
     margin: 0 auto;
-    width: 50%;
-    border: 2px solid black;
-
+    margin-top: 80px;
+    margin-bottom: 120px;
+    margin-left: 500px;
+    text-align: center;
+    width: 35%;
+    box-shadow: 11px 10px 5px 0px rgba(0,0,0,0.32);
 }
+
 .physical-attribute {
     letter-spacing: 10px;
     margin-top: 20px;
     font-size: 30px;
     text-align: center;
-    font-family: 'Rock Salt';
+    font-family: 'Gloria Hallelujah', cursive;
 }
 
 .name-display {
     width: 100%;
     margin-top: 100px;
+    opacity: 0.7;
 }
 
 .name-attribute {
-    font-family: 'Rock Salt';
+    padding: 20px;
+    color: #FF6138;
+    font-family: 'Gloria Hallelujah', cursive;
     font-size: 60px;
-    border: 2px solid black;
+    border: 2px solid #FFFF9D;
     display: inline;
-    border-radius: 90%;
+    border-radius: 120px 20px 127px 20px;
+    box-shadow: 5px 5px 92px 0px rgba(0,0,0,0.75);
 }
 
 .physical {
@@ -82,12 +162,8 @@ div {
     letter-spacing: 10px;
 }
 
-#img {
-    margin-left: 30px;
-}
-
 img {
     margin-top: 50px;
-    width: 25%;
+    width: 40%;
     height: 25%;
 }
