@@ -1,21 +1,43 @@
-<!-- we pass in single pokemon data here -->
-<div class="container">
-    <h1 class="text-center">Pokedex Data</h1>
+<!-- we pass in single pokemon data and text -->
+<% let {name, id, sprites, types, weight, height} = pokemon; %>
+<!-- heigth decimeters -> ft'in" -->
+<% height = (height * 3.937).toFixed(2) %>
+<!-- weight hectograms -> lb  -->
+<% weight = (weight / 4.536).toFixed(2) %>
+<!-- number format #000 -->
+
+
+<main class="container">
+    <h1 class="text-center">PokeDex Data</h1>
     <p class="text-center">
-      <a href="/pokemon">Favorites</a>
-    </p>
-    <% const {name, id, sprites, types} = pokemon; %>
-
-    <h1><%= name %></h1>
-    <h2><%= id %></h2>
-    <img src="<%= sprites.front_default %>" alt="" />
-    
-    <% types.forEach(type => { %>
-    <p><%= type.type.name %></p>
-    <% }) %>
-    
-    <p>
-    <%= text.flavor_text %>
+      <a href="/">Home</a> <a href="/pokemon">Favorites</a>
     </p>
 
-  </div>
+  <section class="pokedex">
+    <div class="dex-img-box">
+      <div class="floor"></div>
+      <img src="<%= sprites.front_default %>" alt="" class="dex-img"/>
+    </div>
+    <div class="dex-data-box">
+      <div class="dex-name">
+          <img class="dex-logo" src="https://img.icons8.com/color/48/000000/pokeball.png">
+        <span> <%= id %> </span>
+        <span> <%= name %> </span>
+      </div>
+      <div class="dex-data">
+        <p>Height: <span><%= height %> in</span></p>
+        <p>Weight: <span><%= weight %> lb</span></p>
+        <% types.forEach(type => { %>
+          <p><%= type.type.name %></p>
+          <% }) %>
+        </div>
+      </div>
+    
+    <div class="dex-info-box">
+      <p><%= text.flavor_text %></p>
+    </div>
+    
+
+  </section>
+
+  </main>

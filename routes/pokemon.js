@@ -33,10 +33,6 @@ router.get("/:search", (req, res) => {
   request(pokemonUrl, function(error, response, body) {
     var pokemon = JSON.parse(body);
     request(pokemon.species.url, (error, response, body) => {
-      if (error) {
-        console.log(error);
-        res.send("not found");
-      }
       if (!error && response.statusCode == 200) {
         let flavorText = JSON.parse(body).flavor_text_entries;
         let text = flavorText.find(entry => {
