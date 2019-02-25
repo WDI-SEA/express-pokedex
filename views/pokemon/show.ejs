@@ -4,7 +4,7 @@
 <% height = Math.round(height * 3.937) %>
 <% let feet = Math.floor(height /12) %>
 <% let inches = height % 12%>
-<!-- weight hectograms -> lb  -->
+<% // weight hectograms -> lb  %>
 <% weight = (weight / 4.536).toFixed(1) %>
 <!-- number format #000 -->
 <% id = id.toString().padStart(3, "0");%>
@@ -12,9 +12,9 @@
 
 <main class="container">
     <h1 class="text-center">PokeDex Data</h1>
-    <p class="text-center">
+    <nav>
       <a href="/">Home</a> <a href="/pokemon">Favorites</a>
-    </p>
+    </nav>
 
   <section class="pokedex">
     <div class="dex-img-box">
@@ -46,6 +46,29 @@
       <p><%= text.flavor_text %></p>
     </div>
     
+    <form method="POST" action="/pokemon" <%= !fave ? "": "hidden" %>>
+      <input
+        hidden
+        type="text"
+        name="name"
+        value="<%= pokemon.name %>"
+      />
+      <button class="fave-btn" type="submit">
+        <img src="/img/fave-add.svg" alt="">
+      </button>
+    </form>
+
+    <form method="POST" action="/pokemon/<%= pokemon.name %>?_method=DELETE" <%= fave ? "" : "hidden" %>>
+      <input
+        hidden
+        type="text"
+        name="name"
+        value="<%= pokemon.name %>"
+      />
+      <button class="fave-btn" type="submit">
+        <img src="/img/fave-delete.svg" alt="">
+      </button>
+    </form>
 
   </section>
 

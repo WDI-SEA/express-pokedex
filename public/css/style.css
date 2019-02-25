@@ -1,13 +1,11 @@
 /* Colors
 logo blue #2a75bb, #3c5aa6
 logo yellow #ffcb05 #c7a008
-ball red #ff3d00 #dd2c00
+ball red #ff3d00 #b32a0a
 gray #cfd8dc #37474F
 */
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -23,6 +21,17 @@ header img {
   display: block;
 }
 
+h1 {
+  margin: 5px;
+}
+
+a,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* Main Section ----------------------------------- */
 .container {
   width: 100vw;
@@ -30,6 +39,29 @@ header img {
   min-width: 300px;
   margin: 0 auto;
   padding: 15px;
+}
+
+/* Nav -------------------------------------------- */
+nav {
+  margin: 0 auto;
+  height: 40px;
+  text-align: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+nav a {
+  padding: 7px 15px 2px;
+  margin: 10px;
+  border-bottom: 5px solid #2a75bb;
+  color: #2a75bb;
+}
+
+nav a:hover,
+nav a:active {
+  color: #ffffff;
+  background-color: #2a75bb;
+  border-bottom: 5px solid #2a75bb;
 }
 
 .collection {
@@ -50,8 +82,9 @@ header img {
   text-transform: capitalize;
   text-decoration: none;
   border: 8px solid #2a75bb;
-  border-radius: 15px;
-  box-shadow: -4px 4px 0 4px #3c5aa6;
+  border-radius: 8px;
+  box-shadow: -4px 4px 0 2px #3c5aa6;
+  color: #2a75bb;
 }
 
 .poke-link:hover,
@@ -71,10 +104,11 @@ header img {
   width: 70%;
   margin: 0 auto;
   padding: 20px;
-  border: 8px solid #2a75bb;
+  border: 5px solid #37474f;
   border-radius: 15px;
-  box-shadow: -4px 4px 0 4px #3c5aa6;
+  /* box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.3); */
 
+  position: relative;
   display: flex;
   flex-wrap: wrap;
 
@@ -86,7 +120,7 @@ header img {
   width: 45%;
   height: 220px;
   margin: 10px 0;
-  background-color: #ddd;
+  background-color: #dddddd;
   position: relative;
 }
 
@@ -100,16 +134,15 @@ header img {
 
 .floor {
   position: absolute;
-  top: 22%;
+  top: 25%;
   left: 15%;
   width: 70%;
   height: 70%;
   border-radius: 50%;
-  border: 3px solid #3c5aa6;
-  box-shadow: 0 5px 0 -1px #37474f;
+  border: 2px solid #b32a0a;
+  box-shadow: 0 9px 0 -2.7px #37474f;
 
-  background-color: #dddddd;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%2337474f' fill-opacity='1' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("/img/hex-bg.svg");
   background-size: 25px;
 
   transform: perspective(200px) rotateX(65deg);
@@ -129,7 +162,7 @@ header img {
   font-size: 2.6rem;
   line-height: 40px;
 
-  color: #fff;
+  color: #ffffff;
   text-shadow: -1.5px -1.5px 0 #37474f, 1.5px -1.5px 0 #37474f,
     -1.5px 1.5px 0 #37474f, 1.5px 1.5px 0 #37474f;
 
@@ -140,23 +173,21 @@ header img {
 
   border: 2px solid #37474f;
   border-radius: 8px;
-  box-shadow: inset 10px 0 5px #dd2c00, inset -10px 0 5px #dd2c00,
+  box-shadow: inset 10px 0 5px #b32a0a, inset -10px 0 5px #b32a0a,
     8px 8px 0 rgba(0, 0, 0, 0.3);
 }
 
 .dex-logo {
   width: 30px;
   height: 30px;
-  /* border: 4px solid #ff3d00; */
   border-radius: 50%;
-  background-color: #fff;
+  background-color: #ffffff;
   margin-right: 5px;
 }
 
 .dex-name .name {
   margin-left: auto;
   font-size: 2.8rem;
-  /* letter-spacing: 0.8px; */
   text-transform: capitalize;
 }
 
@@ -205,4 +236,18 @@ header img {
 
   font-size: 2.1rem;
   letter-spacing: -1px;
+}
+
+.fave-btn {
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+}
+.fave-btn svg {
+  width: 65px;
+  height: 65px;
 }

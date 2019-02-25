@@ -38,7 +38,14 @@ router.get("/:search", (req, res) => {
         let text = flavorText.find(entry => {
           return entry.language.name == "en";
         });
-        res.render("pokemon/show", { pokemon, text });
+
+        db.fave
+          .find({
+            where: { name: qs }
+          })
+          .then(fave => {
+            res.render("pokemon/show", { pokemon, text, fave });
+          });
       }
     });
   });
