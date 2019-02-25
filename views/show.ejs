@@ -4,26 +4,29 @@
 
         
         <h1 class="text-center"> 
-            <img src = <%= info.sprites.front_default %> > 
-            <%= info.name %> 
-            <img src = <%= info.sprites.back_default %> > 
+                <img  class = "sprite" src = <%= info.sprites.front_default %> > 
+                <%= info.name %> 
+                <img  class = "sprite" src = <%= info.sprites.back_default %> > 
         </h1>
+
         <h3 class = "text-center"> <a href="/pokemon">Favorites </a> </h3>
+
         <p class="infoWeight">
-            <%= info.types.name %> 
+                <%= info.types.name %> 
 
-            Base Experience: <%= info.base_experience %>,
+                Base Experience: <%= info.base_experience %>,
 
-            Weight: <%= info.weight %> 
-            <%= info.version_group_details %> 
+                Weight: <%= info.weight %> 
+                <%= info.version_group_details %> 
         </p>
 
     <h4 id ="moves"> Abilties </h4>
+
     <p id = "text">  
-    <%= info.moves[1].move.name %>,
-    <%= info.moves[2].move.name %>,
-    <%= info.moves[3].move.name %>,
-    <%= info.moves[4].move.name %>
+
+        <% info.moves.forEach(function(move){%>
+            <%= move.move.name %> 
+        <% })%> 
     </p>
     
 

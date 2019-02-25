@@ -23,6 +23,11 @@ h5{
     color: white;
 }
 
+.sprite{
+    width: 100px;
+    height: 100px;
+}
+
 #moves{
     text-align: center;
     color: red; 
