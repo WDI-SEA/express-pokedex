@@ -31,8 +31,19 @@
     font-size: 34px;
 }
 
+.text-center:active {
+    transform: translateY(6px);
+}
+
 .btn-main {
+    opacity: 0.8;
     margin-left: 600px;
+    vertical-align: center;
+}
+
+.btn-main:active {
+    opacity: 0.5;
+    transform: translateY(3px);
 }
 
 
@@ -46,9 +57,12 @@
 }
 
 .favorites-header {
+    opacity: .8;
+    color: #30CADC;
     margin-top: 100px;
     margin-bottom: 80px;
     font-size: 82px;
+    letter-spacing: 15px;
     text-align: center;
     text-decoration: underline;
     font-family: 'Gloria Hallelujah', cursive;
@@ -59,11 +73,17 @@
     bottom: 0;
     position: fixed;
 }
+
+.link-box:active {
+    transform: translateY(6px);
+}
+
 .back-home-link {
     font-family: 'Gloria Hallelujah', cursive;
     font-size: 36px;
     margin-left: 700px;
 }
+
 .favorites-container {
     text-align: center;
     vertical-align: top;
@@ -82,6 +102,12 @@
 
 .btn {
     background-color: #FF6138;
+    opacity: 1;
+}
+
+.btn:active {
+    opacity: 0.8;
+    transform: translateY(3px);
 }
 /* SHOW ONE PAGE */
 
@@ -95,6 +121,10 @@
     text-align: center;
     margin-top: 60px;
     margin-right: 100px;
+}
+
+.favorites-link:active {
+    transform: translateY(5px);
 }
 .text-center {
     font-family: 'Gloria Hallelujah', cursive;
@@ -121,12 +151,17 @@
     background-color: #BEEB9F;
     border: 6px solid #FF6138;
     margin: 0 auto;
+    border-radius: 3%;
     margin-top: 80px;
     margin-bottom: 120px;
     margin-left: 500px;
     text-align: center;
     width: 35%;
     box-shadow: 11px 10px 5px 0px rgba(0,0,0,0.32);
+}
+
+.card:hover {
+    box-shadow: 175px 175px 175px 175px rgba(255,97,56,0.32);
 }
 
 .physical-attribute {
@@ -140,7 +175,7 @@
 .name-display {
     width: 100%;
     margin-top: 100px;
-    opacity: 0.7;
+    opacity: 0.6;
 }
 
 .name-attribute {
@@ -150,9 +185,10 @@
     font-size: 60px;
     border: 2px solid #FFFF9D;
     display: inline;
-    border-radius: 120px 20px 127px 20px;
+    border-radius: 100px 5px 107px 5px;
     box-shadow: 5px 5px 92px 0px rgba(0,0,0,0.75);
 }
+
 
 .physical {
     margin-top: 100px;
