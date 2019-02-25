@@ -73,9 +73,9 @@ nav a:active {
 /* Cards ------------------------------------------ */
 /* bootstrap over-write .well */
 .well {
-  width: 260px;
+  width: 270px;
   border-radius: 0;
-  padding: 20px 35px 20px 20px;
+  padding: 20px 35px 20px 15px;
 }
 
 .poke-link {
@@ -241,26 +241,42 @@ nav a:active {
 
 /* Buttons ---------------------------------------- */
 
-.dex-fave-btn {
+.fave-btn {
   position: absolute;
-  top: 1%;
-  left: 1%;
   margin: 0;
   padding: 0;
   border: none;
   background: none;
-}
-.fave-btn svg {
-  width: 65px;
-  height: 65px;
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
 }
 
+.dex-fave-btn {
+  top: 1%;
+  left: 1%;
+}
 .index-fave-btn {
-  margin: 0;
-  padding: 0;
-  border: none;
-  background: none;
-  position: absolute;
   top: 20%;
-  right: 3%;
+  right: 4%;
+  background-color: rgba(245, 245, 245, 0.8);
+}
+
+.dex-fave-btn img {
+  width: 65px;
+  height: 65px;
+  transition: all 0.2s ease-in-out;
+}
+
+.dex-fave-btn:hover,
+.dex-fave-btn:active,
+.index-fave-btn:hover,
+.index-fave-btn:active {
+  background-color: rgba(42, 117, 187, 0.9);
+}
+
+.dex-fave-btn img:hover,
+.dex-fave-btn img:active,
+.index-fave-btn:hover,
+.index-fave-btn:active {
+  transform: scale(1.3);
 }
