@@ -1,6 +1,8 @@
 /* Colors
 logo blue #2a75bb, #3c5aa6
 logo yellow #ffcb05 #c7a008
+ball red #ff3d00 #dd2c00
+gray #cfd8dc #37474F
 */
 
 * {
@@ -40,7 +42,6 @@ header img {
 /* bootstrap over-write .well */
 .well {
   width: 260px;
-  border: 1px solid #e3e3e3;
   border-radius: 0;
   padding: 20px;
 }
@@ -76,18 +77,21 @@ header img {
 
   display: flex;
   flex-wrap: wrap;
+
+  font-family: "Quantico", sans-serif;
 }
 
 /* Pokedex Image Box ------------------------------ */
 .dex-img-box {
-  width: 50%;
-  height: 300px;
-  background-color: #eee;
+  width: 45%;
+  height: 220px;
+  margin: 10px 0;
+  background-color: #ddd;
   position: relative;
 }
 
 .dex-img {
-  width: 250px;
+  width: 180px;
   position: absolute;
   top: 45%;
   left: 50%;
@@ -98,43 +102,107 @@ header img {
   position: absolute;
   top: 22%;
   left: 15%;
-  transform: translate(-50%, -50%);
   width: 70%;
   height: 70%;
   border-radius: 50%;
-  border: 3px solid #2a75bb;
-  box-shadow: 0 5px 0 -1px #3c5aa6;
+  border: 3px solid #3c5aa6;
+  box-shadow: 0 5px 0 -1px #37474f;
 
   background-color: #dddddd;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%233c5aa6' fill-opacity='0.76' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%2337474f' fill-opacity='1' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-size: 25px;
 
   transform: perspective(200px) rotateX(65deg);
 }
 
 /* Pokedex Data Box ------------------------------- */
 .dex-data-box {
-  width: 45%;
-  border: 1px solid black;
-  border-radius: 15px;
-  padding: 20px;
+  width: 50%;
+  margin: 0 auto;
+  padding: 10px 0;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .dex-name {
-  font-size: 4rem;
-  text-transform: capitalize;
+  font-size: 2.6rem;
+  line-height: 40px;
+
+  color: #fff;
+  text-shadow: -1.5px -1.5px 0 #37474f, 1.5px -1.5px 0 #37474f,
+    -1.5px 1.5px 0 #37474f, 1.5px 1.5px 0 #37474f;
+
+  display: flex;
+  align-items: center;
+  background-color: #ff3d00;
+  padding: 2px 10px 5px;
+
+  border: 2px solid #37474f;
+  border-radius: 8px;
+  box-shadow: inset 10px 0 5px #dd2c00, inset -10px 0 5px #dd2c00,
+    8px 8px 0 rgba(0, 0, 0, 0.3);
 }
 
 .dex-logo {
-  width: 40px;
+  width: 30px;
+  height: 30px;
+  /* border: 4px solid #ff3d00; */
+  border-radius: 50%;
+  background-color: #fff;
+  margin-right: 5px;
 }
+
+.dex-name .name {
+  margin-left: auto;
+  font-size: 2.8rem;
+  /* letter-spacing: 0.8px; */
+  text-transform: capitalize;
+}
+
+/* Dex Type Box ----------------------------------- */
+.dex-type {
+  width: 85%;
+  margin: 10px auto;
+}
+
+/* Dex Data Box ----------------------------------- */
+.dex-data {
+  width: 85%;
+  margin: 0 auto;
+  padding: 0 12px;
+  border: 3px solid #37474f;
+  border-radius: 8px;
+  color: #37474f;
+  font-size: 2.2rem;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+.dex-data p {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  padding: 0 20px;
+}
+
+.dex-data b {
+  display: block;
+  width: 95%;
+  margin: 0 auto;
+  height: 1px;
+  border: 2px dashed #37474f;
+}
+
 /* Pokedex Info Box ------------------------------- */
 .dex-info-box {
   width: 80%;
   margin: 10px auto;
-  padding: 10px 30px;
-  border: 4px solid #3c5aa6;
-  border-radius: 15px;
-  box-shadow: inset 20px 0 5px #2a75bb, inset -20px 0 5px #2a75bb;
+  padding: 10px 35px;
+  border: 3px solid #37474f;
+  border-radius: 10px;
+  box-shadow: inset 20px 0 5px #ff3d00, inset -20px 0 5px #ff3d00,
+    8px 8px 0 rgba(0, 0, 0, 0.3);
 
-  font-size: 2rem;
+  font-size: 2.1rem;
+  letter-spacing: -1px;
 }

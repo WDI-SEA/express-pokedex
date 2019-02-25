@@ -1,10 +1,13 @@
 <!-- we pass in single pokemon data and text -->
 <% let {name, id, sprites, types, weight, height} = pokemon; %>
 <!-- heigth decimeters -> ft'in" -->
-<% height = (height * 3.937).toFixed(2) %>
+<% height = Math.round(height * 3.937) %>
+<% let feet = Math.floor(height /12) %>
+<% let inches = height % 12%>
 <!-- weight hectograms -> lb  -->
-<% weight = (weight / 4.536).toFixed(2) %>
+<% weight = (weight / 4.536).toFixed(1) %>
 <!-- number format #000 -->
+<% id = id.toString().padStart(3, "0");%>
 
 
 <main class="container">
@@ -18,18 +21,24 @@
       <div class="floor"></div>
       <img src="<%= sprites.front_default %>" alt="" class="dex-img"/>
     </div>
+
     <div class="dex-data-box">
       <div class="dex-name">
           <img class="dex-logo" src="https://img.icons8.com/color/48/000000/pokeball.png">
-        <span> <%= id %> </span>
-        <span> <%= name %> </span>
+        <span class="id"> <%= id %> </span>
+        <span class="name"> <%= name %> </span>
       </div>
-      <div class="dex-data">
-        <p>Height: <span><%= height %> in</span></p>
-        <p>Weight: <span><%= weight %> lb</span></p>
+
+      <div class="dex-type">
         <% types.forEach(type => { %>
-          <p><%= type.type.name %></p>
-          <% }) %>
+          <p class="type <%= type.type.name %>"><%= type.type.name %></p>
+        <% }) %>
+      </div>
+
+      <div class="dex-data">
+        <p>Height: <span><%= feet %>'<%= inches %>"</span></p>
+        <b></b>
+        <p>Weight: <span><%= weight %> lb</span></p>
         </div>
       </div>
     

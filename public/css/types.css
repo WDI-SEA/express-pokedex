@@ -1,0 +1,142 @@
+/* credit: https://gist.github.com/agarie/2610520 */
+.type {
+  display: inline-block;
+  margin: 5px 2px;
+  padding: 2px 10px;
+  border-radius: 5px;
+  background-color: #68a090;
+  border: 1px solid #44685e;
+
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  text-shadow: 2px 2px 1px #000000;
+  box-shadow: 2px 2px 6px #000000, inset 2px 2px 2px #ffffff80,
+    inset -2px -2px 2px #44685e;
+}
+
+.normal {
+  background-color: #a8a878;
+  border: 2px solid #6d6d4e;
+  box-shadow: 2px 2px 6px #000000, inset 2px 2px 2px #ffffff80,
+    inset -2px -2px 2px #6d6d4e;
+}
+
+.fire {
+  background-color: #f08030;
+  border: 2px solid #9c531f;
+  box-shadow: 2px 2px 6px #000000, inset 2px 2px 2px #ffffff80,
+    inset -2px -2px 2px #9c531f;
+}
+
+.water {
+  background-color: #6890f0;
+  border: 2px solid #445e9c;
+  box-shadow: 2px 2px 6px #000000, inset 2px 2px 2px #ffffff80,
+    inset -2px -2px 2px #445e9c;
+}
+
+.electric {
+  background-color: #f8d030;
+  border: 2px solid #a1871f;
+  box-shadow: 2px 2px 6px #000000, inset 2px 2px 2px #ffffff80,
+    inset -2px -2px 2px #a1871f;
+}
+
+.grass {
+  background-color: #78c850;
+  border: 2px solid #4e8234;
+  box-shadow: 2px 2px 6px #000000, inset 2px 2px 2px #ffffff80,
+    inset -2px -2px 2px #4e8234;
+}
+
+.ice {
+  background-color: #98d8d8;
+  border: 2px solid #638d8d;
+  box-shadow: 2px 2px 6px #000000, inset 2px 2px 2px #ffffff80,
+    inset -2px -2px 2px #638d8d;
+}
+
+.ground {
+  background-color: #e0c068;
+  border: 2px solid #927d44;
+  box-shadow: 2px 2px 6px #000000, inset 2px 2px 2px #ffffff80,
+    inset -2px -2px 2px #927d44;
+}
+
+.flying {
+  background-color: #a890f0;
+  border: 2px solid #6d5e9c;
+  box-shadow: 2px 2px 6px #000000, inset 2px 2px 2px #ffffff80,
+    inset -2px -2px 2px #6d5e9c;
+}
+
+.ghost {
+  background-color: #705898;
+  border: 2px solid #493963;
+  box-shadow: 2px 2px 6px #000000, inset 2px 2px 2px #ffffff80,
+    inset -2px -2px 2px #493963;
+}
+
+.rock {
+  background-color: #b8a038;
+  border: 2px solid #786824;
+  box-shadow: 2px 2px 6px #000000, inset 2px 2px 2px #ffffff80,
+    inset -2px -2px 2px #786824;
+}
+
+.fighting {
+  background-color: #c03028;
+  border: 2px solid #7d1f1a;
+  box-shadow: 2px 2px 6px #000000, inset 2px 2px 2px #ffffff80,
+    inset -2px -2px 2px #7d1f1a;
+}
+
+.poison {
+  background-color: #a040a0;
+  border: 2px solid #682a68;
+  box-shadow: 2px 2px 6px #000000, inset 2px 2px 2px #ffffff80,
+    inset -2px -2px 2px #682a68;
+}
+
+.psychic {
+  background-color: #f85888;
+  border: 2px solid #a13959;
+  box-shadow: 2px 2px 6px #000000, inset 2px 2px 2px #ffffff80,
+    inset -2px -2px 2px #a13959;
+}
+
+.bug {
+  background-color: #a8b820;
+  border: 2px solid #6d7815;
+  box-shadow: 2px 2px 6px #000000, inset 2px 2px 2px #ffffff80,
+    inset -2px -2px 2px #6d7815;
+}
+
+.dark {
+  background-color: #705848;
+  border: 2px solid #49392f;
+  box-shadow: 2px 2px 6px #000000, inset 2px 2px 2px #ffffff80,
+    inset -2px -2px 2px #49392f;
+}
+
+.steel {
+  background-color: #b8b8d0;
+  border: 2px solid #787887;
+  box-shadow: 2px 2px 6px #000000, inset 2px 2px 2px #ffffff80,
+    inset -2px -2px 2px #787887;
+}
+
+.dragon {
+  background-color: #7038f8;
+  border: 2px solid #4924a1;
+  box-shadow: 2px 2px 6px #000000, inset 2px 2px 2px #ffffff80,
+    inset -2px -2px 2px #4924a1;
+}
+
+.fairy {
+  background-color: #ee99ac;
+  border: 2px solid #b16f7d;
+  box-shadow: 2px 2px 6px #000000, inset 2px 2px 2px #ffffff80,
+    inset -2px -2px 2px #b16f7d;
+}
