@@ -1,4 +1,38 @@
-h5{
-    text-align: center;
+body{
+    background-image: url("../img/1509211048651.jpg");
 }
 
+h1{
+    color: white;
+}
+h5{
+    text-align: center;
+    color: white;
+}
+
+#text{
+    text-align: center;
+    color: white;
+}
+
+.typeBox{
+    text-align: center;
+    height: 5em;
+    position: relative;
+    color: white;
+}
+
+#moves{
+    text-align: center;
+    color: white;
+}
+
+#typeHeader{
+    text-align: center;
+    color: white;
+}
+
+.infoWeight{
+    text-align: center;
+    color: white;
+}

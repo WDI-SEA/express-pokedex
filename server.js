@@ -24,6 +24,9 @@ app.get('/', function(req, res) {
   });
 });
 
+
+
+
 // Imports all routes from the pokemon routes file
 app.use('/pokemon', require('./routes/pokemon'));
 
