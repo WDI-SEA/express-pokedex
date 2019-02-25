@@ -11,7 +11,7 @@
 
 
 <main class="container">
-    <h1 class="text-center">PokeDex Data</h1>
+    <h1 class="text-center">PokéDex Data</h1>
     <nav>
       <a href="/">Home</a> <a href="/pokemon">Favorites</a>
     </nav>
@@ -47,24 +47,13 @@
     </div>
     
     <form method="POST" action="/pokemon" <%= !fave ? "": "hidden" %>>
-      <input
-        hidden
-        type="text"
-        name="name"
-        value="<%= pokemon.name %>"
-      />
+      <input hidden type="text" name="name" value="<%= pokemon.name %>"/>
       <button class="dex-fave-btn fave-btn" type="submit">
         <img src="/img/fave-add.svg" alt="">
       </button>
     </form>
 
     <form method="POST" action="/pokemon/<%= pokemon.name %>?_method=DELETE" <%= fave ? "" : "hidden" %>>
-      <input
-        hidden
-        type="text"
-        name="name"
-        value="<%= pokemon.name %>"
-      />
       <button class="dex-fave-btn fave-btn" type="submit">
         <img src="/img/fave-delete.svg" alt="">
       </button>

@@ -11,12 +11,6 @@
           <h2><%= pokemon.name%></h2>
           
           <form method="POST" action="/pokemon/<%= pokemon.name %>?_method=DELETE">
-            <input
-              hidden
-              type="text"
-              name="name"
-              value="<%= pokemon.name %>"
-            />
             <button class="index-fave-btn fave-btn" type="submit">
               <img src="/img/fave-delete.svg" alt="">
             </button>

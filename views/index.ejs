@@ -1,5 +1,5 @@
 <main class="container">
-  <h1 class="text-center">The Original 151 Pokemon</h1>
+  <h1 class="text-center">The Original 151 Pokémon</h1>
   <nav>
     <a href="/pokemon">Favorites</a>
   </nav>
@@ -11,12 +11,7 @@
           <h2><%= pokemon.name%></h2>
 
           <form method="POST" action="/pokemon">
-            <input
-              hidden
-              type="text"
-              name="name"
-              value="<%= pokemon.name %>"
-            />
+            <input hidden type="text" name="name" value="<%= pokemon.name %>"/>
             <button class="index-fave-btn fave-btn" type="submit">
               <img src="/img/fave-add.svg" alt="">
             </button>

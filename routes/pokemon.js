@@ -54,7 +54,7 @@ router.get("/:search", (req, res) => {
 router.delete("/:search", (req, res) => {
   db.fave
     .destroy({
-      where: { name: req.body.name }
+      where: { name: req.params.search }
     })
     .then(() => {
       res.redirect("/pokemon");
