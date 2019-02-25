@@ -11,8 +11,7 @@ router.get('/', function(req, res) {
     // TODO: Get all records from the DB and render to view
       // rendered the favroites DB 
     res.render("favs", {favorites});
-  })  
-
+  }); 
 });
 
 
@@ -24,13 +23,8 @@ router.post('/', function(req, res) {
     name: req.body.name
       }).then(function(){
         res.redirect("/pokemon")
-  })
+  });
 });
-
-
-
-
-
 
 
 // 1 ID POKEMON
@@ -43,9 +37,18 @@ console.log("selecting Poke ID")
     request(speciesUrl, function(error, response, body){
       var speciesInfo = JSON.parse(body)
       res.render('show', {info, speciesInfo});
-    })
-  })
+    });
+  });
 });
+
+
+// route.delete('/:name', function(req, res){
+//   db.favorite.destroy({
+//     where: {name:req.body.name}
+//   }).then(function(){
+//     res.redirect("/pokemon")
+//   }); 
+// });
 
 
 

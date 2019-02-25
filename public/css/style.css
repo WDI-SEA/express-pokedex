@@ -10,7 +10,8 @@ h5{
     color: white;
 }
 
-#text{
+
+.infoWeight{
     text-align: center;
     color: white;
 }
@@ -24,15 +25,19 @@ h5{
 
 #moves{
     text-align: center;
-    color: white;
+    color: red; 
 }
 
 #typeHeader{
     text-align: center;
-    color: white;
+    color: red;
 }
 
-.infoWeight{
+#bioHeader{
+    color: red;
+}
+
+#text{
     text-align: center;
-    color: white;
+    color:white;;
 }
