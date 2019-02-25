@@ -1,0 +1,42 @@
+<div id = "showBox">
+
+    <div class="container">
+
+        
+        <h1 class="text-center"> 
+            <img src = <%= info.sprites.front_default %> > 
+            <%= info.name %> 
+            <img src = <%= info.sprites.back_default %> > 
+        </h1>
+        <h3 class = "text-center"> <a href="/pokemon">Favorites</a> </h3>
+        <p class="text-center">
+        <%= info.types.name %> 
+
+        Base Experience <%= info.base_experience %>
+
+        Weight <%= info.weight %> 
+        <%= info.version_group_details %> 
+    </p>
+    <p text 
+    <%= info.moves[1].move.name %>
+    <%= info.moves[2].move.name %>
+    <%= info.moves[3].move.name %>
+    <%= info.moves[4].move.name %>
+
+    <h4 class ="text-center">
+        <% info.types.forEach(function(type) {%>
+            <%= type.type.name %> 
+        <%}) %> 
+    </h4>
+    <h5 id = "bio">
+    <%= speciesInfo.flavor_text_entries[2].flavor_text %> 
+
+
+    </h5>
+
+</div> 
+
+
+<!-- favorites.forEach(function(pokemon) -->
+
+</div>
