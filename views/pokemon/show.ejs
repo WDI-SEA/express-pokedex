@@ -1,0 +1,46 @@
+<div class="container">
+  <h1 class="text-center"><%= pokemon.name %></h1>
+  <p class="text-center">
+    <button class="btn btn-primary"> <a class='btn' href="/">All Pokemon</a></button>
+  </p>
+
+  <div class="well">
+      <h2><%= pokemon.name %></h2>
+      <img src="<%= pokemon.sprites.front_default %>" alt="">
+      <h2>height (cm): <%= pokemon.height %></h2>
+      <h2>weight (kg): <%= pokemon.weight %></h2>
+      <h2>About: </h2>
+      <p><%= species.flavor_text_entries[1].flavor_text %></p>
+      <h2>Type(s):</h2>
+      <% pokemon.types.forEach(function(type) { %>
+        <span><%= type.type.name %>, </span>
+      <% }); %>
+      
+      <h2>Moves:</h2>
+      <% pokemon.moves.forEach(function(move, index) { %>
+        <% if ( index === (pokemon.moves.length - 1)) { %>
+          <span><%= move.move.name %>.</span>
+        <% } else { %>
+          <span><%= move.move.name %>, </span>
+      <% }}); %> 
+
+      <h2>Stats:</h2>
+      <% pokemon.stats.forEach(function(stat, index) { %>
+        <% if ( index === (pokemon.stats.length - 1)) { %>
+          <span><%= stat.stat.name %>: </span>
+          <span><%= stat.base_stat %>.</span>
+        <% } else { %>
+          <span><%= stat.stat.name %>: </span>
+          <span><%= stat.base_stat %>,</span>
+      <% }}); %>
+
+      <% var evolvesName = evolution.chain.evolves_to[0].evolves_to[0].species.name %>
+      <% if (evolvesName != pokemon.name) { %>
+        <h2>Evolves To:</h2>
+        <h2><%= evolvesName %></h2>
+        <img src="<%= evolvedPokemon.sprites.front_default %>" alt="">
+      <% } %>
+
+      
+  </div>
+</div>

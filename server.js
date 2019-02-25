@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const request = require('request');
 const ejsLayouts = require('express-ejs-layouts');
+const methodOverride = require('method-override');
 const app = express();
 
 // middleware
@@ -10,10 +11,11 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false })); // lets you use form data
 app.use(ejsLayouts);
 app.use(express.static('public')); // tells renderer where static files live
+app.use(methodOverride('_method'));
 
 // GET / - main index of site
 app.get('/', function(req, res) {
-  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/?limit=151';
+  let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/?limit=151';
   // Use request to call the API
   request(pokemonUrl, function(error, response, body) {
     var pokemon = JSON.parse(body).results;

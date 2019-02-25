@@ -1,0 +1,17 @@
+a {
+  color: rgba(240,240,240,1);
+}
+
+.btn {
+  background-color: rgba(238,21,21,1);
+  color: rgba(240,240,240,1);
+}
+
+button:active {
+  background-color: rgba(114, 36, 30, 0.336);
+}
+
+h1, h2, h3 {
+  text-transform: capitalize;
+}
+
