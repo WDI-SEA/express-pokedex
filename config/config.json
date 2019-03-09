@@ -10,6 +10,7 @@
     "dialect": "postgres"
   },
   "production": {
-    "database": "DATABASE_URL"
+    "database": "DATABASE_URL",
+    "dialect": "postgres"
   }
 }
