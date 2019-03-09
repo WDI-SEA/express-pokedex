@@ -1,3 +1,14 @@
+# Express Pokédex
+Basic pokédex made with Node/Express/Postgres and the PokéApi.
+
+All faves and caught pokemon go to a single DB so not very usable for multiple users.
+
+### TODO:
+* Add users
+* Cache PokéApi calls
+
+
+# Assignment Below:
 # Express Pokedex
 
 Working with databases, especially through ORMs, can present quite a learning curve. We'll start by incorporating one database model into an application to save favorite Pokemon.
