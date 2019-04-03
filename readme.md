@@ -10,8 +10,6 @@ If you're not familiar with Pokemon, Pokemon is a franchise/universe created by 
 * The Pokemon universe extends to games, trading cards, and TV
 * [The Pokemon Company](https://en.wikipedia.org/wiki/The_Pok%C3%A9mon_Company) is headquartered in Bellevue, WA.
 
-![Pikachu Image](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/English_Pok%C3%A9mon_logo.svg/2000px-English_Pok%C3%A9mon_logo.svg.png)
-
 ## Getting Started
 
 We'll be using an existing application that uses the [PokeAPI](http://pokeapi.co/), a Pokemon API that allows us to get a list of Pokemon.
@@ -26,8 +24,8 @@ We'll be using an existing application that uses the [PokeAPI](http://pokeapi.co
   * How does the app retrieve a list of Pokemon?
   * How many Pokemon does the API call retrieve? Why that many?
   * What are the routes defined in the application?
-  * Try adding a Pokemon to your favorites.
-    * How is this data being submitted?
+  * Think about adding a Pokemon to your favorites.
+    * How will this data be submitted?
     * What will you have to do to save this data to a database?
     * What will you have to do to display favorite Pokemon?
 
@@ -40,32 +38,39 @@ We'll be using an existing application that uses the [PokeAPI](http://pokeapi.co
 
 #### Part 1: Setup Database
 
-Your first step will be to create a SQL database for your application as well as corresponding setup and seed files. Refer back to the notes as necessary.
+Your first step will be to create a SQL database for your application. Recall the process:
 
-#### Part 2: Create a Pokemon Table
+1. Use `npm` to install the required modules for postgres and sequelize:
+  a. `pg` and `sequelize`
+2. Make sure your Postgres server is running (check for the elephant).
+3. Create your database with the `createdb` command followed by your database name.
+4. Run `sequelize init` to initialize Sequelize.
+5. Update your newly created `config/config.json` file as we did in class. This means changing the credentials, updating the SQL flavor, and changing the database name to the one you created in step 3.
 
-Your second step will involve writing a SQL setup file to create a SQL table in your database to store your favorite Pokemon. It's recommended that you name this table `pokemon`. It will only store one attribute, the Pokemon's `name`.
+#### Part 2: Create your Pokemon Model and Table
 
-Once you have created the setup file, run the file against your database to create your tables. (This of course, can be done directly in psql/postico if you wish.) Then be sure to test connectivity to and the functionality of your database. This can be done in a separate file. An example:
+Our data model needs only one attribute: `name`.
 
-**dbTest.js**
+1. Use the `sequelize model:create` command to make the `pokemon` model.
+  a. This creates both the model JS and the migration JS files.
+2. Use the `sequelize db:migrate` command to apply the migrations.
 
 ```js
-var db = require('./models')
+// Make sure to require your models in the files where they will be used.
+var db = require('./models');
 
 db.pokemon.create({
-  name: 'Bulbasaur',
-  pokedex: 1
+  name: 'Pikachu'
+}).then(function(poke) {
+  console.log('Created: ', poke.name)
 })
-.then(function(){
-  console.log('success')
-})
-.catch(function(err){
-  console.log('Uh-oh', err)
+
+db.pokemon.findAll().then(function(poke) {
+  console.log('Found: ', poke.name)
 })
 ```
 
-Be sure to also test querying against the pokemon table.
+Test by running the file: `node db-test.js`.
 
 #### Part 3: Integrating the database with the app
 
@@ -74,22 +79,73 @@ You'll want to add functionality to the following routes by incorporating the `p
 * `GET /pokemon`
   * View: `views/pokemon/index.ejs`
   * Purpose: Retrieve all favorited Pokemon and display them on the page
+  * What sequelize function will do this for us?
 * `POST /pokemon`
+  * The form for adding is already included on the main index page
   * View: none (redirect to `/pokemon`)
   * Purpose: Creates a new Pokemon and redirects back to `/pokemon`
+  * What is the sequelize function we use here?
 
-#### Part 4: Styling
+#### Part 4: Display more info on each Pokemon
 
-When finished with the above, style the application appropriately with CSS.
+Add a route `GET /pokemon/:id` that renders a `show` page with information about the Pokemon with the corresponding row `id`.
+
+* You can get detailed information about a Pokemon by passing the Pokemon's name to PokeAPI. You can retrieve images, abilities, stats, and moves through the API.
+* Example: http://pokeapi.co/api/v2/pokemon/bulbasaur/
+
+Check out the result of the pokemon API calls (or see the [doc page](http://pokeapi.co/)) for ideas on what data you could show. Show at least 4 pieces of data (e.g. attacks, habitat, etc.)
+
+#### Part 5: Styling
+
+When finished with the above, style the application more to your liking with CSS.
+
+## API Limits
+You might notice the API doesn't return all the data it has at once. It has a
+default limit of 20. That means if it has a list of 150 (or more) Pokemon it
+will only return 20 at a time, by default.
+
+<http://pokeapi.co/api/v2/pokemon/>
+
+The API has a way to get around this limit. You can pass a different limit in
+the query string. The limit allows you to ask the API to return more than it's
+default amount.
+
+Remember, query strings are parameters passed in the URL after a question mark
+and separated with ampersands. They look like this:
+
+```
+http://mapwebsite.com/?lat=40.284&long=110.133&zoom=12
+```
+
+This is a URL. It consists of four parts:
+1. the *protocol* is `http://`
+2. the *domain* is `mapwebsite.com`
+3. the *path* is `/` (the root path)
+4. the *query string* is `?lat=40.284&long=110.133`
+
+The query string is like a JavaScript object. There's keys and values.
+This query string has three keys and values:
+
+| Key  | Value   |
+| ---  | ---     |
+| lat  | 40.284  |
+| long | 110.133 |
+| zoom | 12  |
+
+The Pokemon API is configured to read all sorts of keys and values from
+the query string. Perhaps the most useful one we'll use is `limit`. Specifying
+smaller or larger limits tells the server to send back more or less data.
+
+Specify a limit of just one to see the first item in the list:
+`<http://pokeapi.co/api/v2/pokemon?limit=1>`
+
+Or, specify a limit of 151 to see all 151 pokemon!
+`<http://pokeapi.co/api/v2/pokemon?limit=151>`
 
 ## Bonuses
 
-* Add the ability to DELETE Pokemon from the favorites list.
-* For each Pokemon on the favorites page, create a show page to display additional information about that Pokemon.
-  * You'll need to create an additional route.
-  * You can get detailed information about a Pokemon by passing the Pokemon's name to PokeAPI. You can retrieve images, abilities, stats, and moves through the API.
-  * Example: http://pokeapi.co/api/v2/pokemon/bulbasaur/
-
+* Add the ability to DELETE Pokemon from the favorites list.  
+* Rethink the `pokemon` table. Instead of it being a list of favorites, have it be a list of pokemon the user owns. What columns should the table have? `nickname`, `level`, etc... How would this change the app?
 ---
 
 ## Licensing
