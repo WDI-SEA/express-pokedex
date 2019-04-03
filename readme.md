@@ -19,8 +19,6 @@ We'll be using an existing application that uses the [PokeAPI](http://pokeapi.co
 * Fork and clone this repository
 * Run `npm install` to install dependencies
   * Use `nodemon` to start the server
-  * Use `npm run lint:js` to lint your JS
-  * Use `npm run lint:css` to lint your CSS
 
 #### Read the Code
 
@@ -53,19 +51,18 @@ Once you have created the setup file, run the file against your database to crea
 **dbTest.js**
 
 ```js
+var db = require('./models')
 
-var knex = require('knex')({
-  client: 'pg',
-  connection: process.env.DATABASE_URL
-});
-
-knex.raw(`
-  INSERT INTO pokemon(name)
-  VALUES (?);
-`, ['Pikachu']).then(function(data) {
-  console.log(data);
-});
-
+db.pokemon.create({
+  name: 'Bulbasaur',
+  pokedex: 1
+})
+.then(function(){
+  console.log('success')
+})
+.catch(function(err){
+  console.log('Uh-oh', err)
+})
 ```
 
 Be sure to also test querying against the pokemon table.
@@ -85,7 +82,7 @@ You'll want to add functionality to the following routes by incorporating the `p
 
 When finished with the above, style the application appropriately with CSS.
 
-##Bonuses
+## Bonuses
 
 * Add the ability to DELETE Pokemon from the favorites list.
 * For each Pokemon on the favorites page, create a show page to display additional information about that Pokemon.
