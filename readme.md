@@ -40,8 +40,7 @@ We'll be using an existing application that uses the [PokeAPI](http://pokeapi.co
 
 Your first step will be to create a SQL database for your application. Recall the process:
 
-1. Use `npm` to install the required modules for postgres and sequelize:
-  a. `pg` and `sequelize`
+1. Use `npm` to install the required modules for postgres and sequelize: `pg` and `sequelize`
 2. Make sure your Postgres server is running (check for the elephant).
 3. Create your database with the `createdb` command followed by your database name.
 4. Run `sequelize init` to initialize Sequelize.
