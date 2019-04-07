@@ -35,12 +35,14 @@ router.get('/:name', function(req, res) {
       let evolutionChainURL = species.evolution_chain.url;
       request(evolutionChainURL, function(error, response, body) {
         var evolution = JSON.parse(body);
-        var evolvedName = evolution.chain.evolves_to[0].evolves_to[0].species.name;
-        let evolvedAPI = 'http://pokeapi.co/api/v2/pokemon/' + evolvedName;
-        request(evolvedAPI, function(error, response, body) {
-          var evolvedPokemon =  JSON.parse(body);
-          res.render('pokemon/show', {pokemon, species, evolution, evolvedPokemon});
-        });
+        if (evolution.chain.evolves_to.length) {
+          var evolvedName = evolution.chain.evolves_to[0].evolves_to[0].species.name;
+          let evolvedAPI = 'http://pokeapi.co/api/v2/pokemon/' + evolvedName;
+          request(evolvedAPI, function(error, response, body) {
+            var evolvedPokemon =  JSON.parse(body);
+            res.render('pokemon/show', {pokemon, species, evolution, evolvedPokemon});
+          });
+        };
       });
     });
   });

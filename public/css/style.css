@@ -1,3 +1,8 @@
+/* colors
+red: rgba(238,21,21,1);
+black: rgba (34,34,36,1);
+*/
+
 a {
   color: rgba(240,240,240,1);
 }
@@ -5,13 +10,43 @@ a {
 .btn {
   background-color: rgba(238,21,21,1);
   color: rgba(240,240,240,1);
+  width: 8vw;
 }
 
-button:active {
-  background-color: rgba(114, 36, 30, 0.336);
+.btn:hover {
+  background-color:rgba(238,21,21,0.5);
+}
+
+.btn:active {
+  background-color:rgba(34,34,36,1);
 }
 
 h1, h2, h3 {
   text-transform: capitalize;
 }
 
+.listDiv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.well {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 23vw;
+}
+
+.show {
+  width: 75vw;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.nameAndImages {
+  text-transform: capitalize;
+  font-size: 4rem;
+}

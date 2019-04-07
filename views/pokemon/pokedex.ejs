@@ -1,17 +1,21 @@
 <div class="container">
     <h1 class="text-center">Your Pokedex</h1>
     <p class="text-center">
-    <button class="btn btn-primary"> <a class='btn' href="/">All Pokemon</a></button>
+    <a class="btn btn-primary" href="/">All Pokemon</a>
     </p>
 
-    <% pokemon.forEach(function(pokemon) { %>
-    <div class="well">
-        <h2><%= pokemon.name %></h2>
-        <button class="btn btn-primary" type="submit"> <a href="/pokemon/<%= pokemon.name %>">View Pokemon</a></button>
-        <form method="POST" action="/pokemon/:name?_method=DELETE">
-            <input hidden type="text" name="name" value="<%= pokemon.name %>">
-            <button class="btn btn-primary" type="submit">Delete</button>
-        </form>
+    <div class='listDiv'>
+        <% pokemon.forEach(function(pokemon) { %>
+        <div class="well">
+            <h2><%= pokemon.name %></h2>
+            <div class='btnDiv'>
+                <button class="btn btn-primary" type="submit"> <a href="/pokemon/<%= pokemon.name %>">View Pokemon</a></button>
+                <form method="POST" action="/pokemon/:name?_method=DELETE">
+                    <input hidden type="text" name="name" value="<%= pokemon.name %>">
+                    <button class="btn btn-primary" type="submit">Delete</button>
+                </form>
+            </div>
+        </div>
+        <% }); %>
     </div>
-    <% }); %>
 </div>
