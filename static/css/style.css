@@ -1,0 +1,18 @@
+body {
+    background-color: pink;
+}
+
+.btn {
+    background-color: goldenrod;
+    color: white;
+    padding: .25em 1em;
+
+}
+
+.btn:hover {
+    background-color: gold;
+}
+
+.btn:active {
+    background-color: orange;
+}
