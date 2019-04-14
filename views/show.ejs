@@ -1,0 +1,22 @@
+<h1>Here are all your favorite pokemons</h1>
+
+<% if(poke && poke.length > 0) { %>
+  <% poke.forEach((s)=>{ %>
+    <div>
+
+      <div class="card mb-3" style="max-width: 540px;">
+  <div class="row no-gutters">
+
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">  <%= s.name %></h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+  <% }) %>
+<%} else{  %>
+  <p>Nothing here to see</p>
+<% } %>
