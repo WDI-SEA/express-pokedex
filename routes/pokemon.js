@@ -2,6 +2,7 @@
 var express = require('express');
 var router = express.Router();
 var db = require('../models');
+var request = require('request');
 
 
 // GET /pokemon - return a page with favorited Pokemon
@@ -33,32 +34,44 @@ router.post('/', (req,res)=>{
 
 router.get('/:id', (req, res) => {
   db.poke.findByPk(req.params.id)
+
   .then((foundPoke) => {
+
+    //calling the details of the pokemon
+    var iChooseUrl = 'http://pokeapi.co/api/v2/pokemon/'+ foundPoke.name + '/';
+    console.log(iChooseUrl)
+    
+    // Use request to call the API
+    request(iChooseUrl, function(error, response, body) {
+       chosenPokemon = JSON.parse(body);
+      console.log("HEY CHOSENPOKE: ",chosenPokemon)
+    })
 
 
     //leave this
     res.render('pokemon/show', {
-      poke: foundPoke
+      poke: foundPoke,
+      poke2: chosenPokemon
     })
   })
   .catch((err)=> {
     console.log('Error in POST / pokes', err)
-    res.render('404')
+    res.send('404', err)
   })
 })
 
 
 
 
-// GET / - main index of site
-app.get('/', function(req, res) {
-  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/bulbasaur/';
-  // Use request to call the API
-  request(pokemonUrl, function(error, response, body) {
-    var pokemon = JSON.parse(body).results;
-    res.render('index', { pokemon: pokemon.slice(0, 151) });
-  });
-});
+// // GET / - main index of site
+// app.get('/', function(req, res) {
+//   var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/bulbasaur/';
+//   // Use request to call the API
+//   request(pokemonUrl, function(error, response, body) {
+//     var pokemon = JSON.parse(body).results;
+//     res.render('index', { pokemon: pokemon.slice(0, 151) });
+//   });
+// });
 
 
 

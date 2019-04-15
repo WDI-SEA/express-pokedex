@@ -1,4 +1,16 @@
-<h1><%= poke.name %></h1>
+<div class="pokedex">	
+	.
+	<div class="screen" >
+		<img src="<%= poke2.sprites.front_default%>">
+		<div class="details">
+			<p><span class="upper"><%= poke.name %></span></p>
+			<p><span class="upper"><%= poke2.types[0].type.name %></span></p>
+			<p><span class="upper">HT <%= poke2.height %></span></p>
+			<p><span class="upper">WT <%= poke2.weight %>lb </span></p>
+			<p><span class="upper">No. 0<%= poke2.id %> </span></p>
+		</div>
+	</div>
+</div>
 
 <p><a href="./">Your fav pokemon</a></p>
 <p><a href="../">Catch more pokemon</a></p>

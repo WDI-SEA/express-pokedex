@@ -1,0 +1,38 @@
+h1 {
+	color:red;
+}
+
+.pokedex {
+	background-image: url('../img/pokedex.jpg'); 
+	background-size: contain; 
+	height:1000px;
+	width:666px;
+	/*border:1px solid red;*/
+	
+	
+}
+.screen {
+	margin: 175px 62px;
+}
+.screen img {
+	height: 250px;
+	float: left;
+}
+.details {
+	padding:30px 0 0 0;
+	float: left;
+}
+
+body {
+	font-family: 'IBM Plex Mono', monospace;
+
+}
+
+.upper {
+	text-transform: uppercase;
+	font-size: 2em;
+	letter-spacing: .3em;
+}
+p {
+	margin: 5px;
+}
