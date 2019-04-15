@@ -17,8 +17,9 @@ router.get('/', function(req, res) {
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
   // TODO: Get form data and add a new record to DB
-  db.pokemon.create({
-	  name: req.body.name
+  db.pokemon.findOrCreate({
+	  where: { name: req.body.name },
+	  defaults: req.body
 	}).then(function(poke) {
 		res.redirect('pokemon')
 	})
