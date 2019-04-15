@@ -4,14 +4,13 @@ var request = require('request');
 var ejsLayouts = require('express-ejs-layouts');
 var app = express();
 
-app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 
 // GET / - main index of site
 app.get('/', function(req, res) {
-  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
+  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/?limit=151';
   // Use request to call the API
   request(pokemonUrl, function(error, response, body) {
     var pokemon = JSON.parse(body).results;

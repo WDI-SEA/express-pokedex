@@ -1,0 +1,26 @@
+<div style="background-color: red; display: flex; flex-direction: column; align-items: center;">
+	<div class="container">
+	  <h1 class="text-center" style="color: yellow;"><%= poke.name%></h1>
+	  <p class="text-center">
+	    <a href="/">Home</a>
+	    <a href="/pokemon">Favorites</a>
+	  </p>
+	</div>
+
+	<div style="display: flex; justify-content: center; background-color: lightgrey; width: 300px; border: 20px solid grey;">
+		<div class="card" style="width: 18rem; text-align: center;">
+		  <img class="card-img-top" src="<%= pokemon.sprites.front_default %>" style="height: 150px; width: 150px;" alt="Card image cap">
+		  <div class="card-body">
+		    <h5 class="card-title"><%= poke.name%></h5>
+		    <p class="card-text"><strong>Pokemon No: </strong><%= pokemon.id %></p>
+		    <p class="card-text"><strong>Height: </strong><%= pokemon.height / 10 %> m</p>
+		    <p class="card-text"><strong>Weight: </strong><%= pokemon.weight / 10 %> kgs</p>
+		    <p class="card-text"><strong>Types: </strong>
+		    	<% pokemon.types.forEach(function(type) { %>
+				    <%= type.type.name %>
+				  <% }); %>
+		    </p>
+		  </div>
+		</div>
+	</div>
+</div>
