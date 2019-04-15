@@ -7,6 +7,10 @@
   <% poke.forEach(function(poke) { %>
     <div class="well">
       <h2><a href="/pokemon/<%= poke.id %>"><%= poke.name %></a></h2>
+      <form method="POST" action="/pokemon/?_method=DELETE">
+      	<input type="hidden" name="name" value="<%= poke.name %>">
+      	<input class="btn btn-primary" type="submit" value="Remove from favorites">
+      </form>
     </div>
   <% }); %>
 </div>

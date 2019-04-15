@@ -37,4 +37,14 @@ router.get('/:id', (req, res) => {
 	})
 })
 
+router.delete('/', (req, res) => {
+	db.pokemon.destroy({
+		where: req.body
+	})
+	.then((deletedPokemon) => {
+		console.log(deletedPokemon.name, "has been released")
+		res.redirect('/pokemon')
+	})
+})
+
 module.exports = router;

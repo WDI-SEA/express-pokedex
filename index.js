@@ -2,9 +2,11 @@ require('dotenv').config();
 var express = require('express');
 var request = require('request');
 var ejsLayouts = require('express-ejs-layouts');
+var methodOverride = require('method-override')
 var app = express();
 
 app.set('view engine', 'ejs');
+app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 
