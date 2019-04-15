@@ -18,10 +18,49 @@ router.get('/', function(req, res) {
   
 });
 
-// POST /pokemon - receive the name of a pokemon and add it to the database
-router.post('/', function(req, res) {
-  // TODO: Get form data and add a new record to DB
-  res.send(req.body);
+router.post('/', (req,res)=>{
+  console.log(req.body)
+  db.poke.create(req.body)
+  .then((createPoke)=> {
+    res.redirect('/pokemon/' + createPoke.id)
+  })
+  .catch((err)=> {
+    console.log('Error in POST / poke', err)
+    res.render('404')
+  })
+})
+
+
+router.get('/:id', (req, res) => {
+  db.poke.findByPk(req.params.id)
+  .then((foundPoke) => {
+
+
+    //leave this
+    res.render('pokemon/show', {
+      poke: foundPoke
+    })
+  })
+  .catch((err)=> {
+    console.log('Error in POST / pokes', err)
+    res.render('404')
+  })
+})
+
+
+
+
+// GET / - main index of site
+app.get('/', function(req, res) {
+  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/bulbasaur/';
+  // Use request to call the API
+  request(pokemonUrl, function(error, response, body) {
+    var pokemon = JSON.parse(body).results;
+    res.render('index', { pokemon: pokemon.slice(0, 151) });
+  });
 });
+
+
+
 
 module.exports = router;
