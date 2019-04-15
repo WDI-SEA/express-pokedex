@@ -1,0 +1,10 @@
+<h1>My Fave Pokemon</h1>
+
+<% pokes.forEach(poke=> { %>
+  <p><a> href="/pokemon/fave/<% poke.name %><% poke.id %></a></p>
+  <form method="POST" action="/pokemon/?_method=DELETE">
+    <input type="hidden" name="name" value="<%= poke.name %>">
+    <input type="submit" value="Delete this Pokemon">
+  </form>
+
+  <% }) %>

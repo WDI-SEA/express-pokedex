@@ -1,15 +1,17 @@
-<h2> <%= info.name %> </h2>
-
-<h3>Types</h3>
-<P><% info.types.forEach(function(element){ %>
-    <%= element.type.name %>
-<% }); %> </P>
+<h2> <%= favePoke.name %> </h2>
 
 
-<h3>Held Items</h3>
-<P><% info.held_items.forEach(function(element){ %>
-    <%= element.item.name %>
-<% }); %> </P>
+<form method="POST" action="/pokemon/fave/?_method=PUT">
+    <label for="nickname">Nickname</label>
+    <input type="text" name="nickname" value="<%= favePoke.nickname ? favePoke.nickname : favePoke.name%>" id="nickname">
+
+    <label for="level">Level</label>
+    <input type="number" name="level" id="level" value="<% favePoke.level%>">
+
+<input type="hidden" name="id" value="<%= favePoke.id %>">
+
+<input type="submit" value="Edit">
+
+</form>
 
 
-<p>Height: <%= pokemon.height %> </p>

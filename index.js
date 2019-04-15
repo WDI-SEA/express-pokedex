@@ -3,14 +3,17 @@ var express = require('express');
 var request = require('request');
 var ejsLayouts = require('express-ejs-layouts');
 var app = express();
+var methodOverride = require('method-override')
 
 app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
+app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 
 // GET / - main index of site
 app.get('/', function(req, res) {
+  var orig151 = '?limit=151'
   var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
   // Use request to call the API
   request(pokemonUrl, function(error, response, body) {
