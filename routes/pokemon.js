@@ -23,7 +23,7 @@ router.post('/', (req,res)=>{
   console.log(req.body)
   db.poke.create(req.body)
   .then((createPoke)=> {
-    res.redirect('/pokemon/' + createPoke.id)
+    res.redirect('/pokemon/' + createPoke.name)
   })
   .catch((err)=> {
     console.log('Error in POST / poke', err)
@@ -31,48 +31,64 @@ router.post('/', (req,res)=>{
   })
 })
 
+router.get('/pokemon/:id', (req, res)=>{
 
-router.get('/:id', (req, res) => {
-  db.poke.findByPk(req.params.id)
+  db.poke.findOne({
+    where:{ id: req.params.id }
 
-  .then((foundPoke) => {
-
-    //calling the details of the pokemon
-    var iChooseUrl = 'http://pokeapi.co/api/v2/pokemon/'+ foundPoke.name + '/';
-    console.log(iChooseUrl)
-    
-    // Use request to call the API
-    request(iChooseUrl, function(error, response, body) {
-       chosenPokemon = JSON.parse(body);
-      console.log("HEY CHOSENPOKE: ",chosenPokemon)
     })
+  .then (foundPoke=>{
+    res.render('pokemon/displayFav', {favePoke: foundPoke})
 
 
-    //leave this
-    res.render('pokemon/show', {
-      poke: foundPoke,
-      poke2: chosenPokemon
-    })
   })
-  .catch((err)=> {
-    console.log('Error in POST / pokes', err)
-    res.send('404', err)
+  .catch(err=>{
+    console.log('caught an error',err)
+    res.send('caught an error')
   })
 })
 
 
 
+router.get('/:name', (req, res) => {
+  
+  //calling the details of the pokemon
+  var iChooseUrl = 'http://pokeapi.co/api/v2/pokemon/'+ req.params.name + '/';
+  console.log("api call url: ",iChooseUrl)
 
-// // GET / - main index of site
-// app.get('/', function(req, res) {
-//   var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/bulbasaur/';
-//   // Use request to call the API
-//   request(pokemonUrl, function(error, response, body) {
-//     var pokemon = JSON.parse(body).results;
-//     res.render('index', { pokemon: pokemon.slice(0, 151) });
-//   });
-// });
+  // Use request to call the API
+  request(iChooseUrl, function(error, response, body) {
+       chosenPokemon = JSON.parse(body);
+      // console.log("HEY CHOSENPOKE: ",chosenPokemon)
+      res.render('pokemon/show', {poke: chosenPokemon})
+    })
+})
 
+router.put('/pokemon', (req, res)=>{
+  //an example
+  var newData = {
+    name: req.body.name,
+    nickname: req.body.nickname,
+    level: req.body.level
+  }
+
+  db.poke.update(newData, { where: {id: req.body.id}})
+  .then(updatedFave=>{
+    console.log("updated", updatedFave.nickname)
+    res.redirect('/pokemon/pokemon/'+req.body.id)
+  })
+})
+
+
+router.delete('/', (req, res)=>{
+  db.poke.destroy({
+    where: req.body
+  })
+  .then(deletedPokemon=>{
+    console.log(deletedPokemon.name, "has been released")
+    res.redirect('/pokemon')
+  })
+})
 
 
 

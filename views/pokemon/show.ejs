@@ -1,16 +1,21 @@
 <div class="pokedex">	
 	.
 	<div class="screen" >
-		<img src="<%= poke2.sprites.front_default%>">
+		<img src="<%= poke.sprites.front_default%>">
 		<div class="details">
 			<p><span class="upper"><%= poke.name %></span></p>
-			<p><span class="upper"><%= poke2.types[0].type.name %></span></p>
-			<p><span class="upper">HT <%= poke2.height %></span></p>
-			<p><span class="upper">WT <%= poke2.weight %>lb </span></p>
-			<p><span class="upper">No. 0<%= poke2.id %> </span></p>
+			<p><span class="upper"><%= poke.types[0].type.name %></span></p>
+			<p><span class="upper">HT <%= poke.height %></span></p>
+			<p><span class="upper">WT <%= poke.weight %>lb </span></p>
+			<p><span class="upper">No. 0<%= poke.id %> </span></p>
 		</div>
 	</div>
 </div>
+
+<form method="post" action="/pokemon/?_method=DELETE">
+	<input type="hidden" name="name" value="<%= poke.name%>">
+	<input type="submit" value="delete">
+</form>
 
 <p><a href="./">Your fav pokemon</a></p>
 <p><a href="../">Catch more pokemon</a></p>

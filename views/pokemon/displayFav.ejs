@@ -1,0 +1,10 @@
+<h1> it's <%= favePoke.name %></h1>
+<form method="POST" action="/pokemon/pokemon/?_method=PUT">
+	<label for="nickname" >Nickname</label>
+	<input type="text" value="<%= favePoke.nickname ? favePoke.nickname : favePoke.name %>" name="nickname" id="nickname">
+
+		<label for="level">Level</label>
+		<input type="number" name="level" id="level" value="<%= favePoke.level%>">
+		<input type="hidden" name="id" value="<%= favePoke.id%>">
+		<input type="submit" name="Edit">
+</form>

@@ -1,14 +1,14 @@
 <div class="container">
   <h1 class="text-center">Your favorite pokemon</h1>
   <p class="text-center">
-    <a href="/pokemon">Favorites</a>
+    <a href="/pokemon">Favorites</a> | <a href="/">Catch More</a>
   </p>
 
   <% poke.forEach(function(p) { %>
     <div class="well">
       <h2><%= p.name %></h2>
         <input hidden type="text" name="name" value="<%= p.name %>">
-        <!-- <a href="/pokemon/<%= p.id %>">View</a> -->
+        <a href="/pokemon/pokemon/<%= p.id %>">View</a>
     </div>
   <% }); %>
 </div>
