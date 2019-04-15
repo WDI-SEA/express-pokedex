@@ -4,6 +4,7 @@ var request = require('request');
 var ejsLayouts = require('express-ejs-layouts');
 var app = express();
 
+
 app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
