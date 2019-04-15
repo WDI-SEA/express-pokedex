@@ -20,6 +20,26 @@ app.get('/', function(req, res) {
   });
 });
 
+app.get('/1', function(req, res) {
+  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/?offset=26&limit=25';
+  // Use request to call the API
+  request(pokemonUrl, function(error, response, body) {
+    var pokemon = JSON.parse(body).results;
+    console.log(pokemon);
+    res.render('index', { pokemon: pokemon.slice(0, 151) });
+  });
+});
+
+app.get('/2', function(req, res) {
+  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/?offset=51&limit=25';
+  // Use request to call the API
+  request(pokemonUrl, function(error, response, body) {
+    var pokemon = JSON.parse(body).results;
+    console.log(pokemon);
+    res.render('index', { pokemon: pokemon.slice(0, 151) });
+  });
+});
+
 // Imports all routes from the pokemon routes file
 app.use('/pokemon', require('./routes/pokemon'));
 
