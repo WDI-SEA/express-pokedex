@@ -1,0 +1,15 @@
+<h2> <%= info.name %> </h2>
+
+<h3>Types</h3>
+<P><% info.types.forEach(function(element){ %>
+    <%= element.type.name %>
+<% }); %> </P>
+
+
+<h3>Held Items</h3>
+<P><% info.held_items.forEach(function(element){ %>
+    <%= element.item.name %>
+<% }); %> </P>
+
+
+<p>Height: <%= pokemon.height %> </p>

@@ -1,4 +1,4 @@
-// require('dotenv').config();
+require('dotenv').config();
 var express = require('express');
 var request = require('request');
 var ejsLayouts = require('express-ejs-layouts');
@@ -19,9 +19,16 @@ app.get('/', function(req, res) {
   });
 });
 
-// Imports all routes from the pokemon routes file
-app.use('/pokemon', require('./routes/pokemon'));
-
+  // Imports all routes from the pokemon routes file
+  app.use('/pokemon', require('./routes/pokemon'));
+  
+  // Listen on PORT 3000
 var server = app.listen(process.env.PORT || 3000);
+console.log('I\'m listening to the smooth sounds of port 3000 in the morning. ☕')
 
 module.exports = server;
+
+
+
+
+
