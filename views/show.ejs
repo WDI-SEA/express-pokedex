@@ -2,20 +2,14 @@
 
 <% if(poke && poke.length > 0) { %>
   <% poke.forEach((s)=>{ %>
-    <div>
 
-      <div class="card mb-3" style="max-width: 540px;">
-  <div class="row no-gutters">
+    <div class="container bg-primary text-white"  style="width:18rem;">
 
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">  <%= s.name %></h5>
-      </div>
-    </div>
-  </div>
-</div>
+    <h5 class="card-title"><%= s.name %></h5>
 
-    </div>
+   </div>
+<br>
+<br>
   <% }) %>
 <%} else{  %>
   <p>Nothing here to see</p>
