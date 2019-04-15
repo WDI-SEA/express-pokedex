@@ -12,6 +12,20 @@
     "express": "^4.16.4",
     "express-ejs-layouts": "^2.5.0",
     "morgan": "^1.9.1",
-    "request": "^2.88.0"
-  }
+    "pg": "^7.9.0",
+    "request": "^2.88.0",
+    "sequelize": "^5.3.5",
+    "sequelize-cli": "^5.4.0"
+  },
+  "description": "Working with databases, especially through ORMs, can present quite a learning curve. We'll start by incorporating one database model into an application to save favorite Pokemon.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/greypanda13/express-pokedex.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/greypanda13/express-pokedex/issues"
+  },
+  "homepage": "https://github.com/greypanda13/express-pokedex#readme"
 }

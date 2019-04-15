@@ -1,14 +1,21 @@
 <div class="container">
-  <h1 class="text-center">The Original 151 Pokemon</h1>
+  <h1 class="text-center">Kanto & Johto Pok<%= "\u00e9" %>mon</h1>
   <p class="text-center">
     <a href="/pokemon">Favorites</a>
   </p>
 
-  <% pokemon.forEach(function(pokemon) { %>
+  <% pokemon.forEach(function(pokemon, i) { %>
+    <% let name = pokemon.name %>
+    <% let capName = ""; %>
+    <%= name[0] %>
+    <% (name) => { capName = name[0].toUpperCase() + name.slice(1); } %>
+    <%= capName[0] %>
+    <% var iconUrl = `https://www.serebii.net/pokedex-dp/icon/${10 > (i + 1) ? `00${i + 1}` : 100 > (i + 1) ? `0${i + 1}` : i + 1}.gif`; %>
     <div class="well">
-      <h2><%= pokemon.name %></h2>
+      <h2><img src="<%= iconUrl %>" alt="gif of <%= pokemon.name %>"><%= name %></h2>
+
       <form method="POST" action="/pokemon">
-        <input hidden type="text" name="name" value="<%= pokemon.name %>">
+        <input hidden type="text" name="number" value="<%= i %>">
         <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
       </form>
     </div>

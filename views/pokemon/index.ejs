@@ -1,0 +1,19 @@
+<div class="container">
+  <h1 class="text-center">Kanto & Johto Pok<%= "\u00e9" %>mon</h1>
+  <p class="text-center">
+    <a href="/pokemon">Favorites</a>
+  </p>
+
+  <% pokemon.forEach(function(pokemon, i) { %>
+    <% let srcUrl = `https://pokeapi.co/api/v2/pokemon/${pokemon.number}/` %>
+    <% var iconUrl = `https://www.serebii.net/pokedex-dp/icon/${10 > (pokemon.number) ? `00${pokemon.number}` : 100 > (pokemon.number) ? `0${pokemon.number}` : pokemon.number}.gif`; %>
+    <div class="well">
+      <h2><img src="<%= iconUrl %>" alt="gif of <%= pokemon.name %>"> <a href="#"><%= name %></a></h2>
+
+      <form method="DELETE" action="/pokemon">
+        <input hidden type="text" name="name" value="<%= pokemon.name %>">
+        <button class="btn btn-primary" type="submit">Remove from Favorite Pokemon</button>
+      </form>
+    </div>
+  <% }); %>
+</div>
