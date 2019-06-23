@@ -12,7 +12,6 @@ router.get('/', function(req, res) {
     res.render('pokemon', {data});
     // res.json(pokemon);
   });
-
   // res.send('Render a page of favorites here');
 });
 
@@ -24,11 +23,9 @@ router.post('/', function(req, res) {
   db.pokemon.create({
     name: req.body.name
   }).then(function(data){
-    res.render('pokemon', {data});
-
+    // res.render('pokemon', {data});
+    res.render('pokemon');
   })
-
-
   // res.send(req.body);
 });
 
@@ -55,8 +52,6 @@ router.delete('/:id', function(req, res) {
       res.json(data);
   });
 });
-
 // PUT /pokemon/:id
 // router.put('/:id')
-
 module.exports = router;
