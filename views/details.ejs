@@ -7,14 +7,17 @@
     <title>Pokemon</title>
 </head>
 <body>
+<link href="css/css.ejs" rel="stylesheet" type="text/css">
+<ul>
    <h1>Pokemon Details</h1>
     <p><%= pokemon.name %></p> 
-    <h4> <%= pokemon.abilities %> </h4>
-    <h4> <%= pokemon.forms %></h4>
-  
- 
-
-
+  <img src="<%= pokemon.sprites.front_default %>">
+    <p>Height: <%= pokemon.height %></p>
+    <p> Weight:<%= pokemon.weight %></p>
+</ul>
+    
+<li> Abilities:<%= pokemon.abilities[0].name %></li>
+    
 </body>
 </html> 
  

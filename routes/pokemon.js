@@ -35,16 +35,16 @@ router.post('/', function(req, res) {
 });
 
 //GET /pokemon/:id- gets ONE pokemon id from the database and gets details (like movies)
-// router.get('/details/:id', function(req,res) {
+// router.get('/:id', function(req,res) {
 //   //look up pokemon in our db by  its ID (findByPk)
 //   //User the pokemon name from the db to query the api for details on that one pokemon
 //   // take data from the api and render a detail/show page for this one pokemon
 //   db.pokemon.findOne({
 //     where: {id: parseInt(req.params.id)}
-//   
-//     ).then(
+  
+//   }).then(function(data) {
 //     axios.get('https://pokeapi.co/api/v2/pokemon/' + req.params.id + '/')
-//   ).then(function(response) {
+// }).then(function(response) {
 //   //  console.log(response.dataValues);
 //     res.render('details', {pokemon: response.dataValues});
 //   });
@@ -55,10 +55,11 @@ router.get('/:id', function(req, res) {
   db.pokemon.findOne({
     where: {id: parseInt(req.params.id)}
   }).then( function(data) {
+    console.log(data.name);
     return axios.get('https://pokeapi.co/api/v2/pokemon/' + data.name + '/')
   }).then(function(response) {
-    console.log(response.dataValues);
-    res.render('details', {pokemon: response.dataValues});
+    console.log("HERE I AM", response.data);
+    res.render('details', {pokemon: response.data});
   }).catch(function(error) {
     //if(error.response) {
       console.log(error);

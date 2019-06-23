@@ -1,8 +1,9 @@
+<link href="/css/css.ejs" rel="stylesheet" type="text/css">
 <h2>Here are your Favs</h2>
-<ul></ul>
+<ul>
 <% pokemon.forEach(function(pokemon, id) {%>
 <h2> <%= pokemon.name %> </h2>
-<h4><a href="pokemon/details/<%= pokemon.id %>">View Pokemon</a></h4>
+<h4><a href="/pokemon/<%= pokemon.id %>">View Pokemon</a></h4>
     
 
 
