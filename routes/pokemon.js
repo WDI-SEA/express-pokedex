@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+const axios = require('axios'); 
+
 // notes from Steve
 var db = require('../models'); // have to go up a directory and then down into models
 
@@ -24,7 +26,7 @@ router.post('/', function(req, res) {
     name: req.body.name
   }).then(function(data){
     // res.render('pokemon', {data});
-    res.render('pokemon');
+    res.redirect('pokemon');
   })
   // res.send(req.body);
 });
@@ -37,11 +39,32 @@ router.get('/:id', function(req, res) {
   // details on that one pokemon 
   // Take data from the api and render a detal/show page for this one pokemon. 'show' or 'details' page.
   // res.send('This is the route for showing one pokemon');
-  db.pokemon.findOne({
-    where: {id: parseInt(req.params.id)}
-    }).then(function(data) {
-    res.json(data);
-  });
+  
+  
+  
+
+
+      var pokemonDetailsName = 'charizard';
+      var pokemonUrl = `http://pokeapi.co/api/v2/pokemon/${pokemonDetailsName}`;
+      // Use request to call the API
+      axios.get(pokemonUrl).then( function(apiResponse) {
+        var pokemon = apiResponse.data;
+
+        // res.render('show', { pokemon });
+        console.log(pokemon.abilities[0].ability.name)
+        res.render('show');
+      })
+
+
+  
+  
+  
+  
+  // db.pokemon.findOne({
+  //   where: {id: parseInt(req.params.id)}
+  //   }).then(function(data) {
+  //   res.json(data);
+  // });
 });
 
 // Delete ONE record route

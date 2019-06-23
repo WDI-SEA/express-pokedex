@@ -27,5 +27,4 @@ app.use('/pokemon', require('./routes/pokemon'));
 var server = app.listen(port, function() {
   console.log('...listening on', port );
 });
-
 module.exports = server;
