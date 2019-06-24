@@ -1,0 +1,13 @@
+body {
+    margin-left: 500px;
+    background-color: palegoldenrod;
+}
+
+img {
+    height: 300px;
+    width: 300px;
+}
+
+h1, p {
+    margin: 0 auto;
+}
