@@ -1,0 +1,12 @@
+<h2> Favorites go here </h2>
+<ul>
+
+<% favorites.forEach(function(pokemon){ %>
+<li>
+<%= pokemon.name %>
+<a href="/pokemon/<%= pokemon.id %>">view details</a>
+
+</li>
+
+<% }) %> 
+</ul>
