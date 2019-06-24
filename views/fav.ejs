@@ -1,0 +1,46 @@
+<header>
+  <h1>Pokedex Favorate List</h1>
+  <hr/>
+</header>
+
+
+
+<main>
+  <div id="pokelist">
+    <% pokemons.forEach(function(pokemon) {%>
+      <div>
+        <div class="pokename"><%=pokemon.name%>&nbsp&nbsp
+          <form action="/pokemon/<%=pokemon.id%>/?_method=DELETE" method="POST" class='favbtn'>
+            <input class='hidden' type="text" name='pageid' value=<%=pageid%>>
+            <button type="submit" name='name' value=<%=pokemon.name%>>❤️</button>
+          </form>
+
+        </div>
+        <a href="/pokemon/<%=pokemon.id%>">
+          <div>
+            <img src="<%=pokemon.img%>" alt="">
+          </div>
+        </a> 
+      </div>
+    <%});%>
+  </div>
+
+
+  <div id="pagenums">
+    <%let last = pageid==1 ? 1:pageid-1; %>
+    <%let next = pageid==Math.ceil(favList.length/20) ? Math.ceil(favList.length/20):pageid+1;%>
+    <a href="/pokemon/page/<%=last%>" class="pagenum"><</a>
+    <% for (let i=1; i <= Math.ceil(favList.length/20); i++) {%>
+      <%if (i != pageid) {%>
+        <a href="/pokemon/fav/<%=i%>" class="pagenum"><%=i%></a>
+      <%} else {%>
+        <a href="/pokemon/fav/<%=i%>" class="pagenum active"><%=i%></a>
+      <%}%>
+    <%};%>
+    <a href="/pokemon/fav/<%=next%>" class="pagenum">></a>
+  </div>
+</main>
+
+<%- contentFor('css')%>
+/css/pokemons.css
+<%- contentFor('script')%>

@@ -1,0 +1,35 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+/* * {
+  border: black solid 2px;
+} */
+
+header {
+  margin: 0;
+  padding: 1px;
+  height: 14vh;
+  text-align: center;
+  background: lightcyan;
+}
+
+header h1 {
+  line-height: 10vh;
+  margin-bottom: 1vh;
+}
+
+main {
+  height: 85vh;
+  width: 70vw;
+  margin: auto;
+}
+
+#favlist {
+  float:left;
+  position: fixed;
+  top: 14vh;
+  left: 0;
+  background: lightgray;
+}

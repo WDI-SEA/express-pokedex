@@ -1,0 +1,46 @@
+<header>
+  <h1>Pokedex Origin: <%=pokemon.name%></h1>
+  <hr/>
+</header>
+
+<main>
+  <div id="icon">
+    <img src=<%=pokemon.sprites.front_default%> alt="" srcset="">
+  </div>
+
+  <div id="info">
+    <div id="type">
+      <b>Type: </b> <%=pokemon.types[0].type.name%>
+    </div>
+
+    <div id="status">
+      <b><%=pokemon.stats[5].stat.name%>: </b><%=pokemon.stats[5].base_stat%>&nbsp&nbsp
+      <b><%=pokemon.stats[4].stat.name%>: </b><%=pokemon.stats[4].base_stat%>&nbsp&nbsp
+      <b><%=pokemon.stats[3].stat.name%>: </b><%=pokemon.stats[3].base_stat%>&nbsp&nbsp
+      <b><%=pokemon.stats[0].stat.name%>: </b><%=pokemon.stats[0].base_stat%>&nbsp&nbsp
+    </div>
+
+    <div id="skills">
+      <b>Skills: </b>
+      <%pokemon.moves.forEach(function(skill) {%>
+        <%=skill.move.name%>,&nbsp
+      <%});%>
+    </div>
+
+  </div>
+  <a href="/page/<%=Math.ceil(pokemon.id/20)%>">Back to List</a>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+<%- contentFor('css')%>
+/css/pokemon.css
+<%- contentFor('script')%>

@@ -1,0 +1,90 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+/* * {
+  border: black solid 2px;
+} */
+
+header {
+  margin: 0;
+  padding: 1px;
+  height: 14vh;
+  text-align: center;
+  background: lightcyan;
+}
+
+header h1 {
+  line-height: 10vh;
+  margin-bottom: 1vh;
+}
+
+main {
+  height: 85vh;
+  width: 70vw;
+  margin: auto;
+}
+
+#favlist {
+  float:left;
+  position: fixed;
+  top: 14vh;
+  left: 0;
+  background: lightgray;
+}
+
+#pokelist {
+  height: 92%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4,1fr);
+  margin: 0.7% auto;
+  border: black solid 1px;
+}
+#pokelist div {
+  border: black solid 1px;
+}
+.favbtn {
+  display: inline;
+}
+.hidden {
+  display: none;
+}
+
+
+#pagenums {
+  height: 5%;
+  width: 64%;
+  margin: auto;
+  background: lightgrey;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagenum {
+  display: block;
+  height: 4vh;
+  width: 4vh;
+  color: #3a5cb6;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 4.5vh;
+  border: #3a5cb6 solid 2px;
+}
+.active {
+  color: #ffcb04;
+  background: #3a5cb6;
+  font-weight: bold;
+  border: #ffcb04 solid 2px;
+}
+
+.pagenum:hover {
+  color: #ffcb04;
+  background: #3a5cb6;
+  font-weight: bold;
+  border: #ffcb04 solid 2px;
+}
