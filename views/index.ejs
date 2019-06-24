@@ -7,8 +7,13 @@
   <% pokemon.forEach(function(pokemon) { %>
     <div class="well">
       <h2><%= pokemon.name %></h2>
+      <h3><%= pokemon.url %></h3>
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
+        <input hidden type="text" name="url" value="<%= pokemon.url %>">
+        <input hidden type="text" name="height" value="<%= pokemon.height %>">
+        <input hidden type="text" name="weight" value="<%= pokemon.weight %>">
+        <input hidden type="text" name="baseExperience" value="<%= pokemon.base_experience %>">
         <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
       </form>
     </div>

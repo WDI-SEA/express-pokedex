@@ -1,0 +1,15 @@
+<div>
+
+    <h2>Your Favorite Pokemons :)</h2>
+
+    <% pokemon.forEach(function(pokemon) {%>
+    <h2>Name: <%= pokemon.name %></h2>
+    <h2>Height: <%= pokemon.height %></h2>
+    <h2>Weight: <%= pokemon.weight %></h2>
+    <h2>Base Experience <%= pokemon.base_experience %></h2>
+    <form method="POST" action="/pokemon/<%= pokemon.id %>?_method=DELETE">
+        <input type="submit" name="_method" value="DELETE">
+        </form>
+
+    <% }); %>
+</div>
