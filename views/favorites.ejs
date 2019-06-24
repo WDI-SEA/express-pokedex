@@ -1,0 +1,23 @@
+
+
+
+<div id="fav">
+<h2>Here are your Favorites</h2>
+<ul>
+<a href="/">Back To Home Page</a>
+<% pokemon.forEach(function(pokemon, id) {%>
+<h2> <%= pokemon.name %> </h2>
+
+<h4><a href="/pokemon/<%= pokemon.id %>">View Pokemon</a></h4>
+
+<form method= "POST" action= "/pokemon/<%= pokemon.id %>/?_method=DELETE">
+<input type="Submit" value="DELETE">
+</form>
+
+
+
+
+<% }); %>
+</ul>
+
+</div>

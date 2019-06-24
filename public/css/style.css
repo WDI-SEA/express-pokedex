@@ -1,0 +1,64 @@
+body{
+    background-size: cover;
+    background-attachment: fixed;
+    
+    background-image: url('../img/pokemonball.png')
+
+
+}
+
+
+
+#fav{
+    background-size: cover;
+    background-attachment: fixed;
+    background-image: url('../img/poke.jpg')
+}
+
+
+h1,h2,p{
+
+color: red;
+
+}
+
+#about{
+    background-size: cover;
+    background-attachment: fixed;
+    background-image: url('../img/poke3.jpg')
+}
+
+
+
+h3{
+    color: black;
+    background-color:rgb(236, 214, 19, 0.5);
+    width: 25%;
+    
+
+}
+
+
+#h{
+    background-color:rgba(0, 0, 0, 0.808);
+    color: gold;
+   text-align: center;
+   margin-left: 15%;
+}
+
+
+
+#home{
+    color: rgba(13, 83, 236, 0.9)
+}
+
+#A{
+    background-color:rgba(0, 0, 0, 0.808);
+    color: red;
+    width: 25%;
+}
+
+img{
+    border: 1px solid black;
+    background-color:rgba(0, 0, 0, 0.5);
+}
