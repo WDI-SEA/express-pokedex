@@ -1,13 +1,6 @@
 <h1>All about <%=pokemon.name%>!</h1>
 
-
  <img src=" <%= pokemon.sprites.front_default %>" >
-
-<h2><%= pokemon.stats[5].stat.name %></h2>
-<p> <%= pokemon.stats[5].base_stat %></p>
-
-<h2><%= pokemon.stats[4].stat.name %></h2>
-<p> <%= pokemon.stats[4].base_stat %></p>
 
 <h3>Abilities</h3>
 <p> <%= pokemon.abilities[0].ability.name %></p>
@@ -20,8 +13,15 @@
 <h3>Height</h3>
 <p> <%= ((pokemon.height)/10) %>m tall!</p>
 
+<% for (let i = 0; i < pokemon.stats.length; i++){ %>
+<h3> <%= pokemon.stats[i].stat.name %> </h3>
+<p> <%= pokemon.stats[i].base_stat %></p>
+<% } %>
+
 <hr />
 
-<a href="/pokemon">Back to favorites</a>
+<a class='returnlink' href="/pokemon">Back to favorites</a>
 
-
+<form method="POST" action="/pokemon/<%= id%>/?_method=DELETE ">
+<input type="submit" value="delete"/>
+</form>
