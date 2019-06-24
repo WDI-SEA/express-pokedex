@@ -35,7 +35,7 @@ router.get('/:id', function(req , res) {
   }).then(function(results) {
     res.render('details', {pokemon: results.data, id: req.params.id });
     //res.json(results.data);
-  })
+  });
   // Use the pokemon name from the db to query the api for details on that one pokemon
   // take data from the api and render a details/show page for this one pokemon
 });
@@ -46,7 +46,7 @@ router.delete('/:id', function(req, res) {
     where: {id: id}
   }).then( function() {
     res.redirect('/pokemon');
-  })
+  });
 });
 
 module.exports = router;

@@ -6,6 +6,21 @@ body {
   font-family: 'pokemon-font', monospace;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  background-color: rgb(184, 182, 182);
+  padding: 10px;
+  border-style: double;
+}
+.grid-item {
+  background-color: rgb(184, 182, 182);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
 #logo {
   height: 250px;
   width: 700px;
@@ -30,7 +45,21 @@ h3 {
   font-weight: normal;
 }
 
+.pokemon {
+  font-size: 1em;
+}
+
+#favs {
+  float: ;
+}
+
+#fav {
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
 a:link, a:visited {
+  font-weight: 700;
   background-color: #2f35dc;
   color: white;
   padding: 10px 15px;
@@ -41,5 +70,19 @@ a:link, a:visited {
 }
 
 a:hover, a:active {
+  background-color: red;
+}
+
+button {
+  background-color: #2f35dc;
+  font-size: 0.7em;
+  font-weight: 700;
+  border: none;
+  border-radius: 7px;
+  height: 30px;
+  color: white;
+}
+
+button:hover {
   background-color: red;
 }
