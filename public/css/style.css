@@ -1,0 +1,24 @@
+body {
+    /* background-image: url('https://www.imgbase.info/images/safe-wallpapers/anime/pokemon/17156_pokemon.jpg'); */
+    background-image: url(../img/pokedex.jpg);
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
+    font-family: 'Press Start 2P', cursive;
+}
+
+.text-center {
+    color: orange;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.btn-primary {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(245, 150, 121);
+}
+
+#favorite-heading {
+    color: orange;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-align: center;
+}
+

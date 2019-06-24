@@ -1,0 +1,12 @@
+<h1 id="favorite-heading">Here is a list of your favorite battle slaves!</h1>
+
+<div>
+<% pokemon.forEach(function(pokemon) {%>
+
+
+
+   <p><%= pokemon.name %></p>
+   <a href="/pokemon/<%= pokemon.id%>">Details!</a>
+
+   <% }); %>
+</div>

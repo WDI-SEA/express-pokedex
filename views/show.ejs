@@ -1,5 +1,16 @@
 <h1>Pokemon Details</h1>
+
+<img src='<%= pokemon.sprites.front_default %>'>%>
+<img src='<%= pokemon.sprites.front_shiny %>'>%>
+
+<div>
    <p><%= pokemon.name %></p>
-   <h4> <%= pokemon.abilities %> </h4>
-   <h4> <%= pokemon.forms %></h4>
-   <h4> <%= pokemon.types %></h4>
+   <h4> <%= pokemon.types[0].type.name %></h4>
+   <h4> <%= pokemon.abilities[0].ability.name %> </h4>
+   <h4> <%= pokemon.forms[0].name %></h4>
+</div>
+
+<form method="POST" action="/pokemon/<%= pokemon.id %>/?_method=DELETE">
+    <input type="submit" value="delete" />
+</form>
+
