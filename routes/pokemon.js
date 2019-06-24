@@ -51,7 +51,6 @@ router.get('/:id', function(req, res) {
   // Take data from the api and render a detal/show page for this one pokemon. 'show' or 'details' page.
   // res.send('This is the route for showing one pokemon');
   var id = req.params.id;
-
   db.pokemon.findByPk(id).then(function(pokemon) {
     var pokemonName = pokemon.name  
     var pokemonUrl = `http://pokeapi.co/api/v2/pokemon/${pokemonName}`;
@@ -65,9 +64,9 @@ router.get('/:id', function(req, res) {
 // Delete ONE record route
 router.delete('/:id', function(req, res) {
   db.pokemon.destroy({
-      where: {id: parseInt(req.params.id)}
+    where: {id: parseInt(req.params.id)}
   }).then(function(data) {
-      res.json(data);
+      res.send('done');
   });
 });
 // PUT /pokemon/:id

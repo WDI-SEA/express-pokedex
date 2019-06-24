@@ -1,8 +1,11 @@
-<h1> there should be favorites here!</h1>
+<h1> You picked some great ones for favorites!!</h1>
+<h3>Click your favorite pokemon for more info!</h3>
 
 <% data.forEach(function(pokemon) { %>
-      <h2><%= pokemon.name %></h2>
-      <button> Get more details</button>
+            
+      <a href="/pokemon/<%=pokemon.id %>"><%= pokemon.name %></a>
   <% }); %>
 
+  <hr />
+<a href="/">Back to all of the original pokemon!</a>
 
