@@ -27,6 +27,15 @@ body {
   margin: 2px;
   padding: 2px;
 }
+.delete {
+  border: 1px solid black;
+  background-color: red;
+  margin: 3px;
+  padding: 3px;
+  font-family: 'Bangers', cursive;
+  font-size: 20px;
+  text-align: center;
+}
 p {
   color: rgb(38, 38, 135);
 }
@@ -48,9 +57,11 @@ img:hover {
 .favorite:hover {
   transform: scale(1.3);
 }
+/*
 .name:hover {
   transform: scale(1.3);
 }
+*/
 .nav:hover {
   background-color: rgb(97,96,96);
   color: white;
@@ -58,4 +69,15 @@ img:hover {
 .select:hover {
   background-color: rgb(97,96,96);
   color: white;
+}
+button:hover {
+  background-color: black;
+  color: white;
+}
+.well:hover {
+  transform: scale(1.3);
+}
+.delete:hover {
+  background-color: red;
+  color: yellow;
 }

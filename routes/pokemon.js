@@ -17,7 +17,7 @@ router.post('/', function(req, res) {
     name: req.body.name
     }).then(function(data) {
       console.log(data);
-      res.redirect('/');
+      res.redirect('/pokemon');
     })
   });
 
@@ -34,6 +34,17 @@ router.get('/show/:id', function(req, res) {
     res.render('show', {pokemon: response.data});
   }).catch(function(error) {
       console.log(error);
+  })
+});
+
+//DELETE
+router.delete('/show/:id', function(req, res) {
+  db.pokemon.destroy({
+    where: {id: parseInt(req.params.id)}
+  }).then(function(response) {
+    //var id = parseInt(req.param.id);
+    console.log(response);
+    res.redirect('/pokemon');
   })
 });
 

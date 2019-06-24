@@ -5,6 +5,11 @@
     <div class="well">
       <h2 class="name">  <%= pokemon.name %>  </h2>
       <h4><a class="select" href="pokemon/show/<%= pokemon.id %>">View Pokemon</a></h4>
+   
+  
+    <form method="POST" action="/pokemon/show/<%= pokemon.id %>/?_method=DELETE">
+      <input class="delete" type="submit" value="DELETE">
+    </form>
     </div>
     <% }); %>
   </ul> 
