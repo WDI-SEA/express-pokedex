@@ -15,7 +15,6 @@ router.post('/', function(req, res) {
   db.pokemon.create({
     name: req.body.name
   }).then(function (data) {
-    console.log(data.dataValues.name)
     res.redirect('pokemon');
   });
 });
@@ -24,17 +23,27 @@ router.post('/', function(req, res) {
 // about that one pokemon. 
 router.get('/:id', function(req, res) {
   var id = req.params.id;
-  console.log(id);
 
   db.pokemon.findByPk(id).then(function(pokemon) {
     var pokemonName = pokemon.name;
-    var pokemonURL = 'pokeapi.co/api/v2/pokemon' + pokemonName;
+    var pokemonURL = 'https://pokeapi.co/api/v2/pokemon/' + pokemonName;
 
     axios.get(pokemonURL).then(function (apiResponse) {
       var pokemon = apiResponse.data;
-      res.render('show', { pokemon} );
+      res.render('./pokemon/show', { pokemon } );
+    }).catch( function () {
+      console.log("Team Rocket's blasting off again");
     });
   });
+});
+
+//Delete a pokemon
+router.delete('/:id', function (req, res) {
+  var id = req.params.id;
+
+  db.pokemon.destroy(id).then(function(data) {
+    res.redirect('pokemon')
+  })
 });
 
 module.exports = router;
