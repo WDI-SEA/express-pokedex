@@ -14,7 +14,7 @@ router.get('/page/:id', function(req, res) {
   let pageid = parseInt(req.params.id);
   let offset = pageid-1;
   console.log('This is page' + pageid);
-  let pokeurl = 'https://pokeapi.co/api/v2/pokemon/?offset=' + offset + '&limit=4'
+  let pokeurl = 'https://pokeapi.co/api/v2/pokemon/?offset=' + offset + '&limit=20'
   console.log('get data from ' + pokeurl);
   
 

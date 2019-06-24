@@ -1,6 +1,5 @@
 <header>
   <h1>Pokedex Favorate List</h1>
-  <hr/>
 </header>
 
 
@@ -8,19 +7,19 @@
 <main>
   <div id="pokelist">
     <% pokemons.forEach(function(pokemon) {%>
-      <div>
-        <div class="pokename"><%=pokemon.name%>&nbsp&nbsp
-          <form action="/pokemon/<%=pokemon.id%>/?_method=DELETE" method="POST" class='favbtn'>
-            <input class='hidden' type="text" name='pageid' value=<%=pageid%>>
-            <button type="submit" name='name' value=<%=pokemon.name%>>❤️</button>
-          </form>
-
-        </div>
-        <a href="/pokemon/<%=pokemon.id%>">
-          <div>
-            <img src="<%=pokemon.img%>" alt="">
-          </div>
-        </a> 
+      <div class='pokemondiv'>
+        <img class="pokemonbg" src="/img/<%=pokemon.types[0]%>.png" alt="" srcset="">
+        <div class="pokename"><%=pokemon.name%>
+        <form action="/pokemon/<%=pokemon.id%>/?_method=DELETE" method="POST" class='favbtn'>
+          <input class='hidden' type="text" name='pageid' value=<%=pageid%>>
+          <button type="submit" name='name' value=<%=pokemon.name%>>❤️</button>
+        </form>
+      </div>
+        <div class='pokemonlink'>
+          <a href="/pokemon/<%=pokemon.id%>">
+              <img class='pokemonimg' src="<%=pokemon.img%>" alt="">
+          </a>
+        </div> 
       </div>
     <%});%>
   </div>

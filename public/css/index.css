@@ -1,6 +1,7 @@
 html, body {
   padding: 0;
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* * {
@@ -10,26 +11,106 @@ html, body {
 header {
   margin: 0;
   padding: 1px;
-  height: 14vh;
+  height: 13.5vh;
+  font-size: 2vw;
   text-align: center;
-  background: lightcyan;
+  background: #fbcd3c;
+  border-bottom: #e74a39 solid 5px;
+  color: #e74a39
 }
 
 header h1 {
-  line-height: 10vh;
+  line-height: 5vh;
   margin-bottom: 1vh;
 }
 
 main {
   height: 85vh;
-  width: 70vw;
+  width: 69vw;
+  padding: 5px;
   margin: auto;
+  background: #faf4e1;
 }
 
 #favlist {
   float:left;
   position: fixed;
-  top: 14vh;
+  top: 14.5vh;
+  width: 14.5vw;
+  height: 85vh;
   left: 0;
-  background: lightgray;
+  background: #b3cde0;
+}
+aside h3 {
+  text-align: center;
+  color: #3a5cb6;
+}
+
+aside a {
+  color: #e74a39;
+}
+
+#rightbar {
+  float: right;
+  position: fixed;
+  top: 14.5vh;
+  width: 14.5vw;
+  height: 85vh;
+  right: 0;
+  background: #b3cde0;
+}
+
+
+
+/* * individual format ================================= */
+main {
+  position: relative;
+  background: #faf4e1;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+img {
+  width: 72vw;
+  height:auto;
+  margin-left: -1vw;
+}
+
+main a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3vw;
+  font-weight: bolder;
+  text-decoration: none;
+}
+#links {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  top: 68%;
+}
+
+#links div {
+  border: black solid 5px;
+  /* width: 40%; */
+  text-align: center;
+  padding: 2vh 2vh;
+  border-radius: 15px;
+  
+}
+
+#alllinkdiv {
+  border: #3a5cb6 solid 5px;
+  color: #3a5cb6;
+  background: #ffcb04;
+}
+
+#favlinkdiv {
+  border: #ffcb04 solid 5px;
+  color: #ffcb04;
+  background: #3a5cb6;
+}
+
+main a {
+  color: inherit;
 }

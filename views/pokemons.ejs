@@ -1,6 +1,5 @@
 <header>
   <h1>Pokedex Origin <%=pokemons[0].id%> ~ <%=pokemons[pokemons.length-1].id%></h1>
-  <hr/>
 </header>
 
 
@@ -8,25 +7,30 @@
 <main>
   <div id="pokelist">
     <% pokemons.forEach(function(pokemon) {%>
-      <div>
-        <div class="pokename"><%=pokemon.name%>&nbsp&nbsp
-          <form action="/pokemon" method="POST" class='favbtn'>
-            <input class='hidden' type="text" name='pageid' value=<%=pageid%>>
-            <input class='hidden' type="text" name='pokemonid' value=<%=pokemon.id%>>            
-            <button type="submit" name='name' value=<%=pokemon.name%>>♡</button>
-          </form>
-
-          <form action="/pokemon/<%=pokemon.id%>/?_method=DELETE" method="POST" class='favbtn'>
+      <div class='pokemondiv'>
+        <img class="pokemonbg" src="/img/<%=pokemon.types[0]%>.png" alt="" srcset="">
+        <div class="pokename"><%=pokemon.name%>
+          <%if (favList.includes(pokemon.name)) { %>
+            <form action="/pokemon/<%=pokemon.id%>/?_method=DELETE" method="POST" class='favbtn'>
             <input class='hidden' type="text" name='pageid' value=<%=pageid%>>
             <button type="submit" name='name' value=<%=pokemon.name%>>❤️</button>
           </form>
+          <%} else {%>
+            <form action="/pokemon" method="POST" class='favbtn'>
+              <input class='hidden' type="text" name='pageid' value=<%=pageid%>>
+              <input class='hidden' type="text" name='pokemonid' value=<%=pokemon.id%>>            
+              <button type="submit" name='name' id='emptyheart' value=<%=pokemon.name%>>♡</button>
+            </form>
+          <%}%>
+
+          
 
         </div>
-        <a href="/pokemon/<%=pokemon.id%>">
-          <div>
-            <img src="<%=pokemon.img%>" alt="">
-          </div>
-        </a> 
+        <div class='pokemonlink'>
+          <a href="/pokemon/<%=pokemon.id%>">
+              <img class='pokemonimg' src="<%=pokemon.img%>" alt="">
+          </a>
+        </div> 
       </div>
     <%});%>
   </div>
