@@ -1,0 +1,21 @@
+<a href="/">HOME</a>
+<h3>Name of Pokemon: <br> <br> <%= pokemon.name.toUpperCase() %></h3>
+
+<h3>    <img src= <%= pokemon.sprites.front_shiny %>>
+        <img src= <%= pokemon.sprites.back_shiny %>>
+</h3>
+
+<h3> Height: <%= pokemon.height %></h3>
+
+<h3> Weight: <%= pokemon.weight %></h3>
+
+<h3>    <%= pokemon.abilities[0].ability.name.toUpperCase() %> &
+        <%= pokemon.abilities[1].ability.name.toUpperCase() %> 
+</h3>
+
+
+<form method="POST" action="/pokemon/<%= id %>/?_method=DELETE">
+<button input type="submit" value="Destroy the Pocket Monster!">Destroy the Pocket Monster!</button>
+</form>
+
+

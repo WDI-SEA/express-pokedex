@@ -1,12 +1,14 @@
 <div class="container">
+  <img src="https://cdn1.edgedatg.com/aws/v2/dnow/Pokemon/theme/2065052/81551743809fc030274daef0964c1f78/480x270-Q95_81551743809fc030274daef0964c1f78.jpg" alt="Pokemon">
   <h1 class="text-center">The Original 151 Pokemon</h1>
   <p class="text-center">
     <a href="/pokemon">Favorites</a>
   </p>
 
-  <% pokemon.forEach(function(pokemon) { %>
+  <% pokemon.forEach(function(pokemon, i) { %>
     <div class="well">
-      <h2><%= pokemon.name %></h2>
+      <h2><%= pokemon.name.toUpperCase() %></h2>
+      <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/<%= i + 1 %>.png'>
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
         <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>

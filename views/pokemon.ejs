@@ -1,0 +1,12 @@
+<a href="/">HOME</a>
+<h1>Favorite Pokemon</h1>
+<hr>
+
+
+	<% pokemon.forEach(function(pokemon) { %>
+	<h3>
+		<a href='/pokemon/ <%= pokemon.id %>'><%= pokemon.name.toUpperCase() %></a>
+	</h3>
+	<% }); %>
+
+

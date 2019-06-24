@@ -1,0 +1,25 @@
+body {
+    background-color: aquamarine;
+    text-align: center;
+}
+
+
+img {
+    height: 300px;
+    width: 300px;
+}
+
+.well {
+    display: inline-block;
+    border: 1px solid black;
+}
+
+button {
+    background-color: blueviolet;
+    color: blanchedalmond;
+}
+
+button:hover {
+    background-color: blanchedalmond;
+    color: blueviolet;
+}
