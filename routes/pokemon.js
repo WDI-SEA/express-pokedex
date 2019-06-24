@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var db = require('../models')
+var db = require('../models');
+const axios = require('axios');
+const methodOverride = require('method-override');
 
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', function(req, res) {
@@ -10,7 +12,6 @@ router.get('/', function(req, res) {
     res.render('favorites', {favorites: favorites});
   });
   // get data and rener it into an ejs
-  //res.send('Render a page of favorites here');
 });
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
@@ -27,9 +28,25 @@ router.post('/', function(req, res) {
 // and uses to look up details about that one pokemon
 router.get('/:id', function(req , res) {
   // Look up pokemon in our db by its ID (findByPk)
+  db.pokemon.findOne({
+    where: { id: parseInt(req.params.id)}
+  }).then(function(data) {
+    return axios.get('https://pokeapi.co/api/v2/pokemon/' + data.name + '/')
+  }).then(function(results) {
+    res.render('details', {pokemon: results.data, id: req.params.id });
+    //res.json(results.data);
+  })
   // Use the pokemon name from the db to query the api for details on that one pokemon
   // take data from the api and render a details/show page for this one pokemon
-  res.send('this is the route for showing one pokemon');
+});
+
+router.delete('/:id', function(req, res) {
+  var id = parseInt(req.params.id);
+  db.pokemon.destroy({
+    where: {id: id}
+  }).then( function() {
+    res.redirect('/pokemon');
+  })
 });
 
 module.exports = router;

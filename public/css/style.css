@@ -1,0 +1,45 @@
+body {
+  background-color: #919191;
+  text-align: center;
+  font-size: 1.2em;
+  -webkit-font-smoothing: none;
+  font-family: 'pokemon-font', monospace;
+}
+
+#logo {
+  height: 250px;
+  width: 700px;
+  border: none;
+  background-color: #919191;
+}
+
+img {
+  height: 300px;
+  width: 300px;
+  border: 2px solid black;
+  background-color: rgb(184, 182, 182);
+  border-width: 5px;  
+  border-style: double;
+}
+
+span {
+  font-weight: bold;
+}
+
+h3 {
+  font-weight: normal;
+}
+
+a:link, a:visited {
+  background-color: #2f35dc;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+a:hover, a:active {
+  background-color: red;
+}

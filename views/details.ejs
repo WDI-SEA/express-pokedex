@@ -1,0 +1,13 @@
+<h2> <%= pokemon.name%> </h2>
+<img src="<%= pokemon.sprites.front_default%>" alt="">
+<hr>
+<h3> <span>Height:</span>  <%=pokemon.height%> </h3>
+<h3> <span>Weight:</span>  <%=pokemon.weight%> </h3>
+<h3> <span>Abilities:</span> <%=pokemon.abilities[0].ability.name%> </h3>
+<h3> <span>Moves:</span>  <%=pokemon.moves[0].move.name%>, <%=pokemon.moves[1].move.name%></h3>
+<h3> <span>Stats:</span>  <%=pokemon.stats[0].stat.name%>: <%=pokemon.stats[0].base_stat%></h3>
+<h3> <%=pokemon.stats[3].stat.name%>: <%=pokemon.stats[3].base_stat%></h3>
+<h3> <%=pokemon.stats[4].stat.name%>: <%=pokemon.stats[4].base_stat%></h3>
+<form action="/pokemon/<%= id %>/?_method=DELETE" method="POST">
+  <input type="submit" value="DELETE">
+</form>
