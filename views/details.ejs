@@ -15,9 +15,12 @@
     <p>Height: <%= pokemon.height %></p>
     <p> Weight:<%= pokemon.weight %></p>
 </ul>
-    
-<li> Abilities:<%= pokemon.abilities[0].name %></li>
-    
+<p>Abilities:</p>
+<ul>
+ <% pokemon.abilities.forEach(function(ability, i){ %>
+<li><%= pokemon.abilities[i].ability.name %></li>
+   <% })  %>
+   </ul>
 </body>
 </html> 
  
