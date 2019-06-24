@@ -65,6 +65,16 @@ router.get('/:id', function(req, res) {
       console.log(error);
   })
 });
+//DELETE
+router.post('/:id', function(req, res){
+  db.pokemon.destroy({
+      where: {id: parseInt(req.params.id)}
+     
+  }).then (function(response){
+    res.render('pokemon', {pokemon: response.data})
+        res.redirect('/');  
+  });
+})
 
 
 

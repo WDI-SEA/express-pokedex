@@ -1,0 +1,12 @@
+ul { 
+    margin: o auto;
+ }
+body {
+    background-color: white;
+    background-image: url(pokebol.png);
+    background-position: center;
+    color: red;
+}
+h2 {
+    text-align: center;
+}

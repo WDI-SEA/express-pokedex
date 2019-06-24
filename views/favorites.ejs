@@ -1,10 +1,15 @@
-<link href="/css/css.ejs" rel="stylesheet" type="text/css">
+
 <h2>Here are your Favs</h2>
 <ul>
 <% pokemon.forEach(function(pokemon, id) {%>
-<h2> <%= pokemon.name %> </h2>
+<h3> <%= pokemon.name %> </h3>
 <h4><a href="/pokemon/<%= pokemon.id %>">View Pokemon</a></h4>
     
+<form method= "POST" action= "/pokemon/<%= pokemon.id %>">
+<input type="Submit" value="DELETE">
+</form>
+
+
 
 
 <% }); %>
