@@ -4,24 +4,27 @@ const axios = require('axios');
 const ejsLayouts = require('express-ejs-layouts');
 const app = express();
 const port = process.env.PORT || 3000;
+const methodOverride = require('method-override');
 
 app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
+app.use(express.static(__dirname + "/public"));
 app.use(ejsLayouts);
+app.use(methodOverride('_method'));
 
 // GET / - main index of site
 app.get('/', function(req, res) {
-  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
+  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/?limit=151';
   // Use request to call the API
   axios.get(pokemonUrl).then( function(apiResponse) {
     var pokemon = apiResponse.data.results;
-    res.render('index', { pokemon: pokemon.slice(0, 151) });
+    res.render('index', { pokemon });
   })
 });
 
 // Imports all routes from the pokemon routes file
-app.use('/pokemon', require('./routes/pokemon'));
+app.use('/pokemon', require('./routes/pokemon')); // 1st Param: Mount point ; 2nd Param: Routes/Pokemon...brings in the pokemon.js file which mounts onto the 1st Param
 
 var server = app.listen(port, function() {
   console.log('...listening on', port );

@@ -1,0 +1,14 @@
+<h1>Details</h1>
+<h3><%= pokemon.name.toUpperCase() %></h3>
+<div id="sprite"><img src="<%= pokemon.sprites.front_default%>"></div>
+<p>Height: <%= pokemon.height/10%> meters</p>
+<p>Weight: <%= pokemon.weight/10%> kilograms</p>
+<p>Types: <br><br>
+<% for (let i = 0; i < pokemon.types.length; i++) { %>
+    <%= pokemon.types[i].type.name[0].toUpperCase() + pokemon.types[i].type.name.substr(1,pokemon.types[i].type.name.length) %> <br>
+<% } %>
+</p>
+<a href="/pokemon">Back to favorites</a><br>
+<form method="POST" action="/pokemon/<%=pokemon.name%>/?_method=DELETE"><br>
+    <input type="submit" value="Delete" />
+</form>

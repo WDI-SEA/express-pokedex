@@ -1,0 +1,10 @@
+<h1>Favorites</h1>
+<h3>Here are my favorite pokemon:</h3>
+<p> Click on each pokemon for more details.</p>
+
+<% pokemon.forEach(function(pokemon) { %>
+    <h5><a href="/pokemon/<%= pokemon.name %>"><%= pokemon.name.toUpperCase() %></a></h5>
+<% }); %>
+
+<a href="/">Back to the full list of pokemon</a>
+
