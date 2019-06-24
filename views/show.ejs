@@ -1,1 +1,7 @@
-<h1>This is the details page!</h1>
+<h1>All about <%=pokemon.name%>!</h1>
+ <img src=" <%= pokemon.sprites.front_default %>" >
+
+<h3>Moves</h3>
+<p> <%= pokemon.moves[0].move.name %></p>
+<p> <%= pokemon.moves[1].move.name %></p>
+<hr />
