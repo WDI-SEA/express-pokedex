@@ -50,7 +50,9 @@ h3 {
 }
 
 #favs {
-  float: ;
+  float: left;
+  padding: 10px;
+  margin-left: 35px;
 }
 
 #fav {
