@@ -117,7 +117,7 @@ router.post('/', function(req, res) {
     name: req.body.name,
     pokemon_id: parseInt(req.body.pokemonid)
   })
-  res.redirect('/pokemon/page/' + req.body.pageid);
+  res.redirect(req.body.backlink);
 });
 
 
@@ -130,7 +130,7 @@ router.delete('/:id', function(req, res) {
       name: req.body.name
     }
   })
-  res.redirect('/pokemon/page/' + req.body.pageid);
+  res.redirect(req.body.backlink);
 }) 
 
 

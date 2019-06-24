@@ -11,7 +11,7 @@
         <img class="pokemonbg" src="/img/<%=pokemon.types[0]%>.png" alt="" srcset="">
         <div class="pokename"><%=pokemon.name%>
         <form action="/pokemon/<%=pokemon.id%>/?_method=DELETE" method="POST" class='favbtn'>
-          <input class='hidden' type="text" name='pageid' value=<%=pageid%>>
+          <input class='hidden' type="text" name='backlink' value='/pokemon/fav/<%=pageid%>'>
           <button type="submit" name='name' value=<%=pokemon.name%>>❤️</button>
         </form>
       </div>

@@ -60,13 +60,78 @@ aside a {
   background: #b3cde0;
 }
 
+.hidden {
+  display:none;
+}
 
 
 /* * individual format ================================= */
-main * {
+/* main * {
   border: black solid 2px;
+} */
+
+main {
+  position: relative;
 }
 
+#icon {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  margin-bottom:10px;
+}
+
+#avatar {
+  width: 100%;
+  height: auto;
+  border: #3a5cb6 solid 5px;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+
+#info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 1.5vw;
+  margin-left: 1vw;
+  border: #ffcb04 solid 5px;
+  border-radius:10px;
+  padding: 10px;
+  height: 13vw;
+}
+
+button {
+  position: absolute;
+  top: 3%;
+  left: 16%;
+  border: none;
+  background: none;
+  font-size: 2vw;
+}
+#emptyheart {
+  font-size: 2.2vw;
+  margin-bottom: -1px;
+}
+img {
+  width: 3vw;
+  height: auto;
+  margin-top: 0.2vw;
+}
+
+.type {
+  line-height: 2vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#skills {
+  border: black solid 3px;
+  border-radius: 5px;
+  margin: 20px, 0;
+  padding: 10px;
+  margin-bottom: 8vh;
+}
 
 
 

@@ -4,29 +4,53 @@
 
 <main>
   <div id="icon">
-    <img src=<%=pokemon.sprites.front_default%> alt="" srcset="">
+    <div>
+      <img src=<%=pokemon.sprites.front_default%> id="avatar">
+      <%if (favList.includes(pokemon.name)) { %>
+      <form action="/pokemon/<%=pokemon.id%>/?_method=DELETE" method="POST" class='favbtn'>
+        <input class='hidden' type="text" name='backlink' value="/pokemon/<%=pokemon.id%>">
+        <button type="submit" name='name' value= <%=pokemon.name%> >❤️</button>
+      </form>
+      <%} else {%>
+      <form action="/pokemon" method="POST" class='favbtn'>
+        <input class='hidden' type="text" name='backlink' value="/pokemon/<%=pokemon.id%>">
+        <input class='hidden' type="text" name='pokemonid' value=<%=pokemon.id%>>
+      <button type="submit" name='name' id='emptyheart' value=<%=pokemon.name%>>♡</button>
+      </form>
+      <%}%>
+    </div>
+
+    <div id="info">
+      <div id="name">
+        <b>Name: </b><%=pokemon.name%>
+      </div>
+      <div id="types">
+        <b>Types: </b> 
+        <%pokemon.types.forEach(function(item){ %>
+          <div class='type'>
+            <img src="/img/<%=item.type.name%>.png" alt="">
+            : <%=item.type.name%>
+          </div>
+        <%});%>
+      </div>
+
+      <div id="status">
+        <b><%=pokemon.stats[5].stat.name%>: </b><%=pokemon.stats[5].base_stat%>&nbsp&nbsp
+        <b><%=pokemon.stats[4].stat.name%>: </b><%=pokemon.stats[4].base_stat%>&nbsp&nbsp
+        <b><%=pokemon.stats[3].stat.name%>: </b><%=pokemon.stats[3].base_stat%>&nbsp&nbsp
+        <b><%=pokemon.stats[0].stat.name%>: </b><%=pokemon.stats[0].base_stat%>&nbsp&nbsp
+      </div>
+    </div>
   </div>
 
-  <div id="info">
-    <div id="type">
-      <b>Type: </b> <%=pokemon.types[0].type.name%>
-    </div>
 
-    <div id="status">
-      <b><%=pokemon.stats[5].stat.name%>: </b><%=pokemon.stats[5].base_stat%>&nbsp&nbsp
-      <b><%=pokemon.stats[4].stat.name%>: </b><%=pokemon.stats[4].base_stat%>&nbsp&nbsp
-      <b><%=pokemon.stats[3].stat.name%>: </b><%=pokemon.stats[3].base_stat%>&nbsp&nbsp
-      <b><%=pokemon.stats[0].stat.name%>: </b><%=pokemon.stats[0].base_stat%>&nbsp&nbsp
-    </div>
-
-    <div id="skills">
-      <b>Skills: </b>
-      <%pokemon.moves.forEach(function(skill) {%>
-        <%=skill.move.name%>,&nbsp
-      <%});%>
-    </div>
-
+  <div id="skills">
+    <b>Skills: </b>
+    <%pokemon.moves.forEach(function(skill) {%>
+      <%=skill.move.name%>,&nbsp
+    <%});%>
   </div>
+  
   <a id ='backlink' href="/page/<%=Math.ceil(pokemon.id/20)%>">Back to List</a>
 </main>
 
