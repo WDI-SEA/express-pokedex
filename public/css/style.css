@@ -12,14 +12,24 @@ body {
     color: white;
 }
 
+.well:hover{
+    transform: scale(1.1);
+}
+
 button:hover {
-    background-color: yellow; 
+    background-color: lightyellow; 
+    transform: scale(1.1);
 }
 
 #sprite {
     background-color: lightgreen;
     height: 110px;
     width: 110px; 
-    margin: 0 auto;
+    margin: 10px;
     text-align: center;
+    display: inline-block;
+}
+
+#sprite:hover{
+    transform: scale(1.1);
 }

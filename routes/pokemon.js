@@ -18,7 +18,6 @@ router.get('/', function(req, res) { // appends to the first parameter in the in
 router.post('/', function(req, res) { // appends to the first parameter in the index.js file
   db.pokemon.create({
     name: req.body.name
-
   }).then(function(data) {
     res.redirect('/pokemon');
   });
