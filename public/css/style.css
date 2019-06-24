@@ -4,7 +4,9 @@ ul {
 body {
     background-color: white;
     background-image: url(pokebol.png);
-    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+
     color: red;
 }
 h2 {
