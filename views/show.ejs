@@ -1,0 +1,45 @@
+<h1>Pokemon Info:</h1>
+<a class="nav" href="/"> MAIN PAGE </a> |
+<a class= "nav" href="/pokemon"> FAVORITES </a>
+
+ 
+      <h2>  <%= pokemon.name %> </h2> 
+      <img src="<%= pokemon.sprites.front_shiny %>" alt="">
+      <img src="<%= pokemon.sprites.back_shiny %>" alt="">
+      <hr />
+      <div class="favorite">
+      <h2> Abilities: </h2>
+      <% pokemon.abilities.forEach(function(ability, index) { %>
+        <p> - <%= pokemon.abilities[index].ability.name %> </p>
+      <% }); %>
+      <hr />
+      </div>
+      <div class="favorite">
+      <h2> Moves: </h2>
+      <% pokemon.forms.forEach(function(form, index) { %>
+        <p> - <%= pokemon.moves[index].move.name %> </p>
+        <% }); %>
+      <hr />
+    </div>
+    <div class="favorites">
+      <h2> Types: </h2>
+      <% pokemon.types.forEach(function(form, index) { %>
+        <p> - <%= pokemon.types[index].type.name %> </p>
+        <% }); %>
+      <hr />
+    </div>
+    <div class="favorite">
+      <h2> Height: </h2> <p> <%= pokemon.height %> decimeters</p>
+      <hr />
+    </div> 
+    <div class="favorite">
+      <h2> Weight: </h2> <p> <%= pokemon.weight %> hectograms</p>
+      <hr />
+    </div>
+
+      
+  
+      
+    
+    
+  

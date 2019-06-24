@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: lightgoldenrodyellow;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 1px;
+  text-align: center;
+}
+.nav, .select {
+  text-decoration: none;
+  color: rgb(97, 96, 96);
+  font-family: 'Permanent Marker', cursive;
+  font-size: 25px;
+}
+.well {
+  display: inline-block;
+  border: 2px solid black;
+  background-color: yellow;
+  padding: 2px;
+  margin: 5px;
+}
+.select {
+  border: 2px solid black;
+  background-color: white;
+  margin: 2px;
+  padding: 2px;
+}
+p {
+  color: rgb(38, 38, 135);
+}
+img {
+  border: 2px solid black;
+  background-color: rgb(212, 241, 250);
+  border-radius: 10px;
+  height: 200px;
+  width: 200px;
+}
+button {
+  border: 2px solid black;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 20px;
+}

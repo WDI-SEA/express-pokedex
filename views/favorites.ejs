@@ -1,0 +1,10 @@
+<h1>My Favorite Pokemon:</h1>
+<a class="nav" href="/">MAIN PAGE</a>
+  <ul>
+  <% pokemon.forEach(function(pokemon, id) { %>
+    <div class="well">
+      <h2>  <%= pokemon.name %>  </h2>
+      <h4><a class="select" href="pokemon/show/<%= pokemon.id %>">View Pokemon</a></h4>
+    </div>
+    <% }); %>
+  </ul> 
