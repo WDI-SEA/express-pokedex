@@ -1,0 +1,18 @@
+body {
+  text-align: center;
+  background-color: lightcoral;
+}
+
+img {
+  width: 350px;
+  height: 350px;
+}
+
+button {
+  
+  background-color: lightgreen;
+}
+.well {
+  display: inline-block;
+  border: 1px solid black;
+}

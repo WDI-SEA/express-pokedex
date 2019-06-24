@@ -1,0 +1,18 @@
+<div class="container">
+  <h1 class="text-center">My Favorite Pokemon</h1>
+  <p class="text-center">
+    <a href="/pokemon">Favorites </a> | <a href="/">Home </a>
+  </p>
+  <div>
+    <img src='<%= pokemon.sprites.front_default %>'>
+    <img src='<%= pokemon.sprites.back_default %>'>
+  </div>
+    <div class="well">
+      <h2><%= pokemon.name.toUpperCase() %></a></h2> 
+      <h4><%= pokemon.stats[0].stat.name %></h4>
+      <h4><%= pokemon.abilities[1].ability.name %></h4>
+      <h4><%= pokemon.moves[0].move.name %></h4>
+      <form method="POST" action="/pokemon/<%= id %>/?_method=DELETE">
+        <input type="submit" value="Delete" />
+      </form>
+    </div>
