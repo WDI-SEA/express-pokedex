@@ -3,7 +3,7 @@
 <a class= "nav" href="/pokemon"> FAVORITES </a>
 
  
-      <h2>  <%= pokemon.name %> </h2> 
+      <h2 class="name">  <%= pokemon.name %> </h2> 
       <img src="<%= pokemon.sprites.front_shiny %>" alt="">
       <img src="<%= pokemon.sprites.back_shiny %>" alt="">
       <hr />
@@ -21,7 +21,7 @@
         <% }); %>
       <hr />
     </div>
-    <div class="favorites">
+    <div class="favorite">
       <h2> Types: </h2>
       <% pokemon.types.forEach(function(form, index) { %>
         <p> - <%= pokemon.types[index].type.name %> </p>
