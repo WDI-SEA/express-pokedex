@@ -1,0 +1,22 @@
+<main>
+    <div class="pokedex">
+        <div class="camera"></div>
+        <h2><%= pokemon.name.toUpperCase() %> Pokedex Entry #<%= pokemon.id %></h2>
+        <img src="<%= pokemon.sprites.front_default %>">
+        <img src="<%= pokemon.sprites.back_default %>">        
+        <h3>Type</h3>
+        <% pokemon.types.forEach(function(poke) {%>
+            <p><%= poke.type.name%></p>
+        <% }); %>
+        <h3>Abilities</h3>
+        <% pokemon.abilities.forEach(function(poke) {%>
+            <p><%= poke.ability.name%></p>
+        <% }); %>
+        <h3>Height</h3>
+        <p><%= pokemon.height %> decimeters</p>
+        <h3>Weight</h3>
+        <p><%= pokemon.weight%> hectograms</p>
+        <br \>
+        <a href='/pokemon'>Back to Favorites</a>
+    </div>
+</main>

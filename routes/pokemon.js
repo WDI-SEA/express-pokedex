@@ -22,7 +22,7 @@ router.post('/', function(req, res) {
 // GET /pokemon id. Gets one pokemon id from the database and uses it to look up details
 // about that one pokemon. 
 router.get('/:id', function(req, res) {
-  var id = req.params.id;
+  var id = parseInt(req.params.id);
 
   db.pokemon.findByPk(id).then(function(pokemon) {
     var pokemonName = pokemon.name;
@@ -30,20 +30,22 @@ router.get('/:id', function(req, res) {
 
     axios.get(pokemonURL).then(function (apiResponse) {
       var pokemon = apiResponse.data;
-      res.render('./pokemon/show', { pokemon } );
+      res.render('show', { pokemon } );
     }).catch( function () {
-      console.log("Team Rocket's blasting off again");
+      console.log("Team Rocket's blasting off again!");
     });
   });
 });
 
 //Delete a pokemon
 router.delete('/:id', function (req, res) {
-  var id = req.params.id;
+  var id = parseInt(req.params.id);
 
-  db.pokemon.destroy(id).then(function(data) {
+  db.pokemon.destroy({
+    where: {id: id}
+  }).then(function(data) {
     res.redirect('pokemon')
-  })
+  });
 });
 
 module.exports = router;
