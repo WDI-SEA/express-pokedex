@@ -44,7 +44,7 @@ router.delete('/:id', function (req, res) {
   db.pokemon.destroy({
     where: {id: id}
   }).then(function(data) {
-    res.redirect('pokemon')
+    res.redirect('/pokemon')
   });
 });
 

@@ -5,6 +5,7 @@ html {
 
 body {
     background-color: cornflowerblue;
+    font-family: 'Press Start 2P', cursive;
 }
 
 main {
@@ -21,15 +22,15 @@ div {
 }
 
 .container {
-    width: 50%;
+    width: 90%;
 }
 
 .well {
     display: inline-block;
     height: 100px;
-    width: 200px;
+    width: 250px;
     border: 2px solid black;
-    margin: 5px;
+    margin: 10px;
 }
 
 p {
