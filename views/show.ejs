@@ -4,8 +4,14 @@
 
  
       <h2 class="name">  <%= pokemon.name %> </h2> 
-      <img src="<%= pokemon.sprites.front_shiny %>" alt="">
-      <img src="<%= pokemon.sprites.front_default %>" alt="">
+      <div>
+        <img src="<%= pokemon.sprites.front_shiny %>" alt="">
+        <img src="<%= pokemon.sprites.back_shiny %>" alt="">
+      </div>
+      <div>
+        <img src="<%= pokemon.sprites.front_default %>" alt="">
+        <img src="<%= pokemon.sprites.back_default %>" alt="">
+      </div>
       <hr />
       <div class="favorite">
       <h2> Abilities: </h2>
