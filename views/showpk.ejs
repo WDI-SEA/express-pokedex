@@ -1,0 +1,55 @@
+<%# Show Route for one Pokemon from Favorites Stored in DB %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Your Pokemon / show route</title>
+</head>
+<body>
+	
+	<img src='<%= pokemon.sprites.front_default%>'>
+	<h2> <%= pokemon.name %> </h2>
+	<p> <%= pokemon.type %> </p>
+	<h4> <%= pokemon.weight %></h4>
+	<h4> <%= pokemon.height %></h4>
+
+<form method='POST' action='/pokemon/<%=id%>/?_method=DELETE'> 
+
+	<button type="submit">KILL THE BASTARD!</button>
+
+</form>
+
+<a href="/">Back to Pokemon</a>
+<a href="/pokemon">Back to Favorites</a>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

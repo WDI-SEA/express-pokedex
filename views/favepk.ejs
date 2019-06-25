@@ -1,0 +1,16 @@
+<!--Show a list of PK mon saved from API and into the DB-->
+<h1>FavePk</h1>
+
+<div>
+<% pokemon.forEach(function(pokemon) { %>
+	<p>
+		<a href="/pokemon/<%= pokemon.id %>">
+			<%= pokemon.name %>
+		</a>
+		</p>
+<% }); %>
+</div>
+<a href="/">Back to Pokemon</a>
+
+
+
