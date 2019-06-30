@@ -9,11 +9,13 @@
 </head>
 <body>
 	
-	<img src='<%= pokemon.sprites.front_default%>'>
-	<h2> <%= pokemon.name %> </h2>
+	<div class="sprite">
+		<img src='<%= pokemon.sprites.front_default%>'>
+	</div>
+	<h2>Name: <%= pokemon.name %> </h2>
 	<p> <%= pokemon.type %> </p>
-	<h4> <%= pokemon.weight %></h4>
-	<h4> <%= pokemon.height %></h4>
+	<h4>Weight: <%= pokemon.weight %></h4>
+	<h4>Height: <%= pokemon.height %></h4>
 
 <form method='POST' action='/pokemon/<%=id%>/?_method=DELETE'> 
 

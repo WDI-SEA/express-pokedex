@@ -1,0 +1,36 @@
+html, body {
+	background-color: #FFCB05;
+	font-family: 'Audiowide', cursive;
+	color: #003A70;
+	margin: 0 auto;
+	text-align: center;
+}
+
+
+button {
+	color: #FFCB05;
+	background-color: #3D7DCA;
+	border: 1px solid black;
+	font-family: 'Audiowide', cursive;
+}
+
+.favorites{
+	background-color: #FFCB05;
+	font-family: 'Audiowide', cursive;
+	color: #003A70;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.sprite{
+	display: center;
+	border: 5px solid #f00000;
+	background-color: white;
+	border-radius: 100px;
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+
