@@ -1,0 +1,16 @@
+.pokecontainer{
+    display: flex;
+    flex: auto;
+    text-align: center;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.well{
+    border: 1px solid #000000;
+    width: 22%;
+}
+button{
+    background-color: lightblue;
+}

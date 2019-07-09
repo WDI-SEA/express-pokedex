@@ -1,16 +1,19 @@
+<link rel="stylesheet" href="css/style.css">
 <div class="container">
   <h1 class="text-center">The Original 151 Pokemon</h1>
   <p class="text-center">
     <a href="/pokemon">Favorites</a>
   </p>
-
+  <div class = 'pokecontainer'>
   <% pokemon.forEach(function(pokemon) { %>
     <div class="well">
-      <h2><%= pokemon.name %></h2>
+      <h2><%= pokemon.name.toUpperCase() %></h2>
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
         <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
       </form>
     </div>
   <% }); %>
+  </div>
+  
 </div>

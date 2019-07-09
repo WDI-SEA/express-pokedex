@@ -1,0 +1,8 @@
+<a href="/">Home</a>
+<a href="/pokemon">Back To Fav List</a>
+<h2><%=pokeDetails.name%></h2>
+<img src="<%= pokeDetails.sprites.front_default%>" alt="">
+<p>Weight : <%=pokeDetails.weight%></p>
+<form action="/pokemon/<%= id%>/?_method=DELETE" method='POST'>
+<input type="submit" value="Remove This Pokemon">
+</form>
