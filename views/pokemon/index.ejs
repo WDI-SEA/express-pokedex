@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Show All Fave Pokemons</title>
+</head>
+<body>
+    <h1>Show All Fave Pokemons</h1>
+
+    <% pokemons.forEach(p => { %>
+            <h2>
+            <a href="/pokemons/<%= p.id %>">
+                <%= p.name %>
+            </a>
+            </h2>
+        <% }) %>
+</body>
+</html>
