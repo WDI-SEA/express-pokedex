@@ -70,7 +70,7 @@ db.pokemon.findAll().then(function(poke) {
 
 ~~Test by running the file: `node db-test.js`.~~
 
-#### Part 3: Integrating the database with the app
+~~#### Part 3: Integrating the database with the app~~
 
 You'll want to add functionality to the following routes by incorporating the `pokemon` table you created.
 
@@ -78,13 +78,15 @@ You'll want to add functionality to the following routes by incorporating the `p
   * View: `views/pokemon/index.ejs`
   * Purpose: Retrieve all favorited Pokemon and display them on the page
   * What sequelize function will do this for us?
+
+
 * `POST /pokemon`
   * The form for adding is already included on the main index page
   * View: none (redirect to `/pokemon`)
   * Purpose: Creates a new Pokemon and redirects back to `/pokemon`
   * What is the sequelize function we use here?
 
-#### Part 4: Display more info on each Pokemon
+~~#### Part 4: Display more info on each Pokemon~~
 
 Add a route `GET /pokemon/:id` that renders a `show` page with information about the Pokemon with the corresponding row `id`.
 
@@ -93,9 +95,14 @@ Add a route `GET /pokemon/:id` that renders a `show` page with information about
 
 Check out the result of the pokemon API calls (or see the [doc page](http://pokeapi.co/)) for ideas on what data you could show. Show at least 4 pieces of data (e.g. attacks, habitat, etc.)
 
+
+
 #### Part 5: Styling
 
 When finished with the above, style the application more to your liking with CSS.
+
+
+
 
 ## API Limits
 You might notice the API doesn't return all the data it has at once. It has a

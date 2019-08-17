@@ -16,6 +16,3 @@ db.pokemon.findAll()
   console.log(err);
 })
 
-
-
-
