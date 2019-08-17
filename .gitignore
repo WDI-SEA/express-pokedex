@@ -1,4 +1,6 @@
+# Custom Exclusions 
 .env
+config/config.json
 
 # Created by https://www.gitignore.io/api/node,osx,linux
 

@@ -36,22 +36,22 @@ We'll be using an existing application that uses the [PokeAPI](http://pokeapi.co
 
 ## Requirements
 
-#### Part 1: Setup Database
+~~#### Part 1: Setup Database~~
 
 Your first step will be to create a SQL database for your application. Recall the process:
 
-1. Use `npm` to install the required modules for postgres and sequelize: `pg` and `sequelize`
-2. Make sure your Postgres server is running (check for the elephant).
-3. Create your database with the `createdb` command followed by your database name.
-4. Run `sequelize init` to initialize Sequelize.
-5. Update your newly created `config/config.json` file as we did in class. This means changing the credentials, updating the SQL flavor, and changing the database name to the one you created in step 3.
+~~1. Use `npm` to install the required modules for postgres and sequelize: `pg` and `sequelize`~~
+~~2. Make sure your Postgres server is running (check for the elephant).
+~~3. Create your database with the `createdb` command followed by your database name.~~
+~~4. Run `sequelize init` to initialize Sequelize.~~
+~~5. Update your newly created `config/config.json` file as we did in class. This means changing the credentials, updating the SQL flavor, and changing the database name to the one you created in step 3.~~
 
-#### Part 2: Create your Pokemon Model and Table
+~~#### Part 2: Create your Pokemon Model and Table~~
 
-Our data model needs only one attribute: `name`.
+~~Our data model needs only one attribute: `name`.~~
 
-1. Use the `sequelize model:create` command to make the `pokemon` model. This creates both the model JS and the migration JS files.
-2. Use the `sequelize db:migrate` command to apply the migrations.
+~~1. Use the `sequelize model:create` command to make the `pokemon` model. This creates both the model JS and the migration JS files.~~
+~~2. Use the `sequelize db:migrate` command to apply the migrations.~~
 
 ```js
 // Make sure to require your models in the files where they will be used.
@@ -68,7 +68,7 @@ db.pokemon.findAll().then(function(poke) {
 })
 ```
 
-Test by running the file: `node db-test.js`.
+~~Test by running the file: `node db-test.js`.~~
 
 #### Part 3: Integrating the database with the app
 
