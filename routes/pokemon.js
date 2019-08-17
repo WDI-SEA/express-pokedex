@@ -13,6 +13,28 @@ router.get('/', (req, res) => {
     })
 });
 
+// GET /pokemon/:id to see indiviudal pokemons
+router.get('/:id', (req, res) => {
+    console.log("Testing show")
+    if (parseInt(req.params.id)) {
+        db.pokemon.findByPk(req.params.id)
+        .then(foundPoke => {
+            res.render('pokemon/show', { foundPoke })
+        })
+        .catch(err => {
+            res.send('An error has occurred')
+        })
+    } else {
+        res.send('An error has occurred')
+    }
+})
+
+router.get('/pokemon/new'), (req, res) => {
+    res.send('HI')
+}
+
+
+
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
   // TODO: Get form data and add a new record to DB
