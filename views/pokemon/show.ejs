@@ -1,2 +1,33 @@
-<h1>#<%= foundPoke.id %>: <%= foundPoke.name %>%></h1>
+<h1>You've Selected Fave #<%= poke.id %>: <%= poke.name %>%></h1>
+<h1>Here Are Some Specs:</h1>
+
+
+<div class="card-display" style="margin: 0 auto; text-align: center; display: flex; justify-content: center;">
+    <div class="row" style="border: 10px solid gold; border-radius: 10%; width: 400px; background-color: silver; text-align: center; display: flex; justify-content: center;">
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-image">
+                    <span class="card-title" style="display: inline-block; padding-top: 10px; margin-top: 10px; font-size: 32px; font-weight: bold; text-transform: uppercase"><%= poke.name %>%></span>
+                    <hr>
+                    <img src="<%= pokemon.sprites.front_default %>" alt="front" style="height: 250px; width: 250px">
+                    <img src="<%= pokemon.sprites.back_default %>" alt="back" style="height: 250px; width: 250px">
+                </div>
+            <div class="card-content">
+                <p><strong><%= poke.name %>'s Pokemon ID: </strong><%= pokemon.id %></p>
+                <p><strong><%= poke.name %>'s Height: </strong><%= pokemon.height / 10 %>m</p>
+                <p><strong><%= poke.name %>'s Weight: </strong><%= pokemon.weight / 10 %>kg</p>
+                <p><strong><%= poke.name %>'s Type(s): </strong><% 
+                    pokemon.types.forEach(t => { %>
+                        <%= t.type.name %>
+                    <% }) %></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<h2><strong><%= poke.name %>'s moves: </strong><% 
+        pokemon.moves.forEach(m => { %>
+            <%= m.move.name %>
+        <% }) %></h2>
 

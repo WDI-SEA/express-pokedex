@@ -1,5 +1,11 @@
 var router = require('express').Router();
 var db = require('../models');
+let axios = require('axios'); 
+let methodOverride = require('method-override')
+
+router.use(require('morgan')('dev'));
+router.use(methodOverride('_method'))
+
 
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', (req, res) => {
@@ -15,25 +21,48 @@ router.get('/', (req, res) => {
 
 // GET /pokemon/:id to see indiviudal pokemons
 router.get('/:id', (req, res) => {
-    console.log("Testing show")
     if (parseInt(req.params.id)) {
         db.pokemon.findByPk(req.params.id)
         .then(foundPoke => {
-            res.render('pokemon/show', { foundPoke })
+            let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/' + foundPoke.name + '/'
+            console.log('pokemonUrl : ', pokemonUrl)
+            axios.get(pokemonUrl)
+            .then( (apiResponse) => {
+                var pokemon = apiResponse.data;
+                console.log('pokemon specs: ', pokemon)
+                res.render('pokemon/show', { poke: foundPoke, pokemon: pokemon })
+            })
+            
         })
         .catch(err => {
-            res.send('An error has occurred')
+            res.send('A catch error has occurred')
         })
     } else {
-        res.send('An error has occurred')
+        res.send('A show error has occurred')
     }
 })
 
-router.get('/pokemon/new'), (req, res) => {
-    res.send('HI')
-}
+router.post('/', (req, res) => {
+    db.pokemon.create(req.body)
+    .then(addedPoke => {
+        res.redirect('/pokemon')
+    })
+    .catch(err => {
+        console.log(err)
+        res.send('No Go!')
+    })
+})
 
-
+router.delete('/', (req, res) => {
+    console.log('Delete initiated')
+    db.pokemon.destroy( {
+        where: req.body
+    })
+    .then((deletedPoke) => {
+        console.log(deletedPoke.name, 'has been deleted.')
+        res.redirect('/pokemon')
+    })
+})
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {

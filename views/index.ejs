@@ -8,8 +8,8 @@
     <div class="well">
       <h2><%= pokemon.name %></h2>
       <form method="POST" action="/pokemon">
-        <input hidden type="text" name="name" value="<%= pokemon.name %>">
-        <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
+        <input type="hidden" name="name" value="<%= pokemon.name %>">
+        <input class="btn btn-primary" type="submit" value="Add to Favorite Pokemon">
       </form>
     </div>
   <% }); %>

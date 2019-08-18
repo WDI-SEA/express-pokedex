@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Show All Fave Pokemons</title>
+    <title><h1>Show All Fave Pokemons</h1></title>
 </head>
 <body>
-    <h1>Show All Fave Pokemons</h1>
+    <h1>Here's Your Fave's List; Click on Any of Them to see more Details!</h1>
 
     <% pokemons.forEach(p => { %>
             <h2>
@@ -12,6 +12,10 @@
                 <%= p.name %>
             </a>
             </h2>
+            <form method="POST" action="/pokemon/?_method=DELETE">
+                <input type="hidden" name="name" value="<%= p.name %>">
+                <input class="btn btn-primary" type="submit" value="Delete from Faves">
+            </form>
         <% }) %>
 </body>
 </html>
