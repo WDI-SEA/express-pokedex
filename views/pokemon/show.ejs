@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pokemon</title>
+</head>
+<body>
+	<h1><%= foundpokemon.name%></h1>
+
+	
+	<img src="<%= pokemon.sprites.front_default%>">
+
+	<h2>Types:</h2>
+	<ul>
+		<% pokemon.types.forEach(t => {%>
+		<li><%=t.type.name%></li>
+
+		<%})%>
+	</ul>
+ 
+	<h2>Abilities:</h2>
+
+	<ul>
+		<% pokemon.abilities.forEach(a => {%>
+			<li><%= a.ability.name%></li>
+
+		<%})%>
+	</ul>
+
+	<h2>Moves:</h2>
+	<ul>
+		<% pokemon.moves.forEach(m => {%>
+		<li><%= m.move.name%></li>
+
+		<% })%>
+	</ul>
+
+	
+</body>
+</html>

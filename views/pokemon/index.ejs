@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pokemon</title>
+</head>
+<body>
+	<h1>Your Favorite Pokemon</h1>
+	<% pokemon.forEach(p => {%>
+	<h2>
+		<a href="/pokemon/<%=p.id%>">
+			<%=p.name%>
+		</a>
+	</h2>
+
+	<%})%>
+
+</body>
+</html>
