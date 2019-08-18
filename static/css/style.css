@@ -6,9 +6,21 @@ body {
 
 main {
   flex: 1 0 auto;
+  /* height: 100vh; */
 }
 
 .page-footer a {
   color: white;
 }
 
+.carousel {
+  height: 400px;
+}
+
+.card-content {
+  height: 100%;
+}
+
+.card-title {
+  color: black;
+}

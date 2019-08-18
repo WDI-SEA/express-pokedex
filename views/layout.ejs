@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Pokedex</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="/css/style.css" rel="stylesheet">
-    </head>
-  <body>
-      
-      <%- include partials/header.ejs %>
 
-      <main>
-        <div class="container">
-          <%- body %>
-        </div>
-      </main>
+<head>
+  <title>Pokedex</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="/css/style.css" rel="stylesheet">
+</head>
 
-      <%- include partials/footer.ejs %>
+<body>
+  <header>
+    <%- include partials/header.ejs %>
+  </header>
 
-    <!-- <script src="//code.jquery.com/jquery.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  </body>
+  <main>
+    <div class="container">
+      <%- body %>
+    </div>
+  </main>
+
+  <footer class="page-footer green darken-2">
+    <%- include partials/footer.ejs %>
+  </footer>
+  <!-- <script src="//code.jquery.com/jquery.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+
 </html>
-
