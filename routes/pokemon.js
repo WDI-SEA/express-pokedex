@@ -42,5 +42,15 @@ router.get("/:idx", (req, res) => {
 	})
 })
 
+router.post("/:idx", (req, res) => {
+	db.pokemon.destroy({
+		where: {
+			id: req.params.idx
+		}
+	})
+	.then(() => {
+		res.redirect("/pokemon");
+	})
+})
 
 module.exports = router;

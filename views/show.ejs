@@ -1,5 +1,9 @@
 <h1>Your Favorite Pokemon</h1>
 
 	<% monster.forEach((mon) => { %>
-		<p><%=mon.name%></p>
+		<p><%=mon.name%> Nickname: "<%=mon.nickname%>" Level: <%=mon.level%></p>
+		<form method="POST" action="/pokemon/<%=mon.id%>">
+			<input hidden type="text" name="name" value="<%= mon.name %>">
+			<button class="btn btn-primary" type="submit">Remove From Favorites</button>
+		</form>		
 	<% }) %>
