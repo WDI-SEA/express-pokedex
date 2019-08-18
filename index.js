@@ -14,7 +14,7 @@ app.use(ejsLayouts);
 app.get('/', function(req, res) {
   var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
   // Use request to call the API
-  axios.get(pokemonUrl).then( function(apiResponse) {
+  axios.get(pokemonUrl + "?limit=151").then( function(apiResponse) {
     var pokemon = apiResponse.data.results;
     res.render('index', { pokemon: pokemon.slice(0, 151) });
   })
