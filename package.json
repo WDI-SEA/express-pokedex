@@ -12,6 +12,10 @@
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "express-ejs-layouts": "^2.5.0",
-    "morgan": "^1.9.1"
+    "fs": "0.0.1-security",
+    "morgan": "^1.9.1",
+    "pg": "^7.12.1",
+    "request": "^2.88.0",
+    "sequelize": "^5.15.1"
   }
 }

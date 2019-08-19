@@ -1,0 +1,17 @@
+<div class="container">
+  <h1 class="text-center">The Original 151 Pokemon</h1>
+  <p class="text-center">
+    <a href="/pokemon">Favorites</a>
+  </p>
+    <div class="well">
+      <h2><%= pokemonChose.name %></h2>
+      <h3>Types:<% for (var i = 0; i < pokemonChose.types.length; i++ ) { %>
+        <%= pokemonChose.types[i].type.name %>,
+      <% } %></h3>
+      <h3>Abilities: <% for (var i = 0; i < pokemonChose.abilities.length; i++ ) { %>
+        <%= pokemonChose.abilities[i].ability.name %>,
+      <% } %></h3>
+      <img src='<%= pokemonChose.sprites.front_default%>'>
+      <img src='<%= pokemonChose.sprites.front_shiny%>'>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+body {
+  background-color: red;
+}
+
+h1 {
+  color:black;
+}
+
+a {
+  color:black;
+}
+
+h2 {
+  color: white;
+}
+
+.well {
+  background-color: black;
+  border:0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
