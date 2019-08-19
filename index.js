@@ -4,15 +4,28 @@ const axios = require('axios');
 const ejsLayouts = require('express-ejs-layouts');
 const app = express();
 const port = process.env.PORT || 3000;
+var db = require('./models');
 
 app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
+// app.use(layouts);
+app.use('/pokemon/creatures/*', express.static('static'))
+
+// db.pokemon.create({
+//   name: 'Pikachu'
+// }).then(function(poke) {
+//   console.log('Created: ', poke.name)
+// })
+
+// db.pokemon.findAll().then(function(poke) {
+//   console.log('Found: ', poke.name)
+// })
 
 // GET / - main index of site
 app.get('/', function(req, res) {
-  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
+  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/?limit=151&offset=0';
   // Use request to call the API
   axios.get(pokemonUrl).then( function(apiResponse) {
     var pokemon = apiResponse.data.results;
@@ -22,6 +35,8 @@ app.get('/', function(req, res) {
 
 // Imports all routes from the pokemon routes file
 app.use('/pokemon', require('./routes/pokemon'));
+
+
 
 var server = app.listen(port, function() {
   console.log('...listening on', port );
