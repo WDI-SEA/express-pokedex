@@ -8,19 +8,6 @@ const bodyParser = require('body-parser')
 const path = require('path');
 const port = process.env.PORT || 3000;
 
-// db.pokemon.findOne().then(function(pokemon){
-//   console.log(pokemon);
-// })
-
-// db.pokemon.findOne({
-//   where: {
-//     name: 'Pikachu'
-//   }
-// })
-// .then(function(pokemon){
-// console.log(pokemon);
-// })
-
 app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
@@ -28,10 +15,11 @@ app.use(ejsLayouts);
 app.use(bodyParser.json());
 app.use(bodyParser.text());
 app.use('/pokemon', require('./routes/pokemon.js'))
+app.use(express.static('static'))
 
 // GET / - main index of site
 app.get('/', function(req, res) {
-  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
+  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/?limit=151';
   // Use request to call the API
   axios.get(pokemonUrl).then( function(apiResponse) {
     var pokemon = apiResponse.data.results;

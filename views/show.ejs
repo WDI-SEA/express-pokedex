@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="">
+    <title>Show one Pokemon</title>
+  </head>
+  <body>
+    <div id="show-poke">
+      <h1>Pokemon</h1>
+      <h2><%= pokemon.name %></h2>
+      <img src="<%= pokemon.sprites.front_default %>" alt="" />
+      <h3>Abilities</h3>
+      <% pokemon.abilities.forEach((p) => { %>
+      <li><%= p.ability.name %></li>
+      <% }) %>
+      <h3>Base Experience</h3>
+      <h3><%= pokemon.base_experience %></h3>
+      <h3>Type</h3>
+      <% pokemon.types.forEach((p) => { %>
+      <li><%= p.type.name %></li>
+      <% }) %>
+    </div>
+  </body>
+</html>
