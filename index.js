@@ -4,6 +4,7 @@ const axios = require('axios');
 const ejsLayouts = require('express-ejs-layouts');
 const app = express();
 const port = process.env.PORT || 3000;
+const db = require("./models");
 
 app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
@@ -15,8 +16,24 @@ app.get('/', function(req, res) {
   var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
   // Use request to call the API
   axios.get(pokemonUrl + "?limit=151").then( function(apiResponse) {
-    var pokemon = apiResponse.data.results;
-    res.render('index', { pokemon: pokemon.slice(0, 151) });
+  // 	if (apiResponse.statusCode !== 200) {
+  // 		res.send("ERROR: Couldn't get a response from the api");
+  // 		console.log("ERROR: Couldn't get a response from the api", apiResponse.statusCode);
+  // 	} else {
+  		db.pokemon.findAll()
+  		.then((favorites) => {
+  		    var pokemon = apiResponse.data.results;
+  		    var faves = favorites.map(f => f.name);
+  		    console.log("FAVES:");
+  		    console.log(faves);
+		    res.render('index', {
+		    	pokemon,
+		    	faves });
+  		})
+  		.catch((e) => {
+  			res.render("ERROR: Problem accessing database");
+  			console.log("ERROR: Problem accessing database", e);
+  		});
   })
 });
 
