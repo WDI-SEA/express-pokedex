@@ -26,18 +26,15 @@
 
 <% pokemon.forEach((poke) => { %>
 <div id="<%= poke.name %>_modal" class="modal">
-    <div class="modal-content">
-      <h4><%= poke.name %></h4>
-      <p>Do poke.cards.forEach (c => { c.imageUrl})... to set img src in card </p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
-    
+  <div class="modal-content">
+    <h4><%= poke.name %></h4>
+    <p>Do poke.cards.forEach (c => { c.imageUrl})... to set img src in card </p>
+
     <form method="POST" action="/pokemon">
-      <input hidden type="text" name="name" value="<%= poke.name %>">
-      <button type="submit">Add to Favorite Pokemon</button>
+      <input type="hidden" name="name" value="<%= poke.name %>">
+      <button type="submit">Add to Favorites</button>
     </form>
 
   </div>
-  <% }); %>
+</div>
+<% }); %>
