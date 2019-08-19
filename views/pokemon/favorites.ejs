@@ -1,0 +1,29 @@
+<div class="container">
+  <h1 class="text-center">Your favorite Pokemon!</h1>
+  <p class="text-center">
+    <a class="fav-link" href="/">Home</a>
+  </p>
+  <div class="pokedex-display">
+    <% pokemon.forEach((poke)=>{ %>
+      <div class="pokedex-cell">
+        <h1 class="pokedex-info-display"><%= poke.name.toUpperCase() %></h1>
+        <div class="pokedex-info-display">
+          <% if(poke.spriteFrontM){ %>
+            <img src="<%= poke.spriteFrontM %>" alt="<%= poke.name %> front facing sprite">
+          <% } else if(poke.spriteFrontF){ %>
+            <img src="<%= poke.spriteFrontF %>" alt="<%= poke.name %> front facing sprite">
+          <% } else { %>
+            <h3>N/A</h3>
+          <% } %>
+        </div>
+        <span class="pokedex-info-display" >Weight: <%= poke.weight %>kg </span>
+        <span class="pokedex-info-display">Height: <%= poke.height %>m</span>
+        <span class="pokedex-info-display">National Pokedex No: <%= poke.id %></span>
+        <form method="POST" action="/pokemon/<%= poke.id %>?_method=DELETE">
+          <input hidden type="text" name="name" value="<%= poke.name %>">
+          <button class="btn btn-dark" type="submit">Remove</button>
+        </form>
+      </div>
+    <% }) %>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+.pokedex-cell{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20em;
+  height: 20em;
+  margin: 2em;
+  background-color: #8A0303;
+  border-radius: 9px;
+
+}
+.pokedex-display{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color:  lightgray;
+}
+.pokedex-info-display{
+  background-color: lightgray;
+  border-radius: 5px;
+  margin:5px;
+  padding-right: 2px;
+  padding-left: 2px;
+  font-size: 1em;
+  font-weight: 900;
+}
+.fave-btn{
+  border: none;
+  background-color: inherit;
+  width: 14em;
+  height: 14em;
+}
+.btn-sprite{
+  width: 10em;
+  height: 10em;
+}
+.fav-link{
+  font-size: 2em;
+  font-weight:900;
+}
+.poke-name{
+  font-size: 2em;
+}
