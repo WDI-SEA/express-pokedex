@@ -11,8 +11,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 const pokemonUrl = 'https://pokeapi.co/api/v2/pokemon/';
 let limit = 20;
-// let pokeList = [];
-
+const tcgUrl = 'https://api.pokemontcg.io/v1/';
 
 app.use(methodOverride('_method'));
 app.use('/', express.static('static'));
@@ -30,19 +29,25 @@ async function getPokemonSummary() {
 
   const bl = await getMasterPokeList();
 
-  let subQueryPromises = [];
+  let summarySubQueryPromises = [];
   bl.forEach(e => {
-    subQueryPromises.push(axios.get(e.url))
+    summarySubQueryPromises.push(axios.get(e.url))
   })
+
+  // let tcgSubQueryPromises = [];
+  // bl.forEach(e => {
+  //   tcgSubQueryPromises.push(axios.get(`${tcgUrl}cards?name=${e.name}`))
+  // })
 
   try {
     let pokeList = [];
-    return axios.all(subQueryPromises)
-      .then((resultOfSubquery) => {
-        resultOfSubquery.forEach((subQueryResponse) => {
+    return axios.all(summarySubQueryPromises)
+      .then((resultOfSubqueries) => {
+        resultOfSubqueries.forEach((subQueriesResponse) => {
           pokeList.push({
-            name: subQueryResponse.data.name,
-            sprite: subQueryResponse.data.sprites.front_default
+            name: subQueriesResponse.data.name,
+            sprite: subQueriesResponse.data.sprites.front_default,
+            // cards: subQueriesResponse[1].data.cards
           });
         })
       })
@@ -65,13 +70,11 @@ async function getMasterPokeList() {
 
 app.get('/', async (req, res) => {
   let pokeSummary = await getPokemonSummary();
-
-  // res.send(pokeSummary);
   res.render('index', {
     pokemon: pokeSummary
   })
-
 })
+
 // Imports all routes from the pokemon routes file
 app.use('/pokemon', require('./controllers/pokemon'));
 

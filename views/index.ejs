@@ -9,10 +9,8 @@
     <div class="card carousel-item">
       <div class="card-image">
         <img src="<%= poke.sprite %>">
-        <form method="POST" action="/pokemon">
-          <input hidden type="text" name="name" value="<%= poke.name %>">
-          <button class="btn-floating halfway-fab waves-effect waves-light red" type="submit">&#x2665;</button>
-        </form>
+        <button data-target="<%= poke.name %>_modal"
+          class="btn-floating halfway-fab waves-effect waves-light green modal-trigger">...</button>
       </div>
       <div class="card-content">
         <span class="card-title">
@@ -24,5 +22,22 @@
     </div>
     <% }); %>
   </div>
-
 </div>
+
+<% pokemon.forEach((poke) => { %>
+<div id="<%= poke.name %>_modal" class="modal">
+    <div class="modal-content">
+      <h4><%= poke.name %></h4>
+      <p>Do poke.cards.forEach (c => { c.imageUrl})... to set img src in card </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+    
+    <form method="POST" action="/pokemon">
+      <input hidden type="text" name="name" value="<%= poke.name %>">
+      <button type="submit">Add to Favorite Pokemon</button>
+    </form>
+
+  </div>
+  <% }); %>
