@@ -35,10 +35,10 @@ router.get('/:id', (req, res) => {
             
         })
         .catch(err => {
-            res.send('A catch error has occurred')
+            res.send('An error has occurred')
         })
     } else {
-        res.send('A show error has occurred')
+        res.send('An error has occurred')
     }
 })
 

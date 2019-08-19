@@ -4,18 +4,20 @@
     <title><h1>Show All Fave Pokemons</h1></title>
 </head>
 <body>
-    <h1>Here's Your Fave's List; Click on Any of Them to see more Details!</h1>
+    <div style="margin: 0 auto; text-align: center">
+        <h1>Here's Your Fave's List; Click on Any of Them to see more Details!</h1>
 
-    <% pokemons.forEach(p => { %>
-            <h2>
-            <a href="/pokemon/<%= p.id %>">
-                <%= p.name %>
-            </a>
-            </h2>
-            <form method="POST" action="/pokemon/?_method=DELETE">
-                <input type="hidden" name="name" value="<%= p.name %>">
-                <input class="btn btn-primary" type="submit" value="Delete from Faves">
-            </form>
+        <% pokemons.forEach(p => { %>
+                <h2>
+                <a href="/pokemon/<%= p.id %>">
+                    <%= p.name %>
+                </a>
+                </h2>
+                <form method="POST" action="/pokemon/?_method=DELETE">
+                    <input type="hidden" name="name" value="<%= p.name %>">
+                    <input class="btn btn-primary" type="submit" value="Delete from Faves">
+                </form>
         <% }) %>
+    </div>
 </body>
 </html>
