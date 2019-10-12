@@ -1,0 +1,30 @@
+img{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    display:block;  
+}
+body{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwPNsbj1Bzt3PjwWY_b-Ic5c66Gp6SjHXCZ-U2kqTdy7UuUSzP');
+}
+#top{
+    background-color:goldenrod;
+}
+#nav{
+    background-color:black;
+    font-size:25px;
+    color:white;
+}
+#nav a:link{
+    color:white;
+    text-decoration: none;
+}
+#nav a:visited{
+    color:white;
+    text-decoration: none;
+}
+#show{
+    background: rgb(128, 128, 128, 0.7);
+    height:100vh;
+}
+
