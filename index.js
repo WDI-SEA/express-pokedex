@@ -6,6 +6,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(require('morgan')('dev'));
+app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
@@ -21,7 +22,7 @@ app.get('/', function(req, res) {
 });
 
 // Imports all routes from the pokemon routes file
-app.use('/pokemon', require('./routes/pokemon'));
+app.use('/pokemon', require('./routes/pokemon.js'));
 
 var server = app.listen(port, function() {
   console.log('...listening on', port );
