@@ -1,34 +1,35 @@
 var express = require('express');
 var router = express.Router();
 const ejsLayouts = require('express-ejs-layouts');
-// const axios= require('axios');
-// const db = require('./models');
+// const axios= require('axios')
+const db = require('../models');
 
 const pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
 
 //ROUTES
 
 // GET /pokemon - return a page with favorited Pokemon
-router.get('/pokemon', function(req, res) {
+router.get('/', function(req, res) {
   db.pokemon.findAll()
   .then(function(foundPokemon){
-    res.send(` 🦊 ${foundPokemon}`)
+    // res.send(` 🦊 ${foundPokemon}`)
+    res.render('faves', { faves: foundPokemon })
   })
-  // res.send('Render a page of favorites here');
 });
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
-router.post('/pokemon', function(req, res) {
+router.post('/', function(req, res) {
   // TODO: Get form data and add a new record to DB
+  // res.send(req.body) // check if post route works and verify's what req.body returns
   db.pokemon.findOrCreate({
     where:{
-      id: req.body.id
+      name: req.body.name
     },
     defaults: {
-        name: req.body.name
+      name: req.body.name
     }
   }).then(function([pokemon, created]){
-    console.log(`${pokemon.name} is ${created ? 'Now in my favorites' : 'Already a favorite'}`)
+    console.log(` 🦁🌺 ${pokemon.name} is ${created ? 'now in my favorites' : 'Already a favorite'} 🐯`)
     res.redirect('/pokemon')
   })
 })
