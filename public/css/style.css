@@ -2,9 +2,44 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 h1 {
     text-transform: capitalize;
-    font-size: 25px;
+    font-size: 4em;
+    margin: 35px;
 }
+
+p {
+    font-size: 2em;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+}
+
+.atag {
+    font-size: 2em;
+    margin: 15px;
+    text-transform: capitalize;
+}
+
+hr {
+    width: 96%;               
+    background-color: black;
+    height: 10px;
+}
+
+nav {
+    font-size: 2em;
+    text-decoration: none;
+    color: black;
+    margin-top: 15px;
+    display: block;
+}
+/* 
+nav a:hover {
+    border-bottom: 1px solid black;
+} */

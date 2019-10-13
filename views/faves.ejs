@@ -1,5 +1,9 @@
+<h1>Favorites List:</h1>
+
 <% pokemon.forEach(function(mon, id) { %>
-    <ul>
-        <li> <a href="/pokemon/<%= mon.name %>"><%= mon.name %></a></li>
-    </ul>
-<% }) %>
+    <a class="atag" href="/pokemon/<%= mon.name %>"><%= mon.name %></a>
+    <form action="/pokemon/<%= mon.name %>/?_method=DELETE" method="POST">
+        <input type="submit" value="Remove">
+    </form>
+    <hr>
+    <% }) %>
