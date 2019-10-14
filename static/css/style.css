@@ -1,6 +1,6 @@
 img{
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     margin: 0 auto;
     display:block;  
 }
@@ -24,7 +24,19 @@ body{
     text-decoration: none;
 }
 #show{
-    background: rgb(128, 128, 128, 0.7);
+    background: rgb(128, 128, 128, 0.9);
     height:100vh;
+    font-size: 35px;
+    color:rgba(255, 255, 255, 0.931);
+    border: 2px solid black;
+}
+#show img{
+    border: 2px solid black;
+    border-radius:10px;
+}
+#show h1{
+    text-decoration: underline;
+    font-size:50px;
+    color:black;
 }
 
