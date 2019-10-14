@@ -1,9 +1,11 @@
 <div class="container">
   <h1 class="text-center">The Original 151 Pokemon</h1>
-  <p class="text-center">
-    <a href="/pokemon">Favorites</a>
-  </p>
-
+  <nav class="navbar navbar-expand-lg navbar-light bg-secondary mb-3">
+      <a class="navbar-brand text-light" href="/">Home</a>
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link text-light" href="/favorites">Your Favorites</a></li>
+      </ul>
+  </nav>
   <div class="card-deck">
   <% pokemon.forEach(function(pokemon) { %>
     <% pokeID++ %>
@@ -12,8 +14,9 @@
         <img src="/img/sprites/pokemon/<%= pokeID %>.png" class="card-img-top" alt="<%= pokemon.name %>">
         <div class="card-body">
         <h2><%= pokemon.name %></h2></a>
-        <form method="POST" action="/pokemon">
-          <input hidden type="text" name="name" value="<%= pokemon.name %>">
+        <form method="POST" action="/favorites">
+          <input type="hidden" name="img" value="/img/sprites/pokemon/<%= pokeID %>.png">
+          <input type="hidden" name="name" value="<%= pokemon.name %>">
           <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
         </form>
       </a>     

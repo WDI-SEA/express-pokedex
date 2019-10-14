@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const axios = require('axios');
+const db = require('../models')
 const BASE_URL = 'https://pokeapi.co/api/v2/pokemon?limit=151';
 const BASE_POKE_URL = 'http://pokeapi.co/api/v2/pokemon/';
 const BASE_SPECIES_URL = 'https://pokeapi.co/api/v2/pokemon-species/'
@@ -17,7 +18,7 @@ router.get('/', function(req, res) {
   })
 });
 
-// //Build router for pokemon detail page
+// GET / - router for pokemon detail page
 router.get('/pokemon/:id', function(req, res) {
   axios.all([
     axios.get(BASE_POKE_URL + req.params.id),
@@ -29,6 +30,40 @@ router.get('/pokemon/:id', function(req, res) {
       species: speciesRes.data
     })
   }))
+})
+
+// GET / - router for pokemon favorites page
+router.get('/favorites', function(req, res){
+  db.usr.findAll()
+  .then(function(favRes){
+    res.render('favs', { usrs: favRes })
+  })
+})
+
+// PUT / - router for pokemon favorites page
+router.post('/favorites', function(req, res) {
+  // res.send(req.body)
+  db.usr.findOrCreate({
+    where: {
+      img: req.body.img
+    },
+    defaults: {
+      name: req.body.name
+    }
+  }).then(function(){
+    res.redirect('/favorites')
+  })
+})
+
+// DELETE / - router for pokemon favorites page
+router.delete('/favorites/:id', function(req, res) {
+  db.usr.destroy({
+    where: {
+        name: req.params.id
+    }
+  }).then(function(){
+    res.redirect('/favorites')
+  })
 })
 
 module.exports = router;

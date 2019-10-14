@@ -1,16 +1,33 @@
 <div class="container">
     <div class="row mb-3">
         <div class="col-md-8 poke-grid-col">
-            <div class="pb-3">
-                <%= deets.name %>
+            <div class="pb-3" style="background:lightgrey">
+                <h2><%= deets.name %></h2>
             </div>
             <div class="row">
-                <div class="col-md-6 pokemon-grid-col"><%= deets.height %></div>
-                <div class="col-md-6 pokemon-grid-col"><%= species.color.name %></div>
+                <div class="col-md-6 pokemon-grid-col text-center">
+                    <h4>Species:</h4>
+                    <h4>Height:</h4>
+                    <h4>Weight:</h4>
+                    <h4>Base Happiness:</h4>
+                    <h4>Capture Rate:</h4>
+                    <h4 style="padding-top: 14px">Egg Groups:</h4>
+                </div>
+                <div class="col-md-6 pokemon-grid-col text-center">
+                    <h4 class="text-muted"><%= species.color.name %></h4>
+                    <h4 class="text-muted"><%= Math.floor(deets.height * 3.937) %> in.</h4>
+                    <h4 class="text-muted"><%= Math.floor(deets.weight / 10 * 2.205) %> lbs.</h4>
+                    <h4 class="text-muted" style="padding-top: 14px"><%= species.base_happiness %></h4>
+                    <h4 class="text-muted" style="padding-top: 14px"><%= species.capture_rate %></h4>
+                    <h4 class="text-muted"><%= species.egg_groups[0].name %> /<br> <%= species.egg_groups[1].name %> </h4>
+                </div>
             </div>
         </div>
         <div class="col-md-4 pokemon-grid-col">
-            <img src="<%= deets.front_default %>">
+            <img src="/img/sprites/pokemon/<%= deets.id %>.png">
+            <img src="/img/sprites/pokemon/back/<%= deets.id %>.png">
+            <img src="/img/sprites/pokemon/shiny/<%= deets.id %>.png">
+            <img src="/img/sprites/pokemon/back/shiny/<%= deets.id %>.png">
         </div>
     </div>
 </div>
