@@ -1,12 +1,15 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models')
+const axios = require('axios')
+
+const BASE_URL = `https://pokeapi.co/api/v2/pokemon/?limit=151`
 
 router.get('/pokemon/:name', (req, res) => {
-  request('https://pokeapi.co/api/v2/pokemon/' + req.params.name, (err, response, body) => {
+  request(BASE_URL + req.params.name, (err, response, body) => {
       if (err || response.statusCode != 200) {
           res.render('404')
-          console.log('errorrrrrrrrrrr' + req.params.name)
+          
       }
       else {
         //  res.send('STUB - poke types list')
@@ -21,11 +24,11 @@ router.get('/', (req, res) => {
   .then(pokemon => {
     res.render('faves', { pokemon })
   })
-  .catch(err => {
-    console.log(err)
-    res.send('An error happened')
-  })
 })
+
+router.get('/details', function(req, res) {
+  res.render('details')
+}).then()
 
 router.get('/:id', (req, res) => {
   if (parseInt(req.params.id)) {
@@ -36,13 +39,6 @@ router.get('/:id', (req, res) => {
     .then(pokemon => {
       res.render('faves', { pokemon })
     })
-    .catch(err => {
-      console.log(err)
-      res.send('An error happened')
-    })
-  }
-  else {
-    res.send('Something went wrong')
   }
 })
 
@@ -54,10 +50,6 @@ router.post('/', function(req, res) {
   db.pokemon.create(req.body)
   .then(createdPokemon => {
     res.redirect('/')
-  })
-  .catch(err => {
-    console.log(err)
-    res.send('Uh oh sorry')
   })
 });
 
