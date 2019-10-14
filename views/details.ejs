@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row mb-3">
+        <div class="col-md-8 poke-grid-col">
+            <div class="pb-3">
+                <%= deets.name %>
+            </div>
+            <div class="row">
+                <div class="col-md-6 pokemon-grid-col"><%= deets.height %></div>
+                <div class="col-md-6 pokemon-grid-col"><%= species.color.name %></div>
+            </div>
+        </div>
+        <div class="col-md-4 pokemon-grid-col">
+            <img src="<%= deets.front_default %>">
+        </div>
+    </div>
+</div>

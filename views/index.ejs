@@ -4,13 +4,31 @@
     <a href="/pokemon">Favorites</a>
   </p>
 
+  <div class="card-deck">
   <% pokemon.forEach(function(pokemon) { %>
-    <div class="well">
-      <h2><%= pokemon.name %></h2>
-      <form method="POST" action="/pokemon">
-        <input hidden type="text" name="name" value="<%= pokemon.name %>">
-        <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
-      </form>
+    <% pokeID++ %>
+    <div class="card bg-light mb-3" style="min-width: 250px;">
+      <a href="/pokemon/<%= pokemon.name %>" data-toggle="lightbox" data-max-width="600" class="card-title" >
+        <img src="/img/sprites/pokemon/<%= pokeID %>.png" class="card-img-top" alt="<%= pokemon.name %>">
+        <div class="card-body">
+        <h2><%= pokemon.name %></h2></a>
+        <form method="POST" action="/pokemon">
+          <input hidden type="text" name="name" value="<%= pokemon.name %>">
+          <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
+        </form>
+      </a>     
     </div>
+  </div>
   <% }); %>
 </div>
+
+<script src="//code.jquery.com/jquery-latest.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
+<script>
+$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+  event.preventDefault();
+  $(this).ekkoLightbox({
+    alwaysShowClose: true,
+  });
+});
+</script>
