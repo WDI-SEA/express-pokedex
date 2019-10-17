@@ -26,9 +26,9 @@ router.get('/', (req, res) => {
   })
 })
 
-router.get('/details', function(req, res) {
-  res.render('details')
-}).then()
+// router.get('/details', function(req, res) {
+//   res.render('details')
+// }).then()
 
 router.get('/:id', (req, res) => {
   if (parseInt(req.params.id)) {
