@@ -12,6 +12,9 @@
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "express-ejs-layouts": "^2.5.0",
-    "morgan": "^1.9.1"
+    "method-override": "^3.0.0",
+    "morgan": "^1.9.1",
+    "pg": "^7.12.1",
+    "sequelize": "^5.19.6"
   }
 }
