@@ -16,6 +16,17 @@ router.get('/favorites', (req, res) => {
   })
 });
 
+router.get('/favorites/:id', (req, res) => {
+  db.pokemon.findByPk(req.params.id)
+  .then(pokemon => {
+    res.render('../views/show')
+  })
+  .catch((err) => {
+    console.log('Err', err)
+    res.send('404')
+  })
+})
+
 // POST /pokemon - receive the name of a pokemon and add it to the database
 
 router.post('/favorites', (req, res) =>{
@@ -29,3 +40,11 @@ router.post('/favorites', (req, res) =>{
 
 module.exports = router;
 
+// app.get('/', function(req, res) {
+//   var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
+//   // Use request to call the API
+//   axios.get(pokemonUrl).then( function(apiResponse) {
+//     var pokemon = apiResponse.data.results;
+//     res.render('index', { pokemon: pokemon.slice(0, 151) });
+//   })
+// });

@@ -12,6 +12,7 @@
         <% pokemons.forEach(poke => { %>
             <div>
                 <h2>Pokemon: <%= poke.name %></h2>
+                <a href="./<%- poke.id %>">Details</a>
                 <hr>
             </div>
         <% }) %>
