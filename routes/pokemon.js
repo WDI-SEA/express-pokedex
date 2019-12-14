@@ -1,6 +1,7 @@
 let express = require('express');
 let router = express.Router();
 let db = require('../models')
+let request = require('request')
 
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', function(req, res) {
@@ -23,6 +24,24 @@ router.post('/', function(req, res) {
   .catch(err => {
     console.log('Err', err)
     res.send('error')
+  })
+})
+
+
+//GET /pokemon/:id - renders show page with selected pokemon
+router.get('/:id', (req, res) => {
+  db.pokemon.findByPk(req.params.id)
+  .then(poke => {
+    
+    
+    request('http://pokeapi.co/api/v2/pokemon/' + poke.name, (error, response, body) => {
+      if(error) { 
+        console.log('error', error) 
+      } else { 
+        let data = JSON.parse(body) 
+        res.render('pokemon/show', {poke, data})
+      }
+    }) 
   })
 })
 
