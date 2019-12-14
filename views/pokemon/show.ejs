@@ -1,3 +1,23 @@
 <h1>More info on <%= poke.name %></h1>
 
-<%=data.abilities[0].ability.name%>
+<img src="<%=data.sprites.front_default%>">
+
+<h3>Weight: <%=data.weight%></h3>
+
+<h3>Abilities</h3>
+<ul>
+    <%data.abilities.forEach(ability => {%>
+    <li>
+        <%=ability.ability.name%>
+    </li>
+    <%})%>
+</ul>
+
+<h3>Moves</h3>
+<ul>
+    <%data.moves.forEach(move => {%>
+    <li>
+        <%=move.move.name%>
+    </li>
+    <%})%>
+</ul>
