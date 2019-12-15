@@ -35,7 +35,8 @@ router.get('/:id', (req, res) => {
           pokemonWeight: pokeData.weight,
           pokemonAbil1: pokeData.abilities[0].ability.name,
           pokemonAbil2: pokeData.abilities[1].ability.name,
-          pokemonMove: pokeData.moves[0].move.name
+          pokemonMove: pokeData.moves[0].move.name,
+          pokeImg: pokeData.sprites.front_default
         })
       })
       .catch((err) => {
@@ -46,7 +47,7 @@ router.get('/:id', (req, res) => {
 })
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
-router.post('/pokemon', (req, res) => {
+router.post('/', (req, res) => {
   // TODO: Get form data and add a new record to DB
   db.pokemon.create(req.body)
   .then((newPoke) => {
