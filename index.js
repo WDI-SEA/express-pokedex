@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const axios = require('axios'); 
 const ejsLayouts = require('express-ejs-layouts');
+let db = require('./models');
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -14,11 +15,17 @@ app.use(ejsLayouts);
 app.get('/', function(req, res) {
   var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
   // Use request to call the API
-  axios.get(pokemonUrl).then( function(apiResponse) {
+  axios.get(pokemonUrl)
+  .then( function(apiResponse) {
     var pokemon = apiResponse.data.results;
     res.render('index', { pokemon: pokemon.slice(0, 151) });
   })
 });
+
+// //GET /pokemon/show - the individual pokemon stats page
+// app.get('pokemon/:id', (req, res) => {
+//   res.render('views/show')
+// })
 
 // Imports all routes from the pokemon routes file
 app.use('/pokemon', require('./routes/pokemon'));

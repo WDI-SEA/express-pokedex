@@ -11,6 +11,11 @@
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
         <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
       </form>
+      <br />
+      <form method="GET" action="/show">
+        <input hidden type="text" name="name" value="<%= pokemon.name %>">
+        <button class="btn btn-primary" type="submit">Show More Info</button>
+      </form>
     </div>
   <% }); %>
 </div>
