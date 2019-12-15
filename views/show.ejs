@@ -1,3 +1,5 @@
-<h1>You've reached the show page for <%- pokemonName %></h1>
-<h2>Abilities: <%- pokeData.abilities[0].ability.name %></h2>
+<h1><%- pokemonName.charAt(0).toUpperCase()+pokemonName.slice(1) %> is SO DOPE!</h1>
+<h2>Abilities: <%- (pokeData.abilities[0].ability.name).charAt(0).toUpperCase()+(pokeData.abilities[0].ability.name).slice(1) %></h2>
+<p>Weight: <%- pokeData.weight %></p>
 <img src="<%- pokeData.sprites.front_default %>">
+
