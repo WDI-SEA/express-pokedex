@@ -1,10 +1,18 @@
 <div class="container">
   <h1 class="text-center">The Original 151 Pokemon</h1>
   <p class="text-center">
+    <form method="POST" action="/search">
+    <input type = "search" name = "searchName" placeholder = "Search for a Pokemon!">
+  </form>
+  </p>
+  <p class="text-center">
     <a href="/favorites/">Favorites</a>
   </p>
+  <p>
+    <a href="/">All</a>
+  </p>
 
-  <% pokemon.forEach(function(pokemon) { %>
+  <% pokemon.forEach((pokemon) =>{ %>
     <div class="well">
       <h2><%= pokemon.name %></h2>
       <form method="POST" action="/favorites/">

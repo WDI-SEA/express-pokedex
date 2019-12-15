@@ -17,6 +17,10 @@ router.get('/favorites/', (req, res) => {
   })
 });
 
+router.get('/error', (req, res) =>{
+  res.render('../error')
+})
+
 router.get('/favorites/:id', (req, res) => {
   db.pokemon.findByPk(req.params.id)
   .then(pokemon => {
@@ -39,6 +43,27 @@ router.get('/favorites/:id', (req, res) => {
 })
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
+router.post('/search', (req, res) => {
+  let userSearch = req.body.searchName
+  console.log(userSearch)
+  let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
+  axios.get(pokemonUrl).then((apiResponse)=>{
+    let searchedPoke = apiResponse.data.results
+    for(let i = 0; i < searchedPoke.length; i++){
+      if (searchedPoke[i].name == userSearch){
+        console.log(i)
+        res.render('index', { pokemon: searchedPoke.slice(i, (i + 1))})
+      }
+    }
+  })
+  .catch((err) => {
+    console.log('Err', err)
+    res.send('404')
+  })
+})
+
+
+
 
 router.post('/favorites', (req, res) =>{
   db.pokemon.create(req.body)
