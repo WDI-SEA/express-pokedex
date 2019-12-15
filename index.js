@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 
 // GET / - main index of site
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
   var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
   // Use request to call the API
   axios.get(pokemonUrl).then( function(apiResponse) {
@@ -21,10 +21,10 @@ app.get('/', function(req, res) {
 });
 
 // Imports all routes from the pokemon routes file
-app.use('/pokemon', require('./routes/pokemon'));
-
+app.use('/', require('./routes/pokemon'));
 var server = app.listen(port, function() {
   console.log('...listening on', port );
 });
 
 module.exports = server;
+
