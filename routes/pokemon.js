@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const axios = require('axios'); 
 let db = require('../models')
 
 
@@ -19,7 +20,17 @@ router.get('/favorites', (req, res) => {
 router.get('/favorites/:id', (req, res) => {
   db.pokemon.findByPk(req.params.id)
   .then(pokemon => {
-    res.render('../views/show')
+    let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
+    axios.get((pokemonUrl)+pokemon.name)
+    .then((apiResponse)=> {
+      // console.log(apiResponse)
+      let pokeData = apiResponse.data
+      console.log(pokeData)
+      console.log(pokemon.name)
+  
+      res.render('../views/show', {pokemonName: pokemon.name, pokeData: pokeData})
+
+    })
   })
   .catch((err) => {
     console.log('Err', err)
@@ -40,11 +51,3 @@ router.post('/favorites', (req, res) =>{
 
 module.exports = router;
 
-// app.get('/', function(req, res) {
-//   var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
-//   // Use request to call the API
-//   axios.get(pokemonUrl).then( function(apiResponse) {
-//     var pokemon = apiResponse.data.results;
-//     res.render('index', { pokemon: pokemon.slice(0, 151) });
-//   })
-// });
