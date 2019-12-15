@@ -11,14 +11,14 @@
     <div class="container">
         <div class="row">
             <div class="col s12">
-                <h1 class="center-align">You've reached the show page for <%= pokemonName %></h1>
+                <h1 class="center-align">You've reached the show page for <span class="red-text"><%= pokemonName.charAt(0).toUpperCase()+pokemonName.slice(1) %>!</h1></span></span>
             </div>
 
             <div class="col s6">
                 <div class="card blue-grey darken-1">
                     <div class="card-content white-text">
-                        <span class="card-title">Ability:</span>
-                        <p><%= pokeData.abilities[0].ability.name %></p>
+                        <span class="card-title"><h3 class="center-align blue-text">Ability:</h3></span>
+                        <h5 class="center-align"><%= pokeData.abilities[0].ability.name %></h5>
                     </div>
                 </div>
             </div>
@@ -26,8 +26,8 @@
             <div class="col s6">
                 <div class="card blue-grey darken-1">
                     <div class="card-content white-text">
-                        <span class="card-title">Height:</span>
-                        <p><%= pokeData.height %></p>
+                        <span class="card-title"><h3 class="center-align blue-text">Height:</h3></span>
+                        <h5 class="center-align"><%= pokeData.height %> in decimetres</h5>
                     </div>
                 </div>
             </div>
@@ -35,8 +35,8 @@
             <div class="col s6">
                 <div class="card blue-grey darken-1">
                     <div class="card-content white-text">
-                        <span class="card-title">Weight:</span>
-                        <p><%= pokeData.weight %></p>
+                        <span class="card-title"><h3 class="center-align blue-text">Weight:</h13</span>
+                        <h5 class="center-align"><%= pokeData.weight %> in hectograms</h5>
                     </div>
                 </div>
             </div>
@@ -44,8 +44,8 @@
             <div class="col s6">
                 <div class="card blue-grey darken-1">
                     <div class="card-content white-text">
-                        <span class="card-title">Moves:</span>
-                        <p><%= pokeData.moves[0].move.name %></p>
+                        <span class="card-title"><h3 class="center-align blue-text">Moves:</h3></span>
+                        <h5 class="center-align"><%= pokeData.moves[0].move.name %></h5>
                     </div>
                 </div>
             </div>
@@ -53,8 +53,8 @@
             <div class="col s6">
                 <div class="card blue-grey darken-1">
                     <div class="card-content white-text">
-                        <span class="card-title">Base Experience:</span>
-                        <p><%= pokeData.base_experience %></p>
+                        <span class="card-title"><h3 class="center-align blue-text">Base Experience:</h3></span>
+                        <h5 class="center-align"><%= pokeData.base_experience %></h5>
                     </div>
                 </div>
             </div>
@@ -62,9 +62,11 @@
             <div class="col s6">
                 <div class="card blue-grey darken-1">
                     <div class="card-content white-text">
-                        <span class="card-title">Images:
-                                <img src="<%- pokeData.sprites.front_default %>">
-                                <img src="<%= pokeData.sprites.back_default %>">
+                        <span class="card-title">
+                            <div class="center-align">
+                                <img src="<%- pokeData.sprites.front_default %>" style="width:123px;height:auto;">
+                                <img src="<%= pokeData.sprites.back_default %>" style="width:123px;height:auto;">
+                            </div>
                         </span> 
                     </div>
                 </div>
