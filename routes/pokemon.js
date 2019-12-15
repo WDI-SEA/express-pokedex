@@ -6,7 +6,7 @@ let db = require('../models')
 
 
 // GET /pokemon - return a page with favorited Pokemon
-router.get('/favorites', (req, res) => {
+router.get('/favorites/', (req, res) => {
   db.pokemon.findAll()
   .then(pokemons => {
     res.render('../views/favorites', { pokemons })
