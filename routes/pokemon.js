@@ -46,7 +46,7 @@ router.get('/favorites/:id', (req, res) => {
 router.post('/search', (req, res) => {
   let userSearch = req.body.searchName
   console.log(userSearch)
-  let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
+  let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon?limit=151';
   axios.get(pokemonUrl).then((apiResponse)=>{
     let searchedPoke = apiResponse.data.results
     for(let i = 0; i < searchedPoke.length; i++){
