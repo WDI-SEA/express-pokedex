@@ -26,12 +26,16 @@ router.get('/:id', (req, res) => {
       axios.get((pokeURL)+poke.name)
       .then((apiResponse) => {
         // console.log(apiResponse)
-        let pokeData = apiResponse
-        console.log(pokeData)
+        let pokeData = apiResponse.data
+        // console.log(pokeData)
         console.log(poke.name)
         res.render('../views/show', {
           pokemonName: poke.name,
-          pokeData: pokeData
+          pokemonHeight: pokeData.height,
+          pokemonWeight: pokeData.weight,
+          pokemonAbil1: pokeData.abilities[0].ability.name,
+          pokemonAbil2: pokeData.abilities[1].ability.name,
+          pokemonMove: pokeData.moves[0].move.name
         })
       })
       .catch((err) => {
