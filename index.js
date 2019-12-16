@@ -18,7 +18,11 @@ app.get('/', function(req, res) {
   axios.get(pokemonUrl)
   .then( function(apiResponse) {
     var pokemon = apiResponse.data.results;
-    res.render('index', { pokemon: pokemon.slice(0, 151) });
+    // var pokemonImgData = pokemonURL + pokemon.name;
+    res.render('index', { 
+      pokemon: pokemon.slice(0, 151),
+      // pokemonImg: pokemonImgData.data.sprites.front_default
+    });
   })
 });
 
