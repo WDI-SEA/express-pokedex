@@ -84,3 +84,7 @@ module.exports = router;
 
 
 /*-------------------- Taken out of /favorites, didn't work as intended -----------------------*/
+/* <form method="DELETE" action="/delete/<%- poke.id %>">
+<input hidden type="text" name="delete" value="<%= poke.name %>">
+<button class="btn btn-primary blue lighten-1" type="submit">Remove from Favorites</button>
+</form> */
