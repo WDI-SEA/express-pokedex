@@ -8,7 +8,15 @@
   <% pokemon.forEach(function(pokemon) { %>
     <div class="well">
 
-    <h2><%= pokemon.name %></h2>
+    <% if (pokemon.id) { %>
+    <h2>
+      <a href= <%= "/pokemon/" + pokemon.id %>> <%= pokemon.name %> </a>
+    </h2>
+    <% } else { %>
+    <h2>
+      <%= pokemon.name %>
+    </h2>
+    <% } %>
 
     <form method="POST" action="/pokemon">
       <input hidden type="text" name="name" value="<%= pokemon.name %>">

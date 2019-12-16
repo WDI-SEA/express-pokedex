@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var db = require('../models');
+const axios = require('axios');
+
 
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', function(req, res) {
@@ -17,6 +19,22 @@ router.post('/', function(req, res) {
   db.pokemon.create(req.body)
     .then(function(poke) {
     res.redirect('/pokemon');
+  });
+});
+
+router.get('/:id', function(req,res) {
+  var pokemonId = parseInt(req.params.id);
+  db.pokemon.findByPk(pokemonId)
+    .then(function(pokemon) {
+    var pokemonName = pokemon.name;
+
+    var pokemonSpecificUrl = 'http://pokeapi.co/api/v2/pokemon/' + pokemonName + '/';
+    // Use request to call the API
+    axios.get(pokemonSpecificUrl)
+    .then( function(apiResponse) {
+    var pokemonInfo = apiResponse;
+    res.render('show', {pokemonName, pokemonInfo});
+    });
   });
 });
 

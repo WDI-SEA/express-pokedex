@@ -18,7 +18,7 @@ app.get('/', function(req, res) {
     .then( function(apiResponse) {
     var pokemon = apiResponse.data.results;
     res.render('index', { pokemon: pokemon.slice(0, 151) }); //get the first 151 pokemons and send to index
-  })
+  });
 });
 
 // Imports all routes from the pokemon routes file
