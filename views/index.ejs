@@ -5,20 +5,21 @@
     <input type = "search" name = "searchName" placeholder = "Search for a Pokemon!">
   </form>
   </p>
-  <p class="text-center">
-    <a href="/favorites/">Favorites</a>
-  </p>
-  <p>
-    <a href="/">All</a>
-  </p>
 
+  <div class="row">
   <% pokemon.forEach((pokemon) =>{ %>
-    <div class="well">
-      <h2><%= pokemon.name %></h2>
-      <form method="POST" action="/favorites/">
+    <div class="col s6">
+      <h2><%= pokemon.name.charAt(0).toUpperCase()+pokemon.name.slice(1) %></h2>
+      <form method="POST" action="/favorites">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
-        <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
+        <button class="btn waves-effect waves-light blue lighten-1" type="submit">Add to Favorite Pokemon
+          <i class="material-icons right">add_box</i>
+        </button>
       </form>
+      <hr>
     </div>
-  <% }); %>
+    <% }); %>
+  </div>
 </div>
+
+
