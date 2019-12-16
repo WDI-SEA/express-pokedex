@@ -1,4 +1,28 @@
 <h1>Name : <%= pokemonName %></h1>
 
+<hr>
+
+<% if (pokemonInfo.sprites.front_shiny) { %> 
+    <img src=<%= pokemonInfo.sprites.front_shiny %>>
+<% } %>
+
+
+<h6>Base-experience: <%= pokemonInfo.base_experience + " XP" || "N/A"%></h6>
+<h6>Height: <%= (parseInt(pokemonInfo.height)/10) + " meters" || "N/A"%></h6>
+<h6>Weight: <%= (parseInt(pokemonInfo.weight)/10) + " kg" || "N/A"%></h6>
+<h6>Forms (<%= pokemonInfo.forms.length %> total) :
+    <ul>
+        <% var forms = pokemonInfo.forms %>
+        <% forms.forEach( (form) => { %>
+        </br>
+            <li><%= form.name %></li>
+        <% }) %>
+    </ul>
+</h6>
+
+
+<hr>
+<p>Unit conversions and types determined using: https://pokemondb.net/pokedex/stats/height-weight.</p>
+
 
 

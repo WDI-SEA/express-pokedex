@@ -32,7 +32,7 @@ router.get('/:id', function(req,res) {
     // Use request to call the API
     axios.get(pokemonSpecificUrl)
     .then( function(apiResponse) {
-    var pokemonInfo = apiResponse;
+    var pokemonInfo = apiResponse.data;
     res.render('show', {pokemonName, pokemonInfo});
     });
   });
