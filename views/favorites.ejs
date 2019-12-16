@@ -4,14 +4,14 @@
     <title>Favorite Pokemon</title>
 </head>
 <body>
+    <div class="jumbotron">
     <div class="container text-center">
     <h1>My favorite Pokemon!</h1>
     <% if (pokemons.length) { %>
         <% pokemons.forEach(poke => { %>
             <div class="container">
-                <h2>Pokemon: <%= poke.name %></h2>
-                
-                <a class="btn btn-default"href="favorites/<%- poke.id %>">Details</a>
+                <h2><%= poke.name %></h2>
+                <a class="btn btn-success"href="favorites/<%- poke.id %>">Stats</a>
                 <hr>
             </div>
         <% }) %>
@@ -19,5 +19,6 @@
         <h2>Add some favorites to view interesting PokeFacts!</h2>
     <% } %>
     </div>
+</div>
 </body>
 </html>

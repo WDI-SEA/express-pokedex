@@ -23,10 +23,7 @@ router.get('/favorites/:id', (req, res) => {
     let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
     axios.get((pokemonUrl)+pokemon.name)
     .then((apiResponse)=> {
-      let pokemonInfo = apiResponse.data
-      console.log(pokemonInfo)
-      console.log(pokemon.name)
-  
+      let pokemonInfo = apiResponse.data  
       res.render('../views/show', {pokemonName: pokemon.name, pokemonInfo: pokemonInfo})
 
     })

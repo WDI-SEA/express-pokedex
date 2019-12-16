@@ -10,19 +10,35 @@
         <img src="<%= pokemonInfo.sprites.front_default %>">
         <img src="<%= pokemonInfo.sprites.front_shiny %>">
         <hr>
-        <h2>Height:</h2>
-        <h3><%= pokemonInfo.height%>0 cm</h3>
-        <hr>
-        <h2>Abilities:</h2>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h2>Height:</h2>
+            </div>
+            <div class="panel-body">
+            <h3><%= pokemonInfo.height%>0 cm</h3>
+            </div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h2>Abilities:</h2>
+            </div>
+            <div class="panel-body"></div>
             <% for (let i=0; i < pokemonInfo.abilities.length; i++) { %>
             <h3> <%= pokemonInfo.abilities[i].ability.name %> </h3>
                 <% } %>
+            </div>
+        
         <hr>
+        <div class="panel panel-success">
+            <div class="panel-heading">
         <h2>Type(s):</h2>
+            </div>
+            <div class="panel-body">
             <% for (let i=0; i < pokemonInfo.types.length; i++) { %>
             <h3> <%= pokemonInfo.types[i].type.name  %> </h3>
                 <% } %>
-
+            </div>
+        </div>
     </div>
 </body>
 </html>
