@@ -1,0 +1,73 @@
+header {
+    background: #343940;
+}
+nav {
+    margin-top:25px;
+    text-align: center;
+}
+
+.navlinks {
+    display: inline-block;
+    background: gray;
+}
+
+nav a {
+    padding: 50px;
+    color:white;
+}
+
+nav a:hover {
+    color:black;
+    background: white;
+}
+
+main {
+    text-align: center;
+    background: #D9534E;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.white-bg {
+    background: white;
+    min-height: 90vh;
+}
+
+footer {
+    text-align: center;
+}
+
+.pokecards {
+    width: 30%;
+    margin: 10px;
+    padding: 10px;
+    display: inline-block;
+    border: 1px solid gray;
+}
+
+.inline {
+    display: inline-block;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.collapse li {
+    text-align: center;
+}
+
+#showaccordian {
+    text-align: center;
+}
+
+#show {
+    width: 400px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+button {
+    margin: 10px;
+}

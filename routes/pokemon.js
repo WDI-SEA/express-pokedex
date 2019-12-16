@@ -15,34 +15,60 @@ router.get('/', function(req, res) {
 })
 });
 
+
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
-  db.pokemon.create(req.body)
-  .then(newPoke => {
-    res.redirect('/pokemon')
+     db.pokemon.create(req.body)
+      .then(newPoke => {
+        res.redirect('/pokemon')
+      })
+      .catch(err => {
+        console.log('Err', err)
+        res.send('error')
+      })
   })
-  .catch(err => {
-    console.log('Err', err)
-    res.send('error')
-  })
-})
-
 
 //GET /pokemon/:id - renders show page with selected pokemon
 router.get('/:id', (req, res) => {
-  db.pokemon.findByPk(req.params.id)
-  .then(poke => {
+
+  // db.pokemon.findOne({
+  //   where: {name: req.params.id}
+  // }).then(poke => {
+    let poke = req.params.id
     
-    
-    request('http://pokeapi.co/api/v2/pokemon/' + poke.name, (error, response, body) => {
+    request('http://pokeapi.co/api/v2/pokemon/' + req.params.id, (error, response, body) => {
       if(error) { 
         console.log('error', error) 
       } else { 
-        let data = JSON.parse(body) 
+        let data = JSON.parse(body)
+        
         res.render('pokemon/show', {poke, data})
       }
     }) 
   })
+// } else {
+  
+//   request('http://pokeapi.co/api/v2/pokemon/' + req.params.id, (error, response, body) => {
+//     if(error) { 
+//       console.log('error', error) 
+//     } else { 
+//       let data = JSON.parse(body) 
+//       res.render('pokemon/show', {poke, data})
+//     }
+//   }) 
+// // }
+// })
+
+
+
+router.delete('/:id', (req, res) => {
+
+  db.pokemon.destroy({where: {id: req.params.id}}).then((poke) => { 
+    
+    console.log(`deleted ${poke.name}`)
+    res.redirect('/pokemon')
 })
+})
+
 
 module.exports = router;

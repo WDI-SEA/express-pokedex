@@ -1,23 +1,74 @@
-<h1>More info on <%= poke.name %></h1>
+<div class="white-bg">
+<div class="container d-flex flex-row justify-content-space-around">
+    <h1 class="inline">More info on <%= poke %></h1>
+    <img class="d-inline" src="<%=data.sprites.front_default%>">
+</div>
 
-<img src="<%=data.sprites.front_default%>">
+<form method="POST" action="/pokemon">
+    <input hidden type="text" name="name" value="<%= poke %>">
+    <button class="btn btn-danger" type="submit">Add to Favorites 🤍 </button>
+</form>
 
-<h3>Weight: <%=data.weight%></h3>
-
-<h3>Abilities</h3>
-<ul>
-    <%data.abilities.forEach(ability => {%>
-    <li>
-        <%=ability.ability.name%>
-    </li>
-    <%})%>
-</ul>
-
-<h3>Moves</h3>
-<ul>
-    <%data.moves.forEach(move => {%>
-    <li>
-        <%=move.move.name%>
-    </li>
-    <%})%>
-</ul>
+<h3>Click each category below to expand for more information:</h3>
+<div class="d-flex flex-column justify-content-center align-items-center" id="show">
+<div class="accordion" id="showaccordian">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h2 class="mb-0">
+          <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            Weight
+          </button>
+        </h2>
+      </div>
+  
+      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#showaccordian">
+        <div class="card-body">
+            <%=data.weight%>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h2 class="mb-0">
+          <button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Abilities
+            <span class="badge badge-primary badge-pill"><%=data.abilities.length%></span>
+          </button>
+        </h2>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#showaccordian">
+        <div class="card-body">
+            <ul>
+                <%data.abilities.forEach(ability => {%>
+                <li>
+                    <%=ability.ability.name%>
+                </li>
+                <%})%>
+            </ul>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h2 class="mb-0">
+          <button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Moves
+            <span class="badge badge-primary badge-pill"><%=data.moves.length%></span>
+          </button>
+        </h2>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#showaccordian">
+        <div class="card-body">
+            <ul>
+                <%data.moves.forEach(move => {%>
+                <li>
+                    <%=move.move.name%>
+                </li>
+                <%})%>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

@@ -6,16 +6,19 @@ const app = express();
 const port = process.env.PORT || 3000;
 const db = require('./models')
 const request = require('request') 
+let methodOverride = require('method-override')
 
 app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
+app.use('/', express.static('public'))
+app.use(methodOverride('_method'))
 
 
 // GET / - main index of site
 app.get('/', function(req, res) {
-  let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
+  let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon?limit=30';
   // Use request to call the API
   axios.get(pokemonUrl).then( function(apiResponse) {
     var pokemon = apiResponse.data.results;

@@ -1,4 +1,34 @@
-<h1>Pokemon Favorites</h1>
-<% pokemon.forEach(p => { %>
-    <p><%=p.name%></p>
-<%})%>
+<div class="white-bg">
+
+<h1 class="text-center">Pokemon Favorites</h1>
+
+<div class="container d-flex flex-column justify-content-center align-items-center">
+    <% if(pokemon.length === 0) { %>
+
+        <div class="container">
+            <img src="/img/sad_pika.jpg" width="200px">
+            <h3>Boo hoo. You don't have any favorites.</h3>
+            <p>Add your favorite pokemon by clicking the "add to favorites" buttons on the homepage.</p> 
+            
+        </div>
+        <%} else {%>
+
+    <% pokemon.forEach(p => { %>
+        <div class="card text-center pokecards">
+            <div class="card-body">
+                <h2 class="card-text"><%=p.name%></h2>
+                <form action="/pokemon/<%=p.name%>">
+                    <button class="btn btn-warning">Learn More</button>
+                </form>
+                <form action="/pokemon/<%=p.id%>/?_method=DELETE" method="POST">
+                    <button class="btn btn-link" type="submit">REMOVE</button>
+                </form>
+            </div>
+        </div>
+    <%})%>
+
+    <%}%>
+
+
+</div>
+</div>
