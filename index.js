@@ -16,10 +16,21 @@ app.get('/', function(req, res) {
   // Use request to call the API
   axios.get(pokemonUrl).then( function(apiResponse) {
     console.log('apiResponse.data:', apiResponse.data);
-    var pokemon = apiResponse.data.results;
+    var pokemon = apiResponse.data.results.slice(0,15);
     console.log('pokemon = apiResponse.data.results:', pokemon);
-    res.render('index', { pokemon: pokemon.slice(0, 151) });
-  })
+    var pokePromises = [];
+    pokemon.forEach(poke => {
+      pokePromises.push(axios.get(poke['url']));
+    });
+    Promise.all(pokePromises).then(pokemonResults => {
+      var pokessssss = [];
+      pokemonResults.forEach(result => {
+        pokessssss.push(result);
+        console.log(result);
+      });
+      res.render('index', {pokemon: pokessssss});
+    });
+  });
 });
 
 // Imports all routes from the pokemon routes file
