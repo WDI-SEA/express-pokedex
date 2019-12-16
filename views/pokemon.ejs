@@ -1,0 +1,13 @@
+<div class="container">
+    <h1 class="text-center">Favorite Pokemon</h1>
+    <p class="text-center">
+        <% if (pokemon.length) { %>
+            <% pokemon.forEach(p => { %>              
+            <div class="well">
+                <h2>Name: <%= p.name %></h2>
+                <img src="<%= p.img %>" alt="pokemon sprite" style="width:200px;height:auto;">
+            </div>
+            <% }); %>
+        <% } %>
+    </p>
+</div>

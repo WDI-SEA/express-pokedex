@@ -7,11 +7,13 @@
   <% pokemon.forEach(function(pokemon) { %>
     <div class="well">
       <h2><%= pokemon.data.name %></h2>
-      <img src="<%= pokemon.data.sprites.front_default %>">
+      <img src="<%= pokemon.data.sprites.front_default %>" alt="pokemon sprite" style="width:200px;height:auto;">
       <form method="POST" action="/pokemon">
-        <input hidden type="text" name="name" value="<%= pokemon.name %>">
-        <!-- <input hidden type="text" name="img" value="<%= pokemon.img %>"> -->
+        <input hidden type="text" name="name" value="<%= pokemon.data.name %>">
+        <input hidden type="text" name="url" value="<% `https://pokeapi.co/api/v2/pokemon/${pokemon.data.name}` %>">
+        <input hidden type="text" name="img" value="<%= pokemon.data.sprites.front_default %>">
         <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
+        <!-- <button class="btn btn-primary" type="submit">❤️</button> -->
       </form>
     </div>
   <% }); %>
