@@ -1,27 +1,31 @@
 <div class="container">
-  <h1 class="text-center">The Original 151 Pokemon</h1>
+  <h1 class="text-center title">⚡️ The Original 151 Pokemon ⚡️</h1>
   <p class="text-center">
     <!-- Links to favorites page -->
-    <a href="/pokemon">Favorites</a>
+    <nav>
+      <a href="/">The Original 151 Pokemon List 🐛</a>
+      <a href="/pokemon">My Favorites 💙</a>
+    </nav>
   </p>
-
-  <% pokemon.forEach(function(pokemon) { %>
-    <div class="well">
-
-    <% if (pokemon.id) { %>
-    <h2><a href= <%= "/pokemon/" + pokemon.id %>> <%= pokemon.name %> </a></h2>
-
-    <% } else { %>
-    <h2><%= pokemon.name %></h2>
-
-    <form method="POST" action="/pokemon">
-      <input hidden type="text" name="name" value="<%= pokemon.name %>">
-      <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
-    </form>
-
-    <% } %>
-
-    </div>
-  <% }); %>
+  <div class="poke">
+    <% pokemon.forEach(function(pokemon) { %>
+      <div class="well">
+  
+      <% if (pokemon.id) { %>
+      <h2><a href= <%= "/pokemon/" + pokemon.id %>> <%= pokemon.name %></a></h2>
+      <p class="click">Click the Pokemon name to learn more about this Pokemon.</p>
+      <% } else { %>
+      <h2><%= pokemon.name %></h2>
+  
+      <form method="POST" action="/pokemon">
+        <input hidden type="text" name="name" value="<%= pokemon.name %>">
+        <button class="btn btn-primary" type="submit">❤️ Add to Favorite Pokemon ❤️</button>
+      </form>
+  
+      <% } %>
+  
+      </div>
+    <% }); %>
+  </div>
 </div>
  

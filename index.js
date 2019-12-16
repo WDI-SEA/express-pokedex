@@ -9,10 +9,11 @@ app.use(require('morgan')('dev')); //HTTP request logger
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false })); //body parser
 app.use(ejsLayouts);
+app.use('/', express.static('public'))
 
 // GET / - main index of site
 app.get('/', function(req, res) {
-  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
+  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon?limit=151';
   // Use request to call the API
   axios.get(pokemonUrl)
     .then( function(apiResponse) {
