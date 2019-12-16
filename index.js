@@ -12,10 +12,12 @@ app.use(ejsLayouts);
 
 // GET / - main index of site
 app.get('/', function(req, res) {
-  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
+  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/?limit=151';
   // Use request to call the API
   axios.get(pokemonUrl).then( function(apiResponse) {
+    console.log('apiResponse.data:', apiResponse.data);
     var pokemon = apiResponse.data.results;
+    console.log('pokemon = apiResponse.data.results:', pokemon);
     res.render('index', { pokemon: pokemon.slice(0, 151) });
   })
 });
