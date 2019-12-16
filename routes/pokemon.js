@@ -16,10 +16,10 @@ router.get('/', function(req, res) {
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
   // TODO: Get form data and add a new record to DB
-  db.pokemon.create(req.body)
+    db.pokemon.create(req.body)
     .then(function(poke) {
     res.redirect('/pokemon');
-  });
+    });
 });
 
 router.get('/:id', function(req,res) {
