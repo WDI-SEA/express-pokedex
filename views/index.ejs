@@ -9,6 +9,7 @@
   <div class="row">
   <% pokemon.forEach((pokemon) =>{ %>
     <div class="col s6">
+      <div class="well">
       <h2><%= pokemon.name.charAt(0).toUpperCase()+pokemon.name.slice(1) %></h2>
       <form method="POST" action="/favorites">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
@@ -16,6 +17,7 @@
           <i class="material-icons right">add_box</i>
         </button>
       </form>
+    </div>
       <hr>
     </div>
     <% }); %>

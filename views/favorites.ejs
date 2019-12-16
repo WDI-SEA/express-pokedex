@@ -17,7 +17,10 @@
                 <h2><%= poke.name.charAt(0).toUpperCase()+poke.name.slice(1) %></h2>
                 <a href= "./<%- poke.id %>" class="waves-effect waves-light btn blue lighten-1" style="margin:5px;">Details</a>
                 <hr>
-
+                <form method="POST" action="/delete/<%= poke.id %>?_method=DELETE">
+                    <input hidden type="text" name="delete" value="<%= poke.name %>">
+                    <button class="btn btn-primary blue lighten-1" type="submit">Remove from Favorites</button>
+                </form>
             </div>
         <% }) %>
     </div>
