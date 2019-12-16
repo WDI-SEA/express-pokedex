@@ -16,18 +16,17 @@ app.get('/', function(req, res) {
   // Use request to call the API
   axios.get(pokemonUrl)
     .then( function(apiResponse) {
-      console.log(apiResponse.data.results);
+      console.log(apiResponse.data.results); //a list of all pokemons returned from api
     var pokemon = apiResponse.data.results;
-    res.render('index', { pokemon: pokemon.slice(0, 151) });
+    res.render('index', { pokemon: pokemon.slice(0, 151) }); //get the first 151 pokemons and send to index
   })
 });
 
 // Imports all routes from the pokemon routes file
-app.use('/pokemon', require('./routes/pokemon'));
+app.use('/pokemon', require('./routes/pokemon')); //uses the pokemon controller from routes directory
 
 var server = app.listen(port, function() {
   console.log('...listening on', port );
 });
 
 module.exports = server;
- 
