@@ -26,9 +26,9 @@ router.post('/', function(req, res) {
   });
 });
 
-router.get('/:id',function(req,res){
-  if(req.params && req.params.id){
-    request('https://pokeapi.co/api/v2/pokemon/' + req.params.id, function(error, response, body){
+router.get('/:name',function(req,res){
+  if(req.params && req.params.name){
+    request('https://pokeapi.co/api/v2/pokemon/' + req.params.name, function(error, response, body){
       if(error || response.statusCode != 200){
         //console.error(error);
         res.render('error');
