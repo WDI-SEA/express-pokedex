@@ -1,12 +1,34 @@
-
-<h2><%= pokedata.order %> - <%= pokedata.name %></h2>
-
-<img src="<%= pokedata.sprites.front_default %>">
+<h2><%= pokedata.name %></h2>
+<span>
+    <img src="<%= pokedata.sprites.front_default %>">
+    <img src="<%= pokedata.sprites.front_shiny %>">
+</span>
 
 <div>
-  <h3>Types:</h3>
-
+  <h5>Types:</h5>
   <% pokedata.types.forEach(function(t){ %>
-    <h4 class="<%= t.type.name %>"><%= t.type.name %></h4>
+    <h6 class="<%= t.type.name %>"><%= t.type.name %></h6>
   <% }); %>
 </div>
+<hr>
+<h5>Base-experience: <%= pokedata.base_experience + " XP" || "N/A"%></h5>
+<h5>Height: <%= (parseInt(pokedata.height)/10) + " meters" || "N/A"%></h5>
+<h5>Weight: <%= (parseInt(pokedata.weight)/10) + " kg" || "N/A"%></h5>
+<h5>Forms (<%= pokedata.forms.length %> total) :
+    <ul>
+        <% var forms = pokedata.forms %>
+        <% forms.forEach( (form) => { %>
+        </br>
+            <li><%= form.name %></li>
+        <% }) %>
+    </ul>
+</h5>
+<div>
+    <h5>Abilities:</h5>
+    <% pokedata.abilities.forEach(function(a){ %>
+      <h6 class="<%= a.ability.name %>"><%= a.ability.name %></h6>
+    <% }); %>
+  </div>
+
+<hr>
+<p>Unit conversions and types determined using: https://pokemondb.net/pokedex/stats/height-weight.</p>
