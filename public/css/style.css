@@ -1,45 +1,8 @@
-.fire{
-    color:red;
-}
-
-.poison{
-    color:purple;
-}
-
-.ice{
-    color:lightblue;
-}
-
-.steel{
-    color:grey;
-}
-
-.dark{
-    color:brown;
-}
-
-.water{
-    color:aqua;
-}
-
-.grass{
-    color:lime;
-}
-
 body {
-    background-color: #ccc;
-    font-family: sans-serif;
+    background-color: lightgrey;
+    font-family: Helvetica;
     margin: 0;
     padding: 0;
-  }
-  
-  .page {
-    position: relative;
-    text-align: center;
-  }
-  
-  .page__search {
-    padding-top: 10px;
   }
   
   .page__error {
