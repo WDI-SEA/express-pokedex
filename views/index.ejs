@@ -3,16 +3,22 @@
   <% pokemon.forEach(function(pokemon) { %>
     <div class="well">
       <!--<h2><%= pokemon.name %></h2>-->
-      <% if (pokemon.id) { %>
-        <h2><a href= <%= "/pokemon/" + pokemon.name %>> <%= pokemon.name %> </a></h2>
-        <p class="click">Click the Pokemon name to learn more about this Pokemon.</p>
-      <% } else { %>
-        <h2><%= pokemon.name %></h2>
-        <form method="POST" action="/pokemon">
-          <input hidden type="text" name="name" value="<%= pokemon.name %>">
-          <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
-        </form>
-      <% } %>
-      </div>
-    <% }); %>
+      <ul class="pokemons">
+        <ul class="pokemons_item">
+          <div class="pokemon">
+            <img class="pokemon_sprite" src="http://www.pokestadium.com/sprites/black-white/<%= pokemon.name %>.png"></img>
+          </div>
+        </ul>
+      </ul>
+      <h2><%= pokemon.name %></h2>
+      <form method="GET" action="/pokemon/<%= pokemon.name %>">
+        <button class="btn btn-primary" type="submit">View Pokemon Stat</button>
+      </form>
+      <br>
+      <form method="POST" action="/pokemon">
+        <input hidden type="text" name="name" value="<%= pokemon.name %>">
+        <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
+      </form>
+    </div>
+  <% }); %>
 </div>
