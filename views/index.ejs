@@ -19,6 +19,11 @@
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
         <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
       </form>
+      <br>
+      <form method="POST" action="/pokemon/?_method=DELETE"> <!-- method override -->
+        <input type="hidden" name="name" value="<%= pokemon.name %>">
+        <input class="btn btn-primary" type="submit" value="Delete from Favorites">
+    </form>
     </div>
   <% }); %>
 </div>

@@ -1,7 +1,10 @@
 var express = require('express');
 var router = express.Router();
 var db = require('../models');
-var request = require('request');
+var request = require('request'); // make HTTP/HTTPS calls follows by redirects
+var methodOverride = require('method-override'); // use HTTP verbs such as PUT or DELETE in places where the client doesn't support it.
+
+router.use(methodOverride('_method'));
 
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', function(req, res) {
@@ -34,13 +37,25 @@ router.get('/:name',function(req,res){
         res.render('error');
       }
       else {
-        var pokedata = JSON.parse(body);
-        res.render('show', { pokedata: pokedata });
+        var pokedata = JSON.parse(body); // parse from a string to a JS object
+        res.render('show', { pokedata: pokedata }); // render in show.ejs the JS object
       }
     });
   }
   else {
     res.render('error');
   }
+});
+
+// TODO: Delete from favorite list
+router.delete('/', (req, res) => {
+  db.pokemon.destroy( {
+      where: req.body
+  })
+  .then((deletedPoke) => {
+      console.log(deletedPoke.name, 'has been deleted.')
+      res.redirect('/pokemon')
+      alert(deletedPoke.name + 'has been deleted')
+  });
 });
 module.exports = router;
