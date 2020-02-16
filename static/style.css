@@ -1,0 +1,62 @@
+body {
+    background-color: rgb(209, 175, 175);
+}
+
+h1 {
+    color: rgb(44, 41, 179);
+    font-size: 80px;
+    text-align: center;
+}
+
+.large {
+    font-size: 73px;
+}
+
+.favoritesButton, .listButton {
+    color: rgb(58, 27, 231);
+    font-size: 32px;
+    text-decoration-line: underline;
+}
+
+.favoritesButton:hover, .listButton:hover {
+    color: #1c299c;
+}
+
+.centerDiv {
+    margin: 0 auto;
+    width: 80%;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    width: 33%;
+    margin-top: -23px;
+    margin-bottom: -20px;
+}
+
+h3 {
+    margin-left: 100px;
+}
+
+.del {
+    background-color: rgb(194, 34, 34);
+    border-color: rgb(158, 35, 35);
+}
+
+.del:hover {
+    background-color: #8b2222;
+    border-color: #721717;
+}
+
+.detailsLink {
+    display: inline;
+}
+
+.flexDiv {
+    display: flex;
+    justify-content: space-evenly;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: -19px;
+}
