@@ -1,0 +1,24 @@
+<div class="header">
+    <img src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>">
+    <div>
+        <h2 class="display-3"><%= pokemon.name %></h2>
+        <div class="poke-types">
+            <% pokemon.types.forEach(type => { %>
+                <p class="poke-type"><%= type.type.name %></p>
+            <% }); %>
+        </div>
+    </div>
+</div>
+<div class="poke-stats">
+    <p>Weight: <%= pokemon.weight %></p>
+    <p>Height: <%= pokemon.height %></p>
+    <% pokemon.stats.forEach(stat => { %>
+        <p><%= stat.stat.name %> base: <%= stat.base_stat %></p>
+    <% }); %>
+</div>
+<div class="poke-moves">
+    <h3>Possible Moves:</h3>
+    <% pokemon.moves.forEach(move => { %>
+        <p class="col-sm-3"><%= move.move.name %></p>
+    <% }); %>
+</div>

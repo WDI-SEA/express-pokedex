@@ -1,0 +1,7 @@
+<h1 class="text-center">Your Favorite Pokemon</h1>
+<% pokemon.forEach(pokemon => { %>
+    <div class="well">
+        <h2><%= pokemon.name %></h2>
+        <a class="btn btn-primary" href="/pokemon/<%= pokemon.id %>">See More</a>
+    </div>
+<% }); %>

@@ -1,0 +1,27 @@
+.header {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.poke-type {
+    display: inline;
+    padding: 5px;
+}
+
+.poke-stats, .poke-moves {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    border: 4px solid black;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.poke-moves h3 {
+    width: 100%;
+}
+
+.poke-stats p {
+    text-transform: capitalize;
+}
