@@ -3,13 +3,15 @@
     <h1><%= pokemon.name.toUpperCase() %></h1>
     <div class=flexDiv>
         <p class="text-center detailsLink">
-            <a class ="favoritesButton" href="/pokemon">Favorites</a>
+            <a class ="favoritesButton" href="/pokemon">My Pokemon</a>
         </p>
         <p class="text-center detailsLink">
             <a class ="listButton" href="/">The List of 151</a>
         </p>
     </div>
-    <img src="<%= pokemon.sprites.front_default %>">
+    <div class="imgDiv">
+        <img src="<%= pokemon.sprites.front_default %>">
+    </div>
     <h3>Weight: <%= pokemon.weight %> lbs.</h3>
     <h3>Type: <%= pokemon.types[pokemon.types.length - 1 ].type.name.toUpperCase() %></h3>
     <h3>Example Moves: <%= pokemon.moves[0].move.name.toUpperCase() %>, <%= pokemon.moves[1].move.name.toUpperCase() %></h4>

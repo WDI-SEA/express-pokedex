@@ -1,14 +1,16 @@
 <div class="container">
-  <h1 class="text-center">Favorites</h1>
+  <h1 class="text-center">My Pokemon</h1>
   <p class="text-center">
     <a class ="listButton" href="/">The List of 151</a>
   </p>
   <% pokemons.forEach(function(pokemon) { %>
   <div class="well">
     <h2><%= pokemon.name.toUpperCase() %></h2>
-    <form method="POST" action="/pokemon/<%= pokemon.name %>/?_method=DELETE">
-      <input hidden type="text" name="name" value="<%= pokemon.name %>">
-      <button class="btn btn-primary del" type="submit">Delete from Favorites</button>
+    <h2>Nickname: <%= pokemon.nickname %></h2>
+    <h2>Level: <%= pokemon.level %></h2>
+    <form method="POST" action="/pokemon/<%= pokemon.nickname %>/?_method=DELETE">
+      <input hidden type="text" name="nickname" value="<%= pokemon.nickname %>">
+      <button class="btn btn-primary del" type="submit">Delete from My Pokemon</button>
     </form>
     <p></p>
     <form method="GET" action="/pokemon/<%= pokemon.name %>">

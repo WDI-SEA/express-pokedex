@@ -1,0 +1,9 @@
+<div class="well">
+    <h2><%= pokemon.toUpperCase() %></h2>
+    <form method="POST" action="/pokemon">
+        <input hidden type="text" name="name" value="<%= pokemon %>">
+        Nickname: <input type="text" name="nickname">
+        Level: <input type="number" name="level" min="1" max="99">
+    <button class="btn btn-primary" type="submit">Add to My Pokemon</button>
+    </form>
+</div>

@@ -11,6 +11,14 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
+      nickname: {
+        allowNull: false,
+        type: Sequelize.STRING,
+        unique: true
+      },
+      level: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
