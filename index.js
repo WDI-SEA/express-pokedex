@@ -33,6 +33,21 @@ app.post('/pokemon', function(req, res) {
   })
 });
 
+// GET /pokemon - return a page with favorited Pokemon
+app.get('/pokemon', function(req, res) {
+  // TODO: Get all records from the DB and render to view
+    db.pokemon.findAll().then(function(poke) {
+        res.render('favorites', { pokemon: poke });
+        console.log(poke);
+    }).catch(err => {
+        console.log(err)
+        res.send("ERROR");
+    })
+  // res.send('Render a page of favorites here');
+});
+
+
+
 // // testing...
 // db.pokemon.create({
 //   name: 'Charazar'
