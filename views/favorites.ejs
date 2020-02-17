@@ -1,0 +1,21 @@
+<div class="container">
+    <h1 class="text-center">Favorites</h1>
+    <p class="text-center">
+      <a href="/pokemon">Favorites</a>
+    </p>
+  
+    <% pokemon.forEach(function(pokemon) { %>
+      <div class="well">
+        <h2><%= pokemon.name %></h2>
+        <form action=<%= `/pokemon/${pokemon.name.toLowerCase()}` %> method="get">
+            <button type="submit">Stats</button>
+        </form>
+        <form method="POST" action="/pokemon/remove">
+          <input hidden type="text" name="name" value="<%= pokemon.name %>">
+          <button class="btn btn-primary" type="submit">Delete Pokemon</button>
+        </form>
+        
+      </div>
+    <% }); %>
+  </div>
+  
