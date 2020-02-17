@@ -12,7 +12,7 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 app.use(methodOverride('_method'));
-app.use(express.static('static'));
+app.use(express.static('public/css'));
 
 // GET / - main index of site
 app.get('/', function(req, res) {
