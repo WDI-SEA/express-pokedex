@@ -1,11 +1,12 @@
-<div class="container">
+<div class="container-fluid">
     <h1 class="text-center">Your Favorite Pokemon</h1>
     <p class="text-center">
       <a href="/">Home</a>
     </p>
-  
+</div> 
+<div class="container-fluid" style="margin-left: 20%;">
     <% pokemon.forEach(function(pokemon) { %>
-      <div class="well">
+      <div class="well col-sm-3 justify-content-around" style="border: 1px black solid; margin: 10px; text-align: center;">
         <h2><%= pokemon.dataValues.name %></h2>
         <form method="POST" action="/pokemon">
           <input hidden type="text" name="name" value="<%= pokemon.dataValues.name %>">
@@ -14,5 +15,7 @@
         </form>
       </div>
     <% }); %>
-  </div>
+</div>  
+
+
   

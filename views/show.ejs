@@ -3,21 +3,19 @@
     <p class="text-center">
       <a href="/pokemon">Favorites</a>
     </p>
-
-    <div class="well">
+    <div class="col-lg-4"></div>
+    <div class="well col-xs-4 d-flex justify-content-center" style="border: 1px black solid; margin: 20px; text-align: center;">
         <form method="POST" action="/pokemon">
             <input hidden type="text" name="name" value="<%= pokemon.name %>">
             <!-- <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button> -->
             <img src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %> small image">   
-            <p>Height: <%=(pokemon.height) * .1 %> m</p>
+            <p>Height: <%= (pokemon.height) * .1 %> m</p>
             <p>Weight: <%= (pokemon.weight) * .1 %> kgs</p>
-            <p>Top Ability: <%= pokemon.abilities[1].ability.name %></p>
+            <p>Top Ability: <%= pokemon.abilities[0].ability.name %></p>
             <p>Type: <%= pokemon.types[0].type.name %></p>
-
-
-
             <input type="submit" value="Delete">
         </form>
     </div>
+    <div class="col-lg-4"></div>
 
   </div>

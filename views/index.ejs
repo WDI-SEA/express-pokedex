@@ -1,11 +1,12 @@
-<div class="container">
+<div class="container-fluid">
   <h1 class="text-center">The Original 151 Pokemon</h1>
   <p class="text-center">
     <a href="/pokemon">Favorites</a>
   </p>
 
   <% pokemon.forEach(function(pokemon) { %>
-    <div class="well">
+    <div class="col-xs-3"></div>
+    <div class="well col-xs-3" style="border: 1px black solid; margin: 20px; text-align: center;">
       <h2><%= pokemon.name %></h2>
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
