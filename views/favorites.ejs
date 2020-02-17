@@ -9,7 +9,8 @@
         <h2><%= pokemon.dataValues.name %></h2>
         <form method="POST" action="/pokemon">
           <input hidden type="text" name="name" value="<%= pokemon.dataValues.name %>">
-          <input type="submit" value="Delete">
+          <button class="btn btn-primary" type="submit">View</button>
+          <!-- <input type="submit" value="Delete"> -->
         </form>
       </div>
     <% }); %>

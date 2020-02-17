@@ -23,7 +23,8 @@ app.get('/', function(req, res) {
 });
 
 const db = require('./models');
-// POST / - add selected pokemon to db
+
+// POST /pokemon - add selected pokemon to db
 app.post('/pokemon', function(req, res) {
   db.pokemon.create({
     name: req.body.name
@@ -33,7 +34,7 @@ app.post('/pokemon', function(req, res) {
   })
 });
 
-// GET /pokemon - return a page with favorited Pokemon
+// GET /pokemon - return a page with favorited pokemon
 app.get('/pokemon', function(req, res) {
   // TODO: Get all records from the DB and render to view
     db.pokemon.findAll().then(function(poke) {
@@ -46,6 +47,15 @@ app.get('/pokemon', function(req, res) {
   // res.send('Render a page of favorites here');
 });
 
+// GET /pokemon/:id - return a page with info on just one pokemon
+app.get('/pokemon/:id', function(req, res) {
+  var pokemonUrl = `http://pokeapi.co/api/v2/pokemon/${req.params.id}`;
+  axios.get(pokemonUrl).then( function(apiResponse) {
+    var pokemon = apiResponse.data;
+    res.render('show', { pokemon: pokemon });
+    console.log(pokemon);
+  })
+});
 
 
 // // testing...
