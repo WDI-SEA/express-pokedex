@@ -3,6 +3,7 @@ const express = require('express');
 const axios = require('axios'); 
 const ejsLayouts = require('express-ejs-layouts');
 const app = express();
+
 const port = process.env.PORT || 3000;
 
 app.use(require('morgan')('dev'));
@@ -17,11 +18,36 @@ app.get('/', function(req, res) {
   axios.get(pokemonUrl).then( function(apiResponse) {
     var pokemon = apiResponse.data.results;
     res.render('index', { pokemon: pokemon.slice(0, 151) });
+    console.log(pokemon.slice(0, 151));
   })
 });
 
+const db = require('./models');
+// POST / - add selected pokemon to db
+app.post('/pokemon', function(req, res) {
+  db.pokemon.create({
+    name: req.body.name
+  }).then(function(poke) {
+    console.log('Created: ', poke.name)
+    res.redirect('/');
+  })
+});
+
+// // testing...
+// db.pokemon.create({
+//   name: 'Charazar'
+// }).then(function(poke) {
+//   console.log('Created: ', poke.name)
+// });
+
+// db.pokemon.findAll().then(function(poke) {
+//   console.log('Found: ', poke.name)
+// });
+
+
 // Imports all routes from the pokemon routes file
 app.use('/pokemon', require('./routes/pokemon'));
+
 
 var server = app.listen(port, function() {
   console.log('...listening on', port );
