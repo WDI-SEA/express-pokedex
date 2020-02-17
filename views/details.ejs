@@ -1,0 +1,29 @@
+<h1>Details Page</h1>
+<h3>Name: <%= pokemon.name %> </h3>
+<h3>Image:</h3>
+<img src="<%= pokemon.sprites['front_default'] %>">
+<h3>Type(s):</h3>
+<ul>
+<% pokemon.types.forEach(function(currType) { %>
+	<li>
+		<%= currType.type['name'] %>
+	</li>
+<% }) %>
+</ul>
+<h3>Stats:</h3>
+<ul>
+<% pokemon.stats.forEach(function(currStat) { %>
+	<li>
+		<%= currStat.stat['name'] %> : <%= currStat.base_stat %>
+	</li>
+<% }) %>
+</ul>
+<h3>Abilities:</h3>
+<ul>
+<% pokemon.abilities.forEach(function(abi) { %>
+	<li>
+		<%= abi.ability.name %>
+	</li>
+	
+<% }) %>
+</ul>
