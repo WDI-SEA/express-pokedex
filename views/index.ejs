@@ -1,9 +1,11 @@
 <div class="container">
-  <h1 class="text-center">The Original 151 Pokemon</h1>
-  <p class="text-center">
-    <a href="/pokemon">Favorites</a>
-  </p>
-
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="/pokemon">Favorites</a>
+    <form class="form-inline" method="GET" action="/">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" name="name"/>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </nav>
   <% pokemon.forEach(function(pokemon) { %>
     <div class="well">
       <h2><%= pokemon.name %></h2>
@@ -13,4 +15,6 @@
       </form>
     </div>
   <% }); %>
+  <div class="pagination-nav">
+  </div>
 </div>

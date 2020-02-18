@@ -1,4 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
+    displayPokeTypeColor();
+    //populatePaginationNav();
+});
+
+const populatePaginationNav = () => {
+    let navParent = document.querySelector(".pagination-nav");
+
+    let numberOfPages = Math.ceil(964 / 20);
+    console.log(numberOfPages);
+}
+
+const displayPokeTypeColor = () => {
     let types = document.getElementsByClassName("poke-type");
     for (let i = 0; i < types.length; i++) {
         let backgroundColor = "transparent";
@@ -67,4 +79,4 @@ document.addEventListener("DOMContentLoaded", () => {
         types[i].style.backgroundColor = backgroundColor;
         types[i].style.color = color;
     }
-});
+}

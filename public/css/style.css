@@ -1,4 +1,11 @@
-.header {
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 24px;
+}
+
+/* .header {
     display: flex;
     justify-content: space-evenly;
 }
@@ -6,6 +13,8 @@
 .poke-type {
     display: inline;
     padding: 5px;
+    border-radius: 15px;
+    padding: 10px;
 }
 
 .poke-stats, .poke-moves {
@@ -24,4 +33,4 @@
 
 .poke-stats p {
     text-transform: capitalize;
-}
+} */

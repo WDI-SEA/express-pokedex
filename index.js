@@ -13,12 +13,29 @@ app.use(ejsLayouts);
 
 // GET / - main index of site
 app.get('/', function(req, res) {
-  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
+  let pokemonName = "";
+
+  if (req.query.name) {
+    pokemonName = `/${req.query.name}/`;
+    pokemonName = pokemonName.toLowerCase().replace(/\s/g,'');
+    
+  }
+
+  var pokemonUrl = `http://pokeapi.co/api/v2/pokemon${pokemonName}`;
   // Use request to call the API
   axios.get(pokemonUrl).then( function(apiResponse) {
-    var pokemon = apiResponse.data.results;
-    res.render('index', { pokemon: pokemon.slice(0, 151) });
-  })
+    var pokemon = apiResponse.data;
+
+    if (pokemonName.length > 0) {
+      pokemon = [pokemon];
+    } else {
+      pokemon = pokemon.results;
+    }
+
+    res.render('index', { pokemon: pokemon });
+  }).catch(err => {
+    res.send(err);
+  });
 });
 
 // Imports all routes from the pokemon routes file
