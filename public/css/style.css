@@ -16,7 +16,14 @@
 .poke-header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin-bottom: 24px;
+}
+
+.poke-header h2 {
+    display: inline;
+    line-height: 50px;
+    vertical-align: middle;
 }
 
 .pokeball-img {

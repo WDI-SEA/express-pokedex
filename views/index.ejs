@@ -1,16 +1,24 @@
 <% pokemon.forEach(function(pokemon) { %>
   <div class="well">
     <div class="poke-header">
+      <div>
       <% if (pokemon.isFavorited) { %>
         <img src="/images/pokeball.png" alt="pokeball" class="pokeball-img"/>
       <% } %>
       <h2 class="poke-name"><%= pokemon.name %></h2>
+      </div>
+      <% if (pokemon.isFavorited) { %>
+        <a class="btn btn-primary" href="/favorites/<%= pokemon.name %>">See More</a>
+      <% } %>
     </div>
     <% if (!pokemon.isFavorited) { %> 
-    <form method="POST" action="/pokemon">
-      <input hidden type="text" name="name" value="<%= pokemon.name %>">
-      <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
-    </form>
+    <div class="poke-controls">
+      <form method="POST" action="/pokemon">
+        <input hidden type="text" name="name" value="<%= pokemon.name %>">
+        <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
+      </form>
+      <a class="btn btn-primary" href="/pokemon/<%= pokemon.name %>">See More</a>
+    </div>
     <% } %>
   </div>
 <% }); %>

@@ -16,6 +16,7 @@ app.use(express.static("public"));
 app.use(ejsLayouts);
 app.use(methodOverride("_method"));
 
+let pokemonUrl = "http://pokeapi.co/api/v2/pokemon";
 let pokemonCount = 0;
 let pokemonOffset = 0;
 let pageNumber = 1;
@@ -23,25 +24,29 @@ let pageNumber = 1;
 // GET / - main index of site
 app.get('/', function(req, res) {
   let pokemonName = "";
-  let pokemonUrl = "http://pokeapi.co/api/v2/pokemon";
-
+  let appendedUrl = pokemonUrl;
   if (req.query.name) {
     pokemonName = `/${req.query.name}/`;
     pokemonName = pokemonName.toLowerCase().replace(/\s/g,'');
-    pokemonUrl += pokemonName;
+    appendedUrl += pokemonName;
   } else {
     pageNumber = req.query.pageNumber;
-
-    if (pageNumber < 1 && pageNumber > 49) {
+    if (!pageNumber) {
       pageNumber = 1;
     }
 
+    if (pageNumber < 1) {
+      pageNumber = 1;
+    } else if (pageNumber > 49) {
+      pageNumber = 49;
+    }
+
     pokemonOffset = (pageNumber - 1) * 20;
-    pokemonUrl += `?offset=${pokemonOffset}&limit=20`;
+    appendedUrl += `?offset=${pokemonOffset}&limit=20`;
   }
-  console.log(pokemonUrl);
+
   // Use request to call the API
-  axios.get(pokemonUrl).then(apiResponse => {
+  axios.get(appendedUrl).then(apiResponse => {
 
     pokemonCount = apiResponse.data.count;
 
@@ -68,15 +73,27 @@ app.get('/', function(req, res) {
           pageNumber: pageNumber, 
           totalPages: Math.ceil(pokemonCount/20) });
       }).catch(err => {
-        res.send(err);
+        res.send("Could not access user's pokemon", err);
       })
   }).catch(err => {
-    res.send(err);
+    res.send("Could not get pokemon from API", err);
   });
 });
 
+app.get("/pokemon/:name", (req, res) => {
+  if (req.params.name) {
+    let appendedUrl = pokemonUrl + `/${req.params.name}`;
+    axios.get(appendedUrl).then(response => {
+      let result = response.data;
+      res.render("favorites/show", { pokemon: result });
+    }).catch(err => {
+      res.send(`Could not get ${req.params.name} from API`, err);
+    });
+  }
+});
+
 // Imports all routes from the pokemon routes file
-app.use('/pokemon', require('./routes/pokemon'));
+app.use('/favorites', require('./routes/pokemon'));
 
 var server = app.listen(port, function() {
   console.log('...listening on', port );

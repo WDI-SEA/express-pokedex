@@ -10,14 +10,14 @@ router.get('/', function(req, res) {
     .then(pokemon => {
       res.render("favorites/index", { pokemon: pokemon });
     }).catch(err => {
-      res.send(`Error: ${err}`);
+      res.send("Could not get users pokemon", err);
     });
 });
 
-router.get("/:id", (req, res) => {
+router.get("/:name", (req, res) => {
   db.pokemon.findOne({
     where: {
-      id: req.params.id
+      name: req.params.name
     }
   }).then(pokemon => {
     let pokemonUrl = `http://pokeapi.co/api/v2/pokemon/${pokemon.name}/`;
@@ -25,10 +25,10 @@ router.get("/:id", (req, res) => {
       let result = response.data;
       res.render("favorites/show", { pokemon: result });
     }).catch(err => {
-      res.send(`Error ${err}`);
+      res.send(`Could not get ${pokemon.name} from API`, err);
     });
   }).catch(err => {
-    res.send(`Error ${err}`);
+    res.send(`Could not get ${req.params.name} from user's pokemon`, err);
   });
 });
 
