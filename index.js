@@ -16,18 +16,35 @@ app.use(express.static("public"));
 app.use(ejsLayouts);
 app.use(methodOverride("_method"));
 
+let pokemonCount = 0;
+let pokemonOffset = 0;
+let pageNumber = 1;
+
 // GET / - main index of site
 app.get('/', function(req, res) {
   let pokemonName = "";
+  let pokemonUrl = "http://pokeapi.co/api/v2/pokemon";
 
   if (req.query.name) {
     pokemonName = `/${req.query.name}/`;
     pokemonName = pokemonName.toLowerCase().replace(/\s/g,'');
-  }
+    pokemonUrl += pokemonName;
+  } else {
+    pageNumber = req.query.pageNumber;
 
-  var pokemonUrl = `http://pokeapi.co/api/v2/pokemon${pokemonName}`;
+    if (pageNumber < 1 && pageNumber > 49) {
+      pageNumber = 1;
+    }
+
+    pokemonOffset = (pageNumber - 1) * 20;
+    pokemonUrl += `?offset=${pokemonOffset}&limit=20`;
+  }
+  console.log(pokemonUrl);
   // Use request to call the API
-  axios.get(pokemonUrl).then( function(apiResponse) {
+  axios.get(pokemonUrl).then(apiResponse => {
+
+    pokemonCount = apiResponse.data.count;
+
     var pokemon = apiResponse.data;
 
     if (pokemonName.length > 0) {
@@ -46,7 +63,10 @@ app.get('/', function(req, res) {
             }) !== undefined,
           }
         });
-        res.render('index', { pokemon: mapped_pokemon });
+        res.render('index', { 
+          pokemon: mapped_pokemon, 
+          pageNumber: pageNumber, 
+          totalPages: Math.ceil(pokemonCount/20) });
       }).catch(err => {
         res.send(err);
       })

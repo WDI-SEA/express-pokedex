@@ -34,6 +34,28 @@
     text-transform: capitalize;
 }
 
+.page-nav {
+    text-align: center;
+    margin-bottom: 48px;
+    margin-top: 24px;
+}
+
+.page-nav input[type=number] {
+    text-align: right;
+    width: 50px;
+}
+/* Chrome, Safari, Edge, Opera */
+.page-nav input::-webkit-outer-spin-button,
+.page-nav input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.page-nav input[type=number] {
+  -moz-appearance:textfield;
+}
+
 .header {
     display: flex;
     justify-content: space-evenly;

@@ -14,5 +14,10 @@
     <% } %>
   </div>
 <% }); %>
-<div class="pagination-nav">
+<div class="page-nav">
+  <p>Page <%= pageNumber %> of <%= totalPages %></p>
+  <form method="GET" action="/">
+    <input type="submit" value="Go to " class="btn btn-outline-success my-2 my-sm-0"/>
+    <input type="number" name="pageNumber" value="1" min="1" max="<%= totalPages %>" />
+  </form>
 </div>
