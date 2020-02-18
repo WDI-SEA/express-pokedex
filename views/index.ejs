@@ -4,11 +4,19 @@
     <%// console.log(pokemon) %>
     <div class="well">
       <h2><%= pokemon.name %></h2>
+      <% if (faves.includes(pokemon.name)) { %>
+        <p>he's already my boy</p>
+        <a href="/pokemon/<%= pokemon.name %>">
+          <button class="btn btn-red">See My Boy</button>
+        </a>
+      <% } else { %>
+        <br>
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
         <input hidden type="text" name="url" value="<%= pokemon.url %>">
         <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
       </form>
+      <% } %>
     </div>
   <% }); %>
 </div>
