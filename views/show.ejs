@@ -1,0 +1,7 @@
+<h1>Here's your one stinkin` pokemon</h1>
+
+Name:<%= onePokemon.name %>
+<% onePokemon.type.forEach(function(type) {%>
+    Type:<%= type.type.name %>
+<%})%>
+<a href="<%= onePokemon.url %>">CLick me</a>
