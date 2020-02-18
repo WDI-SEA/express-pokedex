@@ -1,0 +1,71 @@
+body {
+    background: skyblue;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    align-content: center;
+}
+header {
+    padding: 10px;
+    background: black;
+}
+header h1 {
+    color: red;
+    font-family: "Lucida console", monospace;
+    font-size: 3em;
+}
+nav {
+    background: white;
+}
+nav ul {
+    flex-direction: row;
+    justify-content: space-evenly;
+    display: flex;
+    padding-top: 10px;
+}
+nav li {
+    display: inline;
+}
+nav a {
+    text-decoration: none;
+    color: black;
+}
+nav a:hover {
+    color: red;
+}
+.well { /* contains a pokemon */
+    background: white;
+    border-radius: 10px;
+    width: 30%;
+    float: left;
+    margin: 1%;
+}
+.showOne {
+    background: url(Pokedex.png);
+    width: 800px;
+    height: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.showOne h2 {
+    font-family: 'Lucida Console', monospace;
+}
+.showOne ul {
+    list-style: none;
+}
+img {
+    height: 220px;
+}
+.left {
+    padding-left: 87px;
+}
+.right {
+    padding-right: 87px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+

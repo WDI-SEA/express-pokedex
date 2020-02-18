@@ -1,0 +1,34 @@
+<div class="container">
+<div class="showOne">
+    <div class="left">
+        <img src="<%= pokemon.sprites.front_default %>" alt="<%= name %>">
+        <h2><%= name %></h2>
+    </div>
+    <div class="right">
+        <div>
+            <h2>
+                Info
+            </h2>
+        </div>
+        <div>
+            <ul>
+                <li>
+                    Height: <%= pokemon.height %>
+                </li>
+                <li>
+                    Weight: <%= pokemon.weight %>
+                </li>
+                <li>
+                    Type: <%= pokemon.types[0].type.name %>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <form method="POST" action="/pokemon/<%= name %>/?_method=DELETE">
+                <input type="submit" value="Remove from favorites">
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
