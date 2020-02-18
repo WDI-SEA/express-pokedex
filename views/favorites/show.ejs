@@ -10,8 +10,8 @@
     </div>
 </div>
 <div class="poke-stats">
-    <p>Weight: <%= pokemon.weight %></p>
-    <p>Height: <%= pokemon.height %></p>
+    <p>Weight: <%= pokemon.weight/10 %><span> kg</span></p>
+    <p>Height: <%= pokemon.height/10 %><span> m</span></p>
     <% pokemon.stats.forEach(stat => { %>
         <p><%= stat.stat.name %> base: <%= stat.base_stat %></p>
     <% }); %>

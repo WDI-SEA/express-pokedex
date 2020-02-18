@@ -84,11 +84,15 @@
     margin: 10px;
 }
 
-.poke-moves h3 {
-    width: 100%;
-}
-
 .poke-stats p {
     text-transform: capitalize;
+}
+
+.poke-stats span {
+    text-transform: lowercase;
+}
+
+.poke-moves h3 {
+    width: 100%;
 }
 
