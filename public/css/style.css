@@ -1,8 +1,16 @@
+.navbar::before, .navbar::after {
+    content: none;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
     width: 100%;
     margin-top: 24px;
+}
+
+.nav {
+    display: flex;
 }
 
 .poke-controls {
@@ -19,8 +27,14 @@
     justify-content: space-evenly;
 }
 
+.header img {
+    max-height: 100px;
+    max-width: 100px;
+}
+
 .poke-type {
     display: inline;
+    margin: 5px;
     padding: 5px;
     border-radius: 15px;
     padding: 10px;

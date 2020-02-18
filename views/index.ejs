@@ -1,20 +1,11 @@
-<div class="container">
-  <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="/pokemon">Favorites</a>
-    <form class="form-inline" method="GET" action="/">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" name="name"/>
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+<% pokemon.forEach(function(pokemon) { %>
+  <div class="well">
+    <h2 class="poke-name"><%= pokemon.name %></h2>
+    <form method="POST" action="/pokemon">
+      <input hidden type="text" name="name" value="<%= pokemon.name %>">
+      <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
     </form>
-  </nav>
-  <% pokemon.forEach(function(pokemon) { %>
-    <div class="well">
-      <h2 class="poke-name"><%= pokemon.name %></h2>
-      <form method="POST" action="/pokemon">
-        <input hidden type="text" name="name" value="<%= pokemon.name %>">
-        <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
-      </form>
-    </div>
-  <% }); %>
-  <div class="pagination-nav">
   </div>
+<% }); %>
+<div class="pagination-nav">
 </div>

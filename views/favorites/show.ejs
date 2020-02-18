@@ -1,7 +1,7 @@
 <div class="header">
     <img src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>">
     <div>
-        <h2 class="display-3"><%= pokemon.name %></h2>
+        <h2 class="display-3 poke-name"><%= pokemon.name %></h2>
         <div class="poke-types">
             <% pokemon.types.forEach(type => { %>
                 <p class="poke-type"><%= type.type.name %></p>
