@@ -26,10 +26,22 @@
     vertical-align: middle;
 }
 
-.poke-header img {
+.pokeball-img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+.pokemon-img {
     max-height: 100px;
     max-width: 100px;
     margin-left: 25%;
+}
+
+.main-subheader {
+    display: flex;
+    align-items: center;
 }
 
 .poke-subheader {
@@ -40,12 +52,6 @@
 
 .poke-subheader h2 {
     margin-bottom: 10px;
-}
-
-.pokeball-img {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
 }
 
 .poke-controls {
