@@ -46,4 +46,15 @@ router.post('/', function(req, res) {
   });
 });
 
+// DELETE /pokemon - Remove the name of a pokemon from your favorites in the database
+router.delete("/:id", (req, res) => {
+  db.pokemon.destroy({
+    where: {
+      id: req.params.id
+    }
+  }).then(numDeleted => {
+    res.redirect("/pokemon");
+  })
+});
+
 module.exports = router;

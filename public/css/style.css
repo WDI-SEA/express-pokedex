@@ -5,7 +5,16 @@
     margin-top: 24px;
 }
 
-/* .header {
+.poke-controls {
+    display: flex;
+    justify-content: space-between;
+}
+
+.poke-name {
+    text-transform: capitalize;
+}
+
+.header {
     display: flex;
     justify-content: space-evenly;
 }
@@ -33,4 +42,5 @@
 
 .poke-stats p {
     text-transform: capitalize;
-} */
+}
+
