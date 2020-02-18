@@ -23,6 +23,7 @@ router.get("/:name", (req, res) => {
     let pokemonUrl = `http://pokeapi.co/api/v2/pokemon/${pokemon.name}/`;
     axios.get(pokemonUrl).then(response => {
       let result = response.data;
+      result.isFavorited = true;
       res.render("favorites/show", { pokemon: result });
     }).catch(err => {
       res.send(`Could not get ${pokemon.name} from API`, err);
@@ -40,7 +41,7 @@ router.post('/', function(req, res) {
       name: req.body.name
     }
   }).then(([pokemon, created]) => {
-    res.redirect("/pokemon");
+    res.redirect("/favorites");
   }).catch(err => {
     res.send(`Error: ${err}`);
   });
@@ -53,7 +54,7 @@ router.delete("/:id", (req, res) => {
       id: req.params.id
     }
   }).then(numDeleted => {
-    res.redirect("/pokemon");
+    res.redirect("/favorites");
   })
 });
 

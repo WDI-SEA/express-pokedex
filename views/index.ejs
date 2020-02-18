@@ -13,7 +13,7 @@
     </div>
     <% if (!pokemon.isFavorited) { %> 
     <div class="poke-controls">
-      <form method="POST" action="/pokemon">
+      <form method="POST" action="/favorites">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
         <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
       </form>

@@ -1,6 +1,6 @@
-<div class="header">
+<div class="poke-header">
     <img src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>">
-    <div>
+    <div class="poke-subheader">
         <h2 class="display-3 poke-name"><%= pokemon.name %></h2>
         <div class="poke-types">
             <% pokemon.types.forEach(type => { %>
@@ -8,6 +8,12 @@
             <% }); %>
         </div>
     </div>
+    <% if (!pokemon.isFavorited) { %>
+    <form method="POST" action="/favorites">
+        <input hidden type="text" name="name" value="<%= pokemon.name %>"/>
+        <button class="btn btn-primary" type="submit">Add to Favorites</button>
+    </form>
+    <% } %>
 </div>
 <div class="poke-stats">
     <p>Weight: <%= pokemon.weight/10 %><span> kg</span></p>

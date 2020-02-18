@@ -3,8 +3,8 @@
     <div class="well">
         <h2 class="poke-name"><%= pokemon.name %></h2>
         <div class="poke-controls">
-            <a class="btn btn-primary" href="/pokemon/<%= pokemon.name %>">See More</a>
-            <form method="POST" action="/pokemon/<%= pokemon.id %>/?_method=DELETE">
+            <a class="btn btn-primary" href="/favorites/<%= pokemon.name %>">See More</a>
+            <form method="POST" action="/favorites/<%= pokemon.id %>/?_method=DELETE">
                 <button class="btn btn-danger" type="submit">Remove From Party</button>
             </form>
         </div>

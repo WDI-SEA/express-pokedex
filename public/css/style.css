@@ -26,6 +26,22 @@
     vertical-align: middle;
 }
 
+.poke-header img {
+    max-height: 100px;
+    max-width: 100px;
+    margin-left: 25%;
+}
+
+.poke-subheader {
+    text-align: center;
+    margin-bottom: 24px;
+    margin-right: 25%;
+}
+
+.poke-subheader h2 {
+    margin-bottom: 10px;
+}
+
 .pokeball-img {
     width: 50px;
     height: 50px;
@@ -63,20 +79,13 @@
   -moz-appearance:textfield;
 }
 
-.header {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.header img {
-    max-height: 100px;
-    max-width: 100px;
+.poke-types {
+    margin-top: 10px;
 }
 
 .poke-type {
     display: inline;
-    margin: 5px;
-    padding: 5px;
+    margin: 0 5px;
     border-radius: 15px;
     padding: 10px;
 }
