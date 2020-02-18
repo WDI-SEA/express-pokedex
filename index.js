@@ -4,6 +4,8 @@ const axios = require('axios');
 const ejsLayouts = require('express-ejs-layouts');
 const methodOverride = require("method-override");
 
+const db = require("./models");
+
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -21,7 +23,6 @@ app.get('/', function(req, res) {
   if (req.query.name) {
     pokemonName = `/${req.query.name}/`;
     pokemonName = pokemonName.toLowerCase().replace(/\s/g,'');
-    
   }
 
   var pokemonUrl = `http://pokeapi.co/api/v2/pokemon${pokemonName}`;
@@ -35,7 +36,20 @@ app.get('/', function(req, res) {
       pokemon = pokemon.results;
     }
 
-    res.render('index', { pokemon: pokemon });
+    db.pokemon.findAll()
+      .then(user_poke => {
+        let mapped_pokemon = pokemon.map(api_poke => {
+          return {
+            ...api_poke,
+            isFavorited: user_poke.find(poke => {
+              return poke.name === api_poke.name;
+            }) !== undefined,
+          }
+        });
+        res.render('index', { pokemon: mapped_pokemon });
+      }).catch(err => {
+        res.send(err);
+      })
   }).catch(err => {
     res.send(err);
   });
