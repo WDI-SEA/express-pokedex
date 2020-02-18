@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 const axios = require('axios'); 
 
+
+
 var db = require('../models');
 
 // db.pokemon.create({
@@ -29,21 +31,30 @@ router.get('/', function(req, res) {
 
 // })
 router.get('/:id', function(req, res) {
+  
   var pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${req.params.id}`;
   axios.get(pokemonUrl).then( function(apiResponse) {
     res.render('show', { pokemon: apiResponse.data });
-  })
+  }).catch(err => {
+    console.log(err);
+    res.send('error');
+});
 })
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
-  db.pokemon.createOrFind({
-    name: req.body.name
+  db.pokemon.findOrCreate({
+    where: {
+      name: req.body.name
+    }  
   }).then(function(poke) {
     console.log('Created: ', poke.name)
-  })
+    res.redirect('/pokemon');
+  }).catch(err => {
+    console.log(err);
+    res.send('error');
+  });
   // TODO: Get form data and add a new record to DB
-  res.redirect('/pokemon');
 });
 
 router.post('/remove', function(req, res) {
@@ -53,9 +64,12 @@ router.post('/remove', function(req, res) {
     }
   }).then(function(poke) {
     //console.log('Created: ', poke.name)
-  })
+    res.redirect('/pokemon');
+  }).catch(err => {
+    console.log(err);
+    res.send('error');
+  });
   // TODO: Get form data and add a new record to DB
-  res.redirect('/pokemon');
 });
 
 module.exports = router;

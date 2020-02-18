@@ -1,5 +1,19 @@
-<h2>here's <%= pokemon %></h2>
-<img src=<%= pokemon.sprites.front_default %>>
+<div class="middle">
+    <h2>Here's <%= pokemon.name %></h2>
 
+    <img src=<%= pokemon.sprites.front_default %>>
 
+    <h3> Favorite Move: <%= pokemon.moves[0].move.name %></h3>
 
+    <h3>Stats💥</h3>
+    <% pokemon.stats.forEach(function(x) { %>
+
+    <h3><%= x.stat.name + ': ' + x.base_stat %></h3>
+    
+    <% }) %>
+
+    <h3> WEIGHT: <%= pokemon.weight %></h3>
+
+    <h3> TYPE: <%= pokemon.types[0].type.name %></h3>
+
+</div>

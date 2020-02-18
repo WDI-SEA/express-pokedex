@@ -7,13 +7,40 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="style1.css" type="text/css" >
+
+    <style>
+      body {background-color: powderblue;
+            display: flex;
+
+      }
+      a {
+        margin: 30px;
+        align-self: start;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      img {
+        animation-name: pic;
+      }
+      @keyframes pic {
+        from {background-color: rgb(36, 233, 52);}
+        to {background-color: rgb(25, 96, 124);}
+      }
+
+
+    </style>
   </head>
   <body>
+    <a href="/pokemon"> Favorites </a>
+    <a href="/"> Home </a>
     <%- body %>
 
     <!-- jQuery -->
     <script src="//code.jquery.com/jquery.js"></script>
     <!-- Bootstrap JavaScript -->
+    <audio id="ocean" src="Ocean Planet.mp3"></audio>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   </body>
 </html>
