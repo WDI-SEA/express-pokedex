@@ -1,0 +1,16 @@
+  <div>
+    <% if (poke.length > 0) { %>
+    <% poke.forEach(function(p) { %>
+      <div class="fave">
+        <h3><%= p.name %></h3>
+        <h4>
+          <a href="/pokemon/<%= p.id %>">Pokedex Entry for <%= p.name %></a>
+        </h4>
+      </div>
+    <% }) %>
+    <% } else { %>
+      <p>(No favorite Pokémon)</p>
+    <% } %>
+  </div>
+
+ 
