@@ -1,0 +1,35 @@
+<div class="container">
+    <% var capFirst = (s) => {return s.charAt(0).toUpperCase() + s.slice(1)} %>
+    <h1 class="text-center"> <%= capFirst(name) %> </h1>
+    <p class="text-center">
+        <a href="/pokemon">Back to Favorites</a>
+    </p>
+    <div class="well">
+        <div>
+            <h2> Poke Number </h2>
+            <p> <%= id %> </p>
+        </div>
+        <div>
+            <h2> Description</h2>
+            <p> <%= description %> </p>
+        </div>
+        <div>
+            <h2> Habitat </h2>
+            <p> <%= capFirst(habitat) %> </p>
+        </div>
+        <div>
+            <h2> Evolution Chain: </h2>
+            <% var evolutionChain = (evoChain) => { %>
+                <ul>
+                    <li>
+                        <%= capFirst(evoChain.species.name) %>
+                    </li>
+                    <% evoChain.evolves_to.forEach(evolves => { %>    
+                        <% evolutionChain(evolves) %>
+                    <% }) %>
+                </ul>
+            <% } %>
+            <% evolutionChain(evolution) %>
+        </div>
+    </div>
+</div>
