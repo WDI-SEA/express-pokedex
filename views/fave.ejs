@@ -5,8 +5,16 @@
     </p>
   
     <% pokemon.forEach(function(pokemon) { %>
-      <div class="well">
+      <div class=" row  well">
         <h2><%= pokemon.name %></h2>
+            <div class="col-sm-2">
+                <a href="/pokemon/<%=pokemon.id%>"  class="btn btn-info" role="button"><%= pokemon.name %> details</a>
+            </div>
+            <div class="col-sm-2"> 
+                <form method="POST" action="/pokemon/<%=pokemon.id%>?_method=DELETE" >
+                    <button type="submit" class="btn btn-danger">Remove <%=pokemon.name%></button>
+                </form>
+            </div>
       </div>
     <% }); %>
-  </div>
+</div>

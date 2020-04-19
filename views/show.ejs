@@ -1,0 +1,38 @@
+
+
+<div class="container">
+    <h1 class="text-center">Details of <%=name %> </h1>
+    <p class="text-center">
+      <a href="/pokemon">Back To Favorite Pokemons</a>
+    </p>
+      <div class="row well">
+          <div class="col-sm-4">
+            <img class="" src="<%=pokemon.sprites.front_default%>" alt="<%=name %>" height="300px" width="230px">
+          </div>
+          <div class="col-sm-2">
+            <dl>
+                <dt><h3 class="text-center">Abilities</h3> </dt>
+                <% pokemon.abilities.forEach(function(pa) { %>
+                    <dd><p class="text-center bg-success"><%=pa.ability.name %></p></dd>
+                <% }); %>
+                <dt><h3 class="text-center">Types</h3></dt>
+                    <% pokemon.types.forEach(function(pt) { %>
+                        <dd><p class="text-center bg-info"><%=pt.type.name %></p></dd>
+                    <% }); %>
+                <dt><h3 class="text-center">Weight</h3></dt>
+                        <dd><p class="text-center bg-success"><%=pokemon.weight%></p></dd>
+            </dl>    
+          </div>
+          <div class="col-sm-4">
+            <img class="" src="<%=pokemon.sprites.front_default%>" alt="<%=name %>" height="300px" width="230px">
+          </div>
+          <div class="col-sm-2">
+                <dl>   
+                    <dt><h3 class="text-center">Stats</h3></dt>
+                    <% pokemon.stats.forEach(function(ps) { %>
+                        <dd><p class="text-center bg-info"><%=ps.stat.name %></p></dd>
+                    <% }); %>
+                </dl>  
+          </div>
+        </div>
+    </div>
