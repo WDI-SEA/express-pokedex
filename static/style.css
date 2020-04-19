@@ -3,6 +3,10 @@
       text-align: center;
   }
 
+  h1 {
+      color: white;
+  }
+
   #halp {
       margin: 10px;
       /* border: 2px solid red; */
@@ -11,4 +15,8 @@
 
   .bigbox {
     margin-left: 50px;
+  }
+
+  #headline {
+      box-shadow: 5px 5px white;
   }
