@@ -1,15 +1,14 @@
 var express = require('express');
 var router = express.Router();
 let db = require('../models')
+let axios = require('axios')
 
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', function(req, res) {
   // TODO: Get all records from the DB and render to view
   db.pokemon.findAll()
   .then((pokemon) => {
-  	
-  	res.render('favorites/show', { pokemon })
-  	console.log(pokemon)
+  	res.render('favorites/pokemon', { pokemon })
   })
   .catch((err) => {
   	res.send(err)
@@ -28,5 +27,20 @@ router.post('/', function(req, res) {
   	res.send(err)
   })
 });
+
+router.get('/show', (req, res) => {
+	let pokemonURL = `http://pokeapi.co/api/v2/pokemon/${req.query.name}`
+	axios.get(pokemonURL)
+.then((apiResponse) => {
+	let pokemon = apiResponse.data.results
+	res.render('favorites/show', { pokemon })
+	console.log(pokemon + ' is coming back')
+})
+.catch((err) => {
+  	res.send(err)
+})
+
+})
+
 
 module.exports = router;
