@@ -1,0 +1,19 @@
+<div class="container">
+        <h1 id="top" class="text-center">The Original 151 Pokemon</h1>
+        <p id="nav" class="text-center">
+        <a href="/">Home</a> |
+        <a href="/pokemon">Favorites</a>
+        </p>
+</div>
+<div id='show' class='container'>
+<h1 class="text-center"><%= pokemon.name %></h1>
+<p class="text-center"><img src="<%= pokemon.sprites.front_default%>"></p><hr>
+<p class="text-center">Pokemon No: <%= pokemon.id %></p>
+<p class="text-center">Height: <%= (pokemon.height / 3.048).toFixed() %> ft </p>
+<p class="text-center">Weight: <%= (pokemon.weight / 4.536).toFixed()%> lbs</p>
+<p class="text-center"> Type: 
+<% pokemon.types.forEach((type) => { %>
+     <%= type.type.name %> 
+<% }); %>
+<p>
+</div>
