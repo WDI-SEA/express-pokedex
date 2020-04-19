@@ -1,20 +1,10 @@
 <div class="container">
-   <div id="headline">
+   <div id="headlien">
       <h1 class="text-center red">Details about <%=pokemon.name %></h1>
    </div>
    <p class="text-center">
      <a href="/" class="btn red">Pokedex</a>
      <a href="/pokemon/favorites" class="btn red">Favorites</a>
-   <!-- </p>
-   <div class="bigbox">
-     <div class="card col-sm-3" style="width: 18rem;" id="halp">
-       <img class="card-img-top" src="<%= pokemon.sprites.front_default%>" alt="Card image cap">
-       <div class="card-body">
-         <h5 class="card-title"><%= pokemon.name %></h5>
-       </div>
-     </div>
-   </div>
- </div> -->
 <% let pokeweight = pokemon.weight / 10 %>
 
  <div class="row">
@@ -22,7 +12,7 @@
    <div class="col s4 m4 l4" >
      <div class="card " id='halp'>
        <div class="card-image">
-         <img src="<%= pokemon.sprites.front_default%>" style= width: 100px>
+         <img src="<%= pokemon.sprites.front_default%>">
          <span class="card-title"></span><%=pokemon.name %></span>
          <p> Weight: <%= pokeweight %> kg</p>
          <p> Type:

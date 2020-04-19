@@ -34,7 +34,7 @@ router.post('/', function(req, res) {
   name: req.body.name
  })
   .then(function() {
-    res.redirect('/');
+    res.redirect('/pokemon/favorites');
   })
   .catch(function(error) {
     res.send(error)
