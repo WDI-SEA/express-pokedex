@@ -1,1 +1,24 @@
-<h1>YOUR FAVORITE PIKACHUS</h1>
+
+<div class="container">
+    <h1 class="text-center red">Your Favorite Pokemon!</h1>
+    <p class="text-center">
+      <a href="/" class="btn red">Pokedex</a>
+    </p>
+
+    <div class="bigbox">
+    <% pokemon.forEach(function(pokemon) { %>
+   
+   
+      <div class="card col-sm-3" style="width: 18rem;" id="halp">
+        <img class="card-img-top" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= pokemon.pokeId %>.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><%= pokemon.name %></h5>
+          <p class="card-text"></p>
+          <a href="/pokemon/details/<%= pokemon.pokeId %>" class="btn blue">Details</a>
+
+        </div>
+      </div>
+    <% }); %>
+    </div>
+  </div>
+  

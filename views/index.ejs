@@ -1,7 +1,7 @@
 <div class="container">
-  <h1 class="text-center">The Original 151 Pokemon</h1>
+  <h1 class="text-center red">Kanto & Johto Pokedex</h1>
   <p class="text-center">
-    <a href="/pokemon/favorites">Favorites</a>
+    <a href="/pokemon/favorites" class="btn red">Favorites</a>
   </p>
   <% let i = 1 %>
   <div class="bigbox">
@@ -13,8 +13,9 @@
       <div class="card-body">
         <h5 class="card-title"><%= pokemon.name %></h5>
         <p class="card-text"></p>
-        <a href="/pokemon/details/<%= i %>">Details</a>
+        <a href="/pokemon/details/<%= i %>" class="btn blue">Details</a>
           <form method="POST" action="/pokemon">
+            <input hidden type="number" name="pokeId" value="<%= i %>">
           <input hidden type="text" name="name" value="<%= pokemon.name %>">
           <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
         </form>

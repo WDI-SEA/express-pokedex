@@ -5,6 +5,8 @@
 
   #halp {
       margin: 10px;
+      /* border: 2px solid red; */
+      box-shadow: 5px 5px red;
   }
 
   .bigbox {
