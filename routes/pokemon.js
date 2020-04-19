@@ -30,6 +30,7 @@ router.post('/', function(req, res) {
 
 router.get('/show', (req, res) => {
 	let pokemonURL = `http://pokeapi.co/api/v2/pokemon/${req.query.name}`
+	console.log(pokemonURL)
 	axios.get(pokemonURL)
 .then((apiResponse) => {
 	let pokemon = apiResponse.data.results
