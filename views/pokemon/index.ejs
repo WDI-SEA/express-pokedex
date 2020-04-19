@@ -1,5 +1,5 @@
 <div class="container">
-    <h1 class="text-center">Your Favorite Pokemon</h1>
+    <h1 class="text-center">Your Pokemon Team!</h1>
     <p class="text-center">
         <a href="/">Pokedex</a>
     </p>
@@ -7,14 +7,14 @@
     <% if(faves.length != 0) { %>
         <% faves.forEach(function(pokemon) { %>
             <div class="well">
-                <h2><%= pokemon.name %></h2>
+                <h2><%= pokemon.nickName %></h2>
                 <a href="/pokemon/<%=pokemon.name%>" class="btn btn-primary"> See Details</a>
                 <form method="POST" action="/pokemon/<%=pokemon.id%>?_method=DELETE" style="display: inline">
-                    <button class="btn btn-danger">Remove from Favorites</button>
+                    <button type="submit" class="btn btn-danger">Remove from your Team</button>
                 </form>
             </div>
         <% }); %>
     <% } else { %>
-        <h2> You currently have no favorites! </h2>
+        <h2> You currently have no team! </h2>
     <% } %>
 </div>

@@ -25,6 +25,7 @@ app.get('/', function(req, res) {
 // Imports all routes from the pokemon routes file
 app.use('/pokemon', require('./routes/pokemon'));
 
+// Listen for the port
 var server = app.listen(port, function() {
   console.log('...listening on', port );
 });

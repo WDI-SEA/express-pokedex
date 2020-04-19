@@ -1,0 +1,26 @@
+<div class="container">
+    <h1 class="text-center">Add a <%=name%> to your team</h1>
+    <p class="text-center">
+        <a href="/">Pokedex</a>
+    </p>
+
+    <div class="well">
+        <form method="POST" action="/pokemon">
+            <input type="hidden" name="name" value="<%=name%>">
+            <div>
+                <h2> Do you have a nickname for this pokemon? </h2>
+                <input type="text" name="nickName">
+            </div>
+            <div>
+                <h2> What level is this pokemon? </h2>
+                <input type="number" name="level">
+            </div>
+            <div>
+                <h2> How many hit points would they have at the above level? </h2>
+                <input type="number" name="maxHp">
+            </div>
+            <br>
+            <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
+    </div>
+</div>

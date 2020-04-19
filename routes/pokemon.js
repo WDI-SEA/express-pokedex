@@ -13,18 +13,34 @@ router.get('/', function(req, res) {
     console.log(err)
   })
 });
-
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
   // TODO: Get form data and add a new record to DB
-  db.pokemon.create({name: req.body.name})
+  db.pokemon.create({
+    name: req.body.name,
+    nickName: req.body.nickName,
+    level: req.body.level,
+    maxHp: req.body.maxHp,
+    currentHp: req.body.maxHp
+  })
   .then(res.redirect('/pokemon'))
   .catch(err => {
     res.send("Yo, this biz is broke")
     console.log(err)
   })
 });
-
+// GET the form for adding pokemon to your team, or redirect the player
+router.get('/new/:name', (req,res) => {
+  db.pokemon.findAll()
+  .then(team => {
+    if(team.length >= 6) {res.render('pokemon/fullTeam')}
+    else {res.render('pokemon/new', {name:req.params.name})}
+  })
+  .catch(err => {
+    res.send("Yo, this biz is broke")
+    console.log(err)
+  })
+})
 // GET a specific pokemon
 router.get('/:name', (req,res) => {
   var name, id, description, habitat, evoChain
@@ -55,7 +71,7 @@ router.get('/:name', (req,res) => {
     })
   })
 })
-
+// Remove a pokemon from your team
 router.delete('/:idx', (req,res) => {
   console.log("Ready to delete...")
   db.pokemon.destroy({where: {id:req.params.idx}})
