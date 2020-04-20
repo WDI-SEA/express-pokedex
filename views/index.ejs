@@ -1,16 +1,19 @@
-<div class="container">
-  <h1 class="text-center">The Original 151 Pokemon</h1>
+<div class="container text-center">
+  <img src="/img/pokemon-logo-png-1421.png" alt="pokemon logo">
   <p class="text-center">
-    <a href="/pokemon">Favorites</a>
+    <a href="/pokemon">All Favorites</a>
   </p>
-
+</div>
+ <div class="container d-inline flex-row">
   <% pokemon.forEach(function(pokemon) { %>
-    <div class="well">
-      <h2><%= pokemon.name %></h2>
+    <div class="text-center p-2">
+      <h2 class="text-uppercase text-secondary"><%= pokemon.name %></h2>
+      <img class="pokePic" src="https://pokeres.bastionbot.org/images/pokemon/<%=pokemon.url.slice(34, -1)%>.png" alt="pokemon pic">
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
-        <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
+        <button class="btn btn-primary" type="submit">★ Faves</button>
       </form>
     </div>
   <% }); %>
-</div>
+ </div>
+

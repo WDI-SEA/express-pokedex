@@ -1,0 +1,11 @@
+* {
+    box-sizing: border-box;
+  }
+body {
+    background-color: lightskyblue ;
+}
+.pokePic {
+    max-width: 200px;
+    padding: 10px 5px;
+    background-color: #fff;
+}
