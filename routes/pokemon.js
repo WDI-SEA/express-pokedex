@@ -23,7 +23,7 @@ router.post('/', function(req, res) {
     }
   }).spread(function(poke, created) {
     if (created === false) {
-      res.send('already favourited')
+      res.send('Already favourited')
     } else {
       console.log('Created: ', poke.name)
       res.redirect('/pokemon')
@@ -38,12 +38,10 @@ router.post('/', function(req, res) {
 router.get('/:id', function(req,res) {
   db.pokemon.findByPk(req.params.id)
   .then(function(poke) {
-    console.log(poke.name)
     var url = `http://pokeapi.co/api/v2/pokemon/${poke.name}`
     axios.get(url)
     .then(function(response) {
       var results = response.data
-      console.log(results.height, results.sprites.front_default, results.types)
       res.render('details', {results})
     })
     .catch(function(err) {
@@ -53,6 +51,18 @@ router.get('/:id', function(req,res) {
   .catch(function(err) {
       console.log("error", err)
     })
+})
+
+//delete to remove favourites
+router.delete('/:id', function(req,res) {
+  console.log("REQ", req.params.id)
+  db.pokemon.destroy({
+    where: {
+      id: req.params.id
+    }
+  }).then(function() {
+    res.redirect('/pokemon')
+  })
 })
 
 module.exports = router;

@@ -1,11 +1,28 @@
 * {
     box-sizing: border-box;
   }
-body {
-    background-color: lightskyblue ;
+body{
+    background-color: lightskyblue;
 }
 .pokePic {
     max-width: 200px;
     padding: 10px 5px;
+}
+.detailPic {
+    max-width: 600px;
     background-color: #fff;
+    padding: 10px;
+}
+
+.detailContainer{
+    margin-top: 50px;
+    background-color: #fff;
+    border: 10px solid #ffcb05;
+    border-radius: 20px;
+}
+.favePic {
+    max-width: 500px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
 }

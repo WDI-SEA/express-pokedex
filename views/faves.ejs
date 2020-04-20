@@ -1,6 +1,19 @@
-<h1>These are my favorites</h1>
-<% poke.forEach(p => { %>
-    <li><%=p.name%></li>
+<h1 class="text-primary text-center p-5">These are your saved favorites:</h1>
+<div class="container row mx-auto">
+    <% poke.forEach(p => { %>
+    <div class="col-6 pb-4 text-center">
+        <h3 class="text-uppercase text-light">★ <%=p.name%></h3>
+    </div>
+    <div class="row">
+        <p><a class="col btn btn-info" href="/pokemon/<%=p.id%>">More details</a></p>
+        <form action="/pokemon/<%=p.id%>?_method=DELETE" method="POST">
+            <input class="btn btn-danger ml-2" type="submit" value="Remove faves">
+        </form>
+    </div>
 
-<p><a href="/pokemon/<%=p.id%>">More details</a></p>
-<% }) %>
+    <% }) %>
+    <div class="text-center container pt-4">
+        <a href="/" class="text-uppercase btn-primary btn mb-4" role="button">Go Home</a>
+    </div>
+</div>
+<img class="favePic float-right" src="/img/pikachu-pocky.png" alt="pikachu eating pocky">

@@ -1,19 +1,19 @@
 <div class="container text-center">
   <img src="/img/pokemon-logo-png-1421.png" alt="pokemon logo">
-  <p class="text-center">
-    <a href="/pokemon">All Favorites</a>
-  </p>
-</div>
- <div class="container d-inline flex-row">
-  <% pokemon.forEach(function(pokemon) { %>
-    <div class="text-center p-2">
-      <h2 class="text-uppercase text-secondary"><%= pokemon.name %></h2>
-      <img class="pokePic" src="https://pokeres.bastionbot.org/images/pokemon/<%=pokemon.url.slice(34, -1)%>.png" alt="pokemon pic">
-      <form method="POST" action="/pokemon">
-        <input hidden type="text" name="name" value="<%= pokemon.name %>">
-        <button class="btn btn-primary" type="submit">★ Faves</button>
-      </form>
-    </div>
-  <% }); %>
- </div>
+  <h1 class="text-light">THE ORIGINAL 151</h1>
+  <a href="/pokemon" class="text-uppercase btn-danger btn mb-4" role="button">Saved Favorites</a>
 
+</div>
+<div class="container mx-auto row bg-light border">
+  <% pokemon.forEach(function(pokemon) { %>
+  <div class="text-center p-5 col-4">
+    <h2 class="text-uppercase text-secondary"><%= pokemon.name %></h2>
+    <img class="pokePic" src="https://pokeres.bastionbot.org/images/pokemon/<%=pokemon.url.slice(34, -1)%>.png"
+      alt="pokemon pic">
+    <form method="POST" action="/pokemon">
+      <input hidden type="text" name="name" value="<%= pokemon.name %>">
+      <button class="btn btn-warning text-light" type="submit">★ Faves</button>
+    </form>
+  </div>
+  <% }); %>
+</div>

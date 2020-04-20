@@ -1,2 +1,35 @@
-<h1 class="text-uppercase"><%=results.name%></h1>
-<img class="pokePic" src="https://pokeres.bastionbot.org/images/pokemon/<%=results.id%>.png" alt="pokemon image">
+<div class="container text-center detailContainer">
+    <h1 class="text-uppercase text-info pt-5"><%=results.name%></h1>
+    <img class="detailPic" src="https://pokeres.bastionbot.org/images/pokemon/<%=results.id%>.png" alt="pokemon image">
+    <div class="row pt-5">
+        <div class="col-sm-6">
+            <h3>Type: </h3><% results.types.forEach(t => { %>
+            <li><%=t.type.name%></li>
+            <% }) %>
+        </div>
+        <div class="col-sm-6">
+            <h3>Abilities:</h3><% results.abilities.forEach(a => { %>
+            <li><%=a.ability.name%></li>
+            <% }) %>
+        </div>
+    </div>
+    <div class="row pt-5">
+        <div class="col-sm-6">
+            <h3>Height: </h3><%=results.height%>
+        </div>
+        <div class="col-sm-6">
+            <h3>Weight: </h3><%=results.weight%>
+        </div>
+    </div>
+    <div class="row p-5">
+        <div class="col-sm-12">
+            <h3>Sprites:</h3>
+            <img src="<%=results.sprites.front_default%>" alt="front sprite">
+            <img src="<%=results.sprites.back_default%>" alt="back sprite">
+        </div>
+    </div>
+</div>
+
+<div class="text-center container pt-4">
+    <a href="/pokemon" class="text-uppercase btn-primary btn mb-4" role="button">Back to faves</a>
+</div>
