@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var db = require('../models')
 const axios = require('axios')
+const async = require('async')
 
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', function(req, res) {
@@ -42,27 +43,37 @@ router.get('/:id', (req, res) => {
         let data = apiResponse.data
         let pokeId = data.id
         let pokeMoves = data.moves
-        //console.log(pokeMoves)
+        let moves = []
+        console.log(pokeMoves)
         axios.get(('https://pokeapi.co/api/v2/pokemon-species/')+pokeId)
         .then((apiTwo) => {
           let species = apiTwo.data
           //console.log(apiTwo)
           //console.log('This is the pokemon id', pokeId)
-          // pokeMoves.forEach((dataMove) => {
-          //   //console.log(dataMove.move.url)
-          //   axios.get(dataMove.move.url)
-          //   .then(response => {
-          //     let moves = response.data
-          //     console.log(moves)
-          //   })
-          // })
+          async.forEach(pokeMoves, (dataMove, cb) => {
+            //console.log(dataMove.move.url)
+            axios.get(dataMove.move.url)
+            .then(response => {
+              moves.push(response.data)
+              cb()
+            })
+          }, () => {
+            console.log(moves)
+            res.render('pokemon/show', {poke, data, species, moves})
+          })
           // AAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHHHHHHHHHHHH!!!!!!!!!!
+          // let pokeMove = []
+          // pokeMoves.forEach((move) => {
+          //   axios.get(('https://pokeapi.co/api/v2/move/')+pokeMoves)
+
+          // })
           // axios.get(('https://pokeapi.co/api/v2/move/')+pokeMoves)
           // .then((apiThree) => {
             //   let moves = apiThree.data
             //   console.log(moves)
             // })
-            res.render('pokemon/show', {poke, data, species})
+            
+            
           })
       })
     })

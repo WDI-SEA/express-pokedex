@@ -124,15 +124,16 @@
 
 <h2>Moves</h2>
 <table class="centered striped">
-    <tr><td>Name</td><td>Accuracy</td><td>Damage</td><td>Crit-Rate</td><td>Level Learned</td><td>Method</td></tr>
-<% for (let i = 0; i < data.moves.length; i++) { %>
+    <tr><td>Name</td><td>Type</td><td>Accuracy</td><td>Damage</td><td>Crit-Rate</td><td>Action</td><td>PP</td></tr>
+<% for (let i = 0; i < moves.length; i++) { %>
     <tr>
-        <td><%= data.moves[i].move.name.charAt(0).toUpperCase() + data.moves[i].move.name.slice(1) %></td>
-        <td>forEach oof</td>
-        <td>forEach oof</td>
-        <td>forEach oof</td>
-        <td><%= data.moves[i].version_group_details[0].level_learned_at %></td>
-        <td><%= data.moves[i].version_group_details[0].move_learn_method.name.charAt(0).toUpperCase() + data.moves[i].version_group_details[0].move_learn_method.name.slice(1) %></td>
+        <td><%= moves[i].name.charAt(0).toUpperCase() + moves[i].name.slice(1) %></td>
+        <td><%= moves[i].type.name %></td>
+        <td><%= moves[i].accuracy %></td>
+        <td><%= moves[i].power %></td>
+        <td><%= moves[i].meta.crit_rate %></td>
+        <td><%= moves[i].damage_class.name%></td>
+        <td><%= moves[i].pp %></td>
     </tr>
 <% } %>
 </table>
