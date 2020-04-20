@@ -16,7 +16,7 @@ app.use('/pokemon', require('./routes/pokemon'));
 
 // GET / - main index of site
 app.get('/', function(req, res) {
-  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
+  var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/?limit=50';
   // Use request to call the API
   axios.get(pokemonUrl).then( function(apiResponse) {
     var pokemon = apiResponse.data.results;
