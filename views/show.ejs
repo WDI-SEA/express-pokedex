@@ -8,9 +8,9 @@
 	<h3>Weight</h3>
 	<%=pokemonData.weight%>
 	<h3>Types</h3>
-	<p class = "<%=pokemonData.types[0].type.name%>"><%=pokemonData.types[0].type.name%>
+	<p class = "<%=pokemonData.types[0].type.name%> type"><%=pokemonData.types[0].type.name%>
 	<%if (pokemonData.types[1]) {%></p>
-		<p class = "<%=pokemonData.types[1].type.name%>"><%=pokemonData.types[1].type.name%></p>
+		<p class = "<%=pokemonData.types[1].type.name%> type"><%=pokemonData.types[1].type.name%></p>
 		<%}%>
 	</div>
 	<img src= "<%=pokemonData.sprites.front_default%>">
