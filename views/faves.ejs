@@ -1,0 +1,14 @@
+<div class="container">
+  <h1 class="text-center">Your Pokedex</h1>
+  <p class="text-center">
+    <a href="/">The Original 151 Pokemon</a>
+  </p>
+
+  <% pokemon.forEach(function(pokemon) { %>
+    <div class="well">
+      <h2><%= pokemon.name %></h2>
+    </div>
+    <a href="/pokemon/stats/<%= pokemon.name %>">Stats</a>
+
+  <% }); %>
+</div>

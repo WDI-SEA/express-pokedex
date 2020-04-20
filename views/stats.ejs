@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="/style.css">
+
+<div class="body">
+  <h1> <%=pokemon.name %></h1>
+  <img src="<%= pokemon.sprites.front_default%>" >
+  <h2> Height: <%=pokemon.height % 3 %>ft </h2>
+  <h2> weight: <%=pokemon.weight / 8 %> Lbs </h2>
+      <div class="info">
+        <h2>
+          Moves:
+          <% pokemon.moves.slice(-10).forEach((moves) => { %>
+            <h5><%= moves.move.name %> </h5>
+          <% })%>
+        </h2>
+      </div>
+      <div class="info">
+        <h2>
+          types:
+          <% pokemon.types.forEach((t) => { %>
+            <h5><%= t.type.name %> </h5>
+          <% })%>
+        </h2>
+      </div>
+</div>
