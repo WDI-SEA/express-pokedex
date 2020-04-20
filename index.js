@@ -9,6 +9,7 @@ app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
+app.use(express.static('public'))
 
 // GET / - main index of site
 app.get('/', function(req, res) {

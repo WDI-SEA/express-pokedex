@@ -47,7 +47,7 @@ router.get('/:id', function (req, res) {
       res.render('show',{ deets })
     })
     .catch(function (err) {
-      console.log(err)
+      res.send(err)
     })
     })
 })

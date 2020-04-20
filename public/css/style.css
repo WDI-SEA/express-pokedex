@@ -1,0 +1,24 @@
+.fave {
+    background-color: bisque;
+}
+.stats {
+    background-color: rgb(252, 216, 172);
+}
+body {
+    text-align: center;
+}
+
+p {
+    color: white;
+}
+
+.bg-rad {
+    background-color: cornsilk;
+    margin: 5px 5px;
+    padding: 5px;
+    border-radius: 10px;;
+}
+
+nav {
+    float: left;
+}

@@ -1,8 +1,17 @@
-<h1>My Favorites</h1>
-
 <div>
-    <% bob.forEach(p => { %>
-     <h5><%=p.name %></h5>
-     <a href="/pokemon/<%=p.id%>"</a>Details</a>
-    <% }) %>
+    <h1>My Favorites</h1>
+    <nav><a class="btn btn-outline-success" href="/">Home</a></nav>
+</div>
+<div class="container">
+    <div class="row">
+        <% bob.forEach(p => { %>
+        <div class="well bg-rad col-md-4">
+            <h5><%=p.name %></h5>
+            <a class="btn btn-outline-primary" href="/pokemon/<%=p.id%>" </a>Details</a>
+        </div>
+        <% }) %>
+    </div>
+</div>
+<div>
+
 </div>
