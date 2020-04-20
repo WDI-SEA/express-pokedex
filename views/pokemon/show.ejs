@@ -1,0 +1,30 @@
+<h1>Pokemon Details</h1>
+
+<img src="<%=detail.sprites.front_default%>" alt="pokepic">
+<p>
+ID#: <%=detail.id%>
+</p>
+<p>
+Name: <%=detail.name%>
+</p>
+<p>
+Height: <%=detail.height%>
+</p>
+<p>
+<% detail.abilities.forEach(ab => { %>
+<p>
+Abilities: <%= ab.ability.name %>
+</p>
+<% }) %>
+
+<p>
+<% detail.types.forEach(t => { %>
+Types: <%= t.type.name %>
+</p>
+<% }) %>
+</p>
+<div>
+    <button>
+        &larr; Back Home
+    </button>
+    </div>
