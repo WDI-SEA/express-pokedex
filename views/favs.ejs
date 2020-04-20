@@ -1,0 +1,14 @@
+<div class="container">
+    <p class="text-center">
+        <a href="/">Back To The List Of All</a>
+    </p>
+
+
+    <% poki.forEach(function(p) { %>
+    <div class="well">
+        <h2><%= p.name %></h2>
+        <a href="pokemon/<%=p.id%>">see details</a>
+        </div>
+        <% }); %>
+    </div>
+</div>
