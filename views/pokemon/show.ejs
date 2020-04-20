@@ -1,20 +1,33 @@
-<h1><%= data.id %>. <%=poke.name%></h1>
-<h5><%= species.genera[2].genus %></h5>
-<img src="<%= data.sprites.front_default %>" style="display: inline;">
-<img src="<%= data.sprites.front_shiny %>" style="display: inline;">
+<h1><%= data.id %>. <%=poke.name.charAt(0).toUpperCase() + poke.name.slice(1)%></h1>
+
+
+<div class="dataPage">
+<table class="centered striped">
+    <tr>
+        <td>
+        <%= species.genera[2].genus %>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <img class="pokeSprite" src="<%= data.sprites.front_default %>" style="display: inline;">
+            <img class="pokeSprite" src="<%= data.sprites.front_shiny %>" style="display: inline;">
+        </td>
+    </tr>
+</table>
 
 <div>
     <h2>Type</h2>
-    <table>
+    <table class="centered striped">
 <% for (let i = 0; i < data.types.length; i++) { %>
-    <td><%= data.types[i].type.name %> </td>
+    <td><%= data.types[i].type.name.charAt(0).toUpperCase() + data.types[i].type.name.slice(1)  %> </td>
 <% } %>
     </table>
 </div>
 
 <div>
-    <h2>Species</h2>
-    <table>
+    <h2>Species Information</h2>
+    <table class="centered striped">
         <tr>
             <td>Flavor Text</td>
         </tr>
@@ -28,13 +41,15 @@
             </td>
         </tr>
     </table>
-    <table>
+    <table class="centered striped">
         <tr>
             <td>Height</td>
             <td>Weight</td>
             <td>Color</td>
             <td>Growth Rate</td>
+            <% if (species.habitat !== null) { %>
             <td>Habitat</td>
+            <% } %>
             <td>Egg Groups</td>
             <td>Capture Rate</td>
             <td>Base Happiness</td>
@@ -46,12 +61,15 @@
             <td><%= height %> m</td>
             <td><%= weight %> kg</td>
             <% } %>
-            <td><%= species.color.name %></td>
-            <td><%= species.growth_rate.name %></td>
-            <td><%= species.habitat.name %></td>
+            <td><%= species.color.name.charAt(0).toUpperCase() + species.color.name.slice(1) %></td>
+            <td><%= species.growth_rate.name.charAt(0).toUpperCase() + species.growth_rate.name.slice(1) %></td>
+            <% if (species.habitat !== null) { %>
+                <td><%= species.habitat.name.charAt(0).toUpperCase() + species.habitat.name.slice(1) %></td>
+
+            <% } %>
             <td>
                 <% for (let i = 0; i < species.egg_groups.length; i++) { %>
-                    <%= species.egg_groups[i].name %>
+                    <%= species.egg_groups[i].name.charAt(0).toUpperCase() + species.egg_groups[i].name.slice(1) %>
                 <% } %>
             </td>
             <td><%= species.capture_rate %></td>
@@ -64,35 +82,58 @@
 
 
 <h2>Abilities</h2>
-    <table>
+    <table class="centered striped">
         <% for (let i = 0; i < data.abilities.length; i++) { %>
-            <td><%= data.abilities[i].ability.name %> </td>
+            <td><%= data.abilities[i].ability.name.charAt(0).toUpperCase() + data.abilities[i].ability.name.slice(1) %> </td>
         <% } %>     
     </table>
 <div>
     <h2>Base Stats</h2>
-    <table>
+    <table class="centered striped">
         <tr>
         <% for (let i = 0; i < data.stats.length; i++) { %>
-            <td> <%= data.stats[i].stat.name %> </td>
+            <td> <%= data.stats[i].stat.name.charAt(0).toUpperCase() + data.stats[i].stat.name.slice(1) %> </td>
         <% } %>
         </tr>
         <tr>
         <% for (let i = 0; i < data.stats.length; i++) { %>
-            <td><%= data.stats[i].base_stat %> </td>
+            <td><%= data.stats[i].base_stat   %> </td>
+        <% } %>
+        </tr>
+        <tr>
+            <td>Max Stat Lv 100</td>
+            <td>Max Stat Lv 100</td>
+            <td>Max Stat Lv 100</td>
+            <td>Max Stat Lv 100</td>
+            <td>Max Stat Lv 100</td>
+            <td>Max Stat Lv 100</td>
+           
+        </tr>
+        <tr>
+        <% for (let i = 0; i < data.stats.length; i++) { %>
+            <% if (i < 5) { %>
+                <% let stat = (data.stats[i].base_stat*2)+128 %>
+                <td><%= stat %> </td>
+            <% } else {let stat = (data.stats[i].base_stat*2)+204 %>
+                <td><%= stat %> </td>
+            <% } %>
         <% } %>
         </tr>
     </table>
 </div>
 
 <h2>Moves</h2>
-<table style="width: 80%">
-    <tr><td>Name</td><td>Level Learned</td><td>Method</td></tr>
+<table class="centered striped">
+    <tr><td>Name</td><td>Accuracy</td><td>Damage</td><td>Crit-Rate</td><td>Level Learned</td><td>Method</td></tr>
 <% for (let i = 0; i < data.moves.length; i++) { %>
     <tr>
-        <td><%= data.moves[i].move.name %></td>
+        <td><%= data.moves[i].move.name.charAt(0).toUpperCase() + data.moves[i].move.name.slice(1) %></td>
+        <td>forEach oof</td>
+        <td>forEach oof</td>
+        <td>forEach oof</td>
         <td><%= data.moves[i].version_group_details[0].level_learned_at %></td>
-        <td><%= data.moves[i].version_group_details[0].move_learn_method.name %></td>
+        <td><%= data.moves[i].version_group_details[0].move_learn_method.name.charAt(0).toUpperCase() + data.moves[i].version_group_details[0].move_learn_method.name.slice(1) %></td>
     </tr>
 <% } %>
 </table>
+</div>

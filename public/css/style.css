@@ -1,0 +1,37 @@
+
+
+body {
+    background-color: rgb(92, 86, 85);
+    color: rgb(255, 208, 0);
+}
+
+h1 {
+    text-align: center;
+}
+.fave {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.pokeSprite {
+    height: 150px;
+    width: auto;
+    
+}
+
+.row h2 {
+    margin: 0 auto;
+    color: rgb(255, 208, 0);
+}
+
+.dataPage h2 {
+    text-align: center;
+}
+
+.dataPage td {
+    font-size: 16px;
+    color: white;
+}
+
+
+

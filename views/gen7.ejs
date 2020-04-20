@@ -1,0 +1,23 @@
+<div class="container">
+    <h1 class="text-center">Alola Pokédex</h1>
+    
+    <div>
+      <% for(let i = 0; i < pokemon.length; i++) { %>
+      <div class="row">
+        <div class="col s12 m12">
+          <div class="card blue-grey darken-1 z-depth-5">
+            <div class="card-content white-text">
+              <h2><%= i + 722 %>. <%= pokemon[i].name.charAt(0).toUpperCase() + pokemon[i].name.slice(1) %></h2>
+              <img class="pokeSprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= i + 722 %>.png">
+            </div>
+            <div class="card-action">
+              <form method="POST" action="/pokemon">
+                <input hidden type="text" name="name" value="<%= pokemon[i].name %>">
+                <button class="btn btn-primary pulse indigo darken-3" type="submit">Add to Favorite Pokemon</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% }; %>
+    </div>

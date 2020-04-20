@@ -42,27 +42,28 @@ router.get('/:id', (req, res) => {
         let data = apiResponse.data
         let pokeId = data.id
         let pokeMoves = data.moves
-        console.log(pokeMoves)
+        //console.log(pokeMoves)
         axios.get(('https://pokeapi.co/api/v2/pokemon-species/')+pokeId)
         .then((apiTwo) => {
           let species = apiTwo.data
           //console.log(apiTwo)
           //console.log('This is the pokemon id', pokeId)
-          moveData = [];
-          pokeMoves.forEach((dataMove) => {
-            //console.log(dataMove.move.url)
-            axios.get(dataMove.move.url).then(response => {
-              console.log(response.data)
-              moveData.push(response.data)
-            })
-          })
+          // pokeMoves.forEach((dataMove) => {
+          //   //console.log(dataMove.move.url)
+          //   axios.get(dataMove.move.url)
+          //   .then(response => {
+          //     let moves = response.data
+          //     console.log(moves)
+          //   })
+          // })
+          // AAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHHHHHHHHHHHH!!!!!!!!!!
           // axios.get(('https://pokeapi.co/api/v2/move/')+pokeMoves)
           // .then((apiThree) => {
-          //   let moves = apiThree.data
-          //   console.log(moves)
-          // })
-          res.render('pokemon/show', {poke, data, species, moveData})
-        })
+            //   let moves = apiThree.data
+            //   console.log(moves)
+            // })
+            res.render('pokemon/show', {poke, data, species})
+          })
       })
     })
     .catch((err) => {
@@ -70,6 +71,21 @@ router.get('/:id', (req, res) => {
       res.render('error')
     })
 })
+
+router.delete('/:id', (req, res) => {
+  console.log('This is the request id', req.params.id)
+  db.pokemon.destroy({
+    where: { id: req.params.id}
+  })
+  .then(() => {
+      res.redirect('/')
+    })
+    .catch((err) => {
+      console.log('ERROR', err)
+      res.render('error')
+    })
+})
+
 
 
 
