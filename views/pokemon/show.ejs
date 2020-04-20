@@ -1,1 +1,98 @@
-<h1><%=poke.name%></h1>
+<h1><%= data.id %>. <%=poke.name%></h1>
+<h5><%= species.genera[2].genus %></h5>
+<img src="<%= data.sprites.front_default %>" style="display: inline;">
+<img src="<%= data.sprites.front_shiny %>" style="display: inline;">
+
+<div>
+    <h2>Type</h2>
+    <table>
+<% for (let i = 0; i < data.types.length; i++) { %>
+    <td><%= data.types[i].type.name %> </td>
+<% } %>
+    </table>
+</div>
+
+<div>
+    <h2>Species</h2>
+    <table>
+        <tr>
+            <td>Flavor Text</td>
+        </tr>
+        <tr>
+            <td>
+            <% if (species.flavor_text_entries[1].version.name == 'alpha-sapphire') { %>
+            <%= species.flavor_text_entries[1].flavor_text %>
+            <% } else { %>
+            <%= species.flavor_text_entries[2].flavor_text %>
+            <% } %>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td>Height</td>
+            <td>Weight</td>
+            <td>Color</td>
+            <td>Growth Rate</td>
+            <td>Habitat</td>
+            <td>Egg Groups</td>
+            <td>Capture Rate</td>
+            <td>Base Happiness</td>
+        </tr>
+        <tr>
+            <% if (data.height && data.weight) { %>
+            <% let height = data.height/10 %>
+            <% let weight = data.weight/10 %>
+            <td><%= height %> m</td>
+            <td><%= weight %> kg</td>
+            <% } %>
+            <td><%= species.color.name %></td>
+            <td><%= species.growth_rate.name %></td>
+            <td><%= species.habitat.name %></td>
+            <td>
+                <% for (let i = 0; i < species.egg_groups.length; i++) { %>
+                    <%= species.egg_groups[i].name %>
+                <% } %>
+            </td>
+            <td><%= species.capture_rate %></td>
+            <td><%= species.base_happiness %></td>
+        </tr>
+        
+    </table>
+    
+</div>
+
+
+<h2>Abilities</h2>
+    <table>
+        <% for (let i = 0; i < data.abilities.length; i++) { %>
+            <td><%= data.abilities[i].ability.name %> </td>
+        <% } %>     
+    </table>
+<div>
+    <h2>Base Stats</h2>
+    <table>
+        <tr>
+        <% for (let i = 0; i < data.stats.length; i++) { %>
+            <td> <%= data.stats[i].stat.name %> </td>
+        <% } %>
+        </tr>
+        <tr>
+        <% for (let i = 0; i < data.stats.length; i++) { %>
+            <td><%= data.stats[i].base_stat %> </td>
+        <% } %>
+        </tr>
+    </table>
+</div>
+
+<h2>Moves</h2>
+<table style="width: 80%">
+    <tr><td>Name</td><td>Level Learned</td><td>Method</td></tr>
+<% for (let i = 0; i < data.moves.length; i++) { %>
+    <tr>
+        <td><%= data.moves[i].move.name %></td>
+        <td><%= data.moves[i].version_group_details[0].level_learned_at %></td>
+        <td><%= data.moves[i].version_group_details[0].move_learn_method.name %></td>
+    </tr>
+<% } %>
+</table>
