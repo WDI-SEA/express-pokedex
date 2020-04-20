@@ -5,7 +5,7 @@
   </p>
   <div class="row">
     <% pokemon.forEach(function(pokemon) { %>
-    <div class="well col-md-4">
+    <div class="well bg-rad col-md-3.5 m-1">
       <h2><%= pokemon.name %></h2>
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">

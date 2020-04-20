@@ -14,9 +14,8 @@ p {
 
 .bg-rad {
     background-color: cornsilk;
-    margin: 5px 5px;
-    padding: 5px;
-    border-radius: 10px;;
+    padding: 2px 2px;
+    border-radius: 5px;;
 }
 
 nav {
