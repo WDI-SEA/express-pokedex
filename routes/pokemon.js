@@ -30,18 +30,15 @@ router.post('/', function(req, res) {
 
 router.get('/show', (req, res) => {
 	let pokemonURL = `http://pokeapi.co/api/v2/pokemon/${req.query.name}`
-	console.log(pokemonURL)
 	axios.get(pokemonURL)
 .then((apiResponse) => {
-	let pokemon = apiResponse.data.results
-	res.render('favorites/show', { pokemon })
-	console.log(pokemon + ' is coming back')
+	let pokemonData = apiResponse.data
+	res.render('favorites/show', { pokemonData })
 })
 .catch((err) => {
   	res.send(err)
 })
 
 })
-
 
 module.exports = router;

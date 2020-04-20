@@ -1,12 +1,14 @@
+<div class="container">
 <h1 class="text-center">Favorite Pokemon</h1>
-<div>
-	<% pokemon.forEach(p => { %>
-		<div>
-		<h2><%= p.name %></h2>
-		<form method="GET" action="pokemon/show">
+	<div>
+		<% pokemon.forEach(p => { %>
+			<div class="well">
+			<h2><%= p.name %></h2>
+			<form method="GET" action="pokemon/show">
 			<input hidden type="text" name="name" value="<%= p.name %>">
 			<button class="btn btn-primary" type="submit">Data / Specifications</button>
-		</form>
-		</div>
-	<% }) %>
+			</form>
+			</div>
+		<% }) %>
+	</div>
 </div>
