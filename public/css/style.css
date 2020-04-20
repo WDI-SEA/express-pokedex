@@ -1,3 +1,7 @@
+h2 {
+	text-decoration: underline;
+}
+
 .abilities {
 	display: inline;
 }
