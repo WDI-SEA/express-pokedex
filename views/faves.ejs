@@ -1,0 +1,15 @@
+<h1>Favorites</h1>
+
+<% poke.forEach(a => { %>
+<p>
+    Name: <%= a.name %> 
+</p>
+<p><a href="/pokemon/<%= a.id %>">Details</a></p>
+<% }) %>
+
+
+<div>
+<button>
+    &larr; Back Home
+</button>
+</div>

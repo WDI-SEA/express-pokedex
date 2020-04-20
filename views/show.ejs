@@ -1,0 +1,23 @@
+<h1>Show Page</h1>
+<p>
+ID#: <%=detail.id%>
+</p>
+<p>
+Name: <%=detail.name%>
+</p>
+<p>
+Height: <%=detail.height%>
+</p>
+<p>
+<% detail.abilities.forEach(ab => { %>
+<p>
+Abilities: <%= ab.ability.name %>
+</p>
+<% }) %>
+</p>
+
+<div>
+    <button>
+        &larr; Back Home
+    </button>
+    </div>
