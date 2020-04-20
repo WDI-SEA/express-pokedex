@@ -21,9 +21,9 @@ app.get('/', function(req, res) {
   })
 });
 
-app.get('/pokemon', function (req, res) {
-  res.send('Hello World!')
-})
+// app.get('/pokemon', function (req, res) {
+//   res.send('Hello World!')
+// })
 
 // Imports all routes from the pokemon routes file
 app.use('/pokemon', require('./routes/pokemon'));
