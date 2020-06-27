@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Pokemon</title>
+</head>
+
+<body>
+    <h1>Favorites</h1>
+
+    <div class="container">
+        <% pokemons.forEach(poke => { %>
+        <div class="col s5">
+            <div class="well">
+                <h2><%= poke.name %></h2>
+            </div>
+        </div>
+        <%    }) %>
+
+        <button><a href="/">Back</a></button>
+        
+    </div>
+</body>
+
+</html>
