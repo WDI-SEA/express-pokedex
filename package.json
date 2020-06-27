@@ -9,9 +9,23 @@
   "dependencies": {
     "axios": "^0.19.0",
     "dotenv": "^7.0.0",
-    "ejs": "^2.6.1",
-    "express": "^4.16.4",
+    "ejs": "^2.7.4",
+    "express": "^4.17.1",
     "express-ejs-layouts": "^2.5.0",
-    "morgan": "^1.9.1"
-  }
+    "morgan": "^1.9.1",
+    "pg": "^8.2.1",
+    "sequelize": "^6.2.2"
+  },
+  "description": "Working with databases, especially through ORMs, can present quite a learning curve. We'll start by incorporating one database model into an application to save favorite Pokemon.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minhd-nguyen/express-pokedex.git"
+  },
+  "author": "minh.nguyen",
+  "bugs": {
+    "url": "https://github.com/minhd-nguyen/express-pokedex/issues"
+  },
+  "homepage": "https://github.com/minhd-nguyen/express-pokedex#readme",
+  "devDependencies": {},
+  "keywords": []
 }
