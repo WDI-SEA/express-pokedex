@@ -1,0 +1,14 @@
+<div class="container">
+    <h3><%= name %></h3>
+    <img src="<%= image %>" alt="<%= name %>">
+    <ul>
+        <li>Height: <%= parseFloat(height/3.048).toFixed(1) %> ft</li>
+        <li>Weight: <%= parseFloat(weight/4.536).toFixed(1) %> lbs</li>
+        <li>Abilities:</li>
+        <ul>
+            <% abilities.forEach(ability => { %>
+                <li><%= ability.ability.name %></li>
+            <% }) %>
+        </ul>
+    </ul>
+</div>

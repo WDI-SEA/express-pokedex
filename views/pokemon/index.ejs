@@ -1,0 +1,6 @@
+<div class="container">
+    <% pokemon.forEach(pokemon => { %>
+        <% let pokename = pokemon.name.toLowerCase() %>
+        <h4><a href="/pokemon/<%= pokename %>"><%= pokemon.name %></a></h4>
+    <% }) %>
+</div>
