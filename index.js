@@ -4,7 +4,6 @@ const axios = require('axios');
 const ejsLayouts = require('express-ejs-layouts');
 const app = express();
 const port = process.env.PORT || 3000;
-const db = require('./models');
 
 app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
