@@ -1,0 +1,14 @@
+<h2> My Favorites </h2>
+
+<p> I have <%= pokemon.length %> favorites! </p>
+
+<% pokemon.forEach(function(p){ %>
+    <div class="well">
+        <h3>
+            <a href="/pokemon/<%= p.name %>">
+                <%= p.name %>
+            </a>
+        </h3>
+    </div>
+<% }); %>
+

@@ -1,0 +1,25 @@
+.fire {
+    color: red;
+  }
+  
+  .grass {
+    color: green;
+  }
+  
+  .poison {
+    color: purple;
+  }
+
+  body {
+    background: url("https://i.imgur.com/ydFPyAv.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: center;
+  }
+
+  .well {
+    background-color: lightblue;
+   
+  }

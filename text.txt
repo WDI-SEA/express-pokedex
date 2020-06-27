@@ -1,0 +1,9 @@
+Use the sequelize model:create command to make the pokemon model. 
+
+This creates both the model JS and the migration JS files.
+
+Use the sequelize db:migrate command to apply the migrations.
+
+--------------------------------------------------------------------
+
+sequelize model:create --name pokemon --attributes name:string
