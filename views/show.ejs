@@ -1,0 +1,12 @@
+
+<div class = "container text-center">
+    <h1><%- pokemonName.charAt(0).toUpperCase()+pokemonName.slice(1) %></h1>
+    <hr>
+        <h2>Abilities: <%- (pokeData.abilities[0].ability.name).charAt(0).toUpperCase()+(pokeData.abilities[0].ability.name).slice(1) %></h2>
+            <h3>Weight: <%- pokeData.weight %></h3>
+            <img src="<%- pokeData.sprites.front_default %>"width=250px height=250px>
+        <br>
+        <br>
+
+        <button><a href="/pokemon">BACK</a></button>
+</div>

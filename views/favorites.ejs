@@ -8,18 +8,19 @@
 </head>
 
 <body>
-    <h1>Favorites</h1>
+    <button><a href="/">Back</a></button>
+    <h1 class = "text-center">Favorites</h1>
 
     <div class="container">
         <% pokemons.forEach(poke => { %>
-        <div class="col s5">
-            <div class="well">
+        <div class="row">
+            <div class="well well-sm">
                 <h2><%= poke.name %></h2>
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" alt="">
+                <h5><a href="pokemon/<%= poke.id%>">Details</a></h5>
             </div>
         </div>
         <%    }) %>
-
-        <button><a href="/">Back</a></button>
         
     </div>
 </body>
