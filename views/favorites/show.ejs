@@ -1,2 +1,22 @@
-<h1>View <%= thisPokemonInfo.name %></h1>
-<img src="<%= thisPokemonInfo.sprites.front_shiny %>">
+<div class="container">
+        <h1 class="well text-center"><%= thisPokemonInfo.name %></h1>
+        <div class="col-xs-3"></div>
+        <img class="col-xs-2 img-responsive" src="<%= thisPokemonInfo.sprites.front_shiny %>">
+        <div class="col-xs-2">
+            <h3>Types</h3>
+            <ul>
+                <% thisPokemonInfo.types.forEach(type => { %>
+                    <li><%= type.type.name %></li>
+                <% }) %>
+            </ul>
+        </div>
+        <div class="col-xs-2">
+            <h3>Abilities</h3>
+            <ul>
+                <% thisPokemonInfo.abilities.forEach(ability => { %>
+                    <li><%= ability.ability.name %></li>
+                <% }) %>
+            </ul>
+        </div>
+        <div class="col-xs-3"></div>
+</div>
