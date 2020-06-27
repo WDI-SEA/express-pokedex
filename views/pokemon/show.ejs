@@ -11,4 +11,8 @@
             <% }) %>
         </ul>
     </ul>
+
+    <form method="POST" action="/pokemon/<%= name %>/?_method=DELETE">
+        <input type="submit" value="Remove From Favorites">
+    </form>
 </div>

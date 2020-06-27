@@ -35,4 +35,12 @@ router.get('/:id', (req,res) => {
   })
 })
 
+router.delete('/:id', (req, res) => {
+  db.pokemon.destroy({
+    where: {
+      name: req.params.id
+    }
+  }).then(res.redirect('/pokemon'))
+})
+
 module.exports = router;
