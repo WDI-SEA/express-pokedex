@@ -1,0 +1,8 @@
+<h1>View Favorites</h1>
+<% favorites.forEach(favorite => { %>
+    <div class="well">
+        <h2><a href="<%= `/pokemon/${favorite.id}` %>"><%= favorite.name %></a></h2>
+        <p><%= favorite.url %></p>
+    </div>
+<% }) %>
+<%= JSON.stringify(favorites) %>
