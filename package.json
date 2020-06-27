@@ -1,7 +1,7 @@
 {
   "name": "express-pokedex",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node index.js"
   },
@@ -12,6 +12,10 @@
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "express-ejs-layouts": "^2.5.0",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "mysql2": "^2.1.0",
+    "pg": "^8.2.1",
+    "rowdy-logger": "^1.0.2",
+    "sequelize": "^5.21.13"
   }
 }
