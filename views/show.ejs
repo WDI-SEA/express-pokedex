@@ -1,0 +1,12 @@
+<div class="container">
+    <h1 class="text-center">The Original 151 Pokemon</h1>
+    <p class="text-center">
+      <a href="/pokemon">Favorites</a>
+    </p>
+    <div class="well">
+        <h2><%= pokemon.name %></h2>
+        <hr />
+        <h4><%= pokemon.name %>, number: <%= pokemon.game_indices[0].game_index %>, is a <%= pokemon.types[0].type.name %> type pokemon. Their base <%= pokemon.stats[0].stat.name %> is <%= pokemon.stats[0].base_stat %></h4>
+    </div>
+
+</div>
