@@ -12,30 +12,24 @@ router.get('/', function(req, res) {
   
 });
 
-// GET /pokemon - return a page with favorited Pokemon
-// router.get('/:id', function(req, res) {
-//   // TODO: Get all records from the DB and render to view
-//   axios.get(`https://pokeapi.co/api/v2/pokemon/${req.params.id}`)
-//   db.pokemon.findOne({
-//     where: { id: req.params.id }
-//   }).then((pokemonOne) => {
-//     res.render('show2', {
-//       pokemon: pokemonOne
-//     });
-//   }) 
-// });
+router.get('/:name', function(req, res) {
+  var pokemonUrl = `http://pokeapi.co/api/v2/pokemon/${(req.params.name).toLowerCase()}`;
+  // Use request to call the API
+  Axios.get(pokemonUrl).then( function(apiResponse) {
+    var pokemon = apiResponse.data;
+    res.render ('show2', { pokemon });
+  })
+});
 
 
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
   // TODO: Get form data and add a new record to DB
-  db.pokemon.findOrCreate({
-    where: {
+  db.pokemon.create({
       name: req.body.name
-    }
   })
-  .then(([pokemon, created]) => {
+  .then((pokemon) => {
     res.redirect('/')
   }).catch(error => {
     console.log(error)
