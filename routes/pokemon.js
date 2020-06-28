@@ -28,14 +28,16 @@ router.post("/", function(req, res) {
 
 // Add a route GET /pokemon/:id that renders a show page with 
 // information about the Pokemon with the corresponding row id.
-router.get("/pokemon/:id", function(req, res) {
-      let search = req.params.id
-      let pokemonUrl = `http://pokeapi.co/api/v2/pokemon/${(search).toLowerCase()}`;
+router.get("/:name", function(req, res) {
+      let search = req.params.name
+      let pokemonUrl = `http://pokeapi.co/api/v2/pokemon/${(search).toLowerCase()}/`;
       //make a GET request to the PokeApi 
         axios.get(pokemonUrl).then( function(apiResponse) {
-          let peach = apiResponse.data.results;
-          console.log("here are the facts you wanted: ", JSON.parse(peach), "🍑")
-          res.render("show", {pokemon : search})
+          let peach = apiResponse.data;
+          console.log("here are the facts you wanted: ", peach, "🍑")
+          res.render("show", {pokemon : peach})
+      }).catch(error => {
+        console.log(error);
       })
    })
   
