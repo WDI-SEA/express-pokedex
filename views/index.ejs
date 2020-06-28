@@ -1,6 +1,6 @@
-<div class="container">
-  <h1 class="text-center">The Original 151 Pokemon</h1>
-  <p class="text-center">
+<div class="container text-center">
+  <h1>The Original 151 Pokemon</h1>
+  <p>
     <a href="/pokemon">Favorites</a>
   </p>
 
@@ -8,6 +8,7 @@
   <% pokemon.forEach(function(pokemon) { %>
   <div class="well">
     <h2><%= pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)%></h2>
+    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" alt="">
     <form method="POST" action="/pokemon">
       <input hidden type="text" name="name" value="<%= pokemon.name %>">
       <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>

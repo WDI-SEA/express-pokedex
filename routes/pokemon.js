@@ -9,7 +9,6 @@ router.get('/', function(req, res) {
   // TODO: Get all records from the DB and render to view
   db.pokemon.findAll()
   .then(pokemons => {
-    // console.log(pokemons)
     res.render('favorites', {pokemons})
   })
 });
@@ -45,8 +44,20 @@ router.post('/', function(req, res) {
   // TODO: Get form data and add a new record to DB
 });
 
+router.delete('/delete/:id', (req, res) => {
+  db.pokemon.findByPk(req.params.id)
+  .then(id => {
+    console.log('Deleted', req.body.name)
+    id.destroy();
+  })
+  .then(
+    res.send('Pokemon Deleted, oh fuck!')
+  )
+})
 
-
+router.delete('/delete/:id', (req,res) => {
+  
+})
 
 
 module.exports = router;

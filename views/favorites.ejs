@@ -11,13 +11,17 @@
     <button><a href="/">Back</a></button>
     <h1 class = "text-center">Favorites</h1>
 
-    <div class="container">
+    <div class="container text-center">
         <% pokemons.forEach(poke => { %>
         <div class="row">
             <div class="well well-sm">
-                <h2><%= poke.name %></h2>
+                <h2><%= poke.name.charAt(0).toUpperCase()+poke.name.slice(1) %></h2>
                 <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" alt="">
                 <h5><a href="pokemon/<%= poke.id%>">Details</a></h5>
+                <hr>
+                <form action="/delete/<%= poke.id %>?_method=DELETE" method="POST">
+                <input hidden type="text" name = "delete" value = "<%= poke.name %>">
+            <button type = "submit">Remove From Favorites</button></form>
             </div>
         </div>
         <%    }) %>
