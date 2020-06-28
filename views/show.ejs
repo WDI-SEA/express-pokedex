@@ -2,8 +2,8 @@
 <div class = "container text-center">
     <h1><%- pokemonName.charAt(0).toUpperCase()+pokemonName.slice(1) %></h1>
     <hr>
-        <h2>Abilities: <%- (pokeData.abilities[0].ability.name).charAt(0).toUpperCase()+(pokeData.abilities[0].ability.name).slice(1) %></h2>
-            <h3>Weight: <%- pokeData.weight %></h3>
+        <h2>Abilities: <%- (pokeData.abilities[0].ability.name).charAt(0).toUpperCase()+(pokeData.abilities[0].ability.name).slice(1)+(pokeData.abilities[1].ability.name).charAt(0).toUpperCase()+(pokeData.abilities[1].ability.name).slice(1) %></h2>
+            <h3>Base HP: <%= pokeData.stats[0].base_stat %></h3>
             <img src="<%- pokeData.sprites.front_default %>"width=250px height=250px>
         <br>
         <br>
