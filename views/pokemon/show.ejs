@@ -1,0 +1,22 @@
+<!-- named show -->
+
+<div class="container">
+    <h1 class="text-center pokename"><%= pokemon.name %>
+        <img src="<%= pokemon.sprites.front_default %>" alt="">
+        <img src="<%= pokemon.sprites.front_shiny %>" alt=""> </h1>
+    <p class="text-center">
+    </p>
+
+        <div class="well">
+                      
+        <h2 class="pokeinfo"><% pokemon.types.forEach(info => { %>
+            <%= info.type.name %>
+            <% }); %></h2>
+
+            <p> Pokemons Base XP <%= pokemon.base_experience %></p>
+            <p>Pokemons Height <%= pokemon.height %></p>
+            <p>Pokemons Weight <%= pokemon.weight %></p>
+        </form>
+    </div>
+    
+</div>

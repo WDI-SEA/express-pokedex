@@ -15,7 +15,7 @@
     "morgan": "^1.9.1",
     "mysql2": "^2.1.0",
     "pg": "^8.2.1",
-    "sequelize": "^6.2.3"
+    "sequelize": "^5.0.0"
   },
   "description": "Working with databases, especially through ORMs, can present quite a learning curve. We'll start by incorporating one database model into an application to save favorite Pokemon.",
   "repository": {

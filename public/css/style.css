@@ -1,0 +1,7 @@
+.pokename {
+    text-transform: capitalize;
+    color: hotpink;
+}
+.pokeinfo {
+    text-transform: capitalize;
+}
