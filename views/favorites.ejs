@@ -11,7 +11,7 @@
    <div class="favPokes">
     <% pokemon.forEach(function(pokemon) { %>
         <div class="well">
-          <h2><%= pokemon.name %></h2>
+          <h4><%= pokemon.name %></h4>
           <form method="GET" action="/pokemon/<%= pokemon.name %>">
             <button class="btn btn-primary" type="submit">See More PokeFacts</button>
           </form>
@@ -19,5 +19,6 @@
       <% }); %>
     </div>
    </div>
+   <div class="mew"></div>
 </body>
 </html>

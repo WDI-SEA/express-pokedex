@@ -38,7 +38,10 @@ h2{
     top: 0;
     right: 0;
     bottom: 0;
-    left: 0;
+    left: 50px;
+    width: 400px;
+    height: 400px; 
+    background-color: lavenderblush;
 }
 
 #pokeList{
@@ -67,7 +70,7 @@ h2{
     width: 300px;
     height: 800px;
     justify-content: left;
-    margin-top: 40px;
+    margin-top: 0px;
 }
 
 .well{
@@ -78,4 +81,10 @@ h2{
 .btn {
     background-color: rgb(163, 107, 121);
     margin: 0 auto;
+}
+
+
+.sprite {
+    height: 100px;
+    width: 100px;
 }

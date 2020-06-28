@@ -9,12 +9,15 @@
         @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Yellowtail&display=swap');
         </style>
 </head>
-<body>
-    
-</body>
+<body class="favoritesBody">
+   <div class="container">
+        <div class="pokeFacts">
+            <h5>Height: <%= pokemon.height %></h5>
+            <h5>Weight: <%= pokemon.weight %></h5>
+            <img class="sprite" src="<%= pokemon.sprites.front_default%>">
+        </div>
+   </div>
+      </body>
 </html>
-  <div class="well pokeFacts">
-      <h2><%= pokemon.name %></h2>
-    </div>
-</div>
+
 
