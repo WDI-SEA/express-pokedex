@@ -1,0 +1,13 @@
+<div class="well"></div>
+<ul> 
+   <img src='<%= response.sprites.front_default %>'>
+    <h1> <%= response.name %> stats:</h1> 
+    <h2>type: <% response.types.forEach((type) => { %>
+      <%=  type.type.name %>,
+    <% }) %></h2>
+    <h2>abilities: <% response.abilities.forEach((ability) => { %>
+        <%= ability.ability.name %>,
+      <% }) %></h2>
+</ul>
+</div>
+<h1></h1>

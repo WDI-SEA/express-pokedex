@@ -3,9 +3,9 @@
     <p class="text-center">
       <a href="/">Home</a>
     </p>
-  
-  
     <% pokemon.forEach((poke, index) => { %>
-    <%  console.log(poke.name) %>
+    <div class="well">
+        <h2> <a href="pokemon/<%= index %>/<%= poke.name %>"><%= poke.name %></a></h2>
+    </div>
     <% }); %>
 
