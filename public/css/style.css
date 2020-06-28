@@ -1,0 +1,21 @@
+.more-info {
+    display: inline-block;
+    background: navy;
+    width: 60px;
+    height: 33px;
+    border-radius: 5px;
+    color: whitesmoke;
+    line-height: 30px;
+    text-align: center;
+}
+
+.delete-form {
+    display: inline-block;
+    padding: 5px;
+    height: 10px;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}

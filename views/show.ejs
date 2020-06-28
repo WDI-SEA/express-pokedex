@@ -1,0 +1,15 @@
+<div class="container">
+    <h1 class="text-center">The Original 151 Pokemon</h1>
+    <p class="text-center">
+      <a href="/">Home</a>
+    </p>
+
+    
+    <h3> Here are your pokemon info:</h3>
+    <h4>Name: <%= pokemon.name %> - Type: <%= pokemon.types[0].type.name %></h4>
+    <h4>Height: <%= pokemon.height %> - Weight: <%= pokemon.weight %></h4>
+    <img src=" <%= pokemon.sprites.front_default %>" />
+
+<hr />
+
+<a href="/pokemon">&larr; Back </a>
