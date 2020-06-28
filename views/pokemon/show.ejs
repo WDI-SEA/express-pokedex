@@ -1,6 +1,13 @@
+<div class="container">
+    <h1 class="text-center">The Original 151 Pokemon</h1>
+    <p class="text-center">
+      <a href="/pokemon">Favorites</a>
+  
+
 <div class="well"></div>
 <ul> 
    <img src='<%= response.sprites.front_default %>'>
+   <img src='<%= response.sprites.front_shiny %>'>
     <h1> <%= response.name %> stats:</h1> 
     <h2>type: <% response.types.forEach((type) => { %>
       <%=  type.type.name %>,
@@ -10,4 +17,3 @@
       <% }) %></h2>
 </ul>
 </div>
-<h1></h1>

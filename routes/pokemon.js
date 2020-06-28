@@ -49,6 +49,7 @@ router.get('/:id/:name', (req, res) => {
             id : poke
         }
     }).then(foundPoke => {
+      str = foundPoke.name
       let location = `https://pokeapi.co/api/v2/pokemon/${foundPoke.name}`
       console.log(location)
 
@@ -61,10 +62,6 @@ router.get('/:id/:name', (req, res) => {
       .catch(function(error) {
         console.log('There was an ERROR: ', error);
       });
-
-
-
-
     }).catch(err => {
       console.log(err)
     })
