@@ -6,7 +6,7 @@ var db = require('../models')
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', function(req, res) {
   db.pokemon.findAll().then(pokemon => {
-    res.render('index', {pokemon: pokemon})
+    res.render('pokemon/favorite', {pokemon: pokemon})
   })
 });
 
@@ -25,10 +25,19 @@ router.post('/', function(req, res) {
 router.get('/:name', (req, res) => {
     var pokemonUrl = `http://pokeapi.co/api/v2/pokemon/${(req.params.name).toLowerCase()}`;
     // Use request to call the API
-    axios.get(pokemonUrl).then( function(apiResponse) {
+    axios.get(pokemonUrl).then(function(apiResponse) {
       var pokemon = apiResponse.data;
       res.render('show', {pokemon})
     })
+})
+
+router.delete('/:name', (req, res) => {
+  db.pokemon.destroy({
+    where: {
+      name: req.params.name
+    }
+  })
+  .then(res.redirect('/pokemon'))
 })
 
 module.exports = router;
