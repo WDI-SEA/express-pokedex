@@ -45,7 +45,7 @@ Your first step will be to create a SQL database for your application. Recall th
 3. Create your database with the `createdb` command followed by your database name.
 4. Run `sequelize init` to initialize Sequelize.
 5. Update your newly created `config/config.json` file as we did in class. This means changing the credentials, updating the SQL flavor, and changing the database name to the one you created in step 3.
-
+ 
 #### Part 2: Create your Pokemon Model and Table
 
 Our data model needs only one attribute: `name`.
