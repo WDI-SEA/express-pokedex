@@ -10,6 +10,10 @@
         <form method="GET" action="/pokemon/<%= pokemon.name %>">
           <button class="btn btn-primary" type="submit">Details</button>
         </form>
+        <br>
+        <form method="POST" action="/pokemon/<%= pokemon.id %>/?_method=DELETE">
+          <button class="btn btn-primary" type="submit" value="DELETE">Delete From Favorites</button>
+        </form>
       </div>
     <% }); %>
   </div>

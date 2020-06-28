@@ -20,7 +20,7 @@ router.post('/', function(req, res) {
   db.pokemon.findOrCreate({ 
     where: { name: req.body.name}
   }).then(([pokemon, created]) => {
-    console.log('created', pokemon, created)
+    //console.log('created', pokemon, created)
     res.redirect('/pokemon')  
   }).catch(error => {
     console.log(error)
@@ -40,5 +40,15 @@ router.get('/:name', (req, res) => {
   })
 })
 
+router.delete('/:id', (req, res) => {
+  db.pokemon.destroy({
+    where: {id: req.params.id}
+  }).then((pokemon)=> {
+    //console.log('deleted', pokemon)
+    res.redirect('/pokemon')
+  }).catch(error => {
+    console.log(error)
+  })
+})
 
 module.exports = router;
