@@ -12,6 +12,19 @@
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "express-ejs-layouts": "^2.5.0",
-    "morgan": "^1.9.1"
-  }
+    "morgan": "^1.9.1",
+    "mysql2": "^2.1.0",
+    "pg": "^8.2.1",
+    "sequelize": "^6.2.3"
+  },
+  "description": "Working with databases, especially through ORMs, can present quite a learning curve. We'll start by incorporating one database model into an application to save favorite Pokemon.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nessoaf/express-pokedex.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/nessoaf/express-pokedex/issues"
+  },
+  "homepage": "https://github.com/nessoaf/express-pokedex#readme"
 }
