@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 const db = require('../models');
 const axios = require('axios'); 
 
@@ -40,5 +40,13 @@ router.get("/:name", function(req, res) {
         console.log(error);
       })
    })
+
+router.delete("/:name", function(req, res) {
+  db.pokemon.destroy({
+    where: {name: req.params.name}
+  }).then(function() {
+    res.redirect("/pokemon");
+  });
+})
   
 module.exports = router;

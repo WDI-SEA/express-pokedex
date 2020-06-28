@@ -13,8 +13,12 @@
         <div class="well">
           <h4><%= pokemon.name %></h4>
           <form method="GET" action="/pokemon/<%= pokemon.name %>">
-            <button class="btn btn-primary" type="submit">See More PokeFacts</button>
+            <button class="btn btn-primary" type="submit">More PokeFacts</button>
           </form>
+
+          <form method="POST" action="/pokemon/<%= pokemon.name %>?_method=DELETE">
+            <button class="btn btn-primary" type="submit" value="delete">Delete</button>
+            </form>
         </div>
       <% }); %>
     </div>

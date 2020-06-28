@@ -48,6 +48,7 @@ h2{
     overflow-y: auto;
     width: 300px;
     height: 800px;
+    margin-left: 50px;
     justify-content: left;
 }
 
@@ -71,11 +72,15 @@ h2{
     height: 800px;
     justify-content: left;
     margin-top: 0px;
+    margin-left: 50px;
 }
 
 .well{
-    background-color: lightpink;
+    background-color: rgb(235, 228, 235);
     color: black;
+    height: 125px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .btn {
