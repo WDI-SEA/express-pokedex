@@ -2,9 +2,27 @@
 
 .well {
     display: inline-block;
+    flex-wrap: wrap;
+    position: relative;
+    background-color: black;
+    color: grey;
+  
+}
+
+.text-center {
+    font-size: 30px;
+    float: right;
 }
 
 #body {
     background-color: #DD3B33;
     text-align: center;
+    display: flex;
+    
+}
+
+#pokemonDiv {
+    max-width: 936 px;
+    
+  
 }
