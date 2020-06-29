@@ -11,6 +11,7 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 app.use(methodOverride('_method'))
+app.use(express.static(__dirname + '/public'))
 
 // GET / - main index of site
 app.get('/', function(req, res) {

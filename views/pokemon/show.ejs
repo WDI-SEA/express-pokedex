@@ -1,18 +1,15 @@
 <div class="container">
-    <h3><%= name %></h3>
-    <img src="<%= image %>" alt="<%= name %>">
-    <ul>
-        <li>Height: <%= parseFloat(height/3.048).toFixed(1) %> ft</li>
-        <li>Weight: <%= parseFloat(weight/4.536).toFixed(1) %> lbs</li>
-        <li>Abilities:</li>
-        <ul>
+    <div class="list-entry-ind">
+        <h3><%= name %></h3>
+        <img src="<%= image %>" alt="<%= name %>">
+        <p>Height: <%= parseFloat(height/3.048).toFixed(1) %> ft</p>
+        <p>Weight: <%= parseFloat(weight/4.536).toFixed(1) %> lbs</p>
+        <p>Abilities: 
             <% abilities.forEach(ability => { %>
-                <li><%= ability.ability.name %></li>
+                <%= ability.ability.name %>,
             <% }) %>
-        </ul>
-    </ul>
-
-    <form method="POST" action="/pokemon/<%= name %>/?_method=DELETE">
-        <input type="submit" value="Remove From Favorites">
-    </form>
+        <form method="POST" action="/pokemon/<%= name %>/?_method=DELETE">
+            <input class="btn" type="submit" value="Remove From Favorites">
+        </form>
+    </div>
 </div>

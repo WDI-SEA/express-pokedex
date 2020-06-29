@@ -7,6 +7,8 @@ const { default: Axios } = require('axios');
 router.get('/', function(req, res) {
   db.pokemon.findAll().then(pokemon => {
     res.render('pokemon/index', {pokemon: pokemon});
+  }).catch(err => {
+    console.log(`🚦 ${err} 🚦`)
   })
 });
 
@@ -17,7 +19,10 @@ router.post('/', function(req, res) {
       name: req.body.name
     }
   }).then(res.redirect('/pokemon'))
-});
+  .catch(err => {
+    console.log(`🚦 ${err} 🚦`)
+  })
+})
 
 router.get('/:id', (req,res) => {
   var pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${req.params.id}/`
@@ -29,6 +34,8 @@ router.get('/:id', (req,res) => {
       weight: stats.weight,
       image: stats.sprites.front_default,
       abilities: stats.abilities
+    }).catch(err => {
+      console.log(`🚦 ${err} 🚦`)
     })
   }).catch(err => {
     console.log(`🚦 ${err} 🚦`)
@@ -41,6 +48,9 @@ router.delete('/:id', (req, res) => {
       name: req.params.id
     }
   }).then(res.redirect('/pokemon'))
+  .catch(err => {
+    console.log(`🚦 ${err} 🚦`)
+  })
 })
 
 module.exports = router;
