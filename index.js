@@ -7,10 +7,11 @@ const port = process.env.PORT || 3000;
 
 
 app.use(require('morgan')('dev'));
+// allows us to write ejs pages without .ejs in our res.renders
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
-
+app.use(express.static(__dirname + '/public'))
 // GET / - main index of site
 app.get('/', function(req, res) {
   var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';

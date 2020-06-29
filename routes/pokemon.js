@@ -5,7 +5,7 @@ var router = express.Router();
 
 router.get('/', function(req, res) {
   db.pokemon.findAll().then((pokemonAll) => {
-    res.render('show', {
+    res.render('pokemon/index', {
       pokemon: pokemonAll
     });
   }) 
@@ -17,7 +17,7 @@ router.get('/:name', function(req, res) {
   // Use request to call the API
   Axios.get(pokemonUrl).then( function(apiResponse) {
     var pokemon = apiResponse.data;
-    res.render ('show2', { pokemon });
+    res.render ('pokemon/show', { pokemon });
   })
 });
 
