@@ -1,4 +1,4 @@
-<p>
+<div class="well">
     <img src='<%= response.data.sprites.front_default %>'>
     <h3> <%= response.data.name %> </h3><br />
     TYPES: <% response.data.types.forEach(type => { %>
@@ -9,4 +9,4 @@
     ABILITIES: <% response.data.abilities.forEach(ability => { %>
         <p> <%= ability.ability.name %> </p>
     <% }) %> 
-</p>
+    </div>

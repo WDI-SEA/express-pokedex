@@ -43,7 +43,7 @@ router.get('/:id', function(req, res) {
     axios.get('http://pokeapi.co/api/v2/pokemon/'+pokemon.name.toLowerCase())
     .then(function(response) {
       console.log(response)
-      res.render('pokemon/show', {response: response})
+      res.render('pokemon/show', {response})
     }).catch(errorHandler)
   }).catch(errorHandler)
 })
