@@ -9,7 +9,7 @@ router.get('/', ((req, res) => {
     let pokemonList = JSON.stringify(pokemons);
     let pokemonData = JSON.parse(pokemonList)
     // TODO: Get all records from the DB and render to view
-    res.render('pokemon/index.ejs', {myFavoritePokemons: pokemonData});
+    res.render('pokemon/index', {myFavoritePokemons: pokemonData});
   }).catch((error) =>
     console.log(error)
   )

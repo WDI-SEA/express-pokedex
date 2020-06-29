@@ -1,6 +1,7 @@
 body {
   text-align: center; 
   font-family: 'Bangers';
+  background-image: url("https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/masters/forest.jpg")
   
 }
 .pokename {
@@ -12,15 +13,57 @@ body {
 .details {
   text-align: center;
   font-family: 'Bangers';
+  color: white;
+  font-size: 36px;
 }
 
 .index {
   text-align: center;
   font-family: 'Bangers';
+  font-size: 36px;
+}
+
+.title {
+  font-size: 60px;
+  font-family: 'Bangers';
+  font-weight: bold;
 }
 
 #title {
-  font-size: 36px;
-
+  font-size: 60px;
+  font-family: 'Bangers';
+  font-weight: bold;
+  color: white;
 }
 
+.pokepic {
+  background-color: white;
+}
+
+.home {
+  font-size: 36px;
+  font-family: 'Bangers';
+  text-align: center;
+}
+
+.titleTwo {
+  font-size: 36px;
+  font-family: 'Bangers';
+  color: white;
+  font-weight: bold;
+}
+
+
+#homebutton {
+  color: white;
+  font-size: 24px;
+  align-self: flex-start;
+}
+
+#pokemonList {
+  width: 25%;
+  text-align: center;
+  font-size: 36px;
+  font-family: 'Bangers';
+  color: white;
+}

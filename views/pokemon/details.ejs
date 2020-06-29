@@ -1,6 +1,6 @@
 
 <div class="details">
-  <h3>Learn more about <%= pokemon.name %></h3>
+  <h1 class="title">Learn More About <%= pokemon.name %></h1>
   <p> Weight: <%= pokemon.weight%></p>
   <p> Height: <%= pokemon.height %>  </p>
   <p> Species: <%= pokemon.species.name %></p>
@@ -9,8 +9,9 @@
     <p><%= form.name %></p>
   <% }) %>
   </p>
-  <img src = "<%= pokemon.sprites.front_shiny %>" class="img-fluid" alt="Responsive image">
-  <img src = "<%= pokemon.sprites.back_shiny %>" class="img-fluid" alt="Responsive image">
+  <p>Check it out:</p>
+  <img class="pokepic" src = "<%= pokemon.sprites.front_shiny %>" class="img-fluid" alt="Responsive image">
+  <img class="pokepic" src = "<%= pokemon.sprites.back_shiny %>" class="img-fluid" alt="Responsive image">
   <form method="POST" action="/pokemon/<%= pokemon.name%>/?_method=DELETE">
     <input class="btn btn-primary" type="submit" value="Delete">
   </form>
