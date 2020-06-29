@@ -37,15 +37,17 @@ router.get('/:name', ((req,res) => {
   )
 }))
 
-// router.delete('/details/:name', (req, rex) => {
-//   let pokemons = db.pokemon.findAll();
-//   let pokemonList = JSON.stringify(pokemons)
-//   pokemonList =JSON.parse(pokemonList)
-//   pokemonList.splice(req.params.name, 1)
-//   res.redirect('/pokemon')
-//   if (error) {
-//     console.log(error)
-//   }
-// })
+router.delete('/details/:name', (req, rex) => {
+  db.pokemon.findAll().then((pokemons) => {
+    let pokemonList = JSON.stringify(pokemons);
+    let pokemonData = JSON.parse(pokemonList)
+    console.log(pokemonData)
+    pokemonData.splice(req.params.name, 1)
+  rex.redirect('/pokemon')
+  if (error) {
+    console.log(error)
+    }
+  })
+})
 
 module.exports = router;
