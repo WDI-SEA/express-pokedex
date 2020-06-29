@@ -46,18 +46,20 @@
 #statsDiv {
     flex-direction: column;
     text-align: center;
+    margin: 0 auto;
+  
 }
 
 #pokeImg {
     width: 500px;
     display: block;
-    margin: 0 auto;
+   
 }
 
 #pokeStats {
     display: block;
     color: white;
-    font-size: 40px;
+    font-size: 20px;
     font-family: 'Orbitron', sans-serif;
     
 }
