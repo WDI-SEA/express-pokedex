@@ -1,0 +1,33 @@
+.poke {
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h4 {
+   text-align: center; 
+   position: relative;
+
+}
+
+h1 {
+    text-align: center; 
+   position: relative;
+}
+
+.card {
+    
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 8px;
+    border: 15px solid gold;
+    width: 350px;
+    background-image: linear-gradient(to bottom right, red, yellow);
+
+}
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  

@@ -1,0 +1,17 @@
+<link href="/css/style.css" rel="stylesheet" type="text/css">
+<div class="card">
+
+
+<img class="poke" src="<%=  response.sprites.front_shiny %>"/>
+
+
+<h1><%= response.name %> </h1>
+<h4>Abilities:
+<% response.abilities.forEach(ability => { %>
+        <li><%= ability.ability.name %> </li>
+    
+<% }); %>
+</h4>
+
+<h4>Weight: <%= response.weight %> </h4>
+</div>
