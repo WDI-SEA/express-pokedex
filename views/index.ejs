@@ -11,6 +11,11 @@
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
         <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
       </form>
+      <br />
+      <form action="/pokemon/details" method="POST">
+        <input hidden type="text" name="id" value="<%= pokemon.url.slice(34, pokemon.url.length - 1) %>">
+        <button class="btn btn-primary" type="submit">Details</button>
+      </form>
     </div>
   <% }); %>
 </div>

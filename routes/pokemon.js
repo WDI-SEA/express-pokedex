@@ -9,7 +9,14 @@ router.get('/', function(req, res) {
   db.pokemon.findAll()
 
   .then(pokemons => {
-    res.render('favorites', {pokemons})
+    axios.get('http://pokeapi.co/api/v2/pokemon?limit=151')
+    .then(response => {
+      let result = response.data.results
+      res.render('favorites', {
+        pokemons: pokemons,
+        pokeId: result
+      })
+    })
   }).catch(err => console.log(err))
 });
 
@@ -54,5 +61,10 @@ router.post('/', function(req, res) {
     res.redirect('/pokemon')
   })
 });
+
+router.post('/details', (req, res) => {
+  let pokeId = req.body.id
+  res.redirect('/pokemon/' + pokeId)
+})
 
 module.exports = router;
