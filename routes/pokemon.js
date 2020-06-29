@@ -30,18 +30,15 @@ router.get('/:id', (req, res) => {
       id: req.params.id
     }
   }).then((pokemon) => {
-    var pokemonUrl = `http://pokeapi.co/api/v2/pokemon/` + `${pokemon.name}`;
+    var pokemonUrl = `http://pokeapi.co/api/v2/pokemon/` + `${pokemon.name.toLowerCase()}`;
     console.log(pokemonUrl)
     // Use request to call the API
-    axios.get((pokemonUrl)+pokemon.name)
+    axios.get(pokemonUrl)
       .then(function(apiResponse) {
       var pokemon = apiResponse.data;
+      res.render('pokemon/show', {pokemon: pokemon, id: req.params.id})
       console.log(pokemon)
       // res.render('index', { pokemon: pokemon.slice(0, 151) });
-    }).then((pokemon) => {
-          res.render('pokemon/show', {pokemon: pokemon, id: req.params.id})
-    }).catch((error) => {
-      console.log(error)
     })
   }).catch((error) => {
     console.log(error)

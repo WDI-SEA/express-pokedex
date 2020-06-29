@@ -6,7 +6,7 @@ const errorHandler = error => {
 }
 
 db.pokemon.create({
-    name: 'Pikachu'
+    name: 'Rapidash'
 }).then((poke) => {
     console.log('Created', poke.name)
 })

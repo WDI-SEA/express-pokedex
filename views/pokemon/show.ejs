@@ -7,7 +7,21 @@
 </p>
 <p>
     <% pokemon.abilities.forEach(ability => { %>
-        <h2><%= ability.name %></h2>
+        <h2><%= ability.ability.name %></h2>
         <% }) %>
 </p>
-
+<p>
+    <% pokemon.moves.forEach(move => { %>
+        <h2><%= move.move.name %></h2>
+        <% }) %>
+</p>
+<p>
+    <% pokemon.stats.forEach(stat => { %>
+        <h2><%= stat.base_stat.name %></h2>
+        <% }) %>
+</p>
+<p>
+    <% pokemon.types.forEach(type => { %>
+        <h2><%= type.slot.name %></h2>
+        <% }) %>
+</p>
