@@ -22,7 +22,9 @@ router.post('/', ((req, res) => {
   }).then((newPokemon) => {
     console.log('You just created: ', newPokemon.name)
     res.redirect('/pokemon')
-  })
+  }).catch((error) =>
+  console.log(error)
+  )
 }))
 
 router.get('/:name', ((req,res) => {
@@ -30,18 +32,20 @@ router.get('/:name', ((req,res) => {
   axios.get(pokemonUrl).then((apiResponse) => {
     let pokemonDetails = apiResponse.data;
     res.render('pokemon/details', {pokemon: pokemonDetails}) 
-  })
+  }).catch((error) =>
+  console.log(error)
+  )
 }))
 
-router.delete('/details/:name', (req, rex) => {
-  let pokemons = db.pokemon.findAll();
-  let pokemonList = JSON.stringify(pokemons)
-  pokemonList =JSON.parse(pokemonList)
-  pokemonList.splice(req.params.name, 1)
-  res.redirect('/pokemon')
-  if (error) {
-    console.log(error)
-  }
-})
+// router.delete('/details/:name', (req, rex) => {
+//   let pokemons = db.pokemon.findAll();
+//   let pokemonList = JSON.stringify(pokemons)
+//   pokemonList =JSON.parse(pokemonList)
+//   pokemonList.splice(req.params.name, 1)
+//   res.redirect('/pokemon')
+//   if (error) {
+//     console.log(error)
+//   }
+// })
 
 module.exports = router;

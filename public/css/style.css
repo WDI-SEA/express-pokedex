@@ -1,6 +1,6 @@
 body {
   text-align: center; 
-  font-family: 'Bangers', cursive;
+  font-family: 'Bangers';
   
 }
 .pokename {
@@ -11,11 +11,16 @@ body {
 
 .details {
   text-align: center;
-  font-family: 'Bangers', cursive;
+  font-family: 'Bangers';
 }
 
 .index {
   text-align: center;
-  font-family: 'Bangers', cursive;
+  font-family: 'Bangers';
+}
+
+#title {
+  font-size: 36px;
+
 }
 

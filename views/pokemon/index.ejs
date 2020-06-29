@@ -1,7 +1,9 @@
-<div class=index>
-  <ul>My Favorite Pokemon:
-  <% myFavoritePokemons.forEach((pokemon) => { %>
-    <li><a class="pokename" href = "/pokemon/<%= pokemon.name %>"><%= pokemon.name %></li>
+<div class="index">
+  <h2>My Favorite Pokemon</h2>
+  <ul>
+    <% myFavoritePokemons.forEach((pokemon) => { %>
+     <li> <a class="pokename" href = "/pokemon/<%= pokemon.name %>"><%= pokemon.name %></li>
   </ul>
   <% }) %>
 </div>
+

@@ -16,7 +16,8 @@
     "method-override": "^3.0.0",
     "morgan": "^1.9.1",
     "pg": "^8.2.1",
-    "sequelizer": "^1.1.4"
+    "sequelizer": "^1.1.4",
+    "urlencode": "^1.1.0"
   },
   "description": "Working with databases, especially through ORMs, can present quite a learning curve. We'll start by incorporating one database model into an application to save favorite Pokemon.",
   "devDependencies": {},
