@@ -28,3 +28,8 @@ var server = app.listen(port, function() {
 });
 
 module.exports = server;
+
+
+
+//Make sure that your data is squared --- make sure your API gives you back good shit
+//
