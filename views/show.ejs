@@ -1,0 +1,25 @@
+<div>
+    <h1>
+        <%= pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) %>
+    </h1>
+</div>
+<div>
+    <img src="<%= frontImg%>" alt="">
+    <img src="<%= backImg%>" alt="">
+</div>
+
+<% types.forEach(element => { %>
+    <div>
+        Type <%= element.slot %>: <%= element.type.name %>
+    </div>
+    <% }) %>
+    
+<br />
+<div>
+    Can be found in these cities:
+    <% found.forEach(element => { %>
+        <div>
+            <%= element %>
+        </div>
+    <% }) %>
+</div>
