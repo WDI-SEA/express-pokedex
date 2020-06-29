@@ -1,0 +1,10 @@
+pokemon
+--------
+
+name: string
+
+
+        Root file terminal command
+        --------------------------
+sequelize model:create --name pokemon --attributes name:string
+sequelize db:migrate
