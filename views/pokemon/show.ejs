@@ -1,26 +1,29 @@
-<div class="card" style="width: 18rem;">
-  <img
-    src="<%= pokeData.sprites.front_default %>"
-    class="card-img-top"
-    alt=""
-  />
-  <div class="card-body">
-    <h5 class="card-title"><%= pokeData.name %></h5>
-    <h5>Types:</h5>
-    <% pokeData.types.forEach(type => { %>
-    <p><%= type.type.name %></p>
-    <% }) %>
-  </div>
-  <ul class="list-group list-group-flush">
-    <% pokeData.stats.forEach(stat => { %>
-    <li class="list-group-item">
-      <%= stat.stat.name %>: <%= stat.base_stat %>
-    </li>
-    <% }) %>
-  </ul>
-  <div class="card-body">
-    <a href="/" class="card-link">Back to Pokemon</a>
-    <br />
-    <a href="/pokemon" class="card-link">Back to favorites</a>
+<div class="container show-div">
+  <div class="card" style="width: 18rem;">
+    <img
+      src="<%= pokeData.sprites.front_default %>"
+      class="card-img-top"
+      alt=""
+    />
+    <div class="card-body">
+      <h5 class="card-title"><%= pokeData.name %></h5>
+      <h5>Types:</h5>
+      <% pokeData.types.forEach(type => { %>
+      <p><%= type.type.name %></p>
+      <% }) %>
+    </div>
+    <ul class="list-group list-group-flush">
+      <% pokeData.stats.forEach(stat => { %>
+      <li class="list-group-item">
+        <%= stat.stat.name %>: <%= stat.base_stat %>
+      </li>
+      <% }) %>
+    </ul>
+    <div class="card-body">
+      <a href="/" class="card-link btn btn-primary">Back to Pokemon</a>
+      <br />
+      <br />
+      <a href="/pokemon" class="card-link btn btn-primary">Back to favorites</a>
+    </div>
   </div>
 </div>
