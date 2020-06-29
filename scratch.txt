@@ -1,0 +1,10 @@
+<div class="favoritesList">
+  <% pokemons.forEach(pokemon => { %>
+  <div class="pokemon">
+    <p>
+      <%= JSON.stringify(pokemon) %>
+    </p>
+    <br />
+  </div>
+  <% }); %>
+</div>

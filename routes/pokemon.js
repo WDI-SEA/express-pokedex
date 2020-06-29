@@ -1,16 +1,33 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
+var db = require("../models");
 
 // GET /pokemon - return a page with favorited Pokemon
-router.get('/', function(req, res) {
-  // TODO: Get all records from the DB and render to view
-  res.send('Render a page of favorites here');
+router.get('/', function (req, res) {
+  db.pokemon.findAll()
+    .then(function (pokemons) {
+      res.render('pokemon/index', {
+        pokemons: pokemons
+      })
+      .catch(function(err) {console.log(err)})
+    });
+})
+
+router.post("/", function (req, res) {
+  db.pokemon.create({
+    name: JSON.stringify(req.body.name)
+  }).then;
+  res.send(JSON.stringify(req.body.name) + "was added to database.");
 });
 
-// POST /pokemon - receive the name of a pokemon and add it to the database
-router.post('/', function(req, res) {
-  // TODO: Get form data and add a new record to DB
-  res.send(req.body);
-});
+
+// router.get('/', function (req, res) {
+//   db.pokemon.findAll()
+//     .then(function (pokemons) {
+//       res.render('/pokemon/index', {
+//         pokemons: pokemons
+//       });
+//     });
+// })
 
 module.exports = router;
