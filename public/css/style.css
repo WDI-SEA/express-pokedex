@@ -1,0 +1,21 @@
+body {
+  text-align: center; 
+  font-family: 'Bangers', cursive;
+  
+}
+.pokename {
+  text-align: center;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.details {
+  text-align: center;
+  font-family: 'Bangers', cursive;
+}
+
+.index {
+  text-align: center;
+  font-family: 'Bangers', cursive;
+}
+

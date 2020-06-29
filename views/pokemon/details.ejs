@@ -1,0 +1,16 @@
+<div class=details></div>
+  <h3>Learn more about <%= pokemon.name %></h3>
+  <p> Weight: <%= pokemon.weight%></p>
+  <p> Height: <%= pokemon.height %>  </p>
+  <p> Species: <%= pokemon.species.name %></p>
+  <ul>Forms:
+  <% pokemon.forms.forEach((form) => { %>
+    <li><%= form.name %></li>
+  <% }) %>
+  </ul>
+  <img src = "<%= pokemon.sprites.front_shiny %>" class="img-fluid" alt="Responsive image">
+  <img src = "<%= pokemon.sprites.back_shiny %>" class="img-fluid" alt="Responsive image">
+  <form method="POST" action="/pokemon/<%= pokemon.name%>/?_method=DELETE">
+    <input class="btn btn-primary" type="submit" value="Delete">
+  </form>
+</div>
