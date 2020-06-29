@@ -1,0 +1,7 @@
+Pokemon 
+--- 
+name: string (NOT NULL) 
+
+sequelize model:create --name pokemon --attributes name:string
+
+sequelize db:migrate

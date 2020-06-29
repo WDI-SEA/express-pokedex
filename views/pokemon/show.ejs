@@ -1,0 +1,13 @@
+<h1>Pokemon description:</h1>
+<p>
+    Identification #: <%= pokemon.id %>
+</p>
+<p>
+    Poke name: <%= pokemon.name %> 
+</p>
+<p>
+    <% pokemon.abilities.forEach(ability => { %>
+        <h2><%= ability.name %></h2>
+        <% }) %>
+</p>
+
