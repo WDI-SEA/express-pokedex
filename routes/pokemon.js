@@ -13,6 +13,20 @@ router.get('/', function (req, res) {
     });
 })
 
+router.get('/:id', function (req,res) {
+  db.pokemon.findOne({
+    where: {
+      id : req.params.id
+    }
+  })
+  .then(function (pokemon) {
+    res.render('pokemon/detail', {
+      pokemon: pokemon
+    })
+    .catch(function(err) {console.log(err)})
+  })
+})
+
 router.post("/", function (req, res) {
   db.pokemon.create({
     name: JSON.stringify(req.body.name)
