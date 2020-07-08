@@ -28,5 +28,14 @@ router.post('/', function(req, res) {
   })
 });
 
+// GET /pokemon/:name - renders a show page with information about the pokemon by name 
+router.get('/:name', (req, res) => {
+  var pokemonUrl = `http://pokeapi.co/api/v2/pokemon/${(req.params.name).toLowerCase()}`;
+  // Use request to call the API
+  axios.get(pokemonUrl).then(function(apiResponse) {
+    var pokemon = apiResponse.data;
+    res.render('pokemon/show', {pokemon})
+  })
+})
 
 module.exports = router;
