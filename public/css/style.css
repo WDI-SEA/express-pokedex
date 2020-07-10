@@ -19,3 +19,7 @@ img {
     width: 200px;
     height: 200px;
 }
+
+a {
+    margin: 5px;  
+}
