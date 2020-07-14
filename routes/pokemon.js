@@ -31,7 +31,8 @@ router.post("/", function (req, res) {
   db.pokemon.create({
     name: JSON.stringify(req.body.name)
   }).then;
-  res.send(JSON.stringify(req.body.name) + "was added to database.");
+  res.send('was added to database')
+  res.redirect("pokemon");
 });
 
 
