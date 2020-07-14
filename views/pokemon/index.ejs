@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Favorites</title>
 </head>
-<body>
+<body class="well favs">
    <%  pokemon.forEach((poke) => { %>
-       <p> <%= poke.name %> </p>
+        <div class="fav-name">
+            <p> <%= poke.name %> </p>
+            <a href="/pokemon/<%= poke.name %>" class="btn btn-primary">Click Here To View Stats and Info!</a>
+        </div>
    <% }) %>
 </body>
 </html>

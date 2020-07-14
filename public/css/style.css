@@ -1,0 +1,68 @@
+body {
+    margin: 0 auto;
+    background-color: gray;
+    background-image: url("https://i.pinimg.com/originals/ca/e0/1a/cae01ab5cce960db0d7819cc96e97ce8.png");
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-position: center; /* Center the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    color: black;
+}
+
+.main-header {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.main-header img {
+    padding-top: 20px;
+    height: 300px;
+    width: 300px;
+}
+
+
+.favs {
+    margin: 10px;
+    position: relative;
+    text-align: center;
+
+
+}
+
+.fav-name {
+    border: 1px solid red;
+    margin: 5px;
+    padding: 5px;
+    width: 250px;
+    display: grid;
+}
+
+.fav-name p {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.pokedex {
+    position:absolute;
+    top: 15%;
+    left: 35%;
+    z-index: 1;
+    text-align: center;
+}
+
+.display {
+    position:absolute;
+    border: 1px solid black;
+    top: 40%;
+    left: 45%;
+    z-index: 2;
+}
+
+.display h4{
+    text-align: center;
+}
+
+.show-header {
+    text-align: center;
+    
+}

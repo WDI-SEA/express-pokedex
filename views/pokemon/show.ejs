@@ -1,0 +1,16 @@
+<div class="show-header">
+    <h1>Pokedex Entry</h1>
+</div>
+
+<div class="pokedex">
+    <img src="https://i.pinimg.com/originals/ee/cb/19/eecb19a7a4a6aed08dc9abd6238616ec.png">
+</div>
+
+
+<div class="display">
+   <h4> <%= pokemon.name %> </h4>
+   <div class="show-img">
+       <img src="<%= pokemon.sprites.front_shiny %>">
+   </div>
+   <h4> <%= pokemon.types[0].type.name %> </h4>
+</div>
