@@ -1,0 +1,5 @@
+Pokemon
+----
+name: string
+
+sequelize model:create --name Pokemon --attributes name:string
