@@ -1,9 +1,5 @@
 const db = require('./models')
 
-const errorHandler = error => {
-    console.log('🤬🤬🤬')
-}
-
 // CREATE - creates 1 record in specified table of db (db.[Table Name])
 db.pokemon.create({
     name: 'Squirtle',
@@ -14,10 +10,6 @@ db.pokemon.create({
 
 
 // READ - finds all records in specified table of db (db.[Table Name])
-// db.pokemon.findAll().then(function(poke) {
-//     console.log('Found: ', poke.name. poke.type)
-// })
-
-
-// UPDATE
-// DELETE
+db.pokemon.findAll().then(function(poke) {
+    console.log('Found: ', poke.name. poke.type)
+})

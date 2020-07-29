@@ -1,0 +1,24 @@
+<div class="container">
+    <h1 class="text-center">Favorites</h1>
+    <p class="text-center">
+      <a href="/">Home</a>
+    </p>
+  
+    <div class="row">
+        <% pokemon.forEach(function(pokemon) { %>
+          <div class="col-4">
+            <div class="card border-primary mb-3" style="max-width: 20rem;">
+              <div class="card-header"><h3 class="text-center"><%= pokemon.name %></h3></div>
+              <div class="card-body mx-auto">
+                <form method="GET" action="/pokemon/<%= pokemon.id %>">
+                  <input hidden type="text" name="name" value="<%= pokemon.name %>">
+                  <button class="btn btn-primary" type="submit">View Pokemon Details</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+
+    

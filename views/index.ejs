@@ -4,13 +4,22 @@
     <a href="/pokemon">Favorites</a>
   </p>
 
-  <% pokemon.forEach(function(pokemon) { %>
-    <div class="well">
-      <h2><%= pokemon.name %></h2>
-      <form method="POST" action="/pokemon">
-        <input hidden type="text" name="name" value="<%= pokemon.name %>">
-        <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
-      </form>
-    </div>
-  <% }); %>
+  <div class="row">
+    <% pokemon.forEach(function(pokemon) { %>
+      <div class="col-4">
+        <div class="card border-primary mb-3" style="max-width: 20rem;">
+          <div class="card-header"><h3 class="text-center"><%= pokemon.name %></h3></div>
+          <div class="card-body mx-auto">
+            <form method="POST" action="/pokemon">
+              <input hidden type="text" name="name" value="<%= pokemon.name %>">
+              <button class="btn btn-primary" type="submit">Add to Favorites</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    <% }); %>
+  </div>
 </div>
+
+
+

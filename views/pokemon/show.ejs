@@ -1,0 +1,31 @@
+<div class="container">
+    <h2 class="text-center">Detailed View</h2>
+    <p class="text-center">
+      <a href="/">Home</a> | <a href="/pokemon">Favorites</a>
+    </p>
+  
+    <div class="jumbotron">
+        <h1 class="display-3"><%= pokemon.name %></h1>
+        <hr class="my-3">
+        <p class="lead">
+            Pokedex ID: <%= response.data.id %>
+        </p>
+        <p class="lead">
+            Base Experience: <%= response.data.base_experience %> points of XP
+        </p>
+        <p class="lead">
+            Height: <%= response.data.height %> kg
+        </p>
+        <p class="lead">
+            Weight: <%= response.data.weight %> cm
+        </p>
+        <p class="lead">Photo: <img src="<%= response.data.sprites.back_default %>"></p>
+        <div class="text-center">
+            <form method="POST" action="<%= pokemon.id %>/delete">
+                <input hidden type="text" name="id" value="<%= pokemon.id %>">
+                <button class="btn btn-primary btn-lg" type="submit">Remove Pokemon</button>
+            </form>
+        </div>
+    </div>
+
+
