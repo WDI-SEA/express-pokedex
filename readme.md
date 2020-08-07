@@ -42,9 +42,9 @@ Your first step will be to create a SQL database for your application. Recall th
 
 1. Use `npm` to install the required modules for postgres and sequelize: `pg` and `sequelize`
 2. Make sure your Postgres server is running (check for the elephant).
-3. Create your database with the `createdb` command followed by your database name.
-4. Run `sequelize init` to initialize Sequelize.
-5. Update your newly created `config/config.json` file as we did in class. This means changing the credentials, updating the SQL flavor, and changing the database name to the one you created in step 3.
+3. Run `sequelize init` to initialize Sequelize.
+4. Update your newly created `config/config.json` file as we did in class. This means changing the credentials, updating the SQL flavor, and changing the database name to `pokedex`.
+5. Run `sequelize db:create` to create your database inside of Postgres
 
 #### Part 2: Create your Pokemon Model and Table
 
@@ -52,6 +52,7 @@ Our data model needs only one attribute: `name`.
 
 1. Use the `sequelize model:create` command to make the `pokemon` model. This creates both the model JS and the migration JS files.
 2. Use the `sequelize db:migrate` command to apply the migrations.
+3. Confirm that your `database` and `model` are inside Postgres using the `terminal` or `Postico`
 
 ```js
 // Make sure to require your models in the files where they will be used.
