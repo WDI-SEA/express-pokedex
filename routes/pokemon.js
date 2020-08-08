@@ -54,4 +54,20 @@ router.post("/", function (req, res) {
     });
 });
 
+router.delete("/:id", (req, res) => {
+  db.pokemon
+    .destroy({
+      where: {
+        id: req.params.id,
+      },
+    })
+    .then((poke) => {
+      console.log(`Deleted ${poke.name} from favorites`);
+      res.redirect("/pokemon");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
 module.exports = router;

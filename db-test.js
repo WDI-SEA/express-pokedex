@@ -13,3 +13,16 @@ var db = require("./models");
 
 //   console.log("Found: ", poke.name);
 // });
+
+db.pokemon
+  .destroy({
+    where: {
+      id: 3,
+    },
+  })
+  .then((poke) => {
+    console.log(`Deleted ${poke.name} from favorites`);
+  })
+  .catch((err) => {
+    console.log(err);
+  });

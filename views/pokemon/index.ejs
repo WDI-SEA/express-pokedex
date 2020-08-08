@@ -14,5 +14,11 @@
       >
     </form>
   </div>
+  <form action="/pokemon/:id" method="DELETE">
+    <a class="btn btn-danger" href="pokemon/<%= pokemon.id %>"
+      >Delete <%= pokemon.name %></a
+    >
+  </form>
+  <br />
   <% }); %>
 </div>
