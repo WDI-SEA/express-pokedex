@@ -1,2 +1,8 @@
+<h2><%= pokedata.name.toUpperCase()%> | Exp: <%= pokedata.base_experience%></h2>
 <img src="<%= pokedata.sprites.front_default %>" alt="Pokemon image">
+<div>
 
+    <h4>Weight: <%= pokedata.weight %> | Height: <%= pokedata.height%></h4>
+    <h3>Type: <%= pokedata.types[0].type.name %></h3>
+    <h3>Power: <%= pokedata.abilities[1].ability.name %></h3>
+</div>
