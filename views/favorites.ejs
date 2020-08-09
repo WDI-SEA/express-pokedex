@@ -1,8 +1,11 @@
 <div>
     <% pokemon.forEach((p) => { %>
         <div>
-            <a href=“/pokemon/<%=p.name%>“></a>
-            <h2><%= p.name %></h2>
+            <a href="/pokemon/<%= p.name %>">
+
+                <h2><%= p.name %></h2>
+            </a>
+            
                
         </div>
     <% }) %>
