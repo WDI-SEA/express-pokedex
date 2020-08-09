@@ -55,6 +55,18 @@ router.get('/:name', async (req, res) => {
 });
 
 //Delete /pokemon 
+router.delete("/", async (req, res) => {
+  try {
+    await db.pokemon.destroy({
+      where: {
+        name: req.body.name,
+      },
+    });
+    res.redirect("/pokemon");
+  } catch (error) {
+    console.log("error");
+  }
+});
 
 module.exports = router;
 
