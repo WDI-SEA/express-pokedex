@@ -54,7 +54,7 @@ Our data model needs only one attribute: `name`.
 2. Use the `sequelize db:migrate` command to apply the migrations.
 3. Confirm that your `database` and `model` are inside Postgres using the `terminal` or `Postico`
 
-> Write this in the `node db-test.js` file.
+Write this in the `node db-test.js` file.
 
 ```js
 // Make sure to require your models in the files where they will be used.
