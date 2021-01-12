@@ -57,7 +57,7 @@ Our data model needs only one attribute: `name`.
 
 ```js
 // Make sure to require your models in the files where they will be used.
-var db = require('./models');
+const db = require('./models');
 
 db.pokemon.create({
     name: 'pikachu'
