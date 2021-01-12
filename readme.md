@@ -44,7 +44,7 @@ Your first step will be to create a SQL database for your application. Recall th
 2. Make sure your Postgres server is running (check for the elephant).
 3. Run `sequelize init` to initialize Sequelize.
 4. Update your newly created `config/config.json` file as we did in class. This means changing the credentials, updating the SQL flavor, and changing the database name to `pokedex`.
-5. Run `sequelize db:create` to create your database inside of Postgres
+5. Run `createdb pokedex` to create your database inside of Postgres
 
 #### Part 2: Create your Pokemon Model and Table
 
@@ -53,18 +53,23 @@ Our data model needs only one attribute: `name`.
 1. Use the `sequelize model:create` command to make the `pokemon` model. This creates both the model JS and the migration JS files.
 2. Use the `sequelize db:migrate` command to apply the migrations.
 3. Confirm that your `database` and `model` are inside Postgres using the `terminal` or `Postico`
+4. Create a `db-test.js` with the following code:
 
 ```js
 // Make sure to require your models in the files where they will be used.
 var db = require('./models');
 
 db.pokemon.create({
-  name: 'Pikachu'
-}).then(function(poke) {
-  console.log('Created: ', poke.name)
-})
+    name: 'pikachu'
+  }).then(poke => {
+    console.log('Created: ', poke.name)
+  })
 
-db.pokemon.findAll().then(function(poke) {
+db.pokemon.findOne({
+  where: {
+    name: 'pikachu'
+  }
+}).then(poke => {
   console.log('Found: ', poke.name)
 })
 ```
@@ -87,7 +92,7 @@ You'll want to add functionality to the following routes by incorporating the `p
 
 #### Part 4: Display more info on each Pokemon
 
-Add a route `GET /pokemon/:id` that renders a `show` page with information about the Pokemon with the corresponding row `id`.
+Add a route `GET /pokemon/:name` that renders a `show` page with information about the Pokemon.
 
 * You can get detailed information about a Pokemon by passing the Pokemon's name to PokeAPI. You can retrieve images, abilities, stats, and moves through the API.
 * Example: http://pokeapi.co/api/v2/pokemon/bulbasaur/
