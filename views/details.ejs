@@ -24,3 +24,9 @@
       <%  }) %>
     </li>
 </ul>
+
+<form method="POST" action="/pokemon">
+    <input hidden type="text" name="name" value="<%= pokeInfo.data.species.name %>">
+    <input hidden type="text" name="imageUrl" value="<%= pokeInfo.data.sprites.front_default %>">
+    <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
+  </form>
