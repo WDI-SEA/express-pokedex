@@ -1,3 +1,4 @@
+const { default: axios } = require('axios');
 const express = require('express');
 const router = express.Router();
 const db = require('../models')
@@ -6,9 +7,18 @@ const db = require('../models')
 router.get('/', function(req, res) {
   db.pokemon.findAll().then(pokes=>{
     // TODO: Get all records from the DB and render to view
-    res.send(pokes);
+    res.render('faves.ejs', {pokemon: pokes});
   })
 });
+
+router.get('/:name', (req, res) => {
+  console.log(req.params)
+  axios.get(`https://pokeapi.co/api/v2/pokemon/${req.params.name}/`)
+  .then((response) => {
+    console.log(response)
+    res.render('details.ejs', {pokeInfo: response})
+  })
+})
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
@@ -20,8 +30,8 @@ router.post('/', function(req, res) {
 }).then(([user, wasCreated]) => {
     console.log(user)
     console.log(wasCreated)
+    res.redirect('pokemon');
 })
-  res.redirect('pokemon');
 });
 
 module.exports = router;
