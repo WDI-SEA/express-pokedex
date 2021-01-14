@@ -3,6 +3,7 @@
     <% pokemon.forEach(function(pokemon) { %>
       <div class="well">
         <h2><%= pokemon.name %></h2>
+        <img src='<%= pokemon.nickname %>'>
         <form method="POST" action="/pokemon/delete/<%= pokemon.name %>/?_method=DELETE">
           <input hidden type="text" name="name" value="<%= pokemon.name %>">
           <button class="btn btn-primary" type="submit">Delete From Favorite Pokemon</button>

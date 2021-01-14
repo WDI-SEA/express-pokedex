@@ -24,7 +24,8 @@ router.post('/', function(req, res) {
   // TODO: Get form data and add a new record to DB
   db.pokemon.findOrCreate({
     where: {
-        name: req.body.name
+        name: req.body.name,
+        nickname: req.body.imageUrl
     }
 }).then(([user, wasCreated]) => {
     res.redirect('pokemon');

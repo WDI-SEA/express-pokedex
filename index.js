@@ -27,10 +27,10 @@ app.get('/', function(req, res) {
     let urlArray = []
 
     pokemon.forEach((element, i) => {
-      urlArray.push(`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i+1}.png`)
+      element.imageUrl = (`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i+1}.png`)
     })
 
-    res.render('index', { pokemon: pokemon.slice(0, 150), url: urlArray });
+    res.render('index', { pokemon: pokemon.slice(0, 150)});
   })
 });
 
