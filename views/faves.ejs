@@ -2,7 +2,7 @@
   
     <% pokemon.forEach(function(pokemon) { %>
       <div class="well">
-        <h2><%= pokemon.name %></h2>
+        <h2><a href="/pokemon/<%= pokemon.name %>"><%= pokemon.name %></a></h2>
         <img src='<%= pokemon.nickname %>'>
         <form method="POST" action="/pokemon/delete/<%= pokemon.name %>/?_method=DELETE">
           <input hidden type="text" name="name" value="<%= pokemon.name %>">
@@ -11,3 +11,7 @@
       </div>
     <% }); %>
   </div>
+
+  <form method="GET" action="/">
+    <button class="btn btn-primary" type="submit">Return to Pokedex</button>
+  </form>
