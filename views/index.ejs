@@ -1,8 +1,11 @@
 <div class="container">
 
-  <% pokemon.forEach(function(pokemon) { %>
+  <% pokemon.forEach(function(pokemon, i) { %>
     <div class="well">
       <h2><a href="/pokemon/<%= pokemon.name %>"><%= pokemon.name %></a></h2>
+
+      <img src="<%= url[i] %>">
+
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
         <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>

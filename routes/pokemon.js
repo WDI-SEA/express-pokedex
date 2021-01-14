@@ -13,7 +13,6 @@ router.get('/', function(req, res) {
 });
 
 router.get('/:name', (req, res) => {
-  console.log(req.params)
   axios.get(`https://pokeapi.co/api/v2/pokemon/${req.params.name}/`)
   .then((response) => {
     res.render('details.ejs', {pokeInfo: response})
@@ -28,8 +27,6 @@ router.post('/', function(req, res) {
         name: req.body.name
     }
 }).then(([user, wasCreated]) => {
-    console.log(user)
-    console.log(wasCreated)
     res.redirect('pokemon');
 })
 });
@@ -38,7 +35,6 @@ router.delete('/delete/:name', (req, res) => {
   db.pokemon.destroy({
     where: { name: req.params.name }
   }).then((numRowsDeleted) => {
-    console.log(numRowsDeleted)
     res.redirect('/pokemon')
   })
 })
