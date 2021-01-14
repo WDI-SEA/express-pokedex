@@ -52,7 +52,7 @@ Our data model needs only one attribute: `name`.
 
 1. Use the `sequelize model:create` command to make the `pokemon` model. This creates both the model JS and the migration JS files.
 2. Use the `sequelize db:migrate` command to apply the migrations.
-3. Confirm that your `database` and `model` are inside Postgres using the `terminal` or `Postico`
+3. Confirm that your `database` and `model` are inside Postgres using the `terminal`
 4. Create a `db-test.js` with the following code:
 
 ```js
