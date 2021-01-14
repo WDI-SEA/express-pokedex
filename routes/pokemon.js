@@ -1,6 +1,7 @@
 const { default: axios } = require('axios');
 const express = require('express');
 const router = express.Router();
+const methodOverride = require('method-override')
 const db = require('../models')
 
 // GET /pokemon - return a page with favorited Pokemon
@@ -15,7 +16,6 @@ router.get('/:name', (req, res) => {
   console.log(req.params)
   axios.get(`https://pokeapi.co/api/v2/pokemon/${req.params.name}/`)
   .then((response) => {
-    console.log(response)
     res.render('details.ejs', {pokeInfo: response})
   })
 })
@@ -33,5 +33,14 @@ router.post('/', function(req, res) {
     res.redirect('pokemon');
 })
 });
+
+router.delete('/delete/:name', (req, res) => {
+  db.pokemon.destroy({
+    where: { name: req.params.name }
+  }).then((numRowsDeleted) => {
+    console.log(numRowsDeleted)
+    res.redirect('/pokemon')
+  })
+})
 
 module.exports = router;

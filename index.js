@@ -9,10 +9,10 @@ const port = process.env.PORT || 3000;
 
 //View engine
 app.set('view engine', 'ejs');
-//Body parser
-app.use(express.urlencoded({ extended: false }));
 // method-override middleware
 app.use(methodOverride('_method'))
+//Body parser
+app.use(express.urlencoded({ extended: false }));
 //Sets layout
 app.use(ejsLayouts);
 
