@@ -1,0 +1,12 @@
+sequelize 
+
+//create databse
+
+createdb pokedex
+
+// create model
+
+sequelize model:create --name pokemon --attribute name
+
+sequelize db:migrate
+
