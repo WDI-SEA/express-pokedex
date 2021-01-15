@@ -1,1 +1,7 @@
 <h1>Favorite Pokemon</h1>
+
+<% pokemons.forEach(pokemon => { %>
+    <div>
+    <a href='/pokemon/<%=pokemon.name%>'> <%= pokemon.name %> </a>
+    </div>
+<% }) %>

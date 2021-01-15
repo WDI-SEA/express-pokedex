@@ -1,0 +1,19 @@
+<%# Show details for one pokemon here. %>
+<h3><%= name %></h3>
+
+<img src="<%=details.sprites.front_default%>">
+<p>
+    height: <%=height%>
+    
+    <br>
+    abilities: <% abilities.forEach( element => { %>
+        <ul>
+            <li><%= element.ability.name %></li>
+        </ul>
+    <% }) %>
+    moves (only 5 shown): <% moves.forEach( move => { %>
+        <ul>
+            <li><%= move.move.name %></li>    
+        </ul>
+    <% }) %> 
+</p>

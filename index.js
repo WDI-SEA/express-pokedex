@@ -8,6 +8,8 @@ const port = process.env.PORT || 3000;
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
+// createdb pokedex
+// sequelize model:create --name pokemon --attributes name:string
 
 // GET / - main index of site
 app.get('/', function(req, res) {
