@@ -19,16 +19,7 @@ app.get('/', function(req, res) {
   })
 });
 
-// part 3
 
-// app.post('/pokemon', (req, res)=>{
-//     // db.pokemon.create({
-//     //     name: req.body.name
-//     // }).then(createdFav=>{
-//     //   console.log(createdFav)
-//     //   res.redirect('/pokemon')
-//     // })
-// })
 
 // Imports all routes from the pokemon routes file
 app.use('/pokemon', require('./routes/pokemon'));

@@ -5,7 +5,7 @@ const db = require('../models')
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', function (req, res) {
   // TODO: Get all records from the DB and render to view
-  res.render('pokemon/faves.ejs');
+  res.render('pokemon/index.ejs');
 });
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
