@@ -19,6 +19,13 @@ app.get('/', function(req, res) {
   })
 });
 
+
+// part 3
+
+// app.get('/pokemon', (req, res) => {
+//   res.render('pokemon/index.ejs')
+// })
+
 // Imports all routes from the pokemon routes file
 app.use('/pokemon', require('./routes/pokemon'));
 
