@@ -4,14 +4,30 @@ const db = require('../models');
 
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', function(req, res) {
-  // db.pokemon.findAll()
-  res.send('Render a page of favorites here');
+  db.pokemon.findAll()
+  .then(pokemons => {
+    res.render('pokemon', { pokemons } )
+  })
+  // res.send('Render a page of favoritessdfsdfasd here');
 });
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/', function(req, res) {
-  // TODO: Get form data and add a new record to DB
-  res.send(req.body);
+ db.pokemon.findOrCreate({
+   where: { name: req.body.name }
+ }).then(pokemon =>{
+   console.log(`Pokemon ${req.body.name} was favorited!`)
+   res.redirect('pokemon');
+ }).catch(err => {
+   console.log(err)
+   res.send(404)
+});
 });
 
+// GET /pokemon/:name
+router.get('/:name', (req, res) => {
+  console.log(req.params.name)
+  res.send(`Here is info on your fave ${req.params.name}`)
+  // res.render('detail')
+});
 module.exports = router;
