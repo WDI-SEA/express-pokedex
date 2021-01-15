@@ -32,10 +32,10 @@ router.get('/:name',(req,res)=>{
   let pokemonDetail=`http://pokeapi.co/api/v2/pokemon/${req.params.name}/`
   axios.get(pokemonDetail).then(response=>{
     console.log("👌")
-    console.log(response.data.abilities)
+    console.log(response.data)
     //res.send(response.data)
     //axios.get(response.data.abilities.)
-    res.render('pokemon/detail.ejs',{abilities:response.data.abilities})
+    res.render('pokemon/detail.ejs',{details:response.data})
   })
 
 })

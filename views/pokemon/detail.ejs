@@ -4,11 +4,12 @@
 <ul>
 
 
-        <% abilities.forEach(detail=>{%>
+        <% details.abilities.forEach(detail=>{%>
             <li>
 
                 <%= detail.ability.name%>
             </li>
         <%})%>
-
+            
+            <img src="<%= details.sprites.front_shiny %> " alt="pokemon image">
 </ul>
