@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models')
+const axios = require('axios');
+
+
 
 router.get('/', (req, res) => {
   db.pokedex.findAll()
@@ -10,6 +13,24 @@ router.get('/', (req, res) => {
     console.log(error)
   })
 })
+
+router.get('/:pokemon', (req, res) => {
+  console.log(req.params)
+  db.pokedex.findOne({
+    where: {
+      pokemon: req.params.pokemon
+    }
+  }).then(poke => {
+   let pokemonUrl = `http://pokeapi.co/api/v2/pokemon/${poke.pokemon}`
+   axios.get(pokemonUrl).then(apiResponse => {
+     let pokemon = apiResponse.data
+     console.log(pokemon)
+     res.render('show', {pokemon: pokemon})
+
+   })
+  }) 
+})
+
 
 
 // // POST /pokemon - receive the name of a pokemon and add it to the database

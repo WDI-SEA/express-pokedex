@@ -1,7 +1,7 @@
 <ul>
     <form action="/pokemon" method="POST">
     <% pokemon.forEach(function(poke){ %>
-        <li><%= poke.pokemon %></li>
+        <a href="/pokemon/<%= poke.pokemon %>"><li><%= poke.pokemon %></li></a>
    <% }) %>
 </form>
 </ul>
