@@ -1,7 +1,7 @@
+const db = require('./models')
 const express = require('express');
 const axios = require('axios'); 
 const ejsLayouts = require('express-ejs-layouts');
-
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -18,6 +18,17 @@ app.get('/', function(req, res) {
     res.render('index', { pokemon: pokemon.slice(0, 151) });
   })
 });
+
+// part 3
+
+// app.post('/pokemon', (req, res)=>{
+//     // db.pokemon.create({
+//     //     name: req.body.name
+//     // }).then(createdFav=>{
+//     //   console.log(createdFav)
+//     //   res.redirect('/pokemon')
+//     // })
+// })
 
 // Imports all routes from the pokemon routes file
 app.use('/pokemon', require('./routes/pokemon'));
