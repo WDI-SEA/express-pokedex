@@ -1,4 +1,5 @@
 .env
+package-lock.json
 
 # Created by https://www.gitignore.io/api/node,osx,linux
 
@@ -78,3 +79,4 @@ Temporary Items
 
 # Linux trash folder which might appear on any partition or disk
 .Trash-*
+node_modules
