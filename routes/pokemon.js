@@ -35,7 +35,7 @@ router.get('/:name',(req,res)=>{
     console.log(response.data)
     //res.send(response.data)
     //axios.get(response.data.abilities.)
-    res.render('pokemon/detail.ejs',{details:response.data})
+    res.render('pokemon/detail.ejs',{details:response.data,name:req.params.name})
   })
 
 })
