@@ -1,7 +1,7 @@
 <div class="container">
 
   <% pokemon.forEach(function(pokemon, i) { %>
-    <div class="well">
+    <div class="well" class="pokePic" style="background-image: url(<%= pokemon.imageUrl %>), linear-gradient(to right, rgba(0,0,0,0), rgba(216, 235, 199,1));">
       <h2><a href="/pokemon/<%= pokemon.name %>"><%= pokemon.name %></a></h2>
 
       <img src="<%= pokemon.imageUrl %>">

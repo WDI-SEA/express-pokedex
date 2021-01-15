@@ -1,34 +1,32 @@
-<h2><%= pokeInfo.data.species.name %></h2>
 
-<h3>Deets</h3>
 
-<img alt='sprite' src='<%= pokeInfo.data.sprites.front_default %>'>
-<img alt='sprite' src='<%= pokeInfo.data.sprites.front_shiny %>'>
+  <div class="container">
+    <h2><%= pokeInfo.data.species.name %></h2>
 
-<ul>
-    <li>
-        <% pokeInfo.data.types.forEach(element => { %>
-            <ul>
-                <li>
+    <div class="well" style="background-image: url(<%= pokeInfo.data.sprites.front_default %>), linear-gradient(to right, rgba(0,0,0,0), rgba(216, 235, 199,1)); background-position: right; background-size: 800px; background-repeat: no-repeat;">
+        <h3>Deets</h3>
+
+        <img alt='sprite' src='<%= pokeInfo.data.sprites.front_default %>'>
+        <img alt='sprite' src='<%= pokeInfo.data.sprites.front_shiny %>'>
+        
+        <h4 style="padding-bottom: 20px;">Types</h4>
+            <% pokeInfo.data.types.forEach(element => { %>
+                <span class="well" style="background-color: white;">
                     <a href='<%= element.type.url %>'><%= element.type.name %></a>
-                </li>
-            </ul>
-      <%  }) %>
-    </li>
+                </span>
+            <%  }) %>
 
-    <li>
-        <% pokeInfo.data.abilities.forEach(element => { %>
-            <ul>
-                <li>
+        <h4 style="padding-bottom: 20px; padding-top: 20px;">Abilities</h4>
+            <% pokeInfo.data.abilities.forEach(element => { %>
+                <span class="well" style="background-color: white;">
                     <a href='<%= element.ability.url %>'><%= element.ability.name %></a>
-                </li>
-            </ul>
-      <%  }) %>
-    </li>
-</ul>
-
-<form method="POST" action="/pokemon">
-    <input hidden type="text" name="name" value="<%= pokeInfo.data.species.name %>"nd>
-    <input hidden type="text" name="imageUrl" value="<%= pokeInfo.data.sprites.front_default %>">
-    <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
-  </form>
+                </span>
+            <%  }) %>
+        
+        <form method="POST" action="/pokemon" style="padding-top: 30px;">
+            <input hidden type="text" name="name" value="<%= pokeInfo.data.species.name %>"nd>
+            <input hidden type="text" name="imageUrl" value="<%= pokeInfo.data.sprites.front_default %>">
+            <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
+        </form>
+    </div>
+  </div>
