@@ -1,0 +1,24 @@
+<h2><%= pokemon.name %> </h2>
+<img src="<%=pokemon.sprites.front_shiny%>">
+<ol>
+  <li><%= pokemon.weight %> kg</li>
+  <li><%= pokemon.height %> ft</li>
+  <li>Abilities:</li>
+  <ul>
+    <% pokemon.abilities.forEach(a =>{ %>
+      <li><%= a.ability.name %></li>
+    <% }) %>
+  </ul>
+  <li>Type(s):</li>
+  <ul>
+    <% pokemon.types.forEach(t =>{ %>
+      <li><%= t.type.name %></li>
+    <% }) %>
+  </ul>
+  <li>Moves:</li>
+  <ul>
+    <% pokemon.moves.forEach(m =>{ %>
+      <li><%= m.move.name %></li>
+    <% }) %> 
+  </ul>
+</ol>
