@@ -1,6 +1,7 @@
 const express = require('express');
 const axios = require('axios'); 
 const ejsLayouts = require('express-ejs-layouts');
+const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -8,6 +9,8 @@ const port = process.env.PORT || 3000;
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
+//public folder
+app.use(express.static(path.join(__dirname, '/public')));
 
 // GET / - main index of site
 app.get('/', function(req, res) {
