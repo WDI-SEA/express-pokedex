@@ -1,6 +1,11 @@
 body{
     background-color: orange;
 }
-h1{
-    color: red;
+
+.detailsPage {
+    background-color: rgb(226, 158, 153);
+}
+
+.detailsInfo {
+    color:rgba(255, 252, 73, 0.89);
 }
