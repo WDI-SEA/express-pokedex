@@ -4,7 +4,16 @@
   <br /> 
   has id of <%=id%>  
   <br />
-  and has types <%=types[0].type.name%> and <%=types[1].type.name%>
+
+  and has type<%= types.length > 1 ? 's' : '' %>
+  
+  <% types.forEach((type, index) =>{ %>
+    <%= index > 0 ? 'and ' : '' %> 
+    <%=type.type.name%>  
+  <% }) %>
+  <!-- would need to write a for loop against array length because some only have one type and types[1].type.name%> -->
   <br />
   and looks like: <img src="<%=spriteN%>" alt="<%=name%>">
 </h1>
+<!-- <%= JSON.stringify(types, null, 2) %> -->
+<!--  -->
