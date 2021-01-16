@@ -1,0 +1,14 @@
+<h1>My favorite <%= pokemon.name%></h1>
+
+<img src="<%= pokemon.sprites.other['official-artwork'].front_default %> ">
+
+<ul>
+    <li>weight: <%=pokemon.weight %>lbs</li>
+    <li>type: <%= pokemon.types[0].type.name %></li>
+    <li>hp: <%=pokemon.stats[0].base_stat %></li>
+    <li>Attack: <%=pokemon.stats[1].base_stat %></li>
+    <li>defense: <%=pokemon.stats[2].base_stat %></li>
+    <li>special attack: <%=pokemon.stats[3].base_stat %></li>
+    <li>special defense: <%=pokemon.stats[4].base_stat %></li>
+    <li>speed: <%=pokemon.stats[5].base_stat %></li>
+</ul>
