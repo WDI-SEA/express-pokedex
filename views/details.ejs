@@ -7,4 +7,25 @@ height
 abillity(array.name)
 type(array.type.name) -->
 
-<h2>detail page for <%= pokemon.name %></h2>
+<h2><%= pokemon.name %></h2>
+
+<div id="imgDetail">
+    <img src="<%= pokemon.sprites.front_default %>">
+    <ul>
+        <li>Pokémon Id: <%= pokemon.id %></li>
+        <li>Height: <%= pokemon.height %></li>
+        <li>Weight: <%= pokemon.weight %></li>
+        <li>Abilities: <% pokemon.abilities.forEach(ability => { %>
+            <ul>
+                <li><%= ability.ability.name %></li>
+            </ul>
+            <% }) %>
+        </li>
+        <li>Types: <% pokemon.types.forEach(type => { %>
+            <ul>
+                <li><%= type.type.name %></li>
+            </ul>
+            <% }) %>
+        </li>
+    </ul>
+</div>

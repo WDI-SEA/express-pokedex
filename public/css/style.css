@@ -1,0 +1,58 @@
+* {
+    border: none;
+    margin: 0;
+    font-family: 'Montserrat Alternates', sans-serif;
+    background-color: rgb(247, 247, 247);
+}
+
+button {
+    border: rgb(73, 108, 185);
+    border-style: solid;
+    border-width: 5px;
+}
+
+/* button :hover {
+} */
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1em;
+}
+.title {
+    text-align: center;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.container > * + * {
+    margin-left: 5px;
+    margin-top: 20px;
+  }
+.well {
+    width: 200px;
+    height: 100px;
+    background-color: rgb(239, 217, 51);
+    border: rgb(73, 108, 185);
+    border: rgb(73, 108, 185);
+    border-style: solid;
+    border-width: 5px;
+    text-align: center;
+}
+
+form {
+    background-color: rgb(239, 217, 51);
+}
+
+#indexname {
+    font-size: 18px;
+    background-color: rgb(239, 217, 51);
+    margin-top: 15px;
+}
+.btn.btn-primary {
+    margin-top: 15px;
+}

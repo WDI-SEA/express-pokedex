@@ -32,7 +32,7 @@ router.get('/:name', (req, res) => {
   axios.get(`http://pokeapi.co/api/v2/pokemon/${req.params.name}`)
   .then(foundMonster => {
     res.render('details', { pokemon: foundMonster.data })
-    console.log(foundMonster.data)
+    // console.log(foundMonster.data)
   })
 })
 

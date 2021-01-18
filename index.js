@@ -8,6 +8,7 @@ const path = require('path');
 const db = require('./models')
 
 app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 
@@ -21,6 +22,17 @@ app.get('/', function(req, res) {
   }) 
 });
 
+// tried to put img on each list
+// app.get('/', function(req, res) {
+//   let i;
+//   for (i = 1; i <= 3; i++) {
+//     axios.get(`http://pokeapi.co/api/v2/pokemon/${i}`)
+//     .then(foundMonster => {
+//       res.render('index', { pokemon: foundMonster.data })
+//       console.log(foundMonster.data)
+//     })
+//   }
+// });
 
 // Imports all routes from the pokemon routes file
 app.use('/pokemon', require('./routes/pokemon'));
