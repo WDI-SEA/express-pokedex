@@ -17,6 +17,7 @@ nav{
     text-align: center;
     font-size: 22px;
     color: white;
+    margin: 4rem;
 }
 
 nav a{
@@ -33,6 +34,9 @@ nav a:hover{
     justify-content: center;
     align-items: center;
     align-content: center;
+    width: 50%;
+    margin: 0 auto;
+    flex-wrap: wrap;
 }
 
 .pokemon li{
@@ -43,6 +47,7 @@ nav a:hover{
     border-bottom:20px ridge #ff0000;
     border-left:20px ridge #ff0000;
     background-color: #ffde00;
+
 }
 
 .pokemon li a{
@@ -65,7 +70,7 @@ nav a:hover{
 }
 
 .favorite{
-    margin: 2rem;
+    margin: 4rem;
     font-size: 48px;
     color: #ffde00;
     letter-spacing: .5rem;
