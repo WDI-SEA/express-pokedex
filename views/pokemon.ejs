@@ -1,10 +1,10 @@
 <div class="title">
     <h1>Favorite Pokémons</h1>
 </div>
-<div class="well">
-<ul>
+<div class="favbox">
+<ul class="favlist">
     <% dbPokemons.forEach(favPoke => {%>
-        <li><a href='/pokemon/<%= favPoke.name %>'><%= favPoke.name %></a></li>
+        <li class="favlistitem"><a href='/pokemon/<%= favPoke.name %>'><%= favPoke.name %></a></li>
     <% }) %>
 </ul>
 </div>

@@ -9,10 +9,12 @@ button {
     border: rgb(73, 108, 185);
     border-style: solid;
     border-width: 5px;
+    cursor: pointer;
 }
 
-/* button :hover {
-} */
+button :hover {
+    cursor: pointer;
+}
 
 h1 {
     font-size: 2em;
@@ -21,27 +23,50 @@ h1 {
 h2 {
     font-size: 1em;
 }
+
+a {
+    text-decoration: none;
+}
+
+.listnav {
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.naveli {
+    margin-left: 15px;
+    text-decoration: none;
+    color: rgb(73, 108, 185);
+}
+
 .title {
     text-align: center;
+    margin-top: 20px;
 }
+
 .container {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px ;
 }
-.container > * + * {
-    margin-left: 5px;
-    margin-top: 20px;
-  }
+
 .well {
     width: 200px;
     height: 100px;
     background-color: rgb(239, 217, 51);
     border: rgb(73, 108, 185);
-    border: rgb(73, 108, 185);
     border-style: solid;
     border-width: 5px;
     text-align: center;
+    margin: 20px 10px 20px 10px;
 }
 
 form {
@@ -55,4 +80,51 @@ form {
 }
 .btn.btn-primary {
     margin-top: 15px;
+}
+
+.favbox {
+    width: 350px;
+    background-color: rgb(239, 217, 51);
+    border: rgb(73, 108, 185);
+    border-style: solid;
+    border-width: 5px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.favlist {
+    text-decoration: none;
+    list-style: none;
+    background-color: rgb(239, 217, 51);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 40px;
+}
+
+.favlist li {
+    background-color: rgb(239, 217, 51);
+}
+
+.favlist li ul {
+    list-style: none;
+    background-color: rgb(239, 217, 51);
+}
+
+.favlistitem {
+    background-color: rgb(239, 217, 51);
+}
+
+.favlistitem a {
+    background-color: rgb(239, 217, 51);
+}
+
+.imgbox {
+    margin: 0 auto;
+}
+
+.imgbox img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
 }

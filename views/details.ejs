@@ -6,12 +6,15 @@ weight
 height
 abillity(array.name)
 type(array.type.name) -->
-
-<h2><%= pokemon.name %></h2>
-
-<div id="imgDetail">
+<div class="title">
+    <h1><%= pokemon.name %></h1>
+</div>
+<div class="imgbox">
     <img src="<%= pokemon.sprites.front_default %>">
-    <ul>
+</div>
+
+<div class="favbox">
+    <ul class="favlist">
         <li>Pokémon Id: <%= pokemon.id %></li>
         <li>Height: <%= pokemon.height %></li>
         <li>Weight: <%= pokemon.weight %></li>
