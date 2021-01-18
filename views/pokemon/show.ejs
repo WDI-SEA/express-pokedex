@@ -1,0 +1,12 @@
+<h1>Say "Hello" to <%= pokemon.name %></h1>
+<div class="container-fluid">
+    <img src="<%= pokemon.sprites.other['official-artwork'].front_default %>">
+</div>
+
+    <ul>
+        <li>Special Ability <%= pokemon.abilities[0].ability.name%></li>
+        <li>Weight <%= pokemon.weight%></li>
+        <li>Height <%= pokemon.height%></li>
+        <li>Base Experience <%= pokemon.base_experience%></li>
+    </ul>
+
