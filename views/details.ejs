@@ -1,14 +1,16 @@
-<h1>My favorite <%= pokemon.name%></h1>
+<body class='details'>
+<h1 class="favorite">My favorite <%= pokemon.name%></h1>
 
-<img src="<%= pokemon.sprites.other['official-artwork'].front_default %> ">
+<img id="detailsimg" src="<%= pokemon.sprites.other['official-artwork'].front_default %> ">
 
-<ul>
-    <li>weight: <%=pokemon.weight %>lbs</li>
-    <li>type: <%= pokemon.types[0].type.name %></li>
-    <li>hp: <%=pokemon.stats[0].base_stat %></li>
+<ul id="detailsul">
+    <li>Weight: <%=pokemon.weight %>lbs</li>
+    <li>Type: <%= pokemon.types[0].type.name %></li>
+    <li>HP: <%=pokemon.stats[0].base_stat %></li>
     <li>Attack: <%=pokemon.stats[1].base_stat %></li>
-    <li>defense: <%=pokemon.stats[2].base_stat %></li>
-    <li>special attack: <%=pokemon.stats[3].base_stat %></li>
-    <li>special defense: <%=pokemon.stats[4].base_stat %></li>
-    <li>speed: <%=pokemon.stats[5].base_stat %></li>
+    <li>Defense: <%=pokemon.stats[2].base_stat %></li>
+    <li>Special Attack: <%=pokemon.stats[3].base_stat %></li>
+    <li>Special Defense: <%=pokemon.stats[4].base_stat %></li>
+    <li>Speed: <%=pokemon.stats[5].base_stat %></li>
 </ul>
+</body>

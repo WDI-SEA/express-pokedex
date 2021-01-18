@@ -1,0 +1,93 @@
+@import url(//db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon);
+
+.poke{
+    text-align: center;
+    background-color: #3b4cca;
+    font-family: "Pokemon";
+    letter-spacing: .5rem;
+}
+
+.details{
+    text-align: center;
+    background-color: #cc0000;
+    font-family: "Pokemon";
+    letter-spacing: .5rem;
+}
+nav{
+    text-align: center;
+    font-size: 22px;
+    color: white;
+}
+
+nav a{
+    color: white;
+}
+
+nav a:hover{
+    color: #ffde00
+}
+
+.pokemon{
+    display: flex;
+    list-style:none;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.pokemon li{
+    height: 100px;
+    margin: 4px;
+    border-top:20px ridge #cc0000;
+    border-right:20px ridge #cc0000;
+    border-bottom:20px ridge #ff0000;
+    border-left:20px ridge #ff0000;
+    background-color: #ffde00;
+}
+
+.pokemon li a{
+    color: #3b4cca;
+    font-size: 32px;
+    -webkit-text-fill-color: #ffde00;
+    -webkit-text-stroke-color: #3b4cca;
+    -webkit-text-stroke-width: 3px;
+    letter-spacing: .5rem;
+    padding: 10px;
+}
+
+.pokemon li a:hover{
+    color: #3b4cca;
+    font-size: 32px;
+    -webkit-text-fill-color: #3b4cca;
+    -webkit-text-stroke-width: 0px;
+    letter-spacing: .5rem;
+    padding: 10px;
+}
+
+.favorite{
+    margin: 2rem;
+    font-size: 48px;
+    color: #ffde00;
+    letter-spacing: .5rem;
+    -webkit-text-fill-color: #3b4cca;
+    -webkit-text-stroke-color: #ffde00;
+    -webkit-text-stroke-width: 3px;
+}
+
+#detailsimg{
+    width: 10%;
+    margin: 0 auto;
+}
+
+#detailsul{
+    list-style: none;
+}
+
+#detailsul li{
+    font-size: 22px;
+    color: #ffde00;
+    letter-spacing: .5rem;
+    -webkit-text-fill-color: #3b4cca;
+    -webkit-text-stroke-color: #ffde00;
+    -webkit-text-stroke-width: 1px;
+}

@@ -1,7 +1,10 @@
-<h1>Here are a few of my favorite Pokemon</h1>
+<body class="poke">
 
-<ul>
+<h1 class="favorite">My Favorite Pokemon</h1>
+
+<ul class="pokemon">
     <% poke.forEach((pokepoke) => { %>
         <li><a href='/pokemon/<%= pokepoke.name %>'> <%= pokepoke.name %> </a></li>
 <% }) %>
 </ul>
+</body>
