@@ -1,0 +1,6 @@
+<h2>Favorite Pokémons</h2>
+<ul>
+    <% dbPokemons.forEach(favPoke => {%>
+        <li><a href='/pokemon/<%= favPoke.name %>'><%= favPoke.name %></a></li>
+    <% }) %>
+</ul>

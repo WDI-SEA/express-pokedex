@@ -6,10 +6,16 @@ const db = require('./models');
 //     console.log('Created: ', poke.name)
 //   })
 
-db.pokemon.findOne({
-  where: {
-    name: 'pikachu'
-  }
-}).then(poke => {
-  console.log('Found: ', poke.name)
+// db.pokemon.findOne({
+//   where: {
+//     name: 'pikachu'
+//   }
+// }).then(poke => {
+//   console.log('Found: ', poke.name)
+// })
+
+
+db.pokemon.findAll()
+.then(dbmonster => {
+  console.log(dbmonster.names)
 })
