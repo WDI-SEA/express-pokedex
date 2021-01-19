@@ -1,9 +1,9 @@
+<div class="box">
+<h1 class="text-center">--------The Original 151 Pokemon--------</h1>
+<p class="text-center">
+  <a href="/">--------Back to the Pokedex--------</a>
+</p>
 <div class="container">
-    <h1 class="text-center">The Original 151 Pokemon</h1>
-    <p class="text-center">
-      <a href="/">Back to the Pokedex</a>
-    </p>
-  
     <% pokemon.forEach(function(pokemon) { %>
       <div class="well">
         <h2><a href="/pokemon/<%= pokemon.id %>"><%= pokemon.name %></a></h2>
@@ -13,5 +13,7 @@
         </form>
       </div>
     <% }); %>
+
   </div>
+</div>
   

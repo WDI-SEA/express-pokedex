@@ -4,12 +4,18 @@ body {
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
 }
-#container {
+.container {
     display: flex;
-    align-content: stretch;
+    flex-wrap: wrap;
 }
 h1 {
     background: cornsilk;
+    padding: 15px;
+    margin: 20px;
+}
+
+ul {
+    border-style: 2pt solid black;
 }
 
 li {
@@ -25,9 +31,18 @@ li {
     font-size: 20px;
     margin: 10px;
     align-items: flex-start;
+    border-style: 2px solid black;
 }
 
 p {
     background-color: cornsilk;
     font-size: 18px;
+    padding: 15px;
+    text-align: center;
+    
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
 }
