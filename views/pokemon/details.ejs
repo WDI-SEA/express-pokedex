@@ -1,9 +1,12 @@
 <body class="detailsPage">
+<div class="pokeImg">
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= pokemon.id %>.png">
+</div>
 <div class="detailsInfo">
-<h1>This is a <%= pokemon.name %>!</h1>
-<h2>It is <%= pokemon.height %> feet tall.</h2>
-<h2>Its type is <%= pokemon.types[0].type.name %>.</h2>
-<h2>It weighs <%= pokemon.weight %> lbs.</h2>
-<h2>Its hp stat is <%= pokemon.stats[0].base_stat %></h2>
+<h2>This is a <%= pokemon.name %>!</h2>
+<h3>Its height is <%= pokemon.height %>.</h3>
+<h3>Its type is <%= pokemon.types[0].type.name %>.</h3>
+<h3>It weighs <%= pokemon.weight %> lbs.</h3>
+<h3>Its hp stat is <%= pokemon.stats[0].base_stat %></h3>
 </div>
 </body>

@@ -1,11 +1,36 @@
 body{
-    background-color: orange;
+    background-color: rgba(151, 199, 97, 0.849);
+}
+
+.favePage {
+    background-color: rgb(248, 100, 113);
+}
+
+.eachPoke {
+    text-align: center;
+    border: 2px solid black;
+    padding: 0px;
+    background-color: rgb(197, 194, 194);
+    margin: 4% 30% 4% 30%;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    color:khaki;
 }
 
 .detailsPage {
     background-color: rgb(226, 158, 153);
 }
 
+.pokeImg {
+    text-align: center;
+    padding: 0px;
+}
 .detailsInfo {
+    position: relative;
+    border: 5px dotted black;
+    padding: 10px 0px 10px 0px;;
+    border-radius: 15%;
     color:rgba(255, 252, 73, 0.89);
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
 }
