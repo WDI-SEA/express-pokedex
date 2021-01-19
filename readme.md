@@ -62,7 +62,7 @@ const db = require('./models');
 db.pokemon.create({
     name: 'pikachu'
   }).then(poke => {
-    console.log('Created: ', poke.name)
+    console.log('Created: ', poke)
   })
 
 db.pokemon.findOne({
