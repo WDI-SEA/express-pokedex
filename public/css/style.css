@@ -1,5 +1,16 @@
 body{
-    background-color: rgba(151, 199, 97, 0.849);
+    background-color: rgba(219, 235, 202, 0.849);
+    font-family: "Press Start 2P", cursive;
+}
+
+.well {
+    text-align: center;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    background-color:rgb(226, 158, 153);
+    color: yellow;
+    font-size: 5px;
 }
 
 .favePage {
