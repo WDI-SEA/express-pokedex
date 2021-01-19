@@ -55,7 +55,7 @@ router.delete('/:id', (req, res) => {
   }).then((pokemon) => {
       console.log(pokemon)
       // console.log(req.params.id)
-      res.redirect('/pokemon', pokemon)
+      res.redirect('/pokemon')
     })
 });
 

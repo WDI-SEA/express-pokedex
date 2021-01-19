@@ -1,5 +1,33 @@
-* {
+body {
     background-image: url('https://i.redd.it/g8498izx9tc21.png');
     background-size: cover;
     font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+#container {
+    display: flex;
+    align-content: stretch;
+}
+h1 {
+    background: cornsilk;
+}
+
+li {
+    background: cornflowerblue;
+    list-style-type: none;
+}
+
+.well {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 200px;
+    font-size: 20px;
+    margin: 10px;
+    align-items: flex-start;
+}
+
+p {
+    background-color: cornsilk;
+    font-size: 18px;
 }

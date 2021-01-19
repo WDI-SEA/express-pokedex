@@ -1,12 +1,16 @@
-<h1>Say "Hello" to <%= pokemon.name %></h1>
-<div class="container-fluid">
+<div class="container">
+<h1 class="text-center">Say "Hello" to <%= pokemon.name %></h1>
+<p class="text-center">
+    <a href="/pokemon">Favorite Pokemon</a>
+    <a href="/">The index</a>
+  </p>
+<div class="container-fluid text-center">
     <img src="<%= pokemon.sprites.other['official-artwork'].front_default %>">
 </div>
-
-    <ul>
-        <li>Special Ability <%= pokemon.abilities[0].ability.name%></li>
-        <li>Weight <%= pokemon.weight%></li>
-        <li>Height <%= pokemon.height%></li>
-        <li>Base Experience <%= pokemon.base_experience%></li>
+    <ul class="text-center">
+        <li><strong>Special Ability</strong> <%= pokemon.abilities[0].ability.name%></li>
+        <li><strong>Weight</strong> <%= pokemon.weight%></li>
+        <li><strong>Height</strong> <%= pokemon.height%></li>
+        <li><strong>Base Experience</strong> <%= pokemon.base_experience%></li>
     </ul>
-
+</div>

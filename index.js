@@ -3,6 +3,7 @@ const axios = require('axios');
 const ejsLayouts = require('express-ejs-layouts');
 const db = require('./models');
 const methodOverride = require('method-override');
+const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -11,6 +12,9 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 app.use(methodOverride('_method'));
+
+//use the style.css
+app.use(express.static(path.join(__dirname, '/public')));
 
 // GET / - main index of site
 app.get('/', function(req, res) {
@@ -28,3 +32,4 @@ app.use('/pokemon', require('./routes/pokemon'));
 app.listen(port, () => {
   console.log('...listening on', port );
 });
+
