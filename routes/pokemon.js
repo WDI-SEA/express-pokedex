@@ -29,6 +29,19 @@ router.post('/', function(req, res) {
 router.get('/:name', (req, res) => {
   console.log(req.params.name)
   // res.send(`Here is info on your fave ${req.params.name}`)
+  //database sound call
+  let soundId = 'null';
+  db.pokesound.findOne({
+    where: {
+      name: req.params.name
+    }
+  }).then(sound => {
+    console.log(sound.dataValues.dex);
+    // console.log('🐸🐸🐸🐸🐸🐸 Found: ', sound.dex)
+    // console.log(soundId);
+    soundId = sound.dataValues.dex;
+  })
+  
   //another axios call?
   let pokemonUrl = `http://pokeapi.co/api/v2/pokemon/${req.params.name}`;
   // Use request to call the API
@@ -46,8 +59,9 @@ router.get('/:name', (req, res) => {
     // console.log(pokemon.sprites.front_shiny);
     let sprites_s = pokemon.sprites.front_shiny;
 
-    console.log(pokemon.stats);
-    res.render('detail', {name: pokemon.name, weight: pokemon.weight, height: pokemon.height, id: pokemon.id, types: pokemon.types, spriteN: sprites_n, spriteS: sprites_s, stats: pokemon.stats})
+    // console.log(pokemon.stats);
+    console.log('🐸🐸🐸🐸🐸 heres the soundid', soundId);
+    res.render('detail', {name: pokemon.name, weight: pokemon.weight, height: pokemon.height, id: pokemon.id, types: pokemon.types, spriteN: sprites_n, spriteS: sprites_s, stats: pokemon.stats, sound: soundId})
   })
 });
 //sprites: pokemon.sprites.other[1].front_default

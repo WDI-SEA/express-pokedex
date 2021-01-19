@@ -10,3 +10,7 @@ sequelize model:create --name pokemon --attribute name
 
 sequelize db:migrate
 
+-------------
+model for the poke cries
+
+sequelize model:create --name pokesound --attributes name:string,dexid:string
