@@ -1,3 +1,35 @@
-h1{
-  color: chartreuse;
+
+@import url(//db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon);
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+body{
+  background-color: red;
+}
+ul{
+  list-style-type: none;
+}
+.container {
+  background-color: red;
+  width: 100vh;
+  height: 100vh;
+}
+.well {
+  background-color: black;
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+  text-align: center;
+}
+.btn-center{
+  left: 50%;
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+  text-align: center;
+}
+.pokename{
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+}
+h1 {
+  font-family: Pokemon;
+  -webkit-text-stroke: 2px black;
+  color: yellow;
 }

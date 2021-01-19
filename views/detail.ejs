@@ -1,19 +1,43 @@
-<h1>detail page heres your info on <%=name%>
-  <br /> 
-  who weighs <%=weight%>
-  <br /> 
-  has id of <%=id%>  
-  <br />
-
-  and has type<%= types.length > 1 ? 's' : '' %>
-  
-  <% types.forEach((type, index) =>{ %>
-    <%= index > 0 ? 'and ' : '' %> 
-    <%=type.type.name%>  
-  <% }) %>
-  <!-- would need to write a for loop against array length because some only have one type and types[1].type.name%> -->
-  <br />
-  and looks like: <img src="<%=spriteN%>" alt="<%=name%>">
-</h1>
+<div class="container">
+  <h1>Here's your Pokedex Entry for:</h1>
+    <div class="well"> 
+      <h1><%=name%></h1>
+      <p>
+      <br /> 
+      Who weighs: <%=weight%>
+      <br />
+      Has height: <%=height%>
+      <br /> 
+      Has Pokedex id: <%=id%>  
+      <br />
+      Has type<%= types.length > 1 ? 's:' : ':' %>
+      <% types.forEach((type, index) =>{ %>
+        <%= index > 0 ? 'and ' : '' %> 
+        <%=type.type.name%>  
+      <% }) %>
+      <br />
+      Who's base stats are:
+      <br />
+      HP - <%=stats[0].base_stat%>
+      <br />
+      Attack - <%=stats[1].base_stat%>
+      <br />
+      Defense - <%=stats[2].base_stat%>
+      <br />
+      Special-Attack - <%=stats[3].base_stat%>
+      <br />
+      Special-Defense - <%=stats[4].base_stat%>
+      <br />
+      Speed - <%=stats[5].base_stat%>
+      <br />
+      
+      And looks like: <img src="<%=spriteN%>" alt="<%=name%>">
+      </p>
+    </div>  
+      <div class="btn-center">
+      <form action="/">
+      <button class="btn btn-primary" type="submit">Back to All the Pokemon</button>
+      </form>
+</div>
 <!-- <%= JSON.stringify(types, null, 2) %> -->
 <!--  -->

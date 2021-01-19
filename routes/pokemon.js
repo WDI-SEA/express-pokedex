@@ -47,7 +47,7 @@ router.get('/:name', (req, res) => {
     let sprites_s = pokemon.sprites.front_shiny;
 
     console.log(pokemon.stats);
-    res.render('detail', {name: pokemon.name, weight: pokemon.weight, id: pokemon.id, types: pokemon.types, spriteN: sprites_n, spriteS: sprites_s, stats: pokemon.stats})
+    res.render('detail', {name: pokemon.name, weight: pokemon.weight, height: pokemon.height, id: pokemon.id, types: pokemon.types, spriteN: sprites_n, spriteS: sprites_s, stats: pokemon.stats})
   })
 });
 //sprites: pokemon.sprites.other[1].front_default
