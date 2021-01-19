@@ -32,6 +32,8 @@ build/Release
 node_modules
 jspm_packages
 
+# sounds
+public/sound
 # Optional npm cache directory
 .npm
 
