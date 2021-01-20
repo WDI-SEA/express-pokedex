@@ -1,0 +1,12 @@
+<h1><strong><%= pokemons.name %></strong></h1>
+
+<p>Ability: <%= pokeStat.abilities[0].ability.name %></p>
+<p>Height: <%= pokeStat.height %></p>
+<p>Weight: <%= pokeStat.weight %></p>
+
+<h2>Moves</h2>
+<% for(let i=0; i<4;i++){ %>
+    <p><%= pokeStat.moves[i].move.name %></p>
+
+<% } %>
+
