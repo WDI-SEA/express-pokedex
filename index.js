@@ -2,6 +2,7 @@ const express = require('express');
 const axios = require('axios'); 
 const ejsLayouts = require('express-ejs-layouts');
 const methodOverride = require('method-override');
+const db = require('./models');
 const router = express.Router();
 
 const app = express();
@@ -10,6 +11,7 @@ const port = process.env.PORT || 3000;
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
+app.use('/pokemon', require('./routes/pokemon'));
 
 // GET / - main index of site
 app.get('/', function(req, res) {
@@ -23,6 +25,7 @@ app.get('/', function(req, res) {
 
 // Imports all routes from the pokemon routes file
 app.use('/pokemon', require('./routes/pokemon'));
+//automatically uses /pokemon in url bar
 
 const server = app.listen(port, () => {
   console.log('...listening on', port );

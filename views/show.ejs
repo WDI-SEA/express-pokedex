@@ -1,0 +1,11 @@
+<div id="view-pokemon">
+    <h1><%= pokemon.name %></h1>
+    <h4><%= pokemon.types[0].type.name %> type</h4>
+    <img src="<%= pokemon.sprites.front_default %>">
+    <% pokemon.stats.forEach(function(statistic) { %>
+        <p><%= statistic.base_stat %></p>
+        <!-- pokemon.stats[0]
+        pokemon.stats[1]
+        pokemon.stats[2].base_stat -->
+  <%  }) %>
+</div>
