@@ -1,0 +1,8 @@
+<h1>This is the favorite pokemon page</h1>
+    <ul> 
+        <% pokemon.forEach((poke)  => { %>
+        <li> 
+           <a href="/pokemon/<%=poke.name%>"> <%= poke.name %> </a>
+        </li>
+    <% }); %>
+    </ul>
