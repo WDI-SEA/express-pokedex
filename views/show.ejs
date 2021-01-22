@@ -1,11 +1,18 @@
 <div id="view-pokemon">
     <h1><%= pokemon.name %></h1>
     <h4><%= pokemon.types[0].type.name %> type</h4>
-    <img src="<%= pokemon.sprites.front_default %>">
-    <% pokemon.stats.forEach(function(statistic) { %>
-        <p><%= statistic.base_stat %></p>
-        <!-- pokemon.stats[0]
-        pokemon.stats[1]
-        pokemon.stats[2].base_stat -->
-  <%  }) %>
+    <img src="<%= pokemon.sprites.front_default %>" width="200" height="200">
+
+    <% for (let i = 0; i < pokemon.abilities.length; i++) { %>
+      <p><%= pokemon.abilities[i].ability.name %></p>
+    <% } %>
+
+    <h4 class="show-heading">Base Stats</h4>
+
+    <% let stats = pokemon.stats[0] %>
+    <ul id="base-stats">
+    <% pokemon.stats.forEach(s => { %>
+        <li><%= s.stat.name.toUpperCase() %>: <%= s.base_stat %></li>
+    <% }) %>
+    </ul>
 </div>
