@@ -33,12 +33,13 @@ router.post('/', (req, res) => {
 });
 
 // GET /pokemon/:name - renders a show.ejs page with info about pokemon
-router.get('/pokemon/:name', (req, res) => {
+router.get('/:name', (req, res) => {
   let name = req.params.name
   axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`)
   .then(resFromAPI => {
-    let pokeData = resFromAPI
-    res.render('show.ejs', {pokeData: pokeData})
+    let pokeData = resFromAPI.data
+    log(pokeData.abilities)
+    res.render('pokemon/show.ejs', {pokeData: pokeData})
   })
   .catch(err => {
     log(err)
