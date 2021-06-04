@@ -1,10 +1,21 @@
-const express = require('express');
-const router = express.Router();
+const express = require('express')
+const router = express.Router()
+const db = require('../models')
+const app = express()
+const log = console.log
+
 
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', (req, res) => {
   // TODO: Get all records from the DB and render to view
-  res.send('Render a page of favorites here');
+  // Look at function for rendering comments in the blogpulse lab
+  db.pokemon.findAll()
+  .then((pokemons) => {
+    res.render('pokemon/index.ejs', { pokemons: pokemons})
+  })
+  .catch(err => {
+    log(err)
+  })
 });
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
