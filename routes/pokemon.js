@@ -1,14 +1,15 @@
+// MODULE SETUP ------------------------------------
+const axios = require('axios')
 const express = require('express')
 const router = express.Router()
 const db = require('../models')
 const app = express()
 const log = console.log
 
+// ROUTES ---------------------------------------
 
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', (req, res) => {
-  // TODO: Get all records from the DB and render to view
-  // Look at function for rendering comments in the blogpulse lab
   db.pokemon.findAll()
   .then((pokemons) => {
     res.render('pokemon/index.ejs', { pokemons: pokemons})
@@ -20,7 +21,6 @@ router.get('/', (req, res) => {
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/', (req, res) => {
-  // TODO: Get form data and add a new record to DB
   db.pokemon.create({
     name: req.body.name
   })
@@ -32,4 +32,21 @@ router.post('/', (req, res) => {
   })
 });
 
+// GET /pokemon/:name - renders a show.ejs page with info about pokemon
+router.get('/pokemon/:name', (req, res) => {
+  let name = req.params.name
+  axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`)
+  .then(resFromAPI => {
+    let pokeData = resFromAPI
+    res.render('show.ejs', {pokeData: pokeData})
+  })
+  .catch(err => {
+    log(err)
+  })
+})
+
+
+
+
+// EXPORT ROUTER
 module.exports = router;

@@ -1,7 +1,9 @@
-<h1>Yello</h1>
+<h1>Pokedex</h1>
 
 <% pokemons.forEach((pokemon) => { %>
     <p>
-        <%= pokemon.name%>
+        <a href="/pokemon/<%= pokemon.name %>">
+            <%= pokemon.name %>
+        </a>
     </p>
 <% }) %>
