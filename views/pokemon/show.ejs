@@ -1,0 +1,8 @@
+<h1><%= pokemon.name %></h1>
+<img src="<%= pokemon.sprites.front_shiny %>" alt="pokemon.name">
+<ul>
+    <li>Abilities:</li>
+    <% pokemon.abilities.forEach(ability => { %>
+        <li><%= ability.ability.name %></li>
+    <% }) %>
+</ul>
