@@ -1,9 +1,23 @@
 <h1>WHO'S THAT POKEMON?</h1>
 <ul>
     <li>
-        <%= pokeData.name %>
+        Name: <%= pokeData.name %>
     </li>
     <li>
-        <%= pokeData.base_experience %>
+        ID: <%= pokeData.id %>
+    </li>
+    <li>
+        Base XP: <%= pokeData.base_experience %>
+    </li>
+    <li>
+        Height: <%= pokeData.height %>
+    </li>
+    <li>
+        Weight: <%= pokeData.weight %>
+    </li>
+    <li>
+        Types: <% pokeData.types.forEach((e) =>{ %>
+            <p><%= e.type.name%></p>
+        <% }) %>
     </li>
 </ul>
