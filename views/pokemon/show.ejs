@@ -1,8 +1,90 @@
-<h1><%= pokemon.name %></h1>
-<img src="<%= pokemon.sprites.front_shiny %>" alt="pokemon.name">
-<ul>
-    <li>Abilities:</li>
-    <% pokemon.abilities.forEach(ability => { %>
-        <li><%= ability.ability.name %></li>
-    <% }) %>
-</ul>
+<div id="pokedex">
+  <div id="left">
+      <div id="logo"></div>
+      <div id="bg_curve1_left"></div>
+      <div id="bg_curve2_left"></div>
+      <div id="curve1_left">
+        <div id="buttonGlass">
+          <div id="reflect"> </div>
+        </div>
+        <div id="miniButtonGlass1"></div>
+        <div id="miniButtonGlass2"></div>
+        <div id="miniButtonGlass3"></div>
+      </div>
+      <div id="curve2_left">
+        <div id="junction">
+          <div id="junction1"></div>
+          <div id="junction2"></div>
+        </div>
+      </div>
+      <div id="screen">
+        <div id="topPicture">
+          <div id="buttontopPicture1"></div>
+          <div id="buttontopPicture2"></div>
+        </div>
+        <div id="picture">
+          <img src="<%= pokemon.sprites.front_shiny %>" alt="<%= pokemon.name %>" height="170" />
+        </div>
+        <div id="buttonbottomPicture"></div>
+        <div id="speakers">
+          <div class="sp"></div>
+          <div class="sp"></div>
+          <div class="sp"></div>
+          <div class="sp"></div>
+        </div>
+      </div>
+      <div id="bigbluebutton"></div>
+      <div id="barbutton1"></div>
+      <div id="barbutton2"></div>
+      <div id="cross">
+        <div id="leftcross">
+          <div id="leftT"></div>
+        </div>
+        <div id="topcross">
+          <div id="upT"></div>
+        </div>
+        <div id="rightcross">
+          <div id="rightT"></div>
+        </div>
+        <div id="midcross">
+          <div id="midCircle"></div>
+        </div>
+        <div id="botcross">
+          <div id="downT"></div>
+        </div>
+      </div>
+    </div>
+    <div id="right">
+      <div id="stats">
+        <strong>Name:</strong> <%= pokemon.name %><br/>
+        <strong>Type:</strong> <% pokemon.types.forEach(type => { %>
+            |<%= type.type.name %>|
+            <% }) %>
+            <br/>
+        <strong>Height:</strong> <%= pokemon.height*10 %>cm<br/>
+        <strong>Weight:</strong> <%= Math.floor(pokemon.weight/4.6) %>lbs<br/><br/>
+        <dl>
+            <dt><strong>Stats:</strong></dt>
+            <% pokemon.stats.forEach(stat => { %>
+                <dd><%= stat.stat.name %>: <%= stat.base_stat %></dd>
+            <% }) %>
+        </dl>
+      </div>
+      <div id="blueButtons">
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+      </div>
+      <div id="bg_curve1_right"></div>
+      <div id="bg_curve2_right"></div>
+      <div id="curve1_right"></div>
+      <div id="curve2_right"></div>
+    </div>
+  </div>
+<footer class="footer navbar-fixed-bottom">
+  <div class="container text-center mb-3">
+    <h3 id="credit">Pokedex design created by: <a href="https://codepen.io/Bidji">Bidji</a></h3>
+  </div>
+</footer>
