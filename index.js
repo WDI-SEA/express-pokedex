@@ -3,7 +3,7 @@ const axios = require('axios');
 const ejsLayouts = require('express-ejs-layouts');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
@@ -11,11 +11,11 @@ app.use(ejsLayouts);
 
 // GET / - main index of site
 app.get('/', (req, res) => {
-  let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
+  let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon?limit=200&offset=0';
   // Use request to call the API
   axios.get(pokemonUrl).then(apiResponse => {
     let pokemon = apiResponse.data.results;
-    res.render('index', { pokemon: pokemon.slice(0, 151) });
+    res.render('index', { pokemon: pokemon.slice(0, 151) });// if you want more options of pokemon 
   })
 });
 
