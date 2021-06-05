@@ -28,10 +28,24 @@ router.post('/', (req, res) => {
     res.redirect('/pokemon')
   })
   .catch( error => console.log(error))
-
 });
 
-
+router.get('/:id', (req, res)=> {
+  db.pokemon.findOne({
+    where:{
+      id: req.params.id
+    }
+  })
+  .then(poke =>{
+    let pokemonUrl = `http://pokeapi.co/api/v2/pokemon/${poke.name}`;
+    axios.get(pokemonUrl).then(apiResponse =>{
+      let pokemon = apiResponse.data
+      // converter in json file
+      // res.json(pokemon)
+      res.render('pokemon/show.ejs',{pokemon: pokemon})
+    })
+  })
+})
 
 
 

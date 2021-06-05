@@ -4,7 +4,7 @@ const ejsLayouts = require('express-ejs-layouts');
 
 const app = express();
 const port = process.env.PORT || 3000;
-const db = ('./models')
+const db = ('./models');
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
@@ -21,10 +21,12 @@ app.get('/', (req, res) => {
 });
 
 
+
 // app.get ('/pokemon', (req, res) => {
 //   let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
 
 // }
+
 // Imports all routes from the pokemon routes file
 app.use('/pokemon', require('./routes/pokemon'));
 
