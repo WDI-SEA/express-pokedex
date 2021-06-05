@@ -17,6 +17,7 @@ router.get("/", (req, res) => {
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post("/", function (req, res) {
+  console.log(req.body);
   //posts are mounted on the req body object
   let pokeName = req.body.name;
   console.log(pokeName);
@@ -25,10 +26,7 @@ router.post("/", function (req, res) {
       // the findOrCreate promise returns an array with two elements,
       // so 'array destructuring' is used to assign the names to the elements
       const [pokemon, created] = await db.pokemon.findOrCreate({
-        // where is used search for values in columns
-        where: {
-          name: pokeName,
-        },
+        where: { name: pokeName },
       });
       console.log(`${pokemon.name} was ${created ? "created" : "found"}`);
       res.redirect("/pokemon");

@@ -1,3 +1,28 @@
 * {
-  /* background: #333; */
+  background: #fbde02;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 650px;
+  border: 1px solid black;
+}
+
+img.prideball {
+  width: 350px;
+}
+
+.text-center {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
 }

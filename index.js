@@ -3,6 +3,8 @@ const axios = require("axios");
 const ejsLayouts = require("express-ejs-layouts");
 // const rowdy = require("rowdy-logger");
 // const rowdyResults = rowdy.begin(app);
+// const methodOverride = require("method-override");
+// app.use(methodOverride("X-HTTP-Method-Override"));
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -16,10 +18,11 @@ app.use(express.static(__dirname + "/public/"));
 
 // GET / - main index of site
 app.get("/", (req, res) => {
-  let pokemonUrl = "http://pokeapi.co/api/v2/pokemon/?limit=50";
+  let pokemonUrl = "http://pokeapi.co/api/v2/pokemon/?limit=20";
   // Use request to call the API
   axios.get(pokemonUrl).then((apiResponse) => {
     let pokemon = apiResponse.data.results;
+    // console.log(pokemon);
     res.render("index", { pokemon: pokemon.slice(0, 151) });
   });
 });
