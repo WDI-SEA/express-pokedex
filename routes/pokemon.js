@@ -7,7 +7,7 @@ const axios = require('axios');
 router.get('/', (req, res) => {
   // TODO: Get all records from the DB and render to view
   db.pokemon.findAll()
-  .then((pokemons) => {
+  .then((pokemon) => {
     res.render('./pokemon/index.ejs', { pokemon: pokemon})
   })
   .catch(err => {
@@ -19,20 +19,20 @@ router.get('/', (req, res) => {
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/', (req, res) => {
   // TODO: Get form data and add a new record to DB
-  res.send(req.body);
+  db.pokemon.findOrCreate({
+    where: {
+      name: req.body.name
+    }
+  })
+  .then(()=>{
+    res.redirect('/pokemon')
+  })
+  .catch( error => console.log(error))
+
 });
 
 
 
-// router.get(‘/’, (req, res) => {
-//   db.pokemon.findAll()
-//   .then((pokemons) => {
-//     res.render(‘pokemon/index.ejs’, { pokemons: pokemons})
-//   })
-//   .catch(err => {
-//     log(err)
-//   })
-// });
 
 
 module.exports = router;
