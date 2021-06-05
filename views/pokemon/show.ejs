@@ -1,0 +1,12 @@
+
+<h1>Name: <%= pokeData.name %></h1>
+<p><img src="<%= pokeData.sprites.front_default %>" alt="pokemon"> 
+
+<h3>#<%= pokeData.id %></h3>
+<p>weigth: <%= pokeData.weight %></p>
+<p>height: <%= pokeData.height %></p>
+
+<p>Type: <% pokeData.types.forEach(type => { %>
+   <br> <%= type.type.name %>
+<% }) %></p>
+
