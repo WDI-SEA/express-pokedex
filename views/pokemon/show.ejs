@@ -21,10 +21,48 @@
     <li>
         Types: <% pokeData.types.forEach((e) =>{ %>
             <ul>
-                <li><%= e.type.name%></li>
+                <li><%= e.type.name %></li>
             </ul>
         <% }) %>
     </li>
+    <li>
+        Abilities: <% pokeData.abilities.forEach((e) => { %>
+            <ul>
+                <li><%= e.ability.name %></li>
+            </ul>
+        <% }) %>
+    </li>
+        <table>
+            <tr>
+                <th>
+                    Stats
+                </th>
+            </tr>
+            <tr>
+                <td></td>
+                <% pokeData.stats.forEach((e) => {%>
+                    <td>
+                        <%= e.stat.name %>
+                    </td>
+                <% }) %>
+            </tr>
+            <tr>
+                <td>Base Stats</td>
+                <% pokeData.stats.forEach((e) => {%>
+                    <td>
+                        <%= e.base_stat %>
+                    </td>
+                <% }) %>
+            </tr>
+            <tr>
+                <td>EVs</td>
+                <% pokeData.stats.forEach((e) => {%>
+                    <td>
+                        <%= e.effort %>
+                    </td>
+                <% }) %>
+            </tr>
+        </table>
     <li>
         Stats: <% pokeData.stats.forEach((e) => { %>
             <ul>
@@ -34,6 +72,19 @@
                         <li>EVs: <%= e.effort%></li>
                     </ul>
             </ul>
+            <table>
+                <tr>
+                    <th><%= e.stat.name %></th>
+                </tr>
+                <tr>
+                    <td>Base Stat:</td>
+                    <td><%= e.base_stat %></td>
+                </tr>
+                <tr>
+                    <td>EVs:</td>
+                    <td><%= e.effort %></td>
+                </tr>
+            </table>
         <% }) %>
     </li>
     <li>

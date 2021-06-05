@@ -38,7 +38,6 @@ router.get('/:name', (req, res) => {
   axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`)
   .then(resFromAPI => {
     let pokeData = resFromAPI.data
-    log(pokeData.abilities)
     res.render('pokemon/show.ejs', {pokeData: pokeData})
   })
   .catch(err => {
