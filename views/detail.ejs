@@ -1,19 +1,18 @@
-<p class="text-center">
-    <a href="/pokemon">Back</a>
-  </p>
+<a href="/pokemon" class="nav-link">Back</a>
 
-<h1 class="text-center"><%= data.name %></h1>
+<div class="detail-container">
+    <h1 class="detail detail-name"><%= data.name %></h1>
 
-<img src="<%= data.sprites.other["official-artwork"].front_default%>" alt="<%= data.name %>">
+    <img src="<%= data.sprites.other["official-artwork"].front_default%>" alt="<%= data.name %>" class="detail">
 
-<div class="basic-info text-center">
-    <h4>
-        Weight: <%= data.weight %>
-        Height: <%= data.height %>
-    </h4>
+    <div class="detail"> 
+            Weight: <%= data.weight %>
+            Height: <%= data.height %>      
+    </div>
+
+    <h2 class="detail">
+        <%= data.abilities[0].ability.name %>   
+        <%= data.moves[0].move.name %>
+    </h2>
+
 </div>
-
-<h2 class="text-center"><%= data.abilities[0].ability.name %></h2>
-
-<h2 class="text-center"><%= data.moves[0].move.name %></h2>
-

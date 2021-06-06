@@ -1,11 +1,112 @@
+@import url(//db.onlinewebfonts.com/c/b2e75c336df191233b3096682c9ee6be?family=PixelarRegularW01-Regular);
+
 * {
-    background-color: 'FFDE00';
-}
-
-
-img {
+    background-color: #CC0000;
+    text-align: center;
     justify-content: center;
     align-content: center;
-    /* text-align: center;
-    margin: 0 auto; */
+    font-family: "PixelarRegularW01-Regular";
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 2rem;
+    color: white;
+    margin: 50px 0;
+}
+
+.nav-link:hover {
+    color: #FFDE00;
+}
+
+.line {
+    width: auto;
+    border: 3px solid black;
+    position:relative;
+   
+}
+
+.circle {
+    border: 5px solid black;
+    background-color: white;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    left: 95px;
+    bottom: -23px;
+}
+
+.all-names {
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 15px;
+    background-color: white;
+    margin: 50px 15px 30px 15px;
+    width: auto;
+    border-radius: 50%;
+    font-size: 2rem;
+}
+
+.balls-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 25px;
+}
+
+.ball {
+    background-color: white;
+    border: 5px solid black;
+    border-radius: 50%;
+    margin: 15px;
+    width: 250px;
+    height: 250px;
+}
+
+form {
+    background-color: white;
+    padding-top: 15px;
+    margin: 30px 25px 30px 25px;
+}
+
+.add-btn {
+    font-family: "PixelarRegularW01-Regular";
+    background-color: white;
+    border-style: none;
+    color: #B3A125;
+    font-size: 1.5rem;
+}
+
+.add-btn:hover {
+    color: #FFDE00;
+}
+
+.see-more {
+    text-decoration: none;
+    padding-top: 25px;
+    margin: 30px 25px 30px 25px;
+}
+
+#seeMore {
+    margin-top: 300px;
+}
+
+.detail-container{
+    align-items: center;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 5%;
+    margin: 25px auto;
+    width: 500px;
+}
+
+.detail {
+    margin: 25px;
+    background-color: white;
+}
+
+.detail-name{
+    font-size: 3rem;
 }

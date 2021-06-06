@@ -1,16 +1,22 @@
 <div class="container">
   <h1 class="text-center"><a href="https://fontmeme.com/pokemon-font/"><img src="https://fontmeme.com/permalink/210606/88af81c7f92bcaa0951336607f661954.png" alt="pokemon-font" border="0"></a></h1>
   <p class="text-center">
-    <a href="/pokemon">Favorites</a>
+    <a href="/pokemon" class="nav-link">Favorites</a>
   </p>
 
-  <% pokemon.forEach(function(pokemon) { %>
-    <div class="well">
-      <h2><%= pokemon.name %></h2>
-      <form method="POST" action="/pokemon">
-        <input hidden type="text" name="name" value="<%= pokemon.name %>">
-        <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
-      </form>
-    </div>
-  <% }); %>
+  <div class="balls-container">
+    <% pokemon.forEach(function(pokemon) { %>
+      <div class="ball">
+        <h2 class="all-names"><%= pokemon.name %></h2>
+       <div class="line"><div class="circle"></div></div>
+        <form method="POST" action="/pokemon">
+          <input hidden type="text" name="name" value="<%= pokemon.name %>">
+          <button class="add-btn" type="submit">Add to faves</button>
+        </form>
+      </div>
+    <% }); %>
+
+  </div>
+
+ 
 </div>

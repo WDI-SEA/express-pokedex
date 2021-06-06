@@ -1,14 +1,19 @@
 <div class="container">
-    <h1 class="text-center">Favorites</h1>
+    <h1 class="text-center"><a href="https://fontmeme.com/pokemon-font/"><img src="https://fontmeme.com/permalink/210606/68e190b86f5b1b2cd1695464088713d4.png" alt="pokemon-font" border="0"></a></h1>
     <p class="text-center">
-      <a href="/">Home</a>
+      <a href="/" class="nav-link">Home</a>
     </p>
   
+<div class="balls-container">   
     <% pokemon.forEach(function(pokemon) { %>
-      <div class="well">
-          <a href="/pokemon/<%= pokemon.name %>"><%= pokemon.name %></a>
-        <h2></h2>
-        
-      </div>
+    <div class="ball">
+        <h2 class="all-names"><%= pokemon.name %></h2>
+        <div class="line">
+            <div class="circle">
+            </div>
+        </div>
+        <a href="/pokemon/<%= pokemon.name %>" class="see-more add-btn" id="seeMore">See More!</a>
+    </div>
     <% }); %>
   </div>
+</div> 
