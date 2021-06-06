@@ -35,17 +35,25 @@ router.post('/', (req, res) => {
 // GET /pokemon/:name - renders a show.ejs page with info about pokemon
 router.get('/:name', (req, res) => {
   let name = req.params.name
-  axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`)
-  .then(resFromAPI => {
-    let pokeData = resFromAPI.data
-    res.render('pokemon/show.ejs', {pokeData: pokeData})
-  })
+
+  let one = `https://pokeapi.co/api/v2/pokemon/${name}`
+  let two = `https://pokeapi.co/api/v2/pokemon-species/${name}`
+
+  const requestOne = axios.get(one)
+  const requestTwo = axios.get(two)
+
+  axios.all([requestOne, requestTwo]).then(axios.spread((...responses) => {
+    const responseOne = responses[0]
+    const responseTwo = responses[1]
+    let pokeDataOne = responseOne.data
+    let pokeDataTwo = responseTwo.data
+    res.render('pokemon/show.ejs', {pokeDataOne: pokeDataOne, pokeDataTwo: pokeDataTwo})
+    })
+  )
   .catch(err => {
     log(err)
   })
 })
-
-
 
 
 // EXPORT ROUTER

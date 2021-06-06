@@ -1,8 +1,9 @@
 <main>
     <h3 class="a">
-        <img class="detail-sprite" src="<%= pokeData.sprites.versions["generation-viii"].icons.front_default %>"/>
-        #<%= pokeData.id %> <%= pokeData.name %>
+        <img class="detail-sprite" src="<%= pokeDataOne.sprites.versions["generation-viii"].icons.front_default %>"/>
+        #<%= pokeDataOne.id %> <%= pokeDataOne.name %>
     </h3>
+
     <table class="data-table">
         <tbody>
             <tr>
@@ -12,11 +13,12 @@
             </tr>
             <tr>
                 <td>
-                    <img class="detail-img" src="<%= pokeData.sprites.other["official-artwork"].front_default %>"/>
+                    <img class="detail-img" src="<%= pokeDataOne.sprites.other["official-artwork"].front_default %>"/>
                 </td>
             </tr>
         </tbody>
     </table>
+
     <table class="data-table">
         <tbody>
             <tr>
@@ -33,22 +35,22 @@
             <tr>
                 <td>
                     <p>
-                        <%= pokeData.height/10 %>m
+                        <%= pokeDataOne.height/10 %>m
                     </p>
                     <p>
-                        <%= pokeData.height*.328 %>ft
+                        <%= pokeDataOne.height*.328 %>ft
                     </p>
                 </td>
                 <td>
                     <p>
-                        <%= pokeData.weight/10 %>kg
+                        <%= pokeDataOne.weight/10 %>kg
                     </p>
                     <p>
-                        <%= pokeData.weight*.2205 %>lbs
+                        <%= pokeDataOne.weight*.2205 %>lbs
                     </p>
                 </td>
                 <td>
-                    <% pokeData.types.forEach((e) =>{ %>
+                    <% pokeDataOne.types.forEach((e) =>{ %>
                         <p class="a">
                             <%= e.type.name %>
                         </p>
@@ -57,13 +59,14 @@
             </tr>
         </tbody>
     </table>
+
     <table class="data-table">
         <tbody>
-            <td class="data-text" colspan="<%= pokeData.abilities.length %>">
+            <td class="data-text" colspan="<%= pokeDataOne.abilities.length %>">
                 Abilities
             </td>
             <tr>
-                <% pokeData.abilities.forEach((e) => { %>
+                <% pokeDataOne.abilities.forEach((e) => { %>
                     <td class="a">
                         <%= e.ability.name %>
                     </td>
@@ -71,10 +74,11 @@
             </tr>
         </tbody>
     </table>
+
     <table class="data-table">
         <tbody>
             <tr>
-                <td class="data-text" colspan="<%= pokeData.stats.length %>">
+                <td class="data-text" colspan="<%= pokeDataOne.stats.length %>">
                     Stats
                 </td>
             </tr>
@@ -87,7 +91,7 @@
                 <td class="data-text">Speed</td>
             </tr>
             <tr>
-                <% pokeData.stats.forEach((e) => { %>
+                <% pokeDataOne.stats.forEach((e) => { %>
                     <td>
                         <%= e.base_stat %>
                     </td>
@@ -95,6 +99,7 @@
             </tr>
         </tbody>
     </table>
+
     <table class="data-table">
         <tbody>
             <tr>
@@ -115,16 +120,16 @@
             </tr>
             <tr>
                 <td>
-                    <img src="<%= pokeData.sprites.versions["generation-iii"]["ruby-sapphire"].front_default %>"/>
-                    <img src="<%= pokeData.sprites.versions["generation-iii"]["ruby-sapphire"].back_default %>"/>
+                    <img src="<%= pokeDataOne.sprites.versions["generation-iii"]["ruby-sapphire"].front_default %>"/>
+                    <img src="<%= pokeDataOne.sprites.versions["generation-iii"]["ruby-sapphire"].back_default %>"/>
                 </td>
                 <td>
-                    <img src="<%= pokeData.sprites.versions["generation-iii"]["firered-leafgreen"].front_default %>"/>
-                    <img src="<%= pokeData.sprites.versions["generation-iii"]["firered-leafgreen"].back_default %>"/>
+                    <img src="<%= pokeDataOne.sprites.versions["generation-iii"]["firered-leafgreen"].front_default %>"/>
+                    <img src="<%= pokeDataOne.sprites.versions["generation-iii"]["firered-leafgreen"].back_default %>"/>
                 </td>
                 <td>
-                    <img src="<%= pokeData.sprites.versions["generation-iv"]["diamond-pearl"].front_default %>"/>
-                    <img src="<%= pokeData.sprites.versions["generation-iv"]["diamond-pearl"].back_default %>"/>
+                    <img src="<%= pokeDataOne.sprites.versions["generation-iv"]["diamond-pearl"].front_default %>"/>
+                    <img src="<%= pokeDataOne.sprites.versions["generation-iv"]["diamond-pearl"].back_default %>"/>
                 </td>
             </tr>
             <tr class="data-text">
@@ -138,12 +143,12 @@
             </tr>
             <tr>
                 <td>
-                    <img src="<%= pokeData.sprites.versions["generation-iv"]["heartgold-soulsilver"].front_default %>"/>
-                    <img src="<%= pokeData.sprites.versions["generation-iv"]["heartgold-soulsilver"].back_default %>"/>
+                    <img src="<%= pokeDataOne.sprites.versions["generation-iv"]["heartgold-soulsilver"].front_default %>"/>
+                    <img src="<%= pokeDataOne.sprites.versions["generation-iv"]["heartgold-soulsilver"].back_default %>"/>
                 </td>
                 <td>
-                    <img src="<%= pokeData.sprites.versions["generation-v"]["black-white"].animated.front_default %>"/>
-                    <img src="<%= pokeData.sprites.versions["generation-v"]["black-white"].animated.back_default %>"/>
+                    <img src="<%= pokeDataOne.sprites.versions["generation-v"]["black-white"].animated.front_default %>"/>
+                    <img src="<%= pokeDataOne.sprites.versions["generation-v"]["black-white"].animated.back_default %>"/>
                 </td>
             </tr>
         </tbody>
