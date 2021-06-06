@@ -1,53 +1,109 @@
-<h1>WHO'S THAT POKEMON?</h1>
-<ul>
-    <li>
-        <img src="<%= pokeData.sprites.other["official-artwork"].front_default %>"/>
-    </li>
-    <li>
-        Name: <%= pokeData.name %>
-    </li>
-    <li>
-        ID: <%= pokeData.id %>
-    </li>
-    <li>
-        Base XP: <%= pokeData.base_experience %>
-    </li>
-    <li>
-        Height: <%= pokeData.height/10 %>m
-    </li>
-    <li>
-        Weight: <%= pokeData.weight/10 %>kg / <%= pokeData.weight*.2205 %>lbs
-    </li>
-    <li>
-        Types: <% pokeData.types.forEach((e) =>{ %>
-            <ul>
-                <li><%= e.type.name %></li>
-            </ul>
-        <% }) %>
-    </li>
-    <li>
-        Abilities: <% pokeData.abilities.forEach((e) => { %>
-            <ul>
-                <li><%= e.ability.name %></li>
-            </ul>
-        <% }) %>
-    </li>
-        <table>
+<main>
+    <h3 class="a">
+        <img class="detail-sprite" src="<%= pokeData.sprites.versions["generation-viii"].icons.front_default %>"/>
+        #<%= pokeData.id %> <%= pokeData.name %>
+    </h3>
+    <table class="data-table">
+        <tbody>
             <tr>
-                <th>
-                    Stats
-                </th>
+                <td class="data-text">
+                    Picture
+                </td>
             </tr>
             <tr>
-                <td></td>
-                <% pokeData.stats.forEach((e) => {%>
-                    <td>
-                        <%= e.stat.name %>
+                <td>
+                    <img class="detail-img" src="<%= pokeData.sprites.other["official-artwork"].front_default %>"/>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="data-table">
+        <tbody>
+            <tr>
+                <td class="data-text">
+                    Height
+                </td>
+                <td class="data-text">
+                    Weight
+                </td>
+                <td class="data-text">
+                    Type
+                </td> 
+            </tr>
+            <tr>
+                <td>
+                    <%= pokeData.height/10 %>m
+                </td>
+                <td>
+                    <p>
+                        <%= pokeData.weight/10 %>kg
+                    </p>
+                    <p>
+                        <%= pokeData.weight*.2205 %>lbs
+                    </p>
+                </td>
+                <td>
+                    <% pokeData.types.forEach((e) =>{ %>
+                        <p class="a">
+                            <%= e.type.name %>
+                        </p>
+                    <% }) %>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="data-table">
+        <tbody>
+            <td class="data-text" colspan="<%= pokeData.abilities.length %>">
+                Abilities
+            </td>
+            <tr>
+                <% pokeData.abilities.forEach((e) => { %>
+                    <td class="a">
+                        <%= e.ability.name %>
                     </td>
                 <% }) %>
             </tr>
+        </tbody>
+    </table>
+    <table class="data-table">
+        <tbody>
             <tr>
-                <td>Base Stats</td>
+                <td class="data-text" colspan="<%= pokeData.stats.length %>">
+                    Stats
+                </td>
+            </tr>
+            <tr>
+                <td class="data-text">HP</td>
+                <td class="data-text">Attack</td>
+                <td class="data-text">Defense</td>
+                <td class="data-text">Sp. Attack</td>
+                <td class="data-text">Sp. Defense</td>
+                <td class="data-text">Speed</td>
+            </tr>
+            <tr>
+                <% pokeData.stats.forEach((e) => { %>
+                    <td>
+                        <%= e.base_stat %>
+                    </td>
+                <% }) %>
+            </tr>
+        </tbody>
+    </table>
+    <div class="main-content">
+<ul>
+        <table>
+            <tr>
+                <th>Stats</th>
+                <td>HP</td>
+                <td>Attack</td>
+                <td>Defense</td>
+                <td>Sp. Attack</td>
+                <td>Sp. Defense</td>
+                <td>Speed</td>
+            </tr>
+            <tr>
+                <td>Base Points</td>
                 <% pokeData.stats.forEach((e) => {%>
                     <td>
                         <%= e.base_stat %>
@@ -63,30 +119,6 @@
                 <% }) %>
             </tr>
         </table>
-    <li>
-        Stats: <% pokeData.stats.forEach((e) => { %>
-            <ul>
-                <li><%= e.stat.name%></li>
-                    <ul>
-                        <li>Base Stat: <%= e.base_stat%></li>
-                        <li>EVs: <%= e.effort%></li>
-                    </ul>
-            </ul>
-            <table>
-                <tr>
-                    <th><%= e.stat.name %></th>
-                </tr>
-                <tr>
-                    <td>Base Stat:</td>
-                    <td><%= e.base_stat %></td>
-                </tr>
-                <tr>
-                    <td>EVs:</td>
-                    <td><%= e.effort %></td>
-                </tr>
-            </table>
-        <% }) %>
-    </li>
     <li>
         Sprites: 
         <ul>
@@ -140,3 +172,5 @@
         <% }) %>
     </li>
 </ul>
+</div>
+</main>
