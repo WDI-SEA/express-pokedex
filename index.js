@@ -13,6 +13,7 @@ app.use(method_override('_method'))
 
 // GET / - main index of site
 app.get('/', (req, res) => {
+  // limit currently set to the original 151. Change by adjusting limit in url
   let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon?limit=151'
   // Use request to call the API
   axios.get(pokemonUrl).then(apiResponse => {

@@ -3,13 +3,12 @@ const axios = require('axios');
 const db = require('../models');
 const router = express.Router();
 
-// GET /pokemon - return a page with favorited Pokemon
+// GET /pokemon - return a page with all Pokemon in database
 router.get('/', (req, res) => {
+  // find all pokemon in db
   db.pokemon.findAll()
   .then((pokemons) => {
-    // res.redirect('pokemon/index')
-  // })
-  // TODO: Get all records from the DB and render to view
+  // render and redirect to view /pokemon/index page
   pokemons.forEach(poke => {
     console.log(poke.dataValues)
   })
@@ -20,44 +19,35 @@ router.get('/', (req, res) => {
   })
 })
 
-// GET /pokemon/:name - return more information about individual pokemon
+// GET /pokemon/:name - return more information about individual pokemon in database
 router.get('/:name', (req, res) => {
+  // get info from api
   axios.get('http://pokeapi.co/api/v2/pokemon/'+ req.params.name)
+  // render and redirect to /pokemon/show page
   .then(apiResponse => {
     let pokeData = apiResponse.data
-//     pokeData.types.forEach(type => {
-// console.log(type.type.name)
-//     })
     res.render('pokemon/show', { pokeData })
   })
-  // // TODO: Get all records from the DB and render to view
   .catch((err) => {
     res.status(400)
   })
 })
 
-// POST /pokemon - receive the name of a pokemon and add it to the database
+// POST /pokemon - get pokemon name from body and add it to the database
 router.post('/', (req, res) => {
-  // TODO: Get form data and add a new record to DB
   db.pokemon.create({
     name: (req.body.name)
-  }).then(poke => {
-    console.log('Created: ', poke.name)
   })
   res.redirect('/')
-  console.log(req.body.name);
 });
 
+// DELETE /:name - get pokemon name from body then destroy from database
 router.delete('/:name', (req, res) => {
-  // TODO: Get form data and add a new record to DB
   db.pokemon.destroy({
     where: { name: req.body.name}
   }).then(poke => {
-    console.log('Deleted: ', poke)
     res.redirect('/pokemon')
   })
-  // res.send(req.body);
-  // console.log(req.body.name);
 });
 
 module.exports = router;
