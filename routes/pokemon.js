@@ -50,13 +50,12 @@ router.get('/:name', (req, res) => {
     try {
       let pokemonUrl = `http://pokeapi.co/api/v2/pokemon/${name}`;
       // Use request to call the API
-      await axios.get(pokemonUrl).then(apiResponse => {
-        let pokemon = apiResponse.data;
-        res.send(pokemon)
-        console.log(pokemon)
+      const apiResponse = await axios.get(pokemonUrl)
+      let pokemon = apiResponse.data;
+      res.render('pokemon/show', { pokemon })
+      console.log(pokemon)
         // res.render('index', { pokemon: pokemon.slice(0, 151) });
-      })
-    } catch (error) {
+      } catch (error) {
       console.log(error)
     }
   }
