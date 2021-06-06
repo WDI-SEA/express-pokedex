@@ -23,7 +23,27 @@
           <div id="buttontopPicture2"></div>
         </div>
         <div id="picture">
-          <img src="<%= pokemon.sprites.front_shiny %>" alt="<%= pokemon.name %>" height="170" />
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+              <div class="item active">
+                <img src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %> Front" style="height: 170px;" />
+              </div>
+          
+              <div class="item">
+                <img src="<%= pokemon.sprites.back_default %>" alt="<%= pokemon.name %> Back" style="height: 170px;" />
+              </div>
+          
+              <div class="item">
+                <img src="<%= pokemon.sprites.front_shiny %>" alt="<%= pokemon.name %> Shiny" style="height: 170px;" />
+              </div>
+
+              <div class="item">
+                <img src="<%= pokemon.sprites.back_shiny %>" alt="<%= pokemon.name %> Shiny" style="height: 170px;" />
+              </div>
+            </div>
+          </div>
+          <!-- <img src="<%= pokemon.sprites.front_shiny %>" alt="<%= pokemon.name %>" height="170" /> -->
         </div>
         <div id="buttonbottomPicture"></div>
         <div id="speakers">
@@ -38,13 +58,17 @@
       <div id="barbutton2"></div>
       <div id="cross">
         <div id="leftcross">
-          <div id="leftT"></div>
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <div id="leftT"></div>
+          </a>
         </div>
         <div id="topcross">
           <div id="upT"></div>
         </div>
         <div id="rightcross">
-          <div id="rightT"></div>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <div id="rightT"></div>
+          </a>
         </div>
         <div id="midcross">
           <div id="midCircle"></div>
