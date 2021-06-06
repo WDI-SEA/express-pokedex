@@ -23,6 +23,43 @@
         <tbody>
             <tr>
                 <td class="data-text">
+                    Name
+                </td>
+                <td class="data-text">
+                    Other Names
+                </td>
+                <td class="data-text">
+                    No.
+                </td>
+                <td class="data-text">
+                    Classification
+                </td>
+            </tr>
+            <tr>
+                <td class="a">
+                    <%= pokeDataTwo.name %>
+                </td>
+                <td>
+                    <p>Japanese: <%= pokeDataTwo.names[0].name %></p>
+                    <p>Korean: <%= pokeDataTwo.names[2].name %></p>
+                    <p>Chinese: <%= pokeDataTwo.names[3].name %></p>
+                </td>
+                <td>
+                    <p>National: <%= pokeDataTwo.pokedex_numbers[0].entry_number %></p>
+                    <p>Johto: <%= pokeDataTwo.pokedex_numbers[2].entry_number %></p>
+                    <p>Hoenn: <%= pokeDataTwo.pokedex_numbers[3].entry_number %></p>
+                </td>
+                <td>
+                    <%= pokeDataTwo.genera[7].genus %>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="data-table">
+        <tbody>
+            <tr>
+                <td class="data-text">
                     Height
                 </td>
                 <td class="data-text">
@@ -71,6 +108,89 @@
                         <%= e.ability.name %>
                     </td>
                 <% }) %>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="data-table">
+        <tbody>
+            <tr>
+                <td class="data-text" colspan="4">
+                    Flavor Text
+                </td>
+            </tr>
+            <tr>
+                <td id="red">
+                    Red
+                </td>
+                <td id="blue">
+                    Blue
+                </td>
+                <td colspan="2">
+                    <%= pokeDataTwo.flavor_text_entries[1].flavor_text %>
+                </td>
+            </tr>
+            <tr>
+                <td id="yellow" colspan="2">
+                    Yellow
+                </td>
+                <td colspan="2">
+                    <%= pokeDataTwo.flavor_text_entries[3].flavor_text %>
+                </td>
+            </tr>
+            <tr>
+                <td id="gold">
+                    Gold
+                </td>
+                <td id="silver">
+                    Silver
+                </td>
+                <td colspan="2">
+                    <%= pokeDataTwo.flavor_text_entries[4].flavor_text %>
+                </td>
+            </tr>
+            <tr>
+                <td id="ruby" colspan="2">
+                    Ruby
+                </td>
+                <td colspan="2">
+                    <%= pokeDataTwo.flavor_text_entries[7].flavor_text %>
+                </td>
+            </tr>
+            <tr>
+                <td id="sapphire" colspan="2">
+                    Sapphire
+                </td>
+                <td colspan="2">
+                    <%= pokeDataTwo.flavor_text_entries[8].flavor_text %>
+                </td>
+            </tr>
+            <tr>
+                <td id="black">
+                    Black
+                </td>
+                <td id="white">
+                    White
+                </td>
+                <td colspan="2">
+                    <%= pokeDataTwo.flavor_text_entries[20].flavor_text %>
+                </td>
+            </tr>
+            <tr>
+                <td id="sun" colspan="2">
+                    Sun
+                </td>
+                <td colspan="2">
+                    <%= pokeDataTwo.flavor_text_entries[61].flavor_text %>
+                </td>
+            </tr>
+            <tr>
+                <td id="moon" colspan="2">
+                    Moon
+                </td>
+                <td colspan="2">
+                    <%= pokeDataTwo.flavor_text_entries[71].flavor_text %>
+                </td>
             </tr>
         </tbody>
     </table>

@@ -67,3 +67,50 @@ li {
     margin: 5px;
     list-style-type: none;
 }
+
+#red {
+    background-color: red;
+}
+
+#blue {
+    background-color: blue;
+}
+
+#yellow {
+    background-color: yellow;
+    color: black;
+}
+
+#gold {
+    background-color: gold;
+    color: black;
+}
+
+#silver {
+    background-color: silver;
+}
+
+#ruby {
+    background-color: crimson;
+}
+
+#sapphire {
+    background-color: royalblue;
+}
+
+#black {
+    background-color: black;
+}
+
+#white {
+    background-color: white;
+    color: black;
+}
+
+#sun {
+    background-color: darkorange;
+}
+
+#moon {
+    background-color: rebeccapurple;
+}
