@@ -6,6 +6,10 @@ db.pokemon.create({
   }).then(poke => {
     console.log('Created: ', poke.name)
   })
+  .catch((error) => {
+    console.log(error)
+    res.status(400).render('main/404')
+  })
 
 db.pokemon.findOne({
   where: {
@@ -14,3 +18,7 @@ db.pokemon.findOne({
 }).then(poke => {
   console.log('Found: ', poke.name)
 })
+.catch((error) => {
+    console.log(error)
+    res.status(400).render('main/404')
+  })
