@@ -1,27 +1,40 @@
-<div class="container">
-    <h1 class="text-center">Favorites</h1>
-    <p class="text-center">
-      <a href="/">Home</a>
+<style>
+  
+  
+</style>
+<h1 class="text-center">Favorites</h1>
+<p class="text-center">
+  <a href="/">Home</a>
+  <div class="container">
     </p>
   
-    <% pokemon.forEach(function(pokemon) { %>
-      <div class="well">
-        <h2><%= pokemon.name %></h2>
+<div class="container">
+  <% pokemon.forEach(function(pokemon) { %>
+    <div class="grid">
+      
+        <p>
+          <%= pokemon.name %>
 
-
+        </p>
+        
+        
+      
+        
         <form action="/pokemon/<%= pokemon.name %>/" method="GET">
-            <button class="btn btn-primary" name="details" >Details</button>
+            <button class=" btn-primary" name="details" >Details</button>
         </form>
         <form action="/pokemon/<%= pokemon.name %>/?_method=DELETE" method="POST">
-            <button class="btn btn-primary" type="submit" name="name" value="<%= pokemon.name %>">Remove <%= pokemon.name %> from Favorites</button>
+          <button class=" btn-primary" type="submit" name="name" value="<%= pokemon.name %>">⛔</button>
         </form>
-
-
-
-
-
-
       </div>
+        
+        
+        
+
+        
+
+      
+     
     <% }); %>
   </div>
   
