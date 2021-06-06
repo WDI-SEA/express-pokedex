@@ -32,7 +32,12 @@
             </tr>
             <tr>
                 <td>
-                    <%= pokeData.height/10 %>m
+                    <p>
+                        <%= pokeData.height/10 %>m
+                    </p>
+                    <p>
+                        <%= pokeData.height*.328 %>ft
+                    </p>
                 </td>
                 <td>
                     <p>
@@ -90,87 +95,57 @@
             </tr>
         </tbody>
     </table>
-    <div class="main-content">
-<ul>
-        <table>
+    <table class="data-table">
+        <tbody>
             <tr>
-                <th>Stats</th>
-                <td>HP</td>
-                <td>Attack</td>
-                <td>Defense</td>
-                <td>Sp. Attack</td>
-                <td>Sp. Defense</td>
-                <td>Speed</td>
+                <td class="data-text" colspan="3">
+                    Sprites
+                </td>
             </tr>
             <tr>
-                <td>Base Points</td>
-                <% pokeData.stats.forEach((e) => {%>
-                    <td>
-                        <%= e.base_stat %>
-                    </td>
-                <% }) %>
+                <td class="data-text">
+                    R/S/E
+                </td>
+                <td class="data-text">
+                    FR/LG
+                </td>
+                <td class="data-text">
+                    D/P
+                </td>
             </tr>
             <tr>
-                <td>EVs</td>
-                <% pokeData.stats.forEach((e) => {%>
-                    <td>
-                        <%= e.effort %>
-                    </td>
-                <% }) %>
+                <td>
+                    <img src="<%= pokeData.sprites.versions["generation-iii"]["ruby-sapphire"].front_default %>"/>
+                    <img src="<%= pokeData.sprites.versions["generation-iii"]["ruby-sapphire"].back_default %>"/>
+                </td>
+                <td>
+                    <img src="<%= pokeData.sprites.versions["generation-iii"]["firered-leafgreen"].front_default %>"/>
+                    <img src="<%= pokeData.sprites.versions["generation-iii"]["firered-leafgreen"].back_default %>"/>
+                </td>
+                <td>
+                    <img src="<%= pokeData.sprites.versions["generation-iv"]["diamond-pearl"].front_default %>"/>
+                    <img src="<%= pokeData.sprites.versions["generation-iv"]["diamond-pearl"].back_default %>"/>
+                </td>
             </tr>
-        </table>
-    <li>
-        Sprites: 
-        <ul>
-            <li>
-                <p>Red/Blue</p>
-                <img src="<%= pokeData.sprites.versions["generation-i"]["red-blue"].front_default %>"/>
-                <img src="<%= pokeData.sprites.versions["generation-i"]["red-blue"].back_default %>"/>
-            </li>
-            <li>
-                <p>Yellow</p>
-                <img src="<%= pokeData.sprites.versions["generation-i"].yellow.front_default %>"/>
-                <img src="<%= pokeData.sprites.versions["generation-i"].yellow.back_default %>"/>
-            </li>
-            <li>
-                <p>Gold/Silver/Crystal</p>
-                <img src="<%= pokeData.sprites.versions["generation-ii"].gold.front_default %>"/>
-                <img src="<%= pokeData.sprites.versions["generation-ii"].gold.back_default %>"/>
-            </li>
-            <li>
-                <p>Ruby/Sapphire/Emerald</p>
-                <img src="<%= pokeData.sprites.versions["generation-iii"]["ruby-sapphire"].front_default %>"/>
-                <img src="<%= pokeData.sprites.versions["generation-iii"]["ruby-sapphire"].back_default %>"/>
-            </li>
-            <li>
-                <p>FireRed/LeafGreen</p>
-                <img src="<%= pokeData.sprites.versions["generation-iii"]["firered-leafgreen"].front_default %>"/>
-                <img src="<%= pokeData.sprites.versions["generation-iii"]["firered-leafgreen"].back_default %>"/>
-            </li>
-            <li>
-                <p>Diamond/Pearl</p>
-                <img src="<%= pokeData.sprites.versions["generation-iv"]["diamond-pearl"].front_default %>"/>
-                <img src="<%= pokeData.sprites.versions["generation-iv"]["diamond-pearl"].back_default %>"/>
-            </li>
-            <li>
-                <p>HeartGold/SoulSilver</p>
-                <img src="<%= pokeData.sprites.versions["generation-iv"]["heartgold-soulsilver"].front_default %>"/>
-                <img src="<%= pokeData.sprites.versions["generation-iv"]["heartgold-soulsilver"].back_default %>"/>
-            </li>
-            <li>
-                <p>Black/White</p>
-                <img src="<%= pokeData.sprites.versions["generation-v"]["black-white"].animated.front_default %>"/>
-                <img src="<%= pokeData.sprites.versions["generation-v"]["black-white"].animated.back_default %>"/>
-            </li>
-        </ul>
-    </li>
-    <li>
-        Moves: <% pokeData.moves.forEach((e) => { %>
-            <ul>
-                <li><%= e.move.name%></li>
-            </ul>
-        <% }) %>
-    </li>
-</ul>
-</div>
+            <tr class="data-text">
+                <td class="data-text">
+                    HG/SS
+                </td>
+                <td class="data-text">
+                    B/W
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="<%= pokeData.sprites.versions["generation-iv"]["heartgold-soulsilver"].front_default %>"/>
+                    <img src="<%= pokeData.sprites.versions["generation-iv"]["heartgold-soulsilver"].back_default %>"/>
+                </td>
+                <td>
+                    <img src="<%= pokeData.sprites.versions["generation-v"]["black-white"].animated.front_default %>"/>
+                    <img src="<%= pokeData.sprites.versions["generation-v"]["black-white"].animated.back_default %>"/>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </main>
