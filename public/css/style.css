@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 * {
 	margin: 0;
 	padding: 0;
@@ -738,8 +740,8 @@ dd {
 		padding: 10px;
 		background-color: #30da0c;
 		z-index: 1;
-		font-size: 13px;
-		font-family: arial, sans-serif;
+		font-size: 12px;
+		font-family: 'Press Start 2P', cursive;
 
 		position: absolute;
 		top: 130px;

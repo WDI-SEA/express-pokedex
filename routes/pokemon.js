@@ -3,6 +3,18 @@ const db = require('../models');
 const router = express.Router();
 const axios = require('axios')
 
+// DELETE /pokemon/:id - deletes pokemon from the database by their id
+router.delete('/', (req, res) => {
+  db.pokemon.destroy({
+    where: {id: req.body.id}
+  }).then(() => {
+    req.redirect = 'GET'
+    res.redirect('/')
+  }).catch(err => {
+    console.log(err)
+  })
+})
+
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', (req, res) => {
   // TODO: Get all records from the DB and render to view

@@ -2,7 +2,11 @@
   <% pokemons.forEach((pokemon) => { %>
       <div class="well">
         <h2><%= pokemon.name %></h2>
-        <a href="/pokemon/<%= pokemon.name %>" class="btn btn-primary">More Info</a>
+        <form method="POST" action="/pokemon/?_method=DELETE">
+          <a href="/pokemon/<%= pokemon.name %>" class="btn btn-primary">More Info</a>
+          <input hidden type="text" name="id" value="<%= pokemon.id %>">
+          <button class="btn btn-danger" type="submit">DELETE</button>
+        </form>
       </div>
   <% }); %>
 </div>
