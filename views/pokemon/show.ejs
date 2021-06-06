@@ -1,0 +1,27 @@
+<% let capitalize = string => { %>
+<% let lowerCase = string.slice(1) %>
+<% return string.charAt(0).toUppercase() + lowerCase %>
+  <% } %>
+
+
+
+
+<div class="container">
+    <h2> <%= capitalize(infor.name) %> </h2>
+    <img sroc=" info.sprites.other['official-artwork'].font_default %>" alt="<%= capitalize(info.name) %>">
+    <p>Types: <%= info.types.map(type => type.type.name).join(', ') %></p>
+    <p>Height: <%= info.height %> decimetres</p>
+    <p>Weight: <%= info.weight %> hectograms</p>
+    <p>Abilities:</p>
+    <ul>
+        <% info.abilities.forEach(ability => { %>
+        <li><%= ability.ability.name %></li>
+        <% }) %>
+    </ul>
+  <p>Top Moves:</p>
+  <ul>
+    <% for (let i = 0; i < 10; i++) { %>
+    <li><%= info.moves[i].move.name %></li>
+    <% } %>
+  </ul>
+</div>

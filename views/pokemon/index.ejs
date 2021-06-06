@@ -1,0 +1,16 @@
+<div class="container">
+    <h1>Favorites</h1>
+
+    <% pokemons.forEach(pokemon => { %>
+    <div class="well">
+        <h3><%= pokemon.name; %></h3>
+        <a href="/pokemon/<%= pokemon.name.toLowerCase() %>">
+          <button class="btn btn-primary">More Info</button>
+        </a>
+        <form method="POST" action="/pokemon/<%= pokemon.name %>/?_method=DELETE">
+          <input type="submit" value="Remove" class="btn btn-primary">
+        </form>
+      </div>
+      <% }); %>
+    
+    </div>
