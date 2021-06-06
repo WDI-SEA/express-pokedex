@@ -2,13 +2,11 @@
 
 @font-face {
   font-family: "Pokemon-Solid";
-  src: url("Pokemon-Solid.woff") format("woff");
+  src: url("../resources/Pokemon-Solid.woff") format("woff");
 }
 
 * {
-  /* background: #fbde02; */
   margin: 0;
-  /* border: 1px solid black; */
 }
 
 body {
@@ -83,7 +81,6 @@ p.poke-list {
 }
 
 .well {
-  /* height: 200px; */
   font-size: 26px;
 }
 

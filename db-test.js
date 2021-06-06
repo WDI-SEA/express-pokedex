@@ -1,19 +1,23 @@
 const db = require("./models");
 
-db.pokemon
-  .create({
-    name: "pikachu",
-  })
-  .then((poke) => {
-    console.log("Created: ", poke.name);
-  });
+const createPokemon = () => {
+  db.pokemon
+    .create({
+      name: "pikachuuuuuuuuuuuuu",
+    })
+    .then((poke) => {
+      console.log("Created: ", poke.name);
+    });
+};
 
-db.pokemon
-  .findOne({
-    where: {
-      name: "pikachu",
-    },
-  })
-  .then((poke) => {
-    console.log("Found: ", poke.name);
-  });
+createPokemon();
+
+// db.pokemon
+//   .findOne({
+//     where: {
+//       name: "pikachu",
+//     },
+//   })
+//   .then((poke) => {
+//     console.log("Found: ", poke.name);
+//   });
