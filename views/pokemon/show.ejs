@@ -1,0 +1,15 @@
+<h1>
+    NAME: <%= pokemon.name %>
+</h1>
+<img src="<%= pokemon.sprites.other["official-artwork"].front_default %>" alt="pokemon image">
+<h3> 
+    <% pokemon.abilities.forEach(ability => { %>
+         <br> <%= ability.ability.name%>
+    <% }) %>
+ </h3>
+<h3>
+    WEIGHT: <%= pokemon.weight %>
+</h3>
+<h3>
+    HEIGHT: <%= pokemon.height %>
+</h3>

@@ -1,0 +1,13 @@
+<% pokemons.forEach(pokemon => { %>
+    <dvi>
+        <h1>
+            <a href="/pokemon/<%= pokemon.name %>">
+                <%= pokemon.name %>
+            </a>
+        </h1>
+        <form method="POST" action="/pokemon/<%= pokemon.name %>/?_method=DELETE">
+            <input type="submit" value="Delete">
+        </form>
+    </dvi>    
+
+<% }) %>
