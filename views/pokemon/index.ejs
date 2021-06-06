@@ -1,17 +1,16 @@
+<div class="container">
+    <h1 class="text-center">Pokedex 3000</h1>
+    <p class="text-center"></p>
 
 <% pokemons.forEach (pokemon => { %>
 
-    <div class="well">
-
-<p>
+<div class="well">
     <h2><%= pokemon.name %></h2>
-
     <a href="/pokemon/<%= pokemon.name %>">Inspect</a>
-</p>
 
-<form method="POST" action="/pokemon/<%= pokemon.name %>?_method=DELETE">
-    <input hidden type="text" name="name" value="<%= pokemon.name %>">
-    <button class="sm-btn btn-danger" type="submit" onclick="return alert('<%=pokemon.name %> set free!')">Set Free</button>
-</form>
+    <form method="POST" action="/pokemon/<%= pokemon.name %>?_method=DELETE">
+        <input hidden type="text" name="name" value="<%= pokemon.name %>">
+        <button class="sm-btn btn-danger" type="submit" onclick="return alert('<%=pokemon.name %> set free!')">Set Free</button>
+    </form>
 </div>
 <% }) %>
