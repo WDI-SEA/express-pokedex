@@ -20,7 +20,7 @@ body {
   letter-spacing: 3px;
   -webkit-font-smoothing: auto;
   -moz-osx-font-smoothing: auto;
-  background-image: linear-gradient(#fbde02, #ff9400);
+  background-image: linear-gradient(#ff9400, #fbde02);
 }
 
 .header {
