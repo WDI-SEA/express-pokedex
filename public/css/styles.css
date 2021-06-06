@@ -1,0 +1,15 @@
+h1 img {
+  max-width: 250px;
+  width: 100%;
+}
+.favorite h1 {
+  /* font-family: 'Press Start 2P', cursive; */
+  font-family: 'Audiowide', italic;
+}
+.favorite h3 {
+  color: #2c71c8;
+}
+
+.main {
+  background: #2c71c8;
+}

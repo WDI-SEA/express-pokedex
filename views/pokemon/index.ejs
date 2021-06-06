@@ -1,0 +1,16 @@
+
+<div class="container text-center favorite">
+  <div class="row">
+    <h1>My Favorite Pokemon</h1>
+
+    <%pokemons.forEach((pokemon) => { %>
+        
+      <div class="row py-5 text-center text-capitalize">
+        <h3>
+          <a href="/pokemon/<%= pokemon.name %>"> <%= pokemon.name %></a>
+        </h3>
+      </div>
+
+    <% }) %>
+  </div>
+</div>
