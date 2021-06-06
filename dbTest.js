@@ -14,3 +14,8 @@ db.pokemon.findOne({
 }).then(poke => {
   console.log('Found: ', poke.name)
 })
+// * <form action="/pokemon/<%= pokemon.name %>/?_method=DELETE" method="POST">
+// <label for=""> Delete <%= pokemon.name %> </label>
+// <input type="submit" value="Delete"/>
+// </form>  */
+// <img src="<%= creature.img_url %>" alt="<%= creature.type %>" width="700">
