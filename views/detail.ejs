@@ -2,11 +2,18 @@
     <a href="/pokemon">Back</a>
   </p>
 
-<h1><%= data.name %></h1>
+<h1 class="text-center"><%= data.name %></h1>
 
-<img src="<% data.sprites.other["official-artwork"].front_default%>" alt="<%= data.name %>">
+<img src="<%= data.sprites.other["official-artwork"].front_default%>" alt="<%= data.name %>">
 
-<h2><%= data.abilities[0].ability.name %></h2>
+<div class="basic-info text-center">
+    <h4>
+        Weight: <%= data.weight %>
+        Height: <%= data.height %>
+    </h4>
+</div>
 
-<h2><%= data.moves[0].move.name %></h2>
+<h2 class="text-center"><%= data.abilities[0].ability.name %></h2>
+
+<h2 class="text-center"><%= data.moves[0].move.name %></h2>
 

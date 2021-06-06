@@ -1,0 +1,11 @@
+* {
+    background-color: 'FFDE00';
+}
+
+
+img {
+    justify-content: center;
+    align-content: center;
+    /* text-align: center;
+    margin: 0 auto; */
+}
