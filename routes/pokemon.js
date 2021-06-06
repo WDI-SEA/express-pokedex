@@ -58,3 +58,18 @@ router.get('/:name', (req, res) => {
 
 // EXPORT ROUTER
 module.exports = router;
+
+
+// DELETE /pokemon
+// router.delete('/:name', (req, res) => {
+//   let pokeId = req.params.name
+//   db.pokemon.findAll()
+//   .then((pokemon) => {
+//     db.pokemon.destroy({
+//       where: {name: pokeId}
+//     })
+//   })
+//   .catch(err => {
+//     log(err)
+//   })
+// })

@@ -1,7 +1,9 @@
-<div class="container">
+<div class="container my-container">
   <h1 class="text-center">The Original 151 Pokemon</h1>
-  <p class="text-center">
-    <a href="/pokemon">Favorites</a>
+  <p>
+    <form class="text-center" action="/pokemon">
+      <button class="btn btn-primary" type="submit">Favorites</button>
+    </form>
   </p>
 
   <% pokemon.forEach(function(pokemon) { %>

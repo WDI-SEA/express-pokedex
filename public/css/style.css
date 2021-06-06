@@ -1,6 +1,19 @@
 body {
     background-color: rgb(81,123,58);
-    border: 2px solid black;
+}
+
+.my-container {
+    background-color: rgb(56,56,56);
+    color: white;
+}
+
+.well {
+    background-color: rgb(64,64,64);
+    border: none;
+}
+
+.favorite-button {
+    background-color: rgb(29,86,163);
 }
 
 h3 {
@@ -16,7 +29,6 @@ main {
     margin: -20px 50px 0 50px;
     padding: 10px;
     background-color: rgb(56,56,56);
-    border: 1px solid black;
     color: white;
 }
 

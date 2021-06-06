@@ -1,12 +1,11 @@
-<h1>Pokedex</h1>
-
-<% pokemons.forEach((pokemon) => { %>
-    <p>
-        <form action="/pokemon/<%= pokemon.name %>">
-            <input class="a" type="submit" value="<%= pokemon.name %>"/>
-        </form>
-        <form method="POST" action="/pokemon">
-            <input class="submit-button" type="submit" value="DELETE"/>
-        </form>
-    </p>
-<% }) %>
+<div class="container my-container">
+    <h1 class="text-center">Favorites</h1>
+    <% pokemons.forEach((pokemon) => { %>
+        <div class="well">
+            <h2 class="a"><%= pokemon.name %></h2>
+            <form action="/pokemon/<%= pokemon.name %>">
+                <input class="a btn btn-primary" type="submit" value="Details"/>
+            </form>
+        </div>
+    <% }) %>
+</div>
