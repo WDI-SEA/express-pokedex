@@ -44,8 +44,20 @@ router.post('/', (req, res) => {
   }).then(poke => {
     console.log('Created: ', poke.name)
   })
-  // res.send(req.body);
+  res.redirect('/')
   console.log(req.body.name);
+});
+
+router.post('/:name', (req, res) => {
+  // TODO: Get form data and add a new record to DB
+  db.pokemon.destroy({
+    where: { name: req.body.name}
+  }).then(poke => {
+    console.log('Deleted: ', poke)
+    res.redirect('/pokemon')
+  })
+  // res.send(req.body);
+  // console.log(req.body.name);
 });
 
 module.exports = router;
