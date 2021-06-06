@@ -1,6 +1,6 @@
 .env
+config
 
-# Created by https://www.gitignore.io/api/node,osx,linux
 
 ### Node ###
 # Logs
