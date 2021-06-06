@@ -7,6 +7,10 @@ h3 {
     font-weight: bold;
 }
 
+.bold {
+    font-weight: bold;
+}
+
 main {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: -20px 50px 0 50px;
@@ -113,4 +117,24 @@ li {
 
 #moon {
     background-color: rebeccapurple;
+}
+
+#firered {
+    background-color: orangered;
+}
+
+#leafgreen {
+    background-color: olivedrab;
+}
+
+#diamond {
+    background-color: rgb(29,86,163);
+}
+
+#pearl {
+    background-color: rgb(248,164,175);
+}
+
+#shiny {
+    background-color: hotpink;
 }

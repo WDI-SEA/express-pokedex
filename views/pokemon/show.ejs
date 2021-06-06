@@ -99,15 +99,64 @@
 
     <table class="data-table">
         <tbody>
-            <td class="data-text" colspan="<%= pokeDataOne.abilities.length %>">
-                Abilities
-            </td>
             <tr>
-                <% pokeDataOne.abilities.forEach((e) => { %>
-                    <td class="a">
-                        <%= e.ability.name %>
-                    </td>
-                <% }) %>
+                <td class="data-text">
+                    Abilities
+                </td>
+                <td class="data-text">
+                    Egg Group
+                </td>
+                <td class="data-text">
+                    Base Happiness
+                </td>
+                <td class="data-text">
+                    Capture Rate
+                </td>
+            </tr>
+            <tr>
+                <td class="a">
+                    <% pokeDataOne.abilities.forEach((e) => { %>
+                        <p><%= e.ability.name %></p>
+                    <% }) %>
+                </td>
+                <td class="a">
+                    <% pokeDataTwo.egg_groups.forEach((e) => { %>
+                        <p><%= e.name %></p>
+                    <% }) %>
+                </td>
+                <td class="a">
+                        <%= pokeDataTwo.base_happiness %>/255
+                </td>
+                <td class="a">
+                        <%= pokeDataTwo.capture_rate %>/255
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="data-table">
+        <tbody>
+            <tr>
+                <td class="data-text">
+                    Generation
+                </td>
+                <td class="data-text">
+                    Growth Rate
+                </td>
+                <td class="data-text">
+                    Habitat
+                </td>
+            </tr>
+            <tr>
+                <td class="a">
+                    <%= pokeDataTwo.generation.name %>
+                </td>
+                <td class="a">
+                    <%= pokeDataTwo.growth_rate.name %>
+                </td>
+                <td class="a">
+                    <%= pokeDataTwo.habitat.name %>
+                </td>
             </tr>
         </tbody>
     </table>
@@ -120,10 +169,10 @@
                 </td>
             </tr>
             <tr>
-                <td id="red">
+                <td id="red" class="bold">
                     Red
                 </td>
-                <td id="blue">
+                <td id="blue" class="bold">
                     Blue
                 </td>
                 <td colspan="2">
@@ -131,7 +180,7 @@
                 </td>
             </tr>
             <tr>
-                <td id="yellow" colspan="2">
+                <td id="yellow" class="bold" colspan="2">
                     Yellow
                 </td>
                 <td colspan="2">
@@ -139,10 +188,10 @@
                 </td>
             </tr>
             <tr>
-                <td id="gold">
+                <td id="gold" class="bold">
                     Gold
                 </td>
-                <td id="silver">
+                <td id="silver" class="bold">
                     Silver
                 </td>
                 <td colspan="2">
@@ -150,7 +199,7 @@
                 </td>
             </tr>
             <tr>
-                <td id="ruby" colspan="2">
+                <td id="ruby"  class="bold" colspan="2">
                     Ruby
                 </td>
                 <td colspan="2">
@@ -158,7 +207,7 @@
                 </td>
             </tr>
             <tr>
-                <td id="sapphire" colspan="2">
+                <td id="sapphire"  class="bold" colspan="2">
                     Sapphire
                 </td>
                 <td colspan="2">
@@ -166,10 +215,10 @@
                 </td>
             </tr>
             <tr>
-                <td id="black">
+                <td id="black" class="bold">
                     Black
                 </td>
-                <td id="white">
+                <td id="white" class="bold">
                     White
                 </td>
                 <td colspan="2">
@@ -177,7 +226,7 @@
                 </td>
             </tr>
             <tr>
-                <td id="sun" colspan="2">
+                <td id="sun"  class="bold" colspan="2">
                     Sun
                 </td>
                 <td colspan="2">
@@ -185,7 +234,7 @@
                 </td>
             </tr>
             <tr>
-                <td id="moon" colspan="2">
+                <td id="moon"  class="bold" colspan="2">
                     Moon
                 </td>
                 <td colspan="2">
@@ -198,11 +247,12 @@
     <table class="data-table">
         <tbody>
             <tr>
-                <td class="data-text" colspan="<%= pokeDataOne.stats.length %>">
+                <td class="data-text" colspan="<%= pokeDataOne.stats.length + 1%>">
                     Stats
                 </td>
             </tr>
             <tr>
+                <td></td>
                 <td class="data-text">HP</td>
                 <td class="data-text">Attack</td>
                 <td class="data-text">Defense</td>
@@ -211,9 +261,18 @@
                 <td class="data-text">Speed</td>
             </tr>
             <tr>
+                <td>Base Stats</td>
                 <% pokeDataOne.stats.forEach((e) => { %>
                     <td>
                         <%= e.base_stat %>
+                    </td>
+                <% }) %>
+            </tr>
+            <tr>
+                <td>EVs</td>
+                <% pokeDataOne.stats.forEach((e) => { %>
+                    <td>
+                        <%= e.effort %>
                     </td>
                 <% }) %>
             </tr>
@@ -223,52 +282,73 @@
     <table class="data-table">
         <tbody>
             <tr>
-                <td class="data-text" colspan="3">
+                <td class="data-text" colspan="6">
                     Sprites
                 </td>
             </tr>
             <tr>
-                <td class="data-text">
-                    R/S/E
+                <td class="data-text" id="ruby">
+                    R
                 </td>
-                <td class="data-text">
-                    FR/LG
+                <td class="data-text" id="sapphire">
+                    S
                 </td>
-                <td class="data-text">
-                    D/P
+                <td class="data-text" id="firered">
+                    FR
+                </td>
+                <td class="data-text" id="leafgreen">
+                    LG
+                </td>
+                <td class="data-text" id="diamond">
+                    D
+                </td>
+                <td class="data-text" id="pearl">
+                    P
                 </td>
             </tr>
             <tr>
-                <td>
+                <td colspan="2">
                     <img src="<%= pokeDataOne.sprites.versions["generation-iii"]["ruby-sapphire"].front_default %>"/>
                     <img src="<%= pokeDataOne.sprites.versions["generation-iii"]["ruby-sapphire"].back_default %>"/>
                 </td>
-                <td>
+                <td colspan="2">
                     <img src="<%= pokeDataOne.sprites.versions["generation-iii"]["firered-leafgreen"].front_default %>"/>
                     <img src="<%= pokeDataOne.sprites.versions["generation-iii"]["firered-leafgreen"].back_default %>"/>
                 </td>
-                <td>
+                <td colspan="2">
                     <img src="<%= pokeDataOne.sprites.versions["generation-iv"]["diamond-pearl"].front_default %>"/>
                     <img src="<%= pokeDataOne.sprites.versions["generation-iv"]["diamond-pearl"].back_default %>"/>
                 </td>
             </tr>
             <tr class="data-text">
-                <td class="data-text">
-                    HG/SS
+                <td class="data-text" id="gold">
+                    HG
                 </td>
-                <td class="data-text">
-                    B/W
-
+                <td class="data-text" id="silver">
+                    SS
+                </td>
+                <td class="data-text" id="black">
+                    B
+                </td>
+                <td class="data-text" id="white">
+                    W
+                </td>
+                <td class="data-text" colspan="2" id="shiny">
+                    Shiny
                 </td>
             </tr>
             <tr>
-                <td>
+                <td colspan="2">
                     <img src="<%= pokeDataOne.sprites.versions["generation-iv"]["heartgold-soulsilver"].front_default %>"/>
                     <img src="<%= pokeDataOne.sprites.versions["generation-iv"]["heartgold-soulsilver"].back_default %>"/>
                 </td>
-                <td>
+                <td colspan="2">
                     <img src="<%= pokeDataOne.sprites.versions["generation-v"]["black-white"].animated.front_default %>"/>
                     <img src="<%= pokeDataOne.sprites.versions["generation-v"]["black-white"].animated.back_default %>"/>
+                </td>
+                <td colspan="2">
+                    <img src="<%= pokeDataOne.sprites.versions["generation-v"]["black-white"].animated.front_shiny %>"/>
+                    <img src="<%= pokeDataOne.sprites.versions["generation-v"]["black-white"].animated.back_shiny %>"/>
                 </td>
             </tr>
         </tbody>
