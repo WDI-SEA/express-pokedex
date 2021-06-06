@@ -1,10 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Sigmar+One&display=swap");
+
+@font-face {
+  font-family: "Pokemon-Solid";
+  src: url("Pokemon-Solid.woff") format("woff");
+}
+
 * {
-  background: #fbde02;
+  /* background: #fbde02; */
+  margin: 0;
+  /* border: 1px solid black; */
 }
 
 body {
   display: flex;
   justify-content: center;
+  font-family: "Pokemon-Solid", sans-serif;
+  color: #2c72b8;
+  font-size: 20px;
+  letter-spacing: 3px;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+  background-image: linear-gradient(#fbde02, #ff9400);
 }
 
 .header {
@@ -13,8 +29,8 @@ body {
 }
 
 .container {
-  width: 650px;
-  border: 1px solid black;
+  width: 700px;
+  padding: 0px 25px 0px 25px;
 }
 
 img.prideball {
@@ -25,4 +41,97 @@ img.prideball {
   display: flex;
   justify-content: center;
   margin: 0 auto;
+}
+
+.nav-links {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+
+.titles {
+  margin: 8px 0px 18px 0px;
+  font-size: 2.5rem;
+  text-shadow: -2px 2px 1px #21386e;
+  letter-spacing: 3px;
+}
+
+.home-text {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+
+p.nav-links {
+  padding-bottom: 18px;
+}
+
+.pipe {
+  color: #21386e;
+  width: 250px;
+}
+
+.logo {
+  margin-top: 15px;
+}
+
+p.poke-list {
+  font-size: 2.9rem;
+  text-shadow: -2px 2px 1px #21386e;
+  color: #2c72b8;
+  padding-bottom: 5px;
+  margin: 10px 0px 2px 0px;
+  letter-spacing: 4px;
+}
+
+.well {
+  /* height: 200px; */
+  font-size: 26px;
+}
+
+button.btn {
+  background: #facb08;
+  border: 1px solid #e2b708;
+  color: #354d81;
+  padding: 5px 26px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  border-radius: 12px;
+  box-shadow: 2px 10px 5px rgba(199, 159, 8, 0.3);
+  transition: all 0.2s ease 0s;
+}
+
+button.btn:hover {
+  transform: translateY(4px);
+}
+
+hr {
+  height: 2px;
+  background-color: rgba(199, 159, 8, 0.3);
+  border: none;
+}
+
+img.list-ball {
+  width: 42px;
+  margin-left: 15px;
+  /* border: 1px solid black; */
+}
+
+.links {
+  font-family: "Sigmar One";
+  font-weight: 700;
+}
+
+a {
+  font-family: "Sigmar One";
+  color: #2c72b8;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.to-top {
+  margin-bottom: 25px;
+  text-align: right;
 }

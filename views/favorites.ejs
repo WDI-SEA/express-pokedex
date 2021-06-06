@@ -1,14 +1,16 @@
 <div class="container">
-  <h1 class="text-center">My Favorite Pokemon</h1>
-  <p class="text-center"><a href="/">Home</a> | Favorites</p>
+  <h1 class="text-center titles">My Favorite Pokemon</h1>
+  <p class="text-center nav-links">
+    <a href="/">Home</a>
+    <img class="pipe" src="/img/ash1.png" /> &nbsp;
+    <span class="links" style="color: #1f4979;"> >> Favorites << </span>
+  </p>
   <% pokemon.forEach(pokemon => { %>
   <div class="well">
-    <h2><%= pokemon.name %></h2>
+    <p class="poke-list"><%= pokemon.id %>. <%= pokemon.name %><img class="list-ball" src="/img/pokeball-sm2.png">
     <form method="POST" action="/pokemon">
       <input hidden type="text" name="name" value="<%= pokemon.name %>" />
-      <button class="btn btn-primary" type="submit">
-        REMOVE This Favorite Pokemon
-      </button>
+      <button class="btn" type="submit">Remove <b><%= pokemon.name %></b> From Favorite Pokemon</button>
     </form>
 
     <form method="POST" action="/pokemon">
@@ -18,10 +20,16 @@
         name="name"
         value="<%= pokemon.removePokemon %>"
       />
-      <button class="btn btn-primary" type="submit">
-        Get More Details on your Favorite Pokemon
+      <button class="btn" type="submit">
+        Get More Details On: <b><%= pokemon.name %></b>
       </button>
     </form>
+    <br>
+    <hr>
+  </p>
   </div>
   <% }); %>
+  <div class="to-top">
+    <a href="#top">back to top &#x2191;</a>
+  </div>
 </div>
