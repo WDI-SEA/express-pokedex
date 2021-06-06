@@ -48,7 +48,7 @@ router.post('/', (req, res) => {
   console.log(req.body.name);
 });
 
-router.post('/:name', (req, res) => {
+router.delete('/:name', (req, res) => {
   // TODO: Get form data and add a new record to DB
   db.pokemon.destroy({
     where: { name: req.body.name}

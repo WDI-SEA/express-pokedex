@@ -6,7 +6,7 @@
     <a href="/pokemon/<%= pokemon.name %>">Additional Details</a>
 </p>
 
-<form method="POST" action="/pokemon/:name">
+<form method="POST" action="/pokemon/:name?_method=DELETE">
     <input hidden type="text" name="name" value="<%= pokemon.name %>">
     <button class="btn btn-primary" type="submit">DELETE</button>
 </form>
