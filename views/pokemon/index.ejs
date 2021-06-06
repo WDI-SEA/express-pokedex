@@ -1,6 +1,8 @@
 <div class="container">
+  <div class="row">
   <% pokemons.forEach((pokemon) => { %>
-      <div class="well">
+    <div class="col-sm-4">
+      <div class="well text-center align-middle">
         <h2><%= pokemon.name %></h2>
         <form method="POST" action="/pokemon/?_method=DELETE">
           <a href="/pokemon/<%= pokemon.name %>" class="btn btn-primary">More Info</a>
@@ -8,5 +10,7 @@
           <button class="btn btn-danger" type="submit">DELETE</button>
         </form>
       </div>
+    </div>
   <% }); %>
+  </div>
 </div>
