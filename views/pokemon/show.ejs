@@ -1,15 +1,19 @@
 
-<div id="view-pokemon">
+<div class="view-pokemon">
   <h1><%= pokemon.name %></h1>
   <h4><%= pokemon.types[0].type.name %> type</h4>
   <img src="<%= pokemon.sprites.front_default %>" width="100" height="100">
 
  
-
-    <% for (let i = 0; i < pokemon.abilities.length; i++) { %>
-      <p><%= pokemon.abilities[i].ability.name %></p>
-    <% } %>
+    <br>
   
+    <div id='pokeabilities'>
+    Abilities
+     <% for (let i = 0; i < pokemon.abilities.length; i++) { %>
+      <p><%= pokemon.abilities[i].ability.name %></p>
+     <% } %>
+      
+    </div>
 
   <h4 class="show-heading">Base Stats</h4>
 

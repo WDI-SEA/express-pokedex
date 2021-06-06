@@ -9,23 +9,20 @@ const db = ('./models');
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
+app.use(express.static('public'))
 
 // GET / - main index of site
 app.get('/', (req, res) => {
-  let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
+  let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/?limit=898>';
   // Use request to call the API
   axios.get(pokemonUrl).then(apiResponse => {
     let pokemon = apiResponse.data.results;
-    res.render('index', { pokemon: pokemon.slice(0, 151) });
+    res.render('index', { pokemon: pokemon.slice(0, 10) });
   })
 });
 
 
 
-// app.get ('/pokemon', (req, res) => {
-//   let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
-
-// }
 
 // Imports all routes from the pokemon routes file
 app.use('/pokemon', require('./routes/pokemon'));
