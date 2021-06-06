@@ -88,9 +88,7 @@
                 </td>
                 <td>
                     <% pokeDataOne.types.forEach((e) =>{ %>
-                        <p class="a">
-                            <%= e.type.name %>
-                        </p>
+                        <img class="type-img" src="https://www.serebii.net/attackdex-bw/type/<%= e.type.name %>.gif"/>
                     <% }) %>
                 </td>
             </tr>
