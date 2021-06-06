@@ -8,8 +8,7 @@ router.delete('/', (req, res) => {
   db.pokemon.destroy({
     where: {id: req.body.id}
   }).then(() => {
-    req.redirect = 'GET'
-    res.redirect('/')
+    res.redirect(req.originalUrl.split("?").shift())
   }).catch(err => {
     console.log(err)
   })
