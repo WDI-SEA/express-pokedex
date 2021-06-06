@@ -1,0 +1,12 @@
+<p class="text-center">
+    <a href="/pokemon">Back</a>
+  </p>
+
+<h1><%= data.name %></h1>
+
+<img src="<% data.sprites.other["official-artwork"].front_default%>" alt="<%= data.name %>">
+
+<h2><%= data.abilities[0].ability.name %></h2>
+
+<h2><%= data.moves[0].move.name %></h2>
+
