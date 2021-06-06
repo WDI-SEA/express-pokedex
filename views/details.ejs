@@ -1,0 +1,40 @@
+<div class="container">
+    <h1 class="text-center">Favorites</h1>
+    <p class="text-center">
+      <a href="/">Home</a>
+    </p>
+    <style>
+       
+    </style>
+  <div class="class="d-flex justify-content-center"">
+
+      <% pokemon.name %>
+      <img src="<%= pokemon["sprites"]["other"]["official-artwork"]["front_default"] %>" alt="">
+      
+      
+      
+      
+      <div class="well">
+        <h2><%= pokemon.name %></h2>
+        <ul>
+            <li>Id:<%= pokemon.id %></li>
+            <li>Height: <%= pokemon.height %></li>
+            <li>Weight: <%= pokemon.weight %></li>
+            <li>Type(s): <%= pokemon.types[0].type.name%>
+                <%if(pokemon.types.length > 1){%>
+                 / <%= pokemon.types[1].type.name %>  
+                 <%}%> </li>
+                 <% for(i=0; i<pokemon.stats.length; i++){%>
+                     <li><%=pokemon.stats[i].stat.name + ": " + pokemon.stats[i].base_stat%></li>
+                     <%}%>
+                     
+
+                     
+        </ul>
+    </div>
+        
+      </div>
+    
+  </div>
+  
+ 

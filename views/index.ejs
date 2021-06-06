@@ -1,16 +1,24 @@
 <div class="container">
-  <h1 class="text-center">The Original 151 Pokemon</h1>
+  <h1 class="text-center">The Original 151 Pokemans</h1>
   <p class="text-center">
     <a href="/pokemon">Favorites</a>
   </p>
-
+  <%let i=1 %>
   <% pokemon.forEach(function(pokemon) { %>
     <div class="well">
       <h2><%= pokemon.name %></h2>
+
+     <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%=i%>.png" alt="" style="width:150px">
+      
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
         <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
       </form>
+      <form action="/pokemon/<%= pokemon.name %>/" method="GET">
+        <button class="btn btn-primary" name="details" >Details</button>
+    </form>
+      
     </div>
+  <% i++ %>  
   <% }); %>
 </div>
