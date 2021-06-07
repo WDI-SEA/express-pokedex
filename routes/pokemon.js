@@ -9,9 +9,6 @@ router.get('/', (req, res) => {
   db.pokemon.findAll()
   .then((pokemons) => {
   // render and redirect to view /pokemon/index page
-  pokemons.forEach(poke => {
-    console.log(poke.dataValues)
-  })
   res.render('pokemon/index', {pokemons})
   })
   .catch((err) => {
@@ -44,7 +41,7 @@ router.post('/', (req, res) => {
 // DELETE /:name - get pokemon name from body then destroy from database
 router.delete('/:name', (req, res) => {
   db.pokemon.destroy({
-    where: { name: req.body.name}
+    where: { id: req.body.id}
   }).then(poke => {
     res.redirect('/pokemon')
   })

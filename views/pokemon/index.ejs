@@ -7,7 +7,7 @@
             <a href="/pokemon/<%= pokemon.name %>">Inspect</a>
 
             <form method="POST" action="/pokemon/<%= pokemon.name %>?_method=DELETE">
-                <input hidden type="text" name="name" value="<%= pokemon.name %>">
+                <input hidden type="text" name="id" value="<%= pokemon.id %>">
                 <button class="sm-btn btn-danger" type="submit" onclick="return alert('<%=pokemon.name %> set free!')">Set Free</button>
             </form>
         </div>
