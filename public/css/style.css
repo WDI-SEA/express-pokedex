@@ -21,7 +21,9 @@ body {
   /* background-color: rgb(197, 194, 194); */
   margin: 4% 35% 4% 35%;
   font-size: 20px;
-  color: black;
+  color: white;
+
+  background-color:grey
 }
 /* 
 #pokeabilities {
