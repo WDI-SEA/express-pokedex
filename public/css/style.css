@@ -9,27 +9,37 @@ body {
   background-color:grey;
   color: white;
   font-size: 20px;
+  margin: 50px;
 }
 
 
 .view-pokemon {
   text-align: center;
   align-items: center;
-  padding: 0px;
-  /* background-color: rgb(197, 194, 194); */
-  margin: 4% 30% 4% 30%;
   
-  font-size: 30px;
+  /* padding: 0px; */
+  /* background-color: rgb(197, 194, 194); */
+  margin: 4% 35% 4% 35%;
+  font-size: 20px;
   color: black;
 }
-
+/* 
 #pokeabilities {
-  border: 2px solid black;
+  border: 5px solid black;
+  align-items: center;
 
-}
+} */
 
 #base-stats {
   list-style-type: none;
-  align-items: center;
-  font-size: 15px;
+ 
+  font-size: 20px;
+}
+
+.container{
+  height: auto;
+  margin: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  
 }
