@@ -4,13 +4,25 @@
   <div class="row">
     <% let i = 1 %>
     <% pokemon.forEach(function(pokemon) { %>
+      <% let min = 1 %>
+      <% let max = 10 %>
+      <% let rand = Math.floor(Math.random() * (max - min) + min) %>
       <div class="col-sm-4">
         <div class="well text-center">
-          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= i %>.png" alt="<%= pokemon.name %>">
+          <% if(rand === 1) { %>
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/<%= i %>.png" alt="<%= pokemon.name %>">
+          <% } else { %>
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= i %>.png" alt="<%= pokemon.name %>">
+          <% } %>
+
           <h2><%= pokemon.name %></h2>
           <form method="POST" action="/pokemon">
             <input type="hidden" name="name" value="<%= pokemon.name %>">
-            <input type="hidden" name="image" value="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= i %>.png">
+            <% if(rand === 1) { %>
+              <input type="hidden" name="image" value="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/<%= i %>.png">
+            <% } else { %>
+              <input type="hidden" name="image" value="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= i %>.png">
+            <% } %>
             <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
           </form>
         </div>
