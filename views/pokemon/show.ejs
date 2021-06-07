@@ -90,7 +90,16 @@
                     <% }) %>
                 </td>
                 <td class="a">
-                    <%= pokeDataTwo.growth_rate.name %>
+                    <p><%= pokeDataTwo.growth_rate.name %></p>
+                    <% if (pokeDataTwo.growth_rate.name == "slow") { %>
+                        <p>1,250,000 XP</p>
+                    <% } else if (pokeDataTwo.growth_rate.name == "medium-slow") { %>
+                        <p>1,059,860 XP</p>
+                    <% } else if (pokeDataTwo.growth_rate.name == "medium") { %>
+                        <p>1,000,000 XP</p>
+                    <% } else if (pokeDataTwo.growth_rate.name == "fast") { %>
+                        <p>800,000 XP</p>
+                    <% } %>
                 </td>
                 <td class="a">
                     <%= pokeDataTwo.habitat.name %>
@@ -138,12 +147,9 @@
                 <td class="a">
                     <%= 255*(pokeDataTwo.hatch_counter) + pokeDataTwo.hatch_counter %> steps
                 </td>
-
                 <td class="a">
-                    <% if ( pokeDataTwo.gender_rate == -1) { %>
-                        <p>
+                    <% if (pokeDataTwo.gender_rate == -1) { %>
                             Genderless
-                        </p>
                     <% } else { %>
                         <p>
                             Male ♂: <%= (8 - pokeDataTwo.gender_rate)/8*100 %>%
@@ -153,7 +159,6 @@
                         </p>
                     <% } %>
                 </td>
-
                 <td class="a">
                         <%= pokeDataOne.base_experience %>
                 </td>
