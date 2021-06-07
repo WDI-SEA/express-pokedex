@@ -25,7 +25,9 @@ router.get('/:name', (req, res) => {
   axios.get(`http://pokeapi.co/api/v2/pokemon/${req.params.name}`)
   .then(pokemon => {
     //  let randomName = pokemon.data.moves[Math.floor(pokemon.data.moves.length * Math.random())]
-    res.render('pokemon/show.ejs', {pokemon: pokemon})
+    let randomMove = pokemon.data.moves[Math.floor(pokemon.data.moves.length * Math.random())].move.name
+    console.log(randomMove)
+    res.render('pokemon/show.ejs', {pokemon: pokemon, randomMove})
   })
 })  
 
