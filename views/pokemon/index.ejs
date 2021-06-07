@@ -15,7 +15,7 @@
           <a href="/pokemon/<%= pokemon.name %>" class="btn btn-primary">More Info</a>
           <input hidden type="text" name="id" value="<%= pokemon.id %>">
           <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#<%= pokemon.name %>Modal">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#<%= pokemon.id %>Modal">
             Edit
           </button>
           <button class="btn btn-danger" type="submit">DELETE</button>
@@ -24,7 +24,7 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="<%= pokemon.name %>Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="<%= pokemon.id %>Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
