@@ -30,10 +30,6 @@ router.get('/', (req, res) => {
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/', (req, res) => {
   // TODO: Get form data and add a new record to DB
-
-  console.log("👋👋👋👋👋👋👋👋👋👋👋👋👋👋👋👋👋👋")
-  console.log(req.body)
-
   db.pokemon.create({
     name: req.body.name,
     img_url: req.body.image
