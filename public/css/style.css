@@ -66,6 +66,7 @@ p {
     padding: 40px;
     background-color: #CC0000;
 }
+
 .fave-link {
     display: block;
 }
@@ -74,7 +75,6 @@ p {
     width: auto;
     border: 3px solid black;
     position:relative;
-   
 }
 
 .circle {
@@ -146,7 +146,8 @@ form {
 
 .detail-page {
     background-color: #CC0000;
-    height: 100vh;
+    background-size: 100%;
+    padding: 5%;
     margin: 0 auto;
 }
 
@@ -155,12 +156,12 @@ form {
     padding-bottom: 20px;
 }
 
-.detail-container{
+.detail-container {
     align-items: center;
     background-color: white;
     border: 3px solid black;
     border-radius: 5%;
-    margin: 25px auto;
+    margin: 0 auto;
     width: 500px;
 }
 

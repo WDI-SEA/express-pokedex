@@ -15,14 +15,18 @@ router.get('/', (req, res) => {
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/', (req, res) => {
-  // TODO: Get form data and add a new record to DB
-  db.pokemon.create({
-    name: req.body.name
-  })
-  .then(poke => {
-    //console.log('Added: ', poke.name)
-    res.redirect('/')
+  // Get form data
+  let name = req.body.name
 
+  // TODO: Get form data and add a new record to DB
+  db.pokemon.findOrCreate({
+    where: {
+      name: name
+    }
+  })
+  .then((data) => {
+    // redirect back to favorites page
+    res.redirect('/pokemon')
   })
   .catch(err => {console.log(err)})
 })
