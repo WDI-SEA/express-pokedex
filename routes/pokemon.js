@@ -1,3 +1,4 @@
+const { default: axios } = require("axios");
 const express = require("express");
 const router = express.Router();
 const db = require("../models");
@@ -17,20 +18,15 @@ router.get("/", (req, res) => {
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post("/", function (req, res) {
-  // console.log(req.body);
-  //posts are mounted on the req body object
   let pokeName = req.body.name;
-  // console.log(pokeName);
+
   async function findOrCreatePokemon() {
     try {
-      // the findOrCreate promise returns an array with two elements,
-      // so 'array destructuring' is used to assign the names to the elements
       const [pokemon, created] = await db.pokemon.findOrCreate({
         where: { name: pokeName },
       });
-      // console.log(`${pokemon.name} was ${created ? "created" : "found"}`);
+
       res.redirect("/pokemon");
-      // res.json({ username: "Flavio" });
     } catch (error) {
       console.log(error);
     }
@@ -39,7 +35,7 @@ router.post("/", function (req, res) {
 });
 
 // DELETE favorite pokemon
-router.delete("/pokemon", async (req, res) => {
+router.delete("/", async (req, res) => {
   let removePokemon = req.body.name;
 
   try {
@@ -47,7 +43,22 @@ router.delete("/pokemon", async (req, res) => {
       where: { name: removePokemon },
     });
 
-    res.redirect("/");
+    res.redirect("/pokemon");
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+router.get("/:name", async (req, res) => {
+  try {
+    if (req.params.name) {
+      const pokeDataUrl = `https://pokeapi.co/api/v2/pokemon/${req.params.name.toLowerCase()}`;
+      const result = await axios.get(pokeDataUrl);
+      let response = result.data;
+      res.render("more-info", {
+        response: response,
+      });
+    }
   } catch (err) {
     console.log(err);
   }

@@ -8,22 +8,26 @@
   <% pokemon.forEach(pokemon => { %>
   <div class="well">
     <p class="poke-list"><%= pokemon.id %>. <%= pokemon.name %><img class="list-ball" src="/img/pokeball-sm2.png">
+
+<!-- delete form -->
     <form method="POST" action="/pokemon?_method=DELETE">
       <input hidden type="text" name="name" value="<%= pokemon.name %>" />
       <button class="btn" type="submit">Remove <b><%= pokemon.name %></b> From Favorite Pokemon</button>
     </form>
 
-    <form method="POST" action="/pokemon">
+<!-- more info form -->
+    <!-- <form method="POST" action="/pokemon">
       <input
         hidden
         type="text"
         name="name"
         value="<%= pokemon.removePokemon %>"
-      />
-      <button class="btn" type="submit">
+      /> -->
+      <!-- <button class="btn" type="submit">
         Get More Details On: <b><%= pokemon.name %></b>
-      </button>
-    </form>
+      </button> -->
+      <a href="/pokemon/<%= pokemon.name%>">more info</a>
+    <!-- </form> -->
     <br>
     <hr>
   </p>

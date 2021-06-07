@@ -1,10 +1,7 @@
 const express = require("express");
 const axios = require("axios");
 const ejsLayouts = require("express-ejs-layouts");
-// const rowdy = require("rowdy-logger");
-// const rowdyResults = rowdy.begin(app);
-// const methodOverride = require("method-override");
-// app.use(methodOverride("X-HTTP-Method-Override"));
+const methodOverride = require("method-override");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -13,8 +10,7 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 app.use(express.static(__dirname + "/public/"));
-
-// const db = require("/models");
+app.use(methodOverride("_method"));
 
 // GET / - main index of site
 app.get("/", (req, res) => {
