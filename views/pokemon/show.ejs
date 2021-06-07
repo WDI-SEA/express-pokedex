@@ -1,0 +1,16 @@
+<ul>
+<h2><%= pokemon.data.name %></h2>
+<li>
+    Type: <%= pokemon.data.types[0].type.name%>  
+</li> 
+<li>
+    weight: <%= pokemon.data.weight %>
+</li>
+<li>
+    height: <%= pokemon.data.height %>
+</li>
+<li>
+    shiny: <img src=<%= pokemon.data.sprites.front_shiny %> alt="shiny">
+</li>
+</ul>    
+

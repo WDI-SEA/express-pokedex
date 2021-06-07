@@ -3,7 +3,7 @@
 <ul>
     <% pokemon.forEach ( poke => { %>
         <li>
-        <form method="GET" action="/<%= poke.name %>">
+        <form method="GET" action="/pokemon/<%= poke.name %>">
             <input type="submit" value="<%= poke.name %>"> </form></li>
     <% }) %>  
 </ul>
