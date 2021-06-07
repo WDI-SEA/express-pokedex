@@ -51,6 +51,7 @@ router.delete("/", async (req, res) => {
   }
 });
 
+// more info about your pokemon
 router.get("/:name", async (req, res) => {
   try {
     if (req.params.name) {
