@@ -1,7 +1,6 @@
 {
   "development": {
-    "username": "jacks",
-    "password": "2551",
+    
     "database": "pokedex",
     "host": "127.0.0.1",
     "dialect": "postgres",
