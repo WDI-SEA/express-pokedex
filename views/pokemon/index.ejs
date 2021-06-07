@@ -1,0 +1,20 @@
+<h2>Favorite Pokemon:</h2><a href="/">Show all 151 Pokemon</a>
+
+<!-- <div class="d-flex align-content-start flex-wrap"> -->
+<% pokemons.forEach(function(pokemon) { %>
+<div class="well">
+    <h2> #<%= pokemon.id %> <%= pokemon.name %></h2>    
+    <form method="GET" action="pokemon/<%= pokemon.id %>">
+    <input hidden type="text" name="id" value="<%= pokemon.id %>">
+    <input hidden type="text" name="name" value="<%= pokemon.name %>">
+    <button class="btn btn-primary" type="submit">Details</button>
+</form>
+<br>
+   <form action="/pokemon/<%= pokemon.name %>/?_method=DELETE" method="POST">
+        <label for=""> Delete <%= pokemon.name %> </label>
+        <input type="submit" value="Delete"/>
+        </form>  
+
+    </div>
+<% }) %>
+<!-- </div> -->
