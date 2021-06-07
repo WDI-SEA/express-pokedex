@@ -30,8 +30,13 @@ router.get('/', (req, res) => {
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/', (req, res) => {
   // TODO: Get form data and add a new record to DB
+
+  console.log("👋👋👋👋👋👋👋👋👋👋👋👋👋👋👋👋👋👋")
+  console.log(req.body)
+
   db.pokemon.create({
-    name: req.body.name
+    name: req.body.name,
+    img_url: req.body.image
   }).then(poke => {
     console.log('Created: ', poke.name)
     res.redirect('pokemon/')
@@ -49,6 +54,19 @@ router.get('/:name', (req, res) => {
         }).catch(err => {
           console.log(err)
         })
+})
+
+// PUT /pokemon/:id - give the pokemon a nickname
+router.put('/', (req, res) => {
+  db.pokemon.update({
+    nick_name: req.body.nick_name
+  }, {
+    where: { id: req.body.id }
+  }).then(() => {
+    res.redirect(req.originalUrl.split("?").shift())
+  }).catch(err => {
+    console.log(err)
+  })
 })
 
 module.exports = router;

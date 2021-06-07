@@ -1,14 +1,54 @@
 <div class="container">
+  <h1 class="text-center">Favorite Pokemon</h1>
+
   <div class="row">
   <% pokemons.forEach((pokemon) => { %>
     <div class="col-sm-4">
       <div class="well text-center align-middle">
-        <h2><%= pokemon.name %></h2>
+        <img src="<%= pokemon.img_url %>" alt="pokemon.name">
+        <% if(pokemon.nick_name) { %>
+          <h2><%= pokemon.nick_name %></h2>
+        <% } else { %>
+          <h2><%= pokemon.name %></h2>
+        <% } %>
         <form method="POST" action="/pokemon/?_method=DELETE">
           <a href="/pokemon/<%= pokemon.name %>" class="btn btn-primary">More Info</a>
           <input hidden type="text" name="id" value="<%= pokemon.id %>">
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#<%= pokemon.name %>Modal">
+            Edit
+          </button>
           <button class="btn btn-danger" type="submit">DELETE</button>
         </form>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="<%= pokemon.name %>Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h5 class="modal-title" id="exampleModalLabel">Edit Pokemon</h5>
+          </div>
+
+          <form action="/pokemon/?_method=PUT" method="POST">
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="nick_name">Nickname</label>
+                <input type="text" class="form-control" name="nick_name" required />
+                <input type="hidden" class="form-control" name="id" value="<%= pokemon.id %>" />
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <input type="submit" class="btn btn-primary">
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   <% }); %>
