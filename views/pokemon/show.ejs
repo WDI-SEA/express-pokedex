@@ -4,12 +4,12 @@
   <p class="text-center">
   </p>
     <h1><%= pokemon.name %></h1>
-    <h4><%= pokemon.types[0].type.name %> type</h4>
-    <img src="<%= pokemon.sprites.front_default %>" width="100" height="100">
 
-  
-      <br>
-  
+      <% for (let i = 0; i < pokemon.types.length; i++) { %>
+    <h4><%= pokemon.types[i].type.name %> type</h4>
+      <% } %>
+    <img src="<%= pokemon.sprites.front_default %>" width="100" height="100">
+    <br>
     <div id='pokeabilities'>
     <h3>Abilities</h3>
     <% for (let i = 0; i < pokemon.abilities.length; i++) { %>
@@ -17,6 +17,7 @@
     <% } %>
       
     </div>
+
 
     <h2 class="show-heading">Base Stats</h4>
     <% let stats = pokemon.stats[0] %>

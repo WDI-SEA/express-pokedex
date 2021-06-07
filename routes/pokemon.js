@@ -32,6 +32,11 @@ router.post('/', (req, res) => {
 });
 
 router.get('/:id', (req, res)=> {
+  // get the name of the pokemon associated with this id from our db
+  // get the name from req.body
+  // get extra information for pokemon at id
+    // info we want to get: pokeApi ID, pokeAPI char image, 
+  //render a page with pokemon detail passed back from our APIcall
   db.pokemon.findOne({
     where:{
       id: req.params.id
