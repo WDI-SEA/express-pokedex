@@ -9,11 +9,11 @@
         <h3>
           <a href="/pokemon/<%= pokemon.name %>"> <%= pokemon.name %></a>
         </h3>
-        <form action="pokemon/%<= pokemon.name %>/?_method=DELETE" method="POST">
-          <button type="button" class="btn btn-default">Delete</button>
+        <form method="POST" action="/pokemon/<%= pokemon.name %>/?_method=DELETE">
+          <input type="submit" value="Delete">
         </form>
       </div>
 
     <% }) %>
   </div>
-</div>s
+</div>

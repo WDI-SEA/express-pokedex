@@ -42,5 +42,19 @@ router.get('/:name', (req, res) => {
   })
   
 })
+
+//DELETE
+router.delete('/:name', (req, res) => {
+  let pokeData = req.params.name
+  db.pokemon.destroy({
+    where: {
+      name: pokeData
+    }
+  })
+  .then(response => {
+    res.redirect('/pokemon')
+  })
+  
+})
  
 module.exports = router;

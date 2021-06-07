@@ -15,7 +15,7 @@ app.use(methodOverride('_method'))
 
 // GET / - main index of site
 app.get('/', (req, res) => {
-  let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon?limit=151';
+  let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon?limit=40';
   // Use request to call the API
   axios.get(pokemonUrl).then(apiResponse => {
     let pokemon = apiResponse.data.results;

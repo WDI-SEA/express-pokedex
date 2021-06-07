@@ -13,6 +13,9 @@ h1 img {
   max-width: 250px;
   width: 100%;
 }
+.container.home {
+  padding-top: 25px;
+}
 
 .main {
   background: #2c71c8;
@@ -44,13 +47,16 @@ h1 img {
   color: rgb(238, 100, 95);
   letter-spacing: 1px;
 }
-.favorite button {
+.favorite input{
   background-color: rgb(249, 212, 79);
+  border-radius: 6px;
   color: #ffffff;
   letter-spacing: 1px;
   font-weight: 600;
+  padding: 8px 15px;
+  font-size: 18px;
 }
-.favorite button:hover {
+.favorite input:hover {
   background-color: #ffffff;
   color: rgb(249, 212, 79);
   letter-spacing: 1px;
