@@ -1,9 +1,11 @@
+<%# ------------- HTML -------------%>
 <main>
     <h3 class="a">
         <img class="detail-sprite" src="<%= pokeDataOne.sprites.versions["generation-viii"].icons.front_default %>"/>
         #<%= pokeDataOne.id %> <%= pokeDataOne.name %>
     </h3>
 
+<%# ------------- PICTURE TABLE ------------- %>
     <table class="data-table">
         <tbody>
             <tr>
@@ -19,6 +21,7 @@
         </tbody>
     </table>
 
+<%# ------------- CLASSIFICATION TABLE ------------- %>
     <table class="data-table">
         <tbody>
             <tr>
@@ -58,6 +61,7 @@
         </tbody>
     </table>
 
+<%# ------------- TRAITS TABLE -------------%>
     <table class="data-table">
         <tbody>
             <tr>
@@ -82,17 +86,13 @@
                     <p>
                         <%= pokeDataOne.height/10 %> m
                     </p>
-                    <p id="foot-height">
-
-                    </p>
+                    <p id="foot-height"></p>
                 </td>
                 <td>
                     <p>
                         <%= pokeDataOne.weight/10 %> kg
                     </p>
-                    <p id="lbs-weight">
-
-                    </p>
+                    <p id="lbs-weight"></p>
                 </td>
                 <td>
                     <% pokeDataOne.types.forEach((e) =>{ %>
@@ -118,6 +118,7 @@
         </tbody>
     </table>
 
+<%# ------------- MISC TABLE -------------%>
     <table class="data-table">
         <tbody>
             <tr>
@@ -161,11 +162,11 @@
                     <% if (pokeDataTwo.gender_rate == -1) { %>
                             Genderless
                     <% } else { %>
-                        <p id="male">
-                            Male ♂: <%= (8 - pokeDataTwo.gender_rate)/8*100 %>%
+                        <p>
+                            <div id="male">Male ♂</div> <%= (8 - pokeDataTwo.gender_rate)/8*100 %>%
                         </p>
-                        <p id="female">
-                            Female ♀: <%= pokeDataTwo.gender_rate/8*100 %>%
+                        <p>
+                            <div id="female">Female ♀</div> <%= pokeDataTwo.gender_rate/8*100 %>%
                         </p>
                     <% } %>
                 </td>
@@ -182,6 +183,7 @@
         </tbody>
     </table>
 
+<%# ------------- FLAVOR TEXT TABLE -------------%>
     <table class="data-table">
         <tbody>
             <tr>
@@ -249,6 +251,7 @@
         </tbody>
     </table>
 
+<%# ------------- STATS TABLE -------------%>
     <table class="data-table">
         <tbody>
             <tr>
@@ -286,6 +289,7 @@
         </tbody>
     </table>
 
+<%# ------------- SPRITES TABLE -------------%>
     <table class="data-table">
         <tbody>
             <tr>
@@ -361,7 +365,10 @@
         </tbody>
     </table>
 </main>
+
+<%# ------------- JAVASCRIPT -------------%>
 <script>
+    // STAT TOTAL GENERATOR
     let statArray = []
 
     <% pokeDataOne.stats.forEach((e) => { %>
@@ -374,12 +381,16 @@
     document.querySelector("#stat-total").innerText = 
     `${document.querySelector("#stat-total").innerText} ${statTotal}`
 
+    // METRIC-TO-IMPERIAL HT/WT CONVERTER
     let height = parseInt(<%= pokeDataOne.height %>)
     let weight = parseInt(<%= pokeDataOne.weight %>)
 
-    let ftHeight = (height/10*3.28).toFixed(2)
+    let ftHeight = Math.floor(height/10*3.28)
+    let inchHeightDecimal = ((height/10*3.28) % 1).toFixed(2)
+    let inchHeight = Math.round(inchHeightDecimal*12)
+
     let lbsWeight = (weight/10*2.2).toFixed(2)
 
-    document.querySelector("#foot-height").innerText = `${ftHeight} ft`
+    document.querySelector("#foot-height").innerText = `${ftHeight}' ${inchHeight}"`
     document.querySelector("#lbs-weight").innerText = `${lbsWeight} lbs`
 </script>
