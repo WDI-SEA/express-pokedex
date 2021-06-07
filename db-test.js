@@ -1,15 +1,15 @@
 const db = require('./models');
 
 db.pokemon.create({
-    name: 'pikachu'
+    name: 'charizard'
   }).then(poke => {
     console.log('Created: ', poke.name)
+    db.pokemon.findOne({
+      where: {
+        name: 'charizard'
+      }
+    }).then(pokeFound => {
+      console.log('Found: ', pokeFound.name)
+    })
   })
 
-db.pokemon.findOne({
-  where: {
-    name: 'pikachu'
-  }
-}).then(poke => {
-  console.log('Found: ', poke.name)
-})
