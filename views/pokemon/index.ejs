@@ -1,0 +1,15 @@
+<div class="container">
+    <h1 class="text-center">My Favorite Pokemon</h1>
+    <p class="text-center">
+        <a href="/">Show all 151 Pokemon</a>
+    </p>
+    <% pokemons.forEach((pokemon) => { %>
+        <div class="well">
+            <h2><%= pokemon.name %></h2>
+        <form method="POST" action="/">
+            <input hidden type="text" name="name" value="<%= pokemon.name %>">
+            <button class="btn btn-primary" type="submit">Details</button>
+        </form>
+    </div>
+    <% }) %>
+</div>
