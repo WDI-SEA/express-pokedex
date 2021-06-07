@@ -1,0 +1,59 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col my-5">
+            <h2 class="text-center">Your Pokedex</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container" >
+    <div class="row">
+        <div class="col-3">
+            <h3>Pokemon</h3>
+            <% pokemons.forEach(pokemon => { %>
+                <a href="/pokemon/<%= pokemon.name %>">
+                    <h4><%=pokemon.name %></h4>
+                </a>
+            <% }) %>
+        </div>
+
+        <div class="col-9">
+            <h3 class="text-center">Pokemon Details</h3>
+            <div class="card">
+                <% if (details) { %>
+                <h3 class="card-title text-center">
+                        <%= details.name %>
+                </h3>
+                <img src="<%= details.sprites.front_default %>" class="card-img-top" alt="Pokemon Sprite Image" />
+
+                <div class="card-body">
+                    <ul>
+                        <li>
+                            Abilities: <% details.abilities.forEach(obj => { %>
+                                <%= obj.ability.name %>
+                            <% }) %>
+                        </li>
+                        <li>
+                            Type: <% details.types.forEach(obj => { %>
+                                <%= obj.type.name %>
+                            <% }) %>
+                        </li>
+                        <li>
+                            Height: <%= details.height %>
+                        </li>
+                        <li>
+                            Weight: <%= details.weight %>
+                        </li>
+                        <li>
+                            Number of Moves:
+                            <%= details.moves.length %>
+                        </li>
+                    </ul>
+                </div>
+                <% } else { %>
+                    <h3 class="text-center"> Click a Pokemon to View Details!</h3>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
