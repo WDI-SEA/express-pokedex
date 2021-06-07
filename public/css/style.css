@@ -2,6 +2,19 @@ body {
     background-color: rgb(81,123,58);
 }
 
+.btn {
+    background-color: rgb(81,123,58);
+    border: none;
+}
+
+.btn:hover {
+    background-color: rgb(101,143,78);
+}
+
+.back-button {
+    margin-left: 10px;
+}
+
 .my-container {
     background-color: rgb(56,56,56);
     color: white;

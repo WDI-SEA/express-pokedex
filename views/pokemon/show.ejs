@@ -4,6 +4,11 @@
         <img class="detail-sprite" src="<%= pokeDataOne.sprites.versions["generation-viii"].icons.front_default %>"/>
         #<%= pokeDataOne.id %> <%= pokeDataOne.name %>
     </h3>
+    <p>
+        <form class="back-button" action="/pokemon">
+          <button class="btn btn-primary" type="submit">Back to Favorites</button>
+        </form>
+    </p>
 
 <%# ------------- PICTURE TABLE ------------- %>
     <table class="data-table">
@@ -26,13 +31,13 @@
         <tbody>
             <tr>
                 <td class="data-text">
-                    Name
+                    Names
                 </td>
                 <td class="data-text">
                     Other Names
                 </td>
                 <td class="data-text">
-                    No.
+                    Dex No.
                 </td>
                 <td class="data-text">
                     Classification
@@ -40,14 +45,14 @@
             </tr>
             <tr>
                 <td class="a">
-                    <%= pokeDataTwo.name %>
+                    <p>English: <%= pokeDataTwo.name %></p>
+                    <p>French: <%= pokeDataTwo.names[4].name %></p>
+                    <p>German: <%= pokeDataTwo.names[5].name %></p>
                 </td>
                 <td>
                     <p>Japanese: <%= pokeDataTwo.names[0].name %></p>
                     <p>Korean: <%= pokeDataTwo.names[2].name %></p>
                     <p>Chinese: <%= pokeDataTwo.names[3].name %></p>
-                    <p>French: <%= pokeDataTwo.names[4].name %></p>
-                    <p>German: <%= pokeDataTwo.names[5].name %></p>
                 </td>
                 <td>
                     <p>National: <%= pokeDataTwo.pokedex_numbers[0].entry_number %></p>
