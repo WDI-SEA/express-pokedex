@@ -1,0 +1,8 @@
+<h1> <%= pokemon.name %> </h1>
+<h2> #<%= pokemon.id %> </h2>
+<h2>Type:
+    <% pokemon.types.forEach(type => { %> 
+    <%= type.type.name %> 
+    <% }) %>
+</h2>
+<img src="<%= pokemon.sprites.front_default %>"
