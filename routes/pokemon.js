@@ -18,14 +18,15 @@ router.get("/", (req, res) => {
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post("/", function (req, res) {
+  // Get form data
   let pokeName = req.body.name;
-
+  // Add new record to database
   async function findOrCreatePokemon() {
     try {
       const [pokemon, created] = await db.pokemon.findOrCreate({
         where: { name: pokeName },
       });
-
+      // Redirect to pokemon favorites
       res.redirect("/pokemon");
     } catch (error) {
       console.log(error);
