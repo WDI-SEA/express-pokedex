@@ -1,9 +1,9 @@
 <div class="container">
-  <h1 class="text-center"><a href="https://fontmeme.com/pokemon-font/"><img src="https://fontmeme.com/permalink/210606/88af81c7f92bcaa0951336607f661954.png" alt="pokemon-font" border="0"></a></h1>
-  <p class="text-center">
-    <a href="/pokemon" class="nav-link">Favorites</a>
-  </p>
-
+  <div class="banner">
+    <img class="pokedex" src="https://fontmeme.com/permalink/210606/88af81c7f92bcaa0951336607f661954.png" alt="pokemon-font" border="0">
+    <p>Add your favorite pokemon your very own custom list! Then go check them out by clicking "Favorites"</p>
+    <a href="/pokemon" class="nav-link home-nav">go to favorites</a>
+  </div>  
   <div class="balls-container">
     <% pokemon.forEach(function(pokemon) { %>
       <div class="ball">
@@ -17,6 +17,4 @@
     <% }); %>
 
   </div>
-
- 
 </div>

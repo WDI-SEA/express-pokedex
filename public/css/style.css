@@ -1,22 +1,73 @@
 @import url(//db.onlinewebfonts.com/c/b2e75c336df191233b3096682c9ee6be?family=PixelarRegularW01-Regular);
 
 * {
-    background-color: #CC0000;
     text-align: center;
     justify-content: center;
     align-content: center;
     font-family: "PixelarRegularW01-Regular";
+    margin: 0 auto;
+}
+
+p {
+    font-size: 1.5rem;
+    background-color: white;
+    border: 5px solid #FFDE00;
+    padding: 40px;
+    margin: 0 auto;
+    width: 350px;
+    border-radius: 4%;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.banner{
+    background-image: url(../img/pokemon.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    position: relative;
+    margin-top: 0;
+
+}
+
+.pokedex {
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    text-align: center;
 }
 
 .nav-link {
     text-decoration: none;
     font-size: 2rem;
     color: white;
-    margin: 50px 0;
+    margin: 20px 0;
+}
+
+.home-nav{
+    color: black;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    text-align: center;
 }
 
 .nav-link:hover {
     color: #FFDE00;
+}
+
+.faves {
+    padding: 40px;
+    background-color: #CC0000;
+}
+.fave-link {
+    display: block;
 }
 
 .line {
@@ -53,7 +104,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin: 25px;
+    padding-top: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: #CC0000;
+
 }
 
 .ball {
@@ -84,13 +139,20 @@ form {
 }
 
 .see-more {
+    display: inline-block;
     text-decoration: none;
-    padding-top: 25px;
-    margin: 30px 25px 30px 25px;
+    margin: 40px 25px 30px 25px;
 }
 
-#seeMore {
-    margin-top: 300px;
+.detail-page {
+    background-color: #CC0000;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.detail-nav {
+    padding-top: 40px;
+    padding-bottom: 20px;
 }
 
 .detail-container{

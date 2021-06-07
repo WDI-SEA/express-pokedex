@@ -21,7 +21,7 @@ router.post('/', (req, res) => {
   })
   .then(poke => {
     //console.log('Added: ', poke.name)
-    res.send(req.body)
+    res.redirect('/')
 
   })
   .catch(err => {console.log(err)})

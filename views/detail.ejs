@@ -1,18 +1,17 @@
-<a href="/pokemon" class="nav-link">Back</a>
-
-<div class="detail-container">
-    <h1 class="detail detail-name"><%= data.name %></h1>
-
-    <img src="<%= data.sprites.other["official-artwork"].front_default%>" alt="<%= data.name %>" class="detail">
-
-    <div class="detail"> 
-            Weight: <%= data.weight %>
-            Height: <%= data.height %>      
+<div class="detail-page">
+    <div class="detail-nav">
+      <a href="/pokemon" class="nav-link">Back</a>
     </div>
-
-    <h2 class="detail">
-        <%= data.abilities[0].ability.name %>   
-        <%= data.moves[0].move.name %>
-    </h2>
-
+    <div class="detail-container">
+        <h1 class="detail detail-name"><%= data.name %></h1>
+        <img src="<%= data.sprites.other["official-artwork"].front_default%>" alt="<%= data.name %>" class="detail">
+        <div class="detail"> 
+                Weight: <%= data.weight %>
+                Height: <%= data.height %>      
+        </div>
+        <h2 class="detail">
+            <%= data.abilities[0].ability.name %>   
+            <%= data.moves[0].move.name %>
+        </h2>
+    </div>
 </div>
