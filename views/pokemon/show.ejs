@@ -43,6 +43,8 @@
                     <p>Japanese: <%= pokeDataTwo.names[0].name %></p>
                     <p>Korean: <%= pokeDataTwo.names[2].name %></p>
                     <p>Chinese: <%= pokeDataTwo.names[3].name %></p>
+                    <p>French: <%= pokeDataTwo.names[4].name %></p>
+                    <p>German: <%= pokeDataTwo.names[5].name %></p>
                 </td>
                 <td>
                     <p>National: <%= pokeDataTwo.pokedex_numbers[0].entry_number %></p>
@@ -107,6 +109,15 @@
                     Egg Group
                 </td>
                 <td class="data-text">
+                    Base Egg Steps
+                </td>
+                <td class="data-text">
+                    Gender Ratio
+                </td>
+                <td class="data-text">
+                    Base XP
+                </td>
+                <td class="data-text">
                     Base Happiness
                 </td>
                 <td class="data-text">
@@ -123,6 +134,22 @@
                     <% pokeDataTwo.egg_groups.forEach((e) => { %>
                         <p><%= e.name %></p>
                     <% }) %>
+                </td>
+                <td class="a">
+                    <%= 255*(pokeDataTwo.hatch_counter) + pokeDataTwo.hatch_counter %> steps
+                </td>
+
+                <td class="a">
+                    <p>
+                        Male ♂: <%= (8 - pokeDataTwo.gender_rate)/8*100 %>%
+                    </p>
+                    <p>
+                        Female ♀: <%= pokeDataTwo.gender_rate/8*100 %>%
+                    </p>
+                </td>
+
+                <td class="a">
+                        <%= pokeDataOne.base_experience %>
                 </td>
                 <td class="a">
                         <%= pokeDataTwo.base_happiness %>/255
@@ -315,13 +342,14 @@
 </main>
 <script>
     let statArray = []
+
     <% pokeDataOne.stats.forEach((e) => { %>
       statArray.push(<%= e.base_stat %>)
     <% }) %>
+
     const reducer = (accumulator, currentValue) => accumulator + currentValue
     const statTotal = statArray.reduce(reducer)
 
     document.querySelector("#stat-total").innerText = 
-    document.querySelector("#stat-total").innerText + " " + statTotal
-
+    `${document.querySelector("#stat-total").innerText} ${statTotal}`
 </script>
