@@ -1,5 +1,5 @@
 
-<div class="container text-center favorite">
+<div class="container-fluid text-center favorite">
   <div class="row">
     <h1>My Favorite Pokemon</h1>
 
@@ -9,8 +9,11 @@
         <h3>
           <a href="/pokemon/<%= pokemon.name %>"> <%= pokemon.name %></a>
         </h3>
+        <form action="pokemon/%<= pokemon.name %>/?_method=DELETE" method="POST">
+          <button type="button" class="btn btn-default">Delete</button>
+        </form>
       </div>
 
     <% }) %>
   </div>
-</div>
+</div>s

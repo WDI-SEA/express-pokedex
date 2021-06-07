@@ -1,7 +1,19 @@
-  <p> <%= pokemon.name %>
-  <%= pokemon.height%></p>
+  
+  <div class="container-fluid text-center">
+    <div class="row">
+      <h1 class="text-capitalize"> <%= pokemon.name %></h1>
+      <ul>
+        <li>Height: <%= Math.round(pokemon.height * 3.9)%>"</li>
+        <li>Weight: <%=Math.round(pokemon.weight / 4.3)%> lbs</li>
+        <li class="text-capitalize">Abilities: <% pokemon.abilities.forEach(item => { %>
+          <br> <%= item.ability.name %>
+          <% }) %>
+        </li>
+        <li><img src="<%= pokemon.sprites.other["official-artwork"].front_default %>" alt=""></li>
+      </ul>
+    </div>
+  </div>
 
-  <img src="<%= pokemon.sprites.other["official-artwork"].front_default %>" alt="">
  
 
 

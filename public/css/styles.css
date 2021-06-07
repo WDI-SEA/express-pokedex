@@ -1,15 +1,58 @@
+a:hover {
+  text-decoration: none;
+}
+ul {
+  padding: 0;
+}
+li {
+  list-style: none;
+  font-size: 22px;
+}
+
 h1 img {
   max-width: 250px;
   width: 100%;
 }
+
+.main {
+  background: #2c71c8;
+}
+
+/* .favorite {
+  background-image: url('/img/wallpaper1920x1080.jpg');
+  background-size: cover;
+} */
+/* 
+.favorite::before {    
+  content: "";
+  background-image: url('/img/wallpaper1920x1080.jpg');
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.75;
+} */
+
 .favorite h1 {
   /* font-family: 'Press Start 2P', cursive; */
   font-family: 'Audiowide', italic;
 }
-.favorite h3 {
-  color: #2c71c8;
+.favorite a {
+  /* color: rgb(249, 212, 79); */
+  color: rgb(238, 100, 95);
+  letter-spacing: 1px;
 }
-
-.main {
-  background: #2c71c8;
+.favorite button {
+  background-color: rgb(249, 212, 79);
+  color: #ffffff;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+.favorite button:hover {
+  background-color: #ffffff;
+  color: rgb(249, 212, 79);
+  letter-spacing: 1px;
+  font-weight: 600;
 }
