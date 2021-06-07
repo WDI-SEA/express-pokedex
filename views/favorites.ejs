@@ -7,7 +7,7 @@
   </p>
   <% pokemon.forEach(pokemon => { %>
   <div class="well">
-    <p class="poke-list"><%= pokemon.id %>. <%= pokemon.name %><img class="list-ball" src="/img/pokeball-sm2.png">
+    <p class="poke-list"> <%= pokemon.name %><img class="list-ball" src="/img/pokeball-sm2.png">
 
 <!-- delete form -->
     <form method="POST" action="/pokemon?_method=DELETE">

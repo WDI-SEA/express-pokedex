@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models");
 
+// Route that lists pokemon
 router.get("/", (req, res) => {
   async function findPoke() {
     try {
