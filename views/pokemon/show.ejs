@@ -79,10 +79,20 @@
             </tr>
             <tr>
                 <td>
-                    <%= pokeDataOne.height/10 %>m
+                    <p>
+                        <%= pokeDataOne.height/10 %> m
+                    </p>
+                    <p id="foot-height">
+
+                    </p>
                 </td>
                 <td>
-                    <%= pokeDataOne.weight/10 %>kg
+                    <p>
+                        <%= pokeDataOne.weight/10 %> kg
+                    </p>
+                    <p id="lbs-weight">
+
+                    </p>
                 </td>
                 <td>
                     <% pokeDataOne.types.forEach((e) =>{ %>
@@ -151,10 +161,10 @@
                     <% if (pokeDataTwo.gender_rate == -1) { %>
                             Genderless
                     <% } else { %>
-                        <p>
+                        <p id="male">
                             Male ♂: <%= (8 - pokeDataTwo.gender_rate)/8*100 %>%
                         </p>
-                        <p>
+                        <p id="female">
                             Female ♀: <%= pokeDataTwo.gender_rate/8*100 %>%
                         </p>
                     <% } %>
@@ -363,4 +373,13 @@
 
     document.querySelector("#stat-total").innerText = 
     `${document.querySelector("#stat-total").innerText} ${statTotal}`
+
+    let height = parseInt(<%= pokeDataOne.height %>)
+    let weight = parseInt(<%= pokeDataOne.weight %>)
+
+    let ftHeight = (height/10*3.28).toFixed(2)
+    let lbsWeight = (weight/10*2.2).toFixed(2)
+
+    document.querySelector("#foot-height").innerText = `${ftHeight} ft`
+    document.querySelector("#lbs-weight").innerText = `${lbsWeight} lbs`
 </script>

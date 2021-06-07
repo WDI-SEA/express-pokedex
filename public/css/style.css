@@ -85,7 +85,7 @@ li {
 }
 
 .type-img {
-    width: 40px;
+    width: 50px;
 }
 
 #red {
@@ -145,4 +145,12 @@ li {
 
 #shiny {
     background-color: hotpink;
+}
+
+#male {
+    color: rgb(76,151,232)
+}
+
+#female {
+    color: rgb(229,124,120)
 }
