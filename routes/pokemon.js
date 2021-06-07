@@ -26,7 +26,7 @@ router.get('/:name', (req, res) => {
   .then(pokemon => {
     //  let randomName = pokemon.data.moves[Math.floor(pokemon.data.moves.length * Math.random())]
     let randomMove = pokemon.data.moves[Math.floor(pokemon.data.moves.length * Math.random())].move.name
-    console.log(randomMove)
+    
     res.render('pokemon/show.ejs', {pokemon: pokemon, randomMove})
   })
 })  
