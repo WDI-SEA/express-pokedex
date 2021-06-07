@@ -1,11 +1,16 @@
 <div class="container">
-  <h1 class="text-center">The Original 151 Pokemon</h1>
+
+
+  <div class="title-container">
+  <img class="title" src="https://i.imgur.com/o1ZKSwa.png" width="50%" height="50%"  alt="pokemon title logo">
+  </div>
+ 
   <p class="text-center">
     <a href="/pokemon">Favorites</a>
   </p>
-
+ <div class="list-container">
   <% pokemon.forEach(function(pokemon) { %>
-    <div class="well">
+    <div class="well tile">
       <h2><%= pokemon.name %></h2>
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
@@ -13,4 +18,7 @@
       </form>
     </div>
   <% }); %>
+  
+ </div>
+ 
 </div>

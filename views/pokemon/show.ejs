@@ -1,0 +1,44 @@
+<a class="back-favorites" href="/pokemon"> <img class="back-pic" src="https://i.imgur.com/oSxdILp.png" alt=""> Back to Favorites </a>
+
+<div class="detailContainer">
+    <img class="details detail-pic" src="<%= details.sprites.other['official-artwork'].front_default %>" alt="">
+</div>
+
+    <h1 class="details"> <%= details.species.name %> </h1>
+    <div class="details-char">
+        <p class="details">Type: <%= details.types[0].type.name %></p>
+        <p class="details">Weight: <%= details.weight*0.22%> lbs </p>
+        <p class="details">Height: <%= details.height*3.9%>"</5></p>
+    </div>
+   
+    <!-- stat bars -->
+<h3>Base Stats</h3>
+    <div class="progress-container">
+        <div class="progress">
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+            aria-valuemin="0" aria-valuemax="100" style="width:100%">
+             HP  <span> <%= details.stats[0].base_stat %> </span>
+            </div>
+          </div>
+          
+          <div class="progress">
+            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="50"
+            aria-valuemin="0" aria-valuemax="100" style="width:100%">
+            ATK  <span> <%= details.stats[1].base_stat %> </span>
+            </div>
+          </div>
+          
+          <div class="progress">
+            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60"
+            aria-valuemin="0" aria-valuemax="100" style="width:100%">
+            DEF  <span> <%= details.stats[2].base_stat %> </span>
+            </div>
+          </div>
+    </div>
+   
+ 
+
+
+
+
+
