@@ -17,10 +17,10 @@ router.get("/", (req, res) => {
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post("/", function (req, res) {
-  console.log(req.body);
+  // console.log(req.body);
   //posts are mounted on the req body object
   let pokeName = req.body.name;
-  console.log(pokeName);
+  // console.log(pokeName);
   async function findOrCreatePokemon() {
     try {
       // the findOrCreate promise returns an array with two elements,
@@ -28,7 +28,7 @@ router.post("/", function (req, res) {
       const [pokemon, created] = await db.pokemon.findOrCreate({
         where: { name: pokeName },
       });
-      console.log(`${pokemon.name} was ${created ? "created" : "found"}`);
+      // console.log(`${pokemon.name} was ${created ? "created" : "found"}`);
       res.redirect("/pokemon");
       // res.json({ username: "Flavio" });
     } catch (error) {
@@ -39,21 +39,18 @@ router.post("/", function (req, res) {
 });
 
 // DELETE favorite pokemon
-router.delete("/pokemon:name", (req, res) => {
+router.delete("/pokemon", async (req, res) => {
   let removePokemon = req.body.name;
-  async function deletePokemon() {
-    try {
-      // delete pokemon 'removePokemon'
-      // const [pokemon, ...] = await db.pokemon.
-      const [pokemon, removePokemon] = await db.pokemon.destroy({
-        where: { name: removePokemon },
-      });
-      console.log(await db.pokemon.all());
-      console.log(`💀 Name of removePokemon: ${removePokemon}`);
-    } catch (err) {
-      console.log(err);
-    }
-    deletePokemon();
+
+  try {
+    await db.pokemon.destroy({
+      where: { name: removePokemon },
+    });
+
+    res.redirect("/");
+  } catch (err) {
+    console.log(err);
   }
 });
+
 module.exports = router;

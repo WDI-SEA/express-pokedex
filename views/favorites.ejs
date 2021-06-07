@@ -8,7 +8,7 @@
   <% pokemon.forEach(pokemon => { %>
   <div class="well">
     <p class="poke-list"><%= pokemon.id %>. <%= pokemon.name %><img class="list-ball" src="/img/pokeball-sm2.png">
-    <form method="POST" action="/pokemon">
+    <form method="POST" action="/pokemon?_method=DELETE">
       <input hidden type="text" name="name" value="<%= pokemon.name %>" />
       <button class="btn" type="submit">Remove <b><%= pokemon.name %></b> From Favorite Pokemon</button>
     </form>
