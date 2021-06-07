@@ -391,6 +391,11 @@
 
     let lbsWeight = (weight/10*2.2).toFixed(2)
 
+    if (inchHeight == 12) {
+        inchHeight = 0
+        ftHeight++
+    }
+
     document.querySelector("#foot-height").innerText = `${ftHeight}' ${inchHeight}"`
     document.querySelector("#lbs-weight").innerText = `${lbsWeight} lbs`
 </script>
