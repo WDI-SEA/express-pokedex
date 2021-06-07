@@ -53,7 +53,7 @@ router.delete('/:name', (req, res) => {
   .then(response => {
     res.redirect('/pokemon')
   })
-  
+
 })
 
 

@@ -1,15 +1,24 @@
-<h1>
-    NAME: <%= pokemon.name %>
-</h1>
-<img src="<%= pokemon.sprites.other["official-artwork"].front_default %>" alt="pokemon image">
-<h3> 
-    <% pokemon.abilities.forEach(ability => { %>
-         <br> <%= ability.ability.name%>
-    <% }) %>
- </h3>
-<h3>
-    WEIGHT: <%= pokemon.weight %>
-</h3>
-<h3>
-    HEIGHT: <%= pokemon.height %>
-</h3>
+<div class="container"> 
+    <h1 class="text-center">
+        NAME: <%= pokemon.name %>
+    </h1>
+    <div class="row row-centered">
+        <div class="col-sm-6 col-centered">
+            <img class="img-fluid" src="<%= pokemon.sprites.other['official-artwork'].front_default %>" alt="pokemon image">
+        </div>
+        <div>
+            <h3> 
+                <% pokemon.abilities.forEach(ability => { %>
+                    <br> <%= ability.ability.name%>
+                    <% }) %>
+                </h3>
+                <h3>
+                    WEIGHT: <%= pokemon.weight %>
+                </h3>
+                <h3>
+                    HEIGHT: <%= pokemon.height %>
+                </h3>
+            </div> 
+    </div>
+</div>
+        
