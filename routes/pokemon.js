@@ -21,7 +21,8 @@ router.post('/', (req, res) => {
   // TODO: Get form data and add a new record to DB
   db.pokemon.findOrCreate({
     where: {
-      name: req.body.name
+      name: req.body.name,
+      img_url:req.body.img_url
     }
   })
   .then(()=>{

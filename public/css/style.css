@@ -3,7 +3,7 @@ body {
 }
 .well {
   text-align: center;
-  display: flex;
+  display: grid;
   justify-content:space-around;
   align-items: center;
   background-color:grey;

@@ -1,13 +1,12 @@
 
 <h2>I CHOOSE YOU!</h2>
+
 <% pokemon.forEach(pokemon => { %>
     <div class=" well">
         <h2><%= pokemon.name %></h2>
-
+        <img src="<%= pokemon.img_url %>" width="100" height="100">
         <a href="/pokemon/<%= pokemon.id %> ">
-            <button>
-                Show me more
-            </button>
+            <button>Show me more</button>
         </a>
     </div>
-<% }) %> 
+  <% }) %> 

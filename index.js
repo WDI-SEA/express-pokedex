@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
   // Use request to call the API
   axios.get(pokemonUrl).then(apiResponse => {
     let pokemon = apiResponse.data.results;
-    res.render('index', { pokemon: pokemon.slice(0, 10) });
+    res.render('index', { pokemon: pokemon.slice(0, 20) });
   })
 });
 
