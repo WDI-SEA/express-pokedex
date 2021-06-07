@@ -63,4 +63,24 @@ router.get('/:name', (req, res) => {
 
 });
 
+// // Anna's Example of getting more info on each pokemon
+// router.get('/:name', (req, res) => {
+//   //get the name of the pokemon associated wit this id from our db
+//     // get name from req.query
+//     let name = req.query.name
+
+//   //get extra info for pokemon at id
+//     axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`)
+//       .then((apiRes) => {
+//         let imgSrc = apiRes.data.sprites.front_default
+//         let pokeId = apiRes.data.pokeId
+//         let types = apiRes.data.types[0].type.name
+
+//         res.render('pokemon/show', {src: imgSrc, id: pokeId, type: types})
+//       })
+//       .catch(error => console.log(error))
+//     // info we wat to get: pokeAPI id, poke API char image, types
+//   //render a page with pokemon details passed back from our APIcall
+// })
+
 module.exports = router
