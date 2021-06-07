@@ -68,28 +68,30 @@
                 <td class="data-text">
                     Type
                 </td> 
+                <td class="data-text">
+                    Growth Rate
+                </td>
+                <td class="data-text">
+                    Habitat
+                </td>
             </tr>
             <tr>
                 <td>
-                    <p>
-                        <%= pokeDataOne.height/10 %>m
-                    </p>
-                    <p>
-                        <%= pokeDataOne.height*.328 %>ft
-                    </p>
+                    <%= pokeDataOne.height/10 %>m
                 </td>
                 <td>
-                    <p>
-                        <%= pokeDataOne.weight/10 %>kg
-                    </p>
-                    <p>
-                        <%= pokeDataOne.weight*.2205 %>lbs
-                    </p>
+                    <%= pokeDataOne.weight/10 %>kg
                 </td>
                 <td>
                     <% pokeDataOne.types.forEach((e) =>{ %>
                         <img class="type-img" src="https://www.serebii.net/attackdex-bw/type/<%= e.type.name %>.gif"/>
                     <% }) %>
+                </td>
+                <td class="a">
+                    <%= pokeDataTwo.growth_rate.name %>
+                </td>
+                <td class="a">
+                    <%= pokeDataTwo.habitat.name %>
                 </td>
             </tr>
         </tbody>
@@ -127,33 +129,6 @@
                 </td>
                 <td class="a">
                         <%= pokeDataTwo.capture_rate %>/255
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-    <table class="data-table">
-        <tbody>
-            <tr>
-                <td class="data-text">
-                    Generation
-                </td>
-                <td class="data-text">
-                    Growth Rate
-                </td>
-                <td class="data-text">
-                    Habitat
-                </td>
-            </tr>
-            <tr>
-                <td class="a">
-                    <%= pokeDataTwo.generation.name %>
-                </td>
-                <td class="a">
-                    <%= pokeDataTwo.growth_rate.name %>
-                </td>
-                <td class="a">
-                    <%= pokeDataTwo.habitat.name %>
                 </td>
             </tr>
         </tbody>
@@ -223,22 +198,6 @@
                     <%= pokeDataTwo.flavor_text_entries[20].flavor_text %>
                 </td>
             </tr>
-            <tr>
-                <td id="sun"  class="bold" colspan="2">
-                    Sun
-                </td>
-                <td colspan="2">
-                    <%= pokeDataTwo.flavor_text_entries[61].flavor_text %>
-                </td>
-            </tr>
-            <tr>
-                <td id="moon"  class="bold" colspan="2">
-                    Moon
-                </td>
-                <td colspan="2">
-                    <%= pokeDataTwo.flavor_text_entries[71].flavor_text %>
-                </td>
-            </tr>
         </tbody>
     </table>
 
@@ -259,7 +218,9 @@
                 <td class="data-text">Speed</td>
             </tr>
             <tr>
-                <td>Base Stats</td>
+                <td id="stat-total">
+                    Base Stats - Total: 
+                </td>
                 <% pokeDataOne.stats.forEach((e) => { %>
                     <td>
                         <%= e.base_stat %>
@@ -352,3 +313,15 @@
         </tbody>
     </table>
 </main>
+<script>
+    let statArray = []
+    <% pokeDataOne.stats.forEach((e) => { %>
+      statArray.push(<%= e.base_stat %>)
+    <% }) %>
+    const reducer = (accumulator, currentValue) => accumulator + currentValue
+    const statTotal = statArray.reduce(reducer)
+
+    document.querySelector("#stat-total").innerText = 
+    document.querySelector("#stat-total").innerText + " " + statTotal
+
+</script>
