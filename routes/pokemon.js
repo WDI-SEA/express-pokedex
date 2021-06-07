@@ -19,14 +19,13 @@ router.get('/', (req, res) => {
       console.log(error)
     }
       }
+      
       findPokemon()
-
+     // maybe here to add the pictures for favorites?
 })
 
 
-  // //res.render (view, data to add to view)
-  // res.render('index', {pokemon:pokemon})
-  // console.log(req.body.name)
+
 
 
 
@@ -51,8 +50,10 @@ router.post('/', (req, res) => {
       console.log(error)
     }
   }
-  findOrCreatePokemon()
+    findOrCreatePokemon()
+
 })
+
   
 
 

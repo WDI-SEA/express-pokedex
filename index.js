@@ -29,7 +29,11 @@ app.get('/', (req, res) => {
     let pokemon = apiResponse.data.results;
     res.render('index', { pokemon: pokemon.slice(0, 151) });
   })
-  // trying to add pics to homepage
+
+
+
+ 
+  // trying to add pics to favorites pg
  
 
 
