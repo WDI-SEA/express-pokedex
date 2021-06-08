@@ -1,5 +1,5 @@
 <div class="container my-container">
-    <h1 class="text-center">Favorites</h1>
+    <h1 class="text-center">Party</h1>
     <p>
         <form class="text-center" action="/">
           <button class="btn btn-primary" type="submit">Back to Original 151</button>
@@ -7,9 +7,17 @@
     </p>
     <% pokemons.forEach((pokemon) => { %>
         <div class="well">
-            <h2 class="a"><%= pokemon.name %></h2>
-            <form action="/pokemon/<%= pokemon.name %>">
+            <img class="home-sprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= pokemon.dexnum %>.png" />
+            <h2 class="a">
+                <%= pokemon.name %>
+            </h2>
+            <form class="margin-bottom" action="/pokemon/<%= pokemon.name %>">
                 <input class="a btn btn-primary" type="submit" value="Details"/>
+                <input hidden type="integer" name="id" value="<%= pokemon.id %>">
+            </form>
+            <form class="margin-top" action="/pokemon/?_method=DELETE" method="POST">
+                <input class="ruby a btn btn-primary" type="submit" value="Release"/>
+                <input hidden type="integer" name="id" value="<%= pokemon.id %>">
             </form>
         </div>
     <% }) %>

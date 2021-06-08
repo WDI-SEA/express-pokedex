@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Pokemon Fire Red Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Pokemon Fire Red Regular'), url('fonts/pokemon_fire_red.woff') format('woff');
+}
+
 body {
     background-color: rgb(81,123,58);
 }
@@ -5,6 +12,7 @@ body {
 .btn {
     background-color: rgb(81,123,58);
     border: none;
+    border-radius: 15px;
 }
 
 .btn:hover {
@@ -22,6 +30,7 @@ body {
 
 .well {
     background-color: rgb(64,64,64);
+    border-radius: 25px;
     border: none;
 }
 
@@ -92,6 +101,11 @@ h6 {
     border: 1px solid rgb(36,36,36);
 }
 
+.home-sprite {
+    background-color: rgb(56,56,56);
+    border-radius: 25%;
+}
+
 li {
     margin: 5px;
     list-style-type: none;
@@ -101,62 +115,62 @@ li {
     width: 50px;
 }
 
-#red {
+.red {
     background-color: red;
 }
 
-#blue {
+.blue {
     background-color: blue;
 }
 
-#yellow {
+.yellow {
     background-color: yellow;
     color: black;
 }
 
-#gold {
+.gold {
     background-color: gold;
     color: black;
 }
 
-#silver {
+.silver {
     background-color: silver;
 }
 
-#ruby {
+.ruby {
     background-color: crimson;
 }
 
-#sapphire {
+.sapphire {
     background-color: royalblue;
 }
 
-#black {
+.black {
     background-color: black;
 }
 
-#white {
+.white {
     background-color: white;
     color: black;
 }
 
-#firered {
+.firered {
     background-color: orangered;
 }
 
-#leafgreen {
+.leafgreen {
     background-color: olivedrab;
 }
 
-#diamond {
+.diamond {
     background-color: rgb(29,86,163);
 }
 
-#pearl {
+.pearl {
     background-color: rgb(248,164,175);
 }
 
-#shiny {
+.shiny {
     background-color: hotpink;
 }
 
@@ -166,4 +180,16 @@ li {
 
 #female {
     color: rgb(229,124,120)
+}
+
+.margin-top {
+    margin-top: 5px;
+}
+
+.margin-bottom {
+    margin-bottom: 5px;
+}
+
+.ruby:hover {
+    background-color: rgb(238,46,84);
 }

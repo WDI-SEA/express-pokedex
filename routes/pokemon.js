@@ -22,7 +22,8 @@ router.get('/', (req, res) => {
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/', (req, res) => {
   db.pokemon.create({
-    name: req.body.name
+    name: req.body.name,
+    dexnum: parseInt(req.body.dexnum)
   })
   .then((post) => {
     res.redirect('/')
@@ -31,6 +32,21 @@ router.post('/', (req, res) => {
     log(err)
   })
 });
+
+// DELETE /pokemon - delete pokemon from favorites page
+router.delete('/', (req, res) => {
+  db.pokemon.destroy({
+    where: {
+      id: req.body.id
+    }
+  })
+  .then((post) => {
+    res.redirect('/pokemon')
+  })
+  .catch(err => {
+    log(err)
+  })
+})
 
 // GET /pokemon/:name - renders a show.ejs page with info about pokemon
 router.get('/:name', (req, res) => {
@@ -54,7 +70,6 @@ router.get('/:name', (req, res) => {
     log(err)
   })
 })
-
 
 // EXPORT ROUTER
 module.exports = router;

@@ -6,13 +6,18 @@
     </form>
   </p>
 
+  <% let i = 1 %>
   <% pokemon.forEach(function(pokemon) { %>
     <div class="well">
-      <h2 class="a"><%= pokemon.name %></h2>
+      <img class="home-sprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= i %>.png" />
+      <img class="home-sprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/<%= i %>.png" />
+      <h2 class="a">#<%= i %> <%= pokemon.name %></h2>
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
+        <input hidden type="integer" name="dexnum" value="<%=i %>">
         <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
       </form>
     </div>
+  <% i++ %>
   <% }); %>
 </div>
