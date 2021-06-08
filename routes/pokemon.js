@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
     try {
       const pokemon = await db.pokemon.findAll()
       console.log(pokemon);
-      res.render('pokemon/favorites', { pokemon:pokemon })
+      res.render('pokemon/favorites', { pokemons:pokemon })
       // res.send(pokemon)
     }catch (error) {
         console.log(error)
@@ -34,7 +34,7 @@ router.post('/', (req, res) => {
           name: pokeName
         }
           })
-      console.log(`${pokemon.name} was ${created ? 'created' : 'found'}`)
+      // console.log(`${pokemon.name} was ${created ? 'created' : 'found'}`)
     } catch (error) {
       console.log(error)
     }
@@ -45,20 +45,26 @@ router.post('/', (req, res) => {
 
 router.get('/:name', (req, res) => {
   // TODO: Get all records from the DB and render to view
-  let name = req.params.name
+  let name = req.query.name
   async function findOnePokemon(){
     try {
       let pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${name}/`;
     
       const apiResponse = await axios.get(pokemonUrl)
-      let pokemon = apiResponse.data;
-      console.log(pokemon)
-      res.render('pokemon/show', { pokemon })
+      let imgSrc = apiResponse.data.sprites.front_default
+      let pokemon = apiResponse.data.id;
+      // let specie = apiResponse.data.species
+      // let ability = apiResponse.data.abilities
+      // let stat = apiResponse.data.stats[0]
+      console.log('stat🐣' + stat)
+      // res.render('pokemon/show.ejs', {src: imgSrc, id: pokemon, specie: species, ability: abilites, stat: stats })
+      res.render('pokemon/show', {src: imgSrc, id: pokemon})
+
     } catch (error) {
-      console.log(error)
-    }
+      console.log(error)  
   }
-  findOnePokemon()
+  }
+  // findOnePokemon()
 
 });
 module.exports = router;
