@@ -1,10 +1,11 @@
 <div class="container">
     <h1 class="text-center">Pokemon Details</h1>
-    <img src="<%= src%>" />
-    <h3><%=pokemon.id%> </h3>
-    <h4><%=pokemon.specie%></h4>
-    <h4><%=pokemon.ability%></h4>
-    <h4><%=pokemon.stat%></h4>
+    <img src="<%= pokemon.sprites.front_default%>" />
+    <h3>name: <%=pokemon.name%> </h3>
+    <h4>type: <%=pokemon.types[0].type.name%></h4>
+    <h4>ability: <%=pokemon.abilities[0].ability.name%></h4>
+    <h4>weight: <%=pokemon.weight%></h4>
+    <h4>height: <%=pokemon.height%></h4>
     <p class="text-center">
       <a href= '/'>Home Page</a>
     </p>
