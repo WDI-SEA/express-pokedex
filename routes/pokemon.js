@@ -52,7 +52,9 @@ router.get('/:name', (req, res) => {
       // Use request to call the API
       const apiResponse = await axios.get(pokemonUrl)
       let pokemon = apiResponse.data;
+      let imgSrc = apiResponse.data.sprites.front_default
       res.render('pokemon/show', { pokemon })
+      // res.render('pokemon/show', { src : imgSrc })
       console.log(pokemon)
         // res.render('index', { pokemon: pokemon.slice(0, 151) });
       } catch (error) {
