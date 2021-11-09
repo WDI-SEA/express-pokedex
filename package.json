@@ -7,9 +7,11 @@
   },
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.1",
-    "ejs": "^2.6.1",
-    "express": "^4.16.4",
-    "express-ejs-layouts": "^2.5.0"
+    "axios": "^0.21.4",
+    "ejs": "^2.7.4",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.1",
+    "pg": "^8.7.1",
+    "sequelize": "^6.9.0"
   }
 }
