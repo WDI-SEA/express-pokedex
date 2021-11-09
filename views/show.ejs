@@ -1,0 +1,17 @@
+<h1>More info about <%= pokeName %> </h1>
+<h3>Their abilities include: </h3>
+<ul>
+    <% abilities.forEach(ability => { %>
+        <li> <%= ability.ability.name %></li>
+    <% }) %>
+</ul>
+
+<h3>Their base stats include: </h3>
+<ul>
+    <% stats.forEach(ability => { %>
+        <li> <%= ability.stat.name %> with a base stat of <%= ability.base_stat %> </li>
+    <% }) %>
+</ul>
+
+<h3>Their height is: <%= height %> </h3>
+<h3>Their weight is: <%= weight %> </h3>

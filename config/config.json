@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "newPassword",
+    "database": "pokedex",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "newPassword",
+    "database": "pokedex",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "newPassword",
+    "database": "pokedex",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}

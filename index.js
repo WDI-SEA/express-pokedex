@@ -3,7 +3,7 @@ const axios = require('axios');
 const ejsLayouts = require('express-ejs-layouts');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
