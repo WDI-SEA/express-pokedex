@@ -1,0 +1,13 @@
+<h1><%= name %></h1>
+<img src="<%= spriteUrl %>" alt="<%= name %> sprite">
+
+<h2>Weight:</h2>
+<h3><%= weight %> kilograms</h3>
+
+<h2>Type:</h2>
+<% typeArr.forEach(type => { %>
+    <h3><%= type.type.name %></h3>
+<% }) %>
+
+<h2>Base HP:</h2>
+<h3><%= baseHp %> hit points</h3>

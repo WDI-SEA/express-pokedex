@@ -1,0 +1,22 @@
+body {
+    background-color: darkblue;
+    color: whitesmoke;
+    font-family: helvetica;
+    margin: 10% 0 0 10%;
+}
+
+a {
+    color: whitesmoke;
+}
+
+a:hover {
+    color: gray;
+}
+
+img {
+    width: 200px;
+}
+
+button {
+    margin-bottom: 20px;
+}

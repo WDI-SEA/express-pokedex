@@ -1,3 +1,4 @@
+<h1>Your favorite Pokemon:</h1>
 <% results.forEach(result => { %>
-    <p><%= result.name %></p>
+    <p><a href="/pokemon/<%= result.name %>"><%= result.name %></a></p>
 <% }) %> 
