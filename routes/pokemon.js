@@ -1,5 +1,6 @@
 const express = require('express');
 const db = require('../models');
+const pokemon = require('../models/pokemon');
 const router = express.Router();
 
 // GET /pokemon - return a page with favorited Pokemon
@@ -49,4 +50,18 @@ db.pokemon.create({
 //   })
 // })
 
+//show individual pokemon
+router.get('/:name', (req, res) => {
+  console.log('this is the favorite id', req.params.id)
+  db.pokemon.findOne({
+      where: {name: req.params.name}
+  })
+  .then(foundFav => {
+    console.log('my name is: ', foundFav.name)
+      res.render('pokeDetail', {name: foundFav.name})
+  })
+  .catch(error => {
+      console.error
+  })
+})
 module.exports = router;
