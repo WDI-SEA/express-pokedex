@@ -1,0 +1,8 @@
+<body style="text-align: center; background-color: rgb(45, 13, 53); color: black; font-family: 'Mochiy Pop P One', sans-serif;">
+  <h1>Favorite Pokemon</h1>
+<%results.forEach(pokemon => {%>
+ <h1><a href="/pokemon/<%= pokemon.name %>"> <%= pokemon.name %> </a></h1>   
+    <%})%>
+  
+</body>
+
