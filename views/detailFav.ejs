@@ -1,21 +1,35 @@
-<h1>
-    <%= name %> 
-</h1>
+<body>
+    <h1>
+        <%= name %> 
+    </h1>
+    
+    <img src="<%= image %>" alt="<%= name %>" width="250" style="margin-bottom: -25px;">
+    
+    <h3>
+        Height: <%= height %> 
+    </h3>
+    
+    <h3>
+        Weight: <%= weight %> 
+    </h3>
+    
+    <h3>
+        Ability: <%= abilities %> 
+    </h3>
+    
+    <h3>
+        Move: <%= moves %> 
+    </h3>
+</body>
 
-<img src="<%= image %>" alt="<%= name %>" width="250" style="margin-bottom: -25px;">
 
-<h3>
-    Height: <%= height %> 
-</h3>
-
-<h3>
-    Weight: <%= weight %> 
-</h3>
-
-<h3>
-    Ability: <%= abilities %> 
-</h3>
-
-<h3>
-    Move: <%= moves %> 
-</h3>
+<style>
+    body {
+        background-image: url('https://wallpaperaccess.com/full/194885.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        color: black;
+        height: 100%;
+    }
+  </style>
