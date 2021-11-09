@@ -1,0 +1,18 @@
+
+<div class = "container">
+    <h3 class="text-center">This is the favorite page</h3>
+
+    
+    <%result.forEach(result => {%>
+        <div class="well">
+            <h3>
+                <a href="/pokemon/<%= result.name %>"><%= result.name %></a>
+            </h3>
+            <form action="/pokemon/<%= result.id %>?_method=DELETE" method="post">
+                <button class = "btn btn-small btn-danger" type="submit">Remove From Faves</button>
+            </form>
+        </div>
+    <%})%>
+    
+
+</div>

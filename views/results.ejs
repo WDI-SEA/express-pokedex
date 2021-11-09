@@ -1,0 +1,25 @@
+
+<div class="container">
+    <h1><%=results.species.name%></h1>
+    <br>
+    <br>
+
+    <h3><img src="<%=results.sprites.other.dream_world.front_default%>"></h3>
+
+    <h3> Shiny Version <br><img src="<%=results.sprites.front_shiny%>"></h3>
+
+    <h4>
+        Primary Type: <%= results.types[0].type.name %><br>
+        <% if(results.types.length > 1) {%>
+            Secondary Type: <%= results.types[1].type.name %>
+        <% } %>
+    </h4>
+
+    <h4>
+        weight: <%= (results.weight/10) %> kg<br>
+        height: <%= Math.round(results.height/3 * 100 + Number.EPSILON) / 100 %> ft<br>
+        Pokedex Id: <%= results.order %>
+    </h4>
+
+</div>
+
