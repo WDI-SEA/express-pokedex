@@ -1,0 +1,10 @@
+<h1>My Favorite Pokemon</h1>
+<%results.forEach(result => {%>
+    <h3>
+        <%= result.name %>
+    </h3>
+    <!-- <small><%= result.abilities %></small> -->
+    <form action="/pokemon/<%= result.id %>?_method=DELETE " method="POST">
+        <button type="submit">Remove from Faves</button>
+    </form>
+<%})%>
