@@ -31,6 +31,21 @@ router.post('/', (req, res) => {
   })
 })
 
+router.delete('/:name', (req, res) => {
+  // console.log('this is the id\n', req.params.id)
+  db.pokemon.destroy({
+      where: {name: req.params.name}
+  })
+  .then(deletedItem => {
+      // destroy returns '1' if something was deleted and '0' if nothing happened
+      // console.log('you deleted:', deletedItem)
+      res.redirect('/pokemon')
+  })
+  .catch(error => {
+      console.error
+  })
+})
+
 router.get('/:name', (req, res) => {
   let pokemonName = req.params.name
   axios.get(`http://pokeapi.co/api/v2/pokemon/${pokemonName}/`)

@@ -7,5 +7,9 @@
                 <%= pokemon.name %> 
             </a> 
         </h3>
+        <form method="POST" action="/pokemon/<%= pokemon.name %>?_method=DELETE">
+            <button type="submit">Remove from Favorites</button>
+        </form>
+        <br>
     <% }) %> 
 </body>
