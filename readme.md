@@ -15,17 +15,17 @@ If you're not familiar with Pokemon, Pokemon is a franchise/universe created by 
 We'll be using an existing application that uses the [PokeAPI](http://pokeapi.co/), a Pokemon API that allows us to get a list of Pokemon.
 
 * Fork and clone this repository
-* Run `npm install` to install dependencies
-  * Use `nodemon` to start the server
+* Run `npm install` to install dependencies ** DONE
+  * Use `nodemon` to start the server ** DONE
 
 #### Read the Code
 
 * After setup, **STOP**. You're using an existing application, so make sure to read the code and ensure what the application does. Some questions you may want to ask yourself:
-  * How does the app retrieve a list of Pokemon?
-  * How many Pokemon does the API call retrieve? Why that many?
-  * What are the routes defined in the application?
+  * How does the app retrieve a list of Pokemon? ** In pre-built GET request with pokemonUrl variable
+  * How many Pokemon does the API call retrieve? Why that many?  ** 20, API limits GET to 20 without resource ID
+  * What are the routes defined in the application?  ** pokemon.js
   * Think about adding a Pokemon to your favorites.
-    * How will this data be submitted?
+    * How will this data be submitted? ** NEW route with form
     * What will you have to do to save this data to a database?
     * What will you have to do to display favorite Pokemon?
 
@@ -40,13 +40,13 @@ We'll be using an existing application that uses the [PokeAPI](http://pokeapi.co
 
 Your first step will be to create a SQL database for your application. Recall the process:
 
-1. Use `npm` to install the required modules for postgres and sequelize: `pg` and `sequelize`
-2. Make sure your Postgres server is running (check for the elephant).
-3. Run `sequelize init` to initialize Sequelize.
-4. Update your newly created `config/config.json` file as we did in class. This means changing the credentials, updating the SQL flavor, and changing the database name to `pokedex`.
-5. Run `createdb pokedex` to create your database inside of Postgres
+1. Use `npm` to install the required modules for postgres and sequelize: `pg` and `sequelize` ** DONE
+2. Make sure your Postgres server is running (check for the elephant). ** DONE
+3. Run `sequelize init` to initialize Sequelize. ** DONE
+4. Update your newly created `config/config.json` file as we did in class. This means changing the credentials, updating the SQL flavor, and changing the database name to `pokedex`.  ** DONE
+5. Run `createdb pokedex` to create your database inside of Postgres ** DONE
 
-#### Part 2: Create your Pokemon Model and Table
+#### Part 2: Create your Pokemon Model and Table  ** DONE
 
 Our data model needs only one attribute: `name`.
 
@@ -74,7 +74,7 @@ db.pokemon.findOne({
 })
 ```
 
-Test by running the file: `node db-test.js`.
+Test by running the file: `node db-test.js`.  ** PASSED
 
 #### Part 3: Integrating the database with the app
 
