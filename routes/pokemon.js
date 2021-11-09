@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
     })
   //res.send('Render a page of favorites here');
 });
-router.get('/:name', function(req,res) {
+router.get('/:name', (req,res) => {
 
   //we used this console log, to check out our request object
   //console.log('this is req', req.query);
@@ -25,15 +25,16 @@ router.get('/:name', function(req,res) {
       .then(apiRes => {
       //console.log('this is apiRes.data', apiRes.data);
           let name = apiRes.data.name
-          let height = apiRes.data.height
-          let weight = apiRes.data.weight
-          //let abilities = apiRes.data.abilities[2].ability.name
+          let height = Math.floor(apiRes.data.height / 0.254)
+          let weight = Math.floor(apiRes.data.weight / 4.5)
+          let abilities = apiRes.data.abilities
           let pokemonImage = apiRes.data.sprites.front_default
   
           //res.render results to reults.ejs with our selected data sent as an object
           res.render('faveDetail', {name: name,
             weight: weight, 
             height: height,
+            abilities: abilities,
             pokemonImage: pokemonImage
             })
       })

@@ -6,13 +6,22 @@
     Name: <%= name %> 
 </h2>
 
+<h4>
+    Abilities:
+</h4>
+<ul>
+    <% abilities.forEach(ability => {%>
+        <li><%=ability.ability.name%></li>
+    <%}) %>
+</ul>
+
 
 <h3>
-    Weight: <%= weight %>
+    Weight: <%= weight %> lbs
 </h3>
 
 <h3>
-    Height: <%= height %> 
+    Height: <%= height %> inches
 </h3>
 
 <h3>
