@@ -72,20 +72,6 @@ router.delete('/:id', (req,res)=> {
 })
 
 
-router.delete('/:id', (req, res) => {
-  // console.log('this is the id\n', req.params.id)
-  db.favorite.destroy({
-      where: { id: req.params.id }
-  })
-  .then(deletedItem => {
-      // destroy returns '1' if something was deleted and '0' if nothing happened
-      // console.log('you deleted: ', deletedItem)
-      res.redirect('/faves')
-  })
-  .catch(error => {
-      console.error
-  })
-})
 
 
 
