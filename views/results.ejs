@@ -1,25 +1,67 @@
+<style>
+    #holder {
+        display: flex;
+        flex-direction: row; 
+        align-items: top;
+        justify-content: center;
+    }
+    .stats {
+        width: 30%;
+    }
+    .image {
+        width: 30%;
+    }
+    .moves {
+        width: 30%
+    }
+    span {
+        margin: 20px;
+    }
+</style>
 
-<div class="container">
-    <h1><%=results.species.name%></h1>
-    <br>
-    <br>
 
-    <h3><img src="<%=results.sprites.other.dream_world.front_default%>"></h3>
+<div id= "holder" class="container">
+    <span id = "image">
+        <h1><%=results.species.name%></h1>
+        <br>
+        <br>
 
-    <h3> Shiny Version <br><img src="<%=results.sprites.front_shiny%>"></h3>
+        <h3><img src="<%=results.sprites.other.dream_world.front_default%>"></h3>
 
-    <h4>
-        Primary Type: <%= results.types[0].type.name %><br>
-        <% if(results.types.length > 1) {%>
-            Secondary Type: <%= results.types[1].type.name %>
-        <% } %>
-    </h4>
+        <h3> Shiny Version <br><img src="<%=results.sprites.front_shiny%>"></h3>
 
-    <h4>
-        weight: <%= (results.weight/10) %> kg<br>
-        height: <%= Math.round(results.height/3 * 100 + Number.EPSILON) / 100 %> ft<br>
-        Pokedex Id: <%= results.order %>
-    </h4>
+        <h4>
+            Primary Type: <%= results.types[0].type.name %><br>
+            <% if(results.types.length > 1) {%>
+                Secondary Type: <%= results.types[1].type.name %>
+            <% } %>
+        </h4>
+
+        <h4>
+            weight: <%= (results.weight/10) %> kg<br>
+            height: <%= Math.round(results.height/3 * 100 + Number.EPSILON) / 100 %> ft<br>
+            Pokedex Id: <%= results.order %>
+        </h4>
+    </span>
+    <span id="stats">
+        <h4>Pokemon Base Stats</h4>
+        <% stats.forEach((el) => { %>
+            <ul>
+                <li><%= el.stat.name %> = <%=el.base_stat %></li>
+            </ul>
+        <% }) %>
+    
+    </span>
+    <span id="moves">
+        <h4>Pokemon Moves</h4>
+        <% moves.forEach((el) => { %>
+            <ul>
+                <li><%= el.move.name %></li>
+            </ul>
+        <% }) %>
+    
+    </span>
 
 </div>
+
 

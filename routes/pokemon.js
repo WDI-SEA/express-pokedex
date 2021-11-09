@@ -24,7 +24,6 @@ router.post('/', (req, res) => {
     name: data.name
   })
   .then(createdFave =>{
-    console.log('db instance created: \n', data)
     res.redirect('/pokemon');
   })
 });
@@ -35,8 +34,9 @@ router.get('/:name', (req,res)=>{
 
   axios.get(pokemonUrl).then(apiResponse => {
     let pokemon = apiResponse.data;
-    console.log(pokemon.types[0].type.name)
-    res.render('results', {results: pokemon})
+    let stats = apiResponse.data.stats;
+    let moves = apiResponse.data.moves;
+    res.render('results', {results: pokemon, stats: stats, moves: moves})
   })
 })
 
@@ -46,7 +46,6 @@ router.delete('/:id', (req, res)=>{
     where : {id: req.params.id}
   })
   .then(deletedItem => {
-    console.log('You deleted:', deletedItem)
     res.redirect('/pokemon')
   })
   .catch(error => {
