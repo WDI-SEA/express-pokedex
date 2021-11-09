@@ -64,7 +64,7 @@ router.delete('/:id', (req,res)=> {
     where: {id: req.params.id }
   })
   .then(deletedPokemon => {
-    res.redirect('/favorites/')
+    res.redirect('/pokemon')
   })
   .catch(error => {
     console.error
