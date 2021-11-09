@@ -90,7 +90,7 @@ You'll want to add functionality to the following routes by incorporating the `p
   * Purpose: Creates a new Pokemon and redirects back to `/pokemon`
   * What is the sequelize function we use here?
 
-#### Part 4: Display more info on each Pokemon
+#### Part 4: Display more info on each Pokemon ** DONE
 
 Add a route `GET /pokemon/:name` that renders a `show` page with information about the Pokemon.
 
