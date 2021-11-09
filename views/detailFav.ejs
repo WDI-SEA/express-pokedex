@@ -1,9 +1,26 @@
+<head>
+    <style>
+        body {
+            background-image: url('https://wallpaperaccess.com/full/194885.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            color: black;
+            height: 100%;
+        }
+        img {
+            height: 150px;
+            margin-top: 20px;
+        }
+      </style>
+</head>
 <body>
+    <a href="/pokemon">Favorites</a>
     <h1>
         <%= name %> 
     </h1>
     
-    <img src="<%= image %>" alt="<%= name %>" width="250" style="margin-bottom: -25px;">
+    <img src="<%= image %>" alt="<%= name %>">
     
     <h3>
         Height: <%= height %> 
@@ -21,15 +38,3 @@
         Move: <%= moves %> 
     </h3>
 </body>
-
-
-<style>
-    body {
-        background-image: url('https://wallpaperaccess.com/full/194885.jpg');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        color: black;
-        height: 100%;
-    }
-  </style>

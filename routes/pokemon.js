@@ -50,7 +50,7 @@ router.get('/:name', (req, res) => {
   .then(apiRes => {
     console.log('this is the apiRes.data', apiRes.data)
     let name = apiRes.data.name
-    let image = apiRes.data.sprites.front_default
+    let image = apiRes.data.sprites.other.dream_world.front_default
     let height = apiRes.data.height
     let weight = apiRes.data.weight
     let abilities = apiRes.data.abilities[0].ability.name

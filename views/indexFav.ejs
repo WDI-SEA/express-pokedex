@@ -1,8 +1,17 @@
+<head>
+    <style>
+        img {
+            width: 500px;
+            margin: -10px 0 -60px 0;
+        }
+      </style>
+</head>
 <a href="/">Home</a>
 <body style="text-align: center">
     <h1>Here Are All Your Favorite Pokemon!</h1>
+    <img src="https://eskipaper.com/images/pokemon-wallpaper-9.jpg" alt = "four pokemon">
     <% results.forEach((pokemon) => { %>
-        <h3 style="color: black">
+        <h3>
             <a href="/pokemon/<%= pokemon.name %>">
                 <%= pokemon.name %> 
             </a> 
@@ -13,12 +22,3 @@
         <br>
     <% }) %> 
 </body>
-
-<style>
-    body {
-        background-image: url('https://eskipaper.com/images/pokemon-wallpaper-9.jpg');
-        background-repeat: no-repeat;
-        background-position: top;
-        background-size: cover;
-    }
-  </style>
