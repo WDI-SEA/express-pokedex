@@ -1,15 +1,25 @@
 <h1>
+    Name:
     <%= pokemonName %> 
 </h1>
 <h2>
-    <img width="600" src="<%= pokemonImage %> " alt="<%= pokemonName  %>">
+    <img width="200" src="<%= pokemonImage %> " alt="<%= pokemonName  %>">
 </h2>
 <h3>
+    Base stat:
     <%= pokemonBase %>
 </h3>
 <h4>
+    Type:
     <%= pokemonType %>
 </h4>
-<p>
-    <%= pokemonMoves %>
-</p>
+<h5>Moves:</h5>
+<ul>
+    <% moves.forEach(move => { %>
+        <li>
+            <%= move.move.name %> 
+        </li>
+    <% }) %> 
+</ul>
+
+

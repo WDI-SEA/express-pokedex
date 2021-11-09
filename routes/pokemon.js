@@ -60,9 +60,9 @@ router.get('/:name', (req,res)=> {
       let pokemonName = apiRes.data.name
       let pokemonImage = apiRes.data.sprites.front_default
       let pokemonType = apiRes.data.types[0].type.name
-      let pokemonMoves = apiRes.data.moves[0].move.name
+      let moves = apiRes.data.moves
 
-      res.render('detail', {pokemonBase, pokemonName, pokemonImage, pokemonType, pokemonMoves})
+      res.render('detail', {pokemonBase: pokemonBase, pokemonName: pokemonName, pokemonImage: pokemonImage, pokemonType: pokemonType, moves: moves})
     })
     .catch(error => {
       console.log(error)
