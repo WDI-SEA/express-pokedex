@@ -1,6 +1,7 @@
-<h1>All Your Favorite Movies</h1>
+<h1>All Your Favorite Pokemon</h1>
 <%results.forEach(result => {%>
     <h3>
-        <a href="/pokemon/<%= result.pokeName %>"></a>
+        <%= result.pokeName %>
+        <!-- <a href="/pokemon/<%= result.pokeName %>"></a> -->
     </h3>
 <%})%>
