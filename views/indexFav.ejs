@@ -1,9 +1,11 @@
 <a href="/">Home</a>
-<h1>Here Are All Your Favorite Pokemon!</h1>
-<% results.forEach((pokemon) => { %>
-    <h3>
-        <a href="/pokemon/<%= pokemon.name %>">
-            <%= pokemon.name %> 
-        </a> 
-    </h3>
-<% }) %> 
+<body style="text-align: center">
+    <h1>Here Are All Your Favorite Pokemon!</h1>
+    <% results.forEach((pokemon) => { %>
+        <h3>
+            <a href="/pokemon/<%= pokemon.name %>">
+                <%= pokemon.name %> 
+            </a> 
+        </h3>
+    <% }) %> 
+</body>
