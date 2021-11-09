@@ -1,0 +1,16 @@
+<div class="conatiner d-flex justify-content-center w-100">
+  <div class="text-center" style="width: 38rem">
+    <img src="<%= pokemon.sprites.front_shiny %>" class="card-img-top" />
+    <div class="card-body">
+      <h2 class="card-title text-center text-uppercase"><%= pokemon.name %></h2>
+      <ul class="list-group list-group-flush">
+        <% pokemon.stats.forEach(stat => { %>
+        <li class="list-group-item text-center text-uppercase">
+          <%= stat.stat.name %> : <%= stat.base_stat %>
+        </li>
+        <% }) %>
+      </ul>
+      <a href="/" class="btn btn-primary">Go Home</a>
+    </div>
+  </div>
+</div>
