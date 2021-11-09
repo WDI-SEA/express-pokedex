@@ -5,9 +5,11 @@ const ejsLayouts = require('express-ejs-layouts');
 const app = express();
 const port = process.env.PORT || 3000;
 
+//middleware
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
+
 
 // GET / - main index of site
 app.get('/', (req, res) => {
@@ -20,7 +22,9 @@ app.get('/', (req, res) => {
 });
 
 // Imports all routes from the pokemon routes file
-app.use('/pokemon', require('./routes/pokemon'));
+//app.use('/pokemon', require('./routes/pokemon'));
+//routes
+app.use("/pokemon", require("./controllers/pokeRoutes"))
 
 app.listen(port, () => {
   console.log('...listening on', port );
