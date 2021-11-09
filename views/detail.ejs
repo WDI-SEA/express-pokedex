@@ -1,0 +1,28 @@
+<a href="/">Home</a>
+<a href="/pokemon">Favorites</a>
+<h1><%= name %></h1>
+<img src="<%= image %>" alt="Poke pic">
+<h3>Abilities</h3>
+<ul>
+    <% abilities.forEach(ability =>{ %>
+            <li>
+                <%= ability.ability.name %>
+            </li>
+    <% }) %>
+</ul>
+<h3>Moves</h3>
+<ul>
+    <% moves.forEach(move =>{ %>
+            <li>
+                <%= move.move.name %>
+            </li>
+    <% }) %>
+</ul>
+<h3>Stats</h3>
+<ul>
+    <% stats.forEach(stat =>{ %>
+            <li>
+                <%= stat.stat.name %> = <%= stat.base_stat %>
+            </li>
+    <% }) %>
+</ul>

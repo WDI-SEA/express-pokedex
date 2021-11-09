@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
   db.pokemon.findAll()
     .then(poke =>{
       // console.log('this is fave', poke)
-      res.render('/pokemon/index', {faves: poke})
+      res.render('indexFaves.ejs', {results: poke})
     })
     .catch(error =>{
       console.error
@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 });
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
-router.post('/addFave', (req, res) => {
+router.post('/', (req, res) => {
   // TODO: Get form data and add a new record to DB
     const data = JSON.parse(JSON.stringify(req.body))
     res.send(req.body);
@@ -26,7 +26,7 @@ router.post('/addFave', (req, res) => {
     })
     .then(createdFave =>{
       console.log('fave created', createdFave)
-      res.redirect(`/faves/${createdFave.name}`)
+      res.redirect(`/pokemon`)
     })
     .catch(error =>{
       console.error
@@ -34,6 +34,22 @@ router.post('/addFave', (req, res) => {
 });
 
 // SHOW 
+router.get('/:name', (req, res) =>{
+  const pokeName = req.params.name
+  axios.get(`http://pokeapi.co/api/v2/pokemon/${pokeName}/`)
+    .then(apiRes => {
+      const image = apiRes.data.sprites.other.dream_world.front_default
+      const abilities = apiRes.data.abilities
+      const moves = apiRes.data.moves
+      const stats = apiRes.data.stats
+      const name = req.params.name
+      res.render('detail', {name: name, image: image, abilities: abilities, moves: moves, stats: stats})
+      // res.send(apiRes.data)
+    })
+    .catch(error =>{
+      console.error
+  })
+})
 
 
 module.exports = router;
