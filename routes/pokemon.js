@@ -46,11 +46,13 @@ router.get('/:name', function (req, res) {
           let name = apiRes.data.name
           let height = apiRes.data.height
           let weight = apiRes.data.weight
+          let abilities = apiRes.data.abilities
           let id = apiRes.data.id
+          let moves = apiRes.data.moves
           let image = apiRes.data.sprites.front_default
           
           // res.render results to results.ejs, with our selected data sent as an object
-          res.render('detail', { name: name, height: height, weight: weight, id: id, image: image})
+          res.render('detail', { name: name, height: height, weight: weight, abilities: abilities, id: id, moves: moves, image: image})
       })
       .catch(err => {
           console.log(err)

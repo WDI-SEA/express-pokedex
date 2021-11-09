@@ -2,6 +2,7 @@
     <a href="/pokemon/<%= name %>">
         <%= name %>
     </a>
+    <img src="<%= image %>" alt="pokemon character">
 </h1>
 <h3>HEIGHT:
     <%= height %>
@@ -9,7 +10,22 @@
 <h3>WEIGHT:
     <%= weight %>
 </h3>
+<h3>ABILITIES:</h3>
+<ul>
+    <% abilities.forEach(ability=>{%>
+        <li>
+            <%=ability.ability.name%>
+        </li>
+        <%})%>
+</ul>
 <h3>ID:
     <%= id %>
 </h3>
-<img src="<%= image %>" alt="pokemon character">
+<h3>MOVES:</h3>
+<ul>
+    <% moves.forEach(move=>{%>
+        <li>
+            <%=move.move.name%>
+        </li>
+        <%})%>
+</ul>
