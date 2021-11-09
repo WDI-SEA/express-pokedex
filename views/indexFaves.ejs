@@ -1,7 +1,12 @@
-<h1>All Your Favorite Pokemon</h1>
-<%results.forEach(result => {%>
-    <h3>
-        <%= result.pokeName %>
-        <!-- <a href="/pokemon/<%= result.pokeName %>"></a> -->
-    </h3>
-<%})%>
+<h1 class="text-center">All Your Favorite Pokemon</h1>
+<br><br>
+<div class="container"></div>
+    <%results.forEach(result=> {%>
+        <h3 class="text-center">
+        <!-- <%= result.pokeName %> -->
+            <a href="/pokemon/<%= result.pokeName %>">
+            <%= result.pokeName %>
+            </a>
+        </h3>
+    <%})%>
+</div>

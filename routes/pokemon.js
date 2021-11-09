@@ -1,18 +1,18 @@
 const express = require('express');
 const db = require('../models');
 const router = express.Router();
-const axios = require('axios'); 
+const axios = require('axios');
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', (req, res) => {
   // TODO: Get all records from the DB and render to view
   db.pokemon.findAll()
-  .then(faves => {
-    res.render('indexFaves', { results: faves });
-  })
-  .catch(error => {
-    console.error
-  })
-  
+    .then(faves => {
+      res.render('indexFaves', { results: faves });
+    })
+    .catch(error => {
+      console.error
+    })
+
 });
 
 // SHOW ROUTE
@@ -24,7 +24,7 @@ router.get('/:name', (req, res) => {
       let pokeNum = result.data.id
       let pokeType = result.data.types[0].type.name
       let pokeImg = result.data.sprites.other.dream_world.front_default
-      res.render('show', {pokeName, pokeNum, pokeImg, pokeType})
+      res.render('show', { pokeName, pokeNum, pokeImg, pokeType })
     })
     .catch(error => {
       console.error
@@ -39,13 +39,13 @@ router.post('/', (req, res) => {
   db.pokemon.create({
     pokeName: data.name
   })
-  .then(createdFave => {
-    //res.send(req.body);
-    res.redirect('/pokemon')
-  })
-  .catch(error => {
-    console.error
-  })
+    .then(createdFave => {
+      //res.send(req.body);
+      res.redirect('/pokemon')
+    })
+    .catch(error => {
+      console.error
+    })
 });
 
 module.exports = router;
