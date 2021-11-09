@@ -76,7 +76,7 @@ db.pokemon.findOne({
 
 Test by running the file: `node db-test.js`.  ** PASSED
 
-#### Part 3: Integrating the database with the app
+#### Part 3: Integrating the database with the app  ** DONE
 
 You'll want to add functionality to the following routes by incorporating the `pokemon` table you created.
 
@@ -103,7 +103,7 @@ Check out the result of the pokemon API calls (or see the [doc page](http://poke
 
 When finished with the above, style the application more to your liking with CSS.
 
-## API Limits
+## API Limits  ** DONE
 You might notice the API doesn't return all the data it has at once. It has a
 default limit of 20. That means if it has a list of 150 (or more) Pokemon it
 will only return 20 at a time, by default.

@@ -15,6 +15,13 @@ router.get('/', (req, res) => {
   
 });
 
+// SHOW ROUTE
+router.get('/:name', (req, res) => {
+  let pokemon = req.params.name
+  console.log("Show route test")
+  res.render('/show.ejs', { pokemon: pokemon })
+})
+
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/', (req, res) => {
   const data = JSON.parse(JSON.stringify(req.body))
@@ -31,5 +38,7 @@ router.post('/', (req, res) => {
     console.error
   })
 });
+
+
 
 module.exports = router;
