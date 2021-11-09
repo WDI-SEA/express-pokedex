@@ -37,8 +37,6 @@ router.delete('/:name', (req, res) => {
       where: {name: req.params.name}
   })
   .then(deletedItem => {
-      // destroy returns '1' if something was deleted and '0' if nothing happened
-      // console.log('you deleted:', deletedItem)
       res.redirect('/pokemon')
   })
   .catch(error => {
