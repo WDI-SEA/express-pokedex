@@ -51,7 +51,7 @@ router.delete('/:name', (req, res) => {
 router.get('/:name', (req,res)=> {
   let pokemonInfo = req.params.name
 
-  axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonInfo}/`)
+  axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonInfo}`)
     .then(apiRes => {
       console.log('this is apiRES.data', apiRes.data)
       let pokemonNum = apiRes.data.id
