@@ -1,0 +1,16 @@
+<%if(weight===undefined) {%>
+  <h3>No Movies Found</h3>
+  <small>check your spelling and punctuation and try again</small>
+<%} else {%>
+  <ul>
+    <li>Weight: <%= weight %></li>
+  </ul>
+  <!-- <ul>
+    <results.forEach(result => {%>
+      <li>
+        <a href="/movies/<=result.imdbID%>"><=result.Title%></a>
+        <small>(<=result.Type%>)</small>
+      </li>
+    <})%>
+  </ul> -->
+<% } %>
