@@ -21,10 +21,10 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   // TODO: Get form data and add a new record to DB
   // res.send(req.body)
-  const data = JSON.parse(JSON.stringify(req.body))
-  // console.log('this is data:',data)
+  const formData = JSON.parse(JSON.stringify(req.body))
+  // console.log('this is formData:',formData)
   db.pokemon.create({
-    name: data.name
+    name: formData.name
   })
     .then(createdFave => {
       // console.log('db instance created:\n', createdFave)
@@ -40,9 +40,15 @@ router.get('/:name', (req, res) => {
   const name = req.params.name
   axios.get(`http://pokeapi.co/api/v2/pokemon/${name}/`)
     .then(apiResults => {
-      console.log(apiResults.data.weight)
       const weight = apiResults.data.weight
-      res.render('pokemon/show',{ weight })
+      console.log(weight)
+      const pic = apiResults.data.sprites.other.dream_world.front_default
+      console.log(pic)
+      const abilities = apiResults.data.abilities
+      const moves = apiResults.data.moves
+      const stats = apiResults.data.stats
+      console.log(stats)
+      res.render('pokemon/show',{name, weight, pic, abilities, moves, stats})
     })
     .catch(err => {
       console.log(err)

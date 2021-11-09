@@ -1,16 +1,31 @@
 <%if(weight===undefined) {%>
-  <h3>No Movies Found</h3>
-  <small>check your spelling and punctuation and try again</small>
+  <h3>No Pokemon Found</h3>
 <%} else {%>
+  <br>
+  <img src="<%=pic%>" alt="pokemon pic">
   <ul>
+    <li>Name: <%= name %></li>
     <li>Weight: <%= weight %></li>
+    <li>Abilities:
+      <ul>
+        <% abilities.forEach(abil => {%>
+          <li><%=abil.ability.name%></li>
+        <%})%>
+      </ul>
+    </li>
+    <li>Moves:
+      <ul>
+        <% moves.forEach(move => {%>
+          <li><%=move.move.name%></li>
+        <%})%>
+      </ul>
+    </li>
+    <li>Stats:
+      <ul>
+        <% stats.forEach(stat => {%>
+          <li><%=stat.stat.name%>:<%=stat.base_stat%></li>
+        <%})%>
+      </ul>
+    </li>
   </ul>
-  <!-- <ul>
-    <results.forEach(result => {%>
-      <li>
-        <a href="/movies/<=result.imdbID%>"><=result.Title%></a>
-        <small>(<=result.Type%>)</small>
-      </li>
-    <})%>
-  </ul> -->
 <% } %>
