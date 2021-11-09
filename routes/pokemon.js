@@ -31,4 +31,23 @@ router.post('/', (req, res) => {
   })
 })
 
+router.get('/:name', (req, res) => {
+  let pokemonName = req.params.name
+  axios.get(`http://pokeapi.co/api/v2/pokemon/${pokemonName}/`)
+  .then(apiRes => {
+    console.log('this is the apiRes.data', apiRes.data)
+    let name = apiRes.data.name
+    let image = apiRes.data.sprites.front_default
+    let height = apiRes.data.height
+    let weight = apiRes.data.weight
+    let abilities = apiRes.data.abilities[0].ability.name
+    let moves = apiRes.data.moves[0].move.name
+
+    res.render('detailFav', {name: name, image: image, height: height, weight: weight, abilities: abilities, moves: moves})
+  })
+  .catch(error => {
+    console.error
+  })
+})
+
 module.exports = router
