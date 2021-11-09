@@ -1,0 +1,11 @@
+<a href="/">Home</a>
+<h1>Here a List of your Favorite Pokemon</h1>
+
+<% results.forEach(result => { %>
+    <h3>
+        <a href="/pokemon/<%= result.name %> "><%= result.name %></a>
+    </h3>
+    <form action="/pokemon/<%= result.name                                                                                                                                                                                                                       %>?_method=DELETE " method="POST">
+        <button class="btn btn-danger" type="submit">Remove  Pokemon</button>
+    </form>
+<% }) %>
