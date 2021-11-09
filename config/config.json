@@ -2,21 +2,21 @@
   "development": {
     "username": null,
     "password": null,
-    "database": "pokedex_development",
+    "database": "pokedex",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
     "username": null,
     "password": null,
-    "database": "pokedex_test",
+    "database": "pokedex",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
     "username": null,
     "password": null,
-    "database": "pokedex_production",
+    "database": "pokedex",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }
