@@ -1,0 +1,20 @@
+    <p class="text-center">
+      <a href="/pokemon">Favorites</a>
+    </p>
+  
+    <% favoritePokemons.forEach(function(pokemon, index) { %>
+      <div class="well">
+        <li style="list-style: none;">
+        <h2><%= pokemon.name %></h2>
+        <form method="POST" action="/pokemon">
+          <input hidden type="text" name="name" value="<%= pokemon.name %>">
+        </form>
+        <form action="/pokemon/<%= index %>/?_method=DELETE" method="POST" style="margin-right: 10px;">
+            <div class="delete-container">
+                <input class="btn btn-danger" style="color:white;" type="submit" value="✕">
+        </div>
+        </form>
+    <% }); %>
+        </li>
+  </div>
+  

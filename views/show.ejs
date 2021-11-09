@@ -1,0 +1,35 @@
+<div class="flex-container container" style="display:flex; flex-direction:column; align-items: center; justify-content: center; border: 1px dotted black;">
+    <h1 ><%= pokemonDetail.name %></h1>    
+    <div class="image-wrapper">
+        <img src="<%=pokemonDetail.sprites.front_default %>" alt="<%= pokemonDetail.name %>" class="img-fluid" style="font-family: 'pokemon solid';">
+    </div>
+    
+    <div class="stats-wrapper" style="display: flex; flex-direction: row;">
+        <h2><%=pokemonDetail.height %></h2>
+        <h2><%=pokemonDetail.weight %> </h2>
+        <ul>
+            <h3>Special Moves</h2>
+            <% pokemonDetail.abilities.forEach(pokemon => { %>
+                <li>
+                    <%= pokemon.ability.name %>
+                    <%= console.log(pokemon.ability.name) %>
+                </li>
+            <% }); %>  
+            </ul>
+            <ul>
+            <h3>Pokemon Type</h2>
+            <% pokemonDetail.types.forEach(pokemon => { %>
+                <li>
+                    <%= pokemon.type.name %>
+                    <%= console.log(pokemon.type.name) %>
+                </li>
+            <% }); %>
+            </ul>
+        </div>
+
+
+
+
+</div>
+
+
