@@ -35,10 +35,10 @@ router.get('/:name', (req, res) => {
 router.post('/', (req, res) => {
   const data = JSON.parse(JSON.stringify(req.body))
   //console.log('this is the data: ', data)
+  // TODO: Get form data and add a new record to DB
   db.pokemon.create({
     pokeName: data.name
   })
-  // TODO: Get form data and add a new record to DB
   .then(createdFave => {
     //res.send(req.body);
     res.redirect('/pokemon')
