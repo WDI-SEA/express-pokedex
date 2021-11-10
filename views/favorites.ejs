@@ -1,7 +1,9 @@
 <h1>Favorite Pokemon</h1>
-<% results.forEach(result => { %>
-    <p><a href="/pokemon/<%= result.name %>"></a><%= result.name %></p>
-    <form action="/pokemon/<%= result.name %>?_method=DELETE" method="POST">
+<% results.forEach(pokemon => { %>
+    <p>
+        <a href="/pokemon/<%= pokemon.name %>"> <%= pokemon.name %></a>
+    </p>
+    <form action="/pokemon/<%= pokemon.name %>?_method=DELETE" method="POST">
         <button type="submit">Delete from Favorites</button>
     </form>
 <%})%>

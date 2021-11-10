@@ -9,14 +9,14 @@
   "test": {
     "username": null,
     "password": null,
-    "database": "pokedex",
+    "database": "pokedex_test",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
     "username": null,
     "password": null,
-    "database": "pokedex",
+    "database": "pokedex_production",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }

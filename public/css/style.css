@@ -1,0 +1,9 @@
+body, a {
+    background-color: black;
+    color: #dddddd;
+}
+h2, div {
+    text-align: center;
+    justify-content: center;
+    margin: 0, auto;
+}

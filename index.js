@@ -9,7 +9,8 @@ const port = process.env.PORT || 3000;
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
-app.use(methodOverride("_method"))
+app.use(methodOverride('_method'))
+app.use(express.static('public'))
 
 
 // GET / - main index of site
@@ -27,5 +28,5 @@ app.use('/pokemon', require('./routes/pokemon'));
 
 
 app.listen(port, () => {
-  console.log('...listening on', port );
+  console.log('...listening on', port);
 });

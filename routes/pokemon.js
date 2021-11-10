@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
   db.pokemon.findAll()
     .then(fave => {
       // create new page of favorites, fave.ejs
-    res.render('favorites.ejs', {results:fave})
+    res.render('favorites', {results:fave})
     })
     .catch(error => {
     console.error
@@ -23,6 +23,7 @@ router.post('/', (req, res) => {
   // TODO: Get form data and add a new record to DB
   const data = JSON.parse(JSON.stringify(req.body))
   console.log('this is data', data)
+  // res.send(req.body);
   db.pokemon.create({
     name: data.name
   })
@@ -32,13 +33,13 @@ router.post('/', (req, res) => {
   .catch(error => {
     console.log(error)
   })
-  // res.send(req.body);
 })
 
+// SHOW
 router.get('/:name', (req, res) => {
   const pokeName = req.params.name
-  console.log('this is pokeName', pokeName)
-  axios.get(`https://pokeapi.co/api/v2/pokemon${pokeName}/`)
+  // console.log('this is pokeName', pokeName)
+  axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeName}/`)
     .then(apiRes => {
       const abilities = apiRes.data.abilities
       const image = apiRes.data.sprites.other.dream_world.front_default
@@ -46,7 +47,7 @@ router.get('/:name', (req, res) => {
       const stats = apiRes.data.stats
       const name = req.params.name
       // res.send(JSON.parse(JSON.stringify(apiRes.data)))
-      res.render('pokeDetail', {name: name, abilities: abilities, image: image, moves: moves, stats: stats})
+      res.render('detail', {name: name, abilities: abilities, image: image, moves: moves, stats: stats})
     })
     .catch(error => console.error)
 })
