@@ -24,7 +24,8 @@ router.get('/:name', (req, res) => {
       let pokeNum = result.data.id
       let pokeType = result.data.types[0].type.name
       let pokeImg = result.data.sprites.other.dream_world.front_default
-      res.render('show', { pokeName, pokeNum, pokeImg, pokeType })
+      let pokeAbilities = result.data.abilities
+      res.render('show', { pokeName, pokeNum, pokeImg, pokeType, pokeAbilities })
     })
     .catch(error => {
       console.error

@@ -1,5 +1,16 @@
 <br><br><br><br>
-<h1 class="text-center"><%= pokeName %></h1>
-<h2 class="text-center"><%= pokeNum %></h2>
-<h2 class="text-center"><%= pokeType %></h2>
-<h2 class="text-center"><img src="<%= pokeImg %>"</h2>
+<div class="container-fluid">
+<h1 class="text-center">Name: <%= pokeName %></h1>
+<h2 class="text-center">#<%= pokeNum %></h2>
+<h2 class="text-center">Type: <%= pokeType %></h2>
+<h2 class="text-center"><img src="<%= pokeImg %>"></h2>
+</div>
+<br><br><br><br>
+<div class="container"></div>
+    <h2 class="text-center text-primary">Abilities</h2>
+    <%pokeAbilities.forEach(ability=> {%>
+        <h3 class="text-center">
+            <%= ability.ability.name %>
+        </h3>
+    <%})%>
+</div>
