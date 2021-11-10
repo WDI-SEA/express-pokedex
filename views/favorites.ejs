@@ -1,0 +1,7 @@
+<h1>Favorite Pokemans</h1>
+<% console.log(results) %> 
+<% results.forEach(pokemon => { %>
+    <h3>
+        <a href="/pokemon/<%= pokemon.name %> "><%= pokemon.name %> </a>
+    </h3>
+<% }) %>
