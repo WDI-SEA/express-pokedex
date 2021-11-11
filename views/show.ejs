@@ -1,6 +1,25 @@
 <h1><%=name %></h1>
 
+</br>
 <img src = '<%=image %>' alt = 'pic of poke'>
 
+<h3>Abilities</h3>
+<ul>
+<% abilities.forEach(ability => { %>
+   <li> <%= ability.ability.name %></li>
+<%})  %>
+</ul>
 
+<h3>Moves</h3>
+<ul>
+<% moves.forEach(move => { %>
+   <li> <%= move.move.name %></li>
+<%})  %>
+</ul>
 
+<h3>Type</h3>
+<ul>
+<% types.forEach(type => { %>
+   <li> <%= type.type.name %></li>
+<%})  %>
+</ul>

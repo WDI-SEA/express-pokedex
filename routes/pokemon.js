@@ -39,7 +39,12 @@ router.get('/:name', (req, res)=>{
   
     const image = apiRes.data.sprites.other.dream_world.front_default
     const name = req.params.name
-    res.render('show.ejs', {name:name, image:image})
+    const abilities = apiRes.data.abilities
+    const moves =  apiRes.data.moves
+    const types = apiRes.data.types
+    
+    res.render('show.ejs', {name:name, image:image, abilities:abilities, moves:moves, types:types})
+    // res.send(apiRes.data)
   })
 
 })
