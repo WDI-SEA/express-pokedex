@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models')
+const axios = require('axios')
 
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', (req, res) => {
@@ -26,8 +27,21 @@ router.post('/', (req, res) => {
     .then(created => {
       console.log('this is created', created)
     })
-
-  
+    .catch(error => {
+      console.log(error)
+    })
 });
+
+router.get('/:name', (req, res)=>{
+  const pokeName = req.params.name
+  axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeName}/`)
+  .then(apiRes => {
+  
+    const image = apiRes.data.sprites.other.dream_world.front_default
+    const name = req.params.name
+    res.render('show.ejs', {name:name, image:image})
+  })
+
+})
 
 module.exports = router;
