@@ -3,7 +3,7 @@
 <ul>
     <% results.forEach(poke =>{ %>
         <li>   
-            <%= poke.name %>
+            <a href = '/pokemon/<%=poke.name%>'><%=poke.name%></a>
         </li>
  <%   })  %>
 
