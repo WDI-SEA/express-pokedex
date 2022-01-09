@@ -13,21 +13,24 @@ router.get('/', (req, res) => {
     })
 });
 
-router.get('/:name', function (req, res) {
+// SHOW
+router.get('/:name', (req, res) => {
   let pokeDetail = req.params.name
-  axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeDetail}`)
-  .then(showPoke => {
-    let name = showPoke.data.name
-    let description = showPoke.data.description
-    let color = showPoke.data.pokemon_color.name
-    let habitat = showPoke.data.habitat
-
-
-
-    res.render('show', {description: pokeDetail.characteristics.description, })
+  console.log("this is pokedetail", pokeDetail)
+  axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeDetail}/`)
+  .then(apiRes => {
+    console.log('this is apiRes', apiRes.data)
+    const name = req.params.name
+    const image = apiRes.data.sprites.other.dream_world.front_default
+    const abilities = apiRes.data.abilities
+    const moves = apiRes.data.moves
+    const stats = apiRes.data.stats
+    
+  
+    res.render('favePokemon/show', {name: name, abilities: abilities, image: image, moves: moves, stats: stats})
   })
   .catch(error => {
-    console.error
+    console.log(error)
   })
 })
 
@@ -40,9 +43,12 @@ router.post('/', (req, res) => {
     name: data.name
   })
   // TODO: Get form data and add a new record to DB
-  .then(createdFave =>{
+  .then(createdFave => {
     console.log('db instance created: \n', createdFave)
     res.redirect('/');
+  })
+  .catch(error => {
+    console.log(error)
   })
   
 });
