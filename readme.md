@@ -72,6 +72,24 @@ db.pokemon.findOne({
 }).then(poke => {
   console.log('Found: ', poke.name)
 })
+
+// create some pokemon with async/await syntax
+async function createPokemon() {
+  try {
+    const newPokemon = await db.pokemon.create({ name: 'charizard' })
+    console.log('the new pokemon is:', newPokemon)
+    const foundPokemon = await db.pokemon.findOne({
+      where: {
+        name: 'charizard'
+      }
+    })
+    console.log('the found pokemon is:', foundPokemon)
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+createPokemon()
 ```
 
 Test by running the file: `node db-test.js`.
@@ -104,6 +122,7 @@ Check out the result of the pokemon API calls (or see the [doc page](http://poke
 When finished with the above, style the application more to your liking with CSS.
 
 ## API Limits
+
 You might notice the API doesn't return all the data it has at once. It has a
 default limit of 20. That means if it has a list of 150 (or more) Pokemon it
 will only return 20 at a time, by default.
