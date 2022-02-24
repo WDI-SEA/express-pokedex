@@ -3,13 +3,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon -e .js,.ejs,.json"
   },
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
-    "express-ejs-layouts": "^2.5.0"
+    "express-ejs-layouts": "^2.5.0",
+    "pg": "^8.7.3",
+    "sequelize": "^6.16.2"
   }
 }

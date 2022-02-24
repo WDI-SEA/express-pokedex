@@ -1,0 +1,11 @@
+<h3><%= pokemonDetails.name %> </h3>
+
+<img src="<%= pokemonDetails.sprites.front_default %>">
+<p>Weight: <%= pokemonDetails.weight %> </p>
+<p>Height: <%= pokemonDetails.height %> </p>
+<p>Moves:</p>
+<ul>
+    <% pokemonDetails.moves.forEach(element => { %>
+     <li><%= element.move.name %> </li>
+    <% }) %>
+</ul>
