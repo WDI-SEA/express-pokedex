@@ -12,12 +12,7 @@ app.use(ejsLayouts);
 
 // GET / - main index of site
 app.get('/', async (req, res) => {
-  let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
-  // Use request to call the API
-  // axios.get(pokemonUrl).then(apiResponse => {
-  //   let pokemon = apiResponse.data.results;
-  //   res.render('index', { pokemon: pokemon.slice(0, 151) });
-  // })
+  let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon?limit=151';
   try {
     const apiResponse = await axios.get(pokemonUrl)
     const pokemon = apiResponse.data.results

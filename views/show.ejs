@@ -1,0 +1,25 @@
+
+<h2 class="text-center color-red">Showing Results for: <%= pokemon.name.toUpperCase()  %>  </h2>
+<div class="well text-center">
+    <img src="<%= pokemon.sprites.front_default %> " alt="<%= pokemon.name  %> " width="200px">
+    <h3>Name: <%= pokemon.name  %> </h3>
+    <h4>
+        Type: 
+        <% pokemon.types.forEach(type => { %>
+            <span>  | <%= type.type.name %> | </span>
+         <% }) %>
+    </h4>
+     <h4 class="display-inline">Abilities:  
+        <% pokemon.abilities.forEach(ability => { %>
+            <span>  | <%= ability.ability.name %> | </span>
+        <% }) %>
+    </h4>
+
+<h4>Signature Moves:</h4>
+
+    <% pokemon.moves.forEach(move => { %>
+        <span><%= move.move.name %><strong> | </strong></span>
+     <% }) %> 
+
+
+</div>
