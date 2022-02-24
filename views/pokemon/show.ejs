@@ -1,6 +1,4 @@
-<div class="text-center">
- 
-  <h1>All about <%=details.name%> </h1>
+ <h1>All about <%=details.name%> </h1>
   
   <p>
     #<%=details.id%> in the original Pokedex
@@ -14,6 +12,12 @@
     Type: <%=details.types[0].type.name%>
   </p>
   
-  <img src ='<%=details.sprites.front_default%>' />
-  
-</div>
+ 
+    <img src ='<%=details.sprites.front_default%>' />
+    <img src ='<%=details.sprites.back_default%>' />
+<br>
+    <img src ='<%=details.sprites.front_shiny%>' />
+    <img src ='<%=details.sprites.back_shiny%>' />
+
+   
+
