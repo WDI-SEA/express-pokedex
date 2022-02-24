@@ -13,7 +13,7 @@ html {
 }
 div.header {
   height: fit-content;
-  background-color: rgba(255, 205, 0, 255);
+  background-color: rgba(255, 205, 0, .8);
   display: flex;
   justify-content: center;
   padding: 5px 0px 10px 0px;
