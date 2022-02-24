@@ -1,3 +1,4 @@
+const { default: axios } = require('axios');
 const express = require('express');
 const router = express.Router();
 const db = require('../models');
@@ -30,3 +31,17 @@ router.post('/', async (req, res) => {
 });
 
 module.exports = router;
+
+router.get("/:name", (req,res) => {
+  let pokeName = req.params.name
+  console.log(poke.name)
+  axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeName}/`)
+  .then(apiRes => {
+    let imgSrc = apiRes.data.sprites.front_shiny;
+    let types = apiRes.data.types[0].type.name
+    let height = apiRes.data.height
+    let weight = apiRes.data.weight
+    res.json({imgSrc})
+
+  })
+})

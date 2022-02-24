@@ -2,7 +2,7 @@ const db = require('./models');
 
 async function createPokemon() {
     try {
-      const newPokemon = await db.pokemon.create({ name: 'charizard' })
+      const newPokemon = await db.pokemon.create({ name: 'tortwig' })
       console.log('the new pokemon is:', newPokemon)
       const foundPokemon = await db.pokemon.findOne({
         where: {
