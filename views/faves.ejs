@@ -1,0 +1,9 @@
+<h2>Here is a list of your favorite pokemon</h2>
+<h4>Click them for more information!</h4>
+
+<ul>
+    <%favePokemon.forEach(elem=>{%>
+        <li><a href="pokemon/?name=<%=elem.name%>"><%=elem.name%></a></li>
+    <%})%>
+
+</ul>
