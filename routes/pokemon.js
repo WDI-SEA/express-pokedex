@@ -33,8 +33,6 @@ router.get('/:name', async (req, res)=>{
   } catch (error) {
     console.log(error)
   }
-
-  // res.send(`testing the pokemon info page for ${req.params.name}`)
 })
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
@@ -43,10 +41,10 @@ router.post('/', async (req, res) => {
     const addToPokedex = await db.pokemon.findOrCreate({
       where: {
         name: req.body.name
-      },
-      defaults: {
-        name: req.body.name
       }
+      // defaults: {
+      //   name: req.body.name
+      // }
     })
   } catch (error) {
     console.log(error)

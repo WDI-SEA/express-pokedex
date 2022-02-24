@@ -1,12 +1,14 @@
 // Make sure to require your models in the files where they will be used.
 const db = require('./models');
 
-db.pokemon.create({
-    name: 'pikachu'
-  }).then(poke => {
-    console.log('Created: ', poke.name)
-  })
+// CREATE
+// db.pokemon.create({
+//     name: 'pikachu'
+//   }).then(poke => {
+//     console.log('Created: ', poke.name)
+//   })
 
+// READ
 // db.pokemon.findOne({
 //   where: {
 //     name: 'pikachu'
