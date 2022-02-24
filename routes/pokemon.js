@@ -34,13 +34,15 @@ router.get('/:name', (req, res) =>{
   axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeName}`)
     .then(apiRes =>{
       let imgSrc = apiRes.data.sprites.front_shiny
-      let type = apiRes.data.types[0].type.name
+      let types = apiRes.data.types[0].type.name
       let height = apiRes.data.height
       let weight = apiRes.data.weight
       res.render('pokemon/show', {
         name: pokeName,
-        
-
+        types,
+        height, 
+        weight,
+        imgSrc
       })
     })
 })
