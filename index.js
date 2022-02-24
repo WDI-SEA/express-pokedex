@@ -1,5 +1,5 @@
 const express = require('express');
-const axios = require('axios'); 
+const axios = require('axios');
 const ejsLayouts = require('express-ejs-layouts');
 
 const app = express();
@@ -11,7 +11,7 @@ app.use(ejsLayouts);
 
 // GET / - main index of site
 app.get('/', (req, res) => {
-  let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
+  let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon?limit=151';
   // Use request to call the API
   axios.get(pokemonUrl).then(apiResponse => {
     let pokemon = apiResponse.data.results;
@@ -23,5 +23,5 @@ app.get('/', (req, res) => {
 app.use('/pokemon', require('./routes/pokemon'));
 
 app.listen(port, () => {
-  console.log('...listening on', port );
+  console.log('...listening on', port);
 });

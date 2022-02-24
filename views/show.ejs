@@ -1,0 +1,24 @@
+<div class="well text-center">
+    <h1>
+        <%= pokemon.name %>
+    </h1>
+
+    <img src="<%= pokemon.sprites.front_default %>" style="width: 10%; height: 10%;" />
+
+    <h2>Abilities:</h2>
+    <% pokemon.abilities.forEach(element=> { %>
+        <h3 style="display: inline;">
+            [<%= element.ability.name%>]
+        </h3>
+        <% }) %>
+
+            <h2>Pokemon Type:</h2>
+            <% pokemon.types.forEach(element=> { %>
+                <h3 style="display: inline;">
+                    [<%= element.type.name %>]
+                </h3>
+                <% }) %>
+
+
+
+</div>
