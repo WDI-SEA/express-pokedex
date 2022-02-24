@@ -4,19 +4,27 @@ const ejsLayouts = require('express-ejs-layouts');
 
 const app = express();
 const port = process.env.PORT || 3000;
+const db = require("./models")
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 
 // GET / - main index of site
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
   let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
   // Use request to call the API
-  axios.get(pokemonUrl).then(apiResponse => {
-    let pokemon = apiResponse.data.results;
-    res.render('index', { pokemon: pokemon.slice(0, 151) });
-  })
+  // axios.get(pokemonUrl).then(apiResponse => {
+  //   let pokemon = apiResponse.data.results;
+  //   res.render('index', { pokemon: pokemon.slice(0, 151) });
+  // })
+  try {
+    const apiResponse = await axios.get(pokemonUrl)
+    const pokemon = apiResponse.data.results
+    res.render("index", {pokemon: pokemon.slice(0, 151)})
+  } catch(error){
+    console.log(error)
+  }
 });
 
 // Imports all routes from the pokemon routes file
