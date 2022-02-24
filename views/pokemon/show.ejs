@@ -1,0 +1,16 @@
+<h1 class="text-center"><%= pokemonDetails.name %></h1>
+<h1 class="text-center">
+    <img src=" <%= pokemonDetails.sprites.front_default %>" />
+</h1>
+
+<p class="text-center">
+    type: <%= pokemonDetails.types[0].type.name %>
+</p>
+
+<p class="text-center">
+    ability: <%= pokemonDetails.abilities[0].ability.name %>
+</p>
+
+<p class="text-center">
+    pokedex #: <%= pokemonDetails.id %>
+</p>
