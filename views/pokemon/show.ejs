@@ -1,0 +1,23 @@
+<h1>Individual Pokemon Info Page</h1>
+
+<img src="<%= image %> " alt="">
+<h4>Name: <%= name %> </h4>
+<h4>Height: <%= height %> </h4>
+<h4>Weight: <%= weight %> </h4>
+<h4>Types</h4>
+    <ul>
+        <% types.forEach(el => { %>
+            <li>
+                <%= el.type.name %> 
+            </li>
+        <% }) %>
+    </ul> 
+
+<h4>Abilities</h4>
+    <ul>
+        <% abilities.forEach(el => { %>
+            <li>
+                <%= el.ability.name %> 
+            </li>
+        <% }) %>
+    </ul>  

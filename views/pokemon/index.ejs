@@ -1,0 +1,16 @@
+<h1>Your Pokedex</h1>
+
+<ul>
+    
+    <% displayPokedex.forEach(pokemon => { %>
+        <li>
+            <%= pokemon.dataValues.name %>
+            <a href="/pokemon/<%= pokemon.dataValues.name %> ">More Info</a>
+            <!-- <form action="/pokemon/:name" method="get">
+                <input hidden type="text" name="pokemon" value="<%= pokemon.dataValues.name %> ">
+                <input type="submit" value="More Info">
+            </form> -->
+        </li>
+    <% }) %> 
+
+</ul>
