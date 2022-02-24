@@ -2,9 +2,11 @@ const express = require('express');
 const axios = require('axios'); 
 const ejsLayouts = require('express-ejs-layouts');
 
+// MAKE AN INSTANCE OF EXPRESS
 const app = express();
 const port = process.env.PORT || 3000;
 
+//MIDDLEWARE
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
@@ -15,7 +17,7 @@ app.get('/', (req, res) => {
   // Use request to call the API
   axios.get(pokemonUrl).then(apiResponse => {
     let pokemon = apiResponse.data.results;
-    res.render('index', { pokemon: pokemon.slice(0, 151) });
+    res.render('index', { pokemon: pokemon.slice(0, 151) }); // the slice method shows us we are working with an array.
   })
 });
 

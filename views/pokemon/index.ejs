@@ -1,0 +1,10 @@
+<!-- retrieve all fave pkmn and display on page -->
+<h2>My Fave Pokemon</h2>
+
+<p>All of my Faves</p>
+
+<ul>
+    <% favePokes.forEach(favePokemon => { %>
+       <li><a href="/pokemon/<%= pokemon.name%>"> <%= favePokemon.name %> </a></li>
+   <% })%>
+</ul>
