@@ -12,7 +12,7 @@
   
       <% pokemon.forEach(function(pokemon) { %>
       <div class="item-list">
-        <a href="/<%= pokemon.name %>"><%= pokemon.name %></a>        
+        <a href="/<%= pokemon.name %>"><%= pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) %></a>        
       </div>
       <%})%>
     </div>

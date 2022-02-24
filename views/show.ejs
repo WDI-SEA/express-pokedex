@@ -12,13 +12,14 @@
       Height : <%=pokeData.height/100%>m <br />
       Weight :<%=pokeData.weight/10%>kg <br />
       Abilities : <br />
+      <ul>
       <% pokeData.abilities.forEach(element => { %>
-      <%=element.ability.name%> <%=//element.ability.url%> 
+      <li><%=element.ability.name%> <%=//element.ability.url%> 
       <%if(element.is_hidden){%>
         (Hidden)
-      <%}%>
-      <br />
+      <%}%></li>      
       <% }) %> 
+    </ul>
 
       <br/>
       More details to be added in the future.

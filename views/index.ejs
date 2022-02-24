@@ -13,11 +13,11 @@
   <div>
     <% pokemon.results.forEach(function(pokemon) { %>
     <div class="item-list">
-      <%= pokemon.name %>
+      <a href="/<%=pokemon.name%>"><%= pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) %></a>
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>" />
         <button class="btn btn-primary" type="submit">
-          Add to Favorites ⭐
+          ⭐ Favorite
         </button>
       </form>
     </div>   
