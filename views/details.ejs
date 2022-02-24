@@ -1,0 +1,25 @@
+
+<h1><%= details.name.toUpperCase() %></h1>
+
+<h3>Weight: <%= details.weight %></h3>
+
+<h3>Abilities:</h3>
+<ul>
+    <% details.abilities.forEach(element => { %>
+        <li> <%= element.ability.name %></li>
+    <% }) %>
+</ul>
+
+<h3>Type(s):</h3>
+<ul>
+    <% details.types.forEach(element => { %>
+        <li> <%= element.type.name %></li>
+    <% }) %>
+</ul>
+
+<h3>Stats:</h3>
+<ul>
+    <% details.stats.forEach(element => { %>
+        <li> <%= element.stat.name %>: <%= element.base_stat %></li>
+    <% }) %>
+</ul>
