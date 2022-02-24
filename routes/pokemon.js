@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const db = require('../models');
+const pokemon = require('../models/pokemon');
 
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', (req, res) => {
@@ -8,9 +10,21 @@ router.get('/', (req, res) => {
 });
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
-router.post('/', (req, res) => {
-  // TODO: Get form data and add a new record to DB
-  res.send(req.body);
+router.post('/', async (req, res) => {
+  try {
+    const addToPokedex = await db.pokemon.findOrCreate({
+      where: {
+        name: req.body.name
+      },
+      defaults: {
+        name: req.body.name
+      }
+    })
+    console.log(addToPokedex)
+  } catch (error) {
+    console.log(error)
+  }
+  res.redirect('/pokemon');
 });
 
 module.exports = router;
