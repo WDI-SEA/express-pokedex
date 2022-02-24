@@ -1,0 +1,26 @@
+<h1 class="details">
+    <%= pokemonDetails.name.toUpperCase() %>
+</h1>
+
+<img class="details" src="<%= pokemonDetails.sprites.front_default %>" alt="<%= pokemonDetails.front %>" width="500">
+<img src="<%= pokemonDetails.sprites.back_default %>" alt="<%= pokemonDetails.back %>" width="'500">
+
+<h3 class="details">
+    Type: <%= pokemonDetails.types[0].type.name %>
+</h3>
+
+<h3 class="details">
+    Height: <%= pokemonDetails.height %> 
+</h3>
+
+<h3 class="details">
+    Weight: <%= pokemonDetails.weight %> 
+</h3>
+
+<h3 class="details">
+    Ability: <%= pokemonDetails.abilities[0].ability.name %> 
+</h3>
+
+<h3 class="details">
+    Move: <%= pokemonDetails.moves[0].move.name %> 
+</h3> 
