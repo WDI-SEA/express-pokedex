@@ -1,1 +1,15 @@
-<h1><%=pokemon.name%></h1>
+<h1>Pokemon Information</h1>
+
+<h3><%=pokemon.name%></h3>
+<img src=" <%= pokemon.sprites.front_default %>" />
+
+<ul>
+    <li>Type: <%= pokemon.types[0].type.name %></li>
+    <li>Height: <%=pokemon.height%> </li>
+    <li>Id: <%=pokemon.id%> </li>
+     <% for (let i=0;i<pokemon.abilities.length;i++){%>
+        <li>Ability: <%=pokemon.abilities[i].ability.name%>  </li>
+    <%}%>
+
+
+</ul>

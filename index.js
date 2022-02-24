@@ -44,12 +44,9 @@ app.post('/pokemon', async (req,res)=>{
 
 app.get('/pokemon/:name',async (req,res)=>{
   try {
-    let pokemonUrl = await axios.get('http://pokeapi.co/api/v2/pokemon/')
-    // console.log(req.params.name)
-    let pokemon = pokemonUrl.data.results
-    pokemon[req.params] = req.body.name
-
-    res.render('pokemon/show.ejs', {pokemon: pokemon})
+    let pokemonUrl = await axios.get(`http://pokeapi.co/api/v2/pokemon/${req.params.name}`)
+    let pokemon = pokemonUrl.data
+    res.render('pokemon/show.ejs', {pokemon: pokemon}) 
   } catch (error){
     console.log(error)
     

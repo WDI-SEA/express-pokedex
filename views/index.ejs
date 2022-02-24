@@ -10,6 +10,9 @@
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
         <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>
+        <div>
+        <a href="/pokemon/<%= pokemon.name %>">Show Details</a>
+        </div>
       </form>
     </div>
   <% }); %>

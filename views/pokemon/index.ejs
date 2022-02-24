@@ -9,6 +9,7 @@
       <h2><%= pokemon.name %></h2>
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
+        <a href="/pokemon/<%= pokemon.name %>">Show Details</a>
       </form>
     </div>
   <% }); %>
