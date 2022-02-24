@@ -17,8 +17,14 @@ div.header {
   display: flex;
   justify-content: center;
   padding: 5px 0px 10px 0px;
-  color: rgba(53, 106, 188, 255);
+  color: rgba(53, 106, 188, 1);
   font-weight: 600;
+  width: 60vw;
+  max-width: 800px;
+}
+.center {
+  display: flex;
+  justify-content: center;
 }
 img {
   height: 100%;
@@ -44,13 +50,13 @@ a {
   padding: 10px;
   text-decoration: none;
   font-weight: 600;
-  color: rgba(53, 106, 188, 255);
+  color: rgba(53, 106, 188, 1);
 }
 a:visited {
-    color: rgba(53, 106, 188, 255);
+    color: rgba(53, 106, 188, 1);
 }
 a:hover {
-    color: rgba(20,114,71,255);
+    color: rgba(20,114,71,1);
 }
 .nav {
   border: 1px solid #ccc;
