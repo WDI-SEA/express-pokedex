@@ -1,9 +1,9 @@
 // Make sure to require your models in the files where they will be used.
 const db = require('./models');
 
-db.pokemon.create({
+db.pokemon.create({    //db.model.create
     name: 'pikachu'
-  }).then(poke => {
+  }).then(poke => { ///.then to take results of promise 
     console.log('Created: ', poke.name)
   })
 
