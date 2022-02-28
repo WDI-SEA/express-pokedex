@@ -1,25 +1,31 @@
 const express = require('express');
 const axios = require('axios'); 
 const ejsLayouts = require('express-ejs-layouts');
+const methodOverride = require('method-override');
 
 const app = express();
 const port = process.env.PORT || 3000;
 
+// MIDDLEWARES
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
+app.use(methodOverride('_method'));
 
+// HOME ROUTE --all the pokemon
 // GET / - main index of site
 app.get('/', (req, res) => {
   let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
   // Use request to call the API
   axios.get(pokemonUrl).then(apiResponse => {
     let pokemon = apiResponse.data.results;
+    // index.ejs in views
     res.render('index', { pokemon: pokemon.slice(0, 151) });
   })
 });
 
-// Imports all routes from the pokemon routes file
+// CONTROLLERS
+// Imports all routes from the pokemon routes file -pokemon.js in routes
 app.use('/pokemon', require('./routes/pokemon'));
 
 app.listen(port, () => {

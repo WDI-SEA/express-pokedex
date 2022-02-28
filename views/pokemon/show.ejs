@@ -1,0 +1,11 @@
+
+<div class="container">
+    <img src="<%= src %>" />
+    <p>Height: <%= height %></p>
+    <p>Weight: <%= weight %></p>
+    <p>Type: <%= types %></p>
+    <form method="POST" action="/pokemon/<%= pokeName %>?_method=DELETE">
+        <input hidden type="text" name="name" value="<%= pokeName %>">
+        <button class="btn btn-danger" type="submit">Delete Me</button>
+    </form>
+</div>

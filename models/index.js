@@ -35,3 +35,4 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 module.exports = db;
+// db run all seqelized methods and goes into db-test.js
