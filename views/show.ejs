@@ -1,0 +1,31 @@
+<div class="container">
+  <a href="/pokemon">My Favorites</a>
+  <ul class="nav">
+    <li><a href="/">Go back to Pokemon list</a></li>
+  </ul>
+  <div>
+    <div class="item-list">
+      <div class="img-holder"><img src="<%=pokeData.sprites.other.dream_world.front_default%>" /></div>
+      <div class="text-holder">
+      Pokemon : <%=pokeData.name%> <br />
+      ID : <%=pokeData.id%> <br />
+      Height : <%=pokeData.height/100%>m <br />
+      Weight :<%=pokeData.weight/10%>kg <br />
+      Abilities : <br />
+      <ul>
+      <% pokeData.abilities.forEach(element => { %>
+      <li><%=element.ability.name%> <%=//element.ability.url%> 
+      <%if(element.is_hidden){%>
+        (Hidden)
+      <%}%></li>      
+      <% }) %> 
+    </ul>
+
+      <br/>
+      More details to be added in the future.
+      <a href="https://pokeapi.co/api/v2/characteristic/<%=pokeData.id%>"
+        target="_blank">Characteristics</a>
+    </div>
+    </div>
+  </div>
+</div>

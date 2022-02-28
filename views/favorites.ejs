@@ -1,0 +1,20 @@
+<div class="container">
+    <a href="/pokemon">My Favorites</a>
+    <ul class="nav">    
+      <li><a href="/">Go back to Pokemon list</a></li>
+    </ul>
+  
+    <div>
+     
+      <p class="text-center">
+       
+      </p>
+  
+      <% pokemon.forEach(function(pokemon) { %>
+      <div class="item-list">
+        <a href="/<%= pokemon.name %>"><%= pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) %></a>        
+      </div>
+      <%})%>
+    </div>
+  </div>
+  
