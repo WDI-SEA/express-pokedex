@@ -10,6 +10,9 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 
+// Imports all routes from the pokemon routes file
+app.use('/pokemon', require('./routes/pokemon'));
+
 // GET / - main index of site
 app.get('/', (req, res) => {
   let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
@@ -20,8 +23,6 @@ app.get('/', (req, res) => {
   })
 });
 
-// Imports all routes from the pokemon routes file
-app.use('/pokemon', require('./routes/pokemon'));
 
 app.listen(port, () => {
   console.log('...listening on', port );

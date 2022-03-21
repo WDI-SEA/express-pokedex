@@ -6,6 +6,6 @@
 
 <ul>
     <% favePokes.forEach(pokemon => { %>
-     <li><%= pokemon.name %></li>
+     <li><a href ="/pokemon/<%= pokemon.name %>"><%= pokemon.name %></a></li>
     <% }) %>
 </ul>
