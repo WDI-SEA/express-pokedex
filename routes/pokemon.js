@@ -23,6 +23,15 @@ router.post('/', async (req, res) => {
   // redirect to show all fave -- does not exist yet
   res.redirect('/pokemon')
 })
+router.get('/:name', (req, res) => {
+  const pokemon = req.params.name
+  const pokeDeets = `https://pokeapi.co/api/v2/pokemon/${pokemon}`
+  axios.get(pokeDeets)
+    .then(response => {
+      res.render('pokemon/show.ejs', { pokeStats: response.data })
+    })
+    .catch(console.log)
+})
 
 
 module.exports = router;

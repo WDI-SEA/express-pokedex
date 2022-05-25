@@ -19,15 +19,6 @@ app.get('/', (req, res) => {
     res.render('index', { pokemon: pokemon.slice(0, 151) });
   })
 });
-app.get('/:name', (req, res) => {
-  const 
-  axios.get(`http://www.omdbapi.com/?i=${req.params.id}&apikey=${process.env.OMDB_API_KEY}`)
-    .then(response => {
-      res.render('detail.ejs', { movie: response.data })
-    })
-    .catch(console.log)
-})
-
 
 // Imports all routes from the pokemon routes file
 app.use('/pokemon', require('./routes/pokemon'));
