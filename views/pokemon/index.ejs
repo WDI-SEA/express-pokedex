@@ -3,6 +3,9 @@
   <% pokemon.forEach(poke => { %>
   <li>
     <a href="/pokemon/<%= poke.name %>"><%= helper.capitalize(poke.name) %></a>
+    <form action="/pokemon/<%= poke.name %>?_method=DELETE" method="post">
+      <button type="submit">Remove favorite</button>
+    </form>
   </li>
   <% }) %>
 </ul>

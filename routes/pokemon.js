@@ -42,4 +42,19 @@ router.get("/:name", async (req, res) => {
   }
 })
 
+router.delete("/:name", async (req, res) => {
+  try {
+    const name = req.params.name
+    const pokemon = await db.pokemon.findOne({
+      where: {
+        name,
+      },
+    })
+    pokemon.destroy()
+    res.redirect("/pokemon")
+  } catch (err) {
+    console.error("Error deleting pokemon", err)
+  }
+})
+
 module.exports = router
