@@ -1,0 +1,21 @@
+<h1>You are looking at <%=name%></h1>
+
+<h4>Details about this pokemon</h4>
+<p>Pokemon abilities:</p>
+<ul>
+<% pokemonData.data.abilities.forEach(ability => { %>
+    <li><%=ability.ability.name%></li>
+<%})%>
+</ul>
+
+<p>Base experience is: <%= pokemonData.data.base_experience %></p>
+
+<p>Height: <%=pokemonData.data.height%> in</p>
+
+<p>What type is this Pokemon?</p>
+<ul>
+<% pokemonData.data.types.forEach(type => { %>
+    <li><%=type.type.name%></li>
+<%})%>
+</ul>
+
