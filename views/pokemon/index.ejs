@@ -1,11 +1,14 @@
-<h1>My Favorite Pokemon</h1>
-<ul>
+<div class="container">
+
+
+<h1 class="text-center">My Favorite Pokemon</h1>
   <% pokemon.forEach(poke => { %>
-  <li>
-    <a href="/pokemon/<%= poke.name %>"><%= helper.capitalize(poke.name) %></a>
-    <form action="/pokemon/<%= poke.name %>?_method=DELETE" method="post">
-      <button type="submit">Remove favorite</button>
-    </form>
-  </li>
+    <div class="well">
+      <h2><a href="/pokemon/<%= poke.name %>"><%= helper.capitalize(poke.name) %></a></h2>
+      <form action="/pokemon/<%= poke.name %>?_method=DELETE" method="post">
+        <button type="submit" class="btn btn-danger">Remove favorite</button>
+      </form>
+    </div>
   <% }) %>
 </ul>
+</div>

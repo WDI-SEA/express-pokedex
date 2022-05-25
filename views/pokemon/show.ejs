@@ -1,15 +1,17 @@
-<h1><%= helper.capitalize(name) %></h1>
-<img src="<%= imgUrl %>" alt="<%= name %> sprite" />
+<div class="container">
+  <h1><%= helper.capitalize(name) %></h1>
+  <img src="<%= imgUrl %>" alt="<%= name %> sprite" />
 
-<ul>
-  <li>Height: <%= height %></li>
-  <li>Weight: <%= weight %></li>
-  <li>
-    Stats:
-    <ul>
-      <% stats.forEach(stat => { %>
-      <li><%= stat.name %>: <%= stat.amount %></li>
-      <% }) %>
-    </ul>
-  </li>
-</ul>
+  <ul>
+    <li><strong>Height:</strong> <%= height %></li>
+    <li><strong>Weight:</strong> <%= weight %></li>
+    <li>
+      <strong>Stats:</strong>
+      <ul>
+        <% stats.forEach(stat => { %>
+        <li><strong><%= stat.name %>:</strong> <%= stat.amount %></li>
+        <% }) %>
+      </ul>
+    </li>
+  </ul>
+</div>
