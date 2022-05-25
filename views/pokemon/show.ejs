@@ -1,0 +1,23 @@
+<h1><%= name %> </h1>
+<img src="<%= img_url %> " alt="">
+
+<h2>Abilities:</h2>
+<ul>
+    <% abilities.forEach(ability =>{ %>
+    <li><%= ability.ability.name %> </p>
+<% }) %>  
+</ul>
+
+<h2>Moves</h2>
+<ul>
+    <% moves.slice(0,5).forEach(move =>{ %>
+    <li><%= move.move.name %> </p>
+<% }) %>  
+</ul>
+
+<h2>Stats:</h2>
+<ul>
+    <% stats.forEach(stat =>{ %>
+    <li><%= stat.stat.name %> : <%= stat.base_stat %> </p>
+<% }) %>  
+</ul>

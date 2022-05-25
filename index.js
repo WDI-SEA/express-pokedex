@@ -2,8 +2,9 @@ const express = require('express');
 const axios = require('axios'); 
 const ejsLayouts = require('express-ejs-layouts');
 
+
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
@@ -18,6 +19,7 @@ app.get('/', (req, res) => {
     res.render('index', { pokemon: pokemon.slice(0, 151) });
   })
 });
+
 
 // Imports all routes from the pokemon routes file
 app.use('/pokemon', require('./routes/pokemon'));
