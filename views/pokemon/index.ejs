@@ -1,0 +1,6 @@
+<% allFaves.forEach((fave, index) => { %>
+<a href="/pokemon/<%= fave.name %>"><h2><%= fave.name.toUpperCase() %></h2></a>
+<form action="/pokemon/<%= fave.name %>/?_method=DELETE" method="post">
+  <button type="submit">Remove from Favorite</button>
+</form>
+<% }) %>

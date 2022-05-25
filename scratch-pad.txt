@@ -1,0 +1,5 @@
+table: fave
+
+pokemon: VARCHAR
+
+sequelize model:create --name pokemon --attributes name:string

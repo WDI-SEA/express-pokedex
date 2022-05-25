@@ -1,0 +1,13 @@
+<h1><%= name.toUpperCase() %></h1>
+
+<img src="<%= sprites.front_default %>" alt="<%= name %>" />
+
+<h2>ABILITIES</h2>
+<% abilities.forEach(ability => { %>
+<h3><%= ability.ability.name %></h3>
+<% }) %>
+
+<h2>TYPES</h2>
+<% types.forEach(pokeType => { %>
+<p><%= pokeType.type.name %></p>
+<% }) %>
