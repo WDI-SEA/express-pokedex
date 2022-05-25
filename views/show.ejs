@@ -1,0 +1,32 @@
+
+
+<a href="/pokemon">Return to Favorites</a>
+
+<h1><%=name%></h1>
+
+<p>Height: <%=pokemon.height%></p>
+<p>Base Experience: <%=pokemon.base_experience%></p>
+
+<h4>Type:</h4>
+<ul>
+    <% let pokemonType = pokemon.types %>
+    <% pokemonType.forEach(function(type){ %>
+        <li><%=type.type.name%></li>
+    <%})%>
+</ul>
+
+<h4>Abilities:</h4>
+<ul>
+    <% let pokemonAbilities = pokemon.abilities%>
+    <% pokemonAbilities.forEach(function(ability){%>
+        <li><%=ability.ability.name%></li>
+    <%})%>
+</ul>
+
+<h4>Moves:</h4>
+<ul>
+    <% let pokemonMoves = pokemon.moves%>
+    <% pokemonMoves.forEach(function(moves){%>
+        <li><%=moves.move.name%></li>
+    <%})%>
+</ul>
