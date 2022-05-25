@@ -1,0 +1,7 @@
+<% myPokemon.forEach(pokemon => {%>
+    <h2><%= pokemon.name %></h2>
+    <form method="GET" action="/pokemon/<%=pokemon.name%>">
+        <a href="/pokemon/<%= pokemon.name%>">show</a>
+    </form>
+    
+<%})%>
