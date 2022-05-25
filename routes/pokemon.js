@@ -2,12 +2,13 @@ const express = require("express")
 const router = express.Router()
 const db = require("../models")
 const axios = require("axios")
+const helper = require("../views/helper.js")
 
 // GET /pokemon - return a page with favorited Pokemon
 router.get("/", async (req, res) => {
   // TODO: Get all records from the DB and render to view
   const pokemon = await db.pokemon.findAll()
-  res.render("pokemon/index", { pokemon })
+  res.render("pokemon/index", { pokemon, helper })
   // res.send("Render a page of favorites here")
 })
 
@@ -35,8 +36,7 @@ router.get("/:name", async (req, res) => {
       return { name, amount }
     })
 
-    res.render("pokemon/show", { name, imgUrl, height, weight, stats })
-    res.json(pokemon)
+    res.render("pokemon/show", { name, imgUrl, height, weight, stats, helper })
   } catch (err) {
     console.error("error fetching pokemon", err)
   }
