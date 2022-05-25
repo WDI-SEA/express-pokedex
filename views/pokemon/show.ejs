@@ -1,0 +1,24 @@
+<h1><%= pokeStats.name %> </h1>
+
+<img src="<%= pokeStats.sprites.front_default %> "/>
+<h3>Height: <%= pokeStats.height %> </h3>
+<h3>Weight: <%= pokeStats.weight %> </h3>
+<h3>Types: </h3>
+<ul> 
+    <% pokeStats.types.forEach((type) =>{ %>
+        <li> <%= type.type.name %> </li>
+      <% }) %> 
+</ul> 
+<h3>Abilities</h3>
+<ul>
+    <% pokeStats.abilities.forEach((ability) => { %>
+        <li><%= ability.ability.name %> </li>
+    <% }) %> 
+</ul>
+<h3>Moves</h3>
+<ul>
+    <% pokeStats.moves.forEach((move) => { %>
+        <li><%= move.move.name %> </li>
+    <% }) %> 
+</ul>
+<a href="/pokemon">Back</a>

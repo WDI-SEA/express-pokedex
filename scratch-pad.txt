@@ -1,0 +1,5 @@
+#db : pokedex{
+    name: varcahr
+}
+
+sequelize model:create --name pokemon --attributes name:string
