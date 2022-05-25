@@ -1,16 +1,54 @@
 const express = require('express');
+const db = require('../models')
 const router = express.Router();
+const axios = require('axios'); 
 
-// GET /pokemon - return a page with favorited Pokemon
-router.get('/', (req, res) => {
-  // TODO: Get all records from the DB and render to view
-  res.send('Render a page of favorites here');
-});
+router.get('/', async (req, res) => {
+    
+    //get all faves from db
+    const allPokemon = await db.pokemon.findAll()
+    //render faves page
+    res.render('pokemon.ejs', { allPokemon })
+})
 
-// POST /pokemon - receive the name of a pokemon and add it to the database
-router.post('/', (req, res) => {
-  // TODO: Get form data and add a new record to DB
-  res.send(req.body);
-});
+//POST /faves -- CREATE new fave
+router.post('/', async (req, res) => {
+  // console.log(req.body)
+  //create new fave in db
+  // await db.fave.create(req.body) 
+  await db.pokemon.create({//more specific
+    name: req.body.name
+  }) 
+  //redirect to show all faves -- does not exist yet
+  res.redirect('/pokemon')
+})
+
+router.get("/:name", async function(req,res){
+  try {
+    const pokemonUrl = `http://pokeapi.co/api/v2/pokemon/${req.params.name}`;
+    // Use request to call the API
+    const pokemon = await axios.get(pokemonUrl)
+      res.render('show.ejs',{
+        name: req.params.name,
+        pokemon: pokemon.data
+    })
+  } catch (err) {
+    console.warn(err)
+  }
+}) 
+
+router.delete("/:name", async function(req,res){
+  try{
+    const delPoke = await db.pokemon.findOne({
+      where:{
+        name: req.params.name
+      }
+    })
+    await delPoke.destroy()
+    res.redirect("/pokemon")
+  } catch(err){
+    console.warn(err)
+  }
+})
 
 module.exports = router;

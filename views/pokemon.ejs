@@ -1,0 +1,13 @@
+<h1>Favorite Pokemon</h1>
+
+<ul>
+    <%allPokemon.forEach(function(pokemon){%>
+        <li><a href="/pokemon/<%=pokemon.name%>"><%=pokemon.name%></a>
+        <form method="POST" action="/pokemon/<%=pokemon.name%>?_method=DELETE">
+            <button type="submit">Delete</button>
+        </form>
+        </li>
+    <%})%>
+</ul>
+
+<a href="/">Return to Pokemon Home</a>

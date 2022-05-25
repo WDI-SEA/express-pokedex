@@ -1,10 +1,12 @@
 const express = require('express');
 const axios = require('axios'); 
 const ejsLayouts = require('express-ejs-layouts');
+// const methodOverride = require("method-override")
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3100;
 
+// app.use(methodOverride("_method"))
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
@@ -21,6 +23,7 @@ app.get('/', (req, res) => {
 
 // Imports all routes from the pokemon routes file
 app.use('/pokemon', require('./routes/pokemon'));
+
 
 app.listen(port, () => {
   console.log('...listening on', port );

@@ -1,0 +1,20 @@
+model/table name: pokemon
+
+name: VARCHAR
+
+
+sequelize cli command:
+# sequelize model:create --name 'table name singular' --attributes colName:TYPE,colName:TYPE
+sequelize model:create --name pokemon --attributes name:string
+
+
+SEQUELIZE SETUP STEPS
+
+(project from scratch)
+0. install sequelize and pg packages
+1. sequelize init -- creates config json and model/migration folders
+2. update config.json with dialect and db name
+(start here if working with a cloned project)
+3. create the db `createdb dbname`
+4. create models with sequelize model:create
+5. migrate models with sequelize db:migrate
