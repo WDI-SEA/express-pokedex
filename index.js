@@ -1,7 +1,7 @@
 const express = require('express');
 const axios = require('axios'); 
 const ejsLayouts = require('express-ejs-layouts');
-
+const db = require("./models");
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -20,7 +20,15 @@ app.get('/', (req, res) => {
 });
 
 // Imports all routes from the pokemon routes file
-app.use('/pokemon', require('./routes/pokemon'));
+app.get('/pokemon', require('./routes/pokemon'));
+
+app.get("/pokemon", async (req, res) => {
+
+});
+
+
+
+
 
 app.listen(port, () => {
   console.log('...listening on', port );
