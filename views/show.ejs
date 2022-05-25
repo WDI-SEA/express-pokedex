@@ -1,0 +1,16 @@
+<ul>
+    <li><%=pokemon.name%></li>
+    <li>PokemonID: <%=pokemon.id%></li>
+    <li>Height: <%=pokemon.height%></li>
+    <li>Weight: <%=pokemon.weight%></li>
+    <h2>Abilities</h2>
+    <% pokemon.abilities.forEach(ability => {%>
+        <li><%=ability.ability.name%></li>
+    <%})%>
+
+    <h2>Moves</h2>
+    <% pokemon.moves.forEach(move => {%>
+        <li><%=move.move.name%></li>
+    <%})%>
+    
+</ul>
