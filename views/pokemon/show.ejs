@@ -1,0 +1,15 @@
+<h1><%= name %></h1>
+<img src="<%= imgUrl %>" alt="<%= name %> sprite" />
+
+<ul>
+  <li>Height: <%= height %></li>
+  <li>Weight: <%= weight %></li>
+  <li>
+    Stats:
+    <ul>
+      <% stats.forEach(stat => { %>
+      <li><%= stat.name %>: <%= stat.amount %></li>
+      <% }) %>
+    </ul>
+  </li>
+</ul>

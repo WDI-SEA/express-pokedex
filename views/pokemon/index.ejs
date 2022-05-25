@@ -1,5 +1,5 @@
 <ul>
   <% pokemon.forEach(poke => { %>
-  <li><%= poke.name %></li>
+  <li><a href="/pokemon/<%= poke.name %>"><%= poke.name %></a></li>
   <% }) %>
 </ul>
