@@ -1,0 +1,7 @@
+<a href="/">Home</a>
+<% pokeBowl.forEach(pokemon => { %>
+    <h2><a href='/pokemon/<%= pokemon.name %>'><%= pokemon.name %></a></h2>
+    <form method="POST" action="/pokemon/<%= pokemon.name %>/?_method=DELETE">
+        <button type="submit">Delete!</button>
+    </form>
+<% }) %>
