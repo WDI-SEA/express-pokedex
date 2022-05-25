@@ -1,5 +1,5 @@
 const express = require('express');
-const axios = require('axios'); 
+const axios = require('axios');
 const ejsLayouts = require('express-ejs-layouts');
 
 const app = express();
@@ -21,6 +21,20 @@ app.get('/', (req, res) => {
 
 // Imports all routes from the pokemon routes file
 app.use('/pokemon', require('./routes/pokemon'));
+
+
+
+
+
+// app.post('/views/pokemon/index.ejs', async (req, res) => {
+//   console.log(req.body)
+//   await db.fave.create({
+//     title: req.body.title,
+//     imdbid: req.body.imdbid
+//   })
+//   res.redirect('/faves')
+// })
+
 
 app.listen(port, () => {
   console.log('...listening on', port );
