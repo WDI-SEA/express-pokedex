@@ -1,0 +1,22 @@
+<h1><strong>Hello,</strong> <%= pokemon.name %> </h1><hr>
+
+<div class="red">
+    <p><strong>Abilities:</strong></p> <% pokemon.abilities.forEach(ability => { %>
+    <p><%=ability.ability.name%></p> 
+
+ <%})%></br>
+</div>
+ <div class="red">
+ <p><strong>Height: </strong><%= pokemon.height%></p></br>
+</div>
+ <div class="red">
+ <p><strong>Weight: </strong><%= pokemon.weight%></p></br>
+</div>
+ <div class="red">
+ <p class="moves"><strong>Moves: </strong></br> <% pokemon.moves.forEach(move => { %>
+    <%=move.move.name%>,
+
+ <%})%>
+    </p>
+</div>
+</br>

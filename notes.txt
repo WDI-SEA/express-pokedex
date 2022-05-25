@@ -1,0 +1,6 @@
+Pokedex table 
+
+pokemon
+name: CHARVAR
+
+sequelize model:create --name pokemon --attributes name:string

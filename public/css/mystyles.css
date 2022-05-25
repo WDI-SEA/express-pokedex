@@ -1,0 +1,38 @@
+body {
+    background: blue;
+    color: yellow;
+    text-align: center;
+    margin: 0 50px 0 50px;
+}
+.well {
+    background-color: red;;
+}
+
+a {
+    color: white;
+}
+.btn {
+    color: yellow;
+}
+
+ul {
+    position:relative;
+    display: inline-block;  
+    list-style: none;
+    width:100%;
+    text-align: center;
+    margin: auto;
+    padding: 0;
+    color: yellow;
+}
+li > a {
+    color: yellow;
+    text-decoration: underline;
+}
+
+
+.red {
+    background-color: red;
+    border: 5px solid black;
+    margin-top: 20px
+}
