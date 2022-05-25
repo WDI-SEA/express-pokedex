@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post("/", async (req, res) => {
   // TODO: Get form data and add a new record to DB
-  await db.pokemon.create(req.body)
+  await db.pokemon.findOrCreate({ where: { name: req.body.name } })
   res.redirect("/pokemon")
 })
 
