@@ -3,5 +3,8 @@
     <form method="GET" action="/pokemon/<%=pokemon.name%>">
         <a href="/pokemon/<%= pokemon.name%>">show</a>
     </form>
+    <form method="POST" action="/pokemon/?_method=DELETE">
+        <button type="submit">DELETE</button>
+    </form>
     
 <%})%>

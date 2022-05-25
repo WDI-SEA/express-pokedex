@@ -1,0 +1,12 @@
+<img src="<%= pokemon.sprites.front_default %>" />
+<h2>Name:<%=  pokemon.name %></h2>
+<ul><strong>Abilities:</strong> <%abilities.forEach(ability => {%>
+   <li><%= ability.ability.name %></li> 
+<%}) %></ul> 
+<ul><strong>stats: </strong><%stats.forEach(stat => {%>
+    <li><%= stat.stat.name %>: <%= stat.base_stat%></li> 
+ <%}) %></ul> 
+ <ul><strong>types:</strong> <%types.forEach(type => {%>
+    <li><%= type.type.name %></li> 
+ <%}) %></ul> 
+<p><%=  pokemon.attacks %></p>
