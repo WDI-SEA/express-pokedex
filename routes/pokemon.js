@@ -4,23 +4,30 @@ const router = express.Router();
 const axios = require('axios'); 
 
 router.get('/', async (req, res) => {
-    
+  try {
     //get all faves from db
     const allPokemon = await db.pokemon.findAll()
     //render faves page
     res.render('pokemon.ejs', { allPokemon })
+  } catch (err) {
+    console.warn(err)
+  } 
 })
 
 //POST /faves -- CREATE new fave
 router.post('/', async (req, res) => {
-  // console.log(req.body)
-  //create new fave in db
-  // await db.fave.create(req.body) 
-  await db.pokemon.create({//more specific
-    name: req.body.name
-  }) 
-  //redirect to show all faves -- does not exist yet
-  res.redirect('/pokemon')
+  try {
+    // console.log(req.body)
+    //create new fave in db
+    // await db.fave.create(req.body) 
+    await db.pokemon.create({//more specific
+      name: req.body.name
+    }) 
+    //redirect to show all faves -- does not exist yet
+    res.redirect('/pokemon')
+  } catch(err) {
+    console.warn(err)
+  }
 })
 
 router.get("/:name", async function(req,res){
