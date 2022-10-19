@@ -9,7 +9,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "ejs": "^2.6.1",
-    "express": "^4.16.4",
+    "express": "^4.18.2",
     "express-ejs-layouts": "^2.5.0"
   }
 }

@@ -11,6 +11,7 @@ app.use(ejsLayouts);
 
 // GET / - main index of site
 app.get('/', (req, res) => {
+  
   let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
   // Use request to call the API
   axios.get(pokemonUrl).then(apiResponse => {

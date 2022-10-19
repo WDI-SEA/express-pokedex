@@ -1,0 +1,14 @@
+<ul>
+
+<a href="/">Home</a>
+<p><%= pokemonDetail.name %></p>
+
+<img src="<%= pokemonDetail.sprites.front_default %>" alt="">
+
+<% pokemonDetail.stats.forEach(stat => { %>
+    <li>Base Stat: <%= stat.base_stat %></li>
+
+<% }) %>
+
+</ul>
+
