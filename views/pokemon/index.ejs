@@ -1,0 +1,12 @@
+<div class="container">
+  <h1 class="text-center">Current List of Favorite Pokemon</h1>
+  <p class="text-center">
+    <a href="/">Home</a>
+  </p>
+
+  <% pokemon.forEach(function(pokemon) { %>
+    <div class="well">
+      <h2><a href='/pokemon/<%= pokemon.name %>'><%= pokemon.name %></a></h2>
+    </div>
+  <% }); %>
+</div>

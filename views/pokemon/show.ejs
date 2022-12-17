@@ -1,0 +1,15 @@
+<div class="container">
+  <h1 class="text-center"><%= name[0].toUpperCase() + name.slice(1) %></h1>
+  <p class="text-center">
+    <a href="/">Home</a>
+  </p>
+  <h1>Base Experience: <%= pokemon.base_experience %></h1>
+  <h1>Height: <%= pokemon.height %></h1>
+  <h1>Pokedex #: <%= pokemon.id %></h1>
+  <h1>Abilities</h1>
+  <% pokemon.abilities.forEach(function(pokemon) { %>
+  <div class="well">
+    <h2><%= pokemon.ability.name %></h2>
+  </div>
+  <% }); %>
+</div>
