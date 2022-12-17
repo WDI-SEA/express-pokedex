@@ -1,0 +1,21 @@
+<%- include('./partials/header.ejs') %>
+<main class="min-vh-100">
+
+    <%pokemon.forEach(poke=>{%>
+
+
+
+
+        <!-- Start Card -->
+        <div class="card" style="width: 18rem;">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= poke.url%>.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><%= poke.name%></h5>
+                <p class="card-text"><%= poke.url.split('/')[-1]%></p>
+                <a href="#" class="btn btn-primary">Add To Favorites</a>
+            </div>
+        </div>
+        <!-- End Card -->
+    <%})%>
+</main>
+<%- include('./partials/footer.ejs') %>
