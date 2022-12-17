@@ -6,6 +6,7 @@ router.get('/', (req, res) => {
   // TODO: Get all records from the DB and render to view
   res.send('Render a page of favorites here');
 });
+// READ function to finAll favorited pokemon to display on the screen
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/', (req, res) => {
