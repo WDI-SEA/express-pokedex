@@ -7,7 +7,7 @@
   },
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.21.4",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "express-ejs-layouts": "^2.5.0",
@@ -15,7 +15,6 @@
     "sequelize": "^6.27.0"
   },
   "description": "Working with databases, especially through ORMs, can present quite a learning curve. We'll start by incorporating one database model into an application to save favorite Pokemon.",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/charleslamb212/express-pokedex.git"
