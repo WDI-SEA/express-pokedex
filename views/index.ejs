@@ -1,5 +1,5 @@
 <%- include('./partials/header.ejs') %>
-<h1 class="text-center ">Time For Pokemon</h1>
+<h1 class="text-center ">Choose Your Pokemon</h1>
 <main class="min-vh-100 d-flex flex-wrap justify-content-around gap-5">
     <%pokemon.forEach(poke=>{%>
 
@@ -12,7 +12,12 @@
             <div class="card-body">
                 <h5 class="card-title"><%= poke.name%></h5>
                 <p class="card-text"><%= poke.url.split('/').filter(c => !isNaN(c)&&c!=='')%></p>
-                <a href="#" class="btn btn-black">Add To Favorites</a>
+                <form action="/pokemon" method="POST">
+                    <input hidden value="<%=poke.name%>" type="text" name="name">
+                    <input hidden value="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= poke.url.split('/').filter(c => !isNaN(c)&&c!=='')%>.png" type="text" name="img_url">
+                    
+                    <button type='submit'>Add To Favorites</button>
+                </form>
             </div>
         </div>
         <!-- End Card -->

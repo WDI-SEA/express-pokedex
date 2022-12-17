@@ -1,0 +1,20 @@
+<%- include('./partials/header.ejs') %>
+<h1 class="text-center">Favorite Pokemon</h1>
+<main class="min-vh-100 d-flex flex-wrap min-vh-100 justify-content-around">
+  <%pokemon.forEach(poke=>{%>
+
+  <div class="card h-25" style="width: 18rem">
+    <img src="<%=poke.img_url%>" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title"><%=poke.name%></h5>
+    </div>
+    <div class="buttons-container d-flex justify-content-between">
+      <form action="/pokemon/<%=poke.name%>" method="GET">
+        <button type="submit">Stats</button>
+      </form>
+       
+    </div>
+  </div>
+  <%})%>
+</main>
+<%- include('./partials/footer.ejs') %>
