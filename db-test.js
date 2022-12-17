@@ -40,7 +40,7 @@ createPokemon()
 // //---CREATE POKEMON FUNCTION---
 // async function createPokemon(nameInput) {
 //     try{
-//         let findPokemon = await db.pokemon.findOrCreate({
+//         let findPokemon = await db.pokedex.findOrCreate({
 //             where: {
 //                 name: nameInput,
 //             }
@@ -55,7 +55,7 @@ createPokemon()
 // //---READ--- returns aray of pokemon
 // async function getAllPokemon() {
 //     try{
-//         const allPokemon = await db.pokemon.findAll()
+//         const allPokemon = await db.pokedex.findAll()
 //     } catch(error) {
 //         console.log(error.message)
 //     }
@@ -65,7 +65,7 @@ createPokemon()
 // //---UPDATE--- update pokemon
 // async function updatePokemon(idInput,nameInput) {
 //     try{
-//         const updatedPokemon = await db.pokemon.update(
+//         const updatedPokemon = await db.pokedex.update(
 //             {name: nameInput},
 //             {
 //                 where: {
@@ -81,7 +81,7 @@ createPokemon()
 // //---DELETE--- delete a pokemon
 // async function deletePokemon(idInput) {
 //     try{
-//         let deletedPokemon = await db.pokemon.destroy({
+//         let deletedPokemon = await db.pokedex.destroy({
 //             where: {
 //                 id: idInput,
 //             }
