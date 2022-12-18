@@ -47,6 +47,7 @@ router.get('/:name', async(req,res) => {
       pokemon: response.data,
       name: req.params.name
     })
+    // console.log(response.data)
   }catch(error){
     console.log('error', error)
     res.status(500).send('api error')
