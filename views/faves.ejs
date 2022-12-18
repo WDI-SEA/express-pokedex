@@ -1,5 +1,9 @@
 <h1>Favorite Pokemons:</h1>
 
-<% allPokemons.forEach(pokemon => { %>
+<ul>
+    <%allPokemons.forEach(pokemon => {%>
+        <li>
     <a href="/pokemon/<%=pokemon.name %>"><%=pokemon.name%></a>
-<%})%>
+    </li></br>
+    <%})%>
+</ul>
