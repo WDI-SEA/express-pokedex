@@ -40,7 +40,7 @@ router.post('/', async (req, res) => {
 router.get('/:name', async(req,res) => {
   try{
     const url =`http://pokeapi.co/api/v2/pokemon/${req.params.name}`
-    console.log(url)
+    // console.log(url)
     // res.json(response.data)
     const response = await axios.get(url)
     res.render('show.ejs', {
