@@ -14,8 +14,8 @@ app.get('/', (req, res) => {
   let pokemonsUrl = 'http://pokeapi.co/api/v2/pokemon?limit=151/';
   // Use request to call the API
   axios.get(pokemonsUrl).then(apiResponse => {
-    let OGpokemon = apiResponse.data.results;
-    res.render('index', { OGpokemon: OGpokemon.slice(0, 151) });
+    let OGpokemons = apiResponse.data.results;
+    res.render('index', { OGpokemons: OGpokemons.slice(0, 151) });
   })
 });
 
@@ -30,9 +30,9 @@ app.get('/pokemon/:name', async (req, res) => {
     res.render('detail.ejs', {
       character: response.data
     })
-  } catch(err) {
-    console.log('🤬🤬🤬🤬🤬', err)
-    res.status(500).send('api error 🤬')
+  } catch (err) {
+    console.log('UGH AN ERROR', err)
+    res.status(500).send('So very sorry, there\'s been an error somewhere...')
   }
 })
 
