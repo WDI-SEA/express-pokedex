@@ -11,9 +11,9 @@ app.use(ejsLayouts);
 
 // GET / - main index of site, render all 151 pokemon characters
 app.get('/', (req, res) => {
-  let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon?limit=151/';
+  let pokemonsUrl = 'http://pokeapi.co/api/v2/pokemon?limit=151/';
   // Use request to call the API
-  axios.get(pokemonUrl).then(apiResponse => {
+  axios.get(pokemonsUrl).then(apiResponse => {
     let OGpokemon = apiResponse.data.results;
     res.render('index', { OGpokemon: OGpokemon.slice(0, 151) });
   })
@@ -23,12 +23,12 @@ app.get('/', (req, res) => {
 app.get('/pokemon/:name', async (req, res) => {
   try {
     // url route parameters come in on the req.params
-    const url = `http://pokeapi.co/api/v2/pokemon/${req.params.name}`
+    const specificPokemonUrl = `http://pokeapi.co/api/v2/pokemon/${req.params.name}`
     console.log(req.params)
-    const response = await axios.get(url)
+    const response = await axios.get(specificPokemonUrl)
 
     res.render('detail.ejs', {
-      name: response.data
+      character: response.data
     })
   } catch(err) {
     console.log('🤬🤬🤬🤬🤬', err)
