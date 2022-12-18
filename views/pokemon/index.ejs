@@ -1,7 +1,16 @@
 <h1>Favorited Pokemon</h1>
+<a href="/">Pokedex-Home Page</a>
+
 <% allFaves.forEach(fave => { %>
     <ul>
-        <li><%= fave.name %> <a href="/pokemon/<%= fave.name %>">Pokemon Info</a> </li>
+        <li> <img src= "<%=fave.pokeurl %>" /> </br> <%= fave.name %> - <a href="/pokemon/<%= fave.name %>">Pokemon Info</a> 
+        </li>
+
+        <form method="POST" action="/pokemon/?_method=DELETE">
+            <input hidden type="text" name="name" value="<%= fave.name %>">
+            <button type="submit">Delete</button>
+        </form>
+        
         
     </ul>
 <% }) %>
