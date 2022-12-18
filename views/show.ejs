@@ -1,0 +1,34 @@
+<h1><%= poke.name %></h1>
+
+<div>
+    <img src="<%= poke.sprites.front_shiny%>"/>
+</div>
+
+<div>
+    <h4>Typing:</h4>
+    <ul>
+        <% poke.types.forEach(type => { %>
+            <li> <%= type.type.name %> </li>
+        <% }) %>
+    </ul>
+</div>
+
+<div>
+    <h4>Possible Abilities:</h3>
+    <ul>
+        <% poke.abilities.forEach(ability => { %>
+            <li> <%= ability.ability.name %> </li>
+        <% }) %>
+    </ul>
+</div>
+
+<div>
+    <h4>Base stats:</h3>
+    <ul>
+        <% poke.stats.forEach(stat => { %>
+            <li> <%= stat.stat.name %>: <%= stat.base_stat %> </li>
+        <% }) %>
+    </ul>
+</div>
+
+
