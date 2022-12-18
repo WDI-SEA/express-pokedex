@@ -8,7 +8,7 @@
     <% favePokemon.forEach(function(pokemon) { %>
       <div class="well">
         <h2><%= pokemon.name %></h2>
-
+        
         <form method="GET" action="/pokemon/<%= pokemon.name %>">
             <input hidden type="text" name="name" value="<%= pokemon.name %>">
             <button class="btn btn-primary" type="submit">See Attributes</button>
@@ -16,4 +16,6 @@
 
       </div>
     <% }); %>
+
+
   </div>
