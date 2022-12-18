@@ -1,0 +1,15 @@
+<!-- attributes page -->
+<div class="container">
+    <h1 class="text-center">Pokemon Details Page</h1>
+    <p class="text-center">
+        <a href="/">Back to Homepage</a>
+        <a href="/pokemon">Back to Favorite Pokemon</a>
+
+    </p>
+    <% pokemon.abilities.forEach(function(pokemon) {%>
+        <div class ='well'>
+            <h2><%= pokemon.ability.name %></h2>
+        </div>
+    <% }) %>
+
+  </div>
