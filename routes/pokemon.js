@@ -1,3 +1,4 @@
+const { name } = require('ejs');
 const { application } = require('express');
 const express = require('express');
 const router = express.Router();
@@ -22,7 +23,7 @@ router.get('/', async function (req, res) {
 router.post('/', async function (req, res) {
   // TODO: Get form data and add a new record to DB
   try {
-    const pokeArray = db.pokemon.findOrCreate({
+    const pokeArray = await db.pokemon.findOrCreate({
       where: {
         name: req.body.name
       },
@@ -30,8 +31,7 @@ router.post('/', async function (req, res) {
         name: req.body.name
       }
     })
-    res.redirect('/')
-
+    res.redirect('/pokemon')
   }
   catch (err) {
     console.log('FIYAAAAAAAAA', err)
@@ -39,6 +39,36 @@ router.post('/', async function (req, res) {
   }
 });
 
+
+
+async function deleteItemFromDatabase(pokeName) {
+  try {
+    // Delete the item with the specified id
+    await poke.destroy({
+      where: {
+        name: name
+      }
+    })
+  } catch (error) {
+    throw error
+  }
+}
+
+router.delete('/pokemon/:name', async (req, res) => {
+  try {
+    // Get the item id from the URL parameters
+    const pokeName = req.body.name
+
+    // Delete the item from the database
+    await deleteItemFromDatabase(pokeName)
+
+    // Send a success response
+    res.send({ success: true })
+  } catch (error) {
+    // Send an error response
+    res.status(500).send({ success: false, error: error.message })
+  }
+})
 // router.get('/pokemon/details')
 
 module.exports = router;
