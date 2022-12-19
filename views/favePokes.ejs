@@ -1,13 +1,10 @@
 <h1>Here is a List of All Your Favorite Pokemon so Far!</h1>
 <% favePokes.forEach(poke=> { %>
-    <a href="/pokemon">
-        <ul>
-            <li>
+    <ul>
+        <li>
+            <a href="/pokemon/<%= poke.name %>">
                 <%= poke.name %>
-                    <form method="DESTROY" action="/pokemon/:name">
-                        <a href="/pokemon/:id">
-                    </form>
-            </li>
-        </ul>
-    </a>
+            </a>
+        </li>
+    </ul>
     <% }) %>

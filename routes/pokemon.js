@@ -1,3 +1,4 @@
+const { default: axios } = require('axios');
 const { name } = require('ejs');
 const { application } = require('express');
 const express = require('express');
@@ -39,7 +40,17 @@ router.post('/', async function (req, res) {
   }
 });
 
-
+router.get('/:name', async function (req, res) {
+  try {
+    let pokeName = req.params.name
+    let pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${pokeName}`
+    const response = await axios.get(pokemonUrl)
+    res.render('details', { pokemon: response.data })
+  }
+  catch (err) {
+    console.log('AYERRR', err)
+  }
+})
 
 async function deleteItemFromDatabase(pokeName) {
   try {
