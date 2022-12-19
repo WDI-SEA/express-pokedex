@@ -1,0 +1,12 @@
+<a href="/">HOME</a>
+
+<h1>Your pokemon details</h1>
+
+<img src="<%= pokemon.sprites.front_default %>"/>
+
+<h2><%= pokemon.name %></h2>
+<p>pokemon type:</p>
+<% pokemon.types.forEach(type => { %>
+    <%= type.type.name %>
+<% }) %>
+<p>weight: <%= pokemon.weight %></p>

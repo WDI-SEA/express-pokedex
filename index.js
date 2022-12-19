@@ -1,27 +1,35 @@
 const express = require('express');
 const axios = require('axios'); 
 const ejsLayouts = require('express-ejs-layouts');
+require('dotenv').config();
+const db = require('./')
 
 const app = express();
-const port = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 
 // GET / - main index of site
-app.get('/', (req, res) => {
-  let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
-  // Use request to call the API
-  axios.get(pokemonUrl).then(apiResponse => {
-    let pokemon = apiResponse.data.results;
-    res.render('index', { pokemon: pokemon.slice(0, 151) });
-  })
+app.get('/', async (req, res) => {
+  try {
+    let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon?limit=151';
+    // Use request to call the API
+    const response = await axios.get(pokemonUrl)
+    // console.log(response.data.results)
+    res.render('index.ejs', {
+      pokemon: response.data.results.slice(0, 151)
+    })
+  } catch (err) {
+    console.log('🤔🤔🤔🤔🤔🤔🤔', err)
+    res.status(500).send('api error 🤔🤔🤔')
+  }
 });
 
 // Imports all routes from the pokemon routes file
 app.use('/pokemon', require('./routes/pokemon'));
 
-app.listen(port, () => {
-  console.log('...listening on', port );
+const server = app.listen(process.env.PORT, () => {
+  console.log(`I'll be right by your side 'Til ${process.env.PORT}, hold up`)
 });
+
