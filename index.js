@@ -19,24 +19,10 @@ app.get('/', (req, res) => {
   })
 });
 
-//GET 
-// app.get('/views/pokemon/index', (req, res)=>{
-//   res.send('pokemon')
-// })
-app.get("/", async (req, res) => {
-  try {
-    let data = await axios.get(
-      `https://pokeapi.co/api/v2/pokemon/?limit=8&&offset=${getRandomInt(1145)}`
-    );
-    let pokemon = await data.data.results;
-
-    res.render("index", {
-      pokemon: await pokemon,
-    });
-  } catch (error) {
-    // console.error(error);
-  }
-});
+GET 
+app.get('/views/pokemon/index', (req, res)=>{
+  res.send('pokemon')
+})
 
 // Imports all routes from the pokemon routes file
 app.use('/pokemon', require('./routes/pokemon'));
