@@ -35,13 +35,14 @@ router.post('/', async (req, res) => {
 });
 
 //GET add a route that renders a show page that pulls data from the api provided
-router.get('/:name', async(req,res) => {
+router.get('/:name', async (req,res) => {
   try {
-    const url =`http://pokeapi.co/api/v2/pokemon/${req.body.name}`
-
+    const url =`http://pokeapi.co/api/v2/pokemon/${req.params.name}`
+    //console.log(url)
     const response = await axios.get(url)
     res.render('show.ejs', {
-      ability: response.data.abilities.ability
+      pokemon: response.data,
+      name: req.params.name
     })
   } catch (error) {
     console.log(error)
