@@ -1,0 +1,39 @@
+<h3><%=pokemon.name%></h3>
+<img src = <%= pokemon.sprites.front_default %> alt='pokemon <%=pokemon.name%>'>
+
+<h3>general info</h3>
+<ul>
+    <li> <b>name:</b> <%= pokemon.species.name %> </li>
+    <li> <b>weight:</b> <%= pokemon.weight %> </li>
+    <li> <b>height:</b> <%= pokemon.height %> </li>
+    <li> <b>order:</b> <%= pokemon.order %> </li>
+    <li> <b>base experience:</b> <%= pokemon.base_experience %> </li>
+</ul>
+
+<h3>held items</h3>
+<ul>
+   <% pokemon.held_items.forEach(poke => { %>
+    <li>
+        <%= poke.item.name %> 
+    </li>
+   <% }) %>
+</ul>
+
+
+<h3>abilities</h3>
+<ul>
+<% pokemon.abilities.forEach(poke => { %>
+    <li>
+        <%= poke.ability.name %> 
+    </li>
+<% }) %>
+</ul>
+
+<h3>moves</h3>
+<ul>
+<% pokemon.moves.forEach(poke => { %>
+    <li>
+        <%= poke.move.name %> 
+    </li>
+<% }) %>
+</ul>

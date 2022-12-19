@@ -1,0 +1,15 @@
+body{
+    margin: 10px;
+    background-color: rgb(1, 1, 12); 
+    color: #F8F9F9 ;
+}
+
+h2, p {
+    color:  rgb(1, 1, 12);
+}
+
+a{
+    font-weight: bold;
+    font-size: larger;
+
+}
