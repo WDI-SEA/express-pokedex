@@ -1,0 +1,8 @@
+SQL Table: pokedex
+
+name: string
+
+// anatomy of the model create command //
+sequelize model:create --name (name of the table singular) --attributes colName:dataType,colName:dataType
+
+sequelize model:create --name pokemon --attributes name:string
