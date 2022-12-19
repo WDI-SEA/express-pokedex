@@ -1,0 +1,11 @@
+<div class="top">
+<h1>Your favorite Pokemons!</h1>
+<a href="/">back</a>
+</div>
+<div class="dex">
+<ul>
+<% allFaves.forEach(e => { %>
+   <li><a href="/pokemon/<%= e.name %>"><%= e.name %></a></li>
+<% }) %>
+</ul>
+</div>

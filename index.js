@@ -4,6 +4,7 @@ const ejsLayouts = require('express-ejs-layouts');
 
 const app = express();
 const port = process.env.PORT || 3000;
+app.use(express.static(__dirname + '/public'));
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
@@ -19,8 +20,11 @@ app.get('/', (req, res) => {
   })
 });
 
+app.get('')
+
 // Imports all routes from the pokemon routes file
 app.use('/pokemon', require('./routes/pokemon'));
+
 
 app.listen(port, () => {
   console.log('...listening on', port );

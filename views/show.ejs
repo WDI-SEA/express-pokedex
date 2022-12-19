@@ -1,0 +1,15 @@
+<a href="/pokemon">Back</a>
+
+<h1><%= pokemon.name %> </h1>
+<h2>ID: <%= pokemon.id %></h2>
+<h2>Height: <%= pokemon.height %></h2>
+<h2>Weight: <%= pokemon.weight %></h2>
+
+<h3>Normal</h3>
+<div class="sprite">
+<img src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>" />
+</div>
+<h3>Shiny</h3>
+<div class="sprite">
+<img src="<%= pokemon.sprites.front_shiny %>" alt="<%= pokemon.name %> but shiny" />
+</div>

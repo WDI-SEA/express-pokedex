@@ -1,0 +1,42 @@
+body {
+    background-color: red;
+    text-align: center;
+}
+
+.top {
+    position: absolute;
+    height: 15%;
+    width: 80%;
+    margin: 0 auto;
+    background-color: white;
+    border: 10px solid rgb(219, 219, 219);
+    border-radius: 20px;
+    color: black;
+}
+.dex {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    height: 60%;
+    width: 60%;
+    background-color: white;
+    border: 10px solid rgb(117, 3, 3);
+    border-radius: 10px;
+    text-align: left;
+    list-style-type: none;
+}
+
+img {
+    height: 150%; width: 150%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-15%, -15%);
+}
+
+.sprite {
+    margin: 0 auto;
+    height: 200px;
+    width: 200px;
+    background-color: lightblue;
+    border-radius: 15px;
+}
