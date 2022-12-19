@@ -1,0 +1,12 @@
+<%- include('./partials/header.ejs')%>
+<a href="/">Home</a>
+<div>
+    <h1>List of Favorites</h1>
+    <ul>
+        <%pokemon.forEach(function(pokemon){%>
+        <p><%= pokemon.name%></p>
+
+        <%})%>
+    </ul>
+</div>
+<%- include('./partials/footer.ejs') %>
