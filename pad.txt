@@ -1,0 +1,6 @@
+"sequelize model:create --name pokemon --attributes name:string" 
+"sequelize db:migrate" 
+
+// go into psql
+"\c pokedex" // to connext to pokedex
+"\dt" to check db contents 
