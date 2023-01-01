@@ -1,0 +1,13 @@
+<div class="container">
+    <h1 class="text-center">All favorites</h1>
+    <p class="text-center">
+      <a href="/pokemon">All pokemon</a>
+    </p>
+    
+<!-- pokemon JS is where I got this -->
+    <% pokemon.forEach(pokemon => { %>
+        <h2><a href="/pokemon/<%= pokemon.name %>"><%=pokemon.name %></a></h2>
+    <% }) %>
+
+
+</div>

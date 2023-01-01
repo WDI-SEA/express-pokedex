@@ -1,0 +1,13 @@
+<div class="container">
+    <h1 class="text-center">The Original 151 Pokemon</h1>
+    <p class="text-center">
+      <a href="/pokemon">Favorites</a>
+    </p>
+    
+    <h2>Name: <%= pokemon.name %></h2>
+    <h2>Weight:  <%= pokemon.weight %></h2>
+    <h2>Moves:  <%= pokemon.moves[0].move.name %></h2>
+    <h2> Height: <%= pokemon.height %></h2>
+    <img src="<%= pokemon.sprites.front_shiny %>" alt="<%= pokemon.name %> picture">
+
+</div>

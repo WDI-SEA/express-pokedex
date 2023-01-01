@@ -1,0 +1,91 @@
+//routes
+get route to a search page
+#limit 20 pokemon search
+#favorites buttons
+#display pokemon name, pictures, abilities
+
+post route to a favorites page &redirect
+#post pokemon to favorites page
+
+get route to favorites page
+#display list of all pokemon favorites
+
+
+===creating the database
+sequelize model:create --name pokemon --attributes name:string,img_url:string,type:string,stat_name:string,stats_num:integer,moves:string
+
+
+JSON file
+===name
+"name": "bulbasaur",
+
+====img in api 
+sprites
+"other": {
+"dream_world": {
+"front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg",
+"front_female": null
+},
+"home": {
+"front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/1.png",
+
+=====stats 
+stats 
+stats": [
+{
+"base_stat": 45,
+"effort": 0,
+"stat": {
+"name": "hp",
+"url": "https://pokeapi.co/api/v2/stat/1/"
+}
+},
+{
+"base_stat": 49,
+"effort": 0,
+"stat": {
+"name": "attack",
+"url": "https://pokeapi.co/api/v2/stat/2/"
+}
+},
+{
+"base_stat": 49,
+"effort": 0,
+"stat": {
+"name": "defense",
+"url": "https://pokeapi.co/api/v2/stat/3/"
+}
+}
+
+
+====moves
+"moves": [
+{
+"move": {
+"name": "razor-wind",
+"url": "https://pokeapi.co/api/v2/move/13/"
+},
+"move": {
+"name": "swords-dance",
+"url": "https://pokeapi.co/api/v2/move/14/"
+},
+"move": {
+"name": "cut",
+"url": "https://pokeapi.co/api/v2/move/15/"
+}
+
+====type of pokemon
+types": [
+{
+"slot": 1,
+"type": {
+"name": "grass",
+"url": "https://pokeapi.co/api/v2/type/12/"
+}
+},
+{
+"slot": 2,
+"type": {
+"name": "poison",
+"url": "https://pokeapi.co/api/v2/type/4/"
+}
