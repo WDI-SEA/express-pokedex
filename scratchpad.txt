@@ -1,0 +1,3 @@
+sequelize model:create
+
+sequelize model:create --name pokemon --attributes name:string
