@@ -1,14 +1,24 @@
 <div class="container">
-    <h1><%= pokemon.name %></h1>
+    <span><img src="<%= pokemon.sprites.front_default %>" alt=""><h1><%= pokemon.name %></h1></span>
 
-    <img src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>">
+    <img src="<%= pokemon.sprites.other["official-artwork"].front_default %>" alt="official artwork">
     
     <p>height: <%= pokemon.height %></p>
     
     <p>weight: <%= pokemon.weight %></p>
-    
-    <p>ability: <%= pokemon.abilities[0].ability.name %></p>
-    
-    <p>base xp: <%= pokemon.base_experience %></p>
-    
+
+    <ul>Type(s): <% pokemon.types.forEach(function(type) { %>
+        <li>
+            <%= type.type.name %>
+        </li>   
+        <% }) %>
+    </ul>
+
+    <ul>Ability(ies): <% pokemon.abilities.forEach(function(ability) { %>
+        <li>
+            <%= ability.ability.name %>
+        </li>   
+        <% }) %>
+    </ul>
+           
 </div>
