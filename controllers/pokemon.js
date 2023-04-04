@@ -1,16 +1,20 @@
 const express = require('express');
 const router = express.Router();
+const db = require('../models');
+const Pokemon = db.pokemon;
 
-// GET /pokemon - return a page with favorited Pokemon
-router.get('/', (req, res) => {
-  // TODO: Get all records from the DB and render to view
-  res.send('Render a page of favorites here');
+router.get('/', async (req, res) => {
+  let allFavePokemon = await Pokemon.findAll();
+  console.log(allFavePokemon);
+  res.render('pokemon', {
+    pokemon: allFavePokemon
+  });
 });
 
-// POST /pokemon - receive the name of a pokemon and add it to the database
-router.post('/', (req, res) => {
-  // TODO: Get form data and add a new record to DB
-  res.send(req.body);
+router.post('/', async (req, res) => {
+  let newPokemon = await Pokemon.create({name: req.body.name});
+  console.log(newPokemon);
+  res.redirect('pokemon');
 });
 
 module.exports = router;
