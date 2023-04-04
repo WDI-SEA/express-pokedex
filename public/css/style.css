@@ -1,0 +1,21 @@
+body {
+  background-color: darkslategray;
+}
+
+h1,
+li,
+a {
+  color: antiquewhite;
+}
+
+a:visited {
+  color: darkgray;
+}
+
+h2 a {
+  color: black;
+}
+
+h2 a:visited {
+  color: darkgray;
+}
