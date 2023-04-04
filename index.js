@@ -1,5 +1,6 @@
 const express = require('express');
 const axios = require('axios'); 
+const db = require('./models');
 const ejsLayouts = require('express-ejs-layouts');
 
 const app = express();
@@ -19,6 +20,7 @@ app.get('/', (req, res) => {
     res.render('index', { pokemon: pokemon });
   })
 });
+
 
 // Imports all routes from the pokemon routes file
 app.use('/pokemon', require('./controllers/pokemon'));
