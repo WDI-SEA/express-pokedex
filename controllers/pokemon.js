@@ -7,10 +7,9 @@ const axios = require('axios');
 router.get('/', async (req, res) => {
   // TODO: Get all records from the DB and render to view
   const allFaves = await db.pokemon.findAll();
-  console.log(allFaves.name);
   try {
   res.render("pokemon/index.ejs", {
-    allFaves
+    pokemon:allFaves
   })
   } catch(err) {
     console.log(err);
@@ -41,7 +40,10 @@ router.get("/:name", (req, res) => {
   axios.get(pokemonUrl).then(apiResponse => {
     let pokemon = apiResponse.data
     console.log(pokemon.stats.stat)
-    res.render("pokemon/show", { pokemon: pokemon })
+    res.render("pokemon/show", { 
+      pokemon: pokemon,
+      // officialArt: pokemon.sprites.other["official-artwork"].front_default
+     })
   })
 })
 
