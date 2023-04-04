@@ -1,0 +1,20 @@
+<h2>POKI INFO</h2>
+<img src="<%=officialArt%>"/>
+<h3>Pokemon name</h3>
+<p> <%= pokiman.name %> </p>
+<h3>type(s):</h3>
+<ul>
+  <% pokimon.types.forEach(function(type) { %>
+    <li>
+      <%= type.type.name %>
+    </li>
+  <% }) %>
+</ul>
+<h3>Abilities:</h3>
+<ul>
+  <% pokimon.abilities.forEach(function(type) { %>
+    <li>
+      <%= abilitie.abilitie.name %>
+    </li>
+  <% }) %>
+</ul>
