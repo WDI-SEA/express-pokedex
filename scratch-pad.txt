@@ -1,0 +1,13 @@
+# sequelize model:create --name < name of the sql table (singular) to create > --attributes <comma seperated list of column names and data types >
+
+USERS TABLE => user model
+-------------------------------------------
+firstName: VARCHAR(255) => string
+lastName: VARCHAR(255) => string
+age: INT => integer
+email: VARCHAR(255) => string
+
+sequelize model:create --name user --attributes firstName:string,lastName:string,age:integer,email:string
+
+
+sequelize model:create --name pokemon --attributes name:string,url:string
