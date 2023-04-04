@@ -1,0 +1,10 @@
+<div class="container">
+    <h1>Your Faves</h1>
+    
+    <% allFaves.forEach(fave => { %>
+        <a href="/pokemon/<%= fave.name %>">
+            <p><%= fave.name %></p>
+        </a>
+    <% }) %>
+
+</div>
