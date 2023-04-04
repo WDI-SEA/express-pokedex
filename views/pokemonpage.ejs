@@ -1,0 +1,20 @@
+<h1><%= pokemon.name %></h1>
+<img src="<%= sprites.front_default %>" alt="<%= pokemon.name %>">
+<h2>Abilities:</h2>
+<ul>
+  <% for (let i = 0; i < abilities.length; i++) { %>
+    <li><%= abilities[i].ability.name %></li>
+  <% } %>
+</ul>
+<h2>Stats:</h2>
+<ul>
+  <% for (let i = 0; i < stats.length; i++) { %>
+    <li><%= stats[i].stat.name %>: <%= stats[i].base_stat %></li>
+  <% } %>
+</ul>
+<h2>Moves:</h2>
+<ul>
+  <% for (let i = 0; i < moves.length; i++) { %>
+    <li><%= moves[i].move.name %></li>
+  <% } %>
+</ul>
