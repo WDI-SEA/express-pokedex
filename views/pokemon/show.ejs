@@ -1,0 +1,22 @@
+<h1><%= pokemon.name %></h1>
+
+<p>(quick side note -- why is CSS not inheriting on this view)</p>
+
+<img src="<%= pokemon.sprites.front_default %>" alt="" />
+<h2><%= pokemon.name %>'s weight: <%= pokemon.weight %></h2>
+
+<% if (pokemon.types.length < 2) { %>
+<h2><%= pokemon.name %>'s type is <%= pokemon.types[0].type.name %></h2>
+<% } else { %>
+<h2>
+  <%= pokemon.name %>'s types are <%= pokemon.types[0].type.name %> and <%=
+  pokemon.types[1].type.name %>
+</h2>
+<% } %>
+
+<h2>Available abilities:</h2>
+<ul>
+  <% pokemon.abilities.forEach((ability) => { %>
+  <li><%= ability.ability.name %></li>
+  <% }) %>
+</ul>

@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "sequelize",
+    "password": "sequelize",
+    "database": "pokedex",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
