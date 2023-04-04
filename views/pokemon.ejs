@@ -1,0 +1,11 @@
+<a href="/">Home</a>
+
+<h1>Favorite Pokemon</h1>
+
+<ul>
+    <% pocketMonster.forEach(pika => { %>
+        <li>            
+            <a href='/pokemon/<%= pika.dataValues.name%>/'><%= pika.dataValues.name%></a>
+        </li>
+    <% }) %>
+</ul>

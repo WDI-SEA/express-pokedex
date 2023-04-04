@@ -1,0 +1,19 @@
+<a href="/">Home</a>
+<div id="header">
+
+<h1><%=pokemon.name%></h1>
+<p> #<%=pokemon.id%></p>
+</div>
+<aside id="leftAside"></aside>
+<aside id="rightAside"></aside>
+<div id="middle">
+<img src="<%=officialArt%>" />
+<h2>types:</h2>
+<ul>
+    <% pokemon.types.forEach(taco => { %>
+      <li> <%=taco.type.name %> </li> 
+    <% }) %>
+</ul>
+</div>
+
+
