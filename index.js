@@ -8,6 +8,7 @@ const port = process.env.PORT || 3000;
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
+app.use(express.static('public'))
 
 const path = require('path')
 app.set('views', path.join(__dirname, 'views'));
@@ -27,7 +28,7 @@ app.get('/pokemon', async (req, res) => {
   try {
     const allPokemon = await db.pokemon.findAll();
     console.log(__dirname)
-    res.render('index.ejs', { pokemon: allPokemon });
+    res.render('./pokemon/index.ejs', { pokemon: allPokemon });
   } catch (err) {
     console.log(err);
     res.status(500).send('Internal Server Error');
@@ -37,7 +38,7 @@ app.get('/pokemon', async (req, res) => {
 app.post('/pokemon', async (req, res) => {
   const { name } = req.body;
   try {
-    const newPokemon = await db.pokemon.create({ name });
+    const newPokemon = await db.pokemon.findOrCreate({ where: {name} });
     console.log('Created new Pokemon:', newPokemon.name);
     res.redirect('/pokemon');
   } catch (err) {
@@ -45,6 +46,19 @@ app.post('/pokemon', async (req, res) => {
     res.status(500).send('Internal Server Error');
   }
 });
+
+
+app.get('/pokemon/:name', async (req, res) => {
+  const { name } = req.params
+  try {
+    const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`)
+    const pokemon = response.data;
+    res.render('pokemon/show', { pokemon })
+  } catch(err) {
+    console.log(err)
+    res.status(404).send('Pokemon not found')
+  }
+})
 
 
 // Imports all routes from the pokemon routes file
