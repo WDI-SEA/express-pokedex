@@ -11,7 +11,6 @@ app.use(ejsLayouts);
 
 // GET / - main index of site
 app.get('/', (req, res) => {
-  // TODO: use updated url http://pokeapi.co/api/v2/pokemon/?offset=0&limit=151
   let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/?offset=0&limit=151';
   // Use request to call the API
   axios.get(pokemonUrl).then(apiResponse => {
