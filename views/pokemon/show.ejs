@@ -1,0 +1,19 @@
+<h1><%=pokemon.name%></h1>
+<img src="<%=pokemon.sprites.other["official-artwork"].front_default%>"/>
+<h3>Height: </h3> <h4><%=pokemon.height%></h4>
+<h3>Weight: </h3> <h4><%=pokemon.weight%></h4>
+<h3>Abilities: </h3>
+<%pokemon.abilities.forEach(element => { %>
+    <ul>
+        <li><%=element.ability.name%></li>
+    </ul>
+<% }) %>
+
+<h3>Type(s):</h3>
+<ul>
+    <% pokemon.types.forEach(function(type) { %>
+        <li>
+            <%= type.type.name %>
+        </li>
+    <% }) %>
+</ul>

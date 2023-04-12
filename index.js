@@ -15,8 +15,10 @@ app.get('/', (req, res) => {
   let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/?offset=0&limit=151';
   // Use request to call the API
   axios.get(pokemonUrl).then(apiResponse => {
+    // console.log(apiResponse.data)
     let pokemon = apiResponse.data.results;
-    res.render('index', { pokemon: pokemon });
+    res.render('index', 
+    { pokemon: pokemon });
   })
 });
 
